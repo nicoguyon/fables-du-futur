@@ -972,6 +972,76 @@
    "num": 13,
    "ts": "2026-06-11T15:25:28Z",
    "image": "img/marchand-de-donnees-berger-loup.jpg"
+  },
+  {
+   "id": "abeille-essaim-drones",
+   "fr": {
+    "title": "L'Abeille et l'Essaim de Drones",
+    "verses": [
+     "Un Ingénieur, tout fier de sa neuve merveille,",
+     "Lâcha sur le verger mille drones luisants.",
+     "« Adieu, dit-il, la ruche, adieu la vieille Abeille !",
+     "Mes essaims de métal, exacts, obéissants,",
+     "Butinent sans trêve et sans cire ;",
+     "La fleur n'est plus qu'un chiffre, et moi seul sais le lire. »",
+     "Une Abeille des champs suspendit là son vol :",
+     "« Tes filles, Maître, ont l'aile exacte et l'œil rapide ;",
+     "Mais que ramènent-elles, hormis un nombre fol ? »",
+     "— « Du savoir ! » — « Du savoir... et le cellier est vide.",
+     "Compte donc les fleurs, toi ; moi, j'en ferai le miel. »",
+     "L'été fondit ; décembre vint givrer le ciel.",
+     "Les beaux drones, un à un, la batterie tarie,",
+     "Tombèrent du pommier comme feuille flétrie ;",
+     "Or le voilà, le Maître, à la porte voisine,",
+     "Vint mendier, le ventre en proie à la famine :",
+     "« Voisine, j'ai cent mille fleurs en ma mémoire ! »",
+     "— « Et moi cent pots de miel au fond de mon armoire ;",
+     "Entre donc, lui dit-elle, et retiens, l'œil ouvert :",
+     "Le compte emplit l'écran ; le miel emplit l'hiver. »"
+    ],
+    "moral": [
+     "Comptez, pesez le monde, amassez vos données :",
+     "L'hiver ne se paie point en roses dénombrées.",
+     "Heureux qui, butinant sans bruit,",
+     "Change le jour qui passe en miel qui reste et luit."
+    ]
+   },
+   "en": {
+    "title": "The Bee and the Drone Swarm",
+    "verses": [
+     "An Engineer, puffed up with his new wonder,",
+     "Loosed on the bloom a thousand drones of steel.",
+     "\"Farewell, old hive! Your reign is split asunder:",
+     "My swarm wants neither queen nor wax nor meal;",
+     "It tallies every blossom, every grain —",
+     "The flower is a figure, and the figure's mine.\"",
+     "A field-bee hovered by: \"Your craft is plain,",
+     "Good Master; swift the wing, exact the line;",
+     "But what flies home to fill the comb, I pray?\"",
+     "\"Why, data!\" — \"Data... and the cellar's bare.",
+     "Count, then; I'll store the sweetness of the day.\"",
+     "The summer died; December bit the air.",
+     "The drones fell one by one, their batteries dead,",
+     "Like brittle leaves upon the frosted lane.",
+     "The Engineer came begging, bowed his head:",
+     "\"Neighbor, I keep a million flowers in brain!\"",
+     "\"And I keep honey. Enter; take your share;",
+     "Then write this on your console, white with frost:",
+     "The tally fills the screen and feeds the air;",
+     "The honey fills the winter — nothing lost.\""
+    ],
+    "moral": [
+     "Tally the world, and stack your data deep:",
+     "No winter yet was fed on numbered flowers.",
+     "Blest is the bee whose humble labors keep,",
+     "Who turns to honey all her summer hours."
+    ]
+   },
+   "theme": "données contre miel",
+   "image_prompt": "A frozen orchard under a bare apple tree: dozens of small metallic drone-bees lie scattered and lifeless on the snow, wings splayed. A shivering engineer in a long coat, clutching a glowing tablet covered in flower tallies, knocks humbly at a wooden beehive on a stump, where a real honeybee stands at the entrance offering a dripping golden honeycomb.",
+   "num": 14,
+   "ts": "2026-06-11T22:13:45Z",
+   "image": "img/abeille-essaim-drones.jpg"
   }
  ]
 }
