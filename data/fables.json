@@ -1042,6 +1042,86 @@
    "num": 14,
    "ts": "2026-06-11T22:13:45Z",
    "image": "img/abeille-essaim-drones.jpg"
+  },
+  {
+   "id": "enfant-des-etoiles-et-le-vieux-pilote",
+   "fr": {
+    "title": "L'Enfant des Étoiles et le Vieux Pilote",
+    "verses": [
+     "Dans un vaisseau filant vers de lointains soleils,",
+     "Naquit un Enfançon qui ne sut de la Terre",
+     "Que des récits vermeils,",
+     "Des contes de grand-mère.",
+     "« Maître Pilote, dit l'Enfant,",
+     "Montrez-moi ce pays qu'on me vante si grand. »",
+     "Le vieillard au hublot régla la longue-vue,",
+     "Chercha dans l'ombre survenue,",
+     "Et désigna, tremblant, un grain de bleu pâli :",
+     "« Voilà ton berceau, mon petit. »",
+     "L'Enfant fit une moue : « Quoi ! ce grain de lumière ?",
+     "J'attendais des forêts, des mers, un ciel ouvert ;",
+     "Je ne vois qu'une pauvre pierre",
+     "Perdue au fond du noir désert.",
+     "— Enfant, dit le vieillard, vois cette humble chandelle :",
+     "Elle a couru cent ans pour briller dans tes yeux ;",
+     "Peut-être, quand je parle d'elle,",
+     "Sa source est morte dans les cieux.",
+     "— Et de qui, reprit-il, suis-je l'enfant, alors,",
+     "Si mon berceau là-bas n'est que cendre qui dort ?",
+     "— De sa lumière, enfant ; elle court, elle est vive :",
+     "Quand la source n'est plus, le rayon nous arrive.",
+     "Porte-le sans effroi,",
+     "Car tant que tu le vois,",
+     "La Terre vit encore en toi. »"
+    ],
+    "moral": [
+     "Lecteur, plus d'un flambeau qui te montre la voie",
+     "Brûla dans une main que nul œil ne revoit.",
+     "Les morts, en s'éteignant, nous lèguent leur lumière ;",
+     "Deviens lumière à ton tour : voilà toute prière."
+    ]
+   },
+   "en": {
+    "title": "The Star-Child and the Old Pilot",
+    "verses": [
+     "Aboard a vessel bound for suns unnamed,",
+     "A child was born mid-flight, who knew the Earth",
+     "By bedtime tales alone, and stories framed",
+     "Around a fabled hearth.",
+     "\"Old Pilot, show me, pray,\" the youngster cried,",
+     "\"That country they have praised on every side.\"",
+     "The pilot bent his scope against the black,",
+     "Searched long along the track,",
+     "Then pointed, trembling, to a fading fleck of blue:",
+     "\"There swings the cradle, child, that rocked for you.\"",
+     "The child pulled a face: \"What! That speck of light?",
+     "I dreamed of forests, seas, an open sky;",
+     "I see a pebble lost to sight,",
+     "Adrift where dead things lie.\"",
+     "\"Child,\" said the ancient, \"that small candle's gleam",
+     "Ran for a hundred years to reach your eye;",
+     "Perhaps, while here we dream,",
+     "Its hearth has long gone dry.\"",
+     "\"Then whose child am I now?\" the small one said.",
+     "\"If all my cradle holds is ashes, cold and dead?\"",
+     "\"The light's own child. It travels, swift and live:",
+     "The hearth may fail — the ray will still arrive.",
+     "Carry it on, and know:",
+     "So long as you can see,",
+     "Old Earth burns on in thee.\""
+    ],
+    "moral": [
+     "Reader, full many a lamp that lights your road",
+     "Burned in a hand the dark long since has owed.",
+     "The dead bequeath their light to those behind;",
+     "Become, in turn, a flame for humankind."
+    ]
+   },
+   "theme": "héritage de lumière",
+   "image_prompt": "Inside the dim cabin of a generation starship, an elderly pilot in a worn coat leans at a round porthole, one trembling hand pointing to a tiny pale-blue dot lost among dense stars; a small child stands on tiptoe beside a long brass telescope, eyes wide with wonder; coiled cables, star charts and instruments surround them, faint starlight washing both faces.",
+   "num": 15,
+   "ts": "2026-06-11T22:39:44Z",
+   "image": "img/enfant-des-etoiles-et-le-vieux-pilote.jpg"
   }
  ]
 }
