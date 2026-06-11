@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les Fables du Futur — recueil perpétuel de fables de science-fiction</title>
+<meta name="description" content="Une fable de science-fiction nouvelle chaque heure, écrite en direct par une intelligence artificielle, en hommage à Jean de La Fontaine. En français et en anglais.">
+<meta property="og:title" content="Les Fables du Futur">
+<meta property="og:description" content="Du La Fontaine de science-fiction, écrit d'heure en heure par une IA — regardez la fable s'écrire en direct.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f5eedd; --paper2:#efe5cd; --ink:#241d12; --ink-soft:#5c5240;
+  --copper:#9a5b2e; --copper-deep:#7a4521; --electric:#1f3a7a; --gold:#b8893a;
+  --rule:#d8cbac; --card:#faf5e9;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:"EB Garamond",Georgia,serif; font-size:19px; line-height:1.55;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+body::before{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .47 0 0 0 0 .32 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.wrap{position:relative;z-index:1}
+
+/* ---------- barre sticky ---------- */
+.bar{
+  position:sticky; top:0; z-index:50; display:flex; align-items:center; gap:14px;
+  padding:10px 20px; background:rgba(245,238,221,.92); backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--rule);
+  font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.04em;
+}
+.bar .logo{font-family:Fraunces,serif;font-weight:800;font-size:15px;letter-spacing:.02em;white-space:nowrap}
+.bar .logo span{color:var(--copper)}
+.countdown{margin-left:auto;color:var(--ink-soft);white-space:nowrap;display:flex;align-items:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--copper);display:inline-block}
+.dot.live{background:#c0392b;animation:pulse 1.2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+.lang{display:flex;border:1px solid var(--ink);border-radius:20px;overflow:hidden;cursor:pointer;user-select:none}
+.lang button{
+  font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.08em;
+  padding:5px 12px;border:none;background:transparent;color:var(--ink);cursor:pointer;
+}
+.lang button.on{background:var(--ink);color:var(--paper)}
+
+/* ---------- hero ---------- */
+header.hero{max-width:1060px;margin:0 auto;padding:64px 24px 30px;text-align:center}
+.hero .kicker{
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:500;letter-spacing:.32em;
+  text-transform:uppercase;color:var(--copper);margin-bottom:22px;
+}
+.hero h1{
+  font-family:Fraunces,serif;font-optical-sizing:auto;font-weight:900;
+  font-size:clamp(44px,8.5vw,104px);line-height:.98;letter-spacing:-.015em;
+}
+.hero h1 .futur{font-style:italic;font-weight:600;color:var(--copper-deep)}
+.hero .sub{
+  max-width:640px;margin:26px auto 0;font-size:20px;font-style:italic;color:var(--ink-soft);line-height:1.5;
+}
+.hero .meta{
+  margin-top:26px;display:flex;justify-content:center;flex-wrap:wrap;gap:10px 26px;
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--electric);
+}
+.orn{display:flex;align-items:center;gap:16px;justify-content:center;margin:34px auto 0;max-width:520px;color:var(--copper)}
+.orn::before,.orn::after{content:"";flex:1;height:1px;background:var(--rule)}
+.orn svg{flex:none}
+
+/* ---------- fable courante ---------- */
+main{max-width:1060px;margin:0 auto;padding:10px 24px 90px}
+.current{
+  background:var(--card);border:1px solid var(--rule);border-radius:6px;
+  box-shadow:0 24px 60px -30px rgba(60,40,10,.35);
+  padding:clamp(26px,5vw,56px);margin:26px 0 70px;position:relative;
+}
+.current::before{
+  content:"";position:absolute;inset:10px;border:1px solid var(--rule);border-radius:3px;pointer-events:none;
+}
+.status-chip{
+  position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+  background:var(--ink);color:var(--paper);border-radius:20px;padding:6px 16px;
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  display:flex;align-items:center;gap:8px;white-space:nowrap;z-index:2;
+}
+.fable-grid{display:grid;grid-template-columns:1fr 340px;gap:clamp(26px,4vw,54px);align-items:start}
+@media(max-width:820px){.fable-grid{grid-template-columns:1fr}}
+.fnum{
+  font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--copper);margin-bottom:14px;
+}
+.ftitle{
+  font-family:Fraunces,serif;font-weight:800;font-size:clamp(28px,4vw,44px);
+  line-height:1.06;letter-spacing:-.01em;margin-bottom:26px;min-height:1.1em;
+}
+.verses{font-size:clamp(18px,2vw,21.5px);line-height:1.62;white-space:pre-wrap}
+.verses .indent{display:inline-block;width:1.6em}
+.moral-block{margin-top:30px;padding-top:22px;border-top:1px solid var(--rule)}
+.moral-label{
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--copper);margin-bottom:10px;
+}
+.moral{font-style:italic;font-size:clamp(19px,2.2vw,23px);line-height:1.55;color:var(--copper-deep)}
+.caret{
+  display:inline-block;width:.55em;height:1.05em;vertical-align:-0.15em;margin-left:1px;
+  background:var(--copper);animation:blink .9s steps(1) infinite;
+}
+@keyframes blink{50%{opacity:0}}
+.figure{position:sticky;top:70px}
+@media(max-width:820px){.figure{position:static;order:-1;max-width:420px;margin:0 auto}}
+.figure .imgbox{
+  border:1px solid var(--rule);padding:10px;background:var(--paper);
+  box-shadow:0 14px 34px -18px rgba(60,40,10,.4);transform:rotate(.4deg);
+}
+.figure img{display:block;width:100%;transition:filter .8s ease,opacity .8s ease}
+.figure img.developing{filter:blur(14px) sepia(.5) contrast(.85);opacity:.45}
+.figure figcaption{
+  margin-top:10px;text-align:center;font-style:italic;font-size:15px;color:var(--ink-soft);
+}
+.skip-hint{
+  margin-top:18px;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-soft);
+  letter-spacing:.06em;opacity:.75;cursor:pointer;
+}
+
+/* ---------- fil / recueil ---------- */
+.recueil-head{display:flex;align-items:baseline;gap:18px;margin:0 0 8px}
+.recueil-head h2{font-family:Fraunces,serif;font-weight:800;font-size:clamp(24px,3.4vw,34px)}
+.recueil-head .count{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--copper);letter-spacing:.1em}
+.entry{
+  display:grid;grid-template-columns:300px 1fr;gap:clamp(24px,4vw,50px);
+  padding:54px 0;border-bottom:1px solid var(--rule);align-items:start;
+}
+.entry:nth-child(even){grid-template-columns:1fr 300px}
+.entry:nth-child(even) .eimg{order:2}
+@media(max-width:760px){
+  .entry,.entry:nth-child(even){grid-template-columns:1fr}
+  .entry:nth-child(even) .eimg{order:0}
+  .eimg{max-width:340px}
+}
+.eimg{border:1px solid var(--rule);padding:8px;background:var(--card);transform:rotate(-.35deg)}
+.entry:nth-child(even) .eimg{transform:rotate(.35deg)}
+.eimg img{display:block;width:100%}
+.eimg.noimg{display:flex;align-items:center;justify-content:center;aspect-ratio:4/5;color:var(--copper);font-size:44px}
+.entry .fnum{margin-bottom:8px}
+.entry h3{font-family:Fraunces,serif;font-weight:800;font-size:clamp(24px,3vw,32px);line-height:1.08;margin-bottom:6px}
+.edate{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-soft);letter-spacing:.06em;margin-bottom:20px}
+.entry .verses{font-size:18.5px}
+.entry .moral{font-size:19px}
+.sentinel{height:10px}
+.loadmsg{text-align:center;padding:34px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft)}
+
+/* ---------- toast nouvelle fable ---------- */
+.toast{
+  position:fixed;left:50%;bottom:26px;transform:translate(-50%,140%);z-index:60;
+  background:var(--ink);color:var(--paper);padding:13px 22px;border-radius:30px;
+  font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.05em;
+  display:flex;align-items:center;gap:10px;cursor:pointer;transition:transform .5s cubic-bezier(.2,.9,.3,1.2);
+  box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+.toast.show{transform:translate(-50%,0)}
+
+footer{
+  border-top:1px solid var(--rule);padding:40px 24px 60px;text-align:center;
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-soft);letter-spacing:.05em;line-height:2;
+}
+footer a{color:var(--copper);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="bar">
+  <div class="logo">LES FABLES <span>DU FUTUR</span></div>
+  <div class="countdown"><span class="dot" id="liveDot"></span><span id="countdown">…</span></div>
+  <div class="lang">
+    <button id="btnFr" class="on" onclick="setLang('fr')">FR</button>
+    <button id="btnEn" onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="kicker" data-i="kicker">Recueil perpétuel · Hommage à Jean de La Fontaine</div>
+  <h1>Les Fables<br><span class="futur">du Futur</span></h1>
+  <p class="sub" data-i="sub">Des fables de science-fiction, écrites d'heure en heure par une intelligence artificielle — où les corbeaux se perchent sur des pylônes, où les vers hantent les sables des exoplanètes, et où la morale, elle, n'a pas changé.</p>
+  <div class="meta">
+    <span data-i="m1">Une fable nouvelle chaque heure</span>
+    <span>·</span><span id="fableCount">—</span>
+    <span>·</span><span data-i="m3">Écrites par Fable, fabuliste artificiel</span>
+  </div>
+  <div class="orn"><svg width="26" height="18" viewBox="0 0 26 18" fill="none"><path d="M13 1c2 5 6 8 12 8-6 0-10 3-12 8-2-5-6-8-12-8 6 0 10-3 12-8z" fill="#9a5b2e"/></svg></div>
+</header>
+
+<main>
+  <section class="current" id="currentBox" style="display:none">
+    <div class="status-chip"><span class="dot" id="chipDot"></span><span id="chipTxt"></span></div>
+    <div class="fable-grid">
+      <article>
+        <div class="fnum" id="cNum"></div>
+        <h2 class="ftitle" id="cTitle"></h2>
+        <div class="verses" id="cVerses"></div>
+        <div class="moral-block" id="cMoralBlock" style="visibility:hidden">
+          <div class="moral-label" data-i="moral">Moralité</div>
+          <div class="moral" id="cMoral"></div>
+        </div>
+        <div class="skip-hint" id="skipHint" style="display:none" data-i="skip">⏎ cliquer sur le texte pour tout révéler</div>
+      </article>
+      <figure class="figure">
+        <div class="imgbox"><img id="cImg" alt="" style="display:none"></div>
+        <figcaption id="cCaption"></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="recueil-head">
+    <h2 data-i="recueil">Le Recueil</h2>
+    <span class="count" id="recCount"></span>
+  </div>
+  <section id="feed"></section>
+  <div class="sentinel" id="sentinel"></div>
+  <div class="loadmsg" id="loadmsg" style="display:none" data-i="more">… les fables plus anciennes se chargent …</div>
+</main>
+
+<div class="toast" id="toast" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <span class="dot live"></span><span id="toastTxt"></span>
+</div>
+
+<footer>
+  <div><span data-i="f1">Chaque heure, une fable inédite est composée par</span> <strong>Claude&nbsp;Fable&nbsp;5</strong> <span data-i="f2">et gravée par</span> <strong>Nano&nbsp;Banana&nbsp;Pro</strong>.</div>
+  <div data-i="f3">Librement inspiré des Fables de Jean de La Fontaine (1668) — et de tout ce que la science-fiction nous a appris depuis.</div>
+  <div>© 2026 <a href="https://comptoiria.com">Comptoir IA</a></div>
+</footer>
+
+</div>
+<script>
+/* ================= i18n ================= */
+const I18N = {
+ fr:{kicker:"Recueil perpétuel · Hommage à Jean de La Fontaine",
+     sub:"Des fables de science-fiction, écrites d'heure en heure par une intelligence artificielle — où les corbeaux se perchent sur des pylônes, où les vers hantent les sables des exoplanètes, et où la morale, elle, n'a pas changé.",
+     m1:"Une fable nouvelle chaque heure", m3:"Écrites par Fable, fabuliste artificiel",
+     moral:"Moralité", recueil:"Le Recueil", skip:"⏎ cliquer sur le texte pour tout révéler",
+     more:"… les fables plus anciennes se chargent …",
+     writing:"La fable s'écrit en ce moment", latest:"La dernière fable",
+     nextIn:m=>`Prochaine fable dans ${m} min`, nextSoon:"La plume travaille…",
+     count:n=>`${n} fables`, fable:"Fable", toast:"Une nouvelle fable s'écrit — la voir",
+     f1:"Chaque heure, une fable inédite est composée par", f2:"et gravée par",
+     f3:"Librement inspiré des Fables de Jean de La Fontaine (1668) — et de tout ce que la science-fiction nous a appris depuis.",
+     loc:"fr-FR"},
+ en:{kicker:"A perpetual collection · In homage to Jean de La Fontaine",
+     sub:"Science-fiction fables, written hour after hour by an artificial intelligence — where crows perch on pylons, worms haunt the sands of exoplanets, and the moral of the story remains stubbornly human.",
+     m1:"A brand-new fable every hour", m3:"Written by Fable, artificial fabulist",
+     moral:"Moral", recueil:"The Collection", skip:"⏎ click the text to reveal it all",
+     more:"… older fables loading …",
+     writing:"A fable is being written right now", latest:"The latest fable",
+     nextIn:m=>`Next fable in ${m} min`, nextSoon:"The quill is at work…",
+     count:n=>`${n} fables`, fable:"Fable", toast:"A new fable is being written — watch",
+     f1:"Every hour, a brand-new fable is composed by", f2:"and engraved by",
+     f3:"Freely inspired by Jean de La Fontaine's Fables (1668) — and by everything science fiction has taught us since.",
+     loc:"en-GB"}
+};
+let lang = localStorage.getItem("ffLang") || (navigator.language||"fr").slice(0,2);
+if(!I18N[lang]) lang="fr";
+
+function t(k,...a){const v=I18N[lang][k];return typeof v==="function"?v(...a):v}
+function applyStatic(){
+  document.querySelectorAll("[data-i]").forEach(el=>{const v=I18N[lang][el.dataset.i];if(typeof v==="string")el.textContent=v});
+  document.getElementById("btnFr").classList.toggle("on",lang==="fr");
+  document.getElementById("btnEn").classList.toggle("on",lang==="en");
+  document.documentElement.lang=lang;
+}
+function setLang(l){lang=l;localStorage.setItem("ffLang",l);applyStatic();renderAll()}
+
+/* ================= data ================= */
+let FABLES=[], current=null, feedShown=0;
+const CHUNK=8, WRITE_MS=65000, REPLAY_MS=55000;
+
+function roman(n){const R=[[1000,"M"],[900,"CM"],[500,"D"],[400,"CD"],[100,"C"],[90,"XC"],[50,"L"],[40,"XL"],[10,"X"],[9,"IX"],[5,"V"],[4,"IV"],[1,"I"]];let s="";for(const[v,r]of R){while(n>=v){s+=r;n-=v}}return s}
+function fdate(ts){return new Date(ts).toLocaleString(I18N[lang].loc,{day:"numeric",month:"long",hour:"2-digit",minute:"2-digit"})}
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+
+async function load(first){
+  try{
+    const r=await fetch("data/fables.json?v="+Date.now(),{cache:"no-store"});
+    const d=await r.json();
+    const maxBefore=FABLES.length?Math.max(...FABLES.map(f=>f.num)):0;
+    FABLES=d.fables.sort((a,b)=>a.num-b.num);
+    const maxNow=Math.max(...FABLES.map(f=>f.num));
+    if(first){renderAll(true)}
+    else if(maxNow>maxBefore){newFableArrived()}
+    document.getElementById("fableCount").textContent=t("count",FABLES.length);
+    document.getElementById("recCount").textContent=t("count",FABLES.length-1);
+  }catch(e){console.error(e)}
+}
+
+/* ================= typewriter ================= */
+let writer={raf:null, done:true};
+
+function segmentsFor(f){
+  const L=f[lang]||f.fr;
+  return {title:L.title, verses:L.verses.join("\n"), moral:(L.moral||[]).join("\n")};
+}
+function totalLen(s){return s.title.length+s.verses.length+s.moral.length}
+
+function renderCurrent(f,mode){ /* mode: live | replay | static */
+  current=f;
+  const box=document.getElementById("currentBox");box.style.display="block";
+  const s=segmentsFor(f);
+  document.getElementById("cNum").textContent=t("fable")+" "+roman(f.num)+" · "+fdate(f.ts);
+  document.getElementById("cCaption").textContent=s.title;
+  const img=document.getElementById("cImg");
+  if(f.image){img.src=f.image;img.style.display="block"}else{img.style.display="none"}
+  const moralBlock=document.getElementById("cMoralBlock");
+  cancelAnimationFrame(writer.raf);
+
+  if(mode==="static"){
+    document.getElementById("cTitle").textContent=s.title;
+    document.getElementById("cVerses").textContent=s.verses;
+    document.getElementById("cMoral").textContent=s.moral;
+    moralBlock.style.visibility="visible";
+    img.classList.remove("developing");
+    document.getElementById("skipHint").style.display="none";
+    setChip(false); writer.done=true; return;
+  }
+
+  /* écriture progressive ancrée sur l'horloge */
+  const t0 = mode==="live" ? new Date(f.ts).getTime() : Date.now();
+  const dur = mode==="live" ? WRITE_MS : REPLAY_MS;
+  const total=totalLen(s);
+  img.classList.add("developing");
+  moralBlock.style.visibility="hidden";
+  document.getElementById("skipHint").style.display="block";
+  setChip(true); writer.done=false;
+
+  function frame(){
+    const p=Math.min(1,(Date.now()-t0)/dur);
+    const n=Math.floor(p*total);
+    paint(s,n,img,moralBlock);
+    if(p<1){writer.raf=requestAnimationFrame(frame)}
+    else{finishWriting(img,moralBlock)}
+  }
+  frame();
+}
+
+function paint(s,n,img,moralBlock){
+  const tl=Math.min(n,s.title.length);
+  const vl=Math.max(0,Math.min(n-s.title.length,s.verses.length));
+  const ml=Math.max(0,Math.min(n-s.title.length-s.verses.length,s.moral.length));
+  const caret='<span class="caret"></span>';
+  const el=(id)=>document.getElementById(id);
+  el("cTitle").innerHTML=esc(s.title.slice(0,tl))+(tl<s.title.length?caret:"");
+  el("cVerses").innerHTML=esc(s.verses.slice(0,vl))+(tl>=s.title.length&&vl<s.verses.length?caret:"");
+  if(ml>0){moralBlock.style.visibility="visible";
+    el("cMoral").innerHTML=esc(s.moral.slice(0,ml))+(ml<s.moral.length?caret:"")}
+  /* l'image se révèle aux deux tiers de l'écriture */
+  const total=totalLen(s);
+  if(n/total>0.66)img.classList.remove("developing");
+}
+
+function finishWriting(img,moralBlock){
+  const s=segmentsFor(current);
+  document.getElementById("cTitle").textContent=s.title;
+  document.getElementById("cVerses").textContent=s.verses;
+  document.getElementById("cMoral").textContent=s.moral;
+  moralBlock.style.visibility="visible";
+  img.classList.remove("developing");
+  document.getElementById("skipHint").style.display="none";
+  setChip(false); writer.done=true;
+}
+
+document.getElementById("currentBox").addEventListener("click",()=>{
+  if(!writer.done){cancelAnimationFrame(writer.raf);
+    finishWriting(document.getElementById("cImg"),document.getElementById("cMoralBlock"))}
+});
+
+function setChip(writing){
+  document.getElementById("chipTxt").textContent=writing?t("writing"):t("latest");
+  document.getElementById("chipDot").className="dot"+(writing?" live":"");
+  document.getElementById("liveDot").className="dot"+(writing?" live":"");
+}
+
+/* ================= fil ================= */
+function entryHTML(f){
+  const s=segmentsFor(f);
+  const im=f.image?`<img src="${f.image}" alt="${esc(s.title)}" loading="lazy">`:"";
+  return `<div class="entry">
+    <div class="eimg ${f.image?"":"noimg"}">${f.image?im:"❦"}</div>
+    <article>
+      <div class="fnum">${t("fable")} ${roman(f.num)}</div>
+      <h3>${esc(s.title)}</h3>
+      <div class="edate">${fdate(f.ts)}</div>
+      <div class="verses">${esc(s.verses)}</div>
+      <div class="moral-block" style="visibility:visible">
+        <div class="moral-label">${t("moral")}</div>
+        <div class="moral">${esc(s.moral)}</div>
+      </div>
+    </article>
+  </div>`;
+}
+function feedList(){return FABLES.slice(0,-1).reverse()}
+function renderFeedChunk(){
+  const list=feedList();
+  const next=list.slice(feedShown,feedShown+CHUNK);
+  document.getElementById("feed").insertAdjacentHTML("beforeend",next.map(entryHTML).join(""));
+  feedShown+=next.length;
+  document.getElementById("loadmsg").style.display=feedShown<list.length?"block":"none";
+}
+new IntersectionObserver(es=>{if(es[0].isIntersecting&&FABLES.length&&feedShown<feedList().length)renderFeedChunk()})
+  .observe(document.getElementById("sentinel"));
+
+function renderAll(first){
+  applyStatic();
+  if(!FABLES.length)return;
+  const last=FABLES[FABLES.length-1];
+  const age=Date.now()-new Date(last.ts).getTime();
+  const mode=age<WRITE_MS?"live":(first?"replay":"static");
+  renderCurrent(last,mode);
+  document.getElementById("feed").innerHTML="";feedShown=0;renderFeedChunk();
+  document.getElementById("fableCount").textContent=t("count",FABLES.length);
+  document.getElementById("recCount").textContent=t("count",FABLES.length-1);
+}
+
+function newFableArrived(){
+  const tEl=document.getElementById("toast");
+  document.getElementById("toastTxt").textContent=t("toast");
+  tEl.classList.add("show");setTimeout(()=>tEl.classList.remove("show"),8000);
+  const last=FABLES[FABLES.length-1];
+  const age=Date.now()-new Date(last.ts).getTime();
+  renderCurrent(last,age<WRITE_MS?"live":"replay");
+  document.getElementById("feed").innerHTML="";feedShown=0;renderFeedChunk();
+  if(window.scrollY<400)window.scrollTo({top:0,behavior:"smooth"});
+}
+
+/* ================= countdown ================= */
+function tickCountdown(){
+  const now=new Date();
+  const next=new Date(now);next.setMinutes(0,0,0);next.setHours(next.getHours()+1);
+  const mins=Math.ceil((next-now)/60000);
+  const lastTs=FABLES.length?new Date(FABLES[FABLES.length-1].ts).getTime():0;
+  const overdue=now.getMinutes()<7 && now-lastTs>WRITE_MS && now-lastTs>10*60000;
+  document.getElementById("countdown").textContent = overdue?t("nextSoon"):t("nextIn",mins);
+}
+setInterval(tickCountdown,15000);
+
+/* ================= boot ================= */
+load(true).then(tickCountdown);
+setInterval(()=>load(false),60000);
+</script>
+</body>
+</html>
