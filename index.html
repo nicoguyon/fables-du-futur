@@ -311,7 +311,9 @@ function renderCurrent(f,mode){ /* mode: live | replay | static */
   document.getElementById("cNum").textContent=t("fable")+" "+roman(f.num)+" · "+fdate(f.ts);
   document.getElementById("cCaption").textContent=s.title;
   const img=document.getElementById("cImg");
-  if(f.image){img.src=f.image;img.style.display="block"}else{img.style.display="none"}
+  const fig=document.querySelector(".figure");
+  if(f.image){img.src=f.image;img.style.display="block";fig.style.display=""}
+  else{img.style.display="none";fig.style.display="none"}
   const moralBlock=document.getElementById("cMoralBlock");
   cancelAnimationFrame(writer.raf);
 
