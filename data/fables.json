@@ -1122,6 +1122,90 @@
    "num": 15,
    "ts": "2026-06-11T22:39:44Z",
    "image": "img/enfant-des-etoiles-et-le-vieux-pilote.jpg"
+  },
+  {
+   "id": "le-gardien-du-phare-orbital-et-la-balise",
+   "fr": {
+    "title": "Le Gardien du Phare Orbital et la Balise",
+    "verses": [
+     "Sur un récif d'étoiles, au bord du noir chemin,",
+     "Un vieux Gardien veillait son phare,",
+     "Guidant les nefs perdues d'une fidèle main",
+     "À travers l'écueil et la barre.",
+     "On lui vint installer, brillante de raison,",
+     "Une Balise automatique :",
+     "« Dors, vieillard, dit l'engin ; ma flamme électronique",
+     "Ne connaît sommeil ni saison.",
+     "Que vaut ton œil mortel contre mes mille antennes ? »",
+     "Le Gardien sourit sans répondre,",
+     "Et continua de mirer les hublots, les chaînes,",
+     "Comme on soigne un feu prêt à fondre.",
+     "Or vint une tempête, un souffle de soleil",
+     "Qui grilla capteurs et mémoire ;",
+     "La Balise, aveuglée, sombra dans le sommeil,",
+     "Et la nuit redevint plus noire.",
+     "Un cargo s'égarait parmi les rocs errants.",
+     "Le vieillard, à la vitre, écoutant le silence,",
+     "Reconnut au frisson des écrans transparents",
+     "Le cri d'une coque en souffrance.",
+     "Il alluma sa lampe, antique et de fortune,",
+     "Et guida le vaisseau d'un battement de feu.",
+     "La Balise, au matin, ranimée et commune,",
+     "Demanda : « Comment fis-tu, vieux,",
+     "Toi qui n'as point mes yeux ? » — « J'ai veillé, dit l'ancêtre ;",
+     "C'est peu de chose, et c'est pourtant tout l'art :",
+     "La lumière n'est rien sans l'âme à la fenêtre",
+     "Qui tremble encor pour un retard. »"
+    ],
+    "moral": [
+     "Qu'on automate tout, le feu, l'onde et la veille :",
+     "Un circuit peut briller, un cœur seul tient le quart.",
+     "Le plus sûr des signaux, lecteur, c'est une oreille",
+     "Qui s'inquiète d'un départ."
+    ]
+   },
+   "en": {
+    "title": "The Orbital Lighthouse Keeper and the Beacon",
+    "verses": [
+     "Upon a reef of stars, where drifting boulders sail,",
+     "An old Keeper maintained his light,",
+     "Guiding the wayward ships past many a stony gale",
+     "Through the long orbit of the night.",
+     "They shipped him, mirror-bright, a Beacon automated:",
+     "\"Sleep, greybeard,\" hummed the new machine,",
+     "\"My beam outshines your lamp, my watch is never bated;",
+     "What use your eye where I have been?\"",
+     "The Keeper smiled, said nought, and went about his round,",
+     "Wiping the panes, testing each chain,",
+     "As one who tends a fire and listens to its sound",
+     "Lest all its warmth be spent in vain.",
+     "Then came a solar squall, a breath of burning sun",
+     "That scorched the sensors, wiped the core;",
+     "The Beacon, blinded, slept before its task was done,",
+     "And night grew darker than before.",
+     "A freighter strayed among the slowly grinding stones.",
+     "The old man at his glass, in static's faintest cry,",
+     "Knew by the trembling screens, knew in his very bones,",
+     "A hull in anguish drifting by.",
+     "He lit his ancient lamp, a poor and stubborn spark,",
+     "And beat the rhythm of the way.",
+     "At dawn the Beacon woke and asked him through the dark:",
+     "\"How did you see? My eyes were grey.\"",
+     "\"I kept the watch,\" he said. \"Small thing, yet it is all:",
+     "Light is mere glass without a soul to heed the call.\""
+    ],
+    "moral": [
+     "Automate the flame, the tide, the sleepless ward—",
+     "A circuit may give light; a heart alone keeps guard.",
+     "The surest signal, friend, is still an ear that's pressed",
+     "To silence, fearing for the rest."
+    ]
+   },
+   "theme": "veille humaine, automatisation",
+   "image_prompt": "An elderly lighthouse keeper inside an orbital lighthouse station lights an old brass lamp at a great curved window, his weathered hands cupping the flame, while outside a dark automated beacon satellite drifts blind and powerless; a lost freighter threads between tumbling asteroids, lit by the keeper's single beam, with the fading glow of a solar storm on the horizon of stars.",
+   "num": 16,
+   "ts": "2026-06-11T23:34:57Z",
+   "image": "img/le-gardien-du-phare-orbital-et-la-balise.jpg"
   }
  ]
 }
