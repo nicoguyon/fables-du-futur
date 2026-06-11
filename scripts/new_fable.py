@@ -79,7 +79,13 @@ def main():
             fable = cand
             break
         except Exception as e:
-            print(f"tentative {attempt+1}: {e}", flush=True)
+            detail = ""
+            if hasattr(e, "read"):
+                try:
+                    detail = " — " + e.read().decode()[:300]
+                except Exception:
+                    pass
+            print(f"tentative {attempt+1}: {e}{detail}", flush=True)
             time.sleep(10)
     if not fable:
         sys.exit("échec génération texte")
