@@ -35,19 +35,41 @@ DÉJÀ PUBLIÉ (ne répète NI ces sujets NI ces duos de personnages) :
 
 INSPIRATION SUGGÉRÉE pour cette heure (libre à toi de t'en écarter si tu as mieux) : {seed}
 
-Réponds UNIQUEMENT avec ce JSON (aucun texte autour) :
-{{
-  "id": "slug-ascii-court",
-  "fr": {{"title": "…", "verses": ["vers", …], "moral": ["vers", …]}},
-  "en": {{"title": "…", "verses": [...], "moral": [...]}},
-  "theme": "2-4 mots",
-  "image_prompt": "scène clé pour une gravure, en anglais, 40-70 mots, personnages + action + décor, sans style artistique"
-}}"""
+Champs attendus : id (slug ascii court), fr/en (title, verses, moral — moralité de 2-4 vers séparée du récit), theme (2-4 mots), image_prompt (scène clé pour une gravure, en anglais, 40-70 mots, personnages + action + décor, sans style artistique)."""
+
+LANG_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "title": {"type": "string"},
+        "verses": {"type": "array", "items": {"type": "string"}},
+        "moral": {"type": "array", "items": {"type": "string"}},
+    },
+    "required": ["title", "verses", "moral"],
+    "additionalProperties": False,
+}
+FABLE_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "id": {"type": "string"},
+        "fr": LANG_SCHEMA,
+        "en": LANG_SCHEMA,
+        "theme": {"type": "string"},
+        "image_prompt": {"type": "string"},
+    },
+    "required": ["id", "fr", "en", "theme", "image_prompt"],
+    "additionalProperties": False,
+}
 
 def claude(prompt):
+    # Fable 5 : thinking toujours actif (le param "thinking" doit être omis) ;
+    # max_tokens doit couvrir réflexion + texte, profondeur contrôlée par effort.
     body = json.dumps({
         "model": "claude-fable-5",
-        "max_tokens": 4000,
+        "max_tokens": 16000,
+        "output_config": {
+            "effort": "medium",
+            "format": {"type": "json_schema", "schema": FABLE_SCHEMA},
+        },
         "messages": [{"role": "user", "content": prompt}],
     }).encode()
     req = urllib.request.Request(
@@ -55,9 +77,12 @@ def claude(prompt):
         headers={"Content-Type": "application/json",
                  "x-api-key": os.environ["ANTHROPIC_API_KEY"],
                  "anthropic-version": "2023-06-01"})
-    with urllib.request.urlopen(req, timeout=300) as r:
+    with urllib.request.urlopen(req, timeout=600) as r:
         resp = json.load(r)
-    return "".join(b.get("text", "") for b in resp["content"])
+    txt = "".join(b.get("text", "") for b in resp["content"])
+    if not txt.strip():
+        raise RuntimeError(f"réponse vide (stop_reason={resp.get('stop_reason')})")
+    return txt
 
 def slugify(s):
     s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode()

@@ -899,6 +899,79 @@
    "num": 12,
    "ts": "2026-06-11T11:00:00Z",
    "image": "img/enfant-modele.jpg"
+  },
+  {
+   "id": "marchand-de-donnees-berger-loup",
+   "fr": {
+    "title": "Le Marchand de Données, le Berger et le Loup",
+    "verses": [
+     "Un Marchand de Données tenait, sur une étoile,",
+     "Comptoir où chaque pas laisse un fil à sa toile.",
+     "Il achetait les pas, les songes, les humeurs,",
+     "Et revendait le tout à de plus fins flaireurs.",
+     "Un Berger d'exo-plaine, ayant maigre pitance,",
+     "Lui dit : « Prends donc de mes brebis",
+     "Les puces et la transhumance ;",
+     "Qu'importe qui sait où je suis ? »",
+     "Le Marchand paya cher, grava tout sur cristal,",
+     "Et héla le réseau astral :",
+     "« Brebis suivies à la seconde !",
+     "Cartes fraîches pour tout le monde ! »",
+     "Un Loup, premier client, paya sans marchander,",
+     "Téléchargea la plaine, et s'en fut y rôder.",
+     "Au point du jour, hélas ! toisons ensanglantées,",
+     "Os épars, bergerie aux portes éventrées.",
+     "« Traître ! cria l'homme au Marchand.",
+     "— Moi ? dit l'autre, l'œil sur l'écran ;",
+     "Je n'ai vendu que nombre et signe :",
+     "Va te plaindre au Loup, s'il t'indigne. »",
+     "Le Berger pleura ses agneaux ;",
+     "Le Loup, repu, lécha ses crocs,",
+     "Puis, d'un crédit, le Loup acquit",
+     "Le sentier où l'homme dormit."
+    ],
+    "moral": [
+     "Qui vend l'ombre du bien livre le bien lui-même ;",
+     "Ta trace, ami lecteur, vaut plus que ton trésor.",
+     "Le loup ne flaire plus, au siècle où l'on nous sème :",
+     "Il consulte, il achète, et te dévore encor."
+    ]
+   },
+   "en": {
+    "title": "The Data Broker, the Shepherd, and the Wolf",
+    "verses": [
+     "A Data Broker spread his stall upon a star:",
+     "\"Each step you take, I log; I sell it near and far.\"",
+     "A Shepherd came, his pockets thin:",
+     "\"Buy the tags my ewes wear in their skin —",
+     "What harm if strangers know my ground?",
+     "I'll take the coin; the grass stays sound.\"",
+     "The Broker paid, engraved the feed on crystal bright,",
+     "Then hailed the network of the night:",
+     "\"Fresh maps! Live sheep, tracked to the breath!",
+     "First buyer takes the field!\" — and Death,",
+     "In wolfish form, paid on the spot,",
+     "Downloaded plain and pen and plot.",
+     "At dawn: torn fleece, a reddened fold,",
+     "Bones where the lambs had slept of old.",
+     "\"Traitor!\" the Shepherd cried. The Broker, calm and dry:",
+     "\"I sold mere numbers, sir, mere signs —",
+     "The biting clause was never mine.\"",
+     "The Wolf, well fed, logged on once more,",
+     "And bought the path to the Shepherd's door."
+    ],
+    "moral": [
+     "Who sells a thing's mere shadow sells the thing entire;",
+     "Guard your trail closer than your gold.",
+     "The wolf no longer sniffs the mire:",
+     "He clicks, he pays — and eats you as of old."
+    ]
+   },
+   "theme": "trace vendue, prédation",
+   "image_prompt": "A wolf studies a glowing holographic map of a sheep pasture floating before its eyes, on an alien plain under two moons; in the background a robed data merchant counts coins at a market stall built of crystal servers, while a distraught shepherd kneels among scattered fleece and bones near a broken sheepfold.",
+   "num": 13,
+   "ts": "2026-06-11T15:25:28Z",
+   "image": "img/marchand-de-donnees-berger-loup.jpg"
   }
  ]
 }
