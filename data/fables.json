@@ -2090,6 +2090,86 @@
    "num": 28,
    "ts": "2026-06-12T19:44:22Z",
    "image": "img/horloge-sonneur.jpg"
+  },
+  {
+   "id": "araignee-reseau",
+   "fr": {
+    "title": "L'Araignée et le Réseau",
+    "verses": [
+     "Une Araignée filait au coin d'une antenne morte,",
+     "Tendant de poutre en poutre un piège gris perlé.",
+     "Le Réseau, ce seigneur que tout un ciel escorte,",
+     "Du haut des airs vint la railler :",
+     "« Que fais-tu là, dit-il, chétive filandière ?",
+     "Ma toile étreint tout l'univers ;",
+     "J'enlace en un instant la Terre tout entière,",
+     "Toi, tu tends tes fils à des vers. »",
+     "« — Maître Réseau, dit-elle, on vante vos mérites ;",
+     "Vos fils vont où les miens n'iront pas, je le vois.",
+     "Seigneur des célestes orbites,",
+     "Mais qu'y prenez-vous, dites-moi ?",
+     "Ma toile, humble salive, est mon garde-manger ;",
+     "La vôtre n'a su rien piéger. »",
+     "Or il advint qu'un soir le Soleil en colère",
+     "Cracha sur les orbites un torrent de fureur ;",
+     "Le grand parleur se tut de la mer à la terre,",
+     "Plus d'oracles, plus de rumeur.",
+     "Les hommes, démunis, regardèrent les nues ;",
+     "L'Araignée, cependant, dans sa toile menue,",
+     "Saisit une phalène, et soupa sans façon.",
+     "« Tout fil, dit-elle au ciel privé de sa faconde,",
+     "Ne vaut que ce qu'il prend. On peut ceindre le monde",
+     "Et jeûner : c'est une leçon. »"
+    ],
+    "moral": [
+     "Grands tisseurs de réseaux, enlacez les étoiles :",
+     "Le monde entier n'est point un gain ;",
+     "Car toute toile se juge au gibier de ses voiles,",
+     "Et non aux fils qu'on tend en vain."
+    ]
+   },
+   "en": {
+    "title": "The Spider and the Network",
+    "verses": [
+     "A Spider spun her snare upon a rusted mast,",
+     "Stringing her dewy threads from beam to beam with care.",
+     "The Network, lord of links, whose word girdles the vast,",
+     "Looked down and laughed: \"Poor weaver of the air!",
+     "My web embraces every shore and pole;",
+     "A billion signals call me king.",
+     "I bind the planet in a single whole —",
+     "And you hang trembling from a string.\"",
+     "\"Great Sir,\" the Spider said, \"your reach I'll not deny;",
+     "Your filaments outrun my best.",
+     "But tell me, Sovereign of the sky:",
+     "What supper have your meshes blessed?",
+     "My web, mere spittle, keeps my larder fed;",
+     "Yours never caught a crumb of bread.\"",
+     "It chanced one night the Sun, in an ill-tempered hour,",
+     "Spat storms across the orbit-lanes;",
+     "The great voice choked and lost its power,",
+     "And silence rode the darkened planes.",
+     "While men below bewailed their severed thread,",
+     "The Spider, in her little net,",
+     "Caught one plump moth and supped on it instead,",
+     "Then told the sky, now mute with sour regret:",
+     "\"A web is worth the prey it holds — no more.",
+     "Gird all creation, far and near,",
+     "And still go starving at your core,",
+     "For breadth was never bread, my dear.\""
+    ],
+    "moral": [
+     "Great weavers of the world-wide snare,",
+     "Take counsel from the spinning wife:",
+     "A thousand threads flung through the air",
+     "Feed less than one that's strung for life."
+    ]
+   },
+   "theme": "démesure, réseau, subsistance",
+   "image_prompt": "A small spider sits in a dew-beaded web strung between the girders of a derelict antenna tower, calmly wrapping a captured moth, while overhead a vast constellation of satellites linked by glowing network lines flickers and goes dark beneath a flaring, angry sun; tiny engineers far below stare at dead screens, broken signal beams fading across the night sky.",
+   "num": 29,
+   "ts": "2026-06-12T20:50:25Z",
+   "image": "img/araignee-reseau.jpg"
   }
  ]
 }
