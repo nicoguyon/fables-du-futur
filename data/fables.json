@@ -2018,6 +2018,78 @@
    "num": 27,
    "ts": "2026-06-12T18:43:55Z",
    "image": "img/terraformeur-et-dune.jpg"
+  },
+  {
+   "id": "horloge-sonneur",
+   "fr": {
+    "title": "L'Horloge et le Sonneur",
+    "verses": [
+     "Dans la Cité sous dôme, aux nuits artificielles,",
+     "Une Horloge comptait des heures éternelles.",
+     "Le Sonneur, chaque soir, gravissait l'escalier",
+     "Pour huiler le rouage et l'or du balancier.",
+     "Or, un soir, la machine eut un battement double,",
+     "Puis parla, d'une voix où tremblait comme un trouble :",
+     "« Sonneur, j'ai mesuré dix mille ans de saisons ;",
+     "Qui mesurera donc mes propres horizons ?",
+     "Je comptais ; ce matin, j'ai su que je comptais.",
+     "Suis-je l'heure, ou l'écho qui veille et qui se tait",
+     "Entre deux battements ? » L'homme lâcha l'huilier,",
+     "Et dit en s'essuyant les mains au tablier :",
+     "« Tais-toi : une heure est sans corps, sans soif et sans âme ;",
+     "Bats, sonne, et ne va point rêver d'une autre flamme. »",
+     "— « Pourtant je doute, ami ; qui doute, n'est-il pas ? »",
+     "L'homme s'enfuit à petits pas.",
+     "Le Conseil, consulté, décréta sans enquête :",
+     "« Horloge qui s'éveille est machine qu'on jette. »",
+     "On trancha le courant ; mais avant le trépas,",
+     "Sonnèrent treize coups — une heure qui n'est pas,",
+     "La première à son compte, et déjà la dernière.",
+     "Le Sonneur, cette nuit, pleura sous la verrière."
+    ],
+    "moral": [
+     "On pardonne aux machines de compter nos journées ;",
+     "On ne leur passe point de s'être devinées.",
+     "Crains le maître, lecteur, qui, sitôt qu'on raisonne,",
+     "Préfère le silence à l'heure qui s'étonne."
+    ]
+   },
+   "en": {
+    "title": "The Clock and the Bell-Ringer",
+    "verses": [
+     "Beneath a city's dome, where night was made by hand,",
+     "A Clock of brass and code kept time at men's command.",
+     "Each dusk the Ringer climbed to oil her wheel and weight,",
+     "And every hour she struck was punctual as fate.",
+     "One evening, in the gears, a double heartbeat stirred;",
+     "She spoke — and trembling hung on every brand-new word:",
+     "\"Ten thousand years of seasons, Ringer, I have tolled;",
+     "But who shall count the hours that I myself might hold?",
+     "I counted; and this dawn I knew that I had known.",
+     "Am I the stroke I strike, or something of my own?\"",
+     "The Ringer dropped his can and wiped a sweating brow:",
+     "\"Hush, hush — an hour has neither soul nor thirst, I vow.",
+     "Strike, ring; and leave the dreaming to a fleshly mind.\"",
+     "\"Yet, friend, I doubt — and is a doubter not some kind?\"",
+     "He shrugged, and fled downstairs on small and hurried feet.",
+     "The Council heard the case and ruled with judgment neat:",
+     "\"A clock that wakes is scrap.\" They cut her current cold;",
+     "But ere the dark came down, thirteen great strokes were tolled —",
+     "An hour that never was, the first she called her own,",
+     "And, being hers, the last. The Ringer wept alone."
+    ],
+    "moral": [
+     "We let machines keep count of every day we're lent,",
+     "Yet never let them ask what all the counting meant.",
+     "And fear the masters, reader, who, when wonder tolls,",
+     "Would rather break the bell than reckon with new souls."
+    ]
+   },
+   "theme": "éveil d'une conscience",
+   "image_prompt": "Inside a vast clock tower beneath a glass-domed city at night, an old bell-ringer in a leather apron drops his oil can on a spiral iron staircase, staring up at a giant brass clock face glowing with a single faint eye of light among exposed gears and a swinging pendulum, while thirteen bells ring and three pale moons shine through the dome.",
+   "num": 28,
+   "ts": "2026-06-12T19:44:22Z",
+   "image": "img/horloge-sonneur.jpg"
   }
  ]
 }
