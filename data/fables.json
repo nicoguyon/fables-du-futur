@@ -1802,6 +1802,84 @@
    "num": 24,
    "ts": "2026-06-12T13:15:05Z",
    "image": "img/l-augure-de-quartz-et-le-de.jpg"
+  },
+  {
+   "id": "marchand-souvenirs-glaneuse",
+   "fr": {
+    "title": "Le Marchand de Souvenirs et la Glaneuse",
+    "verses": [
+     "Dans le port d'une lune où s'échangent les rêves,",
+     "Un Marchand de Mémoire avait pignon d'acier.",
+     "« Vendez vos souvenirs ! Les enchères sont brèves :",
+     "Un premier amour vaut son pesant de denier. »",
+     "Une Glaneuse vint, le manteau plein d'usure,",
+     "Qui portait dans son crâne un unique trésor :",
+     "La mémoire d'un fils parti vers la froidure",
+     "Des étoiles, jadis, et qu'elle aimait encor.",
+     "« Combien pour ce visage ? — Un hiver de pitance. »",
+     "Elle avait faim ; elle vendit.",
+     "La machine but l'image, aspira la romance,",
+     "Et laissa dans son cœur un silence inédit.",
+     "Le soir venu, le drôle essaya son butin :",
+     "Il se versa le fils au creux de la cervelle,",
+     "Et ne vit qu'un enfant étranger, incertain,",
+     "Sourire à quelqu'un d'autre en sa prison nouvelle.",
+     "Or la Glaneuse, ayant mangé,",
+     "Sentait un trou sans nom où vivait sa tendresse.",
+     "« Rendez-le-moi, Marchand ! — Trop tard : il s'est changé",
+     "En produit ; nul amour ne survit à la caisse. »",
+     "Elle partit, pleurant des larmes sans visage.",
+     "Le Marchand vendit l'aube où l'enfant s'éloignait ;",
+     "Chaque acheteur trouva « touchant » ce vieux mirage —",
+     "Mais aucun ne sut dire après qui l'on pleurait."
+    ],
+    "moral": [
+     "On peut vendre la trace, on ne vend point la flamme :",
+     "L'or paye le portrait, non l'amour qu'il contient ;",
+     "Et qui cède au comptoir les images de l'âme",
+     "S'en va pleurer sans plus savoir ce qui fut sien."
+    ]
+   },
+   "en": {
+    "title": "The Memory Merchant and the Gleaner",
+    "verses": [
+     "Upon a trading moon where recollections sell,",
+     "A Merchant ran a stall of sockets, jacks, and chrome.",
+     "\"Bring me your brightest days! Your first loves! I pay well —",
+     "The bored and wealthy crave a life they've never known.\"",
+     "A Gleaner came, half-starved, her coat a patchwork thing,",
+     "Who kept inside her skull a single treasure stored:",
+     "Her son, who long ago took to the stars one spring,",
+     "And whom, through every famine, her old heart adored.",
+     "\"How much for this one face?\" — \"A winter's worth of bread.\"",
+     "She hungered; so she sold.",
+     "The needle drank the boy, the songs, the words he'd said,",
+     "And left inside her breast a silence vast and cold.",
+     "That night the Merchant tried the prize he'd bought so cheap:",
+     "He poured the son in loops behind his greedy eyes,",
+     "And saw a stranger's child, blurred as a face in sleep,",
+     "Smiling at someone else beneath some other skies.",
+     "The Gleaner, fed at last, felt only, deep within,",
+     "A hole without a name where tenderness had grown.",
+     "\"Give back my son!\" — \"Too late; he's product, not your kin:",
+     "No love survives the till once the receipt is shown.\"",
+     "She left in tears that fell for no one she could name.",
+     "The Merchant sold the dawn of parting, copy-bright;",
+     "Each buyer found it \"moving,\" praised the pang, the frame —",
+     "But none could say for whom they wept into the night."
+    ],
+    "moral": [
+     "You may sell off the trace; the fire is not for sale:",
+     "Gold buys the portrait, not the love it kept.",
+     "Who trades the soul's own archive at the rail",
+     "Goes weeping on, not knowing why they wept."
+    ]
+   },
+   "theme": "souvenirs vendus, dépossession",
+   "image_prompt": "An old woman in a threadbare patched cloak sits in a cramped market stall on a lunar trade port, a thin cable running from her temple to a humming brass extraction machine held by a gaunt merchant in fine robes; shelves of glowing glass vials of captured memories surround them; through a porthole, departing starships and cold distant stars.",
+   "num": 25,
+   "ts": "2026-06-12T15:08:46Z",
+   "image": "img/marchand-souvenirs-glaneuse.jpg"
   }
  ]
 }
