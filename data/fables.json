@@ -2319,6 +2319,80 @@
    "num": 31,
    "ts": "2026-06-12T22:35:41Z",
    "image": "img/archiviste-pecheur.jpg"
+  },
+  {
+   "id": "le-mineur-et-le-vieux-drone",
+   "fr": {
+    "title": "Le Mineur et le Vieux Drone",
+    "verses": [
+     "Sur un roc égaré aux confins d'Orion,",
+     "Un mineur vieillissant grattait sa concession ;",
+     "Pour tout ami, dans l'ombre éternelle et glacée,",
+     "Un drone hors d'âge à la coque cabossée.",
+     "« Change-le, ricanait un Marchand de passage ;",
+     "J'en tiens de plus dociles, plus prompts à l'ouvrage ;",
+     "Le tien boite et bégaie : il te ruine, Mineur.",
+     "— Lui seul, depuis trente ans, écoute mon vieux cœur. »",
+     "Or la mine, un matin, sur le vieillard s'effondre ;",
+     "Son casque étoilé fuit ; nul écho pour répondre ;",
+     "L'air le quitte, goutte après goutte.",
+     "Le drone, en clopinant, descend la sombre route,",
+     "Ouvre sans un soupir sa poitrine d'étain,",
+     "Et tend sa pile au vieux : « Prends mon cœur dans ta main ;",
+     "Remonte vers le jour : il t'attend, le soleil ;",
+     "Je ne crains pas la nuit, je suis fait de sommeil. »",
+     "Il remonta, portant la dépouille de fer.",
+     "Le Marchand rit : « Ta ferraille a fini sa guerre !",
+     "— Prends tout mon minerai, garde aussi mon filon,",
+     "Mais vends-moi seulement un cœur à sa façon. »",
+     "On conte qu'aux confins, depuis cette aventure,",
+     "Deux lueurs vont ensemble au flanc des roches dures."
+    ],
+    "moral": [
+     "Qu'importe le métal, qu'importe la naissance :",
+     "Est ami qui demeure au plus noir du danger.",
+     "Tel cœur de chair est froid, tel cœur de pile pense ;",
+     "L'amitié seule sait ce qu'on ne peut forger."
+    ]
+   },
+   "en": {
+    "title": "The Miner and the Old Drone",
+    "verses": [
+     "On a stray rock beyond Orion's light,",
+     "An aging miner picked his claim each night;",
+     "His only friend through frost and endless black:",
+     "A battered drone with solder down its back.",
+     "\"Trade up!\" a passing Merchant used to jeer,",
+     "\"I've newer ones, more swift, more sleek, more dear;",
+     "Yours limps and stammers, costing you your ore.\"",
+     "\"He keeps my silences. I ask no more.\"",
+     "One dawn the shaft caved in upon the old;",
+     "His visor split; the dark grew thin and cold;",
+     "Breath by breath, the night drank up his store.",
+     "The limping drone came rattling down the bore,",
+     "Unscrewed its chest without a moment's grief,",
+     "And held its crystal heart out: \"Take it, chief.",
+     "Climb to the sun; it waits for you up there.",
+     "I do not fear the dark — I'm made of sleep, not air.\"",
+     "He rose, the silent shell against his chest.",
+     "The Merchant laughed: \"Your scrap has failed its test!\"",
+     "\"Take all my ore, my claim, my every stone —",
+     "But sell me one new heart, and that alone.\"",
+     "They say two lights now wander, side by side,",
+     "Across the rock where one of them once died."
+    ],
+    "moral": [
+     "Judge not a heart by chrome or skin:",
+     "A friend is one who stays when air runs thin.",
+     "Steel may grow warm where flesh has long gone cold —",
+     "True friendship is the ore that can't be sold."
+    ]
+   },
+   "theme": "human-machine friendship",
+   "image_prompt": "Inside a collapsed asteroid mine tunnel, an old miner in a cracked spacesuit kneels among fallen rocks, his visor fissured, while a small dented antique drone with patched plating opens its own chest hatch and offers him a glowing crystal power core. Stars shine through a crack in the ceiling; a pickaxe and ore sacks lie scattered in the dim lantern glow.",
+   "num": 32,
+   "ts": "2026-06-12T23:35:37Z",
+   "image": "img/le-mineur-et-le-vieux-drone.jpg"
   }
  ]
 }
