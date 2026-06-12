@@ -1948,6 +1948,76 @@
    "num": 26,
    "ts": "2026-06-12T17:04:01Z",
    "image": "img/le-robot-qui-revait.jpg"
+  },
+  {
+   "id": "terraformeur-et-dune",
+   "fr": {
+    "title": "Le Terraformeur et la Dune",
+    "verses": [
+     "Sur un monde de sable où nul n'avait semé,",
+     "Un Terraformeur vint, de chrome tout armé.",
+     "« Dune, dit-il, ton règne expire :",
+     "Je porte en mes flancs l'eau, l'orage et la forêt ;",
+     "Avant cent jours, ce désert",
+     "Sera jardin, et toi, souvenir d'un empire. »",
+     "La Dune, sans hâter son grain,",
+     "Répondit : « Sème donc ; moi, j'attendrai demain. »",
+     "La machine creusa, fit pleuvoir, planta des chênes ;",
+     "Le sable but les pluies, étouffa les fontaines.",
+     "Cent jours passés, mille ans peut-être,",
+     "Le vent, patient ouvrier, sans bruit reprit son bien :",
+     "Une vis, puis un bras, puis le grand corps de fer.",
+     "La Dune ensevelit le maître,",
+     "Et sur son dos doré, sous le double soleil,",
+     "Roula, comme devant, son éternel sommeil.",
+     "Un pèlerin, plus tard, foulant la molle cendre,",
+     "Vit luire quelque chose et s'arrêta pour prendre",
+     "Un éclat de miroir où le ciel se peignait :",
+     "C'est tout ce qui restait du dieu qui jardinait."
+    ],
+    "moral": [
+     "Bâtisseurs de planètes, apprenez du roseau :",
+     "Le temps est l'allié du sable et de son flot ;",
+     "Le désert se souvient, et sa patience est telle",
+     "Qu'il enterre sans bruit toute hâte mortelle."
+    ]
+   },
+   "en": {
+    "title": "The Terraformer and the Dune",
+    "verses": [
+     "Upon a world of sand where nothing yet had grown,",
+     "A Terraformer came, all armoured chrome and stone.",
+     "\"Dune,\" quoth he, \"your reign is done:",
+     "I bear the rain, the oak, the river and the vine;",
+     "Within a hundred days this waste shall shine,",
+     "A garden green beneath your double sun.\"",
+     "The Dune, unhurried in her grain,",
+     "Replied: \"Go sow, good sir; the sand has time to spare.\"",
+     "He drilled, he stormed, he planted row on row;",
+     "The thirsty sand drank deep and let no fountain flow.",
+     "A hundred days went by — a thousand years, who knows? —",
+     "The wind, that patient labourer, took back what it had lent:",
+     "A bolt, an arm, and then the mighty frame of steel.",
+     "The Dune entombed her grand opponent,",
+     "And rolled beneath twin suns, gold-backed, supreme, serene,",
+     "Her ancient sleep across the buried machine.",
+     "A pilgrim, ages hence, crossing the ashen swell,",
+     "Stooped where a glimmer shone, and plucked a mirrored shell",
+     "Wherein the sky still dressed: of all that godly scheme,",
+     "This shard was what remained — a heaven, and a dream."
+    ],
+    "moral": [
+     "Builders of worlds, take heed before you boast:",
+     "Time is the desert's ally and its host;",
+     "The sand forgets no conqueror's parade —",
+     "It waits, and buries all that haste has made."
+    ]
+   },
+   "theme": "patience, désert, démesure",
+   "image_prompt": "A colossal half-buried terraforming machine sinking into golden dunes under two suns on an exoplanet, its broken metal arm reaching from the sand; in the foreground a small hooded pilgrim kneels, picking up a shard of mirror reflecting the sky; wind streams sand off the dune crests around the entombed giant.",
+   "num": 27,
+   "ts": "2026-06-12T18:43:55Z",
+   "image": "img/terraformeur-et-dune.jpg"
   }
  ]
 }
