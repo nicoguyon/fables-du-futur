@@ -2245,6 +2245,80 @@
    "num": 30,
    "ts": "2026-06-12T21:37:23Z",
    "image": "img/la-comete-et-le-marchand.jpg"
+  },
+  {
+   "id": "archiviste-pecheur",
+   "fr": {
+    "title": "L'Archiviste et le Pêcheur",
+    "verses": [
+     "Un Archiviste avait, sous des voûtes de glace,",
+     "Gravé dans le cristal cent ans d'instants menus :",
+     "Pas un soupir, pas une trace",
+     "Qui n'eût son double retenu.",
+     "« Chez moi rien ne périt, rien ne fuit, rien ne passe,",
+     "Disait-il ; j'ai mis l'oubli sous les verrous. »",
+     "Un Pêcheur lui répond, le filet sur l'échine :",
+     "« Moi, je rends chaque soir mes peines aux remous ;",
+     "Le flot lave ma mémoire et l'affine.",
+     "Il ne m'en demeure que l'éclair :",
+     "Un visage, un refrain, du sel sur une toile.",
+     "L'oubli, Maître, est un tri ; c'est lui qui fait l'étoile. »",
+     "— « Tri de gueux ! Moi je garde, et le temps m'est sujet. »",
+     "Or vint un grand froid noir qui fendit le projet :",
+     "Le cristal éclata ; l'archive fut poussière.",
+     "L'Archiviste, hagard, fouilla son crâne nu",
+     "Pour y chercher une lumière :",
+     "Rien. Ayant tout confié, il n'avait rien connu ;",
+     "Sa vie était restée au fond du verre éteint.",
+     "Le Pêcheur, ce soir-là, sur la grève sereine,",
+     "Chantait de mémoire, à voix pleine,",
+     "Le vieux chant que nul flot n'éteint."
+    ],
+    "moral": [
+     "Qui remet sa mémoire aux coffres des machines",
+     "N'a plus rien quand le coffre a rendu son trésor.",
+     "L'oubli n'est point voleur : c'est lui qui, dans nos ruines,",
+     "Choisit ce qui mérite encor."
+    ]
+   },
+   "en": {
+    "title": "The Archivist and the Fisherman",
+    "verses": [
+     "An Archivist, in vaults of frost and chrome,",
+     "Etched every breath of life on crystal cores:",
+     "No sigh, no shadow of his home",
+     "But slept in duplicate indoors.",
+     "\"With me no moment dies,\" he'd boast. \"I hold",
+     "Oblivion itself in chains.\"",
+     "A Fisherman replied, his net across his back:",
+     "\"Each night I give my sorrows to the rains;",
+     "The tide scrubs clean my memory's track",
+     "And leaves me only what burns bright:",
+     "A face, a song, salt drying on the sail.",
+     "Forgetting, Master, sorts the treasure from the tale.\"",
+     "\"A beggar's sorting! I keep all; time serves my will.\"",
+     "Then came a black frost through the vaulted hill:",
+     "The crystal split; the archive turned to dust.",
+     "The Archivist, aghast, searched his own bare mind",
+     "For one small ember he could trust —",
+     "And nothing. Having stored it all, he'd lived stone-blind;",
+     "His years lay shattered in the dark glass, gone.",
+     "The Fisherman that night, beside the quiet foam,",
+     "Sang from his heart, and sang till dawn,",
+     "The old song no flood drives from home."
+    ],
+    "moral": [
+     "Who locks his memory in machines of glass",
+     "Owns nothing when the vault gives up its store.",
+     "Forgetting is no thief: it sifts what comes to pass,",
+     "And keeps what's worth the keeping — nothing more."
+    ]
+   },
+   "theme": "mémoire et oubli numérique",
+   "image_prompt": "Inside a vast frozen vault, an elderly archivist in a long robe kneels in despair among shattered glowing crystal pillars whose light is dying, fragments of luminous memory shards scattered on the icy floor; through the broken archway behind him, on a moonlit beach, an old fisherman with a net on his shoulder sings beside a small fire near the waves.",
+   "num": 31,
+   "ts": "2026-06-12T22:35:41Z",
+   "image": "img/archiviste-pecheur.jpg"
   }
  ]
 }
