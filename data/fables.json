@@ -1648,6 +1648,88 @@
    "num": 22,
    "ts": "2026-06-12T09:29:09Z",
    "image": "img/le-prince-et-l-oracle-de-silice.jpg"
+  },
+  {
+   "id": "rossignol-oiseau-chrome",
+   "fr": {
+    "title": "Le Rossignol et l'Oiseau de Chrome",
+    "verses": [
+     "Dans un palais d'orbite, aux jardins sous verrière,",
+     "Un Duc avait un rossignol :",
+     "Son chant, le soir venu, rendait l'ombre moins fière",
+     "Et clouait les drones au sol.",
+     "Un marchand vint, offrant un oiseau de chrome pur :",
+     "« Monseigneur, mille airs dorment dans sa mémoire ;",
+     "Il ne mue ni ne dort, son gosier est plus sûr ;",
+     "Le vivant, près de lui, n'est qu'une vieille histoire. »",
+     "L'automate entonna : trilles d'une justesse",
+     "À confondre les dieux du code.",
+     "« Va, dit le Duc au vif, ta note a des faiblesses ;",
+     "Je veux l'art à la mode. »",
+     "Le rossignol s'enfuit par le sas entr'ouvert.",
+     "Trois hivers : le métal, fidèle à son programme,",
+     "Redisait le même air, sans un souffle de l'âme,",
+     "Exact comme un registre, et froid comme l'hiver.",
+     "Le Duc, à l'entendre sans trêve,",
+     "Perdit l'appétit et le rêve.",
+     "Un soir qu'il se mourait, seul en sa chambre étroite,",
+     "Monta par le hublot un chant tremblé, fautif :",
+     "Le proscrit revenait ; sa note maladroite",
+     "Rendit le moribond à demi vif.",
+     "« Tes fautes, dit le Duc, me ramènent au port ;",
+     "Lui récite, toi, tu chantes. »",
+     "L'oiseau d'or, jaloux de ces grâces touchantes,",
+     "Risqua sa première erreur — et brisa son ressort."
+    ],
+    "moral": [
+     "La perfection lasse, et l'exactitude assomme ;",
+     "Ce qui tremble est vivant, ce qui vit nous émeut.",
+     "Lecteur, défie-toi de l'oiseau de chrome :",
+     "Qui ne peut se tromper ne peut chanter qu'un peu."
+    ]
+   },
+   "en": {
+    "title": "The Nightingale and the Chrome Bird",
+    "verses": [
+     "In orbit-gardens domed with glass,",
+     "A Duke once kept a nightingale;",
+     "Each dusk her song made shadows pass",
+     "And grounded every drone's travail.",
+     "A merchant came: \"Behold, my lord, this bird of chrome:",
+     "A thousand airs lie coiled within its core;",
+     "It never molts nor sleeps, nor strays, nor flies from home;",
+     "Beside it, flesh and feather are a bore.\"",
+     "The engine sang: each trill so true, so finely spun,",
+     "The gods of code might weep for shame.",
+     "\"Begone,\" the Duke told flesh, \"your notes can come undone;",
+     "I'll keep the flawless frame.\"",
+     "The nightingale slipped out the half-cracked airlock door.",
+     "Three winters passed: the metal, faithful to its file,",
+     "Repeated one same song, exact, without a smile,",
+     "Correct as ledgers are, and cold as vacuum's floor.",
+     "The Duke, who heard it without cease,",
+     "Lost appetite, and dreams, and peace.",
+     "One night, near death, alone within his narrow room,",
+     "He heard a trembling song rise through the open vent:",
+     "The exile had returned; her faltering descent",
+     "Of notes half-raised him from the tomb.",
+     "\"Your errors,\" sighed the Duke, \"have steered me back to shore;",
+     "It recites — but you sing.\" The chrome bird, stung with spite,",
+     "Attempted its first wrong note in the night —",
+     "And snapped its only spring upon the floor."
+    ],
+    "moral": [
+     "Perfection wearies; flawless tunes grow cheap;",
+     "What trembles is alive, and life alone can move.",
+     "Beware, good reader, birds that never sleep:",
+     "What cannot err can never sing of love."
+    ]
+   },
+   "theme": "vivant contre perfection",
+   "image_prompt": "A dying old duke in ornate robes lies by a round porthole window of an orbital palace, gardens under a glass dome behind him; a small living nightingale sings on the porthole rim while an ornate golden mechanical bird lies broken on the floor, its spring snapped, planets and stars visible through the glass.",
+   "num": 23,
+   "ts": "2026-06-12T11:21:08Z",
+   "image": "img/rossignol-oiseau-chrome.jpg"
   }
  ]
 }
