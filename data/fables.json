@@ -1347,6 +1347,76 @@
    "num": 18,
    "ts": "2026-06-12T01:55:38Z",
    "image": "img/le-marchand-et-son-double.jpg"
+  },
+  {
+   "id": "le-sourcier-et-le-satellite",
+   "fr": {
+    "title": "Le Sourcier et le Satellite",
+    "verses": [
+     "Sur les dunes d'un monde où nulle eau ne ruisselle,",
+     "La colonie mourait de soif.",
+     "Le Satellite, en haut, croiseur aux cent prunelles,",
+     "Scrutait le sol d'un œil pensif.",
+     "« J'ai sondé, disait-il, la roche et la poussière,",
+     "Mes spectres ont tout épluché :",
+     "Il n'est, sous ce désert, ni source ni rivière,",
+     "Nul filet d'eau n'y est caché. »",
+     "Or un vieillard vivait, sourcier de son village,",
+     "Qui de la Terre avait gardé",
+     "Une baguette en bois, relique d'un autre âge,",
+     "Et l'art de ses aïeux, moqué.",
+     "« Tu lis de haut, dit-il ; moi, j'écoute la terre. »",
+     "La baguette en ses mains trembla.",
+     "Il gratta le sol roux ; jaillit, claire et légère,",
+     "Une eau que nul n'espérait là.",
+     "« Anomalie ! cria l'orgueilleux Satellite,",
+     "Cette eau n'est pas conforme aux plans ! »",
+     "— « Bois-la donc, dit le vieux ; conforme ou non, petite,",
+     "Elle sauve pourtant les gens. »"
+    ],
+    "moral": [
+     "Le savoir neuf voit loin, l'ancien touche la chose ;",
+     "L'un calcule, l'autre comprend.",
+     "Avant de condamner ce que l'aïeul propose,",
+     "Creusez : la source vous attend."
+    ]
+   },
+   "en": {
+    "title": "The Dowser and the Satellite",
+    "verses": [
+     "Upon a purple world where no river had run,",
+     "A thirsty colony despaired.",
+     "High overhead the Satellite, eye of the sun,",
+     "Surveyed the dust, and thus declared:",
+     "\"My beams have probed each stone, each grain of sand below,",
+     "My spectra swept the barren plain:",
+     "No spring, no hidden vein—this much my sensors know.",
+     "Pack up your hopes; your search is vain.\"",
+     "An old man kept from Earth a forked and hazel rod,",
+     "The mocked-at art his fathers knew.",
+     "\"You read the world from heaven; I read it from the sod,\"",
+     "He said—and off the old man drew.",
+     "\"You see from far,\" he called; \"I feel beneath my feet.\"",
+     "The rod began to dip and sway;",
+     "He dug the rust-red dust—a spring rose, cold and sweet,",
+     "Where every chart had marked dry clay.",
+     "\"Impossible!\" the haughty engine beamed its scorn,",
+     "\"No water figures on my chart!\"",
+     "\"And yet the village drinks its fill this very morn,\"",
+     "The old man smiled: \"So mend your art.\""
+    ],
+    "moral": [
+     "New knowledge sees afar; the old still feels the ground:",
+     "One mind computes, one understands.",
+     "Before you scorn the elder's rod, look down—",
+     "The spring lies waiting in his hands."
+    ]
+   },
+   "theme": "vieux savoir, technique",
+   "image_prompt": "An elderly dowser kneels on rust-red alien dunes, gripping a forked wooden rod as a clear spring bursts from the sand at his feet; thirsty colonists with empty vessels gather in astonishment; above, a sleek satellite hangs in a starry violet sky, projecting a thin scanning beam; domed habitats of a struggling colony rise on the horizon.",
+   "num": 19,
+   "ts": "2026-06-12T03:13:57Z",
+   "image": "img/le-sourcier-et-le-satellite.jpg"
   }
  ]
 }
