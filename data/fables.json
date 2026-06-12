@@ -1206,6 +1206,76 @@
    "num": 16,
    "ts": "2026-06-11T23:34:57Z",
    "image": "img/le-gardien-du-phare-orbital-et-la-balise.jpg"
+  },
+  {
+   "id": "le-croiseur-et-le-boulon",
+   "fr": {
+    "title": "Le Croiseur et le Boulon",
+    "verses": [
+     "Un Croiseur sidéral, orgueil de l'arsenal,",
+     "Fendait l'éther en maître et comptait ses canons.",
+     "Or il portait au flanc un Boulon sans renom,",
+     "Petit serviteur du métal.",
+     "« Toi, grain de fer, dit-il, qu'on visse et qu'on oublie,",
+     "Sais-tu que je défie et comète et soleil ?",
+     "— Je sais, répond le nain, serrer dans mon sommeil",
+     "La couture où ta gloire plie. »",
+     "Le grand vaisseau se rit de l'humble prophétie.",
+     "Vint l'orage de roches : un choc, puis dix, puis cent ;",
+     "Le Boulon tint la plaie où sifflait le néant,",
+     "Muet, sans cri ni vanterie.",
+     "Au port, le fier Croiseur fit redorer ses tours ;",
+     "« Ôtez-moi, commanda sa morgue souveraine,",
+     "Ce vieux clou terne qui fait honte à ma carène. »",
+     "On l'ôta sans discours.",
+     "Le Croiseur repartit, tout vermeil, vers la gloire ;",
+     "Au premier vent, hélas ! la couture céda ;",
+     "Le vide entra sans bruit, le géant trébucha,",
+     "Et l'éther but son nom et toute son histoire."
+    ],
+    "moral": [
+     "Grands de ce monde et grands des cieux,",
+     "Vos triomphes sont l'œuvre obscure",
+     "D'un boulon qui serre sans yeux :",
+     "Chassez-le, — comptez vos fissures."
+    ]
+   },
+   "en": {
+    "title": "The Star-Cruiser and the Bolt",
+    "verses": [
+     "A star-going Cruiser, the fleet's bright renown,",
+     "Carved night like a monarch and counted his guns.",
+     "A Bolt in his hull, the humblest of ones,",
+     "Held a seam where the void pressed down.",
+     "\"You speck,\" sneered the giant, \"screwed in and forgot —",
+     "I duel with the comets, I outstare the sun.\"",
+     "\"I know,\" said the small one. \"I clench, and I'm done,",
+     "The stitch where your glory would rot.\"",
+     "The great ship laughed loud at the prophecy grim.",
+     "Then rock-storms came raging: one blow, then a score;",
+     "The Bolt gripped the wound where the emptiness tore,",
+     "And nobody drank to him.",
+     "In dock the proud victor was gilded anew.",
+     "\"Remove,\" boomed his vanity, \"that dingy stud,",
+     "It shames my bright hull.\" So they pried it for good,",
+     "And none dared argue the view.",
+     "He launched again, gleaming, toward triumph and flame;",
+     "At the first solar gust the old seam came apart;",
+     "The silence walked in and unbuttoned his heart,",
+     "And the dark drank his glory and name."
+    ],
+    "moral": [
+     "Empires of steel, so proud, so vast,",
+     "Your triumphs hang on one small screw:",
+     "Despise the least that carries you,",
+     "Then count your fissures — while they last."
+    ]
+   },
+   "theme": "orgueil, humble nécessité",
+   "image_prompt": "A colossal ornate star-cruiser bristling with cannons and gilded towers floats in a dry dock among scaffolding, while two tiny dock workers pry a single small bolt from its hull seam; the bolt gleams modestly in a shaft of light, and behind the ship a storm of asteroids looms in the starry void.",
+   "num": 17,
+   "ts": "2026-06-12T00:58:00Z",
+   "image": "img/le-croiseur-et-le-boulon.jpg"
   }
  ]
 }
