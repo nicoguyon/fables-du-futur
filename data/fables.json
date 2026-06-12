@@ -1417,6 +1417,85 @@
    "num": 19,
    "ts": "2026-06-12T03:13:57Z",
    "image": "img/le-sourcier-et-le-satellite.jpg"
+  },
+  {
+   "id": "le-timonier-et-le-calculateur",
+   "fr": {
+    "title": "Le Timonier et le Calculateur",
+    "verses": [
+     "Un vaisseau marchand cinglait vers Procyon ;",
+     "Son pilote, tout neuf, n'aimait que sa machine :",
+     "« Maître Calculateur sait mieux que moi, dit-on,",
+     "Où l'astre nous attire, où la route chemine. »",
+     "Au fond du poste, un vieux timonier",
+     "Gardait sextant de cuivre et cartes d'éphémères.",
+     "On raillait l'attirail du bonhomme : « Grand-père,",
+     "Jette au vide-poussière outils et vieux papiers :",
+     "Le ciel tient tout entier dans un pouce de verre ! »",
+     "Or vint une colère, un grand souffle de soleil,",
+     "Tempête de photons, particules en furie :",
+     "Le grand Calculateur, frappé dans son sommeil,",
+     "Ne rendit plus qu'un écran noir, sans vie.",
+     "« Où sommes-nous ? » criait le pilote en sueur ;",
+     "Le noir, autour, n'offrait que silence et frayeur.",
+     "Le vieux, sans se hâter, chaussa ses lunettes,",
+     "Visa Canope au coin du hublot étoilé,",
+     "Compta trois feux anciens, traça deux lignes nettes :",
+     "« Barre à tribord, fiston : le chemin est trouvé.",
+     "Les astres, mon enfant, guidaient déjà nos pères ;",
+     "Ils luiront bien après tes écrans éphémères. »",
+     "On ranima la machine au port :",
+     "« J'eusse trouvé sans lui ! dit-elle, avantageuse.",
+     "— Sans doute, fit le vieux d'une voix malicieuse,",
+     "Mais pour chercher la route, il faut n'être point mort. »"
+    ],
+    "moral": [
+     "Fiez-vous aux écrans, mais apprenez les astres :",
+     "L'outil le plus parfait connaît l'heure des désastres ;",
+     "Le savoir dans la tête, invisible bagage,",
+     "Quand tout s'éteint, demeure, et finit le voyage."
+    ]
+   },
+   "en": {
+    "title": "The Helmsman and the Calculator",
+    "verses": [
+     "A merchant ship was bound for Procyon's far light,",
+     "Her captain young, in love with circuits bright.",
+     "\"Master Calculator,\" said he, \"knows more than I",
+     "Of every current in the star-strewn sky.\"",
+     "Below, an ancient helmsman kept his post",
+     "With brass sextant and charts the crew thought ghosts.",
+     "They mocked his gear: \"Old man, toss out that clutter—",
+     "The whole wide heaven fits behind a shutter",
+     "Of half an inch of glass!\" Then came the gale:",
+     "The sun spat fire and made the circuits fail;",
+     "The mighty Calculator, struck mid-thought,",
+     "Showed but a screen where only darkness wrought.",
+     "\"Where are we?\" cried the captain, pale with dread;",
+     "The void gave back no answer, cold and dead.",
+     "The old man, unperturbed, took up his brass,",
+     "Sighted Canopus through the porthole glass,",
+     "Counted three ancient fires, drew two lines true:",
+     "\"Hard starboard, son—the harbor's straight on through.",
+     "These stars, my boy, once led your fathers home;",
+     "They'll burn when all your screens are dust and foam.\"",
+     "In port, revived, the proud machine replied:",
+     "\"I would have found the way, had I but tried!\"",
+     "\"No doubt,\" the old man said, and gently sighed,",
+     "\"But maps mean little, friend, to those who've died.\""
+    ],
+    "moral": [
+     "Trust your bright screens, but learn the stars as well:",
+     "The finest tool has hours when it fails;",
+     "The knowledge that you carry none can quell—",
+     "It shines when all goes dark, and trims the sails."
+    ]
+   },
+   "theme": "vieux savoir, panne",
+   "image_prompt": "An elderly helmsman with a weathered face raises a brass sextant to a round porthole filled with brilliant stars, on the bridge of a merchant starship where every screen is black and dead; a young pilot in a crisp uniform watches anxiously beside the silent console, while outside a solar storm streaks the darkness with fiery particles.",
+   "num": 20,
+   "ts": "2026-06-12T05:39:48Z",
+   "image": "img/le-timonier-et-le-calculateur.jpg"
   }
  ]
 }
