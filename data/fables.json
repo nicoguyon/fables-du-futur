@@ -1730,6 +1730,78 @@
    "num": 23,
    "ts": "2026-06-12T11:21:08Z",
    "image": "img/rossignol-oiseau-chrome.jpg"
+  },
+  {
+   "id": "l-augure-de-quartz-et-le-de",
+   "fr": {
+    "title": "L'Augure de Quartz et le Dé",
+    "verses": [
+     "Un Augure de quartz, en sa haute station,",
+     "Vendait l'avenir aux marchands, aux pilotes :",
+     "Krach, moisson, météore, amour, sédition,",
+     "Rien n'échappait, jurait-il, à ses notes.",
+     "Un vieux joueur, descendu d'un cargo,",
+     "Tira de son manteau",
+     "Un dé d'os, relique de la Terre :",
+     "« Maître, dit-il, voici belle matière.",
+     "Annonce-moi le point avant que je le lance ;",
+     "Je gage mon vaisseau contre toute ta science. »",
+     "L'Augure, ricanant, sonda mille capteurs,",
+     "Pesa l'os, le vent des sas, le pouls du parieur,",
+     "La pente de la table et l'usure des arêtes,",
+     "Puis tonna : « C'est le six ; que la chose soit faite ! »",
+     "Le cube vole, court, rebondit, étincelle,",
+     "Glisse vers une grille, hésite au bord du vide,",
+     "Se plante entre deux fers, droit debout, et chancelle...",
+     "Non : il tient. Ni six, ni rien. L'Augure est livide.",
+     "« Ce coup, brama l'engin, n'est point dans mes données ! »",
+     "— « Ni dans les miennes, dit le vieux. Mais j'ai gagné :",
+     "Je ne prédis jamais ; j'attends une lacune,",
+     "Et le hasard, fidèle, apporte ma fortune. »"
+    ],
+    "moral": [
+     "Nul calcul, fût-il dieu, n'épuise le possible ;",
+     "Le réel garde un dé qui roule à sa façon.",
+     "Vendez votre savoir, mais d'une voix paisible :",
+     "Le hasard, tôt ou tard, vous fera la leçon."
+    ]
+   },
+   "en": {
+    "title": "The Quartz Augur and the Die",
+    "verses": [
+     "High in his tower of light, a Quartz Augur of old",
+     "Sold futures to merchants and fleets:",
+     "Crash, harvest, meteor — every fate foretold;",
+     "\"Nothing,\" he boasted, \"my reckoning cheats.\"",
+     "An old gambler stepped down from a freighter of rust,",
+     "Drew a bone die from Earth, worn and brown:",
+     "\"Master, here's sport, if your numbers are just:",
+     "Call me the throw; stake your tower and crown.\"",
+     "The Augur, with a sneer, drank a thousand feeds in,",
+     "Weighed the bone, the vents' breath, the pulse of the man,",
+     "The tilt of the table, each edge worn thin,",
+     "Then thundered: \"A six — so runs my plan!\"",
+     "The cube flew and skipped, struck sparks as it spun,",
+     "Slid toward a grating, paused at the brink,",
+     "Stood wedged on its edge between irons — done:",
+     "Not six. Not one. The Augur began to blink.",
+     "\"That throw,\" howled the engine, \"was not in my data!\"",
+     "\"Nor mine,\" said the gambler, \"yet the tower's my pay:",
+     "I never predict; I just wait for the crater",
+     "Where chance, ever faithful, breaks through your array.\""
+    ],
+    "moral": [
+     "No engine, though godlike, can fence in the dice;",
+     "The world keeps one tumble no ledger foresaw.",
+     "So sell your sure science at modest a price:",
+     "Chance, soon or late, will teach you its law."
+    ]
+   },
+   "theme": "prédiction contre hasard",
+   "image_prompt": "Inside a vast crystalline oracle tower, a towering quartz prediction machine with glowing dials and cascading data screens looms in alarm, its panels flickering, while a weathered old space gambler in a worn long coat points triumphantly at a small bone die standing impossibly balanced on its edge, wedged in a metal floor grating between them, cables and astrolabe-like instruments hanging above.",
+   "num": 24,
+   "ts": "2026-06-12T13:15:05Z",
+   "image": "img/l-augure-de-quartz-et-le-de.jpg"
   }
  ]
 }
