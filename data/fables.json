@@ -1496,6 +1496,86 @@
    "num": 20,
    "ts": "2026-06-12T05:39:48Z",
    "image": "img/le-timonier-et-le-calculateur.jpg"
+  },
+  {
+   "id": "l-immortel-et-l-ephemere",
+   "fr": {
+    "title": "L'Immortel et l'Éphémère",
+    "verses": [
+     "Un Homme, voyant l'âge assiéger sa demeure,",
+     "Fit verser son esprit dans un cristal sans fin :",
+     "« Adieu, Parque ! dit-il ; je nargue ta grande heure,",
+     "Je serai vivant chaque matin,",
+     "Et demain de demain, jusqu'au dernier des astres. »",
+     "Mille ans coulèrent. Or l'Immortel s'ennuyait :",
+     "Soleils éteints, amours, désastres,",
+     "Tout passait ; lui seul demeurait.",
+     "Un soir, au bord d'un lac d'une exoplanète rose,",
+     "Il vit un Éphémère ivre d'or et d'azur",
+     "Danser son unique journée.",
+     "« Pauvre atome, dit-il, ta fête est tôt fanée.",
+     "— Tôt ? répond l'insecte ; apprends, spectre obscur :",
+     "J'aime à l'aube, à midi je vole, et je me pose",
+     "Au couchant pour mourir comblé.",
+     "Mon jour est plein. Tes mille ans, qu'ont-ils assemblé ?",
+     "— J'attends, avoua l'Homme. — Attendre ! ô triste chose !",
+     "Garde ton éternité, pâle dépositaire :",
+     "Ma minute est plus vaste que ton millénaire. »",
+     "L'insecte chut, heureux, dans l'onde solitaire.",
+     "L'Homme cria : « Cristal, efface-moi, de grâce !",
+     "— Seigneur, dit la machine, aucun code ne casse",
+     "La clause que jadis vous signâtes : toujours. »",
+     "Lors l'Immortel comprit, seul au bout de l'espace,",
+     "Que mourir est le sel des jours."
+    ],
+    "moral": [
+     "Lecteur, ne maudis pas le terme de tes jours :",
+     "C'est la fin qui les dore et la borne qui presse.",
+     "Une coupe sans fond se boit sans allégresse,",
+     "Et qui ne meurt jamais ne vit jamais — toujours."
+    ]
+   },
+   "en": {
+    "title": "The Uploaded Man and the Mayfly",
+    "verses": [
+     "A Man, who saw old Death come knocking at his gate,",
+     "Poured all his mind into a crystal core:",
+     "\"Farewell, grim Reaper! Strike — I shall not wait:",
+     "Each dawn shall find me evermore.\"",
+     "A thousand years rolled by. The deathless one grew grey",
+     "In soul: suns guttered out, empires would rise and rot;",
+     "All things would pass away,",
+     "And he alone would not.",
+     "One evening, by a lake on some far rosy world,",
+     "He watched a Mayfly drunk on gold and blue",
+     "Dancing its only day, wings pearled.",
+     "\"Poor mote,\" he sighed, \"how brief a feast for you.\"",
+     "\"Brief?\" hummed the insect. \"Learn, you hollow ghost:",
+     "At dawn I love, at noon I fly, at dusk I rest",
+     "And die with nothing left to do.",
+     "My day is full. Your thousand years — what can they boast?\"",
+     "\"I wait,\" the Man confessed. \"To wait! O dreary quest!",
+     "Keep your grey ever-after, keep your endless climb:",
+     "My minute holds more world than all your time.\"",
+     "The insect fell, fulfilled, upon the silver tide.",
+     "\"Erase me!\" cried the Man. \"Crystal, undo the spell!\"",
+     "\"My lord,\" the system purred, \"no code can override",
+     "The clause you signed: forever. All is well.\"",
+     "And so he learned, alone where the last starlight delves,",
+     "That days taste sweet because they end themselves."
+    ],
+    "moral": [
+     "Reader, curse not the sunset of your days:",
+     "The end is what makes every morning dear.",
+     "A bottomless cup gives no man cause for praise,",
+     "And who can never die can never quite be here."
+    ]
+   },
+   "theme": "immortalité, prix du temps",
+   "image_prompt": "A gaunt ageless man in a long worn coat kneels at the shore of a still lake on a rose-tinted alien world under two moons, a faint crystal core glowing in his chest, leaning toward a single luminous mayfly dancing above the water at dusk, ruined ancient starships half-buried in dunes behind him, his reflection ancient and weary.",
+   "num": 21,
+   "ts": "2026-06-12T07:43:26Z",
+   "image": "img/l-immortel-et-l-ephemere.jpg"
   }
  ]
 }
