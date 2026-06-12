@@ -1276,6 +1276,77 @@
    "num": 17,
    "ts": "2026-06-12T00:58:00Z",
    "image": "img/le-croiseur-et-le-boulon.jpg"
+  },
+  {
+   "id": "le-marchand-et-son-double",
+   "fr": {
+    "title": "Le Marchand et son Double",
+    "verses": [
+     "Un Marchand de Saturne, avare de ses heures,",
+     "Fit tisser dans la nue un Double de lumière :",
+     "Même voix, même front, même grâce trompeuse.",
+     "« Va, dit-il, vis pour moi : la vie est ennuyeuse.",
+     "Cours les marchés, les bals, les fâcheux, les bureaux ;",
+     "Moi, je compte en dormant l'or de mes durs travaux. »",
+     "Le reflet, sans broncher, prit la cape et la porte.",
+     "Il vendit, il dansa, fit rire la cohorte,",
+     "Consola l'orpheline, instruisit les enfants,",
+     "But le vin des moissons, pleura les morts — vingt ans.",
+     "Or, le Marchand un soir voulut reprendre place.",
+     "Il parut au banquet : on lui rit à la face.",
+     "« Imposteur ! cria-t-on, notre ami n'est pas tel :",
+     "Il a l'œil moins glacé, le sourire fidèle. »",
+     "Le Double s'avança, doux comme une sentence :",
+     "« J'ai porté tes chagrins, tes joies, ton existence ;",
+     "Qui de nous, dis-le-moi, demeure l'original ?",
+     "J'ai l'usure des jours ; tu n'as que ton métal.",
+     "Retourne à ton coffre, ombre fraîche et sans rides :",
+     "La copie, c'est celui dont les heures sont vides. »"
+    ],
+    "moral": [
+     "On n'est l'original ni de droit ni de race :",
+     "On l'est d'avoir vécu, souffert, donné, perdu.",
+     "Qui charge un autre soi de vivre à sa place",
+     "S'éveille un beau matin copie d'un inconnu."
+    ]
+   },
+   "en": {
+    "title": "The Merchant and His Double",
+    "verses": [
+     "A Saturn merchant, miser of his days,",
+     "Had weavers spin a Double out of rays:",
+     "Same voice, same brow, same charming, easy air.",
+     "\"Go live for me,\" he said, \"life's my despair —",
+     "Attend the markets, weddings, bores, and balls,",
+     "While I count credits in my vaulted halls.\"",
+     "The shimmering twin went forth without a word;",
+     "He traded, danced, and laughed where laughter stirred,",
+     "He raised the orphan, taught the boy to play,",
+     "Drank harvest wine, grew lined and slowly gray —",
+     "And twenty years of living slipped away.",
+     "At last the merchant rose to claim his chair;",
+     "The banquet hall but laughed to see him there:",
+     "\"Impostor! Friend of ours you cannot be —",
+     "His eyes are warmer, and his smile more free.\"",
+     "The Double spoke, as gentle as a blade:",
+     "\"I bore your griefs; your debts of joy I paid.",
+     "Which one of us is real? Pray tell me how:",
+     "I wear the years; the chrome is on your brow.",
+     "Go back into your vault, unwrinkled shade —",
+     "The copy is the man whose life was never made.\""
+    ],
+    "moral": [
+     "No deed of birth declares which soul is true:",
+     "It's lived-in years that make a man his own.",
+     "Lend out your living to a self made new —",
+     "You'll wake the copy of a life unknown."
+    ]
+   },
+   "theme": "double, vie déléguée",
+   "image_prompt": "A grand banquet hall in a Saturn colony, ringed planet glowing through tall arched windows. At the head of a long candlelit table sits a luminous holographic double, aged and warm-faced, surrounded by laughing guests raising goblets. At the doorway stands the real merchant, smooth-faced and stunned, pointed at and mocked, his rich cloak slipping from his shoulder.",
+   "num": 18,
+   "ts": "2026-06-12T01:55:38Z",
+   "image": "img/le-marchand-et-son-double.jpg"
   }
  ]
 }
