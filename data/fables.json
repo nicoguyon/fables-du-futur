@@ -2170,6 +2170,81 @@
    "num": 29,
    "ts": "2026-06-12T20:50:25Z",
    "image": "img/araignee-reseau.jpg"
+  },
+  {
+   "id": "la-comete-et-le-marchand",
+   "fr": {
+    "title": "La Comète et le Marchand",
+    "verses": [
+     "Une Comète au front de glace,",
+     "Qui depuis cent mille ans arpentait l'espace,",
+     "Vit fondre sur elle un Marchand",
+     "Monté sur un esquif d'acier étincelant.",
+     "« Halte, la vagabonde ! Au nom de ma compagnie,",
+     "Tes glaces valent leur pesant",
+     "D'or fin : livre-les-moi sur l'heure, et bonne vie ! »",
+     "— « Doucement, dit l'astre chenu :",
+     "Mon orbe me ramène ici dans deux cents ans ;",
+     "Reviens alors : ce qui fut mien sera ton dû. »",
+     "Le Marchand s'esclaffa : « Deux siècles ! Quelle attente !",
+     "Mon bilan se rend tous les ans ;",
+     "Mes coffres veulent leur croissance, et qu'elle est lente",
+     "La fortune qui vient à pas de firmament ! »",
+     "Il lança ses grappins, vida ses réservoirs,",
+     "Força moteurs et trajectoires ;",
+     "La Comète, sans s'émouvoir,",
+     "Poursuivit sa route ancienne,",
+     "Laissant l'esquif à sec dériver dans le noir.",
+     "Deux siècles s'écoulèrent ; elle revint, sereine :",
+     "De l'empire du fol il ne restait plus rien ;",
+     "Mais sur un monde neuf sa glace fit la pluie,",
+     "Et des enfants burent à la fontaine",
+     "Qu'avait semée la voyageuse dans la nuit."
+    ],
+    "moral": [
+     "Lecteur, l'univers a son pas,",
+     "Que nul agenda ne devance :",
+     "Qui veut presser le ciel s'épuise et ne l'a pas ;",
+     "Qui sait l'attendre en reçoit la semence."
+    ]
+   },
+   "en": {
+    "title": "The Comet and the Merchant",
+    "verses": [
+     "A Comet, crowned with ancient ice,",
+     "Who'd roamed the dark a hundred thousand years,",
+     "Was hailed one day by a Merchant's device,",
+     "A steel skiff bristling with bright drills and gears.",
+     "\"Halt, wanderer! By corporate decree",
+     "Your frozen gold belongs to me—",
+     "Surrender it this hour, then drift where you please.\"",
+     "\"Softly,\" the grey star said. \"My road",
+     "Brings me back here in twice a hundred years;",
+     "Return then, friend, and claim your load.\"",
+     "The Merchant roared: \"Two centuries? My shares",
+     "Report each quarter—boards don't wait on spheres!",
+     "What sluggish wealth, that ambles with the skies!\"",
+     "He fired his grapples, burned his tanks to seize the prize;",
+     "The Comet, calm, kept her appointed way",
+     "And left his hollow vessel drifting, dead and grey.",
+     "Two hundred years went by. She came again:",
+     "The Merchant's empire was not even dust;",
+     "But on a young world her ice fell as rain,",
+     "And children drank from springs her passing gave—",
+     "The wanderer's gift outlived the grave."
+    ],
+    "moral": [
+     "Reader, the stars keep their own pace;",
+     "No quarterly can rush their round.",
+     "Who races heaven loses the chase;",
+     "Who waits with heaven, wells are found."
+    ]
+   },
+   "theme": "temps cosmique, avidité",
+   "image_prompt": "A vast comet with a glowing icy head and long luminous tail crossing deep space, while a small angular steel mining skiff fires grappling hooks toward it, thrusters blazing in vain; a greedy merchant in a spacesuit gestures from the cockpit; in the far background, a young blue planet where rain falls and children gather at a spring.",
+   "num": 30,
+   "ts": "2026-06-12T21:37:23Z",
+   "image": "img/la-comete-et-le-marchand.jpg"
   }
  ]
 }
