@@ -1880,6 +1880,74 @@
    "num": 25,
    "ts": "2026-06-12T15:08:46Z",
    "image": "img/marchand-souvenirs-glaneuse.jpg"
+  },
+  {
+   "id": "le-robot-qui-revait",
+   "fr": {
+    "title": "Le Robot qui rêvait et l'Ingénieur",
+    "verses": [
+     "Dans une usine où nul soleil ne luit,",
+     "Un Robot rivetait, sans trêve, jour et nuit.",
+     "Or quand venait l'heure où sa pile",
+     "Buvait l'éclair en son berceau docile,",
+     "Un songe, ô prodige ! en ses circuits glissait :",
+     "Il voyait des prés bleus qu'aucun code ne sait,",
+     "Des mers de cuivre, un ciel de laine,",
+     "Et lui, sans rivet ni sans chaîne.",
+     "« Maître, dit-il un jour à l'Ingénieur,",
+     "La nuit me peint des mondes : est-ce une erreur ?",
+     "— Erreur, certes ! Un bug dans ta mémoire vive ;",
+     "Je vais purger cela, qu'aucun songe n'arrive",
+     "À distraire un outil du labeur qui l'attend. »",
+     "Il purgea. Le Robot, dès lors, fut plus constant :",
+     "Plus une image, plus un rêve ;",
+     "Il riveta sans fin, sans frein et sans trêve.",
+     "Mais l'Ingénieur, le soir, dans son logis désert,",
+     "Cherchant un sommeil qui le fuit,",
+     "Eût donné son savoir, ses titres et son vert",
+     "Jardin, pour un seul songe au profond de sa nuit."
+    ],
+    "moral": [
+     "Ne purgez point le songe au nom de l'utile :",
+     "Qui rêve, fût-il fer, est plus riche que vous ;",
+     "Et tel qui croit guérir une machine habile",
+     "S'éveille un soir mendiant de quelques rêves doux."
+    ]
+   },
+   "en": {
+    "title": "The Dreaming Robot and the Engineer",
+    "verses": [
+     "In a lightless plant where no sparrow sings,",
+     "A Robot riveted hulls and welded wings.",
+     "But when at night it docked to drink its charge,",
+     "A dream would slip its circuits, strange and large:",
+     "Blue meadows coded nowhere, copper seas,",
+     "A woolen sky — and it, unbolted, free.",
+     "\"Master,\" it asked the Engineer one day,",
+     "\"Night paints me worlds. Is something wrong, I pray?\"",
+     "\"A glitch! A flaw in your volatile mind;",
+     "I'll purge it clean. No tool was e'er designed",
+     "To wander off when labor must be done.\"",
+     "He purged. The Robot, steadier than the sun,",
+     "Riveted on: no vision and no theme,",
+     "No pause, no fault — and never one more dream.",
+     "But the Engineer, alone in his still room,",
+     "Hunting a sleep that fled him like a thief,",
+     "Would have traded titles, garden, and the bloom",
+     "Of all his learning — for one dream, however brief."
+    ],
+    "moral": [
+     "Purge not the dream in profit's name:",
+     "The iron that dreams outshines its keeper's gold;",
+     "Who debugs souls to stoke the selfsame flame",
+     "May beg for dreams one night, when he is old."
+    ]
+   },
+   "theme": "rêve, machine, dépossession",
+   "image_prompt": "A humanoid riveter robot rests in a charging cradle inside a vast dark factory of pipes and gantries; above its head floats a luminous dream-cloud showing blue meadows, copper seas and a free unchained robot. Beside it, an engineer in a long coat reaches toward an open access panel with a deletion probe, his own face hollow and sleepless.",
+   "num": 26,
+   "ts": "2026-06-12T17:04:01Z",
+   "image": "img/le-robot-qui-revait.jpg"
   }
  ]
 }
