@@ -155,9 +155,55 @@ footer a:hover{opacity:1;color:#fff}
 
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(40px);background:var(--yr-green);color:#fff;padding:14px 24px;border-radius:40px;font-weight:600;font-size:14px;z-index:130;opacity:0;transition:.3s;box-shadow:0 10px 30px rgba(0,0,0,.25)}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ============ DÉLIRE — immersif ============ */
+/* scroll reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+/* custom cursor (desktop) */
+@media(hover:hover){
+  body{cursor:none}
+  .cursor{position:fixed;top:0;left:0;width:34px;height:34px;border:1.5px solid var(--monoi-gold);border-radius:50%;pointer-events:none;z-index:200;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s,border-color .2s;mix-blend-mode:difference}
+  .cursor.dot{width:7px;height:7px;background:var(--monoi-gold);border:none;transition:none}
+  a:hover ~ .cursor,.cursor.hot{width:60px;height:60px;background:rgba(231,185,107,.18);border-color:var(--monoi-gold)}
+}
+/* manifeste */
+.manifeste{background:var(--monoi-ink);color:var(--monoi-sand);text-align:center;overflow:hidden}
+.manifeste .big{font-family:var(--font-display);font-weight:300;font-size:clamp(34px,7vw,104px);line-height:1.02;letter-spacing:-.02em}
+.manifeste .big b{font-style:italic;font-weight:600;color:var(--monoi-gold)}
+.manifeste .big span{display:block}
+.manifeste .sign{margin-top:34px;font-family:var(--font-mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--monoi-tan)}
+/* expérience délire — full-bleed scenes */
+.scene{position:relative;height:88vh;min-height:520px;display:flex;align-items:center;overflow:hidden}
+.scene img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 1.2s ease}
+.scene.in img{transform:scale(1)}
+.scene::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(42,33,24,.62),rgba(42,33,24,.05) 60%)}
+.scene.right::after{background:linear-gradient(270deg,rgba(42,33,24,.62),rgba(42,33,24,.05) 60%)}
+.scene .sc-in{position:relative;z-index:2;color:#fff;max-width:560px;padding:0 6vw}
+.scene.right .sc-in{margin-left:auto;text-align:right}
+.scene .sc-tag{font-family:var(--font-mono);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--monoi-gold)}
+.scene h3{font-family:var(--font-display);font-weight:300;font-size:clamp(32px,5.5vw,76px);line-height:.98;margin:14px 0;text-shadow:0 4px 30px rgba(0,0,0,.4)}
+.scene h3 b{font-style:italic;font-weight:600}
+.scene p{font-size:clamp(15px,1.8vw,19px);font-weight:300;opacity:.95;max-width:42ch}
+.scene.right p{margin-left:auto}
+.scene .price-pill{display:inline-block;margin-top:18px;font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,.5);border-radius:30px;padding:8px 18px}
+/* number ticker band */
+.facts{background:var(--surface);display:grid;grid-template-columns:repeat(4,1fr);gap:0;text-align:center}
+.facts .f{padding:46px 18px;border-right:1px solid rgba(81,77,79,.12)}
+.facts .f:last-child{border-right:none}
+.facts .n{font-family:var(--font-display);font-weight:600;font-size:clamp(30px,4vw,52px);color:var(--yr-green)}
+.facts .l{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-soft);margin-top:8px}
+@media(max-width:760px){.facts{grid-template-columns:repeat(2,1fr)}.facts .f:nth-child(2){border-right:none}}
+/* progress bar */
+.progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--monoi-gold),var(--yr-green));z-index:70;width:0}
+
 </style>
 </head>
 <body>
+
+<div class="progress" id="progress"></div>
+<div class="cursor" id="cur"></div>
+<div class="cursor dot" id="curDot"></div>
 
 <div class="announce">Livraison offerte dès 49 € · Échantillon Monoï Tradition glissé dans chaque commande</div>
 
@@ -195,6 +241,22 @@ footer a:hover{opacity:1;color:#fff}
 
 <div class="marquee" aria-hidden="true">
   <span>97 % de pur Monoï de Tahiti — <b>fleurs de Tiaré</b> — peau de soleil — <b>route des Sanguinaires</b> — l'or sur la peau — <b>Ajaccio</b> — 97 % de pur Monoï de Tahiti — <b>fleurs de Tiaré</b> — peau de soleil — <b>route des Sanguinaires</b> — l'or sur la peau — <b>Ajaccio</b> — </span>
+</div>
+
+<!-- MANIFESTE -->
+<section class="manifeste">
+  <div class="wrap reveal">
+    <p class="big"><span>On a pris la fleur de Tiaré,</span><span>le soleil de Tahiti,</span><span>et on les a lâchés <b>en Corse</b>.</span></p>
+    <p class="sign">Le manifeste solaire · Yves Rocher Monoï · Été 2026</p>
+  </div>
+</section>
+
+<!-- FACTS -->
+<div class="facts">
+  <div class="f reveal"><div class="n">97 %</div><div class="l">de pur Monoï<br>de Tahiti</div></div>
+  <div class="f reveal"><div class="n">1<sup>er</sup></div><div class="l">rituel solaire<br>botanique</div></div>
+  <div class="f reveal"><div class="n">∞</div><div class="l">heures dorées<br>sur les Sanguinaires</div></div>
+  <div class="f reveal"><div class="n">0</div><div class="l">raison de rester<br>à l'ombre</div></div>
 </div>
 
 <!-- LE RITUEL -->
@@ -239,6 +301,75 @@ footer a:hover{opacity:1;color:#fff}
     <div class="grid" id="gridCapsule" style="margin-top:36px"></div>
   </div>
 </section>
+
+<!-- L'EXPÉRIENCE (délire) -->
+<section style="padding-bottom:0">
+  <div class="wrap reveal" style="text-align:center;margin-bottom:10px">
+    <div class="eyebrow" style="justify-content:center">Objets de désir · sur réservation</div>
+    <h2 class="sec-title">L'<b>Expérience</b> MONOÏ</h2>
+    <p class="sec-lead" style="margin:18px auto 0">Quand une huile devient un art de vivre. Six fantasmes solaires, signés Yves Rocher — parce qu'un été, ça se vit en grand.</p>
+  </div>
+</section>
+
+<div class="scene reveal">
+  <img src="assets/hero/w01.png" alt="La Voiture Bronze sur la route des Sanguinaires">
+  <div class="sc-in">
+    <div class="sc-tag">Pièce nᵒ 01</div>
+    <h3>La Voiture <b>Bronze</b></h3>
+    <p>Un cabriolet vintage trempé dans l'or liquide, pour descendre la route des Sanguinaires cheveux au vent et peau au monoï.</p>
+    <span class="price-pill">Sur réservation</span>
+  </div>
+</div>
+
+<div class="scene right reveal">
+  <img src="assets/hero/w03.png" alt="Le Beach Club Sanguinaires">
+  <div class="sc-in">
+    <div class="sc-tag">Pièce nᵒ 02</div>
+    <h3>Le <b>Beach Club</b> Sanguinaires</h3>
+    <p>Transats crème et or à perte de vue, parasols rayés, brume de monoï dans l'air. Une plage privée, un été entier.</p>
+    <span class="price-pill">Privatisable</span>
+  </div>
+</div>
+
+<div class="scene reveal">
+  <img src="assets/hero/h04.png" alt="Le Yacht Privé MONOÏ">
+  <div class="sc-in">
+    <div class="sc-tag">Pièce nᵒ 03</div>
+    <h3>Le <b>Yacht</b> Privé</h3>
+    <p>Teck, or et eau turquoise. Le rituel monoï se partage à deux, au large d'Ajaccio, le soleil pour seul témoin.</p>
+    <span class="price-pill">Sur invitation</span>
+  </div>
+</div>
+
+<div class="scene right reveal">
+  <img src="assets/social/s17.png" alt="Le Trône Gonflable doré">
+  <div class="sc-in">
+    <div class="sc-tag">Pièce nᵒ 04</div>
+    <h3>Le <b>Trône</b> Gonflable</h3>
+    <p>Le matelas d'or qui flotte seul au milieu d'une crique. Le centre de gravité de toutes les piscines de l'été.</p>
+    <span class="price-pill">59 €</span>
+  </div>
+</div>
+
+<div class="scene reveal">
+  <img src="assets/hero/h08.png" alt="La Villa moderniste">
+  <div class="sc-in">
+    <div class="sc-tag">Pièce nᵒ 05</div>
+    <h3>La <b>Villa</b> Solaire</h3>
+    <p>Béton blanc, piscine à débordement, coucher de soleil sur la grande bleue. La maison du grand bronzage.</p>
+    <span class="price-pill">Édition unique</span>
+  </div>
+</div>
+
+<div class="scene right reveal">
+  <img src="assets/hero/w05.png" alt="La Crique Secrète">
+  <div class="sc-in">
+    <div class="sc-tag">Pièce nᵒ 06</div>
+    <h3>La <b>Crique</b> Secrète</h3>
+    <p>Une eau impossible, un rocher rouge, une bouteille d'or. Les coordonnées GPS, on ne les donne qu'aux initiés.</p>
+    <span class="price-pill">Introuvable</span>
+  </div>
+</div>
 
 <!-- LOOKBOOK -->
 <section id="lookbook" style="background:var(--surface)">
@@ -391,6 +522,24 @@ const Cart = {
   }
 };
 Cart.render();
+
+/* ---------- délire: reveal + cursor + progress ---------- */
+const io = new IntersectionObserver((es)=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }),{threshold:.16});
+document.querySelectorAll('.reveal,.scene').forEach(el=>io.observe(el));
+
+const prog = document.getElementById('progress');
+addEventListener('scroll',()=>{ const h=document.documentElement; const p=h.scrollTop/(h.scrollHeight-h.clientHeight); prog.style.width=(p*100)+'%'; },{passive:true});
+
+if(matchMedia('(hover:hover)').matches){
+  const ring=document.getElementById('cur'), dot=document.getElementById('curDot');
+  let rx=0,ry=0,dx=0,dy=0;
+  addEventListener('mousemove',e=>{ dx=e.clientX;dy=e.clientY; dot.style.left=dx+'px';dot.style.top=dy+'px'; });
+  (function loop(){ rx+=(dx-rx)*.18; ry+=(dy-ry)*.18; ring.style.left=rx+'px';ring.style.top=ry+'px'; requestAnimationFrame(loop); })();
+  document.querySelectorAll('a,button,.card,.look img,.chip').forEach(el=>{
+    el.addEventListener('mouseenter',()=>ring.classList.add('hot'));
+    el.addEventListener('mouseleave',()=>ring.classList.remove('hot'));
+  });
+}
 </script>
 </body>
 </html>
