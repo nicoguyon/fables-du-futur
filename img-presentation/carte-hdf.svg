@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 640" font-family="Georgia, serif">
+  <defs>
+    <linearGradient id="land" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#efe5cd"/><stop offset="100%" stop-color="#e3d4b2"/>
+    </linearGradient>
+    <radialGradient id="pulse" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#9a5b2e" stop-opacity=".55"/><stop offset="100%" stop-color="#9a5b2e" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- mer -->
+  <rect width="700" height="640" fill="#dce6e3" opacity=".0"/>
+  <path d="M40,180 Q90,120 170,95 L210,80 Q240,70 260,60 L300,40" fill="none" stroke="#1f3a7a" stroke-width="3" opacity=".35"/>
+  <text x="46" y="120" font-size="15" font-style="italic" fill="#1f3a7a" opacity=".6">Manche / Mer du Nord</text>
+
+  <!-- silhouette stylisée Hauts-de-France -->
+  <path d="M300,40 L380,55 L430,95 L470,100 L520,140 L560,200 L600,250 L620,330 L590,400
+           L610,470 L560,530 L470,560 L380,545 L300,560 L230,520 L170,470 L130,400
+           L110,330 L90,260 L120,200 L170,95 L210,80 L260,60 Z"
+        fill="url(#land)" stroke="#9a5b2e" stroke-width="3.5" stroke-linejoin="round"/>
+
+  <!-- liaisons -->
+  <g stroke="#b8893a" stroke-width="1.6" stroke-dasharray="5 6" opacity=".7" fill="none">
+    <path d="M232,128 L352,193"/><path d="M352,193 L408,338"/><path d="M352,193 L300,300"/>
+    <path d="M232,128 L300,300"/><path d="M408,338 L470,420"/>
+  </g>
+
+  <!-- sites -->
+  <g>
+    <!-- Gravelines -->
+    <circle cx="232" cy="128" r="34" fill="url(#pulse)"/>
+    <circle cx="232" cy="128" r="9" fill="#1f3a7a"/>
+    <text x="232" y="98" font-size="17" font-weight="bold" text-anchor="middle" fill="#241d12">Gravelines ⚛</text>
+    <text x="232" y="166" font-size="13" text-anchor="middle" fill="#5c5240">centrale nucléaire — l'énergie</text>
+
+    <!-- Lille -->
+    <circle cx="352" cy="193" r="40" fill="url(#pulse)"/>
+    <circle cx="352" cy="193" r="11" fill="#9a5b2e"/>
+    <text x="372" y="186" font-size="19" font-weight="bold" fill="#241d12">Lille</text>
+    <text x="372" y="206" font-size="13" fill="#5c5240">EuraTechnologies — le sommet</text>
+
+    <!-- Cambrai -->
+    <circle cx="408" cy="338" r="46" fill="url(#pulse)"/>
+    <rect x="397" y="327" width="22" height="22" fill="#7a4521"/>
+    <text x="432" y="334" font-size="19" font-weight="bold" fill="#241d12">Cambrai</text>
+    <text x="432" y="354" font-size="13" fill="#5c5240">méga data center 1 GW</text>
+    <text x="432" y="371" font-size="13" fill="#5c5240">Brookfield / Data4</text>
+
+    <!-- Saint-Quentin -->
+    <circle cx="470" cy="420" r="7" fill="#9a5b2e"/>
+    <text x="486" y="425" font-size="15" fill="#241d12">Saint-Quentin</text>
+
+    <!-- Amiens -->
+    <circle cx="300" cy="300" r="7" fill="#9a5b2e"/>
+    <text x="218" y="305" font-size="15" fill="#241d12">Amiens</text>
+  </g>
+
+  <!-- légende -->
+  <g transform="translate(60,560)" font-size="14" fill="#5c5240">
+    <rect x="-14" y="-22" width="380" height="56" rx="9" fill="#faf5e9" stroke="#d8cbac"/>
+    <circle cx="6" cy="-4" r="6" fill="#9a5b2e"/><text x="20" y="1">site stratégique</text>
+    <rect x="150" y="-11" width="14" height="14" fill="#7a4521"/><text x="172" y="1">data center</text>
+    <circle cx="290" cy="-4" r="6" fill="#1f3a7a"/><text x="304" y="1">énergie</text>
+    <text x="6" y="24" font-style="italic" font-size="13">8 des 30 sites français retenus sont en Hauts-de-France</text>
+  </g>
+
+  <text x="350" y="625" font-size="12" text-anchor="middle" fill="#5c5240" font-style="italic">Carte stylisée — Région Hauts-de-France</text>
+</svg>

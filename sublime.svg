@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <!-- Ciel dégradé crépusculaire -->
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#0b1026"/>
+      <stop offset="35%" stop-color="#241b4e"/>
+      <stop offset="60%" stop-color="#6d2f86"/>
+      <stop offset="78%" stop-color="#c84f7a"/>
+      <stop offset="90%" stop-color="#f2935c"/>
+      <stop offset="100%" stop-color="#ffd9a0"/>
+    </linearGradient>
+
+    <radialGradient id="sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="#fff7e6"/>
+      <stop offset="40%" stop-color="#ffd27a"/>
+      <stop offset="75%" stop-color="#ff9a5a"/>
+      <stop offset="100%" stop-color="#ff7a59" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffe9c4" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ffe9c4" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#ffd9a0"/>
+      <stop offset="18%" stop-color="#e07a8a"/>
+      <stop offset="45%" stop-color="#7a3a8c"/>
+      <stop offset="100%" stop-color="#170f33"/>
+    </linearGradient>
+
+    <linearGradient id="ridge1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a2a5e"/>
+      <stop offset="100%" stop-color="#241646"/>
+    </linearGradient>
+    <linearGradient id="ridge2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#241a44"/>
+      <stop offset="100%" stop-color="#160f2e"/>
+    </linearGradient>
+
+    <filter id="soft"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="glow"><feGaussianBlur stdDeviation="3"/></filter>
+  </defs>
+
+  <!-- Ciel -->
+  <rect width="1600" height="560" fill="url(#sky)"/>
+
+  <!-- Étoiles -->
+  <g fill="#ffffff">
+    <circle cx="120" cy="70"  r="1.6" opacity="0.9"/>
+    <circle cx="300" cy="120" r="1.1" opacity="0.7"/>
+    <circle cx="480" cy="60"  r="1.8" opacity="0.95"/>
+    <circle cx="650" cy="140" r="1.0" opacity="0.6"/>
+    <circle cx="820" cy="50"  r="1.4" opacity="0.85"/>
+    <circle cx="1010" cy="110" r="1.2" opacity="0.7"/>
+    <circle cx="1180" cy="70"  r="1.7" opacity="0.9"/>
+    <circle cx="1360" cy="130" r="1.0" opacity="0.6"/>
+    <circle cx="1500" cy="60"  r="1.5" opacity="0.85"/>
+    <circle cx="220" cy="200" r="0.9" opacity="0.5"/>
+    <circle cx="1280" cy="210" r="0.9" opacity="0.5"/>
+    <circle cx="900" cy="180" r="1.1" opacity="0.6"/>
+  </g>
+
+  <!-- Anneau planétaire lointain -->
+  <g transform="translate(1230,150)" opacity="0.55">
+    <ellipse cx="0" cy="0" rx="150" ry="34" fill="none" stroke="#ffd9a0" stroke-width="3" opacity="0.5"/>
+    <circle r="62" fill="#2a2150"/>
+    <circle r="62" fill="url(#halo)" opacity="0.4"/>
+    <ellipse cx="0" cy="0" rx="150" ry="34" fill="none" stroke="#ff9a5a" stroke-width="1.5" opacity="0.7"/>
+  </g>
+
+  <!-- Soleil & halo -->
+  <circle cx="800" cy="470" r="320" fill="url(#halo)" filter="url(#soft)"/>
+  <circle cx="800" cy="470" r="150" fill="url(#sun)"/>
+  <circle cx="800" cy="470" r="92"  fill="#fff3da"/>
+
+  <!-- Montagnes lointaines -->
+  <path d="M0,470 L160,380 L300,440 L470,350 L640,430 L800,360 L980,440 L1160,370 L1340,440 L1500,380 L1600,430 L1600,560 L0,560 Z"
+        fill="url(#ridge1)" opacity="0.85"/>
+  <path d="M0,520 L200,430 L420,500 L600,420 L800,500 L1000,430 L1220,510 L1420,440 L1600,500 L1600,560 L0,560 Z"
+        fill="url(#ridge2)"/>
+
+  <!-- Cité futuriste en silhouette -->
+  <g fill="#120c28">
+    <rect x="690" y="380" width="14" height="130"/>
+    <rect x="712" y="350" width="20" height="160"/>
+    <rect x="740" y="400" width="12" height="110"/>
+    <rect x="860" y="360" width="18" height="150"/>
+    <rect x="884" y="410" width="10" height="100"/>
+    <rect x="900" y="385" width="14" height="125"/>
+    <circle cx="722" cy="346" r="6" fill="#ffd27a" opacity="0.9"/>
+    <circle cx="869" cy="356" r="5" fill="#ff9a5a" opacity="0.9"/>
+  </g>
+  <!-- Tour-aiguille centrale -->
+  <path d="M796,300 L800,250 L804,300 L806,510 L794,510 Z" fill="#0e0922"/>
+  <circle cx="800" cy="250" r="4" fill="#fff3da" filter="url(#glow)"/>
+
+  <!-- Eau -->
+  <rect y="560" width="1600" height="340" fill="url(#water)"/>
+
+  <!-- Reflet du soleil -->
+  <g fill="#ffe9c4" opacity="0.8">
+    <rect x="740" y="566" width="120" height="6" rx="3"/>
+    <rect x="730" y="582" width="140" height="5" rx="3" opacity="0.7"/>
+    <rect x="745" y="600" width="110" height="5" rx="3" opacity="0.6"/>
+    <rect x="720" y="622" width="160" height="6" rx="3" opacity="0.55"/>
+    <rect x="735" y="648" width="130" height="5" rx="3" opacity="0.45"/>
+    <rect x="700" y="678" width="200" height="7" rx="3" opacity="0.4"/>
+    <rect x="725" y="712" width="150" height="5" rx="3" opacity="0.3"/>
+    <rect x="690" y="750" width="220" height="7" rx="3" opacity="0.25"/>
+    <rect x="710" y="795" width="180" height="6" rx="3" opacity="0.2"/>
+  </g>
+
+  <!-- Vol d'oiseaux / drones -->
+  <g stroke="#0c0820" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.8">
+    <path d="M380,250 q12,-12 24,0 q12,-12 24,0"/>
+    <path d="M450,290 q9,-9 18,0 q9,-9 18,0"/>
+    <path d="M520,240 q7,-7 14,0 q7,-7 14,0"/>
+  </g>
+
+  <!-- Brume basse -->
+  <ellipse cx="800" cy="555" rx="700" ry="30" fill="#ffd9a0" opacity="0.18" filter="url(#soft)"/>
+</svg>
