@@ -8,7 +8,7 @@
 <meta property="og:title" content="MONOÏ de Tahiti — Yves Rocher">
 <meta property="og:description" content="L'or du paradis corse. La collection Monoï, version solaire & audacieuse.">
 <meta property="og:image" content="assets/social/s01.png">
-<link rel="icon" href="assets/logos/yves-rocher-logo.png">
+<link rel="icon" href="assets/logos/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -214,6 +214,22 @@ footer a:hover{opacity:1;color:#fff}
 .faq .a{padding:0 4px 22px;font-size:clamp(15px,1.7vw,18px);color:var(--text-soft);line-height:1.65;font-weight:300;max-width:70ch}
 .faq .a a{color:var(--yr-green);text-decoration:underline}
 
+
+/* ---- identité de marque MONOÏ (lockup endossé) ---- */
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand .emblem{width:36px;height:36px;flex:none}
+.brand .emblem svg{width:100%;height:100%;display:block}
+.brand .bw{display:flex;flex-direction:column;line-height:1}
+.brand .bw b{font-family:var(--font-display);font-weight:700;font-size:21px;letter-spacing:.01em;color:var(--monoi-ink)}
+.brand .bw small{font-family:var(--font-mono);font-size:8px;letter-spacing:.26em;text-transform:uppercase;color:var(--yr-green);margin-top:3px}
+.brand .endorse{display:flex;align-items:center;gap:7px;margin-left:6px;padding-left:11px;border-left:1px solid rgba(81,77,79,.22)}
+.brand .endorse i{font-family:var(--font-mono);font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-soft);font-style:normal}
+.brand .endorse .yr{height:17px;width:auto}
+@media(max-width:600px){.brand .endorse{display:none}.brand .bw b{font-size:19px}}
+.fbrand{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.fbrand .emblem{width:34px;height:34px;flex:none}.fbrand .emblem svg{width:100%;height:100%}
+.fbrand b{font-family:var(--font-display);font-weight:700;font-size:20px;color:#fff}
+.fbrand small{display:block;font-family:var(--font-mono);font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--monoi-gold);margin-top:3px}
 </style>
 <link rel="canonical" href="https://fables-du-futur.vercel.app/monoi/">
 <meta name="keywords" content="monoï, monoi de tahiti, yves rocher, huile de monoï, huile sèche, huile nacrée, bronzage, soin solaire, tiaré, corse, ajaccio, sanguinaires, cosmétique végétale">
@@ -717,7 +733,7 @@ footer a:hover{opacity:1;color:#fff}
 
 <header>
   <div class="wrap nav">
-    <a href="#top"><img class="logo" src="assets/logos/yves-rocher-logo.png" alt="Yves Rocher"></a>
+    <a class="brand" href="#top"><span class="emblem"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="#8A9738" stroke-width="2"><circle cx="24" cy="24" r="22"/></g><g fill="#8A9738"><ellipse cx="24" cy="13" rx="3.6" ry="8.4"/><ellipse cx="24" cy="13" rx="3.6" ry="8.4" transform="rotate(72 24 24)"/><ellipse cx="24" cy="13" rx="3.6" ry="8.4" transform="rotate(144 24 24)"/><ellipse cx="24" cy="13" rx="3.6" ry="8.4" transform="rotate(216 24 24)"/><ellipse cx="24" cy="13" rx="3.6" ry="8.4" transform="rotate(288 24 24)"/></g><circle cx="24" cy="24" r="3.4" fill="#E7B96B"/></svg></span><span class="bw"><b>Monoï</b><small>de Tahiti</small></span><span class="endorse"><i>par</i><img class="yr" src="assets/logos/yves-rocher-logo.png" alt="Yves Rocher"></span></a>
     <nav class="links">
       <a href="#collection">La Collection</a>
       <a href="#rituel">Le Rituel</a>
@@ -954,8 +970,8 @@ footer a:hover{opacity:1;color:#fff}
       <div>
         <h4>Maison</h4>
         <a href="#rituel">Le Rituel Monoï</a>
-        <a href="#">Nos engagements</a>
-        <a href="#">Boutiques</a>
+        <a href="journal/cosmetique-vegetale.html">Nos engagements</a>
+        <a href="identite.html">Identité de marque</a>
         <a href="#">Nous contacter</a>
       </div>
       <div class="newsletter">

@@ -1,0 +1,158 @@
+<!DOCTYPE html><html lang="fr"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Identité de marque — MONOÏ de Tahiti · Yves Rocher</title>
+<meta name="description" content="La charte graphique de la collection Monoï de Tahiti par Yves Rocher : logo endossé, emblème Tiaré, couleurs, typographie et règles d'usage.">
+<link rel="canonical" href="https://fables-du-futur.vercel.app/monoi/identite.html">
+<link rel="icon" href="assets/logos/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font-body);color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+.announce{background:var(--yr-green);color:#fff;text-align:center;padding:9px;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase}
+header{position:sticky;top:0;z-index:60;background:rgba(251,247,238,.86);backdrop-filter:blur(14px);border-bottom:1px solid rgba(81,77,79,.12)}
+.nav{display:flex;align-items:center;height:66px}
+.brand{display:flex;align-items:center;gap:10px}.brand .emblem{width:34px;height:34px}.brand .emblem svg{width:100%;height:100%}
+.brand .bw{display:flex;flex-direction:column;line-height:1}.brand .bw b{font-family:var(--font-display);font-weight:700;font-size:20px;color:var(--monoi-ink)}.brand .bw small{font-family:var(--font-mono);font-size:8px;letter-spacing:.26em;text-transform:uppercase;color:var(--yr-green);margin-top:3px}
+.nav .back{margin-left:auto;font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--yr-grey)}.nav .back:hover{color:var(--yr-green)}
+.hero{padding:70px 0 30px;text-align:center}
+.hero .k{font-family:var(--font-mono);font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--yr-green)}
+.hero h1{font-family:var(--font-display);font-weight:300;font-size:clamp(40px,7vw,82px);line-height:1;margin:14px 0;letter-spacing:-.02em}
+.hero h1 b{font-style:italic;font-weight:600}
+.hero p{font-size:19px;color:var(--text-soft);font-weight:300;max-width:60ch;margin:0 auto}
+section{padding:46px 0;border-top:1px solid rgba(81,77,79,.12)}
+.lbl{font-family:var(--font-mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--yr-green);margin-bottom:6px}
+h2{font-family:var(--font-display);font-weight:600;font-size:clamp(26px,4vw,40px);margin-bottom:8px}
+.sub{color:var(--text-soft);font-weight:300;max-width:62ch;margin-bottom:26px;font-size:17px;line-height:1.6}
+.card{background:#fff;border:1px solid rgba(81,77,79,.12);border-radius:var(--radius-lg);padding:40px;box-shadow:0 8px 30px rgba(42,33,24,.06)}
+/* lockup big */
+.bigbrand{display:flex;align-items:center;gap:18px;justify-content:center;flex-wrap:wrap}
+.bigbrand .emblem{width:88px;height:88px}.bigbrand .emblem svg{width:100%;height:100%}
+.bigbrand .bw b{font-family:var(--font-display);font-weight:700;font-size:54px;color:var(--monoi-ink);line-height:.9;display:block}
+.bigbrand .bw small{font-family:var(--font-mono);font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--yr-green)}
+.bigbrand .endorse{display:flex;flex-direction:column;align-items:center;gap:6px;margin-left:14px;padding-left:24px;border-left:1px solid rgba(81,77,79,.2)}
+.bigbrand .endorse i{font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-soft);font-style:normal}
+.bigbrand .endorse img{height:26px}
+.variants{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
+@media(max-width:760px){.variants{grid-template-columns:1fr}}
+.vbox{border-radius:16px;padding:34px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+.vbox svg{width:76px;height:76px}.vbox .vn{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.v-green{background:var(--monoi-tiare)}.v-green .vn{color:var(--yr-green)}
+.v-dark{background:var(--monoi-ink)}.v-dark .vn{color:var(--monoi-gold)}
+.v-gold{background:var(--surface)}.v-gold .vn{color:var(--monoi-tan)}
+/* colors */
+.swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:760px){.swatches{grid-template-columns:repeat(2,1fr)}}
+.sw{border-radius:14px;overflow:hidden;border:1px solid rgba(81,77,79,.1)}
+.sw .chip{height:90px}.sw .meta{padding:12px 14px;background:#fff}.sw .nm{font-weight:600;font-size:14px}.sw .hex{font-family:var(--font-mono);font-size:12px;color:var(--text-soft);margin-top:3px}
+.swgroup{font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-soft);margin:24px 0 12px}
+/* type */
+.type{display:grid;gap:18px}
+.tspec{background:#fff;border:1px solid rgba(81,77,79,.12);border-radius:16px;padding:24px 26px}
+.tspec .tn{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--yr-green);margin-bottom:10px}
+.t-display{font-family:var(--font-display);font-weight:600;font-size:40px}
+.t-body{font-family:var(--font-body);font-weight:400;font-size:22px}
+.t-mono{font-family:var(--font-mono);font-size:18px;letter-spacing:.06em}
+/* do/dont */
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:680px){.dd{grid-template-columns:1fr}}
+.dd .b{border-radius:16px;padding:22px 24px;background:#fff;border:1px solid rgba(81,77,79,.12)}
+.dd h4{font-family:var(--font-display);font-size:18px;margin-bottom:10px}.dd ul{list-style:none}.dd li{padding-left:24px;position:relative;margin:8px 0;font-weight:300;font-size:15px}
+.dd .ok li::before{content:"✓";position:absolute;left:0;color:var(--yr-green);font-weight:700}
+.dd .no li::before{content:"✕";position:absolute;left:0;color:#b04a32;font-weight:700}
+footer{background:var(--monoi-ink);color:var(--monoi-sand);padding:40px 0;margin-top:40px;text-align:center;font-size:13px;font-weight:300}
+footer a{color:var(--monoi-gold)}
+.tagline{font-family:var(--font-display);font-style:italic;font-size:clamp(24px,4vw,40px);text-align:center;color:var(--yr-green-deep)}
+</style></head><body>
+<div class="announce">Charte graphique · usage interne</div>
+<header><div class="wrap nav">
+<a class="brand" href="index.html"><span class="emblem"><svg viewBox="0 0 48 48"><g fill="none" stroke="#8A9738" stroke-width="2"><circle cx="24" cy="24" r="22"/></g><g fill="#8A9738"><ellipse cx="24" cy="13" rx="3.6" ry="8.4"/><ellipse cx="24" cy="13" rx="3.6" ry="8.4" transform="rotate(72 24 24)"/><ellipse cx="24" cy="13" rx="3.6" ry="8.4" transform="rotate(144 24 24)"/><ellipse cx="24" cy="13" rx="3.6" ry="8.4" transform="rotate(216 24 24)"/><ellipse cx="24" cy="13" rx="3.6" ry="8.4" transform="rotate(288 24 24)"/></g><circle cx="24" cy="24" r="3.4" fill="#E7B96B"/></svg></span><span class="bw"><b>Monoï</b><small>de Tahiti</small></span></a>
+<a class="back" href="index.html">← Retour à la boutique</a>
+</div></header>
+
+<div class="wrap">
+<div class="hero">
+  <div class="k">Identité de marque</div>
+  <h1>MONOÏ <b>de Tahiti</b></h1>
+  <p>La charte graphique d'une collection signée Yves Rocher. Une sous-marque <strong>endossée</strong> : MONOÏ rayonne, Yves Rocher cautionne.</p>
+</div>
+
+<section>
+  <div class="lbl">01 · Le logo</div>
+  <h2>Un lockup endossé</h2>
+  <p class="sub">Le logo associe trois éléments : l'<strong>emblème Tiaré</strong> (en écho au médaillon-feuille d'Yves Rocher), le <strong>wordmark « Monoï de Tahiti »</strong> et la <strong>signature d'endossement « par Yves Rocher »</strong>. La marque mère n'est jamais absente : elle légitime la collection.</p>
+  <div class="card">
+    <div class="bigbrand">
+      <span class="emblem"><svg viewBox="0 0 48 48"><g fill="none" stroke="#8A9738" stroke-width="2"><circle cx="24" cy="24" r="22"/></g><g fill="#8A9738"><ellipse cx="24" cy="13" rx="3.6" ry="8.4"/><ellipse cx="24" cy="13" rx="3.6" ry="8.4" transform="rotate(72 24 24)"/><ellipse cx="24" cy="13" rx="3.6" ry="8.4" transform="rotate(144 24 24)"/><ellipse cx="24" cy="13" rx="3.6" ry="8.4" transform="rotate(216 24 24)"/><ellipse cx="24" cy="13" rx="3.6" ry="8.4" transform="rotate(288 24 24)"/></g><circle cx="24" cy="24" r="3.4" fill="#E7B96B"/></svg></span>
+      <span class="bw"><b>Monoï</b><small>de Tahiti</small></span>
+      <span class="endorse"><i>par</i><img src="assets/logos/yves-rocher-logo.png" alt="Yves Rocher"></span>
+    </div>
+  </div>
+  <div class="variants">
+    <div class="vbox v-green"><svg viewBox="0 0 48 48"><g fill="none" stroke="#8A9738" stroke-width="2"><circle cx="24" cy="24" r="22"/></g><g fill="#8A9738"><ellipse cx="24" cy="13" rx="3.6" ry="8.4"/><ellipse cx="24" cy="13" rx="3.6" ry="8.4" transform="rotate(72 24 24)"/><ellipse cx="24" cy="13" rx="3.6" ry="8.4" transform="rotate(144 24 24)"/><ellipse cx="24" cy="13" rx="3.6" ry="8.4" transform="rotate(216 24 24)"/><ellipse cx="24" cy="13" rx="3.6" ry="8.4" transform="rotate(288 24 24)"/></g><circle cx="24" cy="24" r="3.4" fill="#E7B96B"/></svg><span class="vn">Emblème · principal</span></div>
+    <div class="vbox v-dark"><svg viewBox="0 0 48 48"><g fill="none" stroke="#FBF7EE" stroke-width="2"><circle cx="24" cy="24" r="22"/></g><g fill="#FBF7EE"><ellipse cx="24" cy="13" rx="3.6" ry="8.4"/><ellipse cx="24" cy="13" rx="3.6" ry="8.4" transform="rotate(72 24 24)"/><ellipse cx="24" cy="13" rx="3.6" ry="8.4" transform="rotate(144 24 24)"/><ellipse cx="24" cy="13" rx="3.6" ry="8.4" transform="rotate(216 24 24)"/><ellipse cx="24" cy="13" rx="3.6" ry="8.4" transform="rotate(288 24 24)"/></g><circle cx="24" cy="24" r="3.4" fill="#E7B96B"/></svg><span class="vn">Renversé · fond sombre</span></div>
+    <div class="vbox v-gold"><svg viewBox="0 0 48 48"><g fill="none" stroke="#E7B96B" stroke-width="2"><circle cx="24" cy="24" r="22"/></g><g fill="#E7B96B"><ellipse cx="24" cy="13" rx="3.6" ry="8.4"/><ellipse cx="24" cy="13" rx="3.6" ry="8.4" transform="rotate(72 24 24)"/><ellipse cx="24" cy="13" rx="3.6" ry="8.4" transform="rotate(144 24 24)"/><ellipse cx="24" cy="13" rx="3.6" ry="8.4" transform="rotate(216 24 24)"/><ellipse cx="24" cy="13" rx="3.6" ry="8.4" transform="rotate(288 24 24)"/></g><circle cx="24" cy="24" r="3.4" fill="#FBF7EE"/></svg><span class="vn">Or · édition premium</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="lbl">02 · Couleurs</div>
+  <h2>La palette</h2>
+  <p class="sub">Le socle reprend les <strong>couleurs officielles d'Yves Rocher</strong> (extraites du logo), prolongées par une <strong>extension solaire Monoï</strong> — l'ambre, l'or, le sable et le turquoise des Sanguinaires.</p>
+  <div class="swgroup">Socle Yves Rocher</div>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:#8A9738"></div><div class="meta"><div class="nm">Vert feuille</div><div class="hex">#8A9738</div></div></div>
+    <div class="sw"><div class="chip" style="background:#04593C"></div><div class="meta"><div class="nm">Vert profond</div><div class="hex">#04593C</div></div></div>
+    <div class="sw"><div class="chip" style="background:#62A24C"></div><div class="meta"><div class="nm">Vert pousse</div><div class="hex">#62A24C</div></div></div>
+    <div class="sw"><div class="chip" style="background:#514D4F"></div><div class="meta"><div class="nm">Gris signature</div><div class="hex">#514D4F</div></div></div>
+  </div>
+  <div class="swgroup">Extension solaire Monoï</div>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:#E7B96B"></div><div class="meta"><div class="nm">Or solaire</div><div class="hex">#E7B96B</div></div></div>
+    <div class="sw"><div class="chip" style="background:#C98A4B"></div><div class="meta"><div class="nm">Ambre / hâle</div><div class="hex">#C98A4B</div></div></div>
+    <div class="sw"><div class="chip" style="background:#1C6E7B"></div><div class="meta"><div class="nm">Turquoise Sanguinaires</div><div class="hex">#1C6E7B</div></div></div>
+    <div class="sw"><div class="chip" style="background:#EFE2C9"></div><div class="meta"><div class="nm">Sable / coprah</div><div class="hex">#EFE2C9</div></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="lbl">03 · Typographie</div>
+  <h2>Trois voix</h2>
+  <p class="sub">Une serif élégante pour l'émotion, une sans humaniste pour la clarté, un mono pour les détails techniques.</p>
+  <div class="type">
+    <div class="tspec"><div class="tn">Fraunces · Titres &amp; wordmark</div><div class="t-display">Le soleil sur la peau</div></div>
+    <div class="tspec"><div class="tn">Inter · Texte courant</div><div class="t-body">Macération de fleurs de Tiaré dans l'huile de coprah, exclusivement en Polynésie française.</div></div>
+    <div class="tspec"><div class="tn">IBM Plex Mono · Labels &amp; data</div><div class="t-mono">ÉTÉ SANGUINAIRES · 97 % MONOÏ · AJACCIO</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="lbl">04 · Règles d'usage</div>
+  <h2>Ce qui « colle »… et ce qui casse</h2>
+  <div class="dd">
+    <div class="b ok"><h4>À faire</h4><ul>
+      <li>Toujours afficher l'endossement « par Yves Rocher ».</li>
+      <li>Garder l'emblème dans sa zone de protection.</li>
+      <li>Vert feuille pour le primaire, or pour l'accent.</li>
+      <li>Fraunces pour les titres, Inter pour le texte.</li>
+    </ul></div>
+    <div class="b no"><h4>À éviter</h4><ul>
+      <li>Détourer ou déformer l'emblème Tiaré.</li>
+      <li>Masquer ou recolorer le logo Yves Rocher.</li>
+      <li>Mélanger d'autres verts que ceux de la charte.</li>
+      <li>Empiler trop de dorés (l'or reste un accent).</li>
+    </ul></div>
+  </div>
+</section>
+
+<section style="border-bottom:none">
+  <div class="lbl">05 · Territoire de voix</div>
+  <p class="tagline">« L'or du paradis corse. »</p>
+  <p class="sub" style="text-align:center;margin:18px auto 0">Solaire, sensuel, botanique. Le glamour des années 80-90 — Tom Ford, peaux dorées, lunettes miroir — au service d'un rituel naturel signé Yves Rocher.</p>
+</section>
+</div>
+
+<footer><div class="wrap">Charte MONOÏ de Tahiti · <a href="index.html">retour à la boutique</a> · concept Yves Rocher (démonstration)</div></footer>
+</body></html>
