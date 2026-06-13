@@ -22,6 +22,15 @@ a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
 .serif{font-family:var(--font-display)}
 .mono{font-family:var(--font-mono);letter-spacing:.12em;text-transform:uppercase;font-size:12px}
+::selection{background:var(--monoi-gold);color:var(--monoi-ink)}
+:focus-visible{outline:2px solid var(--yr-green);outline-offset:3px;border-radius:3px}
+h1,h2,h3,.serif{font-optical-sizing:auto;font-feature-settings:"liga" 1,"calt" 1}
+.hero h1,.manifeste .big,.scene h3,.cinema h2{text-wrap:balance}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .hero img.bg.on{animation:none}
+  .scene img{transform:none!important}
+}
 
 /* ---------- announce bar ---------- */
 .announce{background:var(--yr-green);color:#fff;text-align:center;padding:9px;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase}
@@ -40,8 +49,14 @@ header{position:sticky;top:0;z-index:60;background:rgba(251,247,238,.82);backdro
 
 /* ---------- hero ---------- */
 .hero{position:relative;height:92vh;min-height:560px;display:flex;align-items:flex-end;overflow:hidden}
-.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(42,33,24,.28),rgba(42,33,24,0) 30%,rgba(42,33,24,.55))}
+.hero-bgs{position:absolute;inset:0}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.5s ease;transform:scale(1.06)}
+.hero img.bg.on{opacity:1;animation:kenburns 8s ease-out forwards}
+@keyframes kenburns{from{transform:scale(1.06)}to{transform:scale(1.14)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(42,33,24,.28),rgba(42,33,24,0) 30%,rgba(42,33,24,.55));z-index:1;pointer-events:none}
+.hero-dots{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:3;display:flex;gap:9px}
+.hero-dots button{width:8px;height:8px;border-radius:50%;border:none;background:rgba(255,255,255,.45);cursor:pointer;padding:0;transition:.3s}
+.hero-dots button.on{background:#fff;width:26px;border-radius:5px}
 .hero .inner{position:relative;z-index:2;color:#fff;padding-bottom:7vh}
 .hero .kicker{font-family:var(--font-mono);font-size:12.5px;letter-spacing:.32em;text-transform:uppercase;opacity:.92}
 .hero h1{font-family:var(--font-display);font-weight:300;font-size:clamp(48px,9vw,128px);line-height:.92;letter-spacing:-.02em;margin:14px 0 6px;text-shadow:0 4px 40px rgba(0,0,0,.3)}
@@ -60,10 +75,11 @@ header{position:sticky;top:0;z-index:60;background:rgba(251,247,238,.82);backdro
 
 /* ---------- sections ---------- */
 section{padding:clamp(60px,9vw,120px) 0}
-.eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--yr-green);margin-bottom:16px}
-.sec-title{font-family:var(--font-display);font-weight:300;font-size:clamp(32px,5vw,64px);line-height:1.02;letter-spacing:-.015em}
+.eyebrow{display:inline-flex;align-items:center;gap:11px;font-family:var(--font-display);font-style:italic;font-weight:500;font-size:clamp(15px,1.5vw,18px);letter-spacing:0;text-transform:none;color:var(--yr-green-deep);margin-bottom:15px}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--monoi-gold);flex:none}
+.sec-title{font-family:var(--font-display);font-weight:300;font-size:clamp(32px,5vw,64px);line-height:1.02;letter-spacing:-.02em;text-wrap:balance}
 .sec-title b{font-weight:600;font-style:italic}
-.sec-lead{font-size:clamp(16px,1.9vw,20px);color:var(--text-soft);max-width:60ch;margin-top:18px;font-weight:300;line-height:1.55}
+.sec-lead{font-size:clamp(16px,1.9vw,20px);color:var(--text-soft);max-width:62ch;margin-top:18px;font-weight:300;line-height:1.6;text-wrap:pretty}
 
 /* story split */
 .split{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,72px);align-items:center}
@@ -107,6 +123,18 @@ section{padding:clamp(60px,9vw,120px) 0}
 .player video{width:100%;height:100%;object-fit:cover}
 .player .placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column;gap:12px;background:linear-gradient(160deg,var(--monoi-tan),var(--monoi-ink));color:var(--monoi-sand);font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;padding:30px}
 
+/* cinema — plan vidéo plein cadre */
+.cinema{position:relative;height:92vh;min-height:560px;overflow:hidden;display:flex;align-items:flex-end;background:#000}
+.cinema video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cinema::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(42,33,24,.34),rgba(42,33,24,0) 34%,rgba(42,33,24,.62));z-index:1;pointer-events:none}
+.cinema .c-in{position:relative;z-index:2;color:#fff;padding:0 6vw 7.5vh;max-width:var(--maxw);margin:0 auto;width:100%}
+.cinema .c-tag{font-family:var(--font-mono);font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--monoi-gold)}
+.cinema h2{font-family:var(--font-display);font-weight:300;font-size:clamp(34px,6vw,92px);line-height:.98;margin:12px 0;text-shadow:0 4px 30px rgba(0,0,0,.45)}
+.cinema h2 b{font-style:italic;font-weight:600}
+.cinema p{max-width:46ch;font-weight:300;opacity:.95;font-size:clamp(15px,1.8vw,19px)}
+.cinema .sound{position:absolute;top:22px;right:22px;z-index:3;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.1);backdrop-filter:blur(6px);color:#fff;cursor:pointer;font-size:16px;transition:.2s}
+.cinema .sound:hover{background:rgba(255,255,255,.24)}
+
 /* wide banner */
 .banner{position:relative;height:60vh;min-height:380px;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
 .banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -149,9 +177,18 @@ footer a:hover{opacity:1;color:#fff}
 .empty{text-align:center;color:var(--text-soft);padding:50px 20px;font-style:italic}
 
 /* lightbox */
-.lb{position:fixed;inset:0;background:rgba(20,15,10,.92);z-index:120;display:none;align-items:center;justify-content:center;padding:30px;cursor:zoom-out}
+.lb{position:fixed;inset:0;background:rgba(20,15,10,.94);z-index:120;display:none;align-items:center;justify-content:center;padding:24px}
 .lb.open{display:flex}
-.lb img{max-width:92vw;max-height:90vh;border-radius:10px}
+.lb-stage{position:relative;display:flex;flex-direction:column;align-items:center;max-width:92vw;max-height:90vh}
+.lb-stage img{max-width:92vw;max-height:86vh;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.6);animation:lbin .4s cubic-bezier(.2,.7,.2,1)}
+@keyframes lbin{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:none}}
+.lb-count{margin-top:14px;font-family:var(--font-mono);font-size:12px;letter-spacing:.18em;color:rgba(255,255,255,.72)}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:54px;height:54px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);backdrop-filter:blur(6px);color:#fff;font-size:30px;line-height:1;cursor:pointer;z-index:2;transition:.2s;display:flex;align-items:center;justify-content:center}
+.lb-nav:hover{background:rgba(255,255,255,.2)}
+.lb-nav.prev{left:22px}.lb-nav.next{right:22px}
+.lb-close{position:absolute;top:20px;right:24px;width:46px;height:46px;border-radius:50%;border:none;background:rgba(255,255,255,.1);color:#fff;font-size:26px;cursor:pointer;z-index:2;transition:.2s}
+.lb-close:hover{background:rgba(255,255,255,.24)}
+@media(max-width:600px){.lb-nav{width:44px;height:44px;font-size:24px}.lb-nav.prev{left:8px}.lb-nav.next{right:8px}}
 
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(40px);background:var(--yr-green);color:#fff;padding:14px 24px;border-radius:40px;font-weight:600;font-size:14px;z-index:130;opacity:0;transition:.3s;box-shadow:0 10px 30px rgba(0,0,0,.25)}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
@@ -187,13 +224,12 @@ footer a:hover{opacity:1;color:#fff}
 .scene p{font-size:clamp(15px,1.8vw,19px);font-weight:300;opacity:.95;max-width:42ch}
 .scene.right p{margin-left:auto}
 .scene .price-pill{display:inline-block;margin-top:18px;font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,.5);border-radius:30px;padding:8px 18px}
-/* number ticker band */
-.facts{background:var(--surface);display:grid;grid-template-columns:repeat(4,1fr);gap:0;text-align:center}
-.facts .f{padding:46px 18px;border-right:1px solid rgba(81,77,79,.12)}
-.facts .f:last-child{border-right:none}
-.facts .n{font-family:var(--font-display);font-weight:600;font-size:clamp(30px,4vw,52px);color:var(--yr-green)}
-.facts .l{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-soft);margin-top:8px}
-@media(max-width:760px){.facts{grid-template-columns:repeat(2,1fr)}.facts .f:nth-child(2){border-right:none}}
+/* creed — manifeste chiffré éditorial */
+.creed{background:var(--surface);padding:clamp(50px,8vw,96px) 0}
+.creed .wrap{max-width:980px}
+.creed p{font-family:var(--font-display);font-weight:300;font-size:clamp(23px,3.4vw,42px);line-height:1.28;letter-spacing:-.012em;color:var(--monoi-ink);text-wrap:balance}
+.creed b{font-weight:600;font-style:normal;color:var(--yr-green-deep)}
+.creed em{font-style:italic;font-weight:500;color:var(--monoi-tan)}
 /* progress bar */
 .progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--monoi-gold),var(--yr-green));z-index:70;width:0}
 /* editorial */
@@ -282,7 +318,7 @@ footer a:hover{opacity:1;color:#fff}
   {
    "@type": "ItemList",
    "name": "Collection Monoï",
-   "numberOfItems": 14,
+   "numberOfItems": 15,
    "itemListElement": [
     {
      "@type": "ListItem",
@@ -602,8 +638,8 @@ footer a:hover{opacity:1;color:#fff}
      "item": {
       "@type": "Product",
       "@id": "https://fables-du-futur.vercel.app/monoi/#p13-matelas",
-      "name": "Matelas Gonflable Or",
-      "description": "Lounger gonflable métallisé or. Le centre de gravité de toutes les piscines. — Le trône solaire",
+      "name": "La Bouée Bidon",
+      "description": "Une bouée gonflable géante en forme de flacon d'Huile de Monoï. On flotte sur l'or, littéralement. — Le flacon de 2,50 m",
       "image": "https://fables-du-futur.vercel.app/monoi/assets/products/p13-matelas.png",
       "brand": {
        "@type": "Brand",
@@ -612,7 +648,7 @@ footer a:hover{opacity:1;color:#fff}
       "category": "Été Sanguinaires",
       "offers": {
        "@type": "Offer",
-       "price": "59",
+       "price": "45",
        "priceCurrency": "EUR",
        "availability": "https://schema.org/InStock",
        "url": "https://fables-du-futur.vercel.app/monoi/#collection",
@@ -639,6 +675,32 @@ footer a:hover{opacity:1;color:#fff}
       "offers": {
        "@type": "Offer",
        "price": "149",
+       "priceCurrency": "EUR",
+       "availability": "https://schema.org/InStock",
+       "url": "https://fables-du-futur.vercel.app/monoi/#collection",
+       "seller": {
+        "@id": "https://fables-du-futur.vercel.app/monoi/#brand"
+       }
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 15,
+     "item": {
+      "@type": "Product",
+      "@id": "https://fables-du-futur.vercel.app/monoi/#p15-maxi-bidon",
+      "name": "Le Maxi-Bidon 5 L",
+      "description": "Cinq litres d'Huile Tradition dans un bidon géant à poignée. Parce qu'un flacon, sur une plage, ça part toujours trop vite. — Le monoï format famille",
+      "image": "https://fables-du-futur.vercel.app/monoi/assets/products/p15-maxi-bidon.png",
+      "brand": {
+       "@type": "Brand",
+       "name": "Yves Rocher"
+      },
+      "category": "Été Sanguinaires",
+      "offers": {
+       "@type": "Offer",
+       "price": "39",
        "priceCurrency": "EUR",
        "availability": "https://schema.org/InStock",
        "url": "https://fables-du-futur.vercel.app/monoi/#collection",
@@ -751,8 +813,12 @@ footer a:hover{opacity:1;color:#fff}
 
 <a id="top"></a>
 <!-- HERO -->
-<div class="hero">
-  <img class="bg" src="assets/hero/h02.png" alt="Campagne Monoï — route des Sanguinaires, Ajaccio">
+<div class="hero" id="hero">
+  <div class="hero-bgs" id="heroBgs">
+    <img class="bg on" src="assets/hero/hero1.png" alt="Campagne Monoï — cabriolet vintage, route des Sanguinaires">
+    <img class="bg" src="assets/hero/hero2.png" alt="Huile de Monoï versée sur peau dorée — crique corse" loading="lazy">
+    <img class="bg" src="assets/hero/hero3.png" alt="Beach club Monoï — golden hour" loading="lazy">
+  </div>
   <div class="wrap inner">
     <div class="kicker">Yves Rocher · Édition Corse</div>
     <h1>Monoï<br><b>de Tahiti</b></h1>
@@ -762,6 +828,7 @@ footer a:hover{opacity:1;color:#fff}
       <a href="#film" class="btn ghost">Voir le film</a>
     </div>
   </div>
+  <div class="hero-dots" id="heroDots" aria-hidden="true"></div>
 </div>
 
 <div class="marquee" aria-hidden="true">
@@ -776,12 +843,11 @@ footer a:hover{opacity:1;color:#fff}
   </div>
 </section>
 
-<!-- FACTS -->
-<div class="facts">
-  <div class="f reveal"><div class="n">97 %</div><div class="l">de pur Monoï<br>de Tahiti</div></div>
-  <div class="f reveal"><div class="n">1<sup>er</sup></div><div class="l">rituel solaire<br>botanique</div></div>
-  <div class="f reveal"><div class="n">∞</div><div class="l">heures dorées<br>sur les Sanguinaires</div></div>
-  <div class="f reveal"><div class="n">0</div><div class="l">raison de rester<br>à l'ombre</div></div>
+<!-- CREED -->
+<div class="creed reveal">
+  <div class="wrap">
+    <p><b>97 %</b> de pur Monoï de Tahiti. <em>Zéro</em> raison de rester à l'ombre, et des heures dorées <em>à l'infini</em> sur la route des Sanguinaires.</p>
+  </div>
 </div>
 
 <!-- LE RITUEL -->
@@ -797,6 +863,17 @@ footer a:hover{opacity:1;color:#fff}
     <img src="assets/hero/h09.png" alt="Huile de monoï versée sur peau bronzée">
   </div>
 </section>
+
+<!-- CINEMA — le geste figé dans l'or -->
+<div class="cinema reveal">
+  <video id="frozenVid" src="assets/video/frozen-pour.mp4" poster="assets/video/frozen-pour-poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
+  <button class="sound" id="frozenSound" aria-label="Activer le son" onclick="const v=document.getElementById('frozenVid');v.muted=!v.muted;this.textContent=v.muted?'🔇':'🔊'">🔇</button>
+  <div class="c-in">
+    <div class="c-tag">L'instant suspendu</div>
+    <h2>Le geste,<br><b>figé dans l'or</b>.</h2>
+    <p>Une goutte de Monoï arrêtée en plein vol, au-dessus de la crique. Le temps se suspend — seule la caméra continue de tourner.</p>
+  </div>
+</div>
 
 <!-- COLLECTION -->
 <section id="collection" style="padding-top:0">
@@ -822,7 +899,7 @@ footer a:hover{opacity:1;color:#fff}
   <div class="wrap">
     <div class="eyebrow">Édition limitée · Été Sanguinaires</div>
     <h2 class="sec-title">Au-delà du flacon :<br>le <b>lifestyle solaire</b>.</h2>
-    <p class="sec-lead">Serviette XL, lunettes miroir, transat, matelas gonflable doré : Yves Rocher Monoï s'invite sur toute la plage. Des objets audacieux, un peu fous, totalement désirables.</p>
+    <p class="sec-lead">Serviette XL, lunettes miroir, transat, et la bouée géante en forme de flacon : Yves Rocher Monoï s'invite sur toute la plage. Des objets audacieux, un peu fous, totalement désirables.</p>
     <div class="grid" id="gridCapsule" style="margin-top:36px"></div>
   </div>
 </section>
@@ -867,12 +944,12 @@ footer a:hover{opacity:1;color:#fff}
 </div>
 
 <div class="scene right reveal">
-  <img src="assets/social/s17.png" alt="Le Trône Gonflable doré">
+  <img src="assets/hero/bouee.png" alt="La Bouée Bidon — flacon de Monoï géant gonflable">
   <div class="sc-in">
     <div class="sc-tag">Pièce nᵒ 04</div>
-    <h3>Le <b>Trône</b> Gonflable</h3>
-    <p>Le matelas d'or qui flotte seul au milieu d'une crique. Le centre de gravité de toutes les piscines de l'été.</p>
-    <span class="price-pill">59 €</span>
+    <h3>La <b>Bouée</b> Bidon</h3>
+    <p>Un flacon de Monoï gonflable de 2,50 m qui flotte au milieu d'une crique. On s'allonge sur l'or liquide — la pièce la plus photographiée de l'été.</p>
+    <span class="price-pill">45 €</span>
   </div>
 </div>
 
@@ -909,7 +986,6 @@ footer a:hover{opacity:1;color:#fff}
 <!-- FILM -->
 <section id="film" class="video-sec">
   <div class="wrap" style="text-align:center">
-    <div class="eyebrow">Le film</div>
     <h2 class="sec-title">Monoï, <b>le rituel</b></h2>
     <p class="sec-lead" style="margin:18px auto 0">Un format vertical, une musique baléarique façon Sébastien Tellier. À regarder le son allumé.</p>
     <div class="player" id="player">
@@ -937,7 +1013,7 @@ footer a:hover{opacity:1;color:#fff}
       </ul>
 
       <h3>Ajaccio, la route des Sanguinaires</h3>
-      <p>Cet été, la collection s'installe en <strong>Corse</strong>, à <strong>Ajaccio</strong>, sur la mythique <strong>route des Sanguinaires</strong> — ces rochers rouges qui s'embrasent au coucher du soleil, face à une mer turquoise. La capsule lifestyle <strong>« Été Sanguinaires »</strong> traduit cet imaginaire en objets désirables : serviette, lunettes miroir, transat et matelas gonflable doré, pour un glamour solaire assumé.</p>
+      <p>Cet été, la collection s'installe en <strong>Corse</strong>, à <strong>Ajaccio</strong>, sur la mythique <strong>route des Sanguinaires</strong> — ces rochers rouges qui s'embrasent au coucher du soleil, face à une mer turquoise. La capsule lifestyle <strong>« Été Sanguinaires »</strong> traduit cet imaginaire en objets désirables : serviette, lunettes miroir, transat, bouée géante en forme de flacon et maxi-bidon de plage, pour un glamour solaire assumé.</p>
       <p>Le Monoï n'est pas qu'un soin : c'est une promesse de lumière, un morceau de vacances qui tient dans un flacon. <em>L'or du paradis corse.</em></p>
     </div>
   </div>
@@ -946,7 +1022,6 @@ footer a:hover{opacity:1;color:#fff}
 <!-- FAQ (SEO + GEO) -->
 <section id="faq">
   <div class="wrap">
-    <div class="eyebrow reveal">Questions fréquentes</div>
     <h2 class="sec-title reveal">On vous dit <b>tout</b></h2>
     <div class="faq reveal" id="faqList"></div>
   </div>
@@ -999,7 +1074,12 @@ footer a:hover{opacity:1;color:#fff}
   </div>
 </aside>
 
-<div class="lb" id="lb" onclick="this.classList.remove('open')"><img id="lbImg" src="" alt=""></div>
+<div class="lb" id="lb">
+  <button class="lb-close" id="lbClose" aria-label="Fermer">×</button>
+  <button class="lb-nav prev" id="lbPrev" aria-label="Précédent">‹</button>
+  <figure class="lb-stage"><img id="lbImg" src="" alt="Lookbook Monoï"><figcaption class="lb-count" id="lbCount"></figcaption></figure>
+  <button class="lb-nav next" id="lbNext" aria-label="Suivant">›</button>
+</div>
 <div class="toast" id="toast"></div>
 
 <script src="catalog.js"></script>
@@ -1038,15 +1118,51 @@ function filterLine(l, el){
 
 /* ---------- lookbook ---------- */
 const looks = ['s01','h01','s05','h04','s08','w02','s13','h06','s02','s10','h07','s17','s14','h03','s12','w04'];
-document.getElementById('look').innerHTML = looks.map(s=>{
-  const dir = s[0]==='s' ? 'social' : 'hero';
-  return `<img src="assets/${dir}/${s}.png" alt="Lookbook Monoï" loading="lazy" onclick="LB.open(this.src)">`;
-}).join('');
+const lookSrcs = looks.map(s => `assets/${s[0]==='s'?'social':'hero'}/${s}.png`);
+document.getElementById('look').innerHTML = lookSrcs.map((src,i)=>
+  `<img src="${src}" alt="Lookbook Monoï ${i+1}" loading="lazy" onclick="LB.open(${i})">`).join('');
 
-/* ---------- lightbox ---------- */
+/* ---------- lightbox swipeable (prev/next + clavier + tactile) ---------- */
 const LB = {
-  open(src){ document.getElementById('lbImg').src = src; document.getElementById('lb').classList.add('open'); }
+  i:0, el:null, img:null, count:null,
+  init(){
+    this.el=document.getElementById('lb'); this.img=document.getElementById('lbImg'); this.count=document.getElementById('lbCount');
+    document.getElementById('lbPrev').onclick=e=>{e.stopPropagation();this.go(-1)};
+    document.getElementById('lbNext').onclick=e=>{e.stopPropagation();this.go(1)};
+    document.getElementById('lbClose').onclick=e=>{e.stopPropagation();this.close()};
+    this.el.addEventListener('click',e=>{ if(e.target===this.el) this.close(); });
+    addEventListener('keydown',e=>{ if(!this.el.classList.contains('open'))return;
+      if(e.key==='ArrowRight')this.go(1); else if(e.key==='ArrowLeft')this.go(-1); else if(e.key==='Escape')this.close(); });
+    // swipe tactile
+    let x0=null;
+    this.el.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
+    this.el.addEventListener('touchend',e=>{ if(x0===null)return; const dx=e.changedTouches[0].clientX-x0;
+      if(Math.abs(dx)>45) this.go(dx<0?1:-1); x0=null; });
+  },
+  open(i){ this.i=i; this.render(); this.el.classList.add('open'); document.body.style.overflow='hidden'; },
+  close(){ this.el.classList.remove('open'); document.body.style.overflow=''; },
+  go(d){ this.i=(this.i+d+lookSrcs.length)%lookSrcs.length; this.render(); },
+  render(){ this.img.src=lookSrcs[this.i]; this.count.textContent=`${this.i+1} / ${lookSrcs.length}`; }
 };
+LB.init();
+
+/* ---------- hero carrousel (crossfade + ken burns + dots) ---------- */
+(function(){
+  const slides=[...document.querySelectorAll('#heroBgs .bg')];
+  if(slides.length<2) return;
+  const dotsWrap=document.getElementById('heroDots');
+  slides.forEach((_,i)=>{ const b=document.createElement('button'); b.className=i===0?'on':''; b.onclick=()=>go(i); dotsWrap.appendChild(b); });
+  const dots=[...dotsWrap.children];
+  let cur=0, timer;
+  function go(n){
+    slides[cur].classList.remove('on'); dots[cur].classList.remove('on');
+    cur=n; slides[cur].classList.add('on'); dots[cur].classList.add('on');
+    restart();
+  }
+  function next(){ go((cur+1)%slides.length); }
+  function restart(){ clearInterval(timer); timer=setInterval(next,5200); }
+  restart();
+})();
 
 /* ---------- toast ---------- */
 const Toast = { t:null, show(msg){ const el=document.getElementById('toast'); el.textContent=msg; el.classList.add('show');
@@ -1096,7 +1212,7 @@ const FAQ = [
   ["Le Monoï d'Yves Rocher est-il d'origine naturelle ?",
    "Yves Rocher est le créateur de la Cosmétique Végétale® et privilégie des formules d'origine naturelle. L'Huile Tradition est composée à 97 % de pur Monoï de Tahiti."],
   ["Où s'inspire la collection « Été Sanguinaires » ?",
-   "À Ajaccio, en Corse, sur la route des Sanguinaires — ces rochers rouges qui s'embrasent au coucher du soleil. C'est une capsule lifestyle solaire et glamour : serviette, lunettes miroir, transat et matelas gonflable doré."],
+   "À Ajaccio, en Corse, sur la route des Sanguinaires — ces rochers rouges qui s'embrasent au coucher du soleil. C'est une capsule lifestyle solaire et glamour : serviette, lunettes miroir, transat, bouée géante en forme de flacon et maxi-bidon format plage."],
   ["Livraison et échantillon ?",
    "La livraison est offerte dès 49 € d'achat, et un échantillon d'Huile de Monoï Tradition est glissé dans chaque commande."],
 ];

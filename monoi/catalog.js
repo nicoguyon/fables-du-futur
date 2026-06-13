@@ -26,8 +26,10 @@ window.MONOI_CATALOG = [
    tagline:"Édition Ajaccio", desc:"Drap de plage XL, rayures sable & or, emblème Yves Rocher tissé. Coton velours."},
   {slug:"p12-lunettes", name:"Lunettes Miroir MONOÏ", line:"Été Sanguinaires", price:89, badge:"Lifestyle",
    tagline:"Le regard Sanguinaires", desc:"Aviateur miroir doré, branches gravées MONOÏ. Pour voir l'été en or."},
-  {slug:"p13-matelas", name:"Matelas Gonflable Or", line:"Été Sanguinaires", price:59, badge:"Culte",
-   tagline:"Le trône solaire", desc:"Lounger gonflable métallisé or. Le centre de gravité de toutes les piscines."},
+  {slug:"p13-matelas", name:"La Bouée Bidon", line:"Été Sanguinaires", price:45, badge:"Délire",
+   tagline:"Le flacon de 2,50 m", desc:"Une bouée gonflable géante en forme de flacon d'Huile de Monoï. On flotte sur l'or, littéralement. La pièce la plus photographiée de la crique."},
   {slug:"p14-transat", name:"Transat Riviera MONOÏ", line:"Été Sanguinaires", price:149, badge:"Lifestyle",
    tagline:"S'allonger dans les années 80", desc:"Bois crème, coussin rayé maison. Le siège du grand bronzage."},
+  {slug:"p15-maxi-bidon", name:"Le Maxi-Bidon 5 L", line:"Été Sanguinaires", price:39, badge:"Format plage",
+   tagline:"Le monoï format famille", desc:"Cinq litres d'Huile Tradition dans un bidon géant à poignée. Parce qu'un flacon, sur une plage, ça part toujours trop vite."},
 ];
