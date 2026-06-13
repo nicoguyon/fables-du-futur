@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xavier Bertrand &amp; l'IA — présentation</title>
+<meta name="description" content="Présentation en 8 slides : Xavier Bertrand et ses déclarations sur l'intelligence artificielle — du sommet « L'IA avec nous » à la « vallée de l'IA » des Hauts-de-France.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f5eedd; --paper2:#efe5cd; --ink:#241d12; --ink-soft:#5c5240;
+  --copper:#9a5b2e; --copper-deep:#7a4521; --electric:#1f3a7a; --gold:#b8893a;
+  --rule:#d8cbac; --card:#faf5e9;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{
+  background:var(--ink); color:var(--ink);
+  font-family:"EB Garamond",Georgia,serif;
+  -webkit-font-smoothing:antialiased; overflow:hidden;
+}
+
+/* ---- deck ---- */
+.deck{position:relative;width:100vw;height:100vh}
+.slide{
+  position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;
+  padding:7vh 8vw;opacity:0;visibility:hidden;transition:opacity .5s ease;
+  background:var(--paper);
+}
+.slide.active{opacity:1;visibility:visible;z-index:2}
+.slide::before{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .47 0 0 0 0 .32 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.slide>*{position:relative;z-index:1}
+
+.kicker{font-family:"IBM Plex Mono",monospace;font-size:clamp(11px,1.1vw,14px);font-weight:500;
+  letter-spacing:.3em;text-transform:uppercase;color:var(--copper);margin-bottom:3vh}
+h1{font-family:Fraunces,serif;font-weight:900;font-size:clamp(40px,7vw,96px);line-height:.98;letter-spacing:-.015em}
+h2{font-family:Fraunces,serif;font-weight:800;font-size:clamp(30px,5vw,62px);line-height:1.04;letter-spacing:-.01em;margin-bottom:3vh}
+.lede{font-size:clamp(19px,2.4vw,30px);color:var(--ink-soft);font-style:italic;max-width:60ch;line-height:1.45}
+p{font-size:clamp(17px,1.9vw,24px);color:var(--ink-soft);max-width:62ch;line-height:1.5;margin:1.2vh 0}
+strong{color:var(--ink)}
+
+/* quote slides */
+.quote{font-family:Fraunces,serif;font-weight:600;font-size:clamp(28px,4.4vw,58px);line-height:1.12;
+  color:var(--ink);max-width:24ch;letter-spacing:-.01em}
+.quote .q{color:var(--copper);font-size:1.3em;line-height:0}
+.attrib{margin-top:4vh;font-family:"IBM Plex Mono",monospace;font-size:clamp(12px,1.2vw,15px);
+  letter-spacing:.08em;color:var(--copper-deep)}
+
+/* stat grid */
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:2.2vh 3vw;margin-top:2vh;max-width:900px}
+.stat{border-left:3px solid var(--copper);padding-left:18px}
+.stat .big{font-family:Fraunces,serif;font-weight:900;font-size:clamp(34px,4.6vw,58px);line-height:1;color:var(--ink)}
+.stat .lab{font-size:clamp(14px,1.5vw,18px);color:var(--ink-soft);margin-top:6px;line-height:1.3}
+
+ul.clean{list-style:none;margin-top:1vh;max-width:60ch}
+ul.clean li{position:relative;padding-left:26px;margin:1.4vh 0;font-size:clamp(17px,1.9vw,24px);color:var(--ink-soft);line-height:1.4}
+ul.clean li::before{content:"›";position:absolute;left:4px;color:var(--copper);font-weight:700}
+ul.clean li b{color:var(--ink)}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:4vw;align-items:start}
+@media(max-width:760px){.two{grid-template-columns:1fr;gap:2vh}.stats{grid-template-columns:1fr}}
+
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:clamp(11px,1.1vw,13px);
+  letter-spacing:.06em;color:var(--ink-soft);border:1px solid var(--rule);background:var(--card);
+  border-radius:20px;padding:6px 14px;margin:4px 6px 4px 0}
+
+.src{position:absolute;bottom:3.5vh;left:8vw;right:8vw;font-family:"IBM Plex Mono",monospace;
+  font-size:clamp(9px,.85vw,11px);color:var(--ink-soft);opacity:.7;letter-spacing:.03em}
+
+/* title slide flourish */
+.byline{margin-top:4vh;font-family:"IBM Plex Mono",monospace;font-size:clamp(12px,1.2vw,15px);
+  color:var(--ink-soft);letter-spacing:.05em}
+
+/* ---- chrome ---- */
+.chrome{position:fixed;bottom:18px;left:0;right:0;z-index:30;display:flex;align-items:center;
+  justify-content:center;gap:14px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft)}
+.dots{display:flex;gap:8px}
+.dots i{width:8px;height:8px;border-radius:50%;background:var(--rule);cursor:pointer;transition:.25s;display:block}
+.dots i.on{background:var(--copper);transform:scale(1.25)}
+.nav{position:fixed;top:0;height:100%;width:14vw;z-index:25;cursor:pointer;background:transparent;border:none}
+.nav.prev{left:0}.nav.next{right:0}
+.counter{position:fixed;top:20px;right:26px;z-index:30;font-family:"IBM Plex Mono",monospace;
+  font-size:12px;letter-spacing:.1em;color:var(--ink-soft)}
+.hint{position:fixed;top:20px;left:26px;z-index:30;font-family:"IBM Plex Mono",monospace;
+  font-size:11px;letter-spacing:.08em;color:var(--ink-soft);opacity:.6}
+</style>
+</head>
+<body>
+
+<div class="counter"><span id="cur">1</span> / 8</div>
+<div class="hint">← → pour naviguer</div>
+
+<button class="nav prev" onclick="go(-1)" aria-label="précédent"></button>
+<button class="nav next" onclick="go(1)" aria-label="suivant"></button>
+
+<div class="deck" id="deck">
+
+  <!-- 1 — TITRE -->
+  <section class="slide active">
+    <div class="kicker">Présentation · 8 slides · Juin 2026</div>
+    <h1>Xavier Bertrand<br>&amp; l'intelligence<br>artificielle</h1>
+    <p class="lede">Ses déclarations, sa vision et sa stratégie : faire des Hauts-de-France « une vallée de l'IA ».</p>
+    <div class="byline">Du sommet européen « L'IA avec nous » au pari industriel d'une région</div>
+  </section>
+
+  <!-- 2 — QUI -->
+  <section class="slide">
+    <div class="kicker">Le personnage</div>
+    <h2>Qui est Xavier Bertrand&nbsp;?</h2>
+    <div class="two">
+      <div>
+        <ul class="clean">
+          <li><b>Président de la Région Hauts-de-France</b> depuis 2016</li>
+          <li>Ancien <b>ministre de la Santé</b> puis <b>du Travail et de l'Emploi</b></li>
+          <li>Figure de la droite française, ancrée dans un territoire post-industriel</li>
+        </ul>
+      </div>
+      <div>
+        <p>Élu d'un territoire marqué par la fin des mines et l'industrie lourde, il fait de la <strong>réindustrialisation par la tech</strong> le fil rouge de son mandat — batteries hier, intelligence artificielle aujourd'hui.</p>
+        <div style="margin-top:2vh">
+          <span class="tag">Hauts-de-France</span>
+          <span class="tag">Emploi</span>
+          <span class="tag">Réindustrialisation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 — LE SOMMET -->
+  <section class="slide">
+    <div class="kicker">L'événement déclencheur</div>
+    <h2>Le sommet « L'IA avec nous »</h2>
+    <p><strong>Le 12 juin 2026</strong>, à EuraTechnologies (Lille), Xavier Bertrand réunit patrons de la tech, investisseurs et élus pour un sommet européen consacré à l'IA « au cœur du réel ».</p>
+    <ul class="clean">
+      <li>Objectif : positionner la région comme <b>destination incontournable</b> des investisseurs de l'IA</li>
+      <li>Annonces ciblées sur <b>l'emploi, la formation et les infrastructures</b></li>
+      <li>Le slogan dit tout : l'IA « <b>avec nous</b> » — au service des habitants, pas contre eux</li>
+    </ul>
+    <div class="src">Sources : L'Observateur · ICI Hauts-de-France · La Gazette France (juin 2026)</div>
+  </section>
+
+  <!-- 4 — CITATION VISION -->
+  <section class="slide">
+    <div class="kicker">La vision · citation</div>
+    <blockquote class="quote"><span class="q">«</span> Faire des Hauts-de-France une vallée de l'IA, ce n'est pas seulement accueillir des technologies. C'est faire en sorte que l'intelligence artificielle serve <em>l'emploi, la compétitivité, les services publics et les habitants</em>. <span class="q">»</span></blockquote>
+    <div class="attrib">— Xavier Bertrand, sommet « L'IA avec nous », Lille</div>
+  </section>
+
+  <!-- 5 — DES MINES À L'IA -->
+  <section class="slide">
+    <div class="kicker">Le récit de transition · citation</div>
+    <blockquote class="quote"><span class="q">«</span> On passera des mines à l'intelligence artificielle. <span class="q">»</span></blockquote>
+    <p style="margin-top:3vh">Une formule-symbole : après la « vallée de la batterie », Bertrand veut bâtir <strong>« une vallée de l'IA et des data centers »</strong>, en s'appuyant sur l'énergie « facilement accessible » de la centrale nucléaire de <strong>Gravelines</strong> et sur les terrains disponibles.</p>
+    <div class="src">Source : HorizonActu — « Il y aura plusieurs data centers dans les Hauts-de-France » (juin 2026)</div>
+  </section>
+
+  <!-- 6 — LES CHIFFRES -->
+  <section class="slide">
+    <div class="kicker">Les chiffres de l'ambition</div>
+    <h2>Data centers &amp; milliards</h2>
+    <div class="stats">
+      <div class="stat"><div class="big">8 / 30</div><div class="lab">des sites français de data centers retenus sont en Hauts-de-France</div></div>
+      <div class="stat"><div class="big">20&nbsp;Mds&nbsp;€</div><div class="lab">investis par Brookfield en France d'ici 2030 — dont un data center géant à Cambrai</div></div>
+      <div class="stat"><div class="big">45&nbsp;Mds&nbsp;€</div><div class="lab">promis par SoftBank pour 3 data centers d'ici 2031</div></div>
+      <div class="stat"><div class="big">2027-28</div><div class="lab">ouverture visée du site de Cambrai (travaux dès 2026)</div></div>
+    </div>
+    <div class="src">Sources : HorizonActu · La Gazette France · Boursorama (juin 2026)</div>
+  </section>
+
+  <!-- 7 — EMPLOI -->
+  <section class="slide">
+    <div class="kicker">Le pari de l'emploi · citation</div>
+    <h2>« Plusieurs milliers d'emplois »</h2>
+    <div class="two">
+      <div>
+        <blockquote class="quote" style="font-size:clamp(24px,3.4vw,42px)"><span class="q">«</span> Un data center génère entre <em>300 et 700 emplois</em>. <span class="q">»</span></blockquote>
+      </div>
+      <div>
+        <p>Multipliés par les implantations régionales, ces emplois doivent se compter en <strong>« plusieurs milliers »</strong>.</p>
+        <p>Au-delà des serveurs, Bertrand insiste sur la <strong>formation</strong> : faire monter en compétences les habitants pour que la valeur reste sur le territoire.</p>
+      </div>
+    </div>
+    <div class="src">Source : HorizonActu / ICI Hauts-de-France (juin 2026)</div>
+  </section>
+
+  <!-- 8 — ENVIRONNEMENT & CONCLUSION -->
+  <section class="slide">
+    <div class="kicker">Réponses aux critiques · conclusion</div>
+    <h2>Énergie, chaleur, souveraineté</h2>
+    <ul class="clean">
+      <li><b>Environnement :</b> la chaleur excédentaire des data centers « <b>doit être renvoyée vers les réseaux de chaleur urbains</b> »</li>
+      <li><b>Énergie :</b> un atout nucléaire local avec <b>Gravelines</b>, pour alimenter sans dépendance</li>
+      <li><b>Souveraineté :</b> ancrer en France et en Europe des capacités de calcul stratégiques</li>
+    </ul>
+    <p style="margin-top:2vh"><strong>En somme :</strong> Xavier Bertrand fait de l'IA un levier de <strong>réindustrialisation et d'emploi</strong> — une IA « avec nous », au service du territoire et de ses habitants.</p>
+    <div class="src">Programme indicatif · citations vérifiées (juin 2026). Pour les sources complètes : L'Observateur, ICI, La Gazette France, HorizonActu, Boursorama.</div>
+  </section>
+
+</div>
+
+<div class="chrome">
+  <span class="dots" id="dots"></span>
+</div>
+
+<script>
+const slides=[...document.querySelectorAll('.slide')];
+let i=0;
+const dotsWrap=document.getElementById('dots');
+slides.forEach((_,k)=>{const d=document.createElement('i');d.onclick=()=>set(k);dotsWrap.appendChild(d);});
+const dots=[...dotsWrap.children];
+function set(n){
+  i=Math.max(0,Math.min(slides.length-1,n));
+  slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+  dots.forEach((d,k)=>d.classList.toggle('on',k===i));
+  document.getElementById('cur').textContent=i+1;
+}
+function go(d){set(i+d);}
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown')go(1);
+  if(e.key==='ArrowLeft'||e.key==='PageUp')go(-1);
+  if(e.key==='Home')set(0);
+  if(e.key==='End')set(slides.length-1);
+});
+// swipe mobile
+let x0=null;
+document.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
+document.addEventListener('touchend',e=>{
+  if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;
+  if(Math.abs(dx)>50)go(dx<0?1:-1);x0=null;
+},{passive:true});
+set(0);
+</script>
+</body>
+</html>
