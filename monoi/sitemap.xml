@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <url><loc>https://fables-du-futur.vercel.app/monoi/</loc><changefreq>weekly</changefreq><priority>1.0</priority>
-    <image:image><image:loc>https://fables-du-futur.vercel.app/monoi/assets/social/s01.png</image:loc></image:image>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://fables-du-futur.vercel.app/monoi/</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://fables-du-futur.vercel.app/monoi/journal/index.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://fables-du-futur.vercel.app/monoi/produit/p01-huile-tradition.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://fables-du-futur.vercel.app/monoi/produit/p02-huile-seche.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://fables-du-futur.vercel.app/monoi/produit/p03-huile-nacree.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://fables-du-futur.vercel.app/monoi/produit/p04-lait-corps.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://fables-du-futur.vercel.app/monoi/produit/p05-gel-douche.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://fables-du-futur.vercel.app/monoi/produit/p06-creme-mains.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://fables-du-futur.vercel.app/monoi/produit/p07-edt.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://fables-du-futur.vercel.app/monoi/produit/p08-gommage.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://fables-du-futur.vercel.app/monoi/produit/p09-brume-cheveux.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://fables-du-futur.vercel.app/monoi/produit/p10-solaire-spf.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://fables-du-futur.vercel.app/monoi/produit/p11-serviette.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://fables-du-futur.vercel.app/monoi/produit/p12-lunettes.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://fables-du-futur.vercel.app/monoi/produit/p13-matelas.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://fables-du-futur.vercel.app/monoi/produit/p14-transat.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://fables-du-futur.vercel.app/monoi/journal/rituel-monoi.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://fables-du-futur.vercel.app/monoi/journal/criques-sanguinaires.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://fables-du-futur.vercel.app/monoi/journal/choisir-son-huile.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://fables-du-futur.vercel.app/monoi/journal/histoire-monoi.html</loc><changefreq>weekly</changefreq></url>
 </urlset>

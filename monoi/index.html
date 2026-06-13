@@ -723,8 +723,8 @@ footer a:hover{opacity:1;color:#fff}
       <a href="#rituel">Le Rituel</a>
       <a href="#capsule">Été Sanguinaires</a>
       <a href="#lookbook">Lookbook</a>
+      <a href="journal/index.html">Le Journal</a>
       <a href="#savoir">Le Monoï</a>
-      <a href="#film">Le Film</a>
     </nav>
     <div class="cart" onclick="Cart.open()">
       <span>Panier</span><span class="count" id="cartCount">0</span>
@@ -994,11 +994,11 @@ const C = window.MONOI_CATALOG;
 /* ---------- product cards ---------- */
 function cardHTML(p){
   return `<div class="card" data-line="${p.line}">
-    <div class="ph"><img src="assets/products/${p.slug}.png" alt="${p.name}" loading="lazy">
-      ${p.badge?`<span class="badge">${p.badge}</span>`:''}</div>
+    <a class="ph" href="produit/${p.slug}.html"><img src="assets/products/${p.slug}.png" alt="${p.name}" loading="lazy">
+      ${p.badge?`<span class="badge">${p.badge}</span>`:''}</a>
     <div class="body">
       <div class="line">${p.line}</div>
-      <h3>${p.name}</h3>
+      <h3><a href="produit/${p.slug}.html">${p.name}</a></h3>
       <div class="tag">${p.tagline}</div>
       <div class="foot"><span class="price">${euro(p.price)}</span>
         <button class="add" onclick="Cart.add('${p.slug}')">Ajouter</button></div>

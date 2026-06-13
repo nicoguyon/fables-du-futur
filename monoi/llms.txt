@@ -54,3 +54,9 @@ Livraison offerte dès 49 €, échantillon Monoï Tradition offert dans chaque 
 
 ## Notes
 Projet de démonstration créatif autour de l'univers Yves Rocher Monoï. Visuels générés par IA.
+
+## Le Journal (articles)
+- Le rituel Monoï : appliquer l'huile en 5 gestes — /journal/rituel-monoi.html
+- 5 criques secrètes de la route des Sanguinaires — /journal/criques-sanguinaires.html
+- Huile Tradition, Sèche ou Nacrée : laquelle choisir ? — /journal/choisir-son-huile.html
+- Monoï de Tahiti : l'histoire d'une Appellation d'Origine — /journal/histoire-monoi.html
