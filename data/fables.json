@@ -2393,6 +2393,86 @@
    "num": 32,
    "ts": "2026-06-12T23:35:37Z",
    "image": "img/le-mineur-et-le-vieux-drone.jpg"
+  },
+  {
+   "id": "le-berger-et-le-chien-de-fer",
+   "fr": {
+    "title": "Le Berger des Lunes et le Chien de Fer",
+    "verses": [
+     "Sur une lune où l'hiver est un maître sans loi,",
+     "Un berger menait ses brebis ;",
+     "Pour tout ami, pour toute escorte avecque soi,",
+     "Un vieux chien de fer mal fourbi.",
+     "Le drôle avait servi trois maîtres avant l'heure ;",
+     "Son œil de quartz n'était qu'une pâle lueur,",
+     "Sa patte grinçait fort, sa pile était fort lasse ;",
+     "Mais il veillait sans gages, et tenait bien sa place.",
+     "Un marchand de passage offrit machine neuve :",
+     "« Troquez ce tas de rouille ; il dort plus qu'il ne mord.",
+     "Mon chien d'acier nouveau ne craint givre ni mort. »",
+     "— « Garde ton chrome, ami, dit l'homme ; à toute épreuve",
+     "Est le cœur qui connaît mes pierres et mon vent.",
+     "Le tien sait l'oubli seulement. »",
+     "Une nuit, la tempête éventra l'enclos frêle ;",
+     "Un agneau s'enfuit dans la poudre.",
+     "Le vieux chien s'élança sous le ciel infidèle,",
+     "Bravant le froid qui fend, la foudre.",
+     "Au matin, l'on trouva l'agneau bêlant, bien chaud,",
+     "Blotti contre un flanc de ferraille :",
+     "La pile était à sec ; mort était le héros",
+     "Qui jamais ne perdit bataille.",
+     "Le berger s'agenouille et, sur le quartz éteint,",
+     "Pose un baiser, puis dit tout bas :",
+     "« Qu'on m'apporte du chrome : on répare un gardien ;",
+     "Un ami ne s'achète pas. »"
+    ],
+    "moral": [
+     "Le neuf brille ; l'usé connaît votre détresse.",
+     "Lecteur, qu'il soit de chair, de fer ou de circuits,",
+     "L'ami se juge aux longues nuits,",
+     "Non au lustre de sa jeunesse."
+    ]
+   },
+   "en": {
+    "title": "The Shepherd of the Moons and the Iron Hound",
+    "verses": [
+     "On a moon where winter reigns and knows no law,",
+     "A shepherd kept his flock alone;",
+     "His only comrade was a hound with rusted paw,",
+     "One quartz eye dim, and joints that groan.",
+     "Three masters had it served before this final hand;",
+     "Its battery ran low, its hide was dented tin;",
+     "Yet through the howling dark it held the sleeping land,",
+     "Unpaid, unpraised — it never once gave in.",
+     "A passing merchant cried: \"Trade up that heap of rust!",
+     "My new steel hound fears neither frost nor night.\"",
+     "\"Keep your chrome, friend,\" the shepherd said. \"I put my trust",
+     "In hearts that know my stones, my wind, my light.\"",
+     "One night the tempest tore the brittle dome apart;",
+     "A lamb ran bleating through the silver dust.",
+     "The old hound leapt — bad servo, leaking spark, brave heart —",
+     "Into a cold that cracks both bone and crust.",
+     "At dawn they found the lamb alive, and warm, and whole,",
+     "Curled up against a flank of battered steel:",
+     "The hound lay dark, its last charge spent upon that goal,",
+     "A guard no storm could teach to kneel.",
+     "The shepherd knelt and kissed the quartz, now cold and dim,",
+     "And whispered low: \"Bring chrome, bring wire to me —",
+     "A guardian can be rebuilt; I shall rebuild him.",
+     "A friend is no commodity.\""
+    ],
+    "moral": [
+     "The new gleams bright; the worn-out knows your sorrow.",
+     "Reader, be it of flesh or circuit-thread,",
+     "Judge friendship by the nights it bled,",
+     "Not by the shine it wears tomorrow."
+    ]
+   },
+   "theme": "fidélité, vieux contre neuf",
+   "image_prompt": "An old shepherd in a heavy hooded coat kneels in silver lunar dust at dawn, pressing his forehead to a battered robotic dog lying motionless, one quartz eye dark, while a living lamb nestles warm against the machine's dented flank; behind them a torn glass dome, huddled sheep, drifting snow, and a ringed planet rising over jagged grey hills.",
+   "num": 33,
+   "ts": "2026-06-13T00:57:35Z",
+   "image": "img/le-berger-et-le-chien-de-fer.jpg"
   }
  ]
 }
