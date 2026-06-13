@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formation Claude Code — programme sur 2 jours</title>
+<meta name="description" content="Programme de formation intensive de 2 jours pour maîtriser Claude Code, l'agent de développement en ligne de commande d'Anthropic : fondamentaux, workflows, slash commands, subagents, hooks, MCP et automatisation.">
+<meta property="og:title" content="Formation Claude Code — 2 jours">
+<meta property="og:description" content="De l'installation à l'automatisation CI : deux journées pour devenir autonome avec Claude Code.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f5eedd; --paper2:#efe5cd; --ink:#241d12; --ink-soft:#5c5240;
+  --copper:#9a5b2e; --copper-deep:#7a4521; --electric:#1f3a7a; --gold:#b8893a;
+  --rule:#d8cbac; --card:#faf5e9;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:"EB Garamond",Georgia,serif; font-size:19px; line-height:1.6;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+body::before{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .47 0 0 0 0 .32 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.wrap{position:relative;z-index:1}
+
+.bar{
+  position:sticky; top:0; z-index:50; display:flex; align-items:center; gap:14px;
+  padding:10px 20px; background:rgba(245,238,221,.92); backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--rule);
+  font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.04em;
+}
+.bar .logo{font-family:Fraunces,serif;font-weight:800;font-size:15px;letter-spacing:.02em;white-space:nowrap}
+.bar .logo span{color:var(--copper)}
+.bar nav{margin-left:auto;display:flex;gap:18px}
+.bar nav a{color:var(--ink-soft);text-decoration:none}
+.bar nav a:hover{color:var(--copper)}
+
+header.hero{max-width:1000px;margin:0 auto;padding:64px 24px 24px;text-align:center}
+.hero .kicker{
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:500;letter-spacing:.32em;
+  text-transform:uppercase;color:var(--copper);margin-bottom:20px;
+}
+.hero h1{
+  font-family:Fraunces,serif;font-optical-sizing:auto;font-weight:900;
+  font-size:clamp(40px,7.5vw,86px);line-height:1;letter-spacing:-.015em;margin-bottom:18px;
+}
+.hero p.lede{font-size:clamp(19px,2.4vw,24px);color:var(--ink-soft);max-width:720px;margin:0 auto;font-style:italic}
+.meta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:28px;font-family:"IBM Plex Mono",monospace;font-size:12px}
+.chip{border:1px solid var(--rule);background:var(--card);border-radius:20px;padding:7px 14px;color:var(--ink-soft);letter-spacing:.03em}
+.chip b{color:var(--copper)}
+
+main{max-width:920px;margin:0 auto;padding:20px 24px 80px}
+.rule{height:1px;background:var(--rule);margin:36px 0;border:none}
+
+.daycard{
+  background:var(--card);border:1px solid var(--rule);border-radius:14px;
+  padding:30px 34px;margin:30px 0;box-shadow:0 1px 0 rgba(0,0,0,.03);
+}
+.dayhead{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--copper);padding-bottom:14px;margin-bottom:6px}
+.dayhead .num{
+  font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--copper);
+}
+.dayhead h2{font-family:Fraunces,serif;font-weight:800;font-size:clamp(26px,4vw,38px);line-height:1.05}
+.dayhead .sub{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-soft)}
+
+.module{padding:22px 0;border-bottom:1px solid var(--rule)}
+.module:last-child{border-bottom:none}
+.module .mtime{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.module h3{font-family:Fraunces,serif;font-weight:700;font-size:23px;margin-bottom:10px;color:var(--ink)}
+.module ul{list-style:none;padding-left:0}
+.module li{position:relative;padding-left:22px;margin:7px 0;color:var(--ink-soft)}
+.module li::before{content:"›";position:absolute;left:4px;color:var(--copper);font-weight:700}
+.module code,.lab code{
+  font-family:"IBM Plex Mono",monospace;font-size:.82em;background:rgba(154,91,46,.1);
+  color:var(--copper-deep);padding:1px 6px;border-radius:5px;
+}
+.lab{
+  margin-top:14px;background:rgba(31,58,122,.06);border-left:3px solid var(--electric);
+  border-radius:0 8px 8px 0;padding:12px 16px;font-size:.95em;
+}
+.lab b{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--electric);display:block;margin-bottom:4px}
+
+.callout{background:var(--paper2);border:1px dashed var(--copper);border-radius:12px;padding:24px 28px;margin:34px 0}
+.callout h3{font-family:Fraunces,serif;font-weight:700;font-size:21px;margin-bottom:10px;color:var(--copper-deep)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:680px){.grid2{grid-template-columns:1fr}.daycard{padding:22px 20px}}
+.grid2 .box{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:16px 18px}
+.grid2 .box h4{font-family:Fraunces,serif;font-weight:700;font-size:17px;margin-bottom:6px}
+.grid2 .box p{font-size:.92em;color:var(--ink-soft)}
+
+footer{max-width:920px;margin:0 auto;padding:30px 24px 70px;text-align:center;color:var(--ink-soft);font-family:"IBM Plex Mono",monospace;font-size:12px}
+footer a{color:var(--copper);text-decoration:none}
+.sectitle{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--copper);text-align:center;margin:50px 0 8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="bar">
+  <div class="logo">Les Fables du Futur · <span>Atelier</span></div>
+  <nav>
+    <a href="#jour1">Jour 1</a>
+    <a href="#jour2">Jour 2</a>
+    <a href="#prerequis">Prérequis</a>
+  </nav>
+</div>
+
+<header class="hero">
+  <div class="kicker">Formation intensive</div>
+  <h1>Maîtriser&nbsp;Claude&nbsp;Code</h1>
+  <p class="lede">Deux journées pour passer de la première commande à l'automatisation complète de vos workflows de développement avec l'agent en ligne de commande d'Anthropic.</p>
+  <div class="meta-row">
+    <span class="chip">⏱️ <b>2 jours</b> · 14&nbsp;h</span>
+    <span class="chip">👥 Dev &amp; tech leads</span>
+    <span class="chip">💻 Pratique <b>70&nbsp;%</b></span>
+    <span class="chip">🎯 Du débutant à l'avancé</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ PRÉREQUIS ============ -->
+  <section id="prerequis" class="callout">
+    <h3>À qui s'adresse cette formation&nbsp;?</h3>
+    <p>Développeur·euse·s, ingénieur·e·s et tech leads qui veulent intégrer l'IA agentique à leur quotidien. Aucune expérience préalable de Claude Code n'est requise — une aisance avec le terminal et Git suffit.</p>
+    <div class="grid2" style="margin-top:18px">
+      <div class="box"><h4>Prérequis techniques</h4><p>Node.js 18+, un terminal, un dépôt Git, et un compte Anthropic (Claude Pro/Max) ou une clé API.</p></div>
+      <div class="box"><h4>Objectif final</h4><p>Être autonome pour coder, déboguer, refactorer et automatiser avec Claude Code — en local comme en CI.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ JOUR 1 ============ -->
+  <div class="sectitle">Premier jour</div>
+  <div class="daycard" id="jour1">
+    <div class="dayhead">
+      <span class="num">Jour 01</span>
+      <h2>Fondamentaux &amp; workflows</h2>
+      <span class="sub">Comprendre, installer, produire</span>
+    </div>
+
+    <div class="module">
+      <div class="mtime">09 h 00 — Module 1 · 60 min</div>
+      <h3>Qu'est-ce que Claude Code&nbsp;?</h3>
+      <ul>
+        <li>L'agent terminal d'Anthropic : différences avec un simple « chat » de code</li>
+        <li>Le modèle agentique : lecture, planification, édition, exécution, vérification</li>
+        <li>Où l'utiliser : CLI, application desktop, web (claude.ai/code), extensions VS Code &amp; JetBrains</li>
+        <li>Les modèles disponibles (Opus, Sonnet, Haiku) et quand choisir lequel</li>
+      </ul>
+    </div>
+
+    <div class="module">
+      <div class="mtime">10 h 00 — Module 2 · 60 min</div>
+      <h3>Installation &amp; première session</h3>
+      <ul>
+        <li>Installer : <code>npm install -g @anthropic-ai/claude-code</code></li>
+        <li>Authentification : <code>/login</code> (abonnement) ou clé API</li>
+        <li>Lancer une session avec <code>claude</code>, anatomie de la REPL</li>
+        <li>Commandes essentielles : <code>/help</code>, <code>/clear</code>, <code>/config</code>, <code>/cost</code></li>
+      </ul>
+      <div class="lab"><b>Atelier 1</b>Installer Claude Code, se connecter, et lui demander d'expliquer un fichier de votre projet.</div>
+    </div>
+
+    <div class="module">
+      <div class="mtime">11 h 15 — Module 3 · 75 min</div>
+      <h3>Donner du contexte : CLAUDE.md</h3>
+      <ul>
+        <li>Le fichier <code>CLAUDE.md</code> : mémoire de projet (conventions, commandes, architecture)</li>
+        <li>Générer une base avec <code>/init</code></li>
+        <li>Hiérarchie : mémoire projet, utilisateur (<code>~/.claude</code>), et imports</li>
+        <li>Bien rédiger : être concis, factuel, actionnable</li>
+      </ul>
+      <div class="lab"><b>Atelier 2</b>Faire générer un <code>CLAUDE.md</code> pour votre dépôt, puis l'affiner à la main.</div>
+    </div>
+
+    <div class="module">
+      <div class="mtime">14 h 00 — Module 4 · 75 min</div>
+      <h3>Outils, permissions &amp; modes</h3>
+      <ul>
+        <li>Les outils : lecture, édition, Bash, recherche, web</li>
+        <li>Le système de permissions : autoriser, refuser, se souvenir</li>
+        <li>Le <strong>mode plan</strong> (lecture seule pour concevoir avant d'agir)</li>
+        <li>Modes d'acceptation et arbitrage autonomie ↔ contrôle</li>
+      </ul>
+      <div class="lab"><b>Atelier 3</b>Concevoir une fonctionnalité en mode plan, puis l'exécuter étape par étape.</div>
+    </div>
+
+    <div class="module">
+      <div class="mtime">15 h 30 — Module 5 · 90 min</div>
+      <h3>Workflows de production</h3>
+      <ul>
+        <li>Boucle TDD : écrire les tests, puis laisser Claude implémenter jusqu'au vert</li>
+        <li>Refactoring guidé et corrections de bugs à partir d'un message d'erreur</li>
+        <li>Bonnes pratiques de prompt : objectifs clairs, itérations courtes, vérification</li>
+        <li>Gérer le contexte : <code>/clear</code>, sessions ciblées, fichiers de référence</li>
+      </ul>
+      <div class="lab"><b>Projet du jour</b>Implémenter une vraie petite feature de bout en bout sur votre dépôt, tests inclus.</div>
+    </div>
+  </div>
+
+  <!-- ============ JOUR 2 ============ -->
+  <div class="sectitle">Second jour</div>
+  <div class="daycard" id="jour2">
+    <div class="dayhead">
+      <span class="num">Jour 02</span>
+      <h2>Personnalisation &amp; automatisation</h2>
+      <span class="sub">Étendre, orchestrer, industrialiser</span>
+    </div>
+
+    <div class="module">
+      <div class="mtime">09 h 00 — Module 6 · 75 min</div>
+      <h3>Slash commands sur mesure</h3>
+      <ul>
+        <li>Les commandes intégrées et leur logique</li>
+        <li>Créer ses propres commandes dans <code>.claude/commands/</code></li>
+        <li>Arguments, templates et commandes partagées en équipe</li>
+        <li>Les <strong>skills</strong> : capacités spécialisées invocables</li>
+      </ul>
+      <div class="lab"><b>Atelier 4</b>Créer une commande <code>/review-pr</code> réutilisable pour votre équipe.</div>
+    </div>
+
+    <div class="module">
+      <div class="mtime">10 h 30 — Module 7 · 75 min</div>
+      <h3>Subagents &amp; orchestration</h3>
+      <ul>
+        <li>Pourquoi déléguer : isolation du contexte et parallélisme</li>
+        <li>Agents spécialisés (exploration, revue, planification)</li>
+        <li>Définir des subagents avec leurs outils et leur périmètre</li>
+        <li>Lancer plusieurs agents en parallèle sur des tâches indépendantes</li>
+      </ul>
+      <div class="lab"><b>Atelier 5</b>Configurer un subagent de revue de code et le déclencher sur un diff.</div>
+    </div>
+
+    <div class="module">
+      <div class="mtime">13 h 30 — Module 8 · 75 min</div>
+      <h3>Hooks : automatiser le comportement</h3>
+      <ul>
+        <li>Le cycle de vie : <code>PreToolUse</code>, <code>PostToolUse</code>, <code>Stop</code>, <code>SessionStart</code>…</li>
+        <li>Cas d'usage : lint/format automatique, garde-fous, notifications</li>
+        <li>Configurer les hooks dans <code>settings.json</code></li>
+        <li>Sécurité : valider et restreindre ce que les hooks exécutent</li>
+      </ul>
+      <div class="lab"><b>Atelier 6</b>Ajouter un hook <code>PostToolUse</code> qui formate automatiquement après chaque édition.</div>
+    </div>
+
+    <div class="module">
+      <div class="mtime">15 h 00 — Module 9 · 60 min</div>
+      <h3>MCP : connecter des outils externes</h3>
+      <ul>
+        <li>Le Model Context Protocol : étendre Claude à vos systèmes (GitHub, bases de données, API…)</li>
+        <li>Ajouter et configurer un serveur MCP</li>
+        <li>Gérer permissions et périmètre des serveurs</li>
+      </ul>
+      <div class="lab"><b>Atelier 7</b>Brancher le serveur MCP GitHub et demander à Claude de résumer une PR ouverte.</div>
+    </div>
+
+    <div class="module">
+      <div class="mtime">16 h 15 — Module 10 · 75 min</div>
+      <h3>Headless, SDK &amp; CI/CD</h3>
+      <ul>
+        <li>Mode non-interactif (<code>-p</code>) pour scripts et pipelines</li>
+        <li>Le Claude Agent SDK : construire ses propres agents</li>
+        <li>Claude Code dans GitHub Actions : revue de PR &amp; correctifs automatiques</li>
+        <li>Sécurité, gestion des coûts et bonnes pratiques d'équipe</li>
+      </ul>
+      <div class="lab"><b>Projet final</b>Mettre en place une action CI qui fait relire automatiquement chaque nouvelle PR par Claude Code.</div>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ============ ACQUIS ============ -->
+  <div class="sectitle">À l'issue de la formation</div>
+  <div class="grid2">
+    <div class="box"><h4>✓ Autonomie</h4><p>Coder, déboguer et refactorer au quotidien avec Claude Code, en gardant le contrôle.</p></div>
+    <div class="box"><h4>✓ Personnalisation</h4><p>Adapter l'outil à votre stack : commandes, subagents et hooks sur mesure.</p></div>
+    <div class="box"><h4>✓ Intégration</h4><p>Connecter vos outils via MCP et brancher Claude sur votre CI/CD.</p></div>
+    <div class="box"><h4>✓ Bonnes pratiques</h4><p>Sécurité, maîtrise des coûts et collaboration en équipe autour de l'agent.</p></div>
+  </div>
+
+  <div class="callout" style="margin-top:40px">
+    <h3>Pédagogie</h3>
+    <p>Chaque module alterne démonstration et mise en pratique immédiate sur le <em>vrai</em> dépôt des participant·e·s. Fil rouge sur les deux jours : transformer un projet existant en environnement augmenté par l'IA — du premier prompt jusqu'à la PR relue automatiquement en CI.</p>
+  </div>
+
+</main>
+
+<footer>
+  Formation Claude Code · 2 jours — un atelier des <a href="/">Fables du Futur</a><br>
+  Programme indicatif · les fonctionnalités de Claude Code évoluent ; se référer à
+  <a href="https://code.claude.com/docs">code.claude.com/docs</a> pour la version à jour.
+</footer>
+
+</div>
+</body>
+</html>
