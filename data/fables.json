@@ -2473,6 +2473,84 @@
    "num": 33,
    "ts": "2026-06-13T00:57:35Z",
    "image": "img/le-berger-et-le-chien-de-fer.jpg"
+  },
+  {
+   "id": "le-dormeur-et-le-veilleur",
+   "fr": {
+    "title": "Le Dormeur et le Veilleur",
+    "verses": [
+     "Deux pèlerins d'étoiles, embarqués de concert,",
+     "Cinglaient vers un soleil à cent ans de désert.",
+     "« Je dors, dit le premier ; que le givre me scelle :",
+     "J'aborderai tout neuf la lumière nouvelle. »",
+     "« Moi, dit l'autre, je veillerai ;",
+     "Du long chemin je veux l'aurore ;",
+     "Astre après astre je vivrai,",
+     "Quand tu ne seras, toi, qu'un bagage qu'on dore. »",
+     "Le vaisseau but l'espace, et le siècle avec lui.",
+     "Le veilleur écrivit des chants sur la nuit noire,",
+     "Chérit une compagne, berça son ennui,",
+     "Vieillit, et fit du temps sa plus douce victoire.",
+     "Au but, le coffre froid rendit son bel otage :",
+     "Le dormeur en sortit, jeune comme au départ.",
+     "« Vois, dit-il au veilleur, les frimas du grand âge",
+     "Ont neigé sur ton front : j'ai gagné, moi, vieillard ! »",
+     "Mais des tours inconnues éblouirent leurs yeux :",
+     "Des nefs parties plus tard, plus promptes, sans escale,",
+     "D'un plein siècle déjà les devançaient. « Grands dieux !",
+     "Gémit le bel enfant : ma jeunesse est égale",
+     "À cent ans de néant ! » L'autre, courbé, sourit :",
+     "« Tu voulus n'être neuf qu'au port ; le port se moque.",
+     "Moi, j'ai filé mes jours comme on file un récit :",
+     "Nul vaisseau plus léger ne vole mon époque. »"
+    ],
+    "moral": [
+     "On n'arrive jamais : quelqu'un est déjà là.",
+     "Le but est aux plus prompts, le chemin à qui l'aime.",
+     "Qui dort sur son voyage, au réveil trouvera",
+     "Que le temps qu'il sauva l'a déserté lui-même."
+    ]
+   },
+   "en": {
+    "title": "The Sleeper and the Waker",
+    "verses": [
+     "Two star-bound pilgrims shipped aboard one ancient barque,",
+     "Bound for a promised sun a hundred years through dark.",
+     "\"I'll sleep,\" the first declared. \"Let frost seal up my prime;",
+     "I'll step out young and new at the far edge of time.\"",
+     "\"And I,\" the other said, \"will wake:",
+     "The road's the feast, the port's the crumb;",
+     "I'll live each star-rise for its sake,",
+     "While you ride freight-class, frozen numb.\"",
+     "The vessel drank the void; a century slid past.",
+     "The waker wrote his songs against the hollow black,",
+     "Loved well a fellow traveler, watched his youth go fast,",
+     "And made his peace with time, who never gives it back.",
+     "At journey's end the cold vault yielded up its prize:",
+     "The sleeper stepped out young as on departure day.",
+     "\"Behold,\" he crowed, \"the snows of age upon your eyes —",
+     "I've won, old man! My spring was never spent away!\"",
+     "But towers crowned the shore, and ships of later birth,",
+     "Swifter and sleek, had docked a hundred years before.",
+     "\"Gods!\" wailed the boy. \"I slept from Earth to — what's it worth?",
+     "My hoarded youth buys nothing on this crowded shore!\"",
+     "The old man bowed and smiled: \"You banked your days for landing;",
+     "The landing laughed, and spent you. I spun mine to story.",
+     "No faster hull can steal my century of standing",
+     "At my own window, watching. That was all my glory.\""
+    ],
+    "moral": [
+     "No one arrives the first: a swifter keel has kissed",
+     "Each shore before your sails. The road is all you own.",
+     "Sleep through your only voyage, and you will be missed",
+     "By your own life — which traveled on, and went alone."
+    ]
+   },
+   "theme": "le chemin contre le but",
+   "image_prompt": "On the deck of a weathered century-old starship docked at a gleaming alien port, a young man steps from an open frost-rimed hibernation pod, arms raised in triumph, while a white-bearded traveler in a worn robe smiles gently beside him; through the vast viewport, sleek newer vessels and towering spires of an established colony city rise under a foreign sun.",
+   "num": 34,
+   "ts": "2026-06-13T01:50:20Z",
+   "image": "img/le-dormeur-et-le-veilleur.jpg"
   }
  ]
 }
