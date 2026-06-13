@@ -196,8 +196,516 @@ footer a:hover{opacity:1;color:#fff}
 @media(max-width:760px){.facts{grid-template-columns:repeat(2,1fr)}.facts .f:nth-child(2){border-right:none}}
 /* progress bar */
 .progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--monoi-gold),var(--yr-green));z-index:70;width:0}
+/* editorial */
+.editorial{max-width:760px;margin-top:26px}
+.editorial p{font-size:clamp(16px,1.8vw,19px);color:var(--text);line-height:1.7;margin:16px 0;font-weight:300}
+.editorial h3{font-family:var(--font-display);font-weight:600;font-size:clamp(22px,3vw,32px);margin:34px 0 8px;color:var(--yr-green-deep)}
+.editorial ul{margin:10px 0 10px;padding-left:0;list-style:none}
+.editorial li{position:relative;padding-left:26px;margin:12px 0;font-size:clamp(15px,1.7vw,18px);line-height:1.6;font-weight:300}
+.editorial li::before{content:"☀";position:absolute;left:0;color:var(--monoi-gold)}
+.editorial a{color:var(--yr-green);text-decoration:underline;text-underline-offset:2px}
+/* faq */
+.faq{max-width:820px;margin-top:30px}
+.faq details{border-bottom:1px solid rgba(81,77,79,.18);padding:6px 0}
+.faq summary{list-style:none;cursor:pointer;padding:20px 4px;font-family:var(--font-display);font-weight:600;font-size:clamp(17px,2.1vw,22px);display:flex;align-items:center;justify-content:space-between;gap:16px;color:var(--text)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--font-body);font-weight:300;font-size:28px;color:var(--yr-green);transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .a{padding:0 4px 22px;font-size:clamp(15px,1.7vw,18px);color:var(--text-soft);line-height:1.65;font-weight:300;max-width:70ch}
+.faq .a a{color:var(--yr-green);text-decoration:underline}
 
 </style>
+<link rel="canonical" href="https://fables-du-futur.vercel.app/monoi/">
+<meta name="keywords" content="monoï, monoi de tahiti, yves rocher, huile de monoï, huile sèche, huile nacrée, bronzage, soin solaire, tiaré, corse, ajaccio, sanguinaires, cosmétique végétale">
+<meta name="author" content="Yves Rocher">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="geo.region" content="FR-COR"><meta name="geo.placename" content="Ajaccio, Corse"><meta name="geo.position" content="41.9192;8.7386"><meta name="ICBM" content="41.9192, 8.7386">
+<meta name="theme-color" content="#8A9738">
+<meta property="og:type" content="website"><meta property="og:url" content="https://fables-du-futur.vercel.app/monoi/"><meta property="og:locale" content="fr_FR"><meta property="og:site_name" content="Yves Rocher — Monoï">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="MONOÏ de Tahiti — Yves Rocher"><meta name="twitter:description" content="L'or du paradis corse. La collection Monoï, version solaire & audacieuse — Ajaccio, route des Sanguinaires."><meta name="twitter:image" content="https://fables-du-futur.vercel.app/monoi/assets/social/s01.png">
+<script type="application/ld+json" id="ld-monoi">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Brand",
+   "@id": "https://fables-du-futur.vercel.app/monoi/#brand",
+   "name": "Yves Rocher — Monoï de Tahiti",
+   "brand": "Yves Rocher",
+   "logo": "https://fables-du-futur.vercel.app/monoi/assets/logos/yves-rocher-logo.png",
+   "slogan": "L'or du paradis corse",
+   "description": "La collection Monoï de Tahiti d'Yves Rocher, édition solaire Corse (Ajaccio, route des Sanguinaires) : huiles, soins solaires et capsule lifestyle Été Sanguinaires."
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://fables-du-futur.vercel.app/monoi/#website",
+   "url": "https://fables-du-futur.vercel.app/monoi/",
+   "name": "MONOÏ de Tahiti — Yves Rocher",
+   "inLanguage": "fr-FR",
+   "about": {
+    "@id": "https://fables-du-futur.vercel.app/monoi/#brand"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Accueil",
+     "item": "https://fables-du-futur.vercel.app/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Monoï de Tahiti",
+     "item": "https://fables-du-futur.vercel.app/monoi/"
+    }
+   ]
+  },
+  {
+   "@type": "ItemList",
+   "name": "Collection Monoï",
+   "numberOfItems": 14,
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "item": {
+      "@type": "Product",
+      "@id": "https://fables-du-futur.vercel.app/monoi/#p01-huile-tradition",
+      "name": "Huile de Monoï Tradition",
+      "description": "Le geste originel. Macération de fleurs de Tiaré dans l'huile de coprah de Polynésie. Nourrit corps et cheveux d'un voile d'or. — 97 % de pur Monoï de Tahiti",
+      "image": "https://fables-du-futur.vercel.app/monoi/assets/products/p01-huile-tradition.png",
+      "brand": {
+       "@type": "Brand",
+       "name": "Yves Rocher"
+      },
+      "category": "La Collection",
+      "offers": {
+       "@type": "Offer",
+       "price": "19.95",
+       "priceCurrency": "EUR",
+       "availability": "https://schema.org/InStock",
+       "url": "https://fables-du-futur.vercel.app/monoi/#collection",
+       "seller": {
+        "@id": "https://fables-du-futur.vercel.app/monoi/#brand"
+       }
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "item": {
+      "@type": "Product",
+      "@id": "https://fables-du-futur.vercel.app/monoi/#p02-huile-seche",
+      "name": "Huile Sèche Sublimatrice",
+      "description": "Brume d'huile sèche au toucher poudré. Sublime le hâle sans fini gras, sillage de Tiaré. — Un voile satiné, une peau de soleil",
+      "image": "https://fables-du-futur.vercel.app/monoi/assets/products/p02-huile-seche.png",
+      "brand": {
+       "@type": "Brand",
+       "name": "Yves Rocher"
+      },
+      "category": "La Collection",
+      "offers": {
+       "@type": "Offer",
+       "price": "16.95",
+       "priceCurrency": "EUR",
+       "availability": "https://schema.org/InStock",
+       "url": "https://fables-du-futur.vercel.app/monoi/#collection",
+       "seller": {
+        "@id": "https://fables-du-futur.vercel.app/monoi/#brand"
+       }
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "item": {
+      "@type": "Product",
+      "@id": "https://fables-du-futur.vercel.app/monoi/#p03-huile-nacree",
+      "name": "Huile Nacrée Or",
+      "description": "Huile pailletée d'or fin. La peau capte le soleil et le renvoie, du matin au dernier rayon. — Paillettes d'or, peau lumière",
+      "image": "https://fables-du-futur.vercel.app/monoi/assets/products/p03-huile-nacree.png",
+      "brand": {
+       "@type": "Brand",
+       "name": "Yves Rocher"
+      },
+      "category": "La Collection",
+      "offers": {
+       "@type": "Offer",
+       "price": "18.95",
+       "priceCurrency": "EUR",
+       "availability": "https://schema.org/InStock",
+       "url": "https://fables-du-futur.vercel.app/monoi/#collection",
+       "seller": {
+        "@id": "https://fables-du-futur.vercel.app/monoi/#brand"
+       }
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 4,
+     "item": {
+      "@type": "Product",
+      "@id": "https://fables-du-futur.vercel.app/monoi/#p04-lait-corps",
+      "name": "Lait Corps Monoï",
+      "description": "Fondant et enveloppant, il prolonge le monoï sur la peau toute la journée. — Hydratation gourmande",
+      "image": "https://fables-du-futur.vercel.app/monoi/assets/products/p04-lait-corps.png",
+      "brand": {
+       "@type": "Brand",
+       "name": "Yves Rocher"
+      },
+      "category": "La Collection",
+      "offers": {
+       "@type": "Offer",
+       "price": "12.95",
+       "priceCurrency": "EUR",
+       "availability": "https://schema.org/InStock",
+       "url": "https://fables-du-futur.vercel.app/monoi/#collection",
+       "seller": {
+        "@id": "https://fables-du-futur.vercel.app/monoi/#brand"
+       }
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 5,
+     "item": {
+      "@type": "Product",
+      "@id": "https://fables-du-futur.vercel.app/monoi/#p05-gel-douche",
+      "name": "Gel Douche Monoï",
+      "description": "La douche devient un départ en vacances. Mousse onctueuse, parfum solaire. — Une mousse fleurie de Tiaré",
+      "image": "https://fables-du-futur.vercel.app/monoi/assets/products/p05-gel-douche.png",
+      "brand": {
+       "@type": "Brand",
+       "name": "Yves Rocher"
+      },
+      "category": "La Collection",
+      "offers": {
+       "@type": "Offer",
+       "price": "5.95",
+       "priceCurrency": "EUR",
+       "availability": "https://schema.org/InStock",
+       "url": "https://fables-du-futur.vercel.app/monoi/#collection",
+       "seller": {
+        "@id": "https://fables-du-futur.vercel.app/monoi/#brand"
+       }
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 6,
+     "item": {
+      "@type": "Product",
+      "@id": "https://fables-du-futur.vercel.app/monoi/#p06-creme-mains",
+      "name": "Crème Mains Monoï",
+      "description": "Texture riche absorbée en un instant. À glisser dans chaque sac de plage. — Le soleil au creux des mains",
+      "image": "https://fables-du-futur.vercel.app/monoi/assets/products/p06-creme-mains.png",
+      "brand": {
+       "@type": "Brand",
+       "name": "Yves Rocher"
+      },
+      "category": "La Collection",
+      "offers": {
+       "@type": "Offer",
+       "price": "6.95",
+       "priceCurrency": "EUR",
+       "availability": "https://schema.org/InStock",
+       "url": "https://fables-du-futur.vercel.app/monoi/#collection",
+       "seller": {
+        "@id": "https://fables-du-futur.vercel.app/monoi/#brand"
+       }
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 7,
+     "item": {
+      "@type": "Product",
+      "@id": "https://fables-du-futur.vercel.app/monoi/#p07-edt",
+      "name": "Eau de Toilette Monoï",
+      "description": "Tiaré, fleur d'oranger et ambre. Un parfum qui sent l'été même en plein hiver. — Le sillage solaire",
+      "image": "https://fables-du-futur.vercel.app/monoi/assets/products/p07-edt.png",
+      "brand": {
+       "@type": "Brand",
+       "name": "Yves Rocher"
+      },
+      "category": "La Collection",
+      "offers": {
+       "@type": "Offer",
+       "price": "24.95",
+       "priceCurrency": "EUR",
+       "availability": "https://schema.org/InStock",
+       "url": "https://fables-du-futur.vercel.app/monoi/#collection",
+       "seller": {
+        "@id": "https://fables-du-futur.vercel.app/monoi/#brand"
+       }
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 8,
+     "item": {
+      "@type": "Product",
+      "@id": "https://fables-du-futur.vercel.app/monoi/#p08-gommage",
+      "name": "Gommage Sucré Monoï",
+      "description": "Cristaux de sucre fondants dans un bain d'huile de monoï. Gommage et soin en un geste. — Peau neuve, peau de miel",
+      "image": "https://fables-du-futur.vercel.app/monoi/assets/products/p08-gommage.png",
+      "brand": {
+       "@type": "Brand",
+       "name": "Yves Rocher"
+      },
+      "category": "La Collection",
+      "offers": {
+       "@type": "Offer",
+       "price": "14.95",
+       "priceCurrency": "EUR",
+       "availability": "https://schema.org/InStock",
+       "url": "https://fables-du-futur.vercel.app/monoi/#collection",
+       "seller": {
+        "@id": "https://fables-du-futur.vercel.app/monoi/#brand"
+       }
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 9,
+     "item": {
+      "@type": "Product",
+      "@id": "https://fables-du-futur.vercel.app/monoi/#p09-brume-cheveux",
+      "name": "Brume Cheveux Soleil",
+      "description": "Voile protecteur et lumineux pour des cheveux gorgés de soleil, sans effet carton. — La crinière de la plage",
+      "image": "https://fables-du-futur.vercel.app/monoi/assets/products/p09-brume-cheveux.png",
+      "brand": {
+       "@type": "Brand",
+       "name": "Yves Rocher"
+      },
+      "category": "Été Sanguinaires",
+      "offers": {
+       "@type": "Offer",
+       "price": "13.95",
+       "priceCurrency": "EUR",
+       "availability": "https://schema.org/InStock",
+       "url": "https://fables-du-futur.vercel.app/monoi/#collection",
+       "seller": {
+        "@id": "https://fables-du-futur.vercel.app/monoi/#brand"
+       }
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 10,
+     "item": {
+      "@type": "Product",
+      "@id": "https://fables-du-futur.vercel.app/monoi/#p10-solaire-spf",
+      "name": "Huile Solaire SPF Or",
+      "description": "La protection d'un soin solaire, la sensorialité du monoï. L'or qui prend soin. — Bronzer protégé, briller doré",
+      "image": "https://fables-du-futur.vercel.app/monoi/assets/products/p10-solaire-spf.png",
+      "brand": {
+       "@type": "Brand",
+       "name": "Yves Rocher"
+      },
+      "category": "Été Sanguinaires",
+      "offers": {
+       "@type": "Offer",
+       "price": "21.95",
+       "priceCurrency": "EUR",
+       "availability": "https://schema.org/InStock",
+       "url": "https://fables-du-futur.vercel.app/monoi/#collection",
+       "seller": {
+        "@id": "https://fables-du-futur.vercel.app/monoi/#brand"
+       }
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 11,
+     "item": {
+      "@type": "Product",
+      "@id": "https://fables-du-futur.vercel.app/monoi/#p11-serviette",
+      "name": "Serviette Plage MONOÏ",
+      "description": "Drap de plage XL, rayures sable & or, emblème Yves Rocher tissé. Coton velours. — Édition Ajaccio",
+      "image": "https://fables-du-futur.vercel.app/monoi/assets/products/p11-serviette.png",
+      "brand": {
+       "@type": "Brand",
+       "name": "Yves Rocher"
+      },
+      "category": "Été Sanguinaires",
+      "offers": {
+       "@type": "Offer",
+       "price": "49",
+       "priceCurrency": "EUR",
+       "availability": "https://schema.org/InStock",
+       "url": "https://fables-du-futur.vercel.app/monoi/#collection",
+       "seller": {
+        "@id": "https://fables-du-futur.vercel.app/monoi/#brand"
+       }
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 12,
+     "item": {
+      "@type": "Product",
+      "@id": "https://fables-du-futur.vercel.app/monoi/#p12-lunettes",
+      "name": "Lunettes Miroir MONOÏ",
+      "description": "Aviateur miroir doré, branches gravées MONOÏ. Pour voir l'été en or. — Le regard Sanguinaires",
+      "image": "https://fables-du-futur.vercel.app/monoi/assets/products/p12-lunettes.png",
+      "brand": {
+       "@type": "Brand",
+       "name": "Yves Rocher"
+      },
+      "category": "Été Sanguinaires",
+      "offers": {
+       "@type": "Offer",
+       "price": "89",
+       "priceCurrency": "EUR",
+       "availability": "https://schema.org/InStock",
+       "url": "https://fables-du-futur.vercel.app/monoi/#collection",
+       "seller": {
+        "@id": "https://fables-du-futur.vercel.app/monoi/#brand"
+       }
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 13,
+     "item": {
+      "@type": "Product",
+      "@id": "https://fables-du-futur.vercel.app/monoi/#p13-matelas",
+      "name": "Matelas Gonflable Or",
+      "description": "Lounger gonflable métallisé or. Le centre de gravité de toutes les piscines. — Le trône solaire",
+      "image": "https://fables-du-futur.vercel.app/monoi/assets/products/p13-matelas.png",
+      "brand": {
+       "@type": "Brand",
+       "name": "Yves Rocher"
+      },
+      "category": "Été Sanguinaires",
+      "offers": {
+       "@type": "Offer",
+       "price": "59",
+       "priceCurrency": "EUR",
+       "availability": "https://schema.org/InStock",
+       "url": "https://fables-du-futur.vercel.app/monoi/#collection",
+       "seller": {
+        "@id": "https://fables-du-futur.vercel.app/monoi/#brand"
+       }
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 14,
+     "item": {
+      "@type": "Product",
+      "@id": "https://fables-du-futur.vercel.app/monoi/#p14-transat",
+      "name": "Transat Riviera MONOÏ",
+      "description": "Bois crème, coussin rayé maison. Le siège du grand bronzage. — S'allonger dans les années 80",
+      "image": "https://fables-du-futur.vercel.app/monoi/assets/products/p14-transat.png",
+      "brand": {
+       "@type": "Brand",
+       "name": "Yves Rocher"
+      },
+      "category": "Été Sanguinaires",
+      "offers": {
+       "@type": "Offer",
+       "price": "149",
+       "priceCurrency": "EUR",
+       "availability": "https://schema.org/InStock",
+       "url": "https://fables-du-futur.vercel.app/monoi/#collection",
+       "seller": {
+        "@id": "https://fables-du-futur.vercel.app/monoi/#brand"
+       }
+      }
+     }
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Qu'est-ce que le Monoï de Tahiti ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Le Monoï de Tahiti est une huile parfumée obtenue par la macération de fleurs de Tiaré dans de l'huile de coprah (noix de coco), exclusivement en Polynésie française. Il bénéficie d'une Appellation d'Origine garantissant son authenticité."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "À quoi sert l'huile de Monoï ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Elle nourrit et adoucit la peau et les cheveux, prolonge le hâle, apaise après le soleil et laisse un sillage fleuri de Tiaré. C'est un soin multi-usage : corps, cheveux, après-soleil et parfum."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "L'huile de Monoï fait-elle bronzer ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Non, le Monoï n'est pas un autobronzant et ne protège pas du soleil. Il sublime et prolonge le bronzage. Pour bronzer protégée, utilisez l'Huile Solaire SPF Or."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Quelle différence entre Huile Tradition, Huile Sèche et Huile Nacrée ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "L'Huile Tradition (jusqu'à 97 % de pur Monoï) est le soin originel pour corps et cheveux. L'Huile Sèche offre un fini satiné non gras. L'Huile Nacrée Or contient des paillettes d'or qui illuminent la peau."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Comment utiliser le Monoï sur les cheveux ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "En bain d'huile avant-shampoing sur les longueurs, ou une goutte sur cheveux secs pour faire briller. La Brume Cheveux Soleil protège et illumine au quotidien."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Le Monoï d'Yves Rocher est-il d'origine naturelle ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yves Rocher est le créateur de la Cosmétique Végétale® et privilégie des formules d'origine naturelle. L'Huile Tradition est composée à 97 % de pur Monoï de Tahiti."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Où s'inspire la collection « Été Sanguinaires » ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "À Ajaccio, en Corse, sur la route des Sanguinaires. C'est une capsule lifestyle solaire : serviette, lunettes miroir, transat et matelas gonflable doré."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Livraison et échantillon ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "La livraison est offerte dès 49 € d'achat, et un échantillon d'Huile de Monoï Tradition est glissé dans chaque commande."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
 </head>
 <body>
 
@@ -215,6 +723,7 @@ footer a:hover{opacity:1;color:#fff}
       <a href="#rituel">Le Rituel</a>
       <a href="#capsule">Été Sanguinaires</a>
       <a href="#lookbook">Lookbook</a>
+      <a href="#savoir">Le Monoï</a>
       <a href="#film">Le Film</a>
     </nav>
     <div class="cart" onclick="Cart.open()">
@@ -394,6 +903,39 @@ footer a:hover{opacity:1;color:#fff}
   </div>
 </section>
 
+<!-- SEO / GEO — ÉDITORIAL ENRICHI -->
+<section id="savoir" style="background:var(--surface)">
+  <div class="wrap">
+    <div class="eyebrow reveal">Tout savoir</div>
+    <h2 class="sec-title reveal">Le <b>Monoï</b>, l'or de Tahiti</h2>
+    <div class="editorial reveal">
+      <p><strong>Le Monoï de Tahiti</strong> est une huile parfumée obtenue par la <strong>macération de fleurs de Tiaré dans de l'huile de coprah</strong> (la pulpe séchée de la noix de coco), exclusivement en <strong>Polynésie française</strong>. Cette préparation ancestrale bénéficie d'une <strong>Appellation d'Origine</strong> : pour mériter le nom de Monoï de Tahiti, l'huile doit contenir au minimum dix fleurs de Tiaré fraîches par litre, cueillies à un stade précis.</p>
+      <p>Chez <strong>Yves Rocher</strong>, créateur de la Cosmétique Végétale®, le Monoï devient un <strong>rituel solaire</strong> : il nourrit la peau et les cheveux, prolonge le hâle et laisse un sillage fleuri de Tiaré. L'<strong>Huile de Monoï Tradition</strong> contient jusqu'à <strong>97 % de pur Monoï de Tahiti</strong> — c'est le geste originel.</p>
+
+      <h3>Le rituel, mode d'emploi</h3>
+      <ul>
+        <li><strong>Sur le corps</strong> — chauffez quelques gouttes d'<a href="#collection">Huile Tradition</a> entre les mains et massez sur peau sèche ou légèrement humide, après la douche ou la plage.</li>
+        <li><strong>Sur les cheveux</strong> — en bain d'huile avant-shampoing sur les longueurs, ou une goutte sur cheveux secs pour discipliner et faire briller.</li>
+        <li><strong>Après le soleil</strong> — le <a href="#collection">Lait Corps</a> et l'<a href="#collection">Huile Nacrée Or</a> apaisent et subliment le bronzage. Pour bronzer protégé, adoptez l'<a href="#capsule">Huile Solaire SPF Or</a>.</li>
+        <li><strong>Le parfum</strong> — l'<a href="#collection">Eau de Toilette Monoï</a> prolonge le sillage Tiaré, fleur d'oranger et ambre, été comme hiver.</li>
+      </ul>
+
+      <h3>Ajaccio, la route des Sanguinaires</h3>
+      <p>Cet été, la collection s'installe en <strong>Corse</strong>, à <strong>Ajaccio</strong>, sur la mythique <strong>route des Sanguinaires</strong> — ces rochers rouges qui s'embrasent au coucher du soleil, face à une mer turquoise. La capsule lifestyle <strong>« Été Sanguinaires »</strong> traduit cet imaginaire en objets désirables : serviette, lunettes miroir, transat et matelas gonflable doré, pour un glamour solaire assumé.</p>
+      <p>Le Monoï n'est pas qu'un soin : c'est une promesse de lumière, un morceau de vacances qui tient dans un flacon. <em>L'or du paradis corse.</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ (SEO + GEO) -->
+<section id="faq">
+  <div class="wrap">
+    <div class="eyebrow reveal">Questions fréquentes</div>
+    <h2 class="sec-title reveal">On vous dit <b>tout</b></h2>
+    <div class="faq reveal" id="faqList"></div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="wrap">
@@ -522,6 +1064,28 @@ const Cart = {
   }
 };
 Cart.render();
+
+/* ---------- FAQ (SEO + GEO) ---------- */
+const FAQ = [
+  ["Qu'est-ce que le Monoï de Tahiti ?",
+   "Le Monoï de Tahiti est une huile parfumée obtenue par la macération de fleurs de Tiaré dans de l'huile de coprah (noix de coco), exclusivement en Polynésie française. Il bénéficie d'une Appellation d'Origine garantissant son authenticité."],
+  ["À quoi sert l'huile de Monoï ?",
+   "Elle nourrit et adoucit la peau et les cheveux, prolonge le hâle, apaise après le soleil et laisse un sillage fleuri de Tiaré. C'est un soin multi-usage : corps, cheveux, après-soleil et parfum."],
+  ["L'huile de Monoï fait-elle bronzer ?",
+   "Non, le Monoï n'est pas un autobronzant et ne protège pas du soleil. Il sublime et prolonge le bronzage. Pour bronzer en étant protégée, utilisez notre Huile Solaire SPF Or de la capsule Été Sanguinaires."],
+  ["Quelle différence entre Huile Tradition, Huile Sèche et Huile Nacrée ?",
+   "L'Huile Tradition (jusqu'à 97 % de pur Monoï) est le soin originel, riche, pour corps et cheveux. L'Huile Sèche offre un fini satiné non gras. L'Huile Nacrée Or contient des paillettes d'or qui illuminent la peau."],
+  ["Comment utiliser le Monoï sur les cheveux ?",
+   "En bain d'huile avant-shampoing sur les longueurs et pointes, à laisser poser 15 minutes ; ou une goutte sur cheveux secs pour faire briller et discipliner. La Brume Cheveux Soleil protège et illumine au quotidien."],
+  ["Le Monoï d'Yves Rocher est-il d'origine naturelle ?",
+   "Yves Rocher est le créateur de la Cosmétique Végétale® et privilégie des formules d'origine naturelle. L'Huile Tradition est composée à 97 % de pur Monoï de Tahiti."],
+  ["Où s'inspire la collection « Été Sanguinaires » ?",
+   "À Ajaccio, en Corse, sur la route des Sanguinaires — ces rochers rouges qui s'embrasent au coucher du soleil. C'est une capsule lifestyle solaire et glamour : serviette, lunettes miroir, transat et matelas gonflable doré."],
+  ["Livraison et échantillon ?",
+   "La livraison est offerte dès 49 € d'achat, et un échantillon d'Huile de Monoï Tradition est glissé dans chaque commande."],
+];
+document.getElementById('faqList').innerHTML = FAQ.map(([q,a],i)=>
+  `<details ${i===0?'open':''}><summary>${q}</summary><div class="a">${a}</div></details>`).join('');
 
 /* ---------- délire: reveal + cursor + progress ---------- */
 const io = new IntersectionObserver((es)=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }),{threshold:.16});
