@@ -2,3 +2,7 @@
 __pycache__/
 data/drafts/
 .vercel
+
+# Secrets locaux (ne jamais committer)
+.env
+.env.*
