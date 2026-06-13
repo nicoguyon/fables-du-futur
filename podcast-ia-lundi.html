@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brief podcast IA — lundi · Fables du Futur</title>
+<meta name="description" content="Préparation du podcast : récap du sommet « L'IA avec nous » de Lille, l'encyclique Magnifica Humanitas du pape Léon XIV, le contrôle américain sur Claude/Anthropic, et les dernières études emploi & éducation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f5eedd; --ink:#241d12; --ink-soft:#5c5240;
+  --copper:#9a5b2e; --copper-deep:#7a4521; --electric:#1f3a7a; --gold:#b8893a;
+  --rule:#d8cbac; --card:#faf5e9; --dark:#1a1330;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:"EB Garamond",Georgia,serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 24px 120px}
+
+/* header */
+header{padding:9vh 0 5vh;border-bottom:3px solid var(--ink);margin-bottom:5vh}
+.kicker{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--copper)}
+h1{font-family:Fraunces,serif;font-weight:900;font-size:clamp(40px,7vw,82px);line-height:.98;letter-spacing:-.015em;margin:18px 0 14px}
+.sub{font-size:clamp(18px,2.3vw,25px);font-style:italic;color:var(--ink-soft);max-width:64ch}
+.meta{margin-top:24px;font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--copper-deep);letter-spacing:.04em}
+
+/* sommaire / rundown */
+.rundown{background:var(--dark);color:#f2e9d4;border-radius:16px;padding:34px 32px;margin:0 0 6vh}
+.rundown h2{font-family:Fraunces,serif;font-weight:800;font-size:26px;color:#fff;margin-bottom:18px}
+.rundown ol{list-style:none;counter-reset:seg}
+.rundown li{counter-increment:seg;display:flex;gap:16px;align-items:baseline;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:18px}
+.rundown li:last-child{border-bottom:none}
+.rundown li::before{content:counter(seg,decimal-leading-zero);font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--gold);font-weight:600}
+.rundown a{color:#f2e9d4;text-decoration:none}
+.rundown a:hover{color:var(--gold)}
+.rundown .t{font-family:"IBM Plex Mono",monospace;font-size:12px;color:#9a8f78;margin-left:auto;white-space:nowrap}
+
+/* segments */
+.seg{margin:7vh 0;scroll-margin-top:20px}
+.seg-head{display:flex;align-items:baseline;gap:16px;border-bottom:2px solid var(--copper);padding-bottom:12px;margin-bottom:26px}
+.seg-num{font-family:"IBM Plex Mono",monospace;font-size:14px;font-weight:600;color:var(--copper);letter-spacing:.1em}
+.seg h2{font-family:Fraunces,serif;font-weight:800;font-size:clamp(27px,4vw,46px);line-height:1.04;letter-spacing:-.01em}
+.seg .dur{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);white-space:nowrap}
+.lead{font-size:clamp(17px,2vw,21px);color:var(--ink-soft);font-style:italic;margin-bottom:22px;max-width:66ch}
+
+h3{font-family:Fraunces,serif;font-weight:700;font-size:21px;margin:28px 0 10px;color:var(--copper-deep)}
+p{font-size:17px;color:#3a3220;margin:10px 0;max-width:70ch}
+strong{color:var(--ink);font-weight:600}
+
+ul.pts{list-style:none;margin:8px 0}
+ul.pts li{position:relative;padding-left:24px;margin:8px 0;font-size:17px;color:#3a3220;max-width:70ch}
+ul.pts li::before{content:"›";position:absolute;left:4px;color:var(--copper);font-weight:700}
+ul.pts li b{color:var(--ink)}
+
+/* key figures */
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:22px 0}
+.fig{background:var(--card);border:1px solid var(--rule);border-left:3px solid var(--copper);border-radius:10px;padding:16px}
+.fig .n{font-family:Fraunces,serif;font-weight:900;font-size:28px;color:var(--ink);line-height:1}
+.fig .l{font-size:14px;color:var(--ink-soft);margin-top:6px;line-height:1.3}
+
+/* quote */
+.q{border-left:3px solid var(--gold);background:rgba(184,137,58,.07);padding:16px 20px;margin:18px 0;border-radius:0 10px 10px 0}
+.q p{font-family:Fraunces,serif;font-style:italic;font-size:19px;color:var(--ink);margin:0;max-width:none}
+.q .who{display:block;font-family:"IBM Plex Mono",monospace;font-style:normal;font-size:12px;color:var(--copper-deep);margin-top:10px;letter-spacing:.04em}
+
+/* ask box */
+.ask{background:#fff;border:1px solid var(--rule);border-radius:12px;padding:20px 22px;margin:22px 0;box-shadow:0 6px 18px rgba(36,29,18,.06)}
+.ask .lbl{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--copper);font-weight:600}
+.ask ul{list-style:none;margin-top:10px}
+.ask li{position:relative;padding-left:26px;margin:9px 0;font-size:16.5px}
+.ask li::before{content:"?";position:absolute;left:0;top:-1px;font-family:Fraunces,serif;font-weight:900;color:var(--gold);font-size:18px}
+
+.transition{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--copper-deep);background:rgba(154,91,46,.07);border-radius:8px;padding:12px 16px;margin:24px 0;letter-spacing:.02em}
+.transition::before{content:"↪ transition  ";color:var(--copper);font-weight:600}
+
+.warn{background:rgba(31,58,122,.06);border:1px solid rgba(31,58,122,.25);border-radius:10px;padding:14px 18px;margin:18px 0;font-size:15.5px;color:#2a2a3a}
+.warn b{color:var(--electric)}
+
+/* sources */
+.sources{margin-top:8vh;padding-top:4vh;border-top:2px solid var(--ink)}
+.sources h2{font-family:Fraunces,serif;font-size:28px;margin-bottom:16px}
+.sources p{font-size:14.5px;margin:8px 0}
+.sources a{color:var(--electric);text-decoration:none;border-bottom:1px solid rgba(31,58,122,.3)}
+
+.foot{margin-top:5vh;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);letter-spacing:.04em}
+.foot a{color:var(--copper)}
+
+/* nav back */
+.topbar{position:sticky;top:0;z-index:10;background:rgba(245,238,221,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);padding:10px 0;margin-bottom:0}
+.topbar .wrap{padding-top:0;padding-bottom:0;display:flex;gap:18px;align-items:center;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;overflow-x:auto;white-space:nowrap}
+.topbar a{color:var(--ink-soft);text-decoration:none}
+.topbar a:hover{color:var(--copper)}
+.topbar .home{color:var(--copper);font-weight:600}
+
+@media print{.topbar{display:none}.rundown{background:#eee;color:#000}.seg{page-break-inside:avoid}}
+@media(max-width:600px){.seg .dur,.rundown .t{display:none}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <a class="home" href="presentation-xavier-bertrand-ia.html">← présentation</a>
+  <a href="#s1">1 · Sommet Lille</a>
+  <a href="#s2">2 · Pape &amp; IA</a>
+  <a href="#s3">3 · Claude/USA</a>
+  <a href="#s4">4 · Emploi</a>
+  <a href="#s5">5 · Éducation</a>
+  <a href="#s6">6 · Clôture</a>
+</div></div>
+
+<div class="wrap">
+
+<header>
+  <div class="kicker">Brief de préparation · podcast du lundi 15 juin 2026</div>
+  <h1>L'IA au cœur du réel</h1>
+  <p class="sub">Tout ce qui s'est dit au sommet de Lille — et les trois ondes de choc de la semaine : le pape qui veut « désarmer l'IA », l'Amérique qui verrouille Claude, et les études qui rebattent les cartes de l'emploi et de l'école.</p>
+  <div class="meta">Durée cible ≈ 45 min · 6 segments · récaps, chiffres, citations, questions &amp; transitions</div>
+</header>
+
+<div class="rundown">
+  <h2>Conducteur de l'émission</h2>
+  <ol>
+    <li><a href="#s1">Le sommet « L'IA avec nous » — les six grands sujets</a><span class="t">~12 min</span></li>
+    <li><a href="#s2">« Magnifica Humanitas » — le pape veut désarmer l'IA</a><span class="t">~8 min</span></li>
+    <li><a href="#s3">Claude verrouillé : l'Amérique nationalise l'IA de pointe</a><span class="t">~7 min</span></li>
+    <li><a href="#s4">Emploi : le « bain de sang des cols blancs » a-t-il eu lieu ?</a><span class="t">~8 min</span></li>
+    <li><a href="#s5">Éducation : l'IA nous rend-elle plus bêtes ?</a><span class="t">~7 min</span></li>
+    <li><a href="#s6">Le fil rouge &amp; clôture</a><span class="t">~3 min</span></li>
+  </ol>
+</div>
+
+<!-- ============ SEGMENT 1 ============ -->
+<section class="seg" id="s1">
+  <div class="seg-head">
+    <span class="seg-num">SEGMENT 01</span>
+    <h2>Le sommet de Lille, les six grands sujets</h2>
+    <span class="dur">~12 min</span>
+  </div>
+  <p class="lead">Vendredi 12 juin, EuraTechnologies. 1 500 personnes, présenté comme « l'acte II de l'IA après Paris » et placé sous une bannière : <strong>l'IA « au cœur du réel »</strong>. Trois fils rouges affichés — innovation, souveraineté, confiance.</p>
+
+  <div class="figs">
+    <div class="fig"><div class="n">1 500+</div><div class="l">participants : politiques européens, patrons tech, chercheurs</div></div>
+    <div class="fig"><div class="n">8 / 30</div><div class="l">des sites français de data centers visés sont en Hauts-de-France</div></div>
+    <div class="fig"><div class="n">75 Mds €</div><div class="l">d'investissements annoncés (SoftBank 45 · Brookfield 20 · Cambrai 10)</div></div>
+    <div class="fig"><div class="n">1 GW</div><div class="l">la puissance du méga data center de Cambrai ≈ un réacteur</div></div>
+  </div>
+
+  <h3>L'angle Bertrand : « des mines à l'IA »</h3>
+  <p>Le président de région a tenu le rôle-titre (séquence officielle à 12h15). Sa thèse : faire des Hauts-de-France une <strong>« vallée de l'IA »</strong>, après la « vallée de la batterie ». Le récit colle à la géographie post-industrielle du Nord.</p>
+  <div class="q"><p>Faire des Hauts-de-France une vallée de l'IA, ce n'est pas seulement accueillir des technologies. C'est faire en sorte que l'IA serve l'emploi, la compétitivité, les services publics et les habitants.</p><span class="who">Xavier Bertrand — sommet « L'IA avec nous », 12 juin 2026</span></div>
+
+  <h3>Les six tables rondes, en une phrase chacune</h3>
+  <ul class="pts">
+    <li><b>Souveraineté</b> — « quand la France trace sa propre voie » : Octave Klaba (OVHcloud), Scale AI, Numeum, H Company. L'enjeu : ne pas dépendre des modèles US/chinois <em>(à connecter directement au segment 3 sur Claude)</em>.</li>
+    <li><b>Prospective / le monde d'après</b> — l'IA, bonne ou mauvaise nouvelle pour l'économie ? Avec Éric Hazan (ex-McKinsey) et l'éthicien Alexeï Grinbaum (CEA) : « révolution anthropologique ».</li>
+    <li><b>Emploi</b> — « le grand contrat social à renégocier » : Thibaut Guilluy (France Travail), Google France, la CFDT. <em>(pont vers le segment 4)</em>.</li>
+    <li><b>Éducation &amp; formation</b> — « l'IA pour tous ou pour quelques-uns ? » : Université Catholique de Lille, Institut DataIA (Paris-Saclay). <em>(pont vers le segment 5)</em>.</li>
+    <li><b>Data centers &amp; réindustrialisation</b> — « le nouveau pacte territorial » : SoftBank, Data4, Nvidia, RTE, Schneider Electric. Mots-clés : emplois, <strong>réinjection de la chaleur fatale</strong>, souveraineté énergétique (Gravelines).</li>
+    <li><b>Culture &amp; défense</b> — droits d'auteur et IA générative (SACEM, Le Fresnoy) ; et en clôture, Josep Borrell : « défendre l'Europe sans deeptech ? ».</li>
+  </ul>
+
+  <div class="warn">⚖️ <b>Contrepoint à garder en bouche</b> : à Cambrai, le scepticisme domine. Une enquête Trendeo (citée par Les Échos) parle de ~2 800 emplois directs pour toute la filière, loin des « milliers » promis ; les habitants ironisent sur la « Ch'tilicon Valley ». Un bon angle critique pour ne pas être un simple relais de com'.</p></div>
+
+  <div class="ask">
+    <span class="lbl">Questions à lancer en plateau</span>
+    <ul>
+      <li>« Vallée de l'IA » : promesse industrielle réelle ou storytelling électoral ?</li>
+      <li>Un data center, c'est 1 GW et « 300 à 700 emplois » : le ratio emplois / consommation électrique est-il soutenable ?</li>
+      <li>La souveraineté française a-t-elle un sens quand les modèles, les puces (Nvidia) et les capitaux (SoftBank, Brookfield) sont étrangers ?</li>
+    </ul>
+  </div>
+
+  <div class="transition">« Justement, sur cette question de souveraineté et de qui contrôle l'IA… il n'y a pas que les États qui s'en mêlent. Cette semaine, c'est le Vatican qui est entré dans l'arène. »</div>
+</section>
+
+<!-- ============ SEGMENT 2 ============ -->
+<section class="seg" id="s2">
+  <div class="seg-head">
+    <span class="seg-num">SEGMENT 02</span>
+    <h2>Le pape veut « désarmer l'IA »</h2>
+    <span class="dur">~8 min</span>
+  </div>
+  <p class="lead">Le 25 mai, le pape Léon XIV a présenté sa <strong>première encyclique, « Magnifica Humanitas »</strong> (signée le 15 mai). C'est le premier document pontifical entièrement consacré à l'intelligence artificielle — daté symboliquement pour le 135ᵉ anniversaire de <em>Rerum Novarum</em>, la grande encyclique sociale de 1891.</p>
+
+  <h3>L'idée-force : « désarmer l'IA »</h3>
+  <p>Attention au contresens : désarmer ne veut <strong>pas</strong> dire renoncer. Cela signifie l'arracher aux « logiques qui en font un instrument de domination, d'exclusion ou de mort » — la soustraire aux monopoles, la rendre transparente, discutable et contestable.</p>
+
+  <div class="q"><p>L'IA n'est pas moralement neutre. Elle introduit d'emblée un critère qui contredit la dignité inaliénable de la personne.</p><span class="who">Léon XIV — encyclique Magnifica Humanitas, ch. 3</span></div>
+  <div class="q"><p>Le pouvoir technologique prend ainsi un visage inédit, essentiellement privé, et donc d'autant plus difficile à cerner.</p><span class="who">Léon XIV — Magnifica Humanitas</span></div>
+
+  <h3>Ce qu'il propose concrètement</h3>
+  <ul class="pts">
+    <li>Un <b>code éthique défini par les peuples</b>, pas par les créateurs des modèles ;</li>
+    <li>Des <b>contrôles indépendants</b> et la transparence algorithmique ;</li>
+    <li>La <b>protection de l'emploi</b> et la reconversion professionnelle (héritage direct de Rerum Novarum : primauté du travail humain) ;</li>
+    <li>Une éducation au <b>« jeûne numérique »</b> — formule qui résonnera au segment 5 ;</li>
+    <li>Des <b>limites réglementaires sur l'IA militaire</b> et un partage équitable des données.</li>
+  </ul>
+
+  <div class="warn">🔗 <b>Le pont fort de l'émission</b> : le pape dénonce un « pouvoir privé » et des « monopoles » qui confisquent l'IA. Or le segment suivant montre exactement l'inverse — un <b>État</b> (les États-Unis) qui reprend la main de force sur une IA privée. Deux visions opposées de « désarmer » ou de « contrôler » l'IA.</div>
+
+  <div class="ask">
+    <span class="lbl">Questions à lancer en plateau</span>
+    <ul>
+      <li>Le Vatican est-il légitime pour parler d'algorithmes — ou est-ce justement sa fonction, parler de dignité humaine ?</li>
+      <li>« Jeûne numérique » à l'école : utopie ou nécessité de santé publique ?</li>
+      <li>Entre le pape qui veut « désarmer » l'IA et les États qui veulent l'« armer », qui gagne ?</li>
+    </ul>
+  </div>
+
+  <div class="transition">« Et la réponse à cette dernière question, on l'a eue cette semaine, de façon spectaculaire, du côté de Washington. »</div>
+</section>
+
+<!-- ============ SEGMENT 3 ============ -->
+<section class="seg" id="s3">
+  <div class="seg-head">
+    <span class="seg-num">SEGMENT 03</span>
+    <h2>L'Amérique verrouille Claude</h2>
+    <span class="dur">~7 min</span>
+  </div>
+  <p class="lead">Coup de tonnerre du 12 juin : <strong>Anthropic a suspendu l'accès à deux de ses modèles de pointe</strong>, Claude Mythos 5 et Claude Fable 5, pour <em>tous</em> ses clients — sur ordre du gouvernement américain.</p>
+
+  <h3>Les faits</h3>
+  <ul class="pts">
+    <li>Le secrétaire au Commerce <b>Howard Lutnick</b> a adressé à Dario Amodei (PDG d'Anthropic) une <b>directive de contrôle à l'exportation</b> au nom de la sécurité nationale.</li>
+    <li>Périmètre des restrictions : <b>aucune exportation hors des États-Unis</b>, interdiction à <b>tous les ressortissants étrangers</b> (y compris sur le sol américain, y compris les salariés étrangers d'Anthropic). Une licence serait requise pour tout transfert.</li>
+    <li>Le déclencheur, selon un responsable cité par Axios : une <b>méthode de contournement (« jailbreak ») de Fable 5</b> jugée sensible.</li>
+    <li>En clair : ces modèles deviennent, de fait, <b>réservés aux personnes et entités américaines</b>.</li>
+  </ul>
+
+  <div class="warn">📌 <b>À cadrer honnêtement à l'antenne</b> : c'est une actualité très récente et mouvante (12 juin). Présenter les faits avec leur source, au conditionnel sur les détails, et préciser que la situation peut évoluer d'ici lundi. <b>Vérifier une dernière fois le matin de l'enregistrement.</b></div>
+
+  <h3>Le contexte : ce n'est pas isolé</h3>
+  <p>Quelques mois plus tôt, le Pentagone avait <strong>annulé un contrat de 200 M$</strong> après le refus d'Anthropic de lever ses garde-fous (pas de surveillance de masse des citoyens américains, pas d'armes létales autonomes). Le bras de fer éthique entre l'entreprise et l'administration Trump est ancien ; l'épisode Fable 5 en est l'escalade.</p>
+
+  <div class="q"><p>Le gouvernement américain, invoquant ses prérogatives de sécurité nationale, a émis une directive de contrôle à l'exportation pour suspendre tout accès.</p><span class="who">Communiqué d'Anthropic, rapporté par 9to5Mac, 12 juin 2026</span></div>
+
+  <div class="ask">
+    <span class="lbl">Questions à lancer en plateau</span>
+    <ul>
+      <li>Si l'IA de pointe devient un actif de sécurité nationale américain, que vaut la « souveraineté » européenne vantée à Lille la veille ?</li>
+      <li>Une entreprise privée peut-elle encore dire non à son propre État sur un sujet de sécurité ?</li>
+      <li>Pour un auditeur français : qu'est-ce que ça change concrètement d'être coupé des meilleurs modèles US ?</li>
+    </ul>
+  </div>
+
+  <div class="transition">« Cette dépendance technologique nous ramène à la vraie question qui obsède tout le monde : et nos emplois, dans tout ça ? »</div>
+</section>
+
+<!-- ============ SEGMENT 4 ============ -->
+<section class="seg" id="s4">
+  <div class="seg-head">
+    <span class="seg-num">SEGMENT 04</span>
+    <h2>Emploi : le « bain de sang » promis a-t-il eu lieu ?</h2>
+    <span class="dur">~8 min</span>
+  </div>
+  <p class="lead">En 2025, Dario Amodei (le même Anthropic) prophétisait un <strong>« bain de sang des cols blancs »</strong>. Un an plus tard, le bilan est plus nuancé — et c'est tout le sujet.</p>
+
+  <div class="figs">
+    <div class="fig"><div class="n">40 %</div><div class="l">des emplois mondiaux impactés par l'IA, jusqu'à 60 % dans les pays avancés (FMI)</div></div>
+    <div class="fig"><div class="n">~25 %</div><div class="l">des travailleurs de l'OCDE fortement exposés à l'IA générative</div></div>
+    <div class="fig"><div class="n">−30 à −50 %</div><div class="l">d'embauches débutantes dans la tech en 2025</div></div>
+    <div class="fig"><div class="n">~55 000</div><div class="l">licenciements US en 2025 directement attribués à l'IA</div></div>
+  </div>
+
+  <h3>La prophétie de 2025…</h3>
+  <p>Amodei annonçait jusqu'à <strong>50 % des emplois de bureau débutants supprimés en cinq ans</strong> et un chômage poussé vers 20 % — banques, cabinets de conseil, droit, développement logiciel en première ligne (interview Axios, mai 2025).</p>
+
+  <h3>…et le rétropédalage de 2026</h3>
+  <ul class="pts">
+    <li>Début 2026, l'emploi reste globalement <b>stable</b> : l'IA dope surtout la productivité.</li>
+    <li>Sam Altman (OpenAI) <b>admet avoir exagéré</b> ; Amodei lui-même nuance, en invoquant le <b>paradoxe de Jevons</b> (plus c'est efficace, plus on en consomme → plus de travail) — Fortune, mai 2026.</li>
+    <li>Mais les signaux faibles sont là : embauches juniors en chute, ~200 000 postes coupés dans les banques de Wall Street, surtout des analystes débutants.</li>
+  </ul>
+
+  <h3>Le renversement historique (OCDE)</h3>
+  <p>Nouveauté majeure : contrairement aux vagues d'automatisation passées, l'IA générative frappe d'abord les <strong>cols blancs, les diplômés, les femmes et les métropoles</strong>. Secteurs les plus exposés : éducation, informatique, finance. C'est l'élite tertiaire qui est dans le viseur, pas l'usine.</p>
+
+  <div class="warn">🧩 <b>Nuance clé pour ne pas tomber dans le catastrophisme</b> : la plupart des métiers seront <b>transformés</b> (≈ 60-70 %), pas supprimés (≈ 10-15 %). Le vrai risque n'est pas « zéro emploi » mais un <b>déclassement</b> et une bascule brutale des compétences requises.</div>
+
+  <div class="ask">
+    <span class="lbl">Questions à lancer en plateau</span>
+    <ul>
+      <li>Quand le PDG le plus alarmiste se met à nuancer, doit-on être rassuré… ou méfiant ?</li>
+      <li>Si ce sont les diplômés qui trinquent, à quoi sert encore le diplôme ?</li>
+      <li>« Le grand contrat social à renégocier » (formule du sommet) : revenu universel, taxe sur l'IA, semaine de 4 jours — quelle piste tient la route ?</li>
+    </ul>
+  </div>
+
+  <div class="transition">« Et si le diplôme est en jeu, c'est toute l'école qui l'est. Or une étude du MIT a fait l'effet d'une bombe… »</div>
+</section>
+
+<!-- ============ SEGMENT 5 ============ -->
+<section class="seg" id="s5">
+  <div class="seg-head">
+    <span class="seg-num">SEGMENT 05</span>
+    <h2>Éducation : l'IA nous rend-elle plus bêtes ?</h2>
+    <span class="dur">~7 min</span>
+  </div>
+  <p class="lead">Le paradoxe de l'année : l'IA est <strong>l'outil pédagogique le plus efficace jamais mesuré</strong>… et peut-être le plus toxique pour le cerveau qui apprend. Tout dépend de l'usage.</p>
+
+  <h3>Côté lumière : une efficacité record</h3>
+  <ul class="pts">
+    <li>Taille d'effet de l'IA générative en apprentissage : <b>0,86</b> — un score considéré comme « énorme » dans la recherche éducative.</li>
+    <li>Les tuteurs intelligents feraient apprendre <b>deux fois plus vite</b> qu'un apprentissage actif classique.</li>
+    <li>Adoption massive : <b>82 % des étudiants français du supérieur</b> utilisaient déjà l'IA générative en 2025.</li>
+  </ul>
+
+  <h3>Côté ombre : la « dette cognitive » (étude MIT)</h3>
+  <p>L'étude « <em>Your Brain on ChatGPT</em> » (MIT Media Lab, Wellesley, MassArt — arXiv, 2025) a fait écrire un essai à 54 participants sous <strong>casque EEG à 32 électrodes</strong>, répartis en trois groupes : ChatGPT, moteur de recherche, ou cerveau seul.</p>
+  <div class="q"><p>Le groupe qui utilisait l'IA présentait la connectivité neuronale la plus faible, la moindre appropriation de son texte — et beaucoup étaient incapables de citer leur propre essai.</p><span class="who">« Your Brain on ChatGPT », MIT Media Lab — synthèse</span></div>
+  <p>Les chercheurs parlent de <strong>« dette cognitive »</strong> : à force de déléguer l'effort, on hypothèque sa capacité à penser seul. Effet confirmé ailleurs : de meilleurs résultats à court terme, mais une chute dès que l'outil est retiré.</p>
+
+  <div class="warn">⛪ <b>Le rappel qui boucle l'émission</b> : c'est exactement le « jeûne numérique » prôné par le pape au segment 2. La science et le Vatican, pour une fois, disent la même chose : il faut réapprendre à penser <b>sans</b> la machine, au moins par moments.</div>
+
+  <div class="ask">
+    <span class="lbl">Questions à lancer en plateau</span>
+    <ul>
+      <li>Faut-il interdire l'IA jusqu'au bac, comme on limite les écrans ?</li>
+      <li>Apprendre « deux fois plus vite » mais retenir deux fois moins : bon marché ?</li>
+      <li>Comment noter une copie à l'ère où 82 % des étudiants utilisent l'IA ?</li>
+    </ul>
+  </div>
+
+  <div class="transition">« Du Nord de la France au Vatican, de Washington à nos salles de classe, un même fil… »</div>
+</section>
+
+<!-- ============ SEGMENT 6 ============ -->
+<section class="seg" id="s6">
+  <div class="seg-head">
+    <span class="seg-num">SEGMENT 06</span>
+    <h2>Le fil rouge &amp; la clôture</h2>
+    <span class="dur">~3 min</span>
+  </div>
+  <p class="lead">De quoi a-t-on vraiment parlé cette semaine ? D'une seule question, posée sous quatre angles : <strong>qui contrôle l'IA — et pour servir qui ?</strong></p>
+  <ul class="pts">
+    <li><b>Lille</b> répond : les territoires, pour l'emploi et la réindustrialisation.</li>
+    <li><b>Le pape</b> répond : les peuples, pour la dignité humaine — surtout pas les monopoles privés.</li>
+    <li><b>Washington</b> répond : l'État, pour la sécurité nationale — et tant pis pour le reste du monde.</li>
+    <li><b>Les études</b> répondent en creux : pour l'instant, l'IA sert surtout la productivité… au risque de notre autonomie de pensée.</li>
+  </ul>
+  <p><strong>Phrase de clôture possible :</strong> « Le pape veut désarmer l'IA, l'Amérique veut l'armer, le Nord veut l'employer, et nos cerveaux, eux, commencent doucement à la sous-traiter. La vraie question de 2026 n'est plus <em>ce que l'IA peut faire</em> — mais <em>ce que nous, nous voulons encore faire nous-mêmes</em>. »</p>
+
+  <div class="warn">✅ <b>Checklist d'avant-enregistrement (lundi matin)</b> : revérifier l'affaire Claude/Anthropic (évolution depuis le 12/06) · confirmer les chiffres d'emplois cités · avoir un exemple local d'usage d'IA (auditeurs) · préparer un tacle critique sur la « com' » du sommet pour garder l'équilibre.</div>
+</section>
+
+<!-- ============ SOURCES ============ -->
+<section class="sources">
+  <h2>Sources</h2>
+  <p><b>Sommet de Lille</b> · <a href="https://ia-avecnous.fr">ia-avecnous.fr</a> (programme officiel) · <a href="https://www.nord.gouv.fr/Actualites/Actualites/La-France-reunit-a-Lille-le-sommet-europeen-de-l-IA-au-coeur-du-reel">Préfecture du Nord</a> · <a href="https://www.ici.fr/hauts-de-france/nord-59/lille/au-sommet-de-l-ia-les-patrons-de-la-tech-convaincus-du-potentiel-des-hauts-de-france-7649950">ICI Hauts-de-France</a> · <a href="https://www.lagazettefrance.fr/article/sommet-europeen-de-l-ia-a-lille-les-hauts-de-france-au-coeur-du-reacteur">La Gazette France</a></p>
+  <p><b>Investissements &amp; critiques</b> · <a href="https://dcmag.fr/brookfield-va-investir-20-milliards-e-en-france-dont-un-mega-data-center-dia-de-1gw-a-cambrai/">DCmag</a> · <a href="https://www.usinenouvelle.com/editorial/ce-que-l-on-sait-du-projet-de-datacenter-de-brookfield-et-data4-a-cambrai.N2232222">Usine Nouvelle</a> · <a href="https://synthmedia.fr/vie-quotidienne/data-centers-et-emploi-a-cambrai-personne-ne-croit-en-une-chtilicon-valley/">Synth Media (Cambrai)</a></p>
+  <p><b>Encyclique Magnifica Humanitas</b> · <a href="https://www.vatican.va/content/leo-xiv/fr/encyclicals/documents/20260515-magnifica-humanitas.html">Vatican.va (texte intégral)</a> · <a href="https://www.vaticannews.va/fr/pape/news/2026-05/resume-encyclique-magnifica-humanitas-leon-xiv.html">Vatican News</a> · <a href="https://www.jepense.org/encyclique-pape-ia-resume/">Jepense.org (résumé)</a> · <a href="https://www.rts.ch/info/monde/2026/article/le-pape-leon-xiv-alerte-sur-les-dangers-de-l-intelligence-artificielle-29252639.html">RTS</a></p>
+  <p><b>Claude / Anthropic &amp; contrôle US</b> · <a href="https://9to5mac.com/2026/06/12/anthropic-pulls-claude-mythos-5-and-claude-fable-5-following-us-government-directive/">9to5Mac</a> · <a href="https://ici.radio-canada.ca/nouvelle/2232841/anthropic-ia-trump-ethique-armee-etats-unis-technologie">Radio-Canada</a> · <a href="https://www.axios.com/2025/05/28/ai-jobs-white-collar-unemployment-anthropic">Axios</a></p>
+  <p><b>Emploi</b> · <a href="https://www.itforbusiness.fr/selon-le-fmi-lia-impactera-40-des-emplois-dans-le-monde-71822">FMI (40 %)</a> · <a href="https://www.oecd.org/en/topics/sub-issues/ai-and-work.html">OCDE — IA &amp; travail</a> · <a href="https://fortune.com/2026/05/05/dario-amodei-jevons-paradox-will-ai-wipe-out-white-collar-jobs/">Fortune (Amodei, 2026)</a> · <a href="https://www.hiringlab.org/fr/blog/2026/04/01/avril-2026-lia-progresse-dans-un-marche-du-travail-en-recul/">Indeed Hiring Lab</a></p>
+  <p><b>Éducation</b> · <a href="https://arxiv.org/abs/2506.08872">« Your Brain on ChatGPT » (arXiv, MIT)</a> · <a href="https://www.inserm.fr/actualite/quel-est-limpact-de-lia-sur-leducation/">Inserm</a> · <a href="https://ecolebranchee.com/ia-donnees-recentes-efficacite-apprentissage/">École branchée (Ludoviales 2026)</a></p>
+</section>
+
+<div class="foot">
+  Brief préparé pour le podcast du 15 juin 2026 — <a href="presentation-xavier-bertrand-ia.html">voir la présentation complète</a> · <a href="presentation-xavier-bertrand-ia.pdf">PDF</a><br>
+  Un dossier des Fables du Futur · les faits sont sourcés ; les angles et formules sont des propositions éditoriales à valider.
+</div>
+
+</div>
+</body>
+</html>

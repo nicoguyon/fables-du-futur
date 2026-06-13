@@ -153,7 +153,7 @@ ul.clean li b{color:var(--ink)}
 </head>
 <body>
 
-<div class="counter"><span id="cur">1</span> / 14</div>
+<div class="counter"><span id="cur">1</span> / 21</div>
 <div class="hint">← → naviguer · swipe sur mobile</div>
 
 <button class="nav prev" onclick="go(-1)" aria-label="précédent"></button>
@@ -165,7 +165,7 @@ ul.clean li b{color:var(--ink)}
   <section class="slide active">
     <div class="portrait">
       <div>
-        <div class="kicker">Dossier documenté · 14 slides · juin 2026</div>
+        <div class="kicker">Dossier documenté · 21 slides · juin 2026</div>
         <h1>Xavier Bertrand<br>&amp; l'intelligence<br>artificielle</h1>
         <p class="lede" style="margin-top:2vh">Déclarations, stratégie, milliards et controverses : enquête sur le pari de la « vallée de l'IA » des Hauts-de-France.</p>
         <div class="byline">Citations vérifiées · cartes &amp; infographies originales · sources en fin de dossier</div>
@@ -187,10 +187,11 @@ ul.clean li b{color:var(--ink)}
         <li><b>08–10</b> · La stratégie : carte des sites, milliards investis, pari de l'emploi</li>
       </ul>
       <ul class="clean">
-        <li><b>11</b> · Énergie &amp; environnement : Gravelines et la chaleur fatale</li>
-        <li><b>12</b> · Les critiques : la « Ch'tilicon Valley » en question</li>
-        <li><b>13</b> · Synthèse : ce qu'il faut retenir</li>
-        <li><b>14</b> · Sources complètes</li>
+        <li><b>11–12</b> · Énergie, environnement &amp; les critiques (« Ch'tilicon Valley »)</li>
+        <li><b>13–14</b> · Au-delà du sommet : ses six grands sujets</li>
+        <li><b>15–16</b> · Le pape « désarme l'IA » · l'Amérique verrouille Claude</li>
+        <li><b>17–18</b> · Les dernières études : emploi &amp; éducation</li>
+        <li><b>19–21</b> · Fil rouge, brief podcast, synthèse &amp; sources</li>
       </ul>
     </div>
   </section>
@@ -398,6 +399,126 @@ ul.clean li b{color:var(--ink)}
       </div>
     </div>
     <div class="src">Source : Synth Media — « Data centers et emploi : à Cambrai, personne ne croit en une Ch'tilicon Valley » (2026) · Les Échos / Trendeo</div>
+  </section>
+
+  <!-- 13 — INTERTITRE PARTIE 2 -->
+  <section class="slide dark">
+    <div class="kicker">Partie II · au-delà du sommet</div>
+    <h1 style="color:#f5eedd">La semaine<br>qui rebat<br>les cartes</h1>
+    <p class="lede" style="margin-top:2vh">Pendant que Lille parlait souveraineté, trois ondes de choc traversaient le monde de l'IA — le Vatican, Washington, et la recherche. De quoi nourrir le débat.</p>
+  </section>
+
+  <!-- 14 — LES 6 SUJETS DU SOMMET -->
+  <section class="slide">
+    <div class="kicker">Récap · le sommet en six débats</div>
+    <h2>Les six grands sujets de Lille</h2>
+    <div class="two txtfirst" style="align-items:start">
+      <ul class="clean">
+        <li><b>Souveraineté</b> — « la France trace sa propre voie » (OVHcloud, Scale AI, Numeum)</li>
+        <li><b>Prospective</b> — l'IA, « révolution anthropologique » (Éric Hazan, A. Grinbaum / CEA)</li>
+        <li><b>Emploi</b> — « le grand contrat social à renégocier » (France Travail, Google, CFDT)</li>
+      </ul>
+      <ul class="clean">
+        <li><b>Éducation</b> — « l'IA pour tous ou pour quelques-uns ? » (Univ. Catho Lille, DataIA)</li>
+        <li><b>Data centers</b> — « le nouveau pacte territorial » : emplois, chaleur fatale, énergie</li>
+        <li><b>Culture &amp; défense</b> — droits d'auteur (SACEM) ; « défendre l'Europe sans deeptech ? » (J. Borrell)</li>
+      </ul>
+    </div>
+    <div class="src">Source : programme officiel du sommet « L'IA avec nous », ia-avecnous.fr (12 juin 2026)</div>
+  </section>
+
+  <!-- 15 — LE PAPE -->
+  <section class="slide dark">
+    <div class="kicker">Onde de choc nᵒ 1 · le Vatican</div>
+    <div class="two txtfirst">
+      <div>
+        <h2 style="color:#f5eedd">Le pape veut<br>« désarmer l'IA »</h2>
+        <p>Le 25 mai, Léon XIV présente <strong>« Magnifica Humanitas »</strong>, première encyclique entièrement consacrée à l'IA — signée pour les 135 ans de <em>Rerum Novarum</em>.</p>
+        <ul class="clean">
+          <li>« <b>Désarmer</b> » = non pas renoncer, mais l'arracher aux monopoles, la rendre transparente et contestable</li>
+          <li>« <b>L'IA n'est pas moralement neutre</b> »</li>
+          <li>Propositions : contrôles indépendants, protection de l'emploi, <b>« jeûne numérique »</b>, limites sur l'IA militaire</li>
+        </ul>
+      </div>
+      <figure class="figure">
+        <img src="img-presentation/gpt2-pape.png" alt="Illustration allégorique : une colombe dont les ailes se prolongent en circuits">
+        <figcaption>Vue d'artiste — image générée (GPT Image 2)</figcaption>
+      </figure>
+    </div>
+    <div class="src">Sources : Vatican.va (texte intégral) · Vatican News · Jepense.org · RTS (mai 2026)</div>
+  </section>
+
+  <!-- 16 — CLAUDE / USA -->
+  <section class="slide">
+    <div class="kicker">Onde de choc nᵒ 2 · Washington</div>
+    <div class="two txtfirst">
+      <div>
+        <h2>L'Amérique<br>verrouille Claude</h2>
+        <p>Le 12 juin, Anthropic <strong>suspend l'accès à Claude Mythos 5 et Fable 5</strong> pour tous ses clients, sur directive de contrôle à l'exportation du gouvernement américain.</p>
+        <ul class="clean">
+          <li>Interdit hors des États-Unis et à <b>tous les ressortissants étrangers</b> — licence requise</li>
+          <li>Invoqué : la sécurité nationale (une méthode de « jailbreak » de Fable 5)</li>
+          <li>Déjà un précédent : le Pentagone avait annulé un contrat de <b>200 M$</b> face aux garde-fous d'Anthropic</li>
+          <li>L'IA de pointe devient un <b>actif de sécurité nationale</b> — la souveraineté en question</li>
+        </ul>
+      </div>
+      <figure class="figure">
+        <img src="img-presentation/gpt2-claude-us.png" alt="Illustration : un cœur d'IA verrouillé derrière une barrière aux couleurs américaines">
+        <figcaption>Vue d'artiste — image générée (GPT Image 2) · actualité en cours</figcaption>
+      </figure>
+    </div>
+    <div class="src">Sources : 9to5Mac · Radio-Canada · Axios (juin 2026) — sujet évolutif, à revérifier</div>
+  </section>
+
+  <!-- 17 — EMPLOI -->
+  <section class="slide dark">
+    <div class="kicker">Onde de choc nᵒ 3a · l'emploi</div>
+    <h2 style="color:#f5eedd">Le « bain de sang des<br>cols blancs » a-t-il eu lieu&nbsp;?</h2>
+    <p style="max-width:64ch">En 2025, Dario Amodei (Anthropic) annonçait jusqu'à <strong>50 % des emplois de bureau débutants supprimés</strong> en 5 ans. En 2026, il nuance (paradoxe de Jevons) ; Sam Altman admet avoir exagéré. La réalité&nbsp;:</p>
+    <div class="stats" style="margin-top:2vh">
+      <div class="stat"><div class="big" style="color:#f5eedd">40 %</div><div class="lab" style="color:#cfc2a8">des emplois mondiaux impactés (60 % dans les pays avancés) — FMI</div></div>
+      <div class="stat"><div class="big" style="color:#f5eedd">~25 %</div><div class="lab" style="color:#cfc2a8">des travailleurs OCDE fortement exposés à l'IA générative</div></div>
+      <div class="stat"><div class="big" style="color:#f5eedd">−30 à −50 %</div><div class="lab" style="color:#cfc2a8">d'embauches débutantes dans la tech en 2025</div></div>
+      <div class="stat"><div class="big" style="color:#f5eedd">renversement</div><div class="lab" style="color:#cfc2a8">cette fois, diplômés, femmes et métropoles en première ligne</div></div>
+    </div>
+    <div class="src">Sources : FMI · OCDE (IA &amp; travail) · Fortune · Axios · Indeed Hiring Lab (2025-2026)</div>
+  </section>
+
+  <!-- 18 — ÉDUCATION -->
+  <section class="slide">
+    <div class="kicker">Onde de choc nᵒ 3b · l'éducation</div>
+    <div class="two txtfirst">
+      <div>
+        <h2>L'IA nous rend-elle<br>plus bêtes&nbsp;?</h2>
+        <ul class="clean">
+          <li><b>Côté lumière</b> : effet d'apprentissage de <b>0,86</b> (énorme) ; tuteurs IA = <b>2× plus rapides</b> ; <b>82 %</b> des étudiants français l'utilisent</li>
+          <li><b>Côté ombre</b> : l'étude MIT « <i>Your Brain on ChatGPT</i> » (EEG, 54 sujets) montre la <b>connectivité neuronale la plus faible</b> chez les utilisateurs d'IA</li>
+          <li>Les chercheurs parlent de <b>« dette cognitive »</b> : on hypothèque sa capacité à penser seul</li>
+          <li>Écho direct au <b>« jeûne numérique »</b> du pape</li>
+        </ul>
+      </div>
+      <figure class="figure">
+        <img src="img-presentation/nb2-education.png" alt="Étudiante avec un casque EEG, cerveau holographique aux deux moitiés inégales">
+        <figcaption>Vue d'artiste — image générée (Nano Banana 2)</figcaption>
+      </figure>
+    </div>
+    <div class="src">Sources : « Your Brain on ChatGPT » (arXiv, MIT Media Lab) · Inserm · École branchée (2025-2026)</div>
+  </section>
+
+  <!-- 19 — CTA PODCAST -->
+  <section class="slide dark">
+    <div class="kicker">Pour aller plus loin</div>
+    <h2 style="color:#f5eedd">Un fil rouge unique&nbsp;:<br>qui contrôle l'IA, pour servir qui&nbsp;?</h2>
+    <ul class="clean">
+      <li><b>Lille</b> : les territoires, pour l'emploi et la réindustrialisation</li>
+      <li><b>Le pape</b> : les peuples, pour la dignité — pas les monopoles</li>
+      <li><b>Washington</b> : l'État, pour la sécurité nationale</li>
+      <li><b>Les études</b> : pour l'instant, la productivité… au risque de notre autonomie de pensée</li>
+    </ul>
+    <a class="dl" href="podcast-ia-lundi.html" style="background:var(--gold)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
+      Ouvrir le brief podcast complet
+    </a>
   </section>
 
   <!-- 13 — SYNTHÈSE -->
