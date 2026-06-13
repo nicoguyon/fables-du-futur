@@ -1,0 +1,42 @@
+/* ============================================================
+   YVES ROCHER — Charte graphique (tokens officiels)
+   Couleurs extraites du logo vectoriel officiel (Wikimedia/SVG).
+   Collection MONOÏ — déclinaison solaire/Corse.
+   ============================================================ */
+:root{
+  /* — Couleurs de marque officielles — */
+  --yr-green:        #8A9738;  /* vert feuille Yves Rocher (emblème) */
+  --yr-green-deep:   #04593C;  /* vert profond botanique */
+  --yr-green-light:  #62A24C;  /* vert pousse */
+  --yr-grey:         #514D4F;  /* gris signature (wordmark) */
+  --yr-white:        #FFFFFF;
+
+  /* — Extension MONOÏ (univers solaire Tom Ford 80-90 / Corse) — */
+  --monoi-tan:       #C98A4B;  /* peau bronzée / monoï ambré */
+  --monoi-gold:      #E7B96B;  /* or solaire, reflets huile */
+  --monoi-sand:      #EFE2C9;  /* sable / coprah */
+  --monoi-tiare:     #FBF7EE;  /* fleur de tiaré, blanc crème */
+  --monoi-sea:       #1C6E7B;  /* turquoise profond Sanguinaires */
+  --monoi-sunset:    #D8643C;  /* couchant rouge sur la mer */
+  --monoi-ink:       #2A2118;  /* brun chaud, texte */
+
+  /* — Rôles — */
+  --bg:        var(--monoi-tiare);
+  --surface:   var(--monoi-sand);
+  --text:      var(--monoi-ink);
+  --text-soft: #6b5d49;
+  --primary:   var(--yr-green);
+  --accent:    var(--monoi-gold);
+  --accent-2:  var(--monoi-sea);
+
+  /* — Typographie — */
+  --font-display: "Fraunces", "Times New Roman", serif;   /* titres, élégance solaire */
+  --font-body:    "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-mono:    "IBM Plex Mono", monospace;
+
+  /* — Rythme — */
+  --radius: 14px;
+  --radius-lg: 26px;
+  --shadow: 0 18px 50px rgba(42,33,24,.16);
+  --maxw: 1240px;
+}

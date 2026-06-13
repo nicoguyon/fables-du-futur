@@ -1,0 +1,33 @@
+// MONOÏ by Yves Rocher — catalogue produits
+window.MONOI_CATALOG = [
+  // — La Collection (gamme réelle Yves Rocher) —
+  {slug:"p01-huile-tradition", name:"Huile de Monoï Tradition", line:"La Collection", price:19.95, badge:"Iconique",
+   tagline:"97 % de pur Monoï de Tahiti", desc:"Le geste originel. Macération de fleurs de Tiaré dans l'huile de coprah de Polynésie. Nourrit corps et cheveux d'un voile d'or."},
+  {slug:"p02-huile-seche", name:"Huile Sèche Sublimatrice", line:"La Collection", price:16.95,
+   tagline:"Un voile satiné, une peau de soleil", desc:"Brume d'huile sèche au toucher poudré. Sublime le hâle sans fini gras, sillage de Tiaré."},
+  {slug:"p03-huile-nacree", name:"Huile Nacrée Or", line:"La Collection", price:18.95, badge:"Édition lumière",
+   tagline:"Paillettes d'or, peau lumière", desc:"Huile pailletée d'or fin. La peau capte le soleil et le renvoie, du matin au dernier rayon."},
+  {slug:"p04-lait-corps", name:"Lait Corps Monoï", line:"La Collection", price:12.95,
+   tagline:"Hydratation gourmande", desc:"Fondant et enveloppant, il prolonge le monoï sur la peau toute la journée."},
+  {slug:"p05-gel-douche", name:"Gel Douche Monoï", line:"La Collection", price:5.95,
+   tagline:"Une mousse fleurie de Tiaré", desc:"La douche devient un départ en vacances. Mousse onctueuse, parfum solaire."},
+  {slug:"p06-creme-mains", name:"Crème Mains Monoï", line:"La Collection", price:6.95,
+   tagline:"Le soleil au creux des mains", desc:"Texture riche absorbée en un instant. À glisser dans chaque sac de plage."},
+  {slug:"p07-edt", name:"Eau de Toilette Monoï", line:"La Collection", price:24.95, badge:"Sillage",
+   tagline:"Le sillage solaire", desc:"Tiaré, fleur d'oranger et ambre. Un parfum qui sent l'été même en plein hiver."},
+  {slug:"p08-gommage", name:"Gommage Sucré Monoï", line:"La Collection", price:14.95,
+   tagline:"Peau neuve, peau de miel", desc:"Cristaux de sucre fondants dans un bain d'huile de monoï. Gommage et soin en un geste."},
+  // — Capsule « Été Sanguinaires » (audacieuse) —
+  {slug:"p09-brume-cheveux", name:"Brume Cheveux Soleil", line:"Été Sanguinaires", price:13.95, badge:"Nouveau",
+   tagline:"La crinière de la plage", desc:"Voile protecteur et lumineux pour des cheveux gorgés de soleil, sans effet carton."},
+  {slug:"p10-solaire-spf", name:"Huile Solaire SPF Or", line:"Été Sanguinaires", price:21.95, badge:"Nouveau",
+   tagline:"Bronzer protégé, briller doré", desc:"La protection d'un soin solaire, la sensorialité du monoï. L'or qui prend soin."},
+  {slug:"p11-serviette", name:"Serviette Plage MONOÏ", line:"Été Sanguinaires", price:49, badge:"Lifestyle",
+   tagline:"Édition Ajaccio", desc:"Drap de plage XL, rayures sable & or, emblème Yves Rocher tissé. Coton velours."},
+  {slug:"p12-lunettes", name:"Lunettes Miroir MONOÏ", line:"Été Sanguinaires", price:89, badge:"Lifestyle",
+   tagline:"Le regard Sanguinaires", desc:"Aviateur miroir doré, branches gravées MONOÏ. Pour voir l'été en or."},
+  {slug:"p13-matelas", name:"Matelas Gonflable Or", line:"Été Sanguinaires", price:59, badge:"Culte",
+   tagline:"Le trône solaire", desc:"Lounger gonflable métallisé or. Le centre de gravité de toutes les piscines."},
+  {slug:"p14-transat", name:"Transat Riviera MONOÏ", line:"Été Sanguinaires", price:149, badge:"Lifestyle",
+   tagline:"S'allonger dans les années 80", desc:"Bois crème, coussin rayé maison. Le siège du grand bronzage."},
+];
