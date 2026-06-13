@@ -67,7 +67,7 @@ ul.clean li b{color:var(--ink)}
 @media(max-width:820px){.two,.two.txtfirst{grid-template-columns:1fr;gap:2vh}.stats{grid-template-columns:1fr}}
 
 .figure{max-width:100%;display:flex;flex-direction:column;align-items:center;gap:8px}
-.figure img{max-width:100%;max-height:62vh;border-radius:12px;box-shadow:0 14px 38px rgba(36,29,18,.22)}
+.figure img,.figure video{max-width:100%;max-height:62vh;border-radius:12px;box-shadow:0 14px 38px rgba(36,29,18,.22)}
 .figure.unboxed img{box-shadow:none;border-radius:0}
 .figure figcaption{font-family:"IBM Plex Mono",monospace;font-size:clamp(9px,.85vw,11px);color:var(--ink-soft);letter-spacing:.04em;text-align:center}
 .slide.dark .figure figcaption{color:#9a8f78}
@@ -207,8 +207,11 @@ ul.clean li b{color:var(--ink)}
         </ul>
       </div>
       <div>
-        <p><strong>Au programme officiel :</strong> souveraineté (OVHcloud, Scale AI…), IA et travail (France Travail, Google France, CFDT), éducation, data centers et réindustrialisation (SoftBank, Data4, Nvidia, RTE, Schneider Electric), IA et culture (SACEM, Le Fresnoy), défense européenne (Josep Borrell).</p>
-        <p>Présents à l'ouverture : la <strong>ministre déléguée à l'IA</strong> Anne Le Hénanff, la vice-présidente de la Commission européenne <strong>Henna Virkkunen</strong>, <strong>Bruno Bonnell</strong> (France 2030) — et <strong>Thierry Breton</strong> en plénière.</p>
+        <figure class="figure">
+          <img src="img-presentation/gpt2-sommet.png" alt="Vue d'artiste du sommet européen de l'IA dans une halle industrielle lilloise">
+          <figcaption>Vue d'artiste — image générée (GPT Image 2)</figcaption>
+        </figure>
+        <p style="margin-top:1.4vh"><strong>Au programme :</strong> souveraineté (OVHcloud, Scale AI…), IA et travail (France Travail, Google France, CFDT), data centers et réindustrialisation (SoftBank, Data4, Nvidia, RTE), culture (SACEM), défense (Josep Borrell). À l'ouverture : la ministre <strong>Anne Le Hénanff</strong>, la vice-présidente de la Commission <strong>Henna Virkkunen</strong>, <strong>Bruno Bonnell</strong> — et <strong>Thierry Breton</strong> en plénière.</p>
       </div>
     </div>
     <div class="src">Sources : programme officiel ia-avecnous.fr (PDF, plénière Atrium) · Préfecture du Nord · L'Essentiel · La Gazette France</div>
@@ -249,9 +252,9 @@ ul.clean li b{color:var(--ink)}
         <div class="attrib">— Xavier Bertrand, interview BFMTV (2026)</div>
         <p style="margin-top:2.2vh">Une phrase calibrée pour l'histoire régionale : après le charbon et après la <strong>« vallée de la batterie »</strong>, l'IA devient le <strong>troisième acte industriel</strong> du Nord. Le storytelling épouse la géographie : terrils d'un côté, serveurs de l'autre.</p>
       </div>
-      <figure class="figure unboxed">
-        <img src="img-presentation/des-mines-a-lia.svg" alt="Illustration : des terrils miniers aux data centers">
-        <figcaption>Illustration originale — du chevalement de mine au data center</figcaption>
+      <figure class="figure">
+        <video src="video-presentation/kling-mines-ia.mp4" poster="img-presentation/nb2-mines-ia.png" autoplay muted loop playsinline></video>
+        <figcaption>Film généré (Kling 3.0) — du chevalement de mine au campus IA</figcaption>
       </figure>
     </div>
     <div class="src">Source : HorizonActu — « Il y aura plusieurs data centers dans les Hauts-de-France » (juin 2026)</div>
@@ -302,9 +305,17 @@ ul.clean li b{color:var(--ink)}
   <!-- 10 — EMPLOI -->
   <section class="slide dark">
     <div class="kicker">Déclaration nᵒ 3 · le pari de l'emploi</div>
-    <blockquote class="quote" style="font-size:clamp(26px,3.8vw,48px)"><span class="q">«</span> Un data center, c'est entre <em>300 et 700 emplois</em>. <span class="q">»</span></blockquote>
-    <div class="attrib">— Xavier Bertrand (2026)</div>
-    <div class="stats" style="margin-top:3vh">
+    <div class="two txtfirst" style="align-items:center">
+      <div>
+        <blockquote class="quote" style="font-size:clamp(24px,3.2vw,42px)"><span class="q">«</span> Un data center, c'est entre <em>300 et 700 emplois</em>. <span class="q">»</span></blockquote>
+        <div class="attrib">— Xavier Bertrand (2026)</div>
+      </div>
+      <figure class="figure">
+        <video src="video-presentation/seedance-datacenter.mp4" poster="img-presentation/gpt2-datacenter.png" autoplay muted loop playsinline style="max-height:34vh"></video>
+        <figcaption>Film généré (Seedance 2.0) — au cœur d'un data center IA</figcaption>
+      </figure>
+    </div>
+    <div class="stats" style="margin-top:2vh">
       <div class="stat"><div class="big" style="color:#f5eedd">300–700</div><div class="lab" style="color:#cfc2a8">emplois par data center, selon Bertrand</div></div>
       <div class="stat"><div class="big" style="color:#f5eedd">≈ 4 000</div><div class="lab" style="color:#cfc2a8">emplois directs et indirects évoqués pour le seul site de Cambrai</div></div>
       <div class="stat"><div class="big" style="color:#f5eedd">« milliers »</div><div class="lab" style="color:#cfc2a8">d'emplois régionaux espérés, data centers cumulés</div></div>
@@ -326,8 +337,11 @@ ul.clean li b{color:var(--ink)}
         </ul>
       </div>
       <div>
-        <p>Cette « <strong>réinjection de chaleur fatale</strong> » figure noir sur blanc au programme du sommet (table ronde de 15h40), aux côtés de la <strong>souveraineté énergétique</strong> — preuve que l'argumentaire régional et l'agenda de l'événement ne font qu'un.</p>
-        <p>Reste l'équation brute : <strong>1 GW pour un seul site</strong>, c'est l'équivalent d'un réacteur entier mobilisé pour le calcul.</p>
+        <figure class="figure">
+          <img src="img-presentation/nb2-energie.png" alt="Centrale nucléaire côtière et lignes haute tension vers des data centers">
+          <figcaption>Vue d'artiste — image générée (Nano Banana 2)</figcaption>
+        </figure>
+        <p style="margin-top:1.2vh">La « <strong>réinjection de chaleur fatale</strong> » figure noir sur blanc au programme du sommet (15h40). Reste l'équation brute : <strong>1 GW pour un seul site</strong>, l'équivalent d'un réacteur entier mobilisé pour le calcul.</p>
       </div>
     </div>
     <div class="src">Sources : HorizonActu · programme officiel du sommet (table ronde « Data centers et réindustrialisation ») · ICI (2026)</div>
@@ -382,7 +396,7 @@ ul.clean li b{color:var(--ink)}
       <p><b>Investissements</b> · <a href="https://dcmag.fr/brookfield-va-investir-20-milliards-e-en-france-dont-un-mega-data-center-dia-de-1gw-a-cambrai/">DCmag</a> · <a href="https://www.usine-digitale.fr/article/brookfield-va-investir-20-milliards-d-euros-dans-l-ia-en-france-d-ici-2030.N2227210">Usine Digitale</a> · <a href="https://www.usinenouvelle.com/editorial/ce-que-l-on-sait-du-projet-de-datacenter-de-brookfield-et-data4-a-cambrai.N2232222">Usine Nouvelle</a> · <a href="https://www.lejournaldesentreprises.com/article/cambrai-beneficiaire-dun-investissement-massif-pour-developper-lia-en-france-annonce-par-le-canadien-2113116">Le Journal des Entreprises</a> · <a href="https://www.franceinfo.fr/replay-jt/france-2/20-heures/intelligence-artificielle-la-ville-de-cambrai-nord-va-bientot-accueillir-un-immense-data-center_7066919.html">franceinfo</a></p>
       <p><b>Critiques</b> · <a href="https://synthmedia.fr/vie-quotidienne/data-centers-et-emploi-a-cambrai-personne-ne-croit-en-une-chtilicon-valley/">Synth Media</a></p>
       <p><b>Biographie</b> · <a href="https://www.franceinfo.fr/politique/xavier-bertrand/">franceinfo</a> · <a href="https://www.trombinoscope.com/biographie-xavier-bertrand-15680.html">Le Trombinoscope</a> · <a href="https://www.hautsdefrance.fr/elu/bertrand-xavier/">Région Hauts-de-France</a></p>
-      <p><b>Crédits</b> · Portrait : Claudio Centonze / © European Union, 2025 — Wikimedia Commons, CC BY 4.0 · Carte, infographie et illustration : créations originales pour ce dossier</p>
+      <p><b>Crédits</b> · Portrait : Claudio Centonze / © European Union, 2025 — Wikimedia Commons, CC BY 4.0 · Carte et infographies : créations originales · Vues d'artiste : images générées par IA (Nano Banana 2, GPT Image 2) · Films : générés par IA (Kling 3.0, Seedance 2.0) via fal.ai</p>
     </div>
     <div class="byline" style="margin-top:2vh">Un dossier des <a href="/" style="color:var(--copper);text-decoration:none">Fables du Futur</a> · juin 2026</div>
   </section>
