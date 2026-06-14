@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIMPLE COMME UNE AMPUTATION — un film d'Alexandre</title>
+<meta name="description" content="Bande-annonce du long-métrage d'Alexandre. Julien est prêt à tout pour se débarrasser de sa jambe gauche. Une comédie (très) noire.">
+<meta property="og:title" content="SIMPLE COMME UNE AMPUTATION">
+<meta property="og:description" content="Julien est prêt à tout pour se débarrasser de sa jambe gauche. Une comédie (très) noire — bande-annonce.">
+<meta property="og:type" content="video.movie">
+<meta property="og:image" content="trailer/poster.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{ --black:#070707; --panel:#0e0e10; --ink:#f4f1ea; --muted:#9a958c; --accent:#c8462e; --line:#1f1f22; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{ background:var(--black); color:var(--ink); font-family:"Fraunces",Georgia,serif; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+.mono{font-family:"IBM Plex Mono",monospace}
+img{display:block;max-width:100%}
+
+/* film grain overlay */
+body::after{ content:""; position:fixed; inset:0; pointer-events:none; z-index:60; opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+/* ---------- HERO VIDEO ---------- */
+.hero{ position:relative; width:100%; min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:40px 20px; }
+.hero video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
+.hero .scrim{ position:absolute; inset:0; z-index:1; background:radial-gradient(ellipse at center, rgba(0,0,0,.25) 0%, rgba(0,0,0,.78) 100%); }
+.hero .content{ position:relative; z-index:2; max-width:1100px; }
+.kicker{ font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.42em; text-transform:uppercase; color:var(--accent); margin-bottom:26px; }
+.hero h1{ font-weight:900; font-size:clamp(40px,8.5vw,118px); line-height:.92; letter-spacing:-.02em; text-transform:uppercase; text-shadow:0 4px 50px rgba(0,0,0,.7); }
+.hero .sub{ font-style:italic; font-size:clamp(18px,2.4vw,28px); color:var(--ink); opacity:.9; margin-top:22px; }
+.hero .credit{ font-family:"IBM Plex Mono",monospace; font-size:13px; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); margin-top:30px; }
+.play{ margin-top:42px; display:inline-flex; align-items:center; gap:12px; cursor:pointer;
+  font-family:"IBM Plex Mono",monospace; font-size:13px; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--ink); background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.35);
+  padding:16px 30px; border-radius:40px; backdrop-filter:blur(6px); transition:.25s; }
+.play:hover{ background:var(--accent); border-color:var(--accent); transform:translateY(-2px); }
+.play .tri{ width:0;height:0;border-left:13px solid currentColor;border-top:8px solid transparent;border-bottom:8px solid transparent; }
+
+/* ---------- WATCH (fullscreen player) ---------- */
+.player{ position:fixed; inset:0; z-index:100; background:#000; display:none; align-items:center; justify-content:center; }
+.player.on{display:flex}
+.player video{ width:100%; height:100%; object-fit:contain; }
+.player .close{ position:absolute; top:22px; right:26px; z-index:101; color:#fff; font-size:30px; cursor:pointer; font-family:"IBM Plex Mono",monospace; opacity:.8; }
+.player .close:hover{opacity:1}
+
+/* ---------- SECTIONS ---------- */
+section{ max-width:1080px; margin:0 auto; padding:90px 24px; }
+.eyebrow{ font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.3em; text-transform:uppercase; color:var(--accent); margin-bottom:20px; }
+.lede{ font-size:clamp(22px,3.4vw,40px); line-height:1.28; letter-spacing:-.01em; }
+.lede em{font-style:italic;color:var(--muted)}
+.syn{ font-size:19px; line-height:1.7; color:var(--muted); margin-top:26px; max-width:760px; }
+.syn strong{color:var(--ink);font-weight:600}
+
+/* cast */
+.cast-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; margin-top:14px; }
+.card{ position:relative; border:1px solid var(--line); border-radius:6px; overflow:hidden; background:var(--panel); aspect-ratio:21/9; }
+.card img{ width:100%; height:100%; object-fit:cover; filter:grayscale(.15) contrast(1.05); transition:.4s; }
+.card:hover img{ filter:none; transform:scale(1.03); }
+.card .cap{ position:absolute; left:0; right:0; bottom:0; padding:14px 16px; background:linear-gradient(transparent,rgba(0,0,0,.85));
+  font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.12em; text-transform:uppercase; }
+.card .cap b{display:block;font-family:"Fraunces",serif;font-size:17px;letter-spacing:0;text-transform:none;margin-bottom:2px}
+.card .cap span{color:var(--muted)}
+.span2{grid-column:span 2}
+@media(max-width:520px){.span2{grid-column:span 1}}
+
+/* beats */
+.beats{ border-top:1px solid var(--line); margin-top:10px; }
+.beat{ display:grid; grid-template-columns:60px 1fr; gap:20px; padding:20px 0; border-bottom:1px solid var(--line); align-items:baseline; }
+.beat .n{ font-family:"IBM Plex Mono",monospace; color:var(--accent); font-size:13px; }
+.beat .t{ font-size:20px; }
+.beat .d{ color:var(--muted); font-size:15px; margin-top:4px; }
+
+footer{ text-align:center; padding:70px 24px 90px; border-top:1px solid var(--line); color:var(--muted); }
+footer .big{ font-family:"Fraunces",serif; font-weight:900; font-size:clamp(28px,5vw,60px); text-transform:uppercase; color:var(--ink); letter-spacing:-.02em; }
+footer .mono{ font-size:12px; letter-spacing:.2em; text-transform:uppercase; margin-top:18px; }
+.made{ margin-top:34px; font-size:12px; opacity:.6; line-height:1.7; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <video src="trailer/trailer.mp4" poster="trailer/poster.png" autoplay muted loop playsinline></video>
+  <div class="scrim"></div>
+  <div class="content">
+    <div class="kicker">Bande-annonce · prochainement</div>
+    <h1>Simple comme<br>une amputation</h1>
+    <div class="sub">Julien est prêt à tout pour se débarrasser de sa jambe gauche.</div>
+    <div class="credit">Un film d'Alexandre</div>
+    <div class="play" onclick="openPlayer()"><span class="tri"></span> Voir la bande-annonce</div>
+  </div>
+</header>
+
+<!-- PLAYER -->
+<div class="player" id="player">
+  <span class="close" onclick="closePlayer()">✕ ESC</span>
+  <video id="pv" src="trailer/trailer.mp4" controls playsinline></video>
+</div>
+
+<!-- SYNOPSIS -->
+<section>
+  <div class="eyebrow">Synopsis</div>
+  <p class="lede">Julien, 40 ans, vendeur de voitures électriques, mari modèle, père tranquille. Jusqu'au jour où son cerveau cesse de reconnaître sa jambe gauche. <em>Cette jambe-là n'est plus la sienne.</em></p>
+  <p class="syn">Dans un monde où l'on n'a pas le droit de se débarrasser d'un membre sain, Julien va devoir ruser : faux accidents de chasse, neige carbonique, blocs de béton, rails de chemin de fer… <strong>Tous les moyens sont bons.</strong> Mais un chirurgien obstiné s'acharne à le réparer. Il ne lui restera bientôt plus qu'une seule solution. Une comédie (très) noire sur l'identité, le corps, et le bonheur — <strong>simple comme une amputation</strong>.</p>
+</section>
+
+<!-- CAST -->
+<section>
+  <div class="eyebrow">Personnages</div>
+  <p class="lede" style="margin-bottom:34px">La famille.</p>
+  <div class="cast-grid">
+    <div class="card span2"><img src="trailer/references/julien.jpg" alt="Julien"><div class="cap"><b>Julien</b><span>le mari · monsieur-je-sais-tout</span></div></div>
+    <div class="card span2"><img src="trailer/references/linda.jpg" alt="Linda"><div class="cap"><b>Linda</b><span>madame santé · jiu-jitsu &amp; bougies</span></div></div>
+    <div class="card"><img src="trailer/references/axel.jpg" alt="Axel"><div class="cap"><b>Axel</b><span>le fils</span></div></div>
+    <div class="card"><img src="trailer/references/lustucru.jpg" alt="Lustucru"><div class="cap"><b>Lustucru</b><span>le chien</span></div></div>
+    <div class="card span2"><img src="trailer/references/michael.jpg" alt="Michaël"><div class="cap"><b>Michaël</b><span>le chirurgien</span></div></div>
+  </div>
+</section>
+
+<!-- BEATS -->
+<section>
+  <div class="eyebrow">Le découpage · 12 plans</div>
+  <div class="beats">
+    <div class="beat"><div class="n">01</div><div><div class="t">La vitrine</div><div class="d">Le bonheur en mode publicité.</div></div></div>
+    <div class="beat"><div class="n">02</div><div><div class="t">La diète</div><div class="d">La famille parfaite, au régime.</div></div></div>
+    <div class="beat"><div class="n">03</div><div><div class="t">La chute</div><div class="d">Une simple chute. Tout dérègle.</div></div></div>
+    <div class="beat"><div class="n">04</div><div><div class="t">La jambe étrangère</div><div class="d">« Cette jambe n'est pas la mienne. »</div></div></div>
+    <div class="beat"><div class="n">05—08</div><div><div class="t">La spirale</div><div class="d">Chasse, neige carbonique, béton, rails. Par tous les moyens.</div></div></div>
+    <div class="beat"><div class="n">09</div><div><div class="t">Le réparateur</div><div class="d">Michaël remet la jambe. La haine naît.</div></div></div>
+    <div class="beat"><div class="n">10</div><div><div class="t">Le kidnapping</div><div class="d">Le serment d'Hippocrate au bout du désespoir.</div></div></div>
+    <div class="beat"><div class="n">11</div><div><div class="t">La délivrance</div><div class="d">Enfin amputé. Le plus beau sourire du film.</div></div></div>
+    <div class="beat"><div class="n">12</div><div><div class="t">La liberté</div><div class="d">Tout perdu. Tout gagné.</div></div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="big">Simple comme une amputation</div>
+  <div class="mono">Un film d'Alexandre — prochainement</div>
+  <div class="made mono">Bande-annonce générée par IA · images Nano Banana Pro · vidéo Seedance 2.0 · musique &amp; voix ElevenLabs · montage Remotion · format 21:9</div>
+</footer>
+
+<script>
+const player=document.getElementById('player'), pv=document.getElementById('pv');
+function openPlayer(){ player.classList.add('on'); pv.currentTime=0; pv.play(); }
+function closePlayer(){ player.classList.remove('on'); pv.pause(); }
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closePlayer(); });
+player.addEventListener('click',e=>{ if(e.target===player) closePlayer(); });
+</script>
+</body>
+</html>

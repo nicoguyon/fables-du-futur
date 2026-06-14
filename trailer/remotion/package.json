@@ -1,0 +1,20 @@
+{
+  "name": "trailer-amputation",
+  "version": "1.0.0",
+  "description": "Bande-annonce 'Simple comme une amputation' — montage Remotion 21:9",
+  "scripts": {
+    "dev": "remotion studio",
+    "render": "remotion render Trailer out/trailer.mp4 --concurrency=2",
+    "still": "remotion still Trailer out/poster.png --frame=1750"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.477",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.477"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.3",
+    "typescript": "5.4.5"
+  }
+}
