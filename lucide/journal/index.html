@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Journal LUCIDE — La lunette rendue à sa vérité</title>
+<meta name="description" content="Le Journal de LUCIDE : décryptages sans détour sur la lunetterie, les marges, le prix-vérité, l'acétate et le titane, les vrais traitements de verres et la réparation. Voir clair, jusque dans nos chiffres.">
+<meta name="keywords" content="journal lunetterie, blog optique, prix-vérité lunettes, marges lunetterie, acétate titane, traitements verres, réparer lunettes, transparence optique">
+<link rel="canonical" href="https://lucide.vision/journal/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Le Journal LUCIDE">
+<meta property="og:description" content="Décryptages sans détour sur la lunetterie : marges, prix-vérité, matière, réparation.">
+<meta property="og:image" content="https://lucide.vision/assets/journal/journal-surenchere.jpg">
+<meta property="og:url" content="https://lucide.vision/journal/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/logos/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/tokens.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Blog","@id":"https://lucide.vision/journal/#blog","name":"Le Journal LUCIDE","description":"Décryptages sans détour sur la lunetterie : marges, prix-vérité, matière, réparation.","url":"https://lucide.vision/journal/","inLanguage":"fr-FR","publisher":{"@type":"Organization","name":"LUCIDE","logo":{"@type":"ImageObject","url":"https://lucide.vision/assets/logos/lucide-lockup.png"}}},
+ {"@type":"ItemList","@id":"https://lucide.vision/journal/#list","itemListElement":[
+   {"@type":"ListItem","position":1,"url":"https://lucide.vision/journal/pourquoi-la-lunetterie-est-l-industrie-de-la-surenchere.html","name":"Pourquoi la lunetterie est l'industrie de la surenchère"},
+   {"@type":"ListItem","position":2,"url":"https://lucide.vision/journal/le-prix-verite-mode-d-emploi.html","name":"Le prix-vérité, mode d'emploi"},
+   {"@type":"ListItem","position":3,"url":"https://lucide.vision/journal/acetate-titane-ce-qui-compte-vraiment.html","name":"Acétate, titane : ce qui compte vraiment"},
+   {"@type":"ListItem","position":4,"url":"https://lucide.vision/journal/reparer-plutot-que-jeter.html","name":"Réparer plutôt que jeter"}
+ ]}
+]}</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.serif{font-family:var(--font-display)}
+.mono{font-family:var(--font-mono);letter-spacing:.04em}
+::selection{background:var(--verre);color:#fff}
+:focus-visible{outline:2px solid var(--verre);outline-offset:3px;border-radius:3px}
+h1,h2,h3{text-wrap:balance;font-weight:400;line-height:1}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+
+.announce{background:var(--ink);color:var(--paper);text-align:center;padding:9px;font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.announce b{color:var(--aube)}
+
+header{position:sticky;top:0;z-index:60;background:rgba(246,243,236,.86);backdrop-filter:blur(14px);border-bottom:var(--line)}
+.nav{display:flex;align-items:center;gap:26px;height:72px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:34px;width:34px}
+.brand .wm{font-family:var(--font-display);font-size:30px;letter-spacing:.14em;line-height:1}
+.nav .links{display:flex;gap:26px;margin-left:24px;font-size:14.5px;font-weight:500}
+.nav .links a{color:var(--text-soft);padding:4px 0;transition:.2s}
+.nav .links a:hover,.nav .links a.on{color:var(--verre)}
+.nav .cart{margin-left:auto;display:flex;align-items:center;gap:8px;font-weight:600;font-size:14px}
+@media(max-width:880px){.nav .links{display:none}.nav .cart{margin-left:auto}}
+
+.jhead{padding:clamp(56px,8vw,104px) 0 clamp(34px,5vw,56px);border-bottom:var(--line)}
+.eyebrow{display:inline-flex;align-items:center;gap:11px;font-family:var(--font-mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--verre-deep);margin-bottom:16px}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--aube-deep)}
+.jhead h1{font-family:var(--font-display);font-size:clamp(46px,9vw,104px);line-height:.9;letter-spacing:-.01em}
+.jhead h1 i{color:var(--verre)}
+.jhead p{font-size:clamp(16px,2vw,21px);color:var(--text-soft);max-width:58ch;margin-top:20px;font-weight:300;line-height:1.6}
+
+.feed{padding:clamp(44px,6vw,80px) 0 clamp(64px,9vw,120px)}
+.jgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px}
+@media(max-width:780px){.jgrid{grid-template-columns:1fr}}
+.jcard{background:var(--paper);border:var(--line);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column;transition:.25s}
+.jcard:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.jcard .ph{aspect-ratio:16/10;background:var(--paper-2);overflow:hidden}
+.jcard .ph img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.jcard:hover .ph img{transform:scale(1.04)}
+.jcard .body{padding:24px 26px 28px;display:flex;flex-direction:column;flex:1}
+.jcard .meta{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--verre);display:flex;justify-content:space-between;gap:12px}
+.jcard h2{font-family:var(--font-display);font-size:clamp(25px,3vw,31px);line-height:1.05;margin:12px 0 10px}
+.jcard p{color:var(--text-soft);font-size:15px;line-height:1.6;font-weight:300;flex:1}
+.jcard .read{margin-top:18px;font-weight:600;font-size:14px;color:var(--ink);display:inline-flex;align-items:center;gap:7px}
+.jcard:hover .read{color:var(--verre)}
+.jcard.feature{grid-column:1 / -1}
+.jcard.feature .ph{aspect-ratio:21/8}
+@media(max-width:780px){.jcard.feature .ph{aspect-ratio:16/10}}
+
+footer{background:var(--ink);color:var(--paper);padding:80px 0 36px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px}
+footer h4{font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--aube);margin-bottom:16px}
+footer a{display:block;color:rgba(246,243,236,.72);font-size:14px;padding:5px 0;transition:.2s}
+footer a:hover{color:var(--paper)}
+footer .big{font-family:var(--font-display);font-size:30px;letter-spacing:.14em}
+footer .news{display:flex;gap:8px;margin-top:14px;max-width:320px}
+footer .news input{flex:1;background:transparent;border:1px solid rgba(246,243,236,.3);border-radius:30px;padding:11px 16px;color:var(--paper);font-family:var(--font-body)}
+footer .news button{background:var(--aube);color:var(--ink);border:none;border-radius:30px;padding:0 18px;font-weight:700;cursor:pointer}
+.fbar{border-top:1px solid rgba(246,243,236,.14);margin-top:48px;padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:rgba(246,243,236,.5);font-family:var(--font-mono)}
+@media(max-width:860px){.fgrid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="announce">Le Journal · <b>Voir clair</b>, jusque dans nos chiffres · La lunette rendue à sa vérité</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="../index.html" class="brand"><img src="../assets/logos/lucide-emblem.svg" alt="LUCIDE"><span class="wm">LUCIDE</span></a>
+    <nav class="links">
+      <a href="../index.html#collection">La collection</a>
+      <a href="../index.html#verite">Le prix-vérité</a>
+      <a href="../identite.html">La maison</a>
+      <a href="index.html" class="on">Journal</a>
+    </nav>
+    <div class="cart">Voir clair.</div>
+  </div>
+</header>
+
+<section class="jhead">
+  <div class="wrap">
+    <div class="eyebrow">Le Journal</div>
+    <h1>On dit la vérité.<br><i>Même sur nos marges.</i></h1>
+    <p>Quatre décryptages sans détour sur la lunetterie : pourquoi vous payez un logo plutôt qu'un verre, ce que couvre vraiment un prix juste, la matière qui compte, et pourquoi rien ne devrait se jeter. L'anti-marketing comme posture — la transparence est notre seul spectacle.</p>
+  </div>
+</section>
+
+<section class="feed">
+  <div class="wrap">
+    <div class="jgrid">
+
+      <article class="jcard feature">
+        <a class="ph" href="pourquoi-la-lunetterie-est-l-industrie-de-la-surenchere.html"><img src="../assets/journal/journal-surenchere.jpg" alt="Un mur de montures identiques face à une paire honnête" loading="lazy"></a>
+        <div class="body">
+          <div class="meta"><span>Le parti pris</span><span>9 min de lecture</span></div>
+          <h2><a href="pourquoi-la-lunetterie-est-l-industrie-de-la-surenchere.html">Pourquoi la lunetterie est l'industrie de la surenchère</a></h2>
+          <p>Des marges multipliées par vingt, un logo qu'on facture à la place du verre, une poignée de groupes qui tiennent la chaîne du verre à la boutique. Décryptage d'un théâtre du prix — et du contre-pied que nous avons choisi.</p>
+          <span class="read">Lire l'article →</span>
+        </div>
+      </article>
+
+      <article class="jcard">
+        <a class="ph" href="le-prix-verite-mode-d-emploi.html"><img src="../assets/social/prix-verite-plate.jpg" alt="Le prix-vérité gravé sur une branche de lunette" loading="lazy"></a>
+        <div class="body">
+          <div class="meta"><span>La méthode</span><span>7 min de lecture</span></div>
+          <h2><a href="le-prix-verite-mode-d-emploi.html">Le prix-vérité, mode d'emploi</a></h2>
+          <p>Matière, verres, façon, transport, marge juste : voici comment nous calculons le coût réel d'une paire, ligne par ligne, et pourquoi nous le gravons à l'intérieur de la branche plutôt que sur une pub.</p>
+          <span class="read">Lire l'article →</span>
+        </div>
+      </article>
+
+      <article class="jcard">
+        <a class="ph" href="acetate-titane-ce-qui-compte-vraiment.html"><img src="../assets/journal/journal-acetate.jpg" alt="Plaques d'acétate brut à l'atelier" loading="lazy"></a>
+        <div class="body">
+          <div class="meta"><span>La matière</span><span>8 min de lecture</span></div>
+          <h2><a href="acetate-titane-ce-qui-compte-vraiment.html">Acétate, titane : ce qui compte vraiment</a></h2>
+          <p>L'acétate italien, le titane recyclé, et le grand tri des « traitements » de verres : le filtre lumière bleue utile face aux options vendues comme miraculeuses. La preuve plutôt que la promesse.</p>
+          <span class="read">Lire l'article →</span>
+        </div>
+      </article>
+
+      <article class="jcard">
+        <a class="ph" href="reparer-plutot-que-jeter.html"><img src="../assets/journal/journal-rechargeable.jpg" alt="Remplacement d'un verre, charnière vissée" loading="lazy"></a>
+        <div class="body">
+          <div class="meta"><span>Le geste</span><span>7 min de lecture</span></div>
+          <h2><a href="reparer-plutot-que-jeter.html">Réparer plutôt que jeter</a></h2>
+          <p>Verres remplaçables, charnières vissées, garantie à vie et opticien de confiance : pourquoi une paire de lunettes ne devrait jamais finir au fond d'un tiroir, ni à la poubelle.</p>
+          <span class="read">Lire l'article →</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="brand" style="margin-bottom:14px"><img src="../assets/logos/lucide-emblem-white.svg" style="height:30px;width:30px" alt=""><span class="big">LUCIDE</span></div>
+        <p style="color:rgba(246,243,236,.7);font-size:14px;max-width:34ch;font-weight:300">Voir clair. La maison française de lunetterie à transparence radicale.</p>
+        <div class="news"><input type="email" placeholder="Votre e-mail" aria-label="e-mail"><button>OK</button></div>
+      </div>
+      <div><h4>La collection</h4><a href="../index.html#collection">Le Verre Nu</a><a href="../index.html#collection">Plein Jour</a><a href="../index.html#collection">L'Atelier</a></div>
+      <div><h4>La maison</h4><a href="../identite.html">La charte</a><a href="../index.html#verite">Le prix-vérité</a><a href="index.html">Journal</a></div>
+      <div><h4>Aide</h4><a href="#">Trouver un opticien</a><a href="#">Garantie à vie</a><a href="#">Nous écrire</a></div>
+    </div>
+    <div class="fbar"><span>© 2026 LUCIDE — marque fictive, exercice créatif (GDIY #544).</span><span>Conçu à l'aube, en France.</span></div>
+  </div>
+</footer>
+</body>
+</html>
