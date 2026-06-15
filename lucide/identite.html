@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Maison & la Charte — LUCIDE · Transparence radicale</title>
+<meta name="description" content="La charte LUCIDE : six engagements pour une lunetterie honnête. Le prix-vérité, de vraies promesses, pas de label mais une charte, une collection essentielle, l'opticien de confiance, réparable à vie. Notre identité, nos valeurs.">
+<link rel="canonical" href="https://lucide.vision/identite.html">
+<meta property="og:title" content="La Maison & la Charte — LUCIDE">
+<meta property="og:description" content="Six engagements pour rendre la lunette honnête.">
+<meta property="og:image" content="assets/social/og.jpg">
+<link rel="icon" href="assets/logos/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AboutPage","name":"La Maison & la Charte LUCIDE","url":"https://lucide.vision/identite.html","about":{"@type":"Brand","name":"LUCIDE","slogan":"Voir clair."}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.narrow{max-width:760px;margin:0 auto;padding:0 28px}
+.serif{font-family:var(--font-display)}.mono{font-family:var(--font-mono)}
+::selection{background:var(--verre);color:#fff}
+header{position:sticky;top:0;z-index:60;background:rgba(246,243,236,.86);backdrop-filter:blur(14px);border-bottom:var(--line)}
+.nav{display:flex;align-items:center;gap:26px;height:72px;max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.brand{display:flex;align-items:center;gap:12px}.brand img{height:34px;width:34px}
+.brand .wm{font-family:var(--font-display);font-size:30px;letter-spacing:.14em}
+.nav .links{display:flex;gap:26px;margin-left:24px;font-size:14.5px;font-weight:500}
+.nav .links a{color:var(--text-soft)}.nav .links a:hover{color:var(--verre)}
+.nav .cta{margin-left:auto;font-size:14px;font-weight:600}
+@media(max-width:880px){.nav .links{display:none}}
+.phead{padding:clamp(70px,11vw,150px) 0 0;text-align:center}
+.kicker{font-family:var(--font-mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--verre-deep)}
+.phead h1{font-family:var(--font-display);font-size:clamp(54px,10vw,140px);line-height:.9;margin:16px 0 10px;font-weight:400}
+.phead h1 i{color:var(--verre)}
+.phead p{font-size:clamp(17px,2vw,22px);color:var(--text-soft);max-width:60ch;margin:0 auto;font-weight:300;line-height:1.55}
+section{padding:clamp(56px,8vw,110px) 0}
+.eyebrow{display:inline-flex;align-items:center;gap:11px;font-family:var(--font-mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--verre-deep);margin-bottom:16px}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--aube-deep)}
+.sec-title{font-family:var(--font-display);font-size:clamp(32px,5vw,64px);line-height:1;font-weight:400}
+.sec-title i{color:var(--verre)}
+.lead{font-size:clamp(16px,1.9vw,20px);color:var(--text-soft);font-weight:300;line-height:1.7;margin-top:18px}
+.lead b{color:var(--ink);font-weight:600}
+.bandimg{width:100%;height:clamp(280px,46vw,560px);object-fit:cover;border-radius:var(--radius-lg);box-shadow:var(--shadow);margin:8px 0}
+/* charte */
+.charte{background:var(--ink);color:var(--paper)}
+.charte .sec-title{color:var(--paper)}.charte .sec-title i{color:var(--aube)}
+.clist{counter-reset:c;margin-top:48px;display:grid;gap:1px;background:rgba(246,243,236,.16);border:1px solid rgba(246,243,236,.16);border-radius:var(--radius-lg);overflow:hidden}
+.citem{background:var(--ink);padding:30px clamp(22px,4vw,44px);display:grid;grid-template-columns:80px 1fr;gap:18px;align-items:start}
+.citem::before{counter-increment:c;content:"0" counter(c);font-family:var(--font-mono);color:var(--aube);font-size:26px}
+.citem h3{font-family:var(--font-display);font-size:clamp(24px,3vw,34px);font-weight:400;margin-bottom:6px}
+.citem p{color:rgba(246,243,236,.72);font-size:15.5px;line-height:1.6;font-weight:300}
+.citem .q{font-family:var(--font-display);font-style:italic;color:var(--aube);margin-top:10px;font-size:17px}
+@media(max-width:620px){.citem{grid-template-columns:1fr;gap:6px}.citem::before{font-size:20px}}
+/* story */
+.story{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(28px,5vw,64px);align-items:center}
+.story img{border-radius:var(--radius-lg);box-shadow:var(--shadow);aspect-ratio:4/5;object-fit:cover;width:100%}
+.story blockquote{font-family:var(--font-display);font-size:clamp(24px,2.8vw,36px);line-height:1.2;border-left:3px solid var(--aube);padding-left:22px;margin:18px 0}
+@media(max-width:860px){.story{grid-template-columns:1fr}}
+/* identity guidelines */
+.id-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+@media(max-width:860px){.id-grid{grid-template-columns:1fr}}
+.idcard{background:var(--paper);border:var(--line);border-radius:var(--radius-lg);padding:28px}
+.idcard h4{font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--verre);margin-bottom:18px}
+.swatch{display:flex;align-items:center;gap:12px;margin:10px 0;font-family:var(--font-mono);font-size:12px}
+.swatch i{width:34px;height:34px;border-radius:8px;border:1px solid rgba(21,24,29,.12);display:block}
+.logo-show{display:flex;align-items:center;justify-content:center;gap:14px;background:var(--paper-2);border-radius:var(--radius);padding:26px;margin-bottom:14px}
+.logo-show img{height:46px;width:46px}.logo-show span{font-family:var(--font-display);font-size:38px;letter-spacing:.14em}
+.type-row{margin:14px 0}.type-row span{display:block;font-size:11px;color:var(--text-soft);font-family:var(--font-mono)}
+footer{background:var(--ink);color:rgba(246,243,236,.6);padding:60px 0 32px;text-align:center;font-family:var(--font-mono);font-size:12px}
+footer .big{font-family:var(--font-display);font-size:30px;letter-spacing:.14em;color:var(--paper);display:block;margin-bottom:12px}
+footer a{color:var(--aube)}
+</style>
+</head>
+<body>
+<header><div class="nav">
+  <a href="index.html" class="brand"><img src="assets/logos/lucide-emblem.svg" alt="LUCIDE"><span class="wm">LUCIDE</span></a>
+  <nav class="links"><a href="index.html#collection">La collection</a><a href="index.html#verite">Le prix-vérité</a><a href="identite.html">La maison</a><a href="journal/index.html">Journal</a></nav>
+  <a class="cta" href="index.html#collection">Voir la collection →</a>
+</div></header>
+
+<div class="phead">
+  <div class="kicker">La maison · la charte · l'identité</div>
+  <h1>On a juré de <i>voir clair.</i></h1>
+  <p>LUCIDE n'est pas une marque de plus. C'est un refus : celui de la surenchère. Voici nos engagements, écrits noir sur blanc — et gravés dans la matière.</p>
+</div>
+<div class="wrap"><img class="bandimg" src="assets/hero/hero-counter.jpg" alt="Le comptoir LUCIDE à l'aube"></div>
+
+<section>
+  <div class="narrow">
+    <div class="eyebrow">Le point de départ</div>
+    <h2 class="sec-title">La lunetterie est, elle aussi, <i>une industrie de la surenchère.</i></h2>
+    <p class="lead">Dans la cosmétique, on a appris à se méfier des promesses : l'anti-âge miracle, le pourcentage d'actif qui ne sert à rien, le label qui rassure mais ne prouve rien. <b>La lunette, c'est pareil — en pire.</b> On y paie un nom gravé en gros, une licence, une campagne d'affichage avec une célébrité. Le verre, lui, coûte une fraction du prix. Le reste, c'est de la mise en scène.</p>
+    <p class="lead">Nous avons construit LUCIDE à l'envers de cette logique. Pas pour faire la morale — pour <b>prouver qu'on peut faire autrement</b> : le bon verre, le juste prix, la vérité gravée dedans. Et le démontrer, chiffre par chiffre, à l'intérieur de chaque branche.</p>
+  </div>
+</section>
+
+<section class="charte">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--aube)">Le document fondateur</div>
+    <h2 class="sec-title">La <i>Charte LUCIDE</i></h2>
+    <p class="lead" style="color:rgba(246,243,236,.72);max-width:60ch">Six engagements. On ne demande pas qu'on nous croie : on demande qu'on vérifie.</p>
+    <div class="clist">
+      <div class="citem"><div><h3>Le prix-vérité</h3><p>Le coût réel — matière, verres, façon, transport, marge juste — est gravé au laser à l'intérieur de la branche gauche. Chaque euro a une ligne. Rien n'est caché.</p><div class="q">« L'industrie de la surenchère et du marketing. »</div></div></div>
+      <div class="citem"><div><h3>De vraies promesses</h3><p>On ne vend aucun « traitement » qui ne sert pas à voir. Pas d'options fantômes, pas de jargon. Si une technologie ne change rien pour vos yeux, elle n'entre pas dans nos verres.</p><div class="q">« Pas de promesses sophistiquées, non tenues. »</div></div></div>
+      <div class="citem"><div><h3>Pas de label — une charte</h3><p>Nous refusons les certifications-décor qui contraignent sans prouver. À la place : cette charte, les fiches techniques complètes, et notre propre cahier de formulation des verres et des matières.</p><div class="q">« S'émanciper des labels qui te contraignent. »</div></div></div>
+      <div class="citem"><div><h3>On ne multiplie pas l'offre</h3><p>Quatorze pièces. Pas une de trop. On ne lance pas une « collection capsule » tous les mois pour entretenir le manque. On fait peu, on le fait bien, on le garde longtemps.</p><div class="q">« On ne veut pas multiplier l'offre et la surenchère. »</div></div></div>
+      <div class="citem"><div><h3>L'opticien de confiance</h3><p>Vos verres sont dosés à votre vraie vue par des opticiens indépendants — pas par un algorithme pressé. La confiance d'un prescripteur, comme on fait confiance à son pharmacien.</p><div class="q">« Le bouche-à-oreille, depuis le début. »</div></div></div>
+      <div class="citem"><div><h3>Réparable à vie</h3><p>Verres remplaçables, charnières vissées, plaquettes de rechange, garantie sans date de péremption. On répare, on ne remplace pas. On ne jette pas la lumière.</p><div class="q">« Prôner le rechargeable. »</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap story">
+    <img src="assets/hero/hero-graving.jpg" alt="Le prix-vérité gravé dans la branche">
+    <div>
+      <div class="eyebrow">L'histoire</div>
+      <h2 class="sec-title">Née d'un <i>ras-le-bol</i> lucide.</h2>
+      <blockquote>« On voulait une marque qui n'ait rien à cacher. Alors on a tout gravé. »</blockquote>
+      <p class="lead">Comme La Rosée est née du refus de la surenchère cosmétique, LUCIDE est née devant une vitrine d'opticien : trois fois le même verre, trois prix multipliés par le logo. L'évidence a été immédiate — il fallait <b>remettre le prix à l'endroit</b>. Pas un discours, une preuve. Pas un slogan, une gravure. La transparence n'est pas notre argument : c'est notre matière première.</p>
+      <a href="index.html#verite" class="serif" style="color:var(--verre);font-size:20px;border-bottom:2px solid var(--aube);padding-bottom:2px">Voir le prix-vérité de L'Aube →</a>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--paper-2)">
+  <div class="wrap">
+    <div class="eyebrow">L'identité, appliquée</div>
+    <h2 class="sec-title">Un signe, <i>une lumière.</i></h2>
+    <p class="lead" style="max-width:62ch">L'emblème <b>« Œil-Aube »</b> se lit de trois façons à la fois : un verre, un œil, et un soleil qui se lève sur l'horizon. Un seul trait, gravable partout — sur la branche, l'étui, la chamoisine. La cohérence comme preuve d'honnêteté.</p>
+    <div class="id-grid">
+      <div class="idcard"><h4>Le logo</h4>
+        <div class="logo-show"><img src="assets/logos/lucide-emblem.svg" alt="emblème LUCIDE"><span>LUCIDE</span></div>
+        <div class="logo-show" style="background:var(--ink)"><img src="assets/logos/lucide-emblem-white.svg" alt=""><span style="color:var(--paper)">LUCIDE</span></div>
+      </div>
+      <div class="idcard"><h4>Les couleurs</h4>
+        <div class="swatch"><i style="background:#15181D"></i> Encre lucide · #15181D</div>
+        <div class="swatch"><i style="background:#F6F3EC"></i> Papier d'aube · #F6F3EC</div>
+        <div class="swatch"><i style="background:#ECB79C"></i> Pêche d'aube · #ECB79C</div>
+        <div class="swatch"><i style="background:#2FA39A"></i> Teal du verre · #2FA39A</div>
+      </div>
+      <div class="idcard"><h4>Les caractères</h4>
+        <div class="type-row"><span>Titres — Instrument Serif</span><div class="serif" style="font-size:38px">Voir clair.</div></div>
+        <div class="type-row"><span>Texte — Inter Tight</span><div style="font-size:18px">La lunette rendue à sa vérité.</div></div>
+        <div class="type-row"><span>Données — Space Mono</span><div class="mono" style="font-size:15px">PRIX-VÉRITÉ · 95 €</div></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding:0;margin-top:36px"><img class="bandimg" src="assets/social/prix-verite-plate.jpg" alt="La plaque prix-vérité LUCIDE" style="max-width:540px;margin:0 auto;height:auto;border-radius:var(--radius-lg)"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="big">LUCIDE</span>
+    « Voir clair. » — La maison française de lunetterie à transparence radicale.<br><br>
+    <a href="index.html">Accueil</a> · <a href="index.html#collection">Collection</a> · <a href="journal/index.html">Journal</a><br><br>
+    © 2026 LUCIDE — marque fictive, exercice créatif inspiré de GDIY #544 (Coline Bertrand / La Rosée).
+  </div>
+</footer>
+</body>
+</html>
