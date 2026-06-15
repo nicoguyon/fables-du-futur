@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUCIDE — Voir clair. La lunette à transparence radicale</title>
+<meta name="description" content="LUCIDE, la maison française de lunetterie à transparence radicale. Le prix-vérité gravé dans chaque paire, de vraies promesses, pas de label : une charte. Lunettes de vue & solaires, à prix juste, chez l'opticien.">
+<meta name="keywords" content="lunettes, lunetterie, transparence, prix-vérité, lunettes de vue, solaires, opticien, marque française, anti-surenchère, acétate, montures éthiques">
+<link rel="canonical" href="https://lucide.vision/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LUCIDE — Voir clair.">
+<meta property="og:description" content="La lunette rendue à sa vérité : le bon verre, le juste prix, gravé dedans.">
+<meta property="og:image" content="assets/social/og.jpg">
+<meta property="og:url" content="https://lucide.vision/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/logos/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Brand","@id":"https://lucide.vision/#brand","name":"LUCIDE","slogan":"Voir clair.","description":"Maison française de lunetterie à transparence radicale : le prix-vérité gravé dans chaque paire.","logo":"https://lucide.vision/assets/logos/lucide-lockup.png"},
+ {"@type":"Organization","@id":"https://lucide.vision/#org","name":"LUCIDE","url":"https://lucide.vision/","logo":"https://lucide.vision/assets/logos/lucide-lockup.png","foundingDate":"2026","slogan":"Voir clair."},
+ {"@type":"WebSite","@id":"https://lucide.vision/#site","url":"https://lucide.vision/","name":"LUCIDE","publisher":{"@id":"https://lucide.vision/#org"},"inLanguage":"fr-FR"}
+]}</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.serif{font-family:var(--font-display)}
+.mono{font-family:var(--font-mono);letter-spacing:.04em}
+.up{text-transform:uppercase;letter-spacing:.18em;font-size:12px}
+::selection{background:var(--verre);color:#fff}
+:focus-visible{outline:2px solid var(--verre);outline-offset:3px;border-radius:3px}
+h1,h2,h3{text-wrap:balance;font-weight:400;line-height:1}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
+
+/* announce */
+.announce{background:var(--ink);color:var(--paper);text-align:center;padding:9px;font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.announce b{color:var(--aube)}
+
+/* header */
+header{position:sticky;top:0;z-index:60;background:rgba(246,243,236,.86);backdrop-filter:blur(14px);border-bottom:var(--line)}
+.nav{display:flex;align-items:center;gap:26px;height:72px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:34px;width:34px}
+.brand .wm{font-family:var(--font-display);font-size:30px;letter-spacing:.14em;line-height:1}
+.nav .links{display:flex;gap:26px;margin-left:24px;font-size:14.5px;font-weight:500}
+.nav .links a{color:var(--text-soft);padding:4px 0;transition:.2s}
+.nav .links a:hover{color:var(--verre)}
+.nav .cart{margin-left:auto;display:flex;align-items:center;gap:8px;cursor:pointer;font-weight:600;font-size:14px}
+.nav .cart .count{background:var(--verre);color:#fff;border-radius:20px;min-width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;padding:0 6px}
+.burger{display:none}
+@media(max-width:880px){.nav .links{display:none}.burger{display:block;margin-left:auto;background:none;border:none;font-size:22px}.nav .cart{margin-left:18px}}
+
+/* hero */
+.hero{position:relative;min-height:90vh;display:flex;align-items:flex-end;overflow:hidden}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,24,29,.12),rgba(21,24,29,0) 28%,rgba(21,24,29,.5));z-index:1}
+.hero .inner{position:relative;z-index:2;color:#fff;padding-bottom:8vh}
+.hero .kicker{font-family:var(--font-mono);font-size:12px;letter-spacing:.28em;text-transform:uppercase;opacity:.95}
+.hero h1{font-family:var(--font-display);font-size:clamp(64px,13vw,180px);line-height:.86;letter-spacing:-.01em;margin:12px 0 8px;text-shadow:0 4px 50px rgba(0,0,0,.25)}
+.hero h1 i{color:var(--aube)}
+.hero p{font-size:clamp(16px,2vw,21px);max-width:46ch;opacity:.96;font-weight:300}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--verre);color:#fff;font-weight:600;font-size:15px;padding:15px 30px;border-radius:40px;margin-top:24px;transition:.22s;border:none;cursor:pointer}
+.btn:hover{background:var(--verre-deep);transform:translateY(-2px)}
+.btn.ghost{background:rgba(255,255,255,.14);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.45);margin-left:12px}
+.btn.dark{background:var(--ink)}
+.btn.dark:hover{background:#000}
+
+/* marquee */
+.marquee{background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap;padding:13px 0;border-block:1px solid rgba(255,255,255,.08)}
+.marquee div{display:inline-block;animation:scroll 30s linear infinite}
+.marquee span{font-family:var(--font-display);font-size:22px;padding:0 26px}
+.marquee b{color:var(--aube)}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+section{padding:clamp(64px,9vw,128px) 0}
+.eyebrow{display:inline-flex;align-items:center;gap:11px;font-family:var(--font-mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--verre-deep);margin-bottom:16px}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--aube-deep)}
+.sec-title{font-family:var(--font-display);font-size:clamp(34px,5.4vw,72px);line-height:1;letter-spacing:-.01em}
+.sec-title i{color:var(--verre)}
+.sec-lead{font-size:clamp(16px,1.9vw,20px);color:var(--text-soft);max-width:64ch;margin-top:18px;font-weight:300;line-height:1.6}
+
+/* principes */
+.principes{background:var(--paper-2)}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(21,24,29,.12);border:var(--line);margin-top:48px;border-radius:var(--radius-lg);overflow:hidden}
+.pcard{background:var(--paper);padding:34px 30px 38px}
+.pcard .n{font-family:var(--font-mono);font-size:12px;color:var(--verre);letter-spacing:.1em}
+.pcard h3{font-family:var(--font-display);font-size:27px;margin:14px 0 10px;line-height:1.05}
+.pcard p{color:var(--text-soft);font-size:15px;line-height:1.6;font-weight:300}
+.pcard .q{margin-top:14px;font-style:italic;font-family:var(--font-display);font-size:16px;color:var(--ink);opacity:.8}
+@media(max-width:860px){.pgrid{grid-template-columns:1fr}}
+
+/* prix-verite */
+.verite{background:var(--ink);color:var(--paper)}
+.verite .sec-title{color:var(--paper)}.verite .sec-title i{color:var(--aube)}
+.verite .sec-lead{color:rgba(246,243,236,.72)}
+.vsplit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,64px);align-items:center;margin-top:46px}
+@media(max-width:860px){.vsplit{grid-template-columns:1fr}}
+.ledger{font-family:var(--font-mono);font-size:14px;border:1px solid rgba(246,243,236,.22);border-radius:var(--radius);overflow:hidden}
+.ledger .row{display:flex;justify-content:space-between;padding:15px 20px;border-bottom:1px solid rgba(246,243,236,.12)}
+.ledger .row span:last-child{color:var(--aube)}
+.ledger .bar{height:8px;background:rgba(246,243,236,.1)}
+.ledger .bar i{display:block;height:100%;background:var(--aube)}
+.ledger .total{background:rgba(246,243,236,.06);font-weight:700;border-bottom:none}
+.ledger .total span:last-child{color:var(--verre)}
+.verite .vs{font-family:var(--font-display);font-size:clamp(28px,4vw,44px);line-height:1.05}
+.verite .vs b{color:var(--aube)}
+.verite .vnote{color:rgba(246,243,236,.6);font-size:14px;margin-top:18px;font-weight:300;line-height:1.6}
+
+/* products */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:34px 0 36px}
+.filters button{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:9px 18px;border-radius:30px;border:1px solid rgba(21,24,29,.2);background:transparent;cursor:pointer;transition:.2s;color:var(--text-soft)}
+.filters button.on,.filters button:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}}
+.card{background:var(--paper);border:var(--line);border-radius:var(--radius-lg);overflow:hidden;transition:.25s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.card .ph{position:relative;aspect-ratio:1/1;background:var(--paper-2);overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.card:hover .ph img{transform:scale(1.05)}
+.card .badge{position:absolute;top:12px;left:12px;background:var(--aube);color:var(--ink);font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:20px}
+.card .body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
+.card .line{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--verre)}
+.card h3{font-family:var(--font-display);font-size:25px;margin:7px 0 4px}
+.card .tag{font-size:14px;color:var(--text-soft);font-weight:300;flex:1}
+.card .foot{display:flex;align-items:center;justify-content:space-between;margin-top:16px}
+.card .price{font-family:var(--font-mono);font-weight:700;font-size:17px}
+.card .add{background:var(--ink);color:var(--paper);border:none;border-radius:30px;padding:9px 16px;font-weight:600;font-size:13px;cursor:pointer;transition:.2s}
+.card .add:hover{background:var(--verre)}
+
+/* lookbook */
+.look{background:var(--paper-2)}
+.lookgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px}
+.lookgrid figure{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5}
+.lookgrid img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.lookgrid figure:hover img{transform:scale(1.06)}
+.lookgrid figcaption{position:absolute;left:0;bottom:0;right:0;padding:14px;color:#fff;font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;background:linear-gradient(0deg,rgba(0,0,0,.5),transparent)}
+@media(max-width:860px){.lookgrid{grid-template-columns:repeat(2,1fr)}}
+
+/* story */
+.story{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,72px);align-items:center}
+.story img{border-radius:var(--radius-lg);box-shadow:var(--shadow);aspect-ratio:4/5;object-fit:cover;width:100%}
+.story blockquote{font-family:var(--font-display);font-size:clamp(22px,2.4vw,30px);line-height:1.25;margin:22px 0;border-left:3px solid var(--aube);padding-left:20px}
+@media(max-width:860px){.story{grid-template-columns:1fr}}
+
+/* footer */
+footer{background:var(--ink);color:var(--paper);padding:80px 0 36px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px}
+footer h4{font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--aube);margin-bottom:16px}
+footer a{display:block;color:rgba(246,243,236,.72);font-size:14px;padding:5px 0;transition:.2s}
+footer a:hover{color:var(--paper)}
+footer .big{font-family:var(--font-display);font-size:30px;letter-spacing:.14em}
+footer .news{display:flex;gap:8px;margin-top:14px;max-width:320px}
+footer .news input{flex:1;background:transparent;border:1px solid rgba(246,243,236,.3);border-radius:30px;padding:11px 16px;color:var(--paper);font-family:var(--font-body)}
+footer .news button{background:var(--aube);color:var(--ink);border:none;border-radius:30px;padding:0 18px;font-weight:700;cursor:pointer}
+.fbar{border-top:1px solid rgba(246,243,236,.14);margin-top:48px;padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:rgba(246,243,236,.5);font-family:var(--font-mono)}
+@media(max-width:860px){.fgrid{grid-template-columns:1fr 1fr}}
+
+/* cart drawer */
+.drawer{position:fixed;inset:0;z-index:100;pointer-events:none}
+.drawer .ov{position:absolute;inset:0;background:rgba(21,24,29,.45);opacity:0;transition:.3s}
+.drawer .panel{position:absolute;top:0;right:0;height:100%;width:min(420px,90vw);background:var(--paper);transform:translateX(100%);transition:.3s;display:flex;flex-direction:column;padding:26px}
+.drawer.open{pointer-events:auto}.drawer.open .ov{opacity:1}.drawer.open .panel{transform:none}
+.drawer h3{font-family:var(--font-display);font-size:26px;margin-bottom:6px}
+.citem{display:flex;gap:12px;padding:14px 0;border-bottom:var(--line)}
+.citem img{width:60px;height:60px;border-radius:8px;object-fit:cover;background:var(--paper-2)}
+.citem .x{margin-left:auto;cursor:pointer;color:var(--text-soft)}
+.drawer .tot{margin-top:auto;padding-top:18px;border-top:var(--line)}
+.drawer .tot .l{display:flex;justify-content:space-between;font-family:var(--font-mono);margin-bottom:14px}
+</style>
+</head>
+<body>
+<div class="announce">Livraison offerte dès 80€ · <b>Le prix-vérité gravé</b> à l'intérieur de chaque paire · Verres remplaçables à vie</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand"><img src="assets/logos/lucide-emblem.svg" alt="LUCIDE"><span class="wm">LUCIDE</span></a>
+    <nav class="links">
+      <a href="#collection">La collection</a>
+      <a href="#verite">Le prix-vérité</a>
+      <a href="identite.html">La maison</a>
+      <a href="journal/index.html">Journal</a>
+    </nav>
+    <div class="cart" onclick="Cart.open()">Panier <span class="count" id="cc">0</span></div>
+    <button class="burger" onclick="document.querySelector('.links').style.display='flex'">☰</button>
+  </div>
+</header>
+
+<section class="hero" style="padding:0">
+  <img class="bg" src="assets/hero/hero-aube-01.jpg" alt="À l'aube, regarder le futur en face — LUCIDE">
+  <div class="wrap inner">
+    <div class="kicker">Maison de lunetterie · transparence radicale</div>
+    <h1>Voir <i>clair.</i></h1>
+    <p>La lunette rendue à sa vérité : le bon verre, le juste prix — et le coût réel gravé à l'intérieur de chaque branche.</p>
+    <div>
+      <a href="#collection" class="btn">Découvrir la collection</a>
+      <a href="#verite" class="btn ghost">C'est quoi, le prix-vérité ?</a>
+    </div>
+  </div>
+</section>
+
+<div class="marquee"><div>
+  <span>De <b>vraies</b> promesses.</span><span>Pas de label — une <b>charte</b>.</span><span>Le <b>prix-vérité</b> gravé.</span><span>Réparable <b>à vie</b>.</span><span>On ne multiplie pas l'<b>offre</b>.</span>
+  <span>De <b>vraies</b> promesses.</span><span>Pas de label — une <b>charte</b>.</span><span>Le <b>prix-vérité</b> gravé.</span><span>Réparable <b>à vie</b>.</span><span>On ne multiplie pas l'<b>offre</b>.</span>
+</div></div>
+
+<section class="principes">
+  <div class="wrap">
+    <div class="eyebrow">Le parti pris</div>
+    <h2 class="sec-title">La lunetterie est <i>l'industrie de la surenchère.</i><br>On a décidé d'en sortir.</h2>
+    <p class="sec-lead">On y paie un logo, pas un verre. Des marges multipliées par vingt, des « traitements » qui ne servent à rien, des montures qu'on jette. LUCIDE applique une autre doctrine — celle de la preuve, du juste prix et de la confiance.</p>
+    <div class="pgrid">
+      <div class="pcard"><div class="n">01</div><h3>Le prix-vérité</h3><p>Le coût réel — matière, verres, façon, marge juste — gravé à l'intérieur de chaque branche. Rien à cacher.</p><div class="q">« L'industrie de la surenchère et du marketing. »</div></div>
+      <div class="pcard"><div class="n">02</div><h3>De vraies promesses</h3><p>Aucun traitement miracle. On ne vous vend que ce qui sert vraiment à voir. Le reste, c'est du décor.</p><div class="q">« Pas de promesses sophistiquées, non tenues. »</div></div>
+      <div class="pcard"><div class="n">03</div><h3>Pas de label, une charte</h3><p>On refuse les certifications-décor. On publie notre propre Charte LUCIDE et les fiches techniques.</p><div class="q">« S'émanciper des labels qui te contraignent. »</div></div>
+      <div class="pcard"><div class="n">04</div><h3>On ne multiplie pas l'offre</h3><p>Une collection essentielle : quatorze pièces pensées pour durer, pas quatre cents pour vous perdre.</p><div class="q">« On ne veut pas multiplier l'offre et la surenchère. »</div></div>
+      <div class="pcard"><div class="n">05</div><h3>L'opticien de confiance</h3><p>Vos verres dosés à votre vraie vue, par des opticiens indépendants. La confiance du prescripteur.</p><div class="q">« Le bouche-à-oreille, depuis le début. »</div></div>
+      <div class="pcard"><div class="n">06</div><h3>Réparable à vie</h3><p>Verres remplaçables, charnières vissées, montures réparées. On ne jette pas la lumière.</p><div class="q">« Prôner le rechargeable. »</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="verite" id="verite">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--aube)">La transparence faite spectacle</div>
+    <h2 class="sec-title">Le <i>prix-vérité</i></h2>
+    <p class="sec-lead">Chez les autres, vous payez un nom. Chez nous, vous payez une paire. Voici, au centime près, où vont vos euros sur <b style="color:var(--aube)">L'Aube</b> — notre monture iconique à 95 €.</p>
+    <div class="vsplit">
+      <div class="ledger">
+        <div class="row"><span>Acétate italien (matière)</span><span>14 €</span></div><div class="bar"><i style="width:15%"></i></div>
+        <div class="row"><span>Verres organiques anti-reflet</span><span>21 €</span></div><div class="bar"><i style="width:22%"></i></div>
+        <div class="row"><span>Façon & assemblage atelier</span><span>18 €</span></div><div class="bar"><i style="width:19%"></i></div>
+        <div class="row"><span>Transport & étui</span><span>3 €</span></div><div class="bar"><i style="width:3%"></i></div>
+        <div class="row"><span>Marge LUCIDE (juste)</span><span>39 €</span></div><div class="bar"><i style="width:41%"></i></div>
+        <div class="row total"><span>Prix-vérité</span><span>95 €</span></div>
+      </div>
+      <div>
+        <p class="vs">La même paire, dans l'industrie, serait vendue <b>240 €.</b><br>On a juste enlevé le mensonge.</p>
+        <p class="vnote">Notre marge couvre l'atelier, l'opticien, le service et la garantie à vie. Pas une campagne d'affichage avec une célébrité. C'est tout. C'est gravé. Vérifiez-le vous-même, à l'intérieur de la branche gauche.</p>
+        <a href="produit/v01-aube.html" class="btn" style="background:var(--aube);color:var(--ink)">Voir L'Aube</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="collection">
+  <div class="wrap">
+    <div class="eyebrow">La collection</div>
+    <h2 class="sec-title">Quatorze pièces. <i>Pas une de trop.</i></h2>
+    <p class="sec-lead">Trois lignes : <b>Le Verre Nu</b> (la vue), <b>Plein Jour</b> (le soleil), <b>L'Atelier</b> (les objets). Chacune porte son prix-vérité.</p>
+    <div class="filters" id="filters"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="look">
+  <div class="wrap">
+    <div class="eyebrow">Le casting</div>
+    <h2 class="sec-title">De vrais visages. <i>Aucune retouche.</i></h2>
+    <p class="sec-lead">On ne lisse pas la peau, on ne gomme pas les rides, on ne ment pas sur les regards. Élise, Sasha, Marius et Aya portent LUCIDE comme on porte la lumière du matin.</p>
+    <div class="lookgrid">
+      <figure><img src="assets/look/look-elise-cafe.jpg" alt="Élise, L'Aube, au café à l'aube"><figcaption>ÉLISE · L'Aube</figcaption></figure>
+      <figure><img src="assets/look/look-sasha-rooftop.jpg" alt="Sasha, Le Méridien, sur les toits"><figcaption>SASHA · Le Méridien</figcaption></figure>
+      <figure><img src="assets/look/look-marius-atelier.jpg" alt="Marius, Le Comptoir, à l'atelier"><figcaption>MARIUS · Le Comptoir</figcaption></figure>
+      <figure><img src="assets/look/look-aya-window.jpg" alt="Aya, L'Écran, à la fenêtre"><figcaption>AYA · L'Écran</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap story">
+    <img src="assets/hero/hero-atelier.jpg" alt="L'atelier LUCIDE à l'aube">
+    <div>
+      <div class="eyebrow">La maison</div>
+      <h2 class="sec-title">Née d'un <i>ras-le-bol.</i></h2>
+      <blockquote>« On ne voulait pas faire une marque de plus. On voulait rendre la lunette honnête — et le prouver, gravé dans la matière. »</blockquote>
+      <p class="sec-lead">LUCIDE est née comme La Rosée : d'un refus. Le refus de la surenchère, des promesses creuses, des labels qui contraignent. À la place : une charte, des preuves, un opticien de confiance et un prix qu'on assume à voix haute.</p>
+      <a href="identite.html" class="btn dark">Lire notre charte</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="brand" style="margin-bottom:14px"><img src="assets/logos/lucide-emblem-white.svg" style="height:30px;width:30px" alt=""><span class="big">LUCIDE</span></div>
+        <p style="color:rgba(246,243,236,.7);font-size:14px;max-width:34ch;font-weight:300">Voir clair. La maison française de lunetterie à transparence radicale.</p>
+        <div class="news"><input type="email" placeholder="Votre e-mail" aria-label="e-mail"><button>OK</button></div>
+      </div>
+      <div><h4>La collection</h4><a href="#collection">Le Verre Nu</a><a href="#collection">Plein Jour</a><a href="#collection">L'Atelier</a></div>
+      <div><h4>La maison</h4><a href="identite.html">La charte</a><a href="#verite">Le prix-vérité</a><a href="journal/index.html">Journal</a></div>
+      <div><h4>Aide</h4><a href="#">Trouver un opticien</a><a href="#">Garantie à vie</a><a href="#">Nous écrire</a></div>
+    </div>
+    <div class="fbar"><span>© 2026 LUCIDE — marque fictive, exercice créatif (GDIY #544).</span><span>Conçu à l'aube, en France.</span></div>
+  </div>
+</footer>
+
+<div class="drawer" id="drawer">
+  <div class="ov" onclick="Cart.close()"></div>
+  <div class="panel">
+    <h3>Votre panier</h3>
+    <div id="citems" style="flex:1;overflow:auto"></div>
+    <div class="tot"><div class="l"><span>Total</span><span id="ctot">0 €</span></div><a class="btn" style="width:100%;justify-content:center" href="#">Passer commande</a></div>
+  </div>
+</div>
+
+<script src="catalog.js"></script>
+<script>
+const fmt=n=>n.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' €';
+const lines=["Tout","Le Verre Nu","Plein Jour","L'Atelier"];
+let active="Tout";
+const grid=document.getElementById('grid'), filters=document.getElementById('filters');
+function img(p){return `assets/product/${p.slug}.jpg`}
+function render(){
+  grid.innerHTML=LUCIDE_CATALOG.filter(p=>active==="Tout"||p.line===active).map(p=>`
+    <article class="card">
+      <a class="ph" href="produit/${p.slug}.html">${p.badge?`<span class="badge">${p.badge}</span>`:""}
+        <img src="${img(p)}" alt="${p.name} — LUCIDE" loading="lazy" onerror="this.style.opacity=.25"></a>
+      <div class="body"><div class="line">${p.line}</div>
+        <h3><a href="produit/${p.slug}.html">${p.name}</a></h3>
+        <div class="tag">${p.tagline}</div>
+        <div class="foot"><span class="price">${fmt(p.price)}</span>
+          <button class="add" onclick='Cart.add("${p.slug}")'>Ajouter</button></div>
+      </div>
+    </article>`).join("");
+}
+filters.innerHTML=lines.map(l=>`<button class="${l===active?'on':''}" onclick="setLine('${l.replace(/'/g,"\\'")}',this)">${l}</button>`).join("");
+function setLine(l,el){active=l;[...filters.children].forEach(b=>b.classList.remove('on'));el.classList.add('on');render()}
+render();
+
+const Cart={items:JSON.parse(localStorage.getItem('lucide_cart')||'[]'),
+  save(){localStorage.setItem('lucide_cart',JSON.stringify(this.items));this.paint()},
+  add(slug){this.items.push(slug);this.save();this.open()},
+  remove(i){this.items.splice(i,1);this.save()},
+  open(){document.getElementById('drawer').classList.add('open')},
+  close(){document.getElementById('drawer').classList.remove('open')},
+  paint(){document.getElementById('cc').textContent=this.items.length;
+    const map=Object.fromEntries(LUCIDE_CATALOG.map(p=>[p.slug,p]));
+    const ci=document.getElementById('citems');
+    ci.innerHTML=this.items.length?this.items.map((s,i)=>{const p=map[s];return`<div class="citem"><img src="${img(p)}" alt=""><div><div style="font-family:var(--font-display);font-size:18px">${p.name}</div><div class="mono" style="font-size:13px">${fmt(p.price)}</div></div><span class="x" onclick="Cart.remove(${i})">✕</span></div>`}).join(""):'<p style="color:var(--text-soft);padding:20px 0">Votre panier est vide. La lumière vous attend.</p>';
+    document.getElementById('ctot').textContent=fmt(this.items.reduce((t,s)=>t+(map[s]?.price||0),0));}
+};
+Cart.paint();
+</script>
+</body>
+</html>

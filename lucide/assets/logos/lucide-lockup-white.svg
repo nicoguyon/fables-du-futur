@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" role="img" aria-label="LUCIDE — Voir clair">
+  <g transform="translate(0,0)">
+    <g fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round">
+      <circle cx="60" cy="60" r="46"/>
+      <line x1="22" y1="71" x2="98" y2="71"/>
+    </g>
+    <path d="M47 71 a13 13 0 0 1 26 0 Z" fill="#FFFFFF"/>
+  </g>
+  <text x="138" y="78" font-family="'Instrument Serif', Georgia, 'Times New Roman', serif"
+        font-size="62" letter-spacing="6" fill="#FFFFFF">LUCIDE</text>
+</svg>
