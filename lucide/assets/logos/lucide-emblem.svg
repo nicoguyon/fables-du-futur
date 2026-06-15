@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="LUCIDE">
+  <g fill="none" stroke="#15181D" stroke-width="4" stroke-linecap="round">
+    <!-- le verre / l'œil -->
+    <circle cx="60" cy="60" r="46"/>
+    <!-- l'horizon de l'aube -->
+    <line x1="22" y1="71" x2="98" y2="71"/>
+  </g>
+  <!-- le soleil qui se lève (demi-disque sur l'horizon) -->
+  <path d="M47 71 a13 13 0 0 1 26 0 Z" fill="#15181D"/>
+</svg>

@@ -1,0 +1,27 @@
+# LUCIDE — Voir clair.
+
+> Maison française (fictive) de lunetterie à TRANSPARENCE RADICALE. Le prix-vérité — le coût
+> réel de chaque paire — est gravé à l'intérieur de la branche. Exercice créatif inspiré des
+> valeurs de Coline Bertrand (La Rosée, podcast GDIY #544 : « la cosmétique, c'est l'industrie
+> de la surenchère »), transposées de la cosmétique à la lunette.
+
+## Principes (la Charte LUCIDE)
+- Le prix-vérité gravé (matière, verres, façon, marge juste) — rien de caché.
+- De vraies promesses : aucun "traitement" de verre inutile.
+- Pas de label, une charte + des preuves (fiches techniques).
+- On ne multiplie pas l'offre : 14 pièces, pas une de trop.
+- L'opticien de confiance (prescripteur indépendant).
+- Réparable à vie : verres remplaçables, charnières vissées.
+
+## Collection
+- Le Verre Nu (vue) : L'Aube, Le Méridien, Le Comptoir, La Demi-Lune, L'Écran.
+- Plein Jour (solaires) : Plein Sud, Lucide Noir, Mirage, Le Pilote Vrai.
+- L'Atelier (objets) : Étui Boîte Noire, Microfibre Honnête, Le Lien, Kit Ordonnance, Ardoise Prix-Vérité.
+
+## Pages
+- / : accueil e-commerce (collection, prix-vérité, casting).
+- /identite.html : la maison, la charte, l'identité.
+- /journal/ : articles (la surenchère, le prix-vérité, l'acétate, réparer plutôt que jeter).
+- /produit/<slug>.html : fiches produit avec prix-vérité détaillé.
+
+Contact / marque : LUCIDE, "Voir clair.", France, 2026. Marque fictive — démonstration créative.
