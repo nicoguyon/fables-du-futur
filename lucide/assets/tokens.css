@@ -1,0 +1,54 @@
+/* ============================================================
+   LUCIDE — Charte graphique (design tokens)
+   « Voir clair. »  Maison française de lunetterie à transparence radicale.
+   Univers : lumière d'aube + clarté clinique. Inspiré des valeurs de
+   Coline Bertrand (GDIY #544) : anti-surenchère, rigueur, preuve, accessibilité.
+   ============================================================ */
+:root{
+  /* — Encres & papiers — */
+  --ink:        #15181D;  /* encre lucide, presque noir-bleu */
+  --ink-soft:   #444B54;  /* gris lecture */
+  --paper:      #F6F3EC;  /* papier d'aube, blanc chaud */
+  --paper-2:    #ECE6DA;  /* surface crème */
+  --white:      #FFFFFF;
+
+  /* — Lumière d'aube (La Rosée → l'aube, la clarté) — */
+  --aube:       #ECB79C;  /* pêche d'aube, premier rayon */
+  --aube-deep:  #D98E6E;  /* aube cuivrée */
+  --rose-verre: #F3D9CB;  /* reflet rosé sur le verre */
+
+  /* — Le verre (la transparence, la clarté optique) — */
+  --verre:      #2FA39A;  /* teal du verre, signature LUCIDE */
+  --verre-deep: #18706A;  /* verre profond */
+  --ciel:       #BFD8E6;  /* ciel d'aube, bleu clair */
+
+  /* — Prix-vérité (la donnée clinique, l'honnêteté chiffrée) — */
+  --verite:     #1A1D22;  /* fond des étiquettes prix-vérité */
+  --verite- on: #E8E2D4;
+
+  /* — Rôles — */
+  --bg:        var(--paper);
+  --surface:   var(--paper-2);
+  --text:      var(--ink);
+  --text-soft: var(--ink-soft);
+  --primary:   var(--verre);
+  --primary-deep: var(--verre-deep);
+  --accent:    var(--aube);
+  --accent-deep: var(--aube-deep);
+
+  /* — Typographie —
+     Instrument Serif : élégance optique, lumière d'aube (titres)
+     Inter Tight      : interface nette, lecture clinique (corps)
+     Space Mono       : la donnée, le prix-vérité, l'ordonnance (labels) */
+  --font-display: "Instrument Serif", "Times New Roman", serif;
+  --font-body:    "Inter Tight", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-mono:    "Space Mono", "IBM Plex Mono", ui-monospace, monospace;
+
+  /* — Rythme — */
+  --radius:    12px;
+  --radius-lg: 24px;
+  --shadow:    0 18px 50px rgba(21,24,29,.13);
+  --shadow-sm: 0 6px 22px rgba(21,24,29,.09);
+  --maxw:      1240px;
+  --line:      1px solid rgba(21,24,29,.14);
+}
