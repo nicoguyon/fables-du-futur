@@ -47,7 +47,7 @@ header{position:sticky;top:0;z-index:60;background:rgba(246,243,236,.86);backdro
 .nav .links a{color:var(--text-soft);padding:4px 0;transition:.2s}
 .nav .links a:hover,.nav .links a.on{color:var(--verre)}
 .nav .cart{margin-left:auto;display:flex;align-items:center;gap:8px;font-weight:600;font-size:14px}
-@media(max-width:880px){.nav .links{display:none}.nav .cart{margin-left:auto}}
+.nav{position:relative}.burger{display:none;background:none;border:0;font:inherit;font-size:24px;line-height:1;color:inherit;cursor:pointer;padding:4px 8px;-webkit-tap-highlight-color:transparent}@media(max-width:880px){.nav .links{position:absolute;top:calc(100% + 1px);left:0;right:0;flex-direction:column;align-items:stretch;gap:0;margin:0;padding:6px 0;background:var(--paper);border-bottom:var(--line);box-shadow:0 22px 44px -24px rgba(21,24,29,.5);z-index:70;display:none}.nav .links.open{display:flex}.nav .links a{padding:13px 24px;font-size:16px}.nav .cart{margin-left:auto}.burger{display:flex;align-items:center;justify-content:center;margin-left:14px}}
 
 .arthead{padding:clamp(40px,6vw,72px) 0 0}
 .crumbs{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.04em;color:var(--text-soft);margin-bottom:26px}
@@ -123,6 +123,7 @@ footer .news button{background:var(--aube);color:var(--ink);border:none;border-r
       <a href="index.html" class="on">Journal</a>
     </nav>
     <div class="cart">Voir clair.</div>
+    <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" onclick="var l=this.closest('.nav').querySelector('.links');var o=l.classList.toggle('open');this.setAttribute('aria-expanded',o);this.textContent=o?'✕':'☰'">☰</button>
   </div>
 </header>
 

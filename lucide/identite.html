@@ -32,7 +32,7 @@ header{position:sticky;top:0;z-index:60;background:rgba(246,243,236,.86);backdro
 .nav .links{display:flex;gap:26px;margin-left:24px;font-size:14.5px;font-weight:500}
 .nav .links a{color:var(--text-soft)}.nav .links a:hover{color:var(--verre)}
 .nav .cta{margin-left:auto;font-size:14px;font-weight:600}
-@media(max-width:880px){.nav .links{display:none}}
+.nav{position:relative}.burger{display:none;background:none;border:0;font:inherit;font-size:24px;line-height:1;color:inherit;cursor:pointer;padding:4px 8px;-webkit-tap-highlight-color:transparent}@media(max-width:880px){.nav .links{position:absolute;top:calc(100% + 1px);left:0;right:0;flex-direction:column;align-items:stretch;gap:0;margin:0;padding:6px 0;background:var(--paper);border-bottom:var(--line);box-shadow:0 22px 44px -24px rgba(21,24,29,.5);z-index:70;display:none}.nav .links.open{display:flex}.nav .links a{padding:13px 24px;font-size:16px}.nav .cart{margin-left:auto}.burger{display:flex;align-items:center;justify-content:center;margin-left:14px}}
 .phead{padding:clamp(70px,11vw,150px) 0 0;text-align:center}
 .kicker{font-family:var(--font-mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--verre-deep)}
 .phead h1{font-family:var(--font-display);font-size:clamp(54px,10vw,140px);line-height:.9;margin:16px 0 10px;font-weight:400}
@@ -81,6 +81,7 @@ footer a{color:var(--aube)}
   <a href="index.html" class="brand"><img src="assets/logos/lucide-emblem.svg" alt="LUCIDE"><span class="wm">LUCIDE</span></a>
   <nav class="links"><a href="index.html#collection">La collection</a><a href="index.html#verite">Le prix-vérité</a><a href="identite.html">La maison</a><a href="journal/index.html">Journal</a></nav>
   <a class="cta" href="index.html#collection">Voir la collection →</a>
+  <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" onclick="var l=this.closest('.nav').querySelector('.links');var o=l.classList.toggle('open');this.setAttribute('aria-expanded',o);this.textContent=o?'✕':'☰'">☰</button>
 </div></header>
 
 <div class="phead">
