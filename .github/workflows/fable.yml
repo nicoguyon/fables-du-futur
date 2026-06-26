@@ -1,8 +1,8 @@
-name: Nouvelle fable horaire
+name: Nouvelle fable quotidienne
 
 on:
   schedule:
-    - cron: "0 * * * *"
+    - cron: "0 8 * * *"
   workflow_dispatch:
 
 concurrency:
@@ -32,6 +32,6 @@ jobs:
           git config user.name "Fable"
           git config user.email "fable@comptoiria.com"
           git add data/fables.json img/
-          git commit -m "Nouvelle fable $(date -u +'%Y-%m-%d %H:00 UTC')" || exit 0
+          git commit -m "Nouvelle fable $(date -u +'%Y-%m-%d')" || exit 0
           git pull --rebase origin main
           git push

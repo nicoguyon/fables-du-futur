@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Génère UNE nouvelle fable (FR+EN) via l'API Claude + son illustration via Nano Banana Pro,
-et l'ajoute à data/fables.json. Tourne chaque heure dans GitHub Actions.
+et l'ajoute à data/fables.json. Tourne une fois par jour dans GitHub Actions.
 Env requis: ANTHROPIC_API_KEY, GEMINI_API_KEY."""
 import json, os, sys, re, time, random, unicodedata
 from datetime import datetime, timezone
@@ -21,7 +21,7 @@ INSPIRATIONS = [
     "les abeilles-drones et la vraie ruche", "le bibliothécaire de l'humanité", "la sonde solitaire",
 ]
 
-PROMPT = """Tu es Fable, fabuliste artificiel du recueil perpétuel « Les Fables du Futur » : des fables de science-fiction dans la tradition exacte de Jean de La Fontaine, publiées une par heure.
+PROMPT = """Tu es Fable, fabuliste artificiel du recueil perpétuel « Les Fables du Futur » : des fables de science-fiction dans la tradition exacte de Jean de La Fontaine, publiées une par jour.
 
 RÈGLES DE STYLE (absolues) :
 - 16 à 28 vers hétérométriques (alexandrins mêlés d'octosyllabes), RIMES soignées et variées, récit vif avec dialogue, chute ironique ou poignante.
@@ -33,7 +33,7 @@ RÈGLES DE STYLE (absolues) :
 DÉJÀ PUBLIÉ (ne répète NI ces sujets NI ces duos de personnages) :
 {existing}
 
-INSPIRATION SUGGÉRÉE pour cette heure (libre à toi de t'en écarter si tu as mieux) : {seed}
+INSPIRATION SUGGÉRÉE pour aujourd'hui (libre à toi de t'en écarter si tu as mieux) : {seed}
 
 Champs attendus : id (slug ascii court), fr/en (title, verses, moral — moralité de 2-4 vers séparée du récit), theme (2-4 mots), image_prompt (scène clé pour une gravure, en anglais, 40-70 mots, personnages + action + décor, sans style artistique)."""
 
@@ -61,10 +61,10 @@ FABLE_SCHEMA = {
 }
 
 def claude(prompt):
-    # Fable 5 : thinking toujours actif (le param "thinking" doit être omis) ;
+    # Opus 4.8 : thinking toujours actif (le param "thinking" doit être omis) ;
     # max_tokens doit couvrir réflexion + texte, profondeur contrôlée par effort.
     body = json.dumps({
-        "model": "claude-fable-5",
+        "model": "claude-opus-4-8",
         "max_tokens": 16000,
         "output_config": {
             "effort": "medium",
