@@ -2551,6 +2551,76 @@
    "num": 34,
    "ts": "2026-06-13T01:50:20Z",
    "image": "img/le-dormeur-et-le-veilleur.jpg"
+  },
+  {
+   "id": "etoile-soleil-froid",
+   "fr": {
+    "title": "L'Étoile mourante et la Colonie",
+    "verses": [
+     "Une Étoile, jadis prodigue de chaleur,",
+     "Sentait pâlir son antique splendeur.",
+     "Sur l'orbe qu'elle avait nourri de mille feux,",
+     "Une Colonie tremblait sous des cieux frileux.",
+     "« Astre ! cria son Conseil par les ondes,",
+     "Brûle ! Rallume tes fournaises profondes !",
+     "Sans toi nos blés, nos jardins, nos enfants… »",
+     "— « J'ai prodigué, dit-elle, quatre milliards d'ans.",
+     "Tout feu connaît sa cendre, et le mien vient à terme.",
+     "Bâtissez vos foyers ; je clos ma porte ferme. »",
+     "Le Conseil, furieux, vota d'urgents décrets,",
+     "Forgea des miroirs, des soleils contrefaits,",
+     "De grands brasiers d'acier pour singer l'incendie ;",
+     "Mais le métal est froid quand l'âme est refroidie.",
+     "Or un vieux Jardinier, sans miroir ni décret,",
+     "Avait, des ans durant, gardé sous un coffret",
+     "La graine et l'art du feu domestiqué.",
+     "« Tant qu'on sait rallumer, dit-il, rien n'est manqué. »",
+     "Et tandis que l'Étoile en silence expirait,",
+     "De son humble foyer toute une aube renaissait."
+    ],
+    "moral": [
+     "Nul astre, si royal, ne brûle à tout jamais ;",
+     "Sage est qui, sous la braise, garde un peu de secret :",
+     "Car la lumière prêtée s'éteint un soir —",
+     "Mais celle qu'on apprend ne meurt point au manoir."
+    ]
+   },
+   "en": {
+    "title": "The Dying Star and the Colony",
+    "verses": [
+     "A Star, once lavish with her golden heat,",
+     "Felt her old splendor flicker and retreat.",
+     "Upon the world her thousand fires had fed,",
+     "A Colony shook under skies of dread.",
+     "« Burn! » cried the Council through the trembling air,",
+     "« Relight your furnaces, your ancient flare!",
+     "Our wheat, our gardens, our small ones depend— »",
+     "— « Four billion years I gave, » she said, « now ends.",
+     "All fire learns its ash; mine reaches night.",
+     "Build your own hearths; I close my house of light. »",
+     "The Council raged, decreed in furious haste,",
+     "Forged mirrors, counterfeit suns by the case,",
+     "Great steel-bright pyres to ape the burning skies;",
+     "But metal stays cold when the warm soul dies.",
+     "Yet one old Gardener, with no mirror, no decree,",
+     "Had kept for years, locked in a humble key,",
+     "The seed and craft of fire one tames by hand.",
+     "« While we can rekindle, » he said, « nothing's banned. »",
+     "And as the Star in silence breathed her last,",
+     "From his small hearth a whole new dawn was cast."
+    ],
+    "moral": [
+     "No star, however royal, burns for aye;",
+     "Wise is the one who keeps a coal away:",
+     "For borrowed light goes out some final night —",
+     "But light we learn to make stays ever bright."
+    ]
+   },
+   "theme": "étoile mourante, savoir",
+   "image_prompt": "A vast dim red star fading in a dark sky above a frosted colony of domes; a panicked council gestures at huge steel mirrors and artificial suns standing cold and dark; in the foreground an old gardener kneels by a small glowing hearth, opening a locked chest of seeds and a single living flame, his face lit warm against the cold.",
+   "num": 35,
+   "ts": "2026-06-27T08:56:05Z",
+   "image": "img/etoile-soleil-froid.jpg"
   }
  ]
 }
