@@ -93,6 +93,12 @@ main{max-width:760px;margin:0 auto;padding:6px 24px 100px}
   font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;color:var(--ink-soft);
 }
 .toolbar .count{color:var(--copper);text-transform:uppercase}
+.exbtn{
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  border:1px solid var(--rule);background:transparent;color:var(--ink-soft);
+  padding:4px 11px;border-radius:14px;cursor:pointer;
+}
+.exbtn:hover{color:var(--copper);border-color:var(--copper)}
 .filters{margin-left:auto;display:flex;gap:4px}
 .filters button{
   font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;
@@ -182,6 +188,7 @@ footer a{color:var(--copper);text-decoration:none}
 
       <div class="toolbar">
         <span class="count" id="count"></span>
+        <button class="exbtn" id="exportEx" title="Télécharger un fichier .excalidraw (à ouvrir sur excalidraw.com)">⤓ Excalidraw</button>
         <div class="filters">
           <button data-f="all" class="on">Tout</button>
           <button data-f="active">À faire</button>
@@ -334,6 +341,59 @@ document.querySelectorAll(".filters button").forEach(b=>{
     document.querySelectorAll(".filters button").forEach(x=>x.classList.toggle("on",x===b));
     render();
   });
+});
+
+/* ================= export Excalidraw ================= */
+function rnd(){ return Math.floor(Math.random()*2e9); }
+function exEl(o){
+  return Object.assign({
+    angle:0, strokeColor:"#1e1e1e", backgroundColor:"transparent",
+    fillStyle:"solid", strokeWidth:1.5, strokeStyle:"solid", roughness:1,
+    opacity:100, groupIds:[], frameId:null, roundness:null,
+    seed:rnd(), version:1, versionNonce:rnd(), isDeleted:false,
+    boundElements:null, updated:1, link:null, locked:false
+  }, o);
+}
+function exRect(o){ return exEl(Object.assign({type:"rectangle", roundness:{type:3}}, o)); }
+function exText(o){
+  return exEl(Object.assign({
+    type:"text", fontSize:20, fontFamily:1, textAlign:"left", verticalAlign:"top",
+    baseline:18, containerId:null, lineHeight:1.25, originalText:o.text
+  }, o));
+}
+
+function buildExcalidraw(){
+  const items=ordered();
+  const els=[];
+  const X=140, rowH=48, fs=20;
+  // titre
+  els.push(exText({x:X, y:80, width:260, height:45, text:"À faire", fontSize:36, strokeColor:"#7a4521"}));
+  let y=170;
+  items.forEach(t=>{
+    const urgent=t.urgent && !t.done;
+    const col = urgent ? "#e03131" : (t.done ? "#868e96" : "#1e1e1e");
+    els.push(exRect({x:X, y:y, width:26, height:26, strokeColor:col,
+      backgroundColor: t.done?"#b2f2bb":"transparent", fillStyle:"solid"}));
+    const label=(urgent?"⚑ ":"")+t.text;
+    const w=Math.max(140, Math.round(label.length*fs*0.55));
+    els.push(exText({x:X+42, y:y+2, width:w, height:25, text:label,
+      fontSize:fs, strokeColor:col, opacity:t.done?55:100}));
+    y+=rowH;
+  });
+  return {
+    type:"excalidraw", version:2, source:"https://fables-du-futur.vercel.app/todo.html",
+    elements:els, appState:{viewBackgroundColor:"#faf5e9", gridSize:null}, files:{}
+  };
+}
+
+document.getElementById("exportEx").addEventListener("click",()=>{
+  const scene=buildExcalidraw();
+  const blob=new Blob([JSON.stringify(scene,null,2)],{type:"application/json"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="a-faire.excalidraw";
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href),2000);
 });
 
 render();
