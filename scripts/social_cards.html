@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f3ead5; --ink:#241d12; --ink-soft:#5c5240;
+  --copper:#9a5b2e; --copper-deep:#7a4521; --gold:#c79a48; --gold-soft:#b8893a;
+  --rule:#cbbb98; --card:#faf5e9; --dark:#16101f; --dark2:#1f1730;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#3a3326;font-family:"EB Garamond",Georgia,serif;-webkit-font-smoothing:antialiased}
+.card{position:relative;overflow:hidden;display:flex;flex-direction:column}
+.grain{position:absolute;inset:0;pointer-events:none;opacity:.5;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .29 0 0 0 0 .18 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
+.mono{font-family:"IBM Plex Mono",monospace}
+.fr{font-family:Fraunces,serif}
+.star{display:block;margin:0 auto}
+
+/* ---------- shared paper card ---------- */
+.paper{background:radial-gradient(120% 90% at 50% 0%, #f7efdb 0%, #efe3c7 100%);color:var(--ink)}
+.paper .frame{position:absolute;inset:34px;border:1px solid var(--rule);pointer-events:none}
+.paper .frame::before{content:"";position:absolute;inset:8px;border:1px solid rgba(154,91,46,.25)}
+
+/* ---------- dark card ---------- */
+.dark{background:radial-gradient(130% 100% at 50% -10%, #241a36 0%, #14101d 70%);color:#f1e7d2}
+.dark .frame{position:absolute;inset:34px;border:1px solid rgba(199,154,72,.4);pointer-events:none}
+.dark .frame::before{content:"";position:absolute;inset:8px;border:1px solid rgba(199,154,72,.18)}
+
+.kick{font-family:"IBM Plex Mono",monospace;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--copper)}
+.dark .kick{color:var(--gold)}
+
+/* ============ VERTICAL COVER 1080x1920 ============ */
+#vertical{width:1080px;height:1920px;padding:88px 96px 80px}
+#vertical .top{display:flex;flex-direction:column;align-items:center;text-align:center}
+#vertical .kick{font-size:23px;margin-bottom:8px}
+#vertical .ep{font-family:"IBM Plex Mono",monospace;font-size:18px;letter-spacing:.18em;color:#b9a987;margin-bottom:54px}
+#vertical h1{font-family:Fraunces,serif;font-weight:900;font-size:150px;line-height:.92;letter-spacing:-.02em;color:#fff}
+#vertical h1 em{font-style:italic;font-weight:500;color:var(--gold)}
+#vertical .tag{font-style:italic;font-size:34px;color:#d8c9a6;margin-top:40px;max-width:18ch;line-height:1.32}
+#vertical .pts{margin:64px 0 0;width:100%}
+#vertical .pt{display:flex;gap:30px;align-items:flex-start;padding:36px 4px;border-top:1px solid rgba(199,154,72,.28)}
+#vertical .pt:last-child{border-bottom:1px solid rgba(199,154,72,.28)}
+#vertical .pt .no{font-family:Fraunces,serif;font-weight:900;font-size:60px;color:var(--gold);line-height:.9;min-width:78px}
+#vertical .pt .tx{font-size:38px;line-height:1.22;color:#f1e7d2}
+#vertical .pt .tx b{color:#fff;font-weight:600}
+#vertical .pt .tx span{display:block;font-family:"IBM Plex Mono",monospace;font-size:23px;color:var(--gold);margin-top:9px;letter-spacing:.02em}
+#vertical .cta{margin-top:64px;text-align:center}
+#vertical .cta .bonus{font-family:Fraunces,serif;font-size:42px;line-height:1.25;color:#f1e7d2;margin:26px 0 30px}
+#vertical .cta .bonus b{color:var(--gold);font-weight:700}
+#vertical .cta .swipe{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:24px;letter-spacing:.06em;color:#16101f;background:var(--gold);border-radius:40px;padding:18px 38px}
+#vertical .foot{margin-top:auto;text-align:center;font-family:"IBM Plex Mono",monospace;font-size:22px;letter-spacing:.16em;color:#b9a987;text-transform:uppercase}
+#vertical .foot b{color:var(--gold)}
+
+/* ============ CAROUSEL 1080x1350 ============ */
+.carousel{width:1080px;height:1350px;padding:96px 88px 84px}
+.carousel .hd{display:flex;align-items:center;gap:26px;margin-bottom:14px}
+.carousel .badge{font-family:Fraunces,serif;font-weight:900;font-size:40px;color:#fff;background:var(--copper);width:96px;height:96px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
+.carousel .kick{font-size:21px}
+.carousel h2{font-family:Fraunces,serif;font-weight:900;font-size:92px;line-height:.96;letter-spacing:-.015em;margin:30px 0 6px;color:var(--ink)}
+.carousel .lead{font-style:italic;font-size:36px;line-height:1.3;color:var(--copper-deep);max-width:24ch;margin-bottom:50px}
+.carousel .stats{display:flex;gap:26px;margin:8px 0 46px}
+.carousel .st{flex:1;background:rgba(255,255,255,.5);border:1px solid var(--rule);border-left:5px solid var(--copper);border-radius:14px;padding:30px 28px}
+.carousel .st .n{font-family:Fraunces,serif;font-weight:900;font-size:74px;line-height:.92;color:var(--ink)}
+.carousel .st .l{font-size:27px;line-height:1.22;color:var(--ink-soft);margin-top:14px}
+.carousel .quote{margin-top:auto;border-left:5px solid var(--gold-soft);background:rgba(184,137,58,.1);border-radius:0 16px 16px 0;padding:34px 38px}
+.carousel .quote p{font-family:Fraunces,serif;font-style:italic;font-size:42px;line-height:1.28;color:var(--ink)}
+.carousel .quote .who{font-family:"IBM Plex Mono",monospace;font-style:normal;font-size:24px;color:var(--copper-deep);margin-top:20px;letter-spacing:.02em}
+.carousel .who b{color:var(--ink)}
+.carousel .tagfoot{position:absolute;bottom:46px;right:64px;font-family:"IBM Plex Mono",monospace;font-size:20px;letter-spacing:.14em;color:var(--copper);text-transform:uppercase}
+
+/* ============ WIDE 1920x1080 ============ */
+#wide{width:1920px;height:1080px;padding:96px 110px;flex-direction:row;align-items:stretch;gap:80px}
+#wide .left{flex:1.15;display:flex;flex-direction:column;justify-content:center}
+#wide .kick{font-size:24px;margin-bottom:10px}
+#wide .ep{font-family:"IBM Plex Mono",monospace;font-size:19px;letter-spacing:.16em;color:#b9a987;margin-bottom:48px}
+#wide h1{font-family:Fraunces,serif;font-weight:900;font-size:138px;line-height:.92;letter-spacing:-.02em;color:#fff}
+#wide h1 em{font-style:italic;font-weight:500;color:var(--gold)}
+#wide .tag{font-style:italic;font-size:36px;color:#d8c9a6;margin-top:40px;max-width:30ch;line-height:1.3}
+#wide .right{flex:.85;display:flex;flex-direction:column;justify-content:center;gap:30px;border-left:1px solid rgba(199,154,72,.3);padding-left:80px}
+#wide .chip .k{font-family:"IBM Plex Mono",monospace;font-size:22px;letter-spacing:.1em;color:var(--gold);text-transform:uppercase;margin-bottom:8px}
+#wide .chip .v{font-family:Fraunces,serif;font-weight:700;font-size:46px;line-height:1.05;color:#fff}
+#wide .chip .v small{display:block;font-family:"EB Garamond",serif;font-weight:400;font-style:italic;font-size:28px;color:#cbb98f;margin-top:8px}
+#wide .wfoot{position:absolute;bottom:54px;left:110px;font-family:"IBM Plex Mono",monospace;font-size:21px;letter-spacing:.14em;color:#b9a987;text-transform:uppercase}
+#wide .wfoot b{color:var(--gold)}
+</style>
+</head>
+<body>
+
+<!-- ============ VERTICAL 9:16 ============ -->
+<div class="card dark" id="vertical">
+  <div class="grain"></div><div class="frame"></div>
+  <div class="top">
+    <div class="kick">All-In Podcast</div>
+    <div class="ep">ÉPISODE 278 · 27 JUIN 2026</div>
+    <svg class="star" width="58" height="40" viewBox="0 0 26 18" style="margin-bottom:30px"><path d="M13 1c2 5 6 8 12 8-6 0-10 3-12 8-2-5-6-8-12-8 6 0 10-3 12-8z" fill="#c79a48"/></svg>
+    <h1>L'IA<br>quitte<br>la <em>Terre</em></h1>
+    <div class="tag">Le récap des moments les plus forts</div>
+  </div>
+  <div class="pts">
+    <div class="pt"><div class="no">1</div><div class="tx"><b>La Chine rattrape la frontière.</b><span>GLM 5.2 → à &lt;1 pt de Claude Opus 4.8 · −85 %</span></div></div>
+    <div class="pt"><div class="no">2</div><div class="tx"><b>Le vrai goulot, c'est la mémoire.</b><span>3 fabricants de HBM au monde · Micron ×4</span></div></div>
+    <div class="pt"><div class="no">3</div><div class="tx"><b>Le datacenter s'envole en orbite.</b><span>« Des racks dans l'espace, reliés par lasers »</span></div></div>
+  </div>
+  <div class="cta">
+    <svg class="star" width="46" height="32" viewBox="0 0 26 18"><path d="M13 1c2 5 6 8 12 8-6 0-10 3-12 8-2-5-6-8-12-8 6 0 10-3 12-8z" fill="#c79a48"/></svg>
+    <div class="bonus">Bonus : Anthropic vaudrait déjà<br><b>3 000 milliards de dollars.</b></div>
+    <div class="swipe">Le récap complet → lien en bio</div>
+  </div>
+  <div class="foot">Le récap — <b>Comptoir IA</b> · Fables du Futur</div>
+</div>
+
+<!-- ============ CAROUSEL 1 — CHINE ============ -->
+<div class="card paper carousel" id="carousel-1">
+  <div class="grain"></div><div class="frame"></div>
+  <div class="hd"><div class="badge">1</div><div class="kick">La Chine rattrape</div></div>
+  <h2>Un modèle gratuit à la frontière</h2>
+  <div class="lead">GLM 5.2 (Z.AI) — open-weight, licence MIT, 744 Md de paramètres.</div>
+  <div class="stats">
+    <div class="st"><div class="n">&lt; 1 pt</div><div class="l">d'écart avec Claude Opus 4.8 au codage SWE</div></div>
+    <div class="st"><div class="n">−85 %</div><div class="l">de coût d'API vs GPT-5.5</div></div>
+  </div>
+  <div class="quote">
+    <p>« Le chat est peut-être sorti du sac : ce modèle est assez bon pour faire son propre apprentissage. »</p>
+    <div class="who">★ <b>Gavin Baker</b> · Atreides Management</div>
+  </div>
+  <div class="tagfoot">All-In #278 · Comptoir IA</div>
+</div>
+
+<!-- ============ CAROUSEL 2 — COMPOSABLE ============ -->
+<div class="card paper carousel" id="carousel-2">
+  <div class="grain"></div><div class="frame"></div>
+  <div class="hd"><div class="badge">2</div><div class="kick">L'IA composable</div></div>
+  <h2>Le « conseil de LLM »</h2>
+  <div class="lead">Plus « un » modèle, mais une symphonie : un routeur, vos modèles maison, la frontière en chef d'orchestre.</div>
+  <div class="stats">
+    <div class="st"><div class="n">~85 %</div><div class="l">des requêtes au modèle open-weight maison</div></div>
+    <div class="st"><div class="n">90 %</div><div class="l">de la valeur encore captée par la frontière</div></div>
+  </div>
+  <div class="quote">
+    <p>« L'open-source n'est pas l'ennemi de l'IA : il déplace la valeur vers l'infrastructure. »</p>
+    <div class="who">★ <b>Gavin Baker</b> · sur les modèles composables</div>
+  </div>
+  <div class="tagfoot">All-In #278 · Comptoir IA</div>
+</div>
+
+<!-- ============ CAROUSEL 3 — MÉMOIRE ============ -->
+<div class="card paper carousel" id="carousel-3">
+  <div class="grain"></div><div class="frame"></div>
+  <div class="hd"><div class="badge">3</div><div class="kick">Le vrai goulot</div></div>
+  <h2>La mémoire, nerf de la guerre</h2>
+  <div class="lead">Micron pulvérise ses résultats. La DRAM/HBM décide de tout.</div>
+  <div class="stats">
+    <div class="st"><div class="n">×4</div><div class="l">de revenus Micron en 1 an (9 → 42 Mds$)</div></div>
+    <div class="st"><div class="n">3</div><div class="l">seuls fabricants de HBM au monde</div></div>
+  </div>
+  <div class="quote">
+    <p>« Le goulot qui compte, c'est la DRAM. C'est aussi proche de la magie que la science puisse l'être. »</p>
+    <div class="who">★ <b>Gavin Baker</b> · le bottleneck n°1</div>
+  </div>
+  <div class="tagfoot">All-In #278 · Comptoir IA</div>
+</div>
+
+<!-- ============ CAROUSEL 4 — ORBITAL ============ -->
+<div class="card paper carousel" id="carousel-4">
+  <div class="grain"></div><div class="frame"></div>
+  <div class="hd"><div class="badge">4</div><div class="kick">Le calcul orbital</div></div>
+  <h2>Un datacenter dans l'espace</h2>
+  <div class="lead">Quand Starship sera réutilisable, l'orbite passe sous le coût du sol.</div>
+  <div class="stats">
+    <div class="st"><div class="n">5 Mds$</div><div class="l">pour lancer 1 GW en orbite (déflationniste)</div></div>
+    <div class="st"><div class="n">40 / 70</div><div class="l">Mds$ : orbite vs sol d'ici 3-4 ans</div></div>
+  </div>
+  <div class="quote">
+    <p>« Ce ne sont pas des datacenters géants : ce sont des racks dans l'espace, reliés par des lasers. »</p>
+    <div class="who">★ <b>Gavin Baker</b> · l'économie orbitale</div>
+  </div>
+  <div class="tagfoot">All-In #278 · Comptoir IA</div>
+</div>
+
+<!-- ============ WIDE 16:9 ============ -->
+<div class="card dark" id="wide">
+  <div class="grain"></div><div class="frame"></div>
+  <div class="left">
+    <div class="kick">All-In Podcast · le récap</div>
+    <div class="ep">ÉPISODE 278 · 27 JUIN 2026</div>
+    <h1>L'IA quitte<br>la <em>Terre</em></h1>
+    <div class="tag">Chine, mémoire, datacenters orbitaux — et Anthropic à 3 000 milliards $.</div>
+  </div>
+  <div class="right">
+    <div class="chip"><div class="k">🇨🇳 La Chine</div><div class="v">GLM 5.2 à &lt;1 pt de Claude<small>open-weight, −85 % de coût</small></div></div>
+    <div class="chip"><div class="k">🧠 La mémoire</div><div class="v">3 fabricants de HBM<small>Micron ×4 · le vrai goulot</small></div></div>
+    <div class="chip"><div class="k">🚀 L'orbite</div><div class="v">40 vs 70 Mds$<small>« des racks reliés par lasers »</small></div></div>
+  </div>
+  <div class="wfoot">Le récap — <b>Comptoir IA</b> · Fables du Futur</div>
+</div>
+
+</body>
+</html>

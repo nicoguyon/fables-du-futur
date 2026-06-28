@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All-In #278 — Le récap : Chine, mémoire, datacenters orbitaux · Fables du Futur</title>
+<meta name="description" content="Récap de l'épisode 278 du All-In Podcast avec Gavin Baker : les modèles chinois rattrapent la frontière, la crise de la mémoire (Micron/HBM), les datacenters dans l'espace de SpaceX, le mariage Tesla×SpaceX et Anthropic à 3 000 milliards de dollars.">
+<meta property="og:title" content="All-In #278 — Le récap marquant">
+<meta property="og:description" content="Gavin Baker : modèles chinois, mémoire HBM, datacenters orbitaux, Tesla×SpaceX, Anthropic à 3 000 Mds$.">
+<meta property="og:image" content="social/all-in-278-wide.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f5eedd; --ink:#241d12; --ink-soft:#5c5240;
+  --copper:#9a5b2e; --copper-deep:#7a4521; --electric:#1f3a7a; --gold:#b8893a;
+  --rule:#d8cbac; --card:#faf5e9; --dark:#1a1330;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:"EB Garamond",Georgia,serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .47 0 0 0 0 .32 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.wrap{position:relative;z-index:1;max-width:940px;margin:0 auto;padding:0 24px 120px}
+
+/* topbar */
+.topbar{position:sticky;top:0;z-index:10;background:rgba(245,238,221,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);padding:10px 0;margin-bottom:0}
+.topbar .in{max-width:940px;margin:0 auto;padding:0 24px;display:flex;gap:18px;align-items:center;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;overflow-x:auto;white-space:nowrap}
+.topbar a{color:var(--ink-soft);text-decoration:none}
+.topbar a:hover{color:var(--copper)}
+.topbar .home{color:var(--copper);font-weight:600}
+
+/* header */
+header{padding:8vh 0 5vh;border-bottom:3px solid var(--ink);margin-bottom:5vh}
+.kicker{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--copper)}
+h1{font-family:Fraunces,serif;font-weight:900;font-size:clamp(40px,7vw,82px);line-height:.98;letter-spacing:-.015em;margin:18px 0 16px}
+.sub{font-size:clamp(18px,2.3vw,25px);font-style:italic;color:var(--ink-soft);max-width:64ch}
+.meta{margin-top:24px;font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--copper-deep);letter-spacing:.04em;line-height:1.9}
+.cast{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.cast span{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.05em;background:rgba(154,91,46,.09);border:1px solid var(--rule);border-radius:20px;padding:5px 12px;color:var(--copper-deep)}
+.cast span.star{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+/* rundown */
+.rundown{background:var(--dark);color:#f2e9d4;border-radius:16px;padding:32px;margin:0 0 6vh}
+.rundown h2{font-family:Fraunces,serif;font-weight:800;font-size:24px;color:#fff;margin-bottom:18px}
+.rundown ol{list-style:none;counter-reset:seg}
+.rundown li{counter-increment:seg;display:flex;gap:16px;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:18px}
+.rundown li:last-child{border-bottom:none}
+.rundown li::before{content:counter(seg,decimal-leading-zero);font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--gold);font-weight:600}
+.rundown a{color:#f2e9d4;text-decoration:none}
+.rundown a:hover{color:var(--gold)}
+.rundown .t{font-family:"IBM Plex Mono",monospace;font-size:12px;color:#9a8f78;margin-left:auto;white-space:nowrap}
+
+/* segments */
+.seg{margin:7vh 0;scroll-margin-top:60px}
+.seg-head{display:flex;align-items:baseline;gap:16px;border-bottom:2px solid var(--copper);padding-bottom:12px;margin-bottom:24px}
+.seg-num{font-family:"IBM Plex Mono",monospace;font-size:14px;font-weight:600;color:var(--copper);letter-spacing:.1em}
+.seg h2{font-family:Fraunces,serif;font-weight:800;font-size:clamp(26px,4vw,44px);line-height:1.04;letter-spacing:-.01em}
+.seg .dur{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);white-space:nowrap}
+.lead{font-size:clamp(17px,2vw,21px);color:var(--ink-soft);font-style:italic;margin-bottom:22px;max-width:66ch}
+p{font-size:17px;color:#3a3220;margin:10px 0;max-width:72ch}
+strong{color:var(--ink);font-weight:600}
+h3{font-family:Fraunces,serif;font-weight:700;font-size:21px;margin:28px 0 10px;color:var(--copper-deep)}
+
+ul.pts{list-style:none;margin:10px 0}
+ul.pts li{position:relative;padding-left:24px;margin:9px 0;font-size:17px;color:#3a3220;max-width:72ch}
+ul.pts li::before{content:"›";position:absolute;left:4px;color:var(--copper);font-weight:700}
+ul.pts li b{color:var(--ink)}
+
+/* key figures */
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin:24px 0}
+.fig{background:var(--card);border:1px solid var(--rule);border-left:3px solid var(--copper);border-radius:10px;padding:18px}
+.fig .n{font-family:Fraunces,serif;font-weight:900;font-size:30px;color:var(--ink);line-height:1}
+.fig .l{font-size:14px;color:var(--ink-soft);margin-top:7px;line-height:1.3}
+
+/* quote — Gavin highlight */
+.q{border-left:3px solid var(--gold);background:rgba(184,137,58,.08);padding:18px 22px;margin:20px 0;border-radius:0 10px 10px 0}
+.q p{font-family:Fraunces,serif;font-style:italic;font-size:21px;color:var(--ink);margin:0;max-width:none;line-height:1.35}
+.q .vo{font-family:"IBM Plex Mono",monospace;font-style:normal;font-size:13px;color:var(--ink-soft);margin-top:12px;line-height:1.45;display:block}
+.q .who{display:block;font-family:"IBM Plex Mono",monospace;font-style:normal;font-size:12px;color:var(--copper-deep);margin-top:12px;letter-spacing:.04em}
+.q.gavin{border-left-color:var(--copper);background:rgba(154,91,46,.09)}
+.q.gavin .who{color:var(--copper)}
+.q.gavin .who b{color:var(--ink)}
+
+.takeaway{background:rgba(31,58,122,.06);border:1px solid rgba(31,58,122,.25);border-radius:10px;padding:16px 20px;margin:22px 0;font-size:16px;color:#2a2a3a}
+.takeaway b{color:var(--electric)}
+.takeaway .lbl{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--electric);font-weight:600;display:block;margin-bottom:6px}
+
+/* social posts */
+.posts-head{margin:9vh 0 3vh;padding-top:5vh;border-top:3px solid var(--ink)}
+.post{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:24px 26px;margin:20px 0;box-shadow:0 8px 22px rgba(36,29,18,.07);position:relative}
+.post .plat{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--copper);font-weight:600;display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.post .plat .cnt{margin-left:auto;color:var(--ink-soft);letter-spacing:.04em;font-weight:400}
+.post .body{font-size:16px;color:#2c2518;white-space:pre-wrap;line-height:1.5;font-family:"EB Garamond",Georgia,serif}
+.post .copy{position:absolute;top:18px;right:20px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;color:var(--copper);background:rgba(154,91,46,.08);border:1px solid var(--rule);border-radius:18px;padding:5px 12px;cursor:pointer;user-select:none}
+.post .copy:hover{background:var(--copper);color:#fff}
+.post .copy.done{background:#3a7a3a;color:#fff;border-color:#3a7a3a}
+
+/* script video */
+.script{background:var(--dark);color:#f2e9d4;border-radius:16px;padding:30px 32px;margin:24px 0}
+.script h3{color:#fff;margin-top:0}
+.script .beat{display:grid;grid-template-columns:74px 1fr;gap:16px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.12);align-items:baseline}
+.script .beat:last-child{border-bottom:none}
+.script .tc{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--gold);letter-spacing:.04em}
+.script .line{font-size:17px;line-height:1.45}
+.script .line em{color:#cdb98a;font-style:italic;font-size:14px;display:block;margin-top:4px}
+
+/* visuals gallery */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin:24px 0}
+.gallery figure{border:1px solid var(--rule);padding:8px;background:var(--card);box-shadow:0 10px 26px -16px rgba(60,40,10,.4)}
+.gallery img{display:block;width:100%}
+.gallery figcaption{margin-top:8px;text-align:center;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-soft);letter-spacing:.04em}
+.dl{display:inline-block;margin-top:4px;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--copper);text-decoration:none}
+
+.sources{margin-top:8vh;padding-top:4vh;border-top:2px solid var(--ink)}
+.sources h2{font-family:Fraunces,serif;font-size:26px;margin-bottom:14px}
+.sources p{font-size:14.5px;margin:8px 0}
+.sources a{color:var(--electric);text-decoration:none;border-bottom:1px solid rgba(31,58,122,.3)}
+.foot{margin-top:5vh;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);letter-spacing:.04em;line-height:1.9}
+.foot a{color:var(--copper)}
+
+@media(max-width:600px){.seg .dur,.rundown .t{display:none}.script .beat{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="in">
+  <a class="home" href="index.html">← Fables du Futur</a>
+  <a href="#s1">1 · Chine</a>
+  <a href="#composable">★ Composable</a>
+  <a href="#s2">2 · Mémoire</a>
+  <a href="#s3">3 · Orbital</a>
+  <a href="#s4">4 · Tesla×SpaceX</a>
+  <a href="#s5">5 · 3 000 Mds$</a>
+  <a href="#posts">Posts</a>
+  <a href="#video">Script vidéo</a>
+</div></div>
+
+<div class="wrap">
+
+<header>
+  <div class="kicker">All-In Podcast · Épisode 278 · 27 juin 2026 · ≈ 1 h 41</div>
+  <h1>L'IA quitte la Terre</h1>
+  <p class="sub">Le récap des moments les plus forts : la Chine rattrape la frontière en codage, la mémoire devient le vrai goulot d'étranglement, et SpaceX commence à calculer combien coûterait un datacenter… en orbite. Avec Gavin Baker (Atreides Management) en grande forme.</p>
+  <div class="cast">
+    <span class="star">★ Gavin Baker — Atreides Management</span>
+    <span>Travis Kalanick — Adams</span>
+    <span>Chamath Palihapitiya</span>
+    <span>David Sacks</span>
+    <span>Jason Calacanis</span>
+  </div>
+  <div class="meta">Récap éditorial — Comptoir IA · les citations sont en VF (traduction) avec la version originale (VO) en regard.</div>
+</header>
+
+<div class="rundown">
+  <h2>Au sommaire des temps forts</h2>
+  <ol>
+    <li><a href="#s1">La Chine rattrape la frontière — GLM 5.2 &amp; la distillation</a><span class="t">45:00</span></li>
+    <li><a href="#composable">Focus — l'IA composable : le « conseil de LLM »</a><span class="t">48:40</span></li>
+    <li><a href="#s2">Le vrai goulot : la mémoire — Micron &amp; HBM</a><span class="t">1:01:45</span></li>
+    <li><a href="#s3">Le datacenter dans l'espace — l'économie orbitale de SpaceX</a><span class="t">1:11:00</span></li>
+    <li><a href="#s4">Tesla × SpaceX, le « Megapod » &amp; le calcul distribué</a><span class="t">1:14:40</span></li>
+    <li><a href="#s5">Anthropic à 3 000 milliards $ — le mur d'introductions en Bourse</a><span class="t">1:27:25</span></li>
+  </ol>
+</div>
+
+<!-- ============ SEGMENT 1 ============ -->
+<section class="seg" id="s1">
+  <div class="seg-head">
+    <span class="seg-num">01</span>
+    <h2>La Chine rattrape la frontière</h2>
+    <span class="dur">≈ 45:00 → 1:01</span>
+  </div>
+  <p class="lead">Un modèle open-weight chinois arrive à un cheveu de Claude Opus 4.8 — pour 85 % moins cher. Gavin Baker explique comment, et pourquoi ce n'est pas forcément une mauvaise nouvelle.</p>
+
+  <div class="figs">
+    <div class="fig"><div class="n">744 Md</div><div class="l">paramètres pour GLM 5.2 (Z.AI), licence MIT, 1 M de contexte</div></div>
+    <div class="fig"><div class="n">51</div><div class="l">score Artificial Analysis — record absolu pour un modèle open-weight</div></div>
+    <div class="fig"><div class="n">&lt; 1 pt</div><div class="l">d'écart avec Claude Opus 4.8 sur le bench de codage SWE</div></div>
+    <div class="fig"><div class="n">−85 %</div><div class="l">de coût d'API vs GPT-5.5 à performance comparable</div></div>
+  </div>
+
+  <p><b>GLM 5.2</b>, sorti par le laboratoire chinois <b>Z.AI</b>, est un modèle « frontière » entièrement open-source : téléchargeable partout, auto-hébergeable, sans restriction régionale. Il bat GPT-5.5 sur le benchmark de codage Frontier SWE et ne trahit Claude Opus 4.8 que de moins d'un point. Son fondateur a glissé à Elon Musk qu'une capacité open-weight « niveau Fable » arriverait <strong>avant le T1 2027</strong>.</p>
+
+  <h3>Le secret : la distillation</h3>
+  <p>Gavin Baker reconnaît que GLM 5.2 a « challengé certaines de ses convictions ». Le mécanisme : des fermes de téléphones chinoises interrogent en masse les API des modèles frontière via des comptes masqués, récoltent les <b>« reasoning traces »</b> (le raisonnement token par token) et les réinjectent en entraînement.</p>
+
+  <div class="q gavin">
+    <p>« Ce serait comme poser à Google toutes les questions imaginables, récupérer tous les résultats, puis assembler votre propre moteur de recherche. Et maintenant que ce modèle est si bon, il est assez bon pour faire son propre apprentissage par renforcement — le chat est peut-être sorti du sac. »</p>
+    <span class="vo">VO — « It would be like asking Google every question you could ever imagine… now that this model is so good, it's good enough to do its own RL, and the cat may be out of the bag. »</span>
+    <span class="who">★ <b>Gavin Baker</b> — sur la distillation des modèles frontière</span>
+  </div>
+
+  <p>Mais pour Gavin, la vraie conséquence n'est pas « la Chine gagne ou perd » — c'est que l'avenir appartient aux <b>modèles composables</b>. <a href="#composable" style="color:var(--copper);border-bottom:1px solid var(--rule)">→ voir le focus juste en dessous.</a></p>
+
+  <div class="takeaway"><span class="lbl">À retenir</span>Côté silicium chinois : GLM 5.2 aurait été entraîné <b>entièrement sur des puces Huawei Ascend 910B</b>. Sacks parle d'une « shot clock » : la Chine est ~6 mois derrière sur le modèle, ~24 mois derrière sur la puce — mais seulement « quelques mois » derrière au total. D'où sa thèse : être <b>pro-export</b>, car la Chine vendra de toute façon son « AI in a box » à prix cassé partout dans le monde.</div>
+</section>
+
+<!-- ============ FOCUS COMPOSABLE ============ -->
+<section class="seg" id="composable">
+  <div class="seg-head">
+    <span class="seg-num">★ FOCUS</span>
+    <h2>L'IA composable : le « conseil de LLM »</h2>
+    <span class="dur">≈ 48:40</span>
+  </div>
+  <p class="lead">Le concept le plus structurant de l'épisode, et la conviction la plus forte de Gavin Baker : on n'utilisera plus « un » modèle, mais une <b>symphonie de modèles</b> qui collaborent. Voilà pourquoi l'open-source chinois ne tue pas l'IA — il la recompose.</p>
+
+  <div class="q gavin">
+    <p>« Je crois profondément que l'avenir, ce sont les modèles composables. Chaque entreprise aura ce qu'Andrej Karpathy appelle un “conseil de LLM” : votre propre modèle open-weight, entraîné sur vos données, et les modèles frontière par-dessus comme chefs d'orchestre. »</p>
+    <span class="vo">VO — « I profoundly believe the future is composable models… a council of LLMs. Your own open-weights model on your data, and the frontier models as the conductors. »</span>
+    <span class="who">★ <b>Gavin Baker</b> — sa conviction n°1</span>
+  </div>
+
+  <h3>Comment ça marche concrètement</h3>
+  <ul class="pts">
+    <li><b>Un routeur</b> en entrée : chaque requête, chaque tâche de l'entreprise est aiguillée. La majorité part vers votre modèle maison (open-weight, affiné par RL/SFT sur vos données) ; seules les plus difficiles montent d'un cran.</li>
+    <li><b>Les modèles frontière jouent les « chefs d'orchestre »</b> : ils interviennent en fin de chaîne pour vérifier, compléter, trancher les cas durs — pas pour tout traiter.</li>
+    <li><b>La répartition typique</b> : ~85 % des requêtes au modèle open-source, le reste contrôlé par la frontière. « Une symphonie de modèles qui travaillent ensemble. »</li>
+  </ul>
+
+  <div class="figs">
+    <div class="fig"><div class="n">~85 %</div><div class="l">des requêtes traitables par le modèle open-weight maison</div></div>
+    <div class="fig"><div class="n">90 %</div><div class="l">de la valeur économique encore captée par les tokens frontière</div></div>
+    <div class="fig"><div class="n">80 %+</div><div class="l">des tokens traités sont déjà open-source</div></div>
+    <div class="fig"><div class="n">≥ 2</div><div class="l">modèles frontière par stack, dont idéalement Grok « pour sa franchise »</div></div>
+  </div>
+
+  <div class="takeaway"><span class="lbl">Le retournement de Gavin</span>La grande idée fausse, c'est de croire que l'open-source nuit à l'IA. <b>Faux</b> : il est « excellent pour les fournisseurs d'infrastructure ». L'open-source ne détruit pas la valeur — il la <b>déplace</b> des marges des labos frontière vers l'infrastructure (puces, mémoire, datacenters). Ce qui boucle parfaitement avec les segments suivants : si tout le monde compose ses modèles, c'est la mémoire et le calcul qui deviennent le nerf de la guerre.</div>
+
+  <p>C'est aussi un argument de <b>souveraineté et de liberté d'expression</b> : posséder son propre modèle open-weight, c'est garder un modèle qui « vous dira une vérité politiquement gênante mais utile pour votre activité » — et ne dépendre de personne pour l'avoir.</p>
+</section>
+
+<!-- ============ SEGMENT 2 ============ -->
+<section class="seg" id="s2">
+  <div class="seg-head">
+    <span class="seg-num">02</span>
+    <h2>Le vrai goulot d'étranglement : la mémoire</h2>
+    <span class="dur">≈ 1:01:45 → 1:11</span>
+  </div>
+  <p class="lead">Micron pulvérise ses résultats. Et pour Gavin Baker, ce n'est pas un détail comptable : la <b>DRAM / HBM</b> est LE goulot qui va conditionner toute la suite de la révolution IA.</p>
+
+  <div class="figs">
+    <div class="fig"><div class="n">×4</div><div class="l">de revenus en un an chez Micron : 9 → 42 Mds$</div></div>
+    <div class="fig"><div class="n">×10</div><div class="l">le cours de l'action depuis l'appel de Gavin (×14 sur son call HBM de 2025)</div></div>
+    <div class="fig"><div class="n">3</div><div class="l">seules entreprises au monde capables de produire la HBM (Micron, SK Hynix, Samsung)</div></div>
+    <div class="fig"><div class="n">30–40 %</div><div class="l">part de la DRAM dans le capex des hyperscalers l'an prochain</div></div>
+  </div>
+
+  <p>La HBM (<b>High Bandwidth Memory</b>) est cette mémoire spécialisée empilée sur le GPU Nvidia — on superpose les dies de DRAM 8, 12, bientôt 16 niveaux de haut. Toute la production 2026 de Micron est <strong>déjà vendue</strong>. Conséquence en bout de chaîne : Apple répercute enfin les hausses (le MacBook Neo passe de 699 à 799 $, le Mac Studio +25 %). « L'inflation arrive sur le bureau. »</p>
+
+  <div class="q gavin">
+    <p>« Le goulot qui compte, c'est la DRAM. Pas les lasers, pas les condensateurs, pas l'alimentation, pas la NAND flash, pas les disques durs : la DRAM. La capacité et la bande passante mémoire sont le fondement de la performance de chaque modèle d'IA. »</p>
+    <span class="vo">VO — « The bottleneck that matters is DRAM… not lasers, not capacitors, not power supply semiconductors, not NAND flash, not HDDs — DRAM. Memory capacity and bandwidth are foundational to the performance of every AI model. »</span>
+    <span class="who">★ <b>Gavin Baker</b> — sur « les bottleneck bros »</span>
+  </div>
+
+  <ul class="pts">
+    <li>Micron a verrouillé des <b>contrats d'approvisionnement (SDA)</b> avec plancher et plafond de prix : le <b>prix plancher dépasse déjà les pics des cycles précédents</b>. Potentiellement transformationnel pour l'industrie.</li>
+    <li>Elon concentre la <b>« Terrafab »</b> sur la mémoire, justement parce qu'il y voit le goulot n°1 — partant avec l'avantage du partenariat Intel.</li>
+    <li>La DRAM, « c'est aussi proche de la magie que la science puisse l'être ». <b>CXMT</b> (qui entre en Bourse en Chine) inondera le marché de DRAM grand public bon marché — mais pas de la DRAM serveur.</li>
+  </ul>
+
+  <div class="takeaway"><span class="lbl">L'angle contre-intuitif de Gavin</span>Cette pénurie pourrait être <b>une bonne chose pour la société</b> : en gonflant le coût d'un datacenter d'1 GW, elle ralentit le « dilemme du prisonnier » des hyperscalers et nous donne du temps pour adapter le « contrat social » (la formule de Brad Gerstner).</div>
+</section>
+
+<!-- ============ SEGMENT 3 ============ -->
+<section class="seg" id="s3">
+  <div class="seg-head">
+    <span class="seg-num">03</span>
+    <h2>Le datacenter qui s'envole — l'économie orbitale</h2>
+    <span class="dur">≈ 1:11:00 → 1:14</span>
+  </div>
+  <p class="lead">Le moment le plus vertigineux de l'épisode. Gavin Baker pose, en « premiers principes », le calcul qui rend un datacenter dans l'espace économiquement crédible. Spoiler : c'est la réutilisabilité de Starship qui change tout.</p>
+
+  <div class="figs">
+    <div class="fig"><div class="n">35 Mds$</div><div class="l">de semi-conducteurs Nvidia pour 1 GW de calcul</div></div>
+    <div class="fig"><div class="n">25 Mds$</div><div class="l">d'équipement énergie + refroidissement au sol (inflationniste : surtout de la main-d'œuvre)</div></div>
+    <div class="fig"><div class="n">5 Mds$</div><div class="l">coût de lancement pour mettre 1 GW en orbite quand Starship sera réutilisable (déflationniste)</div></div>
+    <div class="fig"><div class="n">40 vs 70 Mds$</div><div class="l">orbital vs terrestre d'ici 3–4 ans : l'écart s'inverse</div></div>
+  </div>
+
+  <p>Au sol, un datacenter d'1 GW = <b>35 Mds$ de silicium + 25 Mds$ d'énergie et refroidissement</b>. Ces 25 Mds$ sont inflationnistes (essentiellement de l'installation humaine). En orbite, on garde les 35 Mds$ de silicium mais on remplace le poste énergie/refroidissement par le <b>coût de lancement</b>. Quand Starship sera pleinement réutilisable : <b>5 Mds$ pour hisser 1 GW dans l'espace</b>, soit ~40 Mds$ en orbite contre ~60 (et bientôt ~70) au sol. Ensuite, ~1 Md$/an pour alimenter et refroidir les puces.</p>
+
+  <div class="q gavin">
+    <p>« Ce qui me rend dingue, c'est que les gens imaginent ces datacenters gigantesques. Non : ce sont des racks dans l'espace, reliés par des lasers. C'est, en quelque sorte, un datacenter virtuel en orbite. »</p>
+    <span class="vo">VO — « Something that drives me crazy is people picture these Pentagon-ized data centers. No, it's racks in space linked with lasers. It's kind of a virtual data center in space. »</span>
+    <span class="who">★ <b>Gavin Baker</b> — sur l'architecture du calcul orbital</span>
+  </div>
+
+  <div class="q">
+    <p>« L'offre est très, très maigre et la demande est quasiment infinie. Ce qui restera au sol sera incroyablement précieux : ce seront des diamants. Quelques centaines de mégawatts à un gigawatt — ça, ce sont des Hope Diamonds. »</p>
+    <span class="vo">VO — « There is very meager supply and effectively infinite demand… whatever is left on the ground will be incredibly valuable. These are diamonds. Hundreds of megawatts to gigawatts — those are like hope diamonds. »</span>
+    <span class="who"><b>Chamath Palihapitiya</b> — pourquoi l'économie « tire » vers l'espace, au profit de SpaceX</span>
+  </div>
+
+  <div class="takeaway"><span class="lbl">À retenir</span>Depuis 2021, ~40 % des projets de datacenters sont contestés — et ça empire. Si le sol se bloque et que le lancement devient déflationniste, l'avantage bascule vers <b>la pile de calcul de SpaceX</b> : un coût du token de sortie structurellement plus bas que celui des hyperscalers terrestres, une fois l'échelle atteinte.</div>
+</section>
+
+<!-- ============ SEGMENT 4 ============ -->
+<section class="seg" id="s4">
+  <div class="seg-head">
+    <span class="seg-num">04</span>
+    <h2>Tesla × SpaceX, le « Megapod » &amp; le calcul distribué</h2>
+    <span class="dur">≈ 1:14:40 → 1:27</span>
+  </div>
+  <p class="lead">Une marque déposée le 18 juin trahit la convergence Tesla/SpaceX : des datacenters modulaires, préfabriqués, posés en 90 jours — et un rêve de calcul distribué jusque dans votre Powerwall.</p>
+
+  <ul class="pts">
+    <li><b>« Megapod »</b> (dépôt du 18 juin 2026) : matériel de datacenter modulaire pour l'IA — serveurs, distribution électrique et refroidissement, vendus comme une unité autonome. La rumeur : un gros pack batterie + GPU posé aux <b>stations Superchargeur</b>, où Tesla a déjà terrain et puissance.</li>
+    <li>Le secteur relâche ses « basis of design » : on réaccepte des GPU plus anciens <b>refroidis par air</b>, glissés dans un conteneur maritime « qu'on pose sur une dalle, qu'on branche et qu'on laisse tourner ». Résultat : un <b>cycle de construction de 90 jours</b>, du jamais-vu.</li>
+    <li>Travis Kalanick imagine la version domestique : chaque <b>Powerwall</b> embarque des GPU + une <b>Starlink</b> sur le toit → un réseau d'inférence distribué, et « une infinité de systèmes de secours à domicile » offerts.</li>
+  </ul>
+
+  <div class="q">
+    <p>« Et si Tesla disait : désormais, chaque Powerwall contient nos GPU. Vous ne pouvez pas acheter un Powerwall sans GPU. Quand vous ne l'utilisez pas, on vous paie pour votre batterie. Vous mettez une Starlink sur le toit — et Elon a créé une infinité de systèmes de secours domestiques. »</p>
+    <span class="vo">VO — « Every Power Wall has our GPUs in it… when you're not using it, we will pay you for your battery. You put a Starlink on your roof — and Elon's created an infinite number of home battery backup systems. »</span>
+    <span class="who"><b>Travis Kalanick</b> — sur le calcul distribué grand public</span>
+  </div>
+
+  <h3>Mémoire, encore : prefill vs decode</h3>
+  <p>Gavin relie tout à la mémoire. Quand un modèle répond, il fait deux choses : le <b>prefill</b> (comprendre la question — borné par la <b>capacité</b> mémoire : « plus vous vous souvenez, mieux c'est ») et le <b>decode</b> (générer le token suivant — borné par la <b>bande passante</b> mémoire : « plus vous parlez vite, mieux c'est »). Ces deux étapes se « désagrègent » : on place des puces Groq (rachetée par Nvidia) ou Cerebras, optimisées decode, <b>devant de vieux GPU H100/A100</b> recyclés. D'où des GPU utiles 7, 10, 12 ans — et une révolution IA plus finançable.</p>
+</section>
+
+<!-- ============ SEGMENT 5 ============ -->
+<section class="seg" id="s5">
+  <div class="seg-head">
+    <span class="seg-num">05</span>
+    <h2>Anthropic à 3 000 milliards $</h2>
+    <span class="dur">≈ 1:27:25 → 1:36</span>
+  </div>
+  <p class="lead">La phrase qui a fait sursauter le plateau. Gavin Baker chiffre Anthropic — et explique pourquoi le « mur » d'introductions en Bourse à venir est plus absorbable qu'il n'y paraît.</p>
+
+  <div class="figs">
+    <div class="fig"><div class="n">3 000 Mds$</div><div class="l">la valeur à laquelle Anthropic coterait aujourd'hui, selon Gavin</div></div>
+    <div class="fig"><div class="n">&gt; 100 Mds$</div><div class="l">de revenus pour Anthropic à la fin de l'année</div></div>
+    <div class="fig"><div class="n">85 %</div><div class="l">de marge brute sur l'inférence — très profitable à l'échelle</div></div>
+    <div class="fig"><div class="n">4 000 Mds$</div><div class="l">de nouvelles offres à venir (OpenAI, Anthropic, Cerebras, SpaceX…)</div></div>
+  </div>
+
+  <div class="q gavin">
+    <p>— « Anthropic vaut 3 000 milliards de dollars aujourd'hui, et c'est très important. »<br>— « Attends… tu as bien dit qu'Anthropic vaut 3 000 milliards ? »<br>— « Oui. C'est à peu près là qu'elle coterait en société publique. »</p>
+    <span class="vo">VO — « Anthropic is worth $3 trillion today… » — « Did you say Anthropic is worth $3 trillion? » — « Yeah, that's roughly where it would trade as a public company. »</span>
+    <span class="who">★ <b>Gavin Baker</b> — l'échange qui a glacé le plateau</span>
+  </div>
+
+  <ul class="pts">
+    <li>Le marché a <b>déjà absorbé</b> ces montants : on ne fait que transférer du privé vers le public, « encore plus grand ».</li>
+    <li>Leçon d'IPO via <b>Cerebras</b> (passée sous son prix d'intro) : certains gérants vendent automatiquement dès qu'un titre « casse » son prix d'introduction. Conseil de Gavin aux futurs cotés : « pricez de façon à ne pas casser votre prix sur les neuf premiers mois ».</li>
+    <li>Sur <b>SpaceX</b> (IPO retombée de ~200 $) : pas forcément le mur de liquidité annoncé — chaque actionnaire pouvait déjà vendre tous les 6 mois depuis 10 ans, et près de la moitié des employés ont <b>acheté</b> à l'IPO.</li>
+  </ul>
+</section>
+
+<!-- ============ VISUELS ============ -->
+<section class="seg" id="visuels">
+  <div class="seg-head">
+    <span class="seg-num">★</span>
+    <h2>Visuels prêts à poster</h2>
+  </div>
+  <p class="lead">Générés sur mesure dans l'esthétique « planche de livre ancien » de la maison. Clic droit → enregistrer, ou lien de téléchargement sous chaque image.</p>
+  <div class="gallery">
+    <figure><img src="social/all-in-278-vertical.png" alt="Carte verticale récap 9:16" loading="lazy"><figcaption>Story / TikTok — 9:16<br><a class="dl" href="social/all-in-278-vertical.png" download>télécharger ↓</a></figcaption></figure>
+    <figure><img src="social/all-in-278-carousel-1.png" alt="Carrousel Chine" loading="lazy"><figcaption>Carrousel 1 — Chine · 4:5<br><a class="dl" href="social/all-in-278-carousel-1.png" download>télécharger ↓</a></figcaption></figure>
+    <figure><img src="social/all-in-278-carousel-2.png" alt="Carrousel IA composable" loading="lazy"><figcaption>Carrousel 2 — Composable · 4:5<br><a class="dl" href="social/all-in-278-carousel-2.png" download>télécharger ↓</a></figcaption></figure>
+    <figure><img src="social/all-in-278-carousel-3.png" alt="Carrousel Mémoire" loading="lazy"><figcaption>Carrousel 3 — Mémoire · 4:5<br><a class="dl" href="social/all-in-278-carousel-3.png" download>télécharger ↓</a></figcaption></figure>
+    <figure><img src="social/all-in-278-carousel-4.png" alt="Carrousel Orbital" loading="lazy"><figcaption>Carrousel 4 — Orbital · 4:5<br><a class="dl" href="social/all-in-278-carousel-4.png" download>télécharger ↓</a></figcaption></figure>
+    <figure><img src="social/all-in-278-wide.png" alt="Bannière 16:9 Substack / LinkedIn" loading="lazy"><figcaption>Substack / LinkedIn — 16:9<br><a class="dl" href="social/all-in-278-wide.png" download>télécharger ↓</a></figcaption></figure>
+  </div>
+</section>
+
+<!-- ============ POSTS ============ -->
+<section class="posts-head" id="posts">
+  <div class="seg-head">
+    <span class="seg-num">✎</span>
+    <h2>Posts clés prêts à publier</h2>
+  </div>
+  <p class="lead">Copie-colle. Chaque post est calibré pour son réseau. Bouton « copier » à droite.</p>
+
+  <div class="post">
+    <div class="plat">LinkedIn <span class="cnt">≈ 1 300 caractères · ton analyse</span><span class="copy" onclick="cp(this)">copier</span></div>
+    <div class="body" data-copy>Cette semaine, le All-In Podcast (#278) a posé une phrase qui résume 2026 : « un datacenter, ce sont des racks dans l'espace reliés par des lasers ».
+
+Trois bascules à retenir, et elles tiennent toutes dans un mot : la MÉMOIRE.
+
+1️⃣ La Chine a rattrapé la frontière.
+GLM 5.2 (Z.AI, open-weight, licence MIT) arrive à moins d'un point de Claude Opus 4.8 sur le codage — pour 85 % moins cher. Entraîné, dit-on, entièrement sur des puces Huawei. La « shot clock » a démarré.
+
+2️⃣ Le vrai goulot n'est ni le GPU ni l'énergie : c'est la DRAM/HBM.
+Micron a multiplié son chiffre par 4 en un an. Seules 3 entreprises au monde savent fabriquer la mémoire haute bande passante. Elle pèsera 30 à 40 % du capex des hyperscalers l'an prochain. Comme dit Gavin Baker : « c'est aussi proche de la magie que la science puisse l'être. »
+
+3️⃣ Le calcul quitte la Terre.
+Quand Starship sera réutilisable, mettre 1 GW en orbite coûtera ~5 Mds$ de lancement. Au sol, le poste énergie/refroidissement (~25 Mds$) est inflationniste. D'ici 3-4 ans : ~40 Mds$ en orbite vs ~70 au sol. L'écart s'inverse.
+
+Et la cerise : selon Baker, Anthropic vaudrait déjà 3 000 milliards de dollars.
+
+On bascule d'une industrie de logiciels vers une industrie d'infrastructure physique. Ceux qui maîtrisent la mémoire et le lancement gagnent.
+
+Vous pariez sur le sol ou sur l'orbite ?
+
+#IA #SemiConducteurs #SpaceX #Investissement</div>
+  </div>
+
+  <div class="post">
+    <div class="plat">X / Twitter <span class="cnt">thread · 5 tweets</span><span class="copy" onclick="cp(this)">copier</span></div>
+    <div class="body" data-copy>1/ All-In #278 condensé. La phrase de l'épisode (Gavin Baker) :
+
+« Un datacenter, ce sont des racks dans l'espace reliés par des lasers. »
+
+Le calcul IA est en train de quitter la Terre. 🧵
+
+2/ La Chine a rattrapé.
+GLM 5.2 (open-weight, MIT) → à <1 pt de Claude Opus 4.8 sur le codage, −85 % de coût. Entraîné sur puces Huawei. Capacité « niveau Fable » promise avant T1 2027.
+
+3/ Le vrai goulot, ce n'est pas le GPU. C'est la MÉMOIRE.
+Micron ×4 de revenus en 1 an. 3 fabricants de HBM dans le monde. 30-40 % du capex hyperscaler l'an prochain part en DRAM. « Aussi proche de la magie que la science puisse l'être. »
+
+4/ L'économie orbitale, en premiers principes :
+Sol 1 GW = 35 Mds$ silicium + 25 Mds$ énergie/refroidissement (inflationniste).
+Orbite (Starship réutilisable) = 35 Mds$ + 5 Mds$ de lancement (déflationniste).
+→ 40 vs 70 Mds$ d'ici 3-4 ans.
+
+5/ Et le chiffre qui a fait sursauter le plateau :
+Anthropic vaudrait 3 000 milliards $ aujourd'hui. >100 Mds$ de revenus à fin d'année, 85 % de marge sur l'inférence.
+
+Qui maîtrise la mémoire et le lancement gagne. 🚀</div>
+  </div>
+
+  <div class="post">
+    <div class="plat">Substack <span class="cnt">accroche + intro newsletter</span><span class="copy" onclick="cp(this)">copier</span></div>
+    <div class="body" data-copy>TITRE : L'IA quitte la Terre (et trois chiffres pour le comprendre)
+
+SOUS-TITRE : Cette semaine, le All-In Podcast a discrètement décrit le prochain chapitre de l'IA : la Chine rattrape, la mémoire devient le nerf de la guerre, et SpaceX calcule sérieusement le coût d'un datacenter en orbite.
+
+—
+
+Il y a des épisodes de podcast qu'on écoute distraitement, et d'autres où une phrase vous arrête net. Dans l'épisode 278 du All-In, c'est Gavin Baker (Atreides Management) qui la prononce : « les gens imaginent des datacenters gigantesques — non, ce sont des racks dans l'espace reliés par des lasers. »
+
+Derrière la formule, une thèse d'investissement complète. Je l'ai décortiquée en trois bascules — la Chine, la mémoire, l'orbite — plus le chiffre qui a glacé le plateau : Anthropic à 3 000 milliards de dollars.
+
+[Lire le récap complet → ]</div>
+  </div>
+
+  <div class="post">
+    <div class="plat">Instagram / TikTok <span class="cnt">légende + hashtags</span><span class="copy" onclick="cp(this)">copier</span></div>
+    <div class="body" data-copy>L'IA est en train de quitter la Terre. 🛰️
+
+3 trucs dingues dits cette semaine au All-In Podcast :
+
+🇨🇳 Un modèle chinois GRATUIT est à 1 point de Claude Opus 4.8 — pour 85 % moins cher.
+🧠 Le vrai goulot de l'IA, ce n'est pas le GPU : c'est la MÉMOIRE. Seulement 3 boîtes au monde savent la fabriquer.
+🚀 Un datacenter dans l'espace coûterait bientôt MOINS cher qu'au sol. « Des racks reliés par des lasers. »
+
+Bonus : Anthropic vaudrait déjà 3 000 milliards de dollars. 🤯
+
+Tu paries sur le sol ou sur l'orbite ? Dis-le en commentaire 👇
+
+#IA #intelligenceartificielle #SpaceX #Tesla #tech #investissement #Micron #Nvidia #Anthropic #AllIn</div>
+  </div>
+</section>
+
+<!-- ============ SCRIPT VIDEO ============ -->
+<section class="posts-head" id="video">
+  <div class="seg-head">
+    <span class="seg-num">🎬</span>
+    <h2>Script face-cam — 15-20 s</h2>
+  </div>
+  <p class="lead">À dire face caméra, débit punchy. Objectif : 3 idées fortes en 18 secondes. Le texte entre crochets, c'est la didascalie (regard, geste, incrustation).</p>
+
+  <div class="script">
+    <h3>« L'IA quitte la Terre » — 18 s</h3>
+    <div class="beat"><div class="tc">0–3 s</div><div class="line">« Cette semaine, une phrase a résumé toute l'IA de 2026… »<em>[regard caméra, sourcil levé — incrust texte : ALL-IN #278]</em></div></div>
+    <div class="beat"><div class="tc">3–6 s</div><div class="line">« …un datacenter, c'est des racks dans l'espace reliés par des lasers. »<em>[geste mains qui s'écartent — incrust : 🛰️ ORBITE]</em></div></div>
+    <div class="beat"><div class="tc">6–10 s</div><div class="line">« Un : la Chine a rattrapé. Un modèle gratuit à un point de Claude, 85 % moins cher. »<em>[un doigt levé — incrust : 🇨🇳 GLM 5.2]</em></div></div>
+    <div class="beat"><div class="tc">10–14 s</div><div class="line">« Deux : le vrai goulot, c'est pas le GPU, c'est la mémoire. Trois boîtes au monde savent la faire. »<em>[deux doigts — incrust : 🧠 HBM ×3]</em></div></div>
+    <div class="beat"><div class="tc">14–18 s</div><div class="line">« Et trois : SpaceX calcule un datacenter en orbite moins cher qu'au sol. Le calcul quitte la planète. Abonne-toi. »<em>[sourire, pointe l'objectif — incrust : 🚀 + @ComptoirIA]</em></div></div>
+  </div>
+
+  <p style="font-size:14px;color:var(--ink-soft);font-style:italic">Variante courte 15 s : couper le beat « 6–10 s » et enchaîner mémoire → orbite. Tourner en vertical 9:16, lumière douce, fond neutre ou la bannière en arrière-plan flouté.</p>
+</section>
+
+<div class="sources">
+  <h2>Sources</h2>
+  <p>Épisode : <a href="https://youtu.be/w8ah_tA0yfg" target="_blank" rel="noopener">All-In Podcast #278 — « Socialists Sweep NYC, China Catches Up in Coding, AI Memory Crunch, Micron's Blowout Quarter »</a> (27 juin 2026, ≈ 1 h 41).</p>
+  <p>Transcription intégrale exploitée : <a href="data/transcript-allin-278.txt">data/transcript-allin-278.txt</a>. Citations vérifiées sur la VO ; traductions et mises en forme éditoriales par Comptoir IA. Chiffres tels qu'énoncés à l'antenne par les intervenants.</p>
+</div>
+
+<div class="foot">
+  <div>Récap éditorial — <a href="https://comptoiria.com">Comptoir IA</a> · une production <a href="index.html">Fables du Futur</a></div>
+  <div>© 2026 · à partager librement</div>
+</div>
+
+</div>
+
+<script>
+function cp(btn){
+  const body=btn.closest('.post').querySelector('[data-copy]');
+  const txt=body.innerText;
+  navigator.clipboard.writeText(txt).then(()=>{
+    btn.textContent='copié ✓';btn.classList.add('done');
+    setTimeout(()=>{btn.textContent='copier';btn.classList.remove('done')},2000);
+  }).catch(()=>{btn.textContent='⌘C';});
+}
+</script>
+</body>
+</html>
