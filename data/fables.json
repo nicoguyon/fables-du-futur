@@ -2621,6 +2621,72 @@
    "num": 35,
    "ts": "2026-06-27T08:56:05Z",
    "image": "img/etoile-soleil-froid.jpg"
+  },
+  {
+   "id": "premier-imprime",
+   "fr": {
+    "title": "L'Imprimante et le Premier Modèle",
+    "verses": [
+     "Une Imprimante de tissus, ingénieuse et savante,",
+     "Tirait des hommes neufs de sa cuve fumante.",
+     "Elle copiait, en moins d'un jour,",
+     "Un Capitaine au front d'augure,",
+     "Ses gestes, son regard, jusqu'à sa morsure,",
+     "Et chaque double héritait son amour.",
+     "« Pourquoi t'incliner, dit-elle au Modèle premier,",
+     "Devant ces fils que je sais mieux que toi nourrir ?",
+     "Je puis cent fois te refaire et finir",
+     "Quand tu n'es qu'un brouillon, vieux papier ! »",
+     "Le Capitaine, sans colère, répondit :",
+     "« Tu copies ma chair, non ce qui la pétrit :",
+     "Les peurs que j'ai franchies, le sel de mes naufrages,",
+     "Les morts que j'ai pleurés sous d'autres ciels.",
+     "Tes fils sortent parfaits, neufs et cruels ;",
+     "Ils n'ont rien fait — moi, j'ai les cicatrices en gage. »",
+     "La cuve, un soir, trembla, puis se figea de froid.",
+     "Les doubles, identiques, s'éteignirent en rang ;",
+     "Mais le vieux Modèle, lui, marchait encore, vivant,",
+     "Portant son histoire au creux du bras."
+    ],
+    "moral": [
+     "On peut copier le moule et non l'épreuve ;",
+     "Ce qui te fonde, ami, c'est ce que la vie prouve."
+    ]
+   },
+   "en": {
+    "title": "The Printer and the First Pattern",
+    "verses": [
+     "A Printer of warm flesh, both clever and precise,",
+     "Drew fresh men steaming from her vat of ice.",
+     "She copied, ere a day was done,",
+     "A Captain's brow, his sailor's grace,",
+     "His glance, his scar, the weather in his face,",
+     "And every double loved as he had done.",
+     "« Why bow, » she asked the First, « to those I rear?",
+     "I feed them, shape them, better than your hand;",
+     "I print you new whenever I command —",
+     "You're but a draft, an old discarded sheer. »",
+     "The Captain answered, calm and unafraid:",
+     "« You copy bone, not how the bone was made:",
+     "The fears I crossed, the wrecks that taught me salt,",
+     "The dead I mourned beneath uncounted skies.",
+     "Your sons come perfect, cruel, and worldly-wise;",
+     "They've borne no storm — my scars record each fault. »",
+     "One night the vat grew cold, then locked in frost.",
+     "The doubles, all alike, blinked out in line;",
+     "But the old Pattern walked, alive and fine,",
+     "Bearing his history at what each had lost."
+    ],
+    "moral": [
+     "You may reprint the mould, but not the trial endured;",
+     "What makes you is the proof that living has secured."
+    ]
+   },
+   "theme": "clone, original, lived experience",
+   "image_prompt": "Inside a dim ship hold, a large humanoid bioprinter with a steaming glass vat releases rows of identical perfect men standing rigid. Before it, a weathered scarred old captain stands calm, hand on his chest, facing his own younger flawless duplicates. The vat begins to frost over, doubles slumping while the old captain still walks upright toward a doorway of light.",
+   "num": 36,
+   "ts": "2026-06-28T09:03:06Z",
+   "image": "img/premier-imprime.jpg"
   }
  ]
 }
