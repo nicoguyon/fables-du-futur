@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>À faire — Les Fables du Futur</title>
+<meta name="description" content="Liste de choses à faire — Comptoir IA / Les Fables du Futur.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f5eedd; --paper2:#efe5cd; --ink:#241d12; --ink-soft:#5c5240;
+  --copper:#9a5b2e; --copper-deep:#7a4521; --electric:#1f3a7a; --gold:#b8893a;
+  --rule:#d8cbac; --card:#faf5e9; --urgent:#c0392b;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:"EB Garamond",Georgia,serif; font-size:19px; line-height:1.55;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden; min-height:100vh;
+}
+body::before{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .47 0 0 0 0 .32 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.wrap{position:relative;z-index:1}
+
+/* ---------- barre sticky ---------- */
+.bar{
+  position:sticky; top:0; z-index:50; display:flex; align-items:center; gap:14px;
+  padding:10px 20px; background:rgba(245,238,221,.92); backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--rule);
+  font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.04em;
+}
+.bar .logo{font-family:Fraunces,serif;font-weight:800;font-size:15px;letter-spacing:.02em;white-space:nowrap;text-decoration:none;color:var(--ink)}
+.bar .logo span{color:var(--copper)}
+.bar .home{margin-left:auto;color:var(--ink-soft);text-decoration:none;display:flex;align-items:center;gap:6px}
+.bar .home:hover{color:var(--copper)}
+
+/* ---------- hero ---------- */
+header.hero{max-width:760px;margin:0 auto;padding:60px 24px 24px;text-align:center}
+.hero .kicker{
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:500;letter-spacing:.32em;
+  text-transform:uppercase;color:var(--copper);margin-bottom:18px;
+}
+.hero h1{
+  font-family:Fraunces,serif;font-optical-sizing:auto;font-weight:900;
+  font-size:clamp(40px,8vw,80px);line-height:.98;letter-spacing:-.015em;
+}
+.hero h1 .em{font-style:italic;font-weight:600;color:var(--copper-deep)}
+.hero .sub{
+  max-width:520px;margin:22px auto 0;font-size:19px;font-style:italic;color:var(--ink-soft);line-height:1.5;
+}
+.orn{display:flex;align-items:center;gap:16px;justify-content:center;margin:30px auto 0;max-width:420px;color:var(--copper)}
+.orn::before,.orn::after{content:"";flex:1;height:1px;background:var(--rule)}
+.orn svg{flex:none}
+
+/* ---------- carte liste ---------- */
+main{max-width:760px;margin:0 auto;padding:6px 24px 100px}
+.board{
+  background:var(--card);border:1px solid var(--rule);border-radius:6px;
+  box-shadow:0 24px 60px -30px rgba(60,40,10,.35);
+  padding:clamp(20px,4vw,40px);margin:24px 0 40px;position:relative;
+}
+.board::before{
+  content:"";position:absolute;inset:9px;border:1px solid var(--rule);border-radius:3px;pointer-events:none;
+}
+.board-inner{position:relative;z-index:1}
+
+/* ---------- ajout ---------- */
+.addrow{display:flex;gap:10px;margin-bottom:20px}
+.addrow input[type=text]{
+  flex:1;font-family:"EB Garamond",Georgia,serif;font-size:18px;color:var(--ink);
+  background:var(--paper);border:1px solid var(--rule);border-radius:4px;padding:11px 14px;
+}
+.addrow input[type=text]:focus{outline:none;border-color:var(--copper)}
+.addrow input::placeholder{color:var(--ink-soft);opacity:.7;font-style:italic}
+.btn{
+  font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;cursor:pointer;border:1px solid var(--ink);background:var(--ink);
+  color:var(--paper);border-radius:4px;padding:0 18px;white-space:nowrap;transition:opacity .15s;
+}
+.btn:hover{opacity:.85}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--rule)}
+.btn.ghost:hover{border-color:var(--copper);color:var(--copper);opacity:1}
+
+/* ---------- compteur / filtres ---------- */
+.toolbar{
+  display:flex;align-items:center;gap:14px;margin-bottom:6px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;color:var(--ink-soft);
+}
+.toolbar .count{color:var(--copper);text-transform:uppercase}
+.filters{margin-left:auto;display:flex;gap:4px}
+.filters button{
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  border:1px solid var(--rule);background:transparent;color:var(--ink-soft);
+  padding:4px 11px;border-radius:14px;cursor:pointer;
+}
+.filters button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+/* ---------- liste ---------- */
+ul.todo{list-style:none;margin-top:14px}
+li.item{
+  display:flex;align-items:flex-start;gap:14px;padding:16px 4px;
+  border-bottom:1px solid var(--rule);position:relative;
+}
+li.item:last-child{border-bottom:none}
+.check{
+  flex:none;width:22px;height:22px;margin-top:2px;border:1.5px solid var(--copper);
+  border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:background .15s,border-color .15s;background:var(--paper);
+}
+.check svg{width:13px;height:13px;opacity:0;transition:opacity .15s}
+.item.done .check{background:var(--copper);border-color:var(--copper)}
+.item.done .check svg{opacity:1}
+.body{flex:1;min-width:0}
+.text{font-size:19px;line-height:1.4;word-break:break-word}
+.item.done .text{text-decoration:line-through;color:var(--ink-soft);opacity:.7}
+.tags{margin-top:5px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.flag{
+  font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--copper);border:1px solid var(--rule);border-radius:10px;padding:2px 8px;
+}
+.flag.urgent{color:var(--urgent);border-color:var(--urgent)}
+.urgent-btn{
+  cursor:pointer;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-soft);border:1px dashed var(--rule);
+  border-radius:10px;padding:2px 8px;background:transparent;
+}
+.urgent-btn:hover{color:var(--urgent);border-color:var(--urgent)}
+.del{
+  flex:none;cursor:pointer;color:var(--ink-soft);opacity:.45;background:none;border:none;
+  font-size:20px;line-height:1;padding:2px 4px;transition:opacity .15s,color .15s;
+}
+.del:hover{opacity:1;color:var(--urgent)}
+.empty{text-align:center;padding:40px 10px;color:var(--ink-soft);font-style:italic}
+
+/* ordre : urgent d'abord, fait à la fin (géré en JS) */
+footer{
+  border-top:1px solid var(--rule);padding:34px 24px 60px;text-align:center;
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-soft);letter-spacing:.05em;line-height:2;
+}
+footer a{color:var(--copper);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="bar">
+  <a class="logo" href="index.html">LES FABLES <span>DU FUTUR</span></a>
+  <a class="home" href="index.html">↩ retour au recueil</a>
+</nav>
+
+<header class="hero">
+  <div class="kicker">Carnet de bord · Comptoir IA</div>
+  <h1>À <span class="em">faire</span></h1>
+  <p class="sub">Les choses qui n'attendent pas — cochées d'heure en heure, comme les fables.</p>
+  <div class="orn"><svg width="26" height="18" viewBox="0 0 26 18" fill="none"><path d="M13 1c2 5 6 8 12 8-6 0-10 3-12 8-2-5-6-8-12-8 6 0 10-3 12-8z" fill="#9a5b2e"/></svg></div>
+</header>
+
+<main>
+  <section class="board">
+    <div class="board-inner">
+      <form class="addrow" id="addForm">
+        <input type="text" id="addInput" placeholder="Ajouter une tâche…" autocomplete="off">
+        <button class="btn" type="submit">Ajouter</button>
+      </form>
+
+      <div class="toolbar">
+        <span class="count" id="count"></span>
+        <div class="filters">
+          <button data-f="all" class="on">Tout</button>
+          <button data-f="active">À faire</button>
+          <button data-f="done">Fait</button>
+        </div>
+      </div>
+
+      <ul class="todo" id="list"></ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div>Liste privée — sauvegardée dans ce navigateur uniquement.</div>
+  <div>© 2026 <a href="https://comptoiria.com">Comptoir IA</a> · <a href="index.html">Les Fables du Futur</a></div>
+</footer>
+
+</div>
+<script>
+const KEY="ff_todos_v1";
+const CHECK_SVG='<svg viewBox="0 0 24 24" fill="none" stroke="#f5eedd" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5 11-11"/></svg>';
+
+const SEED=[
+  {text:"Remercier Fred Montagnon", urgent:false},
+  {text:"Répondre à Pierre-Antoine Tétard", urgent:false},
+  {text:"Remercier Alexandre Caussignac", urgent:false},
+  {text:"Faire les pubs Facebook pour les formations", urgent:false},
+  {text:"Publier le post sur les formations — en taggant tout le monde", urgent:true},
+  {text:"Décaler le déj avec Caro et le remplacer par un webinaire", urgent:false},
+];
+
+let todos = load();
+let filter = "all";
+
+function load(){
+  try{
+    const raw=localStorage.getItem(KEY);
+    if(raw) return JSON.parse(raw);
+  }catch(e){}
+  // première visite : on amorce avec la liste connue
+  const seeded = SEED.map((t,i)=>({id:Date.now()+i, text:t.text, done:false, urgent:t.urgent}));
+  save(seeded);
+  return seeded;
+}
+function save(arr){ try{localStorage.setItem(KEY, JSON.stringify(arr||todos));}catch(e){} }
+
+function ordered(){
+  return [...todos].sort((a,b)=>{
+    if(a.done!==b.done) return a.done?1:-1;          // faits à la fin
+    if(a.urgent!==b.urgent) return a.urgent?-1:1;     // urgents d'abord
+    return 0;
+  });
+}
+
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+
+function render(){
+  const list=document.getElementById("list");
+  let items=ordered();
+  if(filter==="active") items=items.filter(t=>!t.done);
+  if(filter==="done") items=items.filter(t=>t.done);
+
+  if(!items.length){
+    list.innerHTML=`<div class="empty">${todos.length? "Rien ici." : "Tout est fait. 🪶"}</div>`;
+  } else {
+    list.innerHTML=items.map(t=>`
+      <li class="item ${t.done?"done":""}" data-id="${t.id}">
+        <span class="check" data-act="toggle" title="Cocher">${CHECK_SVG}</span>
+        <div class="body">
+          <div class="text">${esc(t.text)}</div>
+          <div class="tags">
+            ${t.urgent?'<span class="flag urgent">Urgent</span>':''}
+            ${!t.done?`<button class="urgent-btn" data-act="urgent">${t.urgent?"↺ normal":"⚑ urgent"}</button>`:''}
+          </div>
+        </div>
+        <button class="del" data-act="del" title="Supprimer">×</button>
+      </li>`).join("");
+  }
+
+  const remaining=todos.filter(t=>!t.done).length;
+  document.getElementById("count").textContent =
+    `${remaining} à faire · ${todos.length} au total`;
+}
+
+document.getElementById("list").addEventListener("click",e=>{
+  const li=e.target.closest(".item"); if(!li) return;
+  const id=Number(li.dataset.id);
+  const act=e.target.closest("[data-act]")?.dataset.act;
+  const t=todos.find(x=>x.id===id); if(!t) return;
+  if(act==="toggle"){ t.done=!t.done; if(t.done) t.urgent=false; }
+  else if(act==="urgent"){ t.urgent=!t.urgent; }
+  else if(act==="del"){ todos=todos.filter(x=>x.id!==id); }
+  else return;
+  save(); render();
+});
+
+document.getElementById("addForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const inp=document.getElementById("addInput");
+  const v=inp.value.trim(); if(!v) return;
+  todos.push({id:Date.now(), text:v, done:false, urgent:false});
+  inp.value=""; save(); render();
+});
+
+document.querySelectorAll(".filters button").forEach(b=>{
+  b.addEventListener("click",()=>{
+    filter=b.dataset.f;
+    document.querySelectorAll(".filters button").forEach(x=>x.classList.toggle("on",x===b));
+    render();
+  });
+});
+
+render();
+</script>
+</body>
+</html>
