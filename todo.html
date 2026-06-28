@@ -131,6 +131,17 @@ li.item:last-child{border-bottom:none}
   border-radius:10px;padding:2px 8px;background:transparent;
 }
 .urgent-btn:hover{color:var(--urgent);border-color:var(--urgent)}
+.edit-btn{
+  cursor:pointer;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-soft);border:1px dashed var(--rule);
+  border-radius:10px;padding:2px 8px;background:transparent;
+}
+.edit-btn:hover{color:var(--copper);border-color:var(--copper)}
+.edit-input{
+  width:100%;font-family:"EB Garamond",Georgia,serif;font-size:19px;line-height:1.4;color:var(--ink);
+  background:var(--paper);border:1px solid var(--copper);border-radius:4px;padding:6px 10px;
+}
+.edit-input:focus{outline:none}
 .del{
   flex:none;cursor:pointer;color:var(--ink-soft);opacity:.45;background:none;border:none;
   font-size:20px;line-height:1;padding:2px 4px;transition:opacity .15s,color .15s;
@@ -191,29 +202,50 @@ footer a{color:var(--copper);text-decoration:none}
 </div>
 <script>
 const KEY="ff_todos_v1";
+const SEED_KEY="ff_todos_seeded_v1";
 const CHECK_SVG='<svg viewBox="0 0 24 24" fill="none" stroke="#f5eedd" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5 11-11"/></svg>';
 
+// Chaque item a un "sid" stable : il n'est injecté qu'une seule fois,
+// même si tu le supprimes ensuite ou si on ajoute de nouveaux items plus tard.
 const SEED=[
-  {text:"Remercier Fred Montagnon", urgent:false},
-  {text:"Répondre à Pierre-Antoine Tétard", urgent:false},
-  {text:"Remercier Alexandre Caussignac", urgent:false},
-  {text:"Faire les pubs Facebook pour les formations", urgent:false},
-  {text:"Publier le post sur les formations — en taggant tout le monde", urgent:true},
-  {text:"Décaler le déj avec Caro et le remplacer par un webinaire", urgent:false},
+  {sid:"thank-fred",        text:"Remercier Fred Montagnon", urgent:false},
+  {sid:"reply-pat",         text:"Répondre à Pierre-Antoine Tétard", urgent:false},
+  {sid:"thank-alex",        text:"Remercier Alexandre Caussignac", urgent:false},
+  {sid:"fb-ads",            text:"Faire les pubs Facebook pour les formations", urgent:false},
+  {sid:"post-formations",   text:"Publier le post sur les formations — en taggant tout le monde", urgent:true},
+  {sid:"dej-caro",          text:"Décaler le déj avec Caro et le remplacer par un webinaire", urgent:false},
+  {sid:"invest-polymarket", text:"Invest Polymarket", urgent:false},
+  {sid:"invest-robotique",  text:"Invest robotique", urgent:false},
 ];
+// items présents avant le suivi par sid : on les considère déjà injectés
+const LEGACY_SIDS=["thank-fred","reply-pat","thank-alex","fb-ads","post-formations","dej-caro"];
 
 let todos = load();
 let filter = "all";
 
 function load(){
-  try{
-    const raw=localStorage.getItem(KEY);
-    if(raw) return JSON.parse(raw);
-  }catch(e){}
-  // première visite : on amorce avec la liste connue
-  const seeded = SEED.map((t,i)=>({id:Date.now()+i, text:t.text, done:false, urgent:t.urgent}));
-  save(seeded);
-  return seeded;
+  const hadData = !!localStorage.getItem(KEY);
+  let arr=[];
+  try{ const raw=localStorage.getItem(KEY); if(raw) arr=JSON.parse(raw); }catch(e){}
+
+  let injected={};
+  try{ injected=JSON.parse(localStorage.getItem(SEED_KEY))||{}; }catch(e){}
+  // migration : une liste v1 antérieure au suivi → on marque les 6 items d'origine comme injectés
+  if(hadData && !localStorage.getItem(SEED_KEY)){
+    LEGACY_SIDS.forEach(s=>injected[s]=true);
+  }
+
+  // on ajoute (une seule fois) les items de SEED jamais injectés
+  let changed=false;
+  SEED.forEach((s,i)=>{
+    if(!injected[s.sid]){
+      arr.push({id:Date.now()+i, text:s.text, done:false, urgent:s.urgent});
+      injected[s.sid]=true; changed=true;
+    }
+  });
+  localStorage.setItem(SEED_KEY, JSON.stringify(injected));
+  if(changed || !hadData) save(arr);
+  return arr;
 }
 function save(arr){ try{localStorage.setItem(KEY, JSON.stringify(arr||todos));}catch(e){} }
 
@@ -244,6 +276,7 @@ function render(){
           <div class="tags">
             ${t.urgent?'<span class="flag urgent">Urgent</span>':''}
             ${!t.done?`<button class="urgent-btn" data-act="urgent">${t.urgent?"↺ normal":"⚑ urgent"}</button>`:''}
+            ${!t.done?'<button class="edit-btn" data-act="edit">✎ modifier</button>':''}
           </div>
         </div>
         <button class="del" data-act="del" title="Supprimer">×</button>
@@ -263,9 +296,29 @@ document.getElementById("list").addEventListener("click",e=>{
   if(act==="toggle"){ t.done=!t.done; if(t.done) t.urgent=false; }
   else if(act==="urgent"){ t.urgent=!t.urgent; }
   else if(act==="del"){ todos=todos.filter(x=>x.id!==id); }
+  else if(act==="edit"){ startEdit(li, t); return; }
   else return;
   save(); render();
 });
+
+function startEdit(li, t){
+  const textEl=li.querySelector(".text");
+  const input=document.createElement("input");
+  input.type="text"; input.className="edit-input"; input.value=t.text;
+  textEl.replaceWith(input); input.focus(); input.select();
+  let committed=false;
+  function commit(){
+    if(committed) return; committed=true;
+    const v=input.value.trim();
+    if(v){ t.text=v; save(); }
+    render();
+  }
+  input.addEventListener("keydown",e=>{
+    if(e.key==="Enter"){ e.preventDefault(); commit(); }
+    else if(e.key==="Escape"){ committed=true; render(); }
+  });
+  input.addEventListener("blur",commit);
+}
 
 document.getElementById("addForm").addEventListener("submit",e=>{
   e.preventDefault();
