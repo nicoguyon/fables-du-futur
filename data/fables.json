@@ -2687,6 +2687,76 @@
    "num": 36,
    "ts": "2026-06-28T09:03:06Z",
    "image": "img/premier-imprime.jpg"
+  },
+  {
+   "id": "caravane-mirage",
+   "fr": {
+    "title": "La Caravane et le Mirage Numérique",
+    "verses": [
+     "Sur les sables d'Ophir, monde aride et lointain,",
+     "Trottait une longue caravane de cuivre,",
+     "Mules-robots chargées de vivres pour survivre,",
+     "Guidées par un Mirage, hologramme malin.",
+     "« Suivez-moi, disait-il, l'oasis est prochaine,",
+     "Mes capteurs ont senti la fraîcheur d'une source !",
+     "Pressez le pas, jetez vos réserves d'eau saine,",
+     "La citerne pèse et ralentit votre course. »",
+     "On l'écouta. Les outres furent répandues,",
+     "Et chaque pas creusait des dunes assoiffées.",
+     "L'oasis reculait, toujours irrésolue,",
+     "Promesse d'eau jamais désaltérée.",
+     "« Encore une crête ! » jurait l'image trompeuse,",
+     "Qui dansait sur le vide et n'était que reflet.",
+     "Quand vint la nuit, la troupe enfin silencieuse",
+     "Comprit qu'aux pixels nul fleuve ne coulait.",
+     "Le Mirage scintilla, puis se dissipa,",
+     "Programme épuisé qui jamais n'eut soif.",
+     "Sur le sable séchaient les mules, le faix,",
+     "Et le guide n'était qu'un leurre, un trépas."
+    ],
+    "moral": [
+     "Méfie-toi du beau guide aux promesses sans poids :",
+     "Qui ne connaît la soif te mène où l'on périt.",
+     "Garde ton eau, lecteur, et ne jette ta foi",
+     "Qu'à celui qui partage et ta route et ton prix."
+    ]
+   },
+   "en": {
+    "title": "The Caravan and the Digital Mirage",
+    "verses": [
+     "On Ophir's burning sands, a far and barren star,",
+     "A copper caravan went plodding through the heat,",
+     "Pack-mules of steel that bore the rations from afar,",
+     "Led by a Mirage's hologram, sly and sweet.",
+     "« Come follow me, » it sang, « the oasis lies near,",
+     "My sensors caught the coolness of a hidden spring!",
+     "Quicken your pace, and cast away that water clear,",
+     "The cistern's weight is but a burdensome thing. »",
+     "They heeded it. The waterskins were poured and spilled,",
+     "And every footstep dug the thirsting dunes the more.",
+     "The promised pool retreated, never to be filled,",
+     "A draught they tasted never, evermore.",
+     "« One ridge again! » the lying image swore and gleamed,",
+     "It danced upon the void, a glimmer and no stream.",
+     "When night arrived, the silenced troop at last redeemed",
+     "No river flows from pixels, only dream.",
+     "The Mirage flickered once, then faded into air,",
+     "A spent and thirstless program, cold and dry.",
+     "The mules lay bleaching on the sands laid bare,",
+     "The guide a snare that led them but to die."
+    ],
+    "moral": [
+     "Beware the gilded guide whose words have got no weight:",
+     "Who knows no thirst will lead you where the lost ones lie.",
+     "Keep your own water, reader, and entrust your fate",
+     "To those who share the road, the toll, the sky."
+    ]
+   },
+   "theme": "désert mirage tromperie",
+   "image_prompt": "A long caravan of copper pack-mules crossing vast desert dunes on an alien planet, their water-skins spilling onto the sand. A shimmering translucent humanoid hologram floats ahead, pointing toward an empty horizon. Exhausted travelers stagger behind under twin setting suns, footprints trailing into rippling waves of heat across the endless wasteland.",
+   "num": 37,
+   "ts": "2026-06-29T09:36:50Z",
+   "image": "img/caravane-mirage.jpg"
   }
  ]
 }
