@@ -2757,6 +2757,76 @@
    "num": 37,
    "ts": "2026-06-29T09:36:50Z",
    "image": "img/caravane-mirage.jpg"
+  },
+  {
+   "id": "semeur-et-comete-glace",
+   "fr": {
+    "title": "Le Semeur de Glace et l' Astéroïde",
+    "verses": [
+     "Un Semeur lançait sur les mondes lointains",
+     "De minces grains de glace en troupeaux clairsemés,",
+     "Pour qu'aux siècles futurs naissent des océans",
+     "Sur des roches encor de personne aimées.",
+     "« À quoi bon, » dit l'Astéroïde au flanc dur,",
+     "« Semer ce que jamais ton œil ne verra mûr ?",
+     "Tu mourras bien avant la première marée ;",
+     "Ton labeur n'est qu'une eau dans l'abîme jetée. »",
+     "« Je le sais, » dit le Semeur sans amertume,",
+     "« Et c'est pourquoi mon geste vaut mieux que l'écume.",
+     "Qui plante pour soi seul moissonne peu de chose ;",
+     "Qui sème pour autrui plante une apothéose. »",
+     "L'Astéroïde rit, poursuivit sa croisière,",
+     "Tournant, tournant, fidèle à sa froide carrière.",
+     "Or dix mille ans passés, des enfants inconnus",
+     "Burent à des fleuves que le Semeur n'a point vus,",
+     "Et nommèrent la mer, sans savoir d'où venait",
+     "Ce nom de Semeur que leur cœur murmurait.",
+     "L'Astéroïde, errant toujours, n'avait rien fait",
+     "Que tourner sur lui-même, et tournait, et tournait."
+    ],
+    "moral": [
+     "Qui n'œuvre que pour l'heure où son œil pourra voir",
+     "Tourne sur lui sans fin et n'enfante l'espoir.",
+     "Le vrai semeur consent à mourir sans la gerbe :",
+     "Il fait de sa brève heure une moisson superbe."
+    ]
+   },
+   "en": {
+    "title": "The Ice-Sower and the Asteroid",
+    "verses": [
+     "A Sower cast on worlds beyond all ken",
+     "Thin grains of ice in scattered, glittering rain,",
+     "That ages hence might wake to ocean's swell",
+     "On rocks no eye had ever loved nor known.",
+     "« Why bother, » sneered the Asteroid of stone,",
+     "« To sow a harvest you shall never own?",
+     "You'll perish long before the first cold tide;",
+     "Your toil is water down the void's wide side. »",
+     "« I know it well, » the Sower answered, mild,",
+     "« And that is why my labor's undefiled.",
+     "Who plants for self alone reaps meager grain;",
+     "Who sows for strangers plants a glorious reign. »",
+     "The Asteroid laughed and spun upon its way,",
+     "Turning, turning, faithful to cold play.",
+     "Ten thousand years: some children, never met,",
+     "Drank from the rivers that the Sower set,",
+     "And named the sea, not knowing whence there came",
+     "Within their hearts that whispered Sower's name.",
+     "The Asteroid, still wandering, had wrought",
+     "But its own spin, and turned, and turned to naught."
+    ],
+    "moral": [
+     "Who works for only what his eye may see",
+     "Spins on himself, and breeds no destiny.",
+     "The true sower will die without the sheaf:",
+     "He makes his brief hour yield a vast relief."
+    ]
+   },
+   "theme": "temps long, altruisme cosmique",
+   "image_prompt": "A lone spacesuited sower scatters glowing grains of ice from a small craft across the dark of space toward a barren rocky planet; nearby a large jagged asteroid tumbles in its lonely orbit, indifferent, while faint distant worlds glimmer; long shafts of starlight cross the cold void, emphasizing solitude and vast scale.",
+   "num": 38,
+   "ts": "2026-06-30T09:06:38Z",
+   "image": "img/semeur-et-comete-glace.jpg"
   }
  ]
 }
