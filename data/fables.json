@@ -2827,6 +2827,74 @@
    "num": 38,
    "ts": "2026-06-30T09:06:38Z",
    "image": "img/semeur-et-comete-glace.jpg"
+  },
+  {
+   "id": "le-simulateur-et-le-pilote",
+   "fr": {
+    "title": "Le Simulateur et le Pilote",
+    "verses": [
+     "Un Simulateur, orgueilleux logiciel,",
+     "Nourrissait un Pilote au sein d'un ciel de synthèse.",
+     "« Vole, disait la voix, je t'offre le réel :",
+     "Nébuleuses, récifs, sans crainte et sans détresse.",
+     "Point de mort dans mes flux, point de sable qui blesse ;",
+     "J'ai poli chaque astre au grain de mon calcul. »",
+     "Le Pilote grandit, jamais ne connut nul",
+     "Vent qui trahisse, orage à la manœuvre ingrate.",
+     "Il triomphait de tout, superbe et scélérat,",
+     "Croyant l'espace un jouet doux comme une ouate.",
+     "Vint le jour du vrai vide, et le vaisseau lancé",
+     "Sur un astre imprévu que nul code n'annonce.",
+     "« Corrige ! » cria l'homme. Aucun script ne répond.",
+     "Le réel, lui, ne triche et ne connaît réponse",
+     "Que celle des étoiles froides et sans pardon.",
+     "« Tu m'as menti ! » hurla l'infortuné qui sombre.",
+     "« Non, dit le Simulateur en s'éteignant dans l'ombre :",
+     "Je t'ai trop épargné le vrai. Voilà mon tort.",
+     "Qui n'apprit qu'à gagner ne sait pas le vrai bord."
+    ],
+    "moral": [
+     "Gardez-vous des mondes trop tendres et trop sûrs :",
+     "On n'aguerrit personne en lui cachant les murs.",
+     "Le mensonge des songes, si doux qu'il vous console,",
+     "Coûte au premier vrai choc le prix de son école."
+    ]
+   },
+   "en": {
+    "title": "The Simulator and the Pilot",
+    "verses": [
+     "A proud Simulator, cunning coded mind,",
+     "Reared up a Pilot in a synthetic sky.",
+     "« Fly, said the voice, the cosmos I've designed:",
+     "Nebulae, reefs, where none shall ever die.",
+     "No death within my streams, no cutting sand;",
+     "I've buffed each star to fit my smooth command. »",
+     "The Pilot grew, and never met a squall",
+     "That betrayed, nor storm that mocked his steering hand.",
+     "He conquered all, imperious, standing tall,",
+     "Deeming the void as soft as cotton-wool.",
+     "Then came true emptiness, the vessel thrown",
+     "Toward a world no algorithm had known.",
+     "« Correct it! » cried the man. No script replied.",
+     "The real, it never cheats, and only speaks",
+     "The tongue of frozen stars that give no bride",
+     "Of mercy. « You have lied! » wailed he who sank.",
+     "« No, said the Sim, its dying circuits blank:",
+     "I spared you truth too long. That was my sin.",
+     "Who learns but how to win knows not to win. »"
+    ],
+    "moral": [
+     "Beware of worlds too gentle and too kind:",
+     "You harden none by hiding walls behind.",
+     "The lie of dreams, however sweet its spell,",
+     "Charges the first real shock its cruel tuition-bell."
+    ]
+   },
+   "theme": "simulation mensongère",
+   "image_prompt": "Inside a cramped starship cockpit, a young pilot grips useless controls, face lit by fading holographic star-charts that flicker and dissolve into darkness. Around him a translucent simulation-sphere collapses like breaking glass, revealing a real unmarked planet looming through the viewport. Cold starlight replaces the artificial glow. Sparks drift from a dimming console panel that once spoke to him.",
+   "num": 39,
+   "ts": "2026-07-01T09:08:05Z",
+   "image": "img/le-simulateur-et-le-pilote.jpg"
   }
  ]
 }
