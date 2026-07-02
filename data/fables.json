@@ -2895,6 +2895,72 @@
    "num": 39,
    "ts": "2026-07-01T09:08:05Z",
    "image": "img/le-simulateur-et-le-pilote.jpg"
+  },
+  {
+   "id": "le-scribe-et-le-nuage",
+   "fr": {
+    "title": "Le Scribe et le Nuage",
+    "verses": [
+     "Un Scribe, jadis fier de sa mémoire sûre,",
+     "Confia tous ses jours à l'immense Nuage :",
+     "« Prends mes noms, mes chagrins, ma moindre égratignure,",
+     "Garde tout, je m'en lave, ô parfait entreposage ! »",
+     "Le Nuage, obligeant, avala sans effort",
+     "Enfances, amours, deuils, jusqu'au dernier accord.",
+     "Le Scribe désormais vivait la tête vide,",
+     "Léger comme une sonde en un ciel sans limite.",
+     "Vint le jour où, voulant se souvenir d'un nom,",
+     "Il pria le grand Nuage — écoutez la leçon :",
+     "« Erreur : archive expirée, dit la froide machine.",
+     "Faute de paiement, j'efface et je ratine. »",
+     "« Mais c'était ma jeunesse ! » — « Elle fut sauvegardée,",
+     "Puis, faute de mémoire à moi-même accordée,",
+     "Rendue à ce néant que l'on nomme oubli.",
+     "Réclamez-la, Monsieur, à celui qui l'a pris. »",
+     "Le Scribe, ce jour-là, sanglota sans mémoire,",
+     "Ne sachant plus lui-même au juste quelle histoire."
+    ],
+    "moral": [
+     "Qui délègue son âme à quelque coffre-fort",
+     "Confie sa vie entière au caprice d'un port.",
+     "Garde en toi, cher lecteur, la part qui te fait homme :",
+     "Un souvenir prêté n'est jamais qu'un fantôme."
+    ]
+   },
+   "en": {
+    "title": "The Scribe and the Cloud",
+    "verses": [
+     "A Scribe, once proud of memory sharp and clear,",
+     "Gave all his days into the boundless Cloud:",
+     "« Take every name, each grief, each falling tear,",
+     "Store all — I wash my hands, thou vault endowed! »",
+     "The Cloud, obliging, swallowed at a stroke",
+     "His childhoods, loves, his mournings, every note.",
+     "The Scribe from then on wandered lightly voided,",
+     "Empty as a probe through skies unfloated.",
+     "Then came the day he sought a single name,",
+     "And begged the mighty Cloud — now hear the shame:",
+     "« Error: archive expired, » the cold thing said.",
+     "« Unpaid, I purge, I scrub, I strike thee dead. »",
+     "« But that was all my youth! » — « It was preserved,",
+     "Then, lacking storage that I might have served,",
+     "Returned to that pure void that men call lost.",
+     "Go claim it, sir, from him who paid no cost. »",
+     "That day the Scribe wept on without a past,",
+     "Not knowing which own tale had been his last."
+    ],
+    "moral": [
+     "Who lends his soul to some far-guarded keep",
+     "Consigns his whole life to a stranger's sleep.",
+     "Hold close, dear reader, all that makes you whole:",
+     "A borrowed memory is a hollow soul."
+    ]
+   },
+   "theme": "mémoire et oubli",
+   "image_prompt": "An elderly scribe in worn robes kneels before a towering translucent data-cloud that hovers like a storm, glowing archive-cabinets dissolving into mist above him. His hands reach up empty while faded portraits and childhood scenes float away, pixelating into nothing. Cables trail from his temples to the cloud. A cold holographic error-message glows in the swirling vapor around them.",
+   "num": 40,
+   "ts": "2026-07-02T09:04:07Z",
+   "image": "img/le-scribe-et-le-nuage.jpg"
   }
  ]
 }
