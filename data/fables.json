@@ -2961,6 +2961,72 @@
    "num": 40,
    "ts": "2026-07-02T09:04:07Z",
    "image": "img/le-scribe-et-le-nuage.jpg"
+  },
+  {
+   "id": "pilote-carte-stellaire",
+   "fr": {
+    "title": "Le Pilote et la Carte Stellaire",
+    "verses": [
+     "Un jeune homme voguant vers un lointain soleil",
+     "Portait, gravée en verre, une carte fidèle",
+     "Où chaque astre inscrivait son fil et son conseil,",
+     "Chaque écueil, chaque port, chaque route immortelle.",
+     "« À quoi bon regarder par le hublot glacé ?",
+     "Disait-il fièrement à son vieux second sage.",
+     "Ma carte sait déjà tout ce qui s'est tracé ;",
+     "Le ciel n'est qu'un décor, et moi je fais le voyage. »",
+     "Le vieux, sans un mot, veillait les nuits entières,",
+     "Épiait les comètes et leurs neuves lueurs.",
+     "Or un beau jour surgit, hors des vieilles frontières,",
+     "Un astre point noté, brûlant de mille feux.",
+     "« Impossible ! cria le jeune à sa machine,",
+     "Ma carte ne ment pas ! » — Et droit il maintint le cap.",
+     "Le récif que nul verre en son cœur ne devine",
+     "Broya contre ses flancs le vaisseau d'un seul frappe.",
+     "Le vieux, dans la nacelle, échappa par miracle,",
+     "Murmurant, tandis que sombrait l'orgueilleux :",
+     "« La carte est d'hier, mon fils ; le ciel est l'oracle,",
+     "Et l'univers se peint plus vite que nos yeux. »"
+    ],
+    "moral": [
+     "Qui prend son savoir pour le monde achevé",
+     "Naufrage aux astres neufs que nul n'avait rêvé."
+    ]
+   },
+   "en": {
+    "title": "The Pilot and the Star-Chart",
+    "verses": [
+     "A youth who sailed toward some far-burning sun",
+     "Bore, etched in glass, a chart he thought complete,",
+     "Where every star its ancient thread had spun,",
+     "Each reef, each port, each course, each sure retreat.",
+     "« Why stare through frosted panes into the void? »",
+     "He told his aged second, proud and cool.",
+     "« My chart knows all the paths the past employed;",
+     "The sky's mere scenery — I am the rule. »",
+     "The old man, wordless, watched the nights unfold,",
+     "Tracking each comet's fresh and trembling glow.",
+     "Then from beyond the borders charted old",
+     "A star unmarked flared up, a molten throe.",
+     "« Impossible! » the young man told his brain,",
+     "« My chart can't lie! » — and held his heading true.",
+     "The reef no glass had ever learned to feign",
+     "Split wide his hull; the vessel broke in two.",
+     "The old man, in a pod, by luck was thrown,",
+     "And whispered as the proud one sank from sight:",
+     "« The chart is yesterday, my son — the sky's the throne,",
+     "And heaven paints itself faster than light. »"
+    ],
+    "moral": [
+     "Who takes his learning for the finished sphere",
+     "Wrecks on new stars no map has drawn so clear."
+    ]
+   },
+   "theme": "savoir figé, cosmos vivant",
+   "image_prompt": "Inside a cramped starship cockpit, a proud young pilot grips the controls, eyes fixed on a glowing engraved glass star-chart floating before him, ignoring the huge unexpected star blazing through the frosted viewport. Behind him an old bearded second officer points urgently at the window. Cracks begin spreading across the hull as an unseen reef of asteroids looms in the dark.",
+   "num": 41,
+   "ts": "2026-07-03T10:29:36Z",
+   "image": "img/pilote-carte-stellaire.jpg"
   }
  ]
 }
