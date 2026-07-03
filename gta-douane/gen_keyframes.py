@@ -8,7 +8,9 @@ Usage:
 import base64, concurrent.futures as cf, json, os, sys, urllib.request
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(ROOT, "keyframes")
+VERTICAL = os.environ.get("AR") == "916"   # AR=916 → version 9:16 (TikTok/Reels)
+OUT = os.path.join(ROOT, "keyframes-916" if VERTICAL else "keyframes")
+SIZE = "864x1536" if VERTICAL else "1536x864"
 KEY = os.environ["OPENAI_API_KEY"]
 
 # Le personnage : stylisé "jeu vidéo", inspiré du phénomène, pas un portrait réel.
@@ -21,6 +23,8 @@ DOUANE = (
 )
 
 STYLE = (
+    ("Vertical 9:16 smartphone-format composition, subject centered, key elements kept well inside "
+     "the frame. " if VERTICAL else "") +
     "Official GTA VI key art style: painterly-realistic AAA video game render, ultra-saturated warm "
     "colors, Miami-style sunset gradient sky from hot pink to orange to violet, crisp rim lighting, "
     "glossy summer heat haze, subtle film grain, cinematic composition. Setting: Canal Saint-Martin "
@@ -75,7 +79,7 @@ def gen(n):
     body = json.dumps({
         "model": "gpt-image-2",
         "prompt": SHOTS[n],
-        "size": "1536x864",
+        "size": SIZE,
         "quality": "high",
         "output_format": "png",
         "n": 1,
