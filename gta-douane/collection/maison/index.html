@@ -9,39 +9,54 @@
 <meta property="og:image" content="art/int_eclipse.jpg">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: #f4efe7; color: #1d1a16; font-family: Georgia, "Times New Roman", serif; }
-  .rule { width: 64px; height: 2px; background: #b4552d; margin: 26px auto; }
+  body { background: #12041f;
+         background-image: linear-gradient(180deg, #12041f 0%, #35093f 30%, #7a1a4e 65%, #c74a35 100%);
+         background-attachment: fixed; color: #fff; font-family: "Arial Narrow", Impact, sans-serif; }
+  .rule { width: 64px; height: 2px; background: #ff5fb8; margin: 26px auto;
+          box-shadow: 0 0 12px rgba(255,95,184,.8); }
   header { text-align: center; padding: 84px 18px 40px; }
-  header .over { font-family: Futura, "Century Gothic", Arial, sans-serif; font-size: .82rem;
-                 letter-spacing: .55em; text-transform: uppercase; color: #b4552d; }
-  h1 { font-size: clamp(2.6rem, 7.5vw, 5rem); font-weight: 400; letter-spacing: .04em; margin-top: 18px;
-       font-variant: small-caps; }
-  header .pitch { max-width: 620px; margin: 0 auto; font-style: italic; font-size: 1.08rem;
-                  line-height: 1.7; color: #4c443a; }
+  header .over { font-size: .9rem; letter-spacing: .55em; text-transform: uppercase; color: #ffd9a0; }
+  h1 { font-size: clamp(2.6rem, 7.5vw, 5rem); text-transform: uppercase; letter-spacing: .04em; margin-top: 18px;
+       background: linear-gradient(180deg, #ff8de5 0%, #ff5fb8 45%, #ffb45f 100%);
+       -webkit-background-clip: text; background-clip: text; color: transparent;
+       filter: drop-shadow(0 0 20px rgba(255, 95, 184, .5)); }
+  header .pitch { max-width: 620px; margin: 0 auto; font-family: Georgia, serif; font-style: italic;
+                  font-size: 1.08rem; line-height: 1.7; color: rgba(255,255,255,.85); }
   .chapter { text-align: center; padding: 90px 18px 10px; }
-  .chapter h2 { font-variant: small-caps; font-weight: 400; font-size: 2rem; letter-spacing: .1em; }
-  .chapter p { font-style: italic; color: #4c443a; margin-top: 10px; }
+  .chapter h2 { text-transform: uppercase; font-size: 2rem; letter-spacing: .12em; color: #ffd400;
+                text-shadow: 0 2px 12px rgba(0,0,0,.6); }
+  .chapter p { font-family: Georgia, serif; font-style: italic; color: rgba(255,255,255,.75); margin-top: 10px; }
   main { max-width: 1180px; margin: 0 auto; padding: 34px 18px; display: flex; flex-direction: column; gap: 84px; }
   figure { margin: 0; }
-  figure img { width: 100%; display: block; border-radius: 4px;
-               box-shadow: 0 26px 70px rgba(50, 30, 10, .28); }
+  figure img { width: 100%; display: block; border-radius: 14px; cursor: zoom-in;
+               box-shadow: 0 30px 90px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.14); }
   figcaption { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 18px; padding: 18px 4px 0; }
-  figcaption .name { font-family: Futura, "Century Gothic", Arial, sans-serif; text-transform: uppercase;
-                     letter-spacing: .3em; font-size: .95rem; color: #b4552d; }
-  figcaption .piece { font-size: .9rem; color: #6b6156; letter-spacing: .06em; }
-  figcaption p { width: 100%; font-style: italic; color: #4c443a; line-height: 1.65; max-width: 720px; font-size: 1rem; }
+  figcaption .name { text-transform: uppercase; letter-spacing: .3em; font-size: 1rem; color: #ffd400; }
+  figcaption .piece { font-size: .9rem; color: rgba(255,255,255,.65); letter-spacing: .1em; text-transform: uppercase; }
+  figcaption p { width: 100%; font-family: Georgia, serif; font-style: italic; color: rgba(255,255,255,.85);
+                 line-height: 1.65; max-width: 720px; font-size: 1rem; }
   .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
   @media (max-width: 760px) { .duo { grid-template-columns: 1fr; } }
-  footer { text-align: center; padding: 100px 20px 80px; background: #1d1a16; color: #efe6d8; margin-top: 90px; }
-  footer .brand { font-family: Futura, "Century Gothic", Arial, sans-serif; letter-spacing: .5em;
-                  text-transform: uppercase; font-size: 1rem; color: #e8a76f; }
-  footer p { max-width: 640px; margin: 22px auto 0; font-size: .86rem; line-height: 1.8; color: rgba(239,230,216,.75); }
-  footer a { color: #e8a76f; }
+  footer { text-align: center; padding: 100px 20px 80px; background: rgba(0,0,0,.35); margin-top: 90px; }
+  footer .brand { letter-spacing: .5em; text-transform: uppercase; font-size: 1.1rem; color: #ffd9a0; }
+  footer p { max-width: 640px; margin: 22px auto 0; font-size: .86rem; line-height: 1.8; color: rgba(255,255,255,.72); }
+  footer a { color: #ffb45f; }
   .nav { margin-top: 34px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-  .nav a { display: inline-block; padding: 12px 26px; border: 1px solid rgba(232,167,111,.65); border-radius: 999px;
-           color: #e8a76f; text-decoration: none; letter-spacing: .2em; text-transform: uppercase;
-           font-family: Futura, Arial, sans-serif; font-size: .74rem; }
-  .nav a:hover { background: rgba(232,167,111,.14); }
+  .nav a { display: inline-block; padding: 12px 26px; border: 1px solid rgba(255,217,160,.6); border-radius: 999px;
+           color: #ffd9a0; text-decoration: none; letter-spacing: .2em; text-transform: uppercase; font-size: .78rem; }
+  .nav a:hover { background: rgba(255,217,160,.12); }
+  .hud-money { position: fixed; top: 16px; right: 20px; z-index: 50; font-size: 1.5rem; font-weight: bold;
+               color: #7dff8a; text-shadow: 0 2px 6px rgba(0,0,0,.8); letter-spacing: .06em; }
+  .hud-mission { position: fixed; bottom: 26px; left: 50%; transform: translateX(-50%); z-index: 50;
+                 font-size: .95rem; letter-spacing: .12em; color: #ffd400; text-transform: uppercase;
+                 text-shadow: 0 2px 8px rgba(0,0,0,.9); white-space: nowrap; }
+  @media (max-width: 720px) { .hud-mission { display: none; } }
+  #lightbox { position: fixed; inset: 0; z-index: 100; display: none; align-items: center; justify-content: center;
+              background: rgba(6,0,14,.94); padding: 24px; cursor: zoom-out; }
+  #lightbox.open { display: flex; }
+  #lightbox img { max-width: 96vw; max-height: 92vh; border-radius: 10px; box-shadow: 0 30px 120px rgba(0,0,0,.8); }
+  #lightbox .cap { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%);
+                   color: #ffd9a0; font-size: .9rem; letter-spacing: .18em; text-transform: uppercase; }
 </style>
 </head>
 <body>
@@ -132,5 +147,18 @@
     <a href="https://fables-du-futur.vercel.app/gta-douane/">Le film GTA : La Douane</a>
   </div>
 </footer>
+<div class="hud-money">2,00 €</div>
+<div class="hud-mission">Mission&nbsp;: rentrer les meubles avant l'orage — accomplie</div>
+<div id="lightbox"><img src="" alt=""><div class="cap"></div></div>
+<script>
+  const lb = document.getElementById('lightbox'), lbImg = lb.querySelector('img'), lbCap = lb.querySelector('.cap');
+  document.querySelectorAll('main img').forEach(img => {
+    img.addEventListener('click', () => {
+      lbImg.src = img.currentSrc || img.src; lbCap.textContent = img.alt || ''; lb.classList.add('open');
+    });
+  });
+  lb.addEventListener('click', () => lb.classList.remove('open'));
+  addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
+</script>
 </body>
 </html>

@@ -52,6 +52,33 @@
               border-radius: 999px; color: #ffd9a0; text-decoration: none; letter-spacing: .22em;
               text-transform: uppercase; font-size: .8rem; }
   .backfilm:hover { background: rgba(255,217,160,.12); }
+  /* ——— Héro jaquette ——— */
+  .hero { max-width: 1200px; margin: 10px auto 0; padding: 0 18px; }
+  .hero img { width: 100%; display: block; border-radius: 18px;
+              box-shadow: 0 34px 100px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.16); }
+  /* ——— HUD GTA ——— */
+  .hud-money { position: fixed; top: 16px; right: 20px; z-index: 50; font-size: 1.5rem; font-weight: bold;
+               color: #7dff8a; text-shadow: 0 2px 6px rgba(0,0,0,.8); letter-spacing: .06em; }
+  .hud-stars { position: fixed; top: 46px; right: 20px; z-index: 50; font-size: 1.1rem; color: #fff;
+               text-shadow: 0 2px 6px rgba(0,0,0,.8); letter-spacing: .2em; }
+  .hud-stars .off { opacity: .25; }
+  .hud-map { position: fixed; bottom: 18px; left: 18px; z-index: 50; width: 108px; height: 108px;
+             border-radius: 50%; border: 3px solid rgba(255,255,255,.85); overflow: hidden;
+             box-shadow: 0 8px 30px rgba(0,0,0,.6); background: #2a2f28; }
+  .hud-map svg { width: 100%; height: 100%; display: block; }
+  .hud-mission { position: fixed; bottom: 26px; left: 50%; transform: translateX(-50%); z-index: 50;
+                 font-size: .95rem; letter-spacing: .12em; color: #ffd400; text-transform: uppercase;
+                 text-shadow: 0 2px 8px rgba(0,0,0,.9); white-space: nowrap; }
+  @media (max-width: 720px) { .hud-map, .hud-mission { display: none; } }
+  /* ——— Lightbox ——— */
+  main img, .hero img { cursor: zoom-in; }
+  #lightbox { position: fixed; inset: 0; z-index: 100; display: none; align-items: center; justify-content: center;
+              background: rgba(6,0,14,.94); padding: 24px; cursor: zoom-out; }
+  #lightbox.open { display: flex; }
+  #lightbox img { max-width: 96vw; max-height: 92vh; border-radius: 10px;
+                  box-shadow: 0 30px 120px rgba(0,0,0,.8); }
+  #lightbox .cap { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%);
+                   color: #ffd9a0; font-size: .9rem; letter-spacing: .18em; text-transform: uppercase; }
 </style>
 </head>
 <body>
@@ -63,6 +90,7 @@
   où Paris frôle les quarante degrés. Le passage est à 2&nbsp;€, l'accrochage est offert,
   et personne ne repart tout à fait sec.</p>
 </header>
+<div class="hero"><img src="art/hero.jpg" alt="LA DOUANE × LUDOVIC ROTH — jaquette de la collection"></div>
 <main>
   <section class="piece">
     <div class="art"><span class="num">01</span><img src="art/eclipse.jpg" alt="Éclipse — Trois lunes sur le canal"></div>
@@ -124,5 +152,25 @@
   <a class="backfilm" href="https://fables-du-futur.vercel.app/gta-douane/">← Voir le film GTA : La Douane</a>
   <a class="backfilm" href="maison/">La Douane Maison : intérieurs &amp; déclinaisons →</a>
 </footer>
+<div class="hud-money">2,00 €</div>
+<div class="hud-stars">★★★<span class="off">★★★</span></div>
+<div class="hud-map" aria-hidden="true"><svg viewBox="0 0 100 100">
+  <rect width="100" height="100" fill="#39413a"/>
+  <path d="M8 96 L38 60 L44 44 L44 8" stroke="#57c3ff" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M0 30 H100 M0 55 H100 M20 0 V100 M65 0 V100 M85 20 H100" stroke="#5a635b" stroke-width="3"/>
+  <polygon points="50,58 44,70 50,66 56,70" fill="#fff"/>
+</svg></div>
+<div class="hud-mission">Mission&nbsp;: équiper le canal — 6/6 pièces livrées</div>
+<div id="lightbox"><img src="" alt=""><div class="cap"></div></div>
+<script>
+  const lb = document.getElementById('lightbox'), lbImg = lb.querySelector('img'), lbCap = lb.querySelector('.cap');
+  document.querySelectorAll('main img, .hero img').forEach(img => {
+    img.addEventListener('click', () => {
+      lbImg.src = img.currentSrc || img.src; lbCap.textContent = img.alt || ''; lb.classList.add('open');
+    });
+  });
+  lb.addEventListener('click', () => lb.classList.remove('open'));
+  addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
+</script>
 </body>
 </html>
