@@ -6,3 +6,5 @@ data/drafts/
 # Secrets locaux (ne jamais committer)
 .env
 .env.*
+gta-douane/gta-la-douane-30s.mp4
+gta-douane/clips/*.bak

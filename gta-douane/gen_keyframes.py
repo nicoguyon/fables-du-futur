@@ -75,7 +75,7 @@ def gen(n):
     body = json.dumps({
         "model": "gpt-image-2",
         "prompt": SHOTS[n],
-        "size": "1536x1024",
+        "size": "1536x864",
         "quality": "high",
         "output_format": "png",
         "n": 1,
