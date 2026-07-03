@@ -13,10 +13,11 @@ KEY = os.environ["OPENAI_API_KEY"]
 
 # Le personnage : stylisé "jeu vidéo", inspiré du phénomène, pas un portrait réel.
 DOUANE = (
-    "LA DOUANE, a fictional video-game character: a skinny cheeky 14-year-old Parisian street kid, "
-    "short faded haircut, big mischievous grin, white tank top, black football shorts, white socks "
-    "in slide sandals, a small crossbody bag worn across the chest, holding a huge fluorescent "
-    "orange-and-yellow super-soaker water gun"
+    "LA DOUANE, a fictional video-game character: a chubby, stocky 14-year-old Parisian street kid "
+    "with a round face, full cheeks and a solid husky build that he carries with total swagger, "
+    "short buzz cut with faded sides, big charismatic mischievous grin, white tank top stretched "
+    "over his belly, black football shorts, white socks in slide sandals, a small crossbody bag "
+    "worn across the chest, holding a huge fluorescent orange-and-yellow super-soaker water gun"
 )
 
 STYLE = (
