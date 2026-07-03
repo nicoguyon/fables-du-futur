@@ -25,10 +25,13 @@
   }
   h1 small { display: block; font-size: .32em; color: #ffe9c9; -webkit-text-fill-color: #ffe9c9; letter-spacing: .35em; margin-top: 10px; }
   video {
-    width: min(1100px, 96vw); aspect-ratio: 16/9; border-radius: 14px;
+    border-radius: 14px;
     box-shadow: 0 24px 80px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.15);
     background: #000;
   }
+  video.wide { width: min(1100px, 96vw); aspect-ratio: 16/9; }
+  video.tall { width: min(420px, 92vw); aspect-ratio: 9/16; }
+  h2 { font-size: 1.1rem; letter-spacing: .3em; text-transform: uppercase; color: #ffe9c9; margin-top: 18px; }
   p.tag { font-size: 1.05rem; color: #ffe9c9; letter-spacing: .18em; text-transform: uppercase; }
   p.credits { font-size: .8rem; color: rgba(255,255,255,.75); max-width: 640px; line-height: 1.6; }
   a { color: #ffd9a0; }
@@ -36,7 +39,9 @@
 </head>
 <body>
   <h1>GTA : La Douane<small>Édition Spéciale Canal Saint-Martin</small></h1>
-  <video src="gta-la-douane-30s-1080p.mp4" poster="keyframes/plan1.png" controls playsinline></video>
+  <video class="wide" src="gta-la-douane-30s-1080p.mp4" poster="keyframes/plan1.png" controls playsinline></video>
+  <h2>Version 9:16 — TikTok · Reels · Stories</h2>
+  <video class="tall" src="gta-la-douane-30s-916-1080p.mp4" poster="keyframes-916/plan1.png" controls playsinline></video>
   <p class="tag">Été 2026 · Canicule — « 2 € tu passes, sinon on t'arrose »</p>
   <p class="credits">
     Parodie 100 % IA — personnage fictif stylisé. Images : GPT Image 2 · Vidéo : Seedance 2.0 (4K)

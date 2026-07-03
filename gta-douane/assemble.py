@@ -7,9 +7,11 @@ Usage: python3 assemble.py [suno1|suno2]   # choix de la piste (défaut: suno1)
 import os, subprocess, sys
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-CLIPS = [os.path.join(ROOT, "clips", f"plan{n}.mp4") for n in range(1, 7)]
+VERTICAL = os.environ.get("AR") == "916"   # AR=916 → version 9:16 (TikTok/Reels)
+CLIPS = [os.path.join(ROOT, "clips-916" if VERTICAL else "clips", f"plan{n}.mp4") for n in range(1, 7)]
 MUSIC = os.path.join(ROOT, "audio", (sys.argv[1] if len(sys.argv) > 1 else "suno1") + ".mp3")
-OUT = os.path.join(ROOT, "gta-la-douane-30s.mp4")
+OUT = os.path.join(ROOT, "gta-la-douane-30s-916.mp4" if VERTICAL else "gta-la-douane-30s.mp4")
+W, H = (2160, 3840) if VERTICAL else (3840, 2160)
 
 DUR = 5.0
 TOTAL = DUR * len(CLIPS)
@@ -24,8 +26,8 @@ filters = []
 # Vidéo : uniformise 3840x2160 @30fps, coupe à 5 s exactes
 for i in range(len(CLIPS)):
     filters.append(f"[{i}:v]trim=duration={DUR},setpts=PTS-STARTPTS,"
-                   f"scale=3840:2160:force_original_aspect_ratio=decrease,"
-                   f"pad=3840:2160:(ow-iw)/2:(oh-ih)/2,fps=30,format=yuv420p[v{i}]")
+                   f"scale={W}:{H}:force_original_aspect_ratio=decrease,"
+                   f"pad={W}:{H}:(ow-iw)/2:(oh-ih)/2,fps=30,format=yuv420p[v{i}]")
     filters.append(f"[{i}:a]atrim=duration={DUR},asetpts=PTS-STARTPTS,"
                    f"aresample=48000,pan=stereo|c0=c0|c1=c1[a{i}]")
 vcat = "".join(f"[v{i}][a{i}]" for i in range(len(CLIPS)))

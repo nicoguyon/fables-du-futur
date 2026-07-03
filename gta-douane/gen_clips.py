@@ -11,8 +11,10 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(os.path.dirname(ROOT), "trailer"))
 from falgen import run, download, KEY
 
-KEYFRAMES = os.path.join(ROOT, "keyframes")
-CLIPS = os.path.join(ROOT, "clips")
+VERTICAL = os.environ.get("AR") == "916"   # AR=916 → version 9:16 (TikTok/Reels)
+KEYFRAMES = os.path.join(ROOT, "keyframes-916" if VERTICAL else "keyframes")
+CLIPS = os.path.join(ROOT, "clips-916" if VERTICAL else "clips")
+ASPECT = "9:16" if VERTICAL else "16:9"
 MODEL = "bytedance/seedance-2.0/image-to-video"
 
 HUD_LOCK = (" The video-game HUD overlay (minimap, on-screen texts, money counter, wanted stars) stays "
@@ -63,7 +65,7 @@ def one(n):
     res = run(MODEL, {
         "prompt": MOTION[n],
         "image_url": img_url,
-        "aspect_ratio": "16:9",
+        "aspect_ratio": ASPECT,
         "resolution": "4k",
         "duration": "5",
         "bitrate_mode": "high",
