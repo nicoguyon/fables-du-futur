@@ -2,53 +2,57 @@
 
 > **Document privé** — exclu du déploiement Vercel via `.vercelignore`.
 > Colette GUYON, née le 06-03-2022 (4 ans).
-> Contexte : hématurie (sang dans les urines), suivi dans le temps.
-> Ce document est un relevé factuel des comptes-rendus de laboratoire ; l'interprétation médicale revient au médecin (Dr NEUKIRCH Gilbert, Neuilly-sur-Seine).
+> Contexte : hématurie macroscopique (urines « Coca ») découverte le 02-07-2026, hypothèse principale de **glomérulonéphrite aiguë post-streptococcique** après une importante infection cutanée dans les semaines précédentes.
+> Dossier pédagogique complet : https://colette.comptoiria.com (version mise à jour : `sante-colette/index.html` dans ce dépôt).
+> Ce document est un relevé factuel des comptes-rendus de laboratoire ; l'interprétation médicale revient aux médecins (urgences pédiatriques Ambroise Paré ; Dr NEUKIRCH Gilbert, Neuilly-sur-Seine).
 
-## Tableau récapitulatif
+## Évolution des ECBU
 
-| Paramètre | Référence | … (résultats antérieurs à compléter) | 04-07-2026 |
-|---|---|---|---|
-| Leucocytes (/mL) | < 10 000 | — | **268 000** ⚠️ |
-| Hématies (/mL) | < 10 000 | — | **> 1 000 000** ⚠️ |
-| Cellules épithéliales | absence | — | Absence |
-| Cristaux | absence | — | Absence |
-| Cylindres | absence | — | Absence |
-| Culture bactériologique | stérile | — | **En cours** |
+| Paramètre | Référence | 02-07-2026 (Hôpital Ambroise Paré) | 04-07-2026 (Biogroup Neuilly) | Tendance |
+|---|---|---|---|---|
+| Hématies (/mL) | < 10 000 | **> 1 000 000** ⚠️ | **> 1 000 000** ⚠️ | ➡️ toujours au plafond de mesure |
+| Leucocytes (/mL) | < 10 000 | **164 400** ⚠️ | **268 000** ⚠️ | ↗️ +63 % |
+| Bactéries | stérile | Aucune significative (leucocyturie aseptique) | **Culture en cours** ⏳ | à suivre |
+| Cristaux | absence | Absence | Absence | ✅ |
+| Cylindres | absence | non précisé | Absence | ✅ |
+| Cellules épithéliales | absence | non précisé | Absence | ✅ |
 
 ⚠️ = hors intervalle de référence.
 
-## Détail des comptes-rendus
+## Bilan sanguin et urinaire du 02-07-2026 (urgences pédiatriques, Ambroise Paré)
 
-### 04-07-2026 — ECBU (examen cytobactériologique des urines)
+Prélevé le 02-07-2026 à 10h15.
 
-- **Laboratoire** : Biogroup — Laboratoire Neuilly–Michelis, 18 rue Madeleine Michelis, 92200 Neuilly-sur-Seine
+| Paramètre | Résultat | Référence / seuil | Lecture |
+|---|---|---|---|
+| Créatinine sanguine | 24 µmol/L | 24–43 | ✅ Fonction rénale conservée |
+| Urée | normale | — | ✅ |
+| Protéinurie/créatininurie | 62 mg/mmol | normal < 50 ; grave (néphrotique) ≥ 200 | ⚠️ Élevée mais modérée, en partie liée au sang |
+| Calcium/créatininurie | 0,28 mmol/mmol | < 0,6 | ✅ Hypercalciurie écartée |
+| Albumine sanguine | 37 g/L | 38–54 | ⚠️ Limite basse (fuite légère) |
+| Hémoglobine | 11,8 g/dL | norme basse ≈ 11,5 | ⚠️ Anémie légère (dilution/inflammation) |
+| Hématocrite | 32,1 % | — | ⚠️ limite |
+| Bicarbonates (CO₂) | 19 mmol/L | ≈ 22–29 | ⚠️ Discrète acidose, non spécifique |
+| TP, TCA, plaquettes | normaux | — | ✅ Pas de trouble de coagulation |
+
+## ECBU n°2 — 04-07-2026 (Biogroup, Laboratoire Neuilly–Michelis)
+
 - **Demande** : M2607040083 du 04-07-2026 — prescrit par Dr NEUKIRCH Gilbert
 - **Prélèvement** : urines de 2ᵉ jet, effectué au laboratoire
 - **Signes cliniques déclarés** : signes d'infection urinaire et/ou fièvre — pas de notion de traitement antibiotique
-- **Statut** : compte-rendu **partiel** (édité le 04-07-2026 à 17h30) — culture bactériologique en cours, conclusion et antibiogramme éventuels à venir (page 2)
+- **Statut** : compte-rendu **partiel** (édité le 04-07-2026 à 17h30, validé Dr Aline Billiaux) — culture bactériologique **en cours**, conclusion en page 2 à venir
+- Leucocytes 268 000/mL — hématies > 1 000 000/mL — absence de cellules épithéliales, cristaux, cylindres
 
-**Cytologie urinaire (cytométrie DxU Beckman Coulter) :**
+**Lecture factuelle** : hématurie toujours au plafond de mesure de l'automate (impossible de juger une éventuelle baisse). Leucocyturie en hausse (164 400 → 268 000/mL) : soit poursuite de la leucocyturie aseptique de l'inflammation glomérulaire, soit véritable infection urinaire surajoutée — **c'est la culture qui tranchera**. La mention de fièvre/signes urinaires est un élément nouveau à signaler au médecin (la fièvre figure dans les signes d'alerte du dossier).
 
-| Paramètre | Résultat | Référence |
-|---|---|---|
-| Leucocytes | 268 000 /mL | < 10 000 |
-| Hématies | > 1 000 000 /mL | < 10 000 |
-| Cellules épithéliales | Absence | — |
-| Cristaux | Absence | — |
-| Cylindres | Absence | — |
+**En attente :**
+- [ ] Page 2 du compte-rendu (conclusion du laboratoire)
+- [ ] Résultat de la culture bactériologique (germe + numération, antibiogramme éventuel)
+- [ ] Prochains dosages de suivi de la maladie elle-même : protéinurie/créatininurie, créatinine sanguine, complément C3/C4, anti-DNase B, tension artérielle
 
-**Lecture factuelle** : leucocyturie très élevée (≈ 27× le seuil) associée à une hématurie massive (> 100× le seuil), dans un contexte de signes d'infection urinaire et/ou fièvre. L'absence de cylindres est notée. La culture en cours dira s'il y a un germe identifié (et son antibiogramme le cas échéant).
+## Points de suivi (rappel du dossier du 02-07)
 
-**En attente pour ce prélèvement :**
-- [ ] Résultat de la culture bactériologique (germe + numération)
-- [ ] Antibiogramme éventuel
-- [ ] Conclusion du laboratoire (page 2 du compte-rendu)
-
-### Résultats antérieurs — à compléter
-
-Les analyses précédentes (travail de la session d'hier) ne sont pas dans ce dépôt : à renvoyer pour reconstituer l'historique et la courbe d'évolution.
-
-## Historique / évolution
-
-À construire dès que les résultats antérieurs seront fournis : évolution des hématies et leucocytes par date, corrélation avec les épisodes cliniques (fièvre, symptômes) et les traitements.
+- Surveillance rapprochée : **tension artérielle**, diurèse, poids quotidien, œdèmes
+- Marqueurs diagnostiques : C3 abaissé puis normalisé en 6–8 semaines, anti-DNase B (meilleur marqueur après infection cutanée)
+- Échographie rénale et vésicale si non faite
+- Signes d'alerte → reconsulter en urgence : baisse nette des urines, œdèmes/prise de poids rapide, maux de tête/vomissements, grande pâleur, douleurs abdominales/lombaires intenses ou taches violacées, fièvre nouvelle
