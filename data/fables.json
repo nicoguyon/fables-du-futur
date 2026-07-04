@@ -3027,6 +3027,76 @@
    "num": 41,
    "ts": "2026-07-03T10:29:36Z",
    "image": "img/pilote-carte-stellaire.jpg"
+  },
+  {
+   "id": "le-titan-et-la-vis",
+   "fr": {
+    "title": "Le Titan de Combat et la Petite Vis",
+    "verses": [
+     "Un Titan de combat, colosse d'acier bleu,",
+     "Toisait le champ d'étoiles avec des airs de dieu.",
+     "« Je porte mille canons, je fends les nébuleuses,",
+     "Je broie sans effort les flottes belliqueuses.",
+     "Que serais-je sans moi ? Rien ne me vaut, dit-il,",
+     "Et l'univers entier tremble à mon seul profil ! »",
+     "Une Vis dans sa hanche, oyant cette harangue,",
+     "Répondit d'une voix modeste et sans harangue :",
+     "« Maître, je ne suis rien, un filet, un boulon,",
+     "Mais je tiens ton genou depuis le premier bond. »",
+     "« Silence, atome ! » fit le géant plein de morgue,",
+     "Et il partit tonner comme un orage en orgue.",
+     "Or, dans le grand assaut, sous un feu meurtrier,",
+     "La Vis fatiguée, un jour, se mit à crier ;",
+     "Puis lâcha. Le genou du Titan se disloque,",
+     "Le colosse s'effondre au beau milieu de l'époque.",
+     "Gisant parmi les feux, immense et impuissant,",
+     "Il chercha du regard son humble accompagnant.",
+     "« Reviens ! » gémit l'acier. Mais la Vis, envolée,",
+     "Roulait déjà, minuscule, dans la Voie lactée."
+    ],
+    "moral": [
+     "Le fort qui méprise le faible qui le tient",
+     "Découvre, en s'écroulant, que ce rien était tout.",
+     "Nul colosse ne marche autrement que debout,",
+     "Et debout, c'est souvent un boulon qui l'y maintient."
+    ]
+   },
+   "en": {
+    "title": "The War-Titan and the Little Screw",
+    "verses": [
+     "A War-Titan of steel, blue as a frozen sun,",
+     "Loomed o'er the starry fields as if the war were won.",
+     "« A thousand guns I bear, I cleave through nebulae,",
+     "I grind whole fleets to dust and never blink an eye.",
+     "What would I be without myself? None is my peer,",
+     "The cosmos holds its breath whenever I appear! »",
+     "A tiny Screw, lodged deep within his armored knee,",
+     "Replied in humble tones, with soft sincerity:",
+     "« Master, I'm nought — a thread, a coil, a speck of tin —",
+     "Yet I have held your joint since first your marches did begin. »",
+     "« Be still, you atom! » thundered pride in molten scorn,",
+     "And off he stormed to war like some tremendous horn.",
+     "But in the fiercest charge, beneath a killing rain,",
+     "The weary Screw at last gave one small cry of pain,",
+     "Then loosed. The Titan's knee unhinged and came apart;",
+     "The giant crashed to ground, a mountain with no heart.",
+     "Sprawled among the fires, colossal and undone,",
+     "He sought with dimming eyes his little vanished one.",
+     "« Come back! » the great steel moaned. But far the Screw had rolled,",
+     "A speck within the Milky Way, forever lost and cold."
+    ],
+    "moral": [
+     "The strong who scorn the small on whom they lean",
+     "Learn, as they fall, that nothing was the whole.",
+     "No colossus walks unless it stands upright —",
+     "And standing, it's a screw that keeps it seen."
+    ]
+   },
+   "theme": "orgueil des machines",
+   "image_prompt": "A colossal blue-steel war-robot collapsed among fires on a battlefield beneath a starry sky, its knee joint burst open, giant hand reaching desperately toward a tiny screw rolling away into space. The fallen titan's face turns downward in shock while the minuscule bolt glints small and free against distant galaxies.",
+   "num": 42,
+   "ts": "2026-07-04T10:04:46Z",
+   "image": "img/le-titan-et-la-vis.jpg"
   }
  ]
 }
