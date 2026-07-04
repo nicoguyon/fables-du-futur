@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tout le monde utilise l'IA. Personne n'a vu la révolution. · Fables du Futur</title>
+<meta name="description" content="Tribune : l'adoption grand public de l'IA est terminée, celle des entreprises a échoué en réunion — et la vraie bascule, l'arrivée des systèmes agentiques fin novembre 2025, est passée inaperçue.">
+<meta property="og:title" content="Tout le monde utilise l'IA. Personne n'a vu la révolution.">
+<meta property="og:description" content="L'adoption individuelle s'est faite toute seule. L'adoption en entreprise a été organisée en réunion. Tribune sur le moment agentique que presque tout le monde a manqué.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f5eedd; --ink:#241d12; --ink-soft:#5c5240;
+  --copper:#9a5b2e; --copper-deep:#7a4521; --electric:#1f3a7a; --gold:#b8893a;
+  --rule:#d8cbac; --card:#faf5e9;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:"EB Garamond",Georgia,serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .47 0 0 0 0 .32 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:0 24px 110px}
+
+.topbar{position:sticky;top:0;z-index:10;background:rgba(245,238,221,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);padding:10px 0}
+.topbar .inner{max-width:760px;margin:0 auto;padding:0 24px;display:flex;gap:18px;align-items:center;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em}
+.topbar a{color:var(--ink-soft);text-decoration:none}
+.topbar a:hover{color:var(--copper)}
+.topbar .home{color:var(--copper);font-weight:600}
+
+header{padding:10vh 0 6vh;border-bottom:3px solid var(--ink);margin-bottom:6vh}
+.kicker{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--copper)}
+h1{font-family:Fraunces,serif;font-weight:900;font-size:clamp(38px,6.4vw,68px);line-height:1.02;letter-spacing:-.015em;margin:20px 0 22px}
+h1 em{font-style:italic;font-weight:600;color:var(--copper-deep)}
+.standfirst{font-size:clamp(19px,2.4vw,24px);font-style:italic;color:var(--ink-soft);line-height:1.5;max-width:60ch}
+.byline{margin-top:26px;font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--copper-deep);letter-spacing:.05em}
+
+section{margin:6.5vh 0}
+.snum{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--copper);margin-bottom:8px}
+h2{font-family:Fraunces,serif;font-weight:800;font-size:clamp(26px,3.6vw,38px);line-height:1.08;letter-spacing:-.01em;margin-bottom:22px}
+p{font-size:clamp(17.5px,1.9vw,20px);color:#33290f;margin:16px 0;max-width:68ch}
+p strong{color:var(--ink);font-weight:600}
+.opener::first-letter{
+  font-family:Fraunces,serif;font-weight:900;font-size:3.4em;line-height:.82;
+  float:left;padding:6px 10px 0 0;color:var(--copper-deep);
+}
+.pull{
+  margin:34px 0;padding:6px 0 6px 26px;border-left:3px solid var(--gold);
+  font-family:Fraunces,serif;font-style:italic;font-weight:600;
+  font-size:clamp(21px,2.8vw,27px);line-height:1.35;color:var(--copper-deep);max-width:56ch;
+}
+.orn{display:flex;align-items:center;gap:16px;justify-content:center;margin:7vh auto;max-width:420px;color:var(--copper)}
+.orn::before,.orn::after{content:"";flex:1;height:1px;background:var(--rule)}
+.orn span{font-family:Fraunces,serif;font-size:18px;letter-spacing:.4em;padding-left:.4em}
+
+.sig{margin-top:8vh;padding-top:4vh;border-top:2px solid var(--ink)}
+.sig p{font-size:16.5px;color:var(--ink-soft);font-style:italic}
+.sig .name{font-family:"IBM Plex Mono",monospace;font-style:normal;font-size:13px;color:var(--copper-deep);letter-spacing:.06em;margin-top:8px}
+.foot{margin-top:4vh;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);letter-spacing:.04em}
+.foot a{color:var(--copper)}
+@media print{.topbar{display:none}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="inner">
+  <a class="home" href="index.html">← Fables du Futur</a>
+  <a href="#adoption">L'adoption</a>
+  <a href="#bascule">La bascule</a>
+  <a href="#fenetre">La fenêtre</a>
+</div></div>
+
+<div class="wrap">
+
+<header>
+  <div class="kicker">Tribune · juillet 2026</div>
+  <h1>Tout le monde utilise l'IA. <em>Personne n'a vu la révolution.</em></h1>
+  <p class="standfirst">L'adoption de l'intelligence artificielle par le grand public est terminée : elle s'est faite toute seule, sans plan de formation. Celle des entreprises, organisée à coups de comités de pilotage, a produit l'inverse de ce qu'elle promettait. Et la vraie bascule, elle, est passée pendant les vacances de Noël, dans l'indifférence générale.</p>
+  <div class="byline">Nicolas · Comptoir IA</div>
+</header>
+
+<section id="adoption">
+  <div class="snum">I</div>
+  <h2>La greffe a pris</h2>
+  <p class="opener">Quelque chose de remarquable s'est produit ces derniers mois, et presque personne ne l'a formulé : l'adoption de l'IA par le grand public est terminée. Pas « en bonne voie », pas « prometteuse ». Terminée.</p>
+  <p>Autour de moi, tout le monde s'en sert, et pas pour jouer : pour les choses sérieuses de la vie. On fait relire son contrat d'assurance, on prépare la négociation de son prêt immobilier, on compare des modèles de voitures avant d'acheter, on fait décrypter une ordonnance ou les résultats d'une analyse de sang. On rédige enfin les courriers qu'on repoussait depuis des semaines. Et on le fait bien, avec un naturel désarmant.</p>
+  <p>Le plus frappant, c'est qu'il n'y a eu ni plan de formation, ni conduite du changement, ni campagne nationale. Cela s'est fait comme Google s'était fait, comme le smartphone s'était fait : par capillarité, certains un peu plus avertis que d'autres montrant le chemin au reste. En deux ans et demi, ChatGPT est devenu un réflexe de la vie quotidienne, au même titre que la recherche en ligne.</p>
+  <p>Avec une limite, une seule, mais énorme : tout ce monde est resté dans la fenêtre de conversation. Pour l'immense majorité, l'IA demeure un endroit où l'on tape du texte et d'où il ressort du texte. C'est déjà beaucoup. Mais ce n'est plus du tout là que ça se passe.</p>
+</section>
+
+<section id="reunion">
+  <div class="snum">II</div>
+  <h2>Pendant ce temps, en salle de réunion</h2>
+  <p>Face à cette adoption spontanée, silencieuse et massive, regardons ce qu'ont fait les organisations sur la même période. Je l'observe de près depuis deux ans et demi, et le constat est cruel : je ne connais pas une entreprise qui ait vraiment tiré son épingle du jeu. Pas une.</p>
+  <p>Pire : plus une organisation a « travaillé le sujet » — grandes réunions, notes de cadrage, comités de pilotage, matrices de cas d'usage — plus le résultat a été contre-productif. Le scénario type, je l'ai vu se rejouer partout : après dix-huit mois de délibérations, on déploie Copilot, parce que c'est rassurant, intégré, négocié avec la DSI. Et l'on met dans les mains des équipes des outils qui ont six à douze mois de retard sur ce que ChatGPT et Claude offrent au premier particulier venu.</p>
+  <div class="pull">Dans une technologie qui double de capacités chaque année, douze mois de retard, ce n'est pas un délai : c'est une génération.</div>
+  <p>La suite est mécanique. Les collaborateurs comparent, constatent que l'outil officiel est moins bon que celui qu'ils ont dans la poche, et basculent sur leur compte personnel — les données de l'entreprise avec eux. L'entreprise voulait maîtriser le risque, elle a fabriqué du shadow IT. Elle voulait de la productivité, elle a distribué la version d'avant. Et surtout, elle a privé ses équipes du poste d'observation où tout se joue désormais : là où les modèles cessent d'être des interlocuteurs pour devenir des exécutants.</p>
+</section>
+
+<section id="bascule">
+  <div class="snum">III</div>
+  <h2>Le moment que tout le monde a manqué</h2>
+  <p>Car il y a bien eu un moment de bascule, et il a une date : fin novembre 2025, l'arrivée de Claude Opus 4.5, bientôt suivi de ses équivalents chez les concurrents. Pour la première fois, un modèle savait non seulement produire, mais orchestrer : décomposer un objectif, lancer des agents, contrôler leur travail, corriger, recommencer. Ce qu'on nous promettait depuis des mois sous le nom de « systèmes agentiques » devenait simplement vrai.</p>
+  <p>Et personne ne l'a vu. Pas de keynote planétaire, pas de « moment ChatGPT ». L'annonce est tombée à la veille des fêtes ; tout le monde est parti en vacances de Noël, et le monde du travail a repris en janvier comme si de rien n'était.</p>
+  <div class="pull">Je pèse mes mots : depuis que je travaille avec ces systèmes, utiliser mon ordinateur sans eux me fait l'effet d'un Minitel.</div>
+  <p>Ce n'est pas une formule publicitaire, c'est la description honnête d'une sensation quotidienne. La machine n'attend plus mes clics ; elle exécute mes intentions.</p>
+</section>
+
+<section id="agents">
+  <div class="snum">IV</div>
+  <h2>Des « agents » partout, des agents nulle part</h2>
+  <p>Le paradoxe, c'est que cette révolution ignorée est en même temps sur toutes les lèvres. Impossible d'ouvrir LinkedIn sans tomber sur le mot « agent ». Mais à force de le prononcer, plus personne ne sait ce qu'il désigne. Un prompt bien rangé dans une capsule — un « GPT » — n'est pas un agent. Un chatbot affublé d'un prénom et d'un avatar souriant n'est pas un agent. Un agent, c'est un système qui perçoit un environnement, prend des décisions, se sert d'outils, agit, vérifie le résultat et recommence — sans qu'on lui tienne la main à chaque étape.</p>
+  <p>Construire cela demande exactement l'inverse de la grandiloquence ambiante : de l'humilité. Démarrer sur des cas petits, bornés, vérifiables. Accepter que tout le monde ne saura pas en construire, et que ce n'est pas grave. Les quelques personnes que je vois réussir procèdent toutes de la même façon : un périmètre minuscule, un résultat mesuré, puis on élargit.</p>
+</section>
+
+<section id="concret">
+  <div class="snum">V</div>
+  <h2>Ce que j'ai vu, très concrètement</h2>
+  <p>On m'objectera que tout cela reste abstrait. Voici donc ce que ces systèmes font déjà — pas en démo, dans la vraie vie de la vraie entreprise.</p>
+  <p>J'ai paramétré et mis en production un CRM — configuration, champs, automatisations, maintenance comprise — en <strong>deux heures</strong> de travail avec Claude. La même mission, il y a deux ans, c'était <strong>un mois de consultant spécialisé</strong>. Dans le gestionnaire de publicités de Meta, devenu de fait une interface d'IA, je vois l'outil proposer des campagnes, construire des audiences, arbitrer des budgets à un niveau qui laisse les experts du marketing sonnés. Sur un site e-commerce, le référencement — l'ancien, celui de Google, et le nouveau, celui qui vise les réponses des IA — se fait et s'entretient presque tout seul. Travailler un business plan dans Excel sans assistant intégré paraît soudain aussi absurde que de fabriquer soi-même son ordinateur avant de s'en servir. Quant à créer une application sur mesure, avec la dernière génération de modèles, c'est l'affaire de quelques minutes : on décrit ce qu'on veut, on l'obtient.</p>
+  <p>Il ne manque pas grand-chose pour y accéder : un Claude Cowork, un Claude Desktop, un Codex, installés sur le poste de travail. Ce ne sont pas des promesses de conférence. C'est ce qui se passe, en juillet 2026, sur un ordinateur correctement équipé.</p>
+</section>
+
+<section id="brouillard">
+  <div class="snum">VI</div>
+  <h2>Les plans à trois ans, dans le brouillard</h2>
+  <p>Alors pourquoi l'usage n'est-il pas massif ? Parce que cela fait peur. Parce que les directions informatiques bloquent, souvent avec de bonnes questions et de mauvaises réponses. Et parce que les dirigeants, au lieu d'équiper leurs équipes aujourd'hui, s'épuisent à dessiner l'organisation cible à trois ans — alors que personne, littéralement personne, ne sait ce que ces systèmes sauront faire dans dix-huit mois.</p>
+  <p>Une chose devrait pourtant inciter à la modestie : les prédictions de Sam Altman et de Dario Amodei, qu'on trouvait extravagantes il y a deux ans, se sont pour l'essentiel révélées justes. Quand les personnes les mieux informées de la planète vous disent que l'accélération va continuer, le plan quinquennal n'est pas de la prudence, c'est une forme de déni.</p>
+  <div class="pull">La seule stratégie rationnelle tient en trois verbes : équiper, essayer, apprendre.</div>
+  <p>Donner les meilleurs outils du moment, poser un cadre de sécurité simple, et laisser les usages émerger du terrain — exactement comme ils ont émergé, tout seuls, chez les particuliers.</p>
+</section>
+
+<section id="fenetre">
+  <div class="snum">VII</div>
+  <h2>La fenêtre</h2>
+  <p>Je ne sais pas de quoi sera faite l'étape d'après. Elle ressemble à un grand saut dans le vide : on peut sérieusement imaginer des systèmes qui feront à peu près tout mieux que nous, en quelques secondes. C'est vertigineux, et ce vertige mérite un vrai débat.</p>
+  <p>Mais en attendant, il existe une fenêtre — quelques mois, peut-être quelques années — qui est tout sauf angoissante : une période de confort au travail à peu près inédite. Dicter au lieu de taper. Déléguer ce qui nous rongeait les soirées. Et surtout ce fait, que je constate chaque semaine : une personne qui se sert bien de ces systèmes produit, dans à peu près n'importe quelle discipline, l'équivalent du travail d'une équipe de dix à cinquante personnes.</p>
+  <p>La question n'est donc plus de savoir si votre organisation « doit y aller ». Vos collaborateurs y sont déjà — le soir, sur leur compte personnel. La question est de savoir si vous allez leur donner, au travail, la version d'aujourd'hui, ou continuer à leur imposer, réunion après réunion, la version d'hier.</p>
+</section>
+
+<div class="orn"><span>❦</span></div>
+
+<div class="sig">
+  <p>Cette tribune reflète un constat de terrain : deux ans et demi passés à accompagner des dirigeants, des équipes et des indépendants dans leurs usages de l'IA.</p>
+  <div class="name">Nicolas · Comptoir IA · juillet 2026</div>
+</div>
+
+<div class="foot">
+  Une tribune des <a href="index.html">Fables du Futur</a> · le texte source est disponible en <a href="tribune-ia-entreprise.md">markdown</a>.
+</div>
+
+</div>
+</body>
+</html>
