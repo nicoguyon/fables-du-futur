@@ -12,7 +12,8 @@
 |---|---|---|---|---|
 | Hématies (/mL) | < 10 000 | **> 1 000 000** ⚠️ | **> 1 000 000** ⚠️ | ➡️ toujours au plafond de mesure |
 | Leucocytes (/mL) | < 10 000 | **164 400** ⚠️ | **268 000** ⚠️ | ↗️ +63 % |
-| Bactéries | stérile | Aucune significative (leucocyturie aseptique) | **Culture en cours** ⏳ | à suivre |
+| Bactéries | stérile | Aucune significative (leucocyturie aseptique) | ***E. coli* 10⁴ UFC/mL — culture positive** ⚠️ | 🔴 infection urinaire |
+| Examen direct (Gram) | — | non précisé | Cocci Gram positif (≠ E. coli, bacille Gram −) | à interpréter |
 | Cristaux | absence | Absence | Absence | ✅ |
 | Cylindres | absence | non précisé | Absence | ✅ |
 | Cellules épithéliales | absence | non précisé | Absence | ✅ |
@@ -40,15 +41,15 @@ Prélevé le 02-07-2026 à 10h15.
 - **Demande** : M2607040083 du 04-07-2026 — prescrit par Dr NEUKIRCH Gilbert
 - **Prélèvement** : urines de 2ᵉ jet, effectué au laboratoire
 - **Signes cliniques déclarés** : signes d'infection urinaire et/ou fièvre — pas de notion de traitement antibiotique
-- **Statut** : compte-rendu **partiel** (édité le 04-07-2026 à 17h30, validé Dr Aline Billiaux) — culture bactériologique **en cours**, conclusion en page 2 à venir
-- Leucocytes 268 000/mL — hématies > 1 000 000/mL — absence de cellules épithéliales, cristaux, cylindres
+- **Statut** : compte-rendu complété le **05-07-2026 à 13h10** (validé Dr Emmanuelle Klein) — culture bactériologique **rendue**
+- Leucocytes 268 000/mL — hématies > 1 000 000/mL — absence de cellules épithéliales, cristaux, cylindres — **présence de cocci Gram positif** (examen direct)
+- **Culture : Positive — 10⁴ UFC/mL *Escherichia coli*** — Conclusion : « **Infection urinaire probable** » (mention « en cours », antibiogramme non encore joint)
 
-**Lecture factuelle** : hématurie toujours au plafond de mesure de l'automate (impossible de juger une éventuelle baisse). Leucocyturie en hausse (164 400 → 268 000/mL) : soit poursuite de la leucocyturie aseptique de l'inflammation glomérulaire, soit véritable infection urinaire surajoutée — **c'est la culture qui tranchera**. La mention de fièvre/signes urinaires est un élément nouveau à signaler au médecin (la fièvre figure dans les signes d'alerte du dossier).
+**Lecture factuelle** : hématurie toujours au plafond de mesure de l'automate. Leucocyturie très élevée (268 000/mL). La culture, stérile le 02/07, est **positive à _E. coli_ le 04/07** → une **infection urinaire** est documentée et se traite (antibiotique, choix au médecin). Elle n'exclut pas la glomérulonéphrite post-streptococcique : les deux peuvent coexister. Points à noter : (1) discordance examen direct « cocci Gram + » vs culture _E. coli_ (bacille Gram −) → possible flore mixte / contamination ; (2) numération 10⁴ UFC/mL modérée (seuil classique 10⁵) ; (3) infection urinaire **fébrile** chez une enfant de 4 ans → contacter le médecin rapidement (risque de pyélonéphrite).
 
 **En attente :**
-- [ ] Page 2 du compte-rendu (conclusion du laboratoire)
-- [ ] Résultat de la culture bactériologique (germe + numération, antibiogramme éventuel)
-- [ ] Prochains dosages de suivi de la maladie elle-même : protéinurie/créatininurie, créatinine sanguine, complément C3/C4, anti-DNase B, tension artérielle
+- [ ] Antibiogramme (sensibilité d'_E. coli_ aux antibiotiques)
+- [ ] Prochains dosages de suivi de la maladie rénale : protéinurie/créatininurie, créatinine sanguine, complément C3/C4, anti-DNase B, tension artérielle
 
 ## Points de suivi (rappel du dossier du 02-07)
 
