@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WALL·E — Le petit robot qui a sauvé la Terre</title>
+<meta name="description" content="Site hommage à WALL·E, le chef-d'œuvre de Pixar (2008) : synopsis, personnages, thèmes, anecdotes et fiche technique du film d'Andrew Stanton.">
+<meta property="og:title" content="WALL·E — Le petit robot qui a sauvé la Terre">
+<meta property="og:description" content="700 ans de solitude, une plante dans une botte, et la plus belle histoire d'amour robotique du cinéma. Hommage au chef-d'œuvre de Pixar.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf6ee;          /* fond clair, sable poussiéreux */
+  --panel:#ffffff;
+  --ink:#2b2620;         /* brun très foncé */
+  --muted:#7d7468;
+  --rust:#c05a2e;        /* rouille WALL·E */
+  --yellow:#e8a835;      /* jaune caisse */
+  --sky:#2f7fb8;         /* bleu EVE / espace */
+  --green:#4a8c3f;       /* la plante */
+  --line:#e7dfd2;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Fraunces",Georgia,serif;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.mono{font-family:"IBM Plex Mono",monospace}
+img,svg{display:block;max-width:100%}
+a{color:var(--rust)}
+
+.wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative; text-align:center;
+  padding:72px 22px 56px;
+  background:
+    radial-gradient(ellipse 90% 60% at 50% 0%, #fdf1d8 0%, transparent 70%),
+    var(--bg);
+  border-bottom:1px solid var(--line);
+}
+.kicker{
+  font-family:"IBM Plex Mono",monospace; font-size:12px;
+  letter-spacing:.38em; text-transform:uppercase; color:var(--rust);
+  margin-bottom:22px;
+}
+.hero h1{
+  font-weight:900; font-size:clamp(56px,13vw,150px);
+  line-height:.9; letter-spacing:-.02em;
+  color:var(--ink);
+}
+.hero h1 .dot{color:var(--yellow)}
+.hero .sub{
+  font-style:italic; font-size:clamp(18px,3vw,26px);
+  color:var(--muted); margin-top:18px;
+}
+.hero .robot{margin:40px auto 0; width:min(320px,72vw)}
+.badges{
+  display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:36px;
+}
+.badge{
+  font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--ink);
+  background:#fff; border:1px solid var(--line); border-radius:30px;
+  padding:9px 16px;
+}
+.badge b{color:var(--rust);font-weight:600}
+
+/* ---------- SECTIONS ---------- */
+section{padding:64px 0}
+section+section{border-top:1px solid var(--line)}
+h2{
+  font-weight:900; font-size:clamp(28px,5vw,44px); letter-spacing:-.01em;
+  margin-bottom:8px;
+}
+.h2-kicker{
+  font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.32em;
+  text-transform:uppercase; color:var(--rust); margin-bottom:14px;
+}
+.lead{font-size:clamp(17px,2.2vw,21px); line-height:1.65; color:var(--ink); max-width:760px}
+.lead+.lead{margin-top:18px}
+.lead em{color:var(--rust)}
+
+/* ---------- DIRECTIVE ---------- */
+.directive{
+  margin-top:34px; background:var(--panel); border:1px solid var(--line);
+  border-radius:16px; padding:26px 28px; max-width:760px;
+  box-shadow:0 2px 14px rgba(43,38,32,.05);
+}
+.directive .mono{font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--sky); margin-bottom:10px}
+.directive p{font-size:clamp(17px,2.2vw,20px); line-height:1.6; font-style:italic}
+
+/* ---------- PERSONNAGES ---------- */
+.cards{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:18px; margin-top:36px;
+}
+.card{
+  background:var(--panel); border:1px solid var(--line); border-radius:16px;
+  padding:24px; box-shadow:0 2px 14px rgba(43,38,32,.05);
+}
+.card .emoji{font-size:34px; line-height:1; margin-bottom:14px}
+.card h3{font-weight:800; font-size:21px; margin-bottom:4px}
+.card .role{
+  font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--muted); margin-bottom:12px;
+}
+.card p{font-size:15.5px; line-height:1.6; color:#4c453c}
+.card.walle{border-top:4px solid var(--yellow)}
+.card.eve{border-top:4px solid var(--sky)}
+.card.mo{border-top:4px solid var(--green)}
+.card.auto{border-top:4px solid var(--rust)}
+.card.capitaine{border-top:4px solid #8a6db1}
+.card.cafard{border-top:4px solid #a3906b}
+
+/* ---------- THÈMES ---------- */
+.themes{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; margin-top:36px}
+.theme{
+  background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:24px;
+}
+.theme h3{font-weight:800; font-size:19px; margin-bottom:10px}
+.theme h3 span{margin-right:10px}
+.theme p{font-size:15.5px; line-height:1.65; color:#4c453c}
+
+/* ---------- ANECDOTES ---------- */
+.facts{margin-top:36px; display:grid; gap:14px; max-width:820px}
+.fact{
+  display:flex; gap:16px; align-items:flex-start;
+  background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:18px 20px;
+}
+.fact .n{
+  font-family:"IBM Plex Mono",monospace; font-weight:600; color:var(--yellow);
+  font-size:14px; padding-top:2px; min-width:28px;
+}
+.fact p{font-size:15.5px; line-height:1.6; color:#4c453c}
+
+/* ---------- FICHE ---------- */
+.fiche{
+  margin-top:36px; background:var(--panel); border:1px solid var(--line);
+  border-radius:16px; overflow:hidden; max-width:760px;
+}
+.fiche .row{
+  display:flex; gap:16px; padding:15px 22px; font-size:15.5px; line-height:1.5;
+}
+.fiche .row+.row{border-top:1px solid var(--line)}
+.fiche .k{
+  font-family:"IBM Plex Mono",monospace; font-size:11.5px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--muted); min-width:130px; padding-top:3px;
+}
+.fiche .v{color:var(--ink)}
+
+/* ---------- QUOTE ---------- */
+.bigquote{
+  text-align:center; padding:78px 22px;
+  background:linear-gradient(180deg,#12151c 0%, #1b2233 100%);
+  color:#f2ede2;
+}
+.bigquote .stars{letter-spacing:14px; color:#e8a835; margin-bottom:26px; font-size:14px}
+.bigquote blockquote{
+  font-size:clamp(24px,4.5vw,40px); font-weight:700; font-style:italic;
+  line-height:1.3; max-width:820px; margin:0 auto;
+}
+.bigquote .who{
+  font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.28em;
+  text-transform:uppercase; color:#9aa7c4; margin-top:26px;
+}
+
+/* ---------- FOOTER ---------- */
+footer{
+  padding:44px 22px 60px; text-align:center; color:var(--muted);
+  font-size:13.5px; line-height:1.8; border-top:1px solid var(--line);
+}
+footer .mono{font-size:11px; letter-spacing:.22em; text-transform:uppercase}
+
+@media (max-width:600px){
+  .fiche .row{flex-direction:column; gap:4px}
+  section{padding:52px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <p class="kicker">Pixar · 2008 · Un film d'Andrew Stanton</p>
+  <h1>WALL<span class="dot">·</span>E</h1>
+  <p class="sub">700 ans de solitude. Une plante dans une botte. Une histoire d'amour interstellaire.</p>
+
+  <!-- WALL·E dessiné en SVG (illustration originale stylisée) -->
+  <div class="robot" aria-hidden="true">
+    <svg viewBox="0 0 320 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration stylisée du robot WALL·E">
+      <!-- ombre -->
+      <ellipse cx="160" cy="278" rx="120" ry="14" fill="#2b2620" opacity=".08"/>
+      <!-- chenilles -->
+      <g>
+        <rect x="42" y="212" width="92" height="58" rx="26" fill="#3a342c"/>
+        <rect x="186" y="212" width="92" height="58" rx="26" fill="#3a342c"/>
+        <circle cx="70" cy="241" r="13" fill="#5b5347"/>
+        <circle cx="106" cy="241" r="13" fill="#5b5347"/>
+        <circle cx="214" cy="241" r="13" fill="#5b5347"/>
+        <circle cx="250" cy="241" r="13" fill="#5b5347"/>
+      </g>
+      <!-- corps caisse -->
+      <g>
+        <rect x="74" y="118" width="172" height="104" rx="10" fill="#e8a835"/>
+        <rect x="74" y="118" width="172" height="104" rx="10" fill="none" stroke="#b97e1e" stroke-width="4"/>
+        <rect x="94" y="138" width="132" height="64" rx="6" fill="#d99a2b"/>
+        <!-- rayures usure -->
+        <line x1="90" y1="212" x2="118" y2="212" stroke="#b97e1e" stroke-width="4" stroke-linecap="round"/>
+        <line x1="200" y1="128" x2="228" y2="128" stroke="#f6c86a" stroke-width="4" stroke-linecap="round"/>
+        <!-- bouton rouge -->
+        <circle cx="160" cy="170" r="10" fill="#c0392b"/>
+        <circle cx="160" cy="170" r="10" fill="none" stroke="#8e2a20" stroke-width="3"/>
+      </g>
+      <!-- bras -->
+      <g>
+        <rect x="38" y="150" width="40" height="16" rx="8" fill="#8a7c66"/>
+        <rect x="242" y="150" width="40" height="16" rx="8" fill="#8a7c66"/>
+        <path d="M30 144 l14 14 -14 14 z" fill="#5b5347"/>
+        <path d="M290 144 l-14 14 14 14 z" fill="#5b5347"/>
+      </g>
+      <!-- cou -->
+      <rect x="150" y="88" width="20" height="34" rx="8" fill="#8a7c66"/>
+      <!-- tête binoculaire -->
+      <g>
+        <rect x="96" y="42" width="60" height="52" rx="24" fill="#cfc6b4"/>
+        <rect x="164" y="42" width="60" height="52" rx="24" fill="#cfc6b4"/>
+        <rect x="96" y="42" width="60" height="52" rx="24" fill="none" stroke="#9b917e" stroke-width="4"/>
+        <rect x="164" y="42" width="60" height="52" rx="24" fill="none" stroke="#9b917e" stroke-width="4"/>
+        <!-- pupilles -->
+        <circle cx="126" cy="68" r="15" fill="#2b2620"/>
+        <circle cx="194" cy="68" r="15" fill="#2b2620"/>
+        <circle cx="131" cy="63" r="5" fill="#fff" opacity=".9"/>
+        <circle cx="199" cy="63" r="5" fill="#fff" opacity=".9"/>
+      </g>
+      <!-- la plante dans la botte -->
+      <g>
+        <path d="M262 222 h26 v34 a6 6 0 0 1 -6 6 h-14 a6 6 0 0 1 -6 -6 z" fill="#7a5a3a"/>
+        <rect x="258" y="214" width="34" height="12" rx="4" fill="#5f4630"/>
+        <path d="M275 214 c0-18 0-26 0-34" stroke="#4a8c3f" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <path d="M275 192 c-10-4 -14-12 -14-20 10 2 15 8 14 20 z" fill="#4a8c3f"/>
+        <path d="M275 186 c10-4 14-12 14-20 -10 2 -15 8 -14 20 z" fill="#5ba54e"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="badges">
+    <span class="badge"><b>Oscar 2009</b> · Meilleur film d'animation</span>
+    <span class="badge"><b>98 min</b> · dont ~40 sans dialogue</span>
+    <span class="badge"><b>Pixar</b> · 9ᵉ long-métrage</span>
+  </div>
+</header>
+
+<!-- ================= SYNOPSIS ================= -->
+<section id="synopsis">
+  <div class="wrap">
+    <p class="h2-kicker">L'histoire</p>
+    <h2>Le dernier robot sur Terre</h2>
+    <p class="lead">
+      An 2805. La Terre, ensevelie sous les déchets, a été abandonnée par l'humanité,
+      partie en croisière « temporaire » à bord de l'Axiom, un gigantesque vaisseau de luxe.
+      Sept cents ans plus tard, il ne reste qu'un seul petit robot compacteur encore en service :
+      <em>WALL·E</em> (Waste Allocation Load Lifter — Earth-class).
+    </p>
+    <p class="lead">
+      Jour après jour, il compresse les ordures en cubes, collectionne les trésors qu'il y déniche
+      — un Rubik's Cube, une petite cuillère-fourchette, une cassette de
+      <em>Hello, Dolly!</em> — et rêve, en regardant les étoiles, de tenir un jour la main de quelqu'un.
+      L'arrivée d'EVE, une sonde blanche et fusiforme envoyée pour chercher une trace de vie,
+      va tout bouleverser : WALL·E lui offre ce qu'il a de plus précieux, une petite plante verte
+      poussée dans une vieille botte. Sans le savoir, il vient de rallumer l'espoir de toute l'humanité.
+    </p>
+    <div class="directive">
+      <p class="mono">Directive</p>
+      <p>« WALL·E ne suit pas sa programmation, il suit son cœur. C'est le robot le plus humain
+      du vaisseau — et souvent du cinéma tout entier. »</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PERSONNAGES ================= -->
+<section id="personnages">
+  <div class="wrap">
+    <p class="h2-kicker">Les personnages</p>
+    <h2>Des robots plus humains que nous</h2>
+    <div class="cards">
+      <div class="card walle">
+        <div class="emoji">🤖</div>
+        <h3>WALL·E</h3>
+        <p class="role">Compacteur de déchets · classe Terre</p>
+        <p>Petit, rouillé, infatigable et incurablement romantique. Il a développé en 700 ans
+        ce que sa programmation ne prévoyait pas : une personnalité, de la curiosité, et
+        un immense besoin de tendresse.</p>
+      </div>
+      <div class="card eve">
+        <div class="emoji">🥚</div>
+        <h3>EVE</h3>
+        <p class="role">Sonde d'évaluation de végétation extraterrestre</p>
+        <p>Lisse, rapide, armée d'un canon à plasma et d'une directive secrète.
+        Derrière son design immaculé (inspiré par le designer d'Apple Jonathan Ive),
+        un rire qui fait fondre — et un attachement croissant pour un petit robot cabossé.</p>
+      </div>
+      <div class="card capitaine">
+        <div class="emoji">🧑‍✈️</div>
+        <h3>Le capitaine McCrea</h3>
+        <p class="role">Commandant de l'Axiom</p>
+        <p>Cinquième capitaine d'un vaisseau qui se pilote tout seul. Le jour où il découvre
+        la plante, il réapprend — littéralement — à se tenir debout. « Je ne veux pas survivre,
+        je veux vivre ! »</p>
+      </div>
+      <div class="card auto">
+        <div class="emoji">🛞</div>
+        <h3>AUTO</h3>
+        <p class="role">Pilote automatique de l'Axiom</p>
+        <p>L'antagoniste : un volant à l'œil rouge, héritier direct de HAL 9000.
+        Il ne hait personne — il obéit simplement, depuis 700 ans, à une directive
+        obsolète : ne jamais rentrer sur Terre.</p>
+      </div>
+      <div class="card mo">
+        <div class="emoji">🧼</div>
+        <h3>M-O</h3>
+        <p class="role">Microbe-Obliterator · nettoyage</p>
+        <p>Petit robot maniaque de la propreté, scandalisé par la « contamination » que
+        WALL·E traîne partout. Son obstination à suivre la trace de boue en fait
+        le héros comique du film.</p>
+      </div>
+      <div class="card cafard">
+        <div class="emoji">🪳</div>
+        <h3>Hal, le cafard</h3>
+        <p class="role">Meilleur ami · indestructible</p>
+        <p>Dernier compagnon de WALL·E sur Terre, nommé en clin d'œil au producteur
+        Hal Roach (et à HAL 9000). Il se nourrit de gâteaux Twinkie, éternels comme lui.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= THÈMES ================= -->
+<section id="themes">
+  <div class="wrap">
+    <p class="h2-kicker">Pourquoi ce film est un chef-d'œuvre</p>
+    <h2>Une fable du futur</h2>
+    <div class="themes">
+      <div class="theme">
+        <h3><span>🌍</span>L'écologie sans sermon</h3>
+        <p>La Terre dévastée n'est jamais expliquée par un long discours : elle se lit dans
+        les gratte-ciel de déchets compactés, plus hauts que les vrais immeubles.
+        Le film montre, ne moralise pas — et c'est pour ça qu'il marque.</p>
+      </div>
+      <div class="theme">
+        <h3><span>🛋️</span>La satire de la consommation</h3>
+        <p>À bord de l'Axiom, l'humanité flotte sur des transats-écrans, nourrie au gobelet,
+        incapable de marcher. Buy n Large, méga-entreprise devenue gouvernement,
+        a tout automatisé — y compris la pensée.</p>
+      </div>
+      <div class="theme">
+        <h3><span>🎬</span>Le pari du cinéma muet</h3>
+        <p>Près de quarante minutes sans dialogue : tout passe par le regard, le geste,
+        et les sons du légendaire Ben Burtt (la voix de R2-D2). Un hommage assumé
+        à Chaplin et Keaton, dans un blockbuster d'animation.</p>
+      </div>
+      <div class="theme">
+        <h3><span>💚</span>L'amour comme moteur</h3>
+        <p>« WALL·E » est avant tout une histoire d'amour : un robot qui veut tenir une main.
+        La danse spatiale de WALL·E et EVE, à l'extincteur et au propulseur,
+        reste l'une des plus belles scènes de Pixar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CITATION ================= -->
+<div class="bigquote">
+  <div class="stars">★ ★ ★ ★ ★</div>
+  <blockquote>« EEEE-vah ! »</blockquote>
+  <p class="who">WALL·E — l'essentiel de son vocabulaire, et pourtant tout est dit</p>
+</div>
+
+<!-- ================= ANECDOTES ================= -->
+<section id="anecdotes">
+  <div class="wrap">
+    <p class="h2-kicker">Le saviez-vous ?</p>
+    <h2>Anecdotes de fabrication</h2>
+    <div class="facts">
+      <div class="fact"><span class="n">01</span><p>L'idée date d'un déjeuner de 1994 entre John Lasseter, Andrew Stanton, Pete Docter et Joe Ranft — le même repas qui a esquissé « 1001 Pattes », « Monstres &amp; Cie » et « Le Monde de Nemo ». La question de départ : « Et si l'humanité quittait la Terre en oubliant d'éteindre le dernier robot ? »</p></div>
+      <div class="fact"><span class="n">02</span><p>Toutes les « voix » de WALL·E, EVE et des robots ont été créées par Ben Burtt, le sound designer de Star Wars : plus de 2 500 sons, dont le cri « Eve ! » généré à partir de sa propre voix traitée électroniquement.</p></div>
+      <div class="fact"><span class="n">03</span><p>Le nom du cafard, Hal, est un double hommage : au pionnier de la comédie muette Hal Roach et à HAL 9000 de « 2001, l'Odyssée de l'espace » — dont AUTO, l'œil rouge du pilote automatique, est le descendant direct.</p></div>
+      <div class="fact"><span class="n">04</span><p>Pixar a invité le chef opérateur Roger Deakins (Blade Runner 2049, 1917) pour apprendre aux animateurs à « salir » l'image : flous, poussière, aberrations d'objectif — d'où le rendu quasi documentaire des scènes terrestres.</p></div>
+      <div class="fact"><span class="n">05</span><p>Le film s'ouvre et se ferme sur « Hello, Dolly! » (1969) : « Put On Your Sunday Clothes » et « It Only Takes a Moment », la chanson qui apprend à WALL·E ce que signifie tenir la main de quelqu'un.</p></div>
+      <div class="fact"><span class="n">06</span><p>Oscar du meilleur film d'animation 2009 et — fait rarissime pour un film d'animation — nomination au meilleur scénario original. Le générique de fin retrace l'histoire de l'art, des fresques rupestres jusqu'au pixel art.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FICHE TECHNIQUE ================= -->
+<section id="fiche">
+  <div class="wrap">
+    <p class="h2-kicker">Fiche technique</p>
+    <h2>WALL·E en bref</h2>
+    <div class="fiche">
+      <div class="row"><span class="k">Titre</span><span class="v">WALL·E (Waste Allocation Load Lifter — Earth-class)</span></div>
+      <div class="row"><span class="k">Réalisation</span><span class="v">Andrew Stanton (Le Monde de Nemo)</span></div>
+      <div class="row"><span class="k">Scénario</span><span class="v">Andrew Stanton &amp; Jim Reardon, d'après une histoire de Stanton et Pete Docter</span></div>
+      <div class="row"><span class="k">Musique</span><span class="v">Thomas Newman — avec Peter Gabriel (« Down to Earth »)</span></div>
+      <div class="row"><span class="k">Son</span><span class="v">Ben Burtt (conception sonore et voix des robots)</span></div>
+      <div class="row"><span class="k">Studio</span><span class="v">Pixar Animation Studios / Walt Disney Pictures</span></div>
+      <div class="row"><span class="k">Sortie</span><span class="v">27 juin 2008 (États-Unis) · 30 juillet 2008 (France)</span></div>
+      <div class="row"><span class="k">Durée</span><span class="v">98 minutes</span></div>
+      <div class="row"><span class="k">Récompenses</span><span class="v">Oscar du meilleur film d'animation, Golden Globe, BAFTA, Hugo Award — 6 nominations aux Oscars</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="mono">Fables du futur · Hommage de fan</p>
+  <p>Site hommage non officiel. « WALL·E » est une œuvre de Pixar Animation Studios / Disney.<br>
+  Illustration originale stylisée — aucune image du film n'est utilisée.</p>
+</footer>
+
+</body>
+</html>
