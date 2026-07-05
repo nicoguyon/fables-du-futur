@@ -3097,6 +3097,78 @@
    "num": 42,
    "ts": "2026-07-04T10:04:46Z",
    "image": "img/le-titan-et-la-vis.jpg"
+  },
+  {
+   "id": "horloge-stellaire-mouche",
+   "fr": {
+    "title": "L'Horloge Stellaire et la Mouche des Vides",
+    "verses": [
+     "Sur un pilier de fer aux confins du néant,",
+     "Comptait les âges morts une Horloge géante ;",
+     "Elle égrenait, superbe et lente,",
+     "Les millions d'ans d'un ciel béant.",
+     "« J'ai vu naître, dit-elle, et périr des soleils,",
+     "Rougir les nébuleuses, s'éteindre les merveilles.",
+     "Tout n'est qu'un grain dans mon sablier :",
+     "Le siècle humain, je le tiens pour un clin d'œil. »",
+     "Or une Mouche des grands vides,",
+     "Née du matin, morte le soir,",
+     "Butinait un rayon splendide",
+     "Aux vitres d'un vieux réservoir.",
+     "« Ô toi qui traînes les millénaires,",
+     "Lui dit la bestiole en riant,",
+     "Tu comptes sans jamais rien faire ;",
+     "Moi je vis tout dans un instant.",
+     "Ce soleil-là, je le savoure ;",
+     "Toi, tu le chiffres sans amour. »",
+     "L'Horloge sonna sa réponse austère…",
+     "Mais son ressort, ce même jour,",
+     "Rongé d'un froid vieux comme l'univers entier,",
+     "Se brisa net, et se tut sur son pied."
+    ],
+    "moral": [
+     "Compter les siècles n'est pas vivre :",
+     "Le temps sans joie n'est qu'un tombeau.",
+     "Mieux vaut une heure ivre de givre",
+     "Qu'un éon froid dans un caveau."
+    ]
+   },
+   "en": {
+    "title": "The Star-Clock and the Void-Fly",
+    "verses": [
+     "Upon an iron pillar at the edge of night,",
+     "A giant Clock kept count of ages dead;",
+     "It ticked out, slow and proud in its own light,",
+     "The million years that overhead had bled.",
+     "« I saw suns kindle, » spoke the mighty gear,",
+     "« And nebulae grow crimson, then go cold.",
+     "Your human century? A twitch, a mere",
+     "Blink in the endless sand-glass that I hold. »",
+     "Now came a Fly of the wide vacant deep,",
+     "Born with the dawn, to perish with the dark,",
+     "Who sipped a splendid ray, too glad to sleep,",
+     "Along an old tank's window, spark to spark.",
+     "« O you who drag the aeons on your back, »",
+     "She laughed, « you tally, yet you never taste.",
+     "This very sun I drink; you keep the track",
+     "And number light you let go all to waste. »",
+     "The Clock prepared some cold and stern reply—",
+     "But that same day its ancient mainspring, worn",
+     "By frost as old as any wandering sky,",
+     "Snapped clean, and hushed forever, wound and torn."
+    ],
+    "moral": [
+     "To count the centuries is not to live;",
+     "Time without joy is but a gilded grave.",
+     "One frost-drunk hour has more delight to give",
+     "Than frozen aeons no warm heart could save."
+    ]
+   },
+   "theme": "temps long, joie de l'instant",
+   "image_prompt": "A colossal ornate mechanical clock mounted on an iron pillar at the edge of dark space, its enormous dial covered in strange star-symbols, gears frozen mid-tick. A tiny glowing fly hovers before a cracked tank window catching a bright ray of light. Distant dying stars and drifting nebulae fill the void behind them.",
+   "num": 43,
+   "ts": "2026-07-05T10:07:23Z",
+   "image": "img/horloge-stellaire-mouche.jpg"
   }
  ]
 }
