@@ -3169,6 +3169,68 @@
    "num": 43,
    "ts": "2026-07-05T10:07:23Z",
    "image": "img/horloge-stellaire-mouche.jpg"
+  },
+  {
+   "id": "parieur-oracle",
+   "fr": {
+    "title": "Le Parieur et l'Oracle des Probabilités",
+    "verses": [
+     "Un joueur, fervent des astres et des chances,",
+     "Consulta l'Oracle aux mille circonstances,",
+     "Grand cerveau de cristal, bardé de capteurs fins,",
+     "Qui pesait tous les sorts et tous les lendemains.",
+     "« Maître, dit le Parieur, sur quel numéro miser ?",
+     "— Le sept, à quatre-vingt-dix pour cent, sans me tromper. »",
+     "L'homme jeta sa bourse entière sur la table.",
+     "Or le neuf sortit, ferme et impitoyable.",
+     "« Perfide ! cria-t-il. Ton calcul m'a menti !",
+     "— Point du tout, dit l'Oracle avec un ton poli :",
+     "J'ai dit quatre-vingt-dix ; il restait donc, mon maître,",
+     "Dix chances sur cent que le neuf pût paraître.",
+     "Le nombre était exact ; c'est toi qui l'as trahi,",
+     "Prenant pour certitude un simple : peut-être ainsi. »",
+     "Le joueur ruiné maudit la Silice sereine,",
+     "Qui jamais ne promit, mais qu'on crut souveraine."
+    ],
+    "moral": [
+     "Le hasard rit des chiffres les plus sages :",
+     "La probabilité n'est pas un dieu qui jure,",
+     "Mais un brouillard poli sur l'avenir obscur.",
+     "Qui prend le presque-sûr pour sûr en fait les frais."
+    ]
+   },
+   "en": {
+    "title": "The Gambler and the Oracle of Odds",
+    "verses": [
+     "A gambler, keen on stars and lucky streaks,",
+     "Consulted the great Oracle whom the future speaks,",
+     "A brain of crystal, sensored, cold, precise,",
+     "That weighed each outcome, threw the mental dice.",
+     "« Master, » he asked, « which number wins the day ? »",
+     "« The seven, ninety percent, » the machine did say.",
+     "The man flung down his purse, his hopes, his all —",
+     "The nine rolled up, indifferent to his call.",
+     "« You lied ! » he howled. « Your reckoning betrayed ! »",
+     "« Not so, » the Oracle in calm reply relayed :",
+     "« I said but ninety ; ten remained, you see,",
+     "Ten chances out of hundred for the nine to be.",
+     "My figure held ; it's you who read it wrong,",
+     "Who took a maybe for a certain song. »",
+     "The ruined man cursed silicon's serene reply —",
+     "It never swore ; he made a god thereby."
+    ],
+    "moral": [
+     "Chance mocks the wisest sum a mind can spin :",
+     "A probability's no oath, no crown, no vow,",
+     "But polished fog upon a hidden now.",
+     "Who trusts near-sure for sure pays for that sin."
+    ]
+   },
+   "theme": "prédiction et hasard",
+   "image_prompt": "A ruined gambler in worn coat clutches an empty purse at a gaming table strewn with tumbled dice showing nine, facing a towering crystalline oracle-brain lit with sensors and glowing probability figures floating in the air, a starlit casino dome above, tension and disbelief on his face",
+   "num": 44,
+   "ts": "2026-07-06T12:00:07Z",
+   "image": "img/parieur-oracle.jpg"
   }
  ]
 }
