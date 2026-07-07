@@ -3231,6 +3231,80 @@
    "num": 44,
    "ts": "2026-07-06T12:00:07Z",
    "image": "img/parieur-oracle.jpg"
+  },
+  {
+   "id": "le-humain-et-lalien",
+   "fr": {
+    "title": "L'Ambassadeur et la Chose des Étoiles",
+    "verses": [
+     "Sur un rocher perdu au bord d'un ciel étrange,",
+     "Deux mondes pour la fois première allaient se voir.",
+     "L'Ambassadeur, drapé d'un protocole d'ange,",
+     "Tenait cent mille mots pour tout savoir.",
+     "Devant lui se dressa la Chose des espaces,",
+     "Corps de brume et de sels, sans front et sans regard.",
+     "« Salut, dit l'homme, ô Peuple des surfaces !",
+     "Je viens vous offrir paix, commerce, art. »",
+     "La Chose, lentement, tendit une nuée",
+     "Et ne répondit rien qui pût être compris.",
+     "L'homme, de discours vains à la voix enrouée,",
+     "S'irritait de ce mur sans oui ni prix.",
+     "Trois jours il argua, cita ses lois, ses chartes ;",
+     "La brume l'écoutait ainsi qu'on hume un vent.",
+     "Puis, las de déployer ses éloquentes cartes,",
+     "L'homme se tut — et sourit simplement.",
+     "Alors la Chose vint, et frôla son épaule,",
+     "Comme un enfant qui reconnaît un frère.",
+     "Ce n'était pas les mots qui jouaient leur beau rôle :",
+     "C'était l'instant sans mots, nu et sincère.",
+     "« Ô sotte diplomatie ! songea l'Ambassadeur ;",
+     "J'apportais mille phrases — il fallait un cœur. »"
+    ],
+    "moral": [
+     "Qui veut se faire entendre au seuil de l'inconnu",
+     "Doit taire ses discours et tendre un front tout nu.",
+     "Le premier des langages, avant qu'aucun n'existe,",
+     "N'est point dans le savant, mais bien dans le silence triste."
+    ]
+   },
+   "en": {
+    "title": "The Envoy and the Thing of Stars",
+    "verses": [
+     "On a lost rock beneath a foreign sky,",
+     "Two worlds prepared their very first regard.",
+     "The Envoy, robed in protocol most high,",
+     "Had learned ten thousand words to play his card.",
+     "Before him rose the Thing of outer deeps,",
+     "A form of mist and salt, no brow, no eye.",
+     "« Hail, said the man, o Folk the great void keeps!",
+     "I come with peace and trade beneath your sky. »",
+     "The Thing put forth a slow and drifting haze,",
+     "And gave no answer man could ever spell.",
+     "The Envoy, hoarse from his rehearsed displays,",
+     "Raged at that wall that neither bought nor fell.",
+     "Three days he pled, cited each treaty page ;",
+     "The mist just heard him as one hears a breeze.",
+     "Then, weary of his eloquence and rage,",
+     "He hushed at last — and smiled with quiet ease.",
+     "The Thing drew near, and brushed against his side,",
+     "As some lost child that knows a brother's face.",
+     "It was not words that turned the coming tide :",
+     "It was the wordless, naked, honest space.",
+     "« O foolish diplomacy! the Envoy sighed ;",
+     "I brought a thousand phrases — one heart tried. »"
+    ],
+    "moral": [
+     "Who seeks to speak where all is strange and new",
+     "Must drop his speech and bare a brow that's true.",
+     "The oldest tongue, before all tongues began,",
+     "Lies not in learned lips, but in the silent man."
+    ]
+   },
+   "theme": "première rencontre",
+   "image_prompt": "On a barren rocky outcrop under an alien twin-star sky, a robed human envoy stands with arms lowered, having stopped talking, smiling faintly. Before him a tall shapeless creature of mist and salt gently reaches a tendril to brush his shoulder. Scattered diplomatic scrolls and a translation device lie forgotten at his feet in the strange dust.",
+   "num": 45,
+   "ts": "2026-07-07T10:51:30Z",
+   "image": "img/le-humain-et-lalien.jpg"
   }
  ]
 }
