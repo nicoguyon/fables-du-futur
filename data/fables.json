@@ -3305,6 +3305,80 @@
    "num": 45,
    "ts": "2026-07-07T10:51:30Z",
    "image": "img/le-humain-et-lalien.jpg"
+  },
+  {
+   "id": "forge-comete",
+   "fr": {
+    "title": "Le Forgeron d'Étoiles et l'Étincelle",
+    "verses": [
+     "Un vieux Forgeron d'astres, au fond d'un four solaire,",
+     "Battait des mondes neufs sur son enclume claire.",
+     "« Regarde, disait-il à l'humble Étincelle,",
+     "Combien mes soleils sont splendides et parfaits !",
+     "Toi qui n'es qu'un éclat, qu'un souffle, une donzelle,",
+     "Que crois-tu donc pouvoir accomplir désormais ? »",
+     "L'Étincelle, sans peur, dansait sur le métal.",
+     "« Je ne prétends forger nul astre colossal ;",
+     "Je saute, je pétille, et je m'éteins bien vite. »",
+     "Le Maître rit, hautain, de sa vertu petite.",
+     "Or un jour, le grand four, gonflé de son orgueil,",
+     "Se fendit, débordant en un flot de furie ;",
+     "Les soleils calcinés s'écroulaient au cercueil,",
+     "Et le Forgeron seul pleurait sa forgerie.",
+     "Dans la cendre, pourtant, brillait encore, menue,",
+     "La petite Étincelle, à travers l'étendue :",
+     "« Maître, de tes cent astres il ne reste plus rien,",
+     "Mais moi, ce rien qui tremble, allumerai demain",
+     "Aux confins d'un espace où nul four ne rougeoie",
+     "Le premier feu d'un peuple ivre de ma joie. »",
+     "Le vieux resta muet devant ce point de flamme,",
+     "Qui, sans forge et sans art, portait toute une âme."
+    ],
+    "moral": [
+     "Le grand ouvrage périt sous son propre poids ;",
+     "L'humble étincelle, elle, ensemence les bois.",
+     "Ce qui dure n'est pas ce qui pèse et qui brille,",
+     "Mais le peu vif qui saute et de siècle en siècle file."
+    ]
+   },
+   "en": {
+    "title": "The Star-Smith and the Spark",
+    "verses": [
+     "A grizzled Smith of stars, deep in a solar kiln,",
+     "Hammered fresh worlds on anvils bright and still.",
+     "« Behold, » he told the small unruly Spark,",
+     "« How grand and flawless every sun I make!",
+     "And you — a flicker, barely worth a mark —",
+     "What deed could such a puny breath undertake? »",
+     "The Spark just danced along the glowing steel:",
+     "« I claim no colossus, no immortal wheel;",
+     "I leap, I crackle, and I gutter fast. »",
+     "The Smith laughed proudly at her modest cast.",
+     "But one dark day the kiln, swollen with pride,",
+     "Cracked wide and spilled a flood of raging fire;",
+     "The charred suns crumbled, tumbling far and wide,",
+     "And lonely wept the Smith beside his pyre.",
+     "Yet in the ash there gleamed, still small and true,",
+     "The little Spark that leapt the darkness through:",
+     "« Master, of all your hundred suns none stay,",
+     "But I, this trembling nothing, will one day",
+     "On some far shore where no proud kiln shall burn",
+     "Light up a people's first glad fire in turn. »",
+     "The old man stood struck silent by that gleam,",
+     "Which, forgeless, artless, carried a whole dream."
+    ],
+    "moral": [
+     "The mighty work sinks under its own weight;",
+     "The humble spark seeds forests soon or late.",
+     "What lasts is not the heavy and the grand,",
+     "But the quick little flame that leaps from hand to hand."
+    ]
+   },
+   "theme": "humilité et transmission",
+   "image_prompt": "An ancient star-smith in a vast solar forge, hammering glowing miniature suns on a bright anvil, the great kiln cracked and spilling molten fire behind him. Charred sun-orbs crumble across the floor. A tiny bright spark hovers defiantly above the ashes, casting light on the smith's stunned face amid swirling embers and darkness.",
+   "num": 46,
+   "ts": "2026-07-08T10:12:45Z",
+   "image": "img/forge-comete.jpg"
   }
  ]
 }
