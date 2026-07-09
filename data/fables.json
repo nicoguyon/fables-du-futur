@@ -3379,6 +3379,72 @@
    "num": 46,
    "ts": "2026-07-08T10:12:45Z",
    "image": "img/forge-comete.jpg"
+  },
+  {
+   "id": "cartographe-nova",
+   "fr": {
+    "title": "Le Cartographe des Vides et la Nova",
+    "verses": [
+     "Un vieux Cartographe, arpentant l'infini,",
+     "Traçait les astres un à un dans son grand livre béni.",
+     "« Mille ans, disait-il, je dessine et je nomme ;",
+     "Mon atlas survivra bien plus longtemps qu'un homme. »",
+     "Une Nova, tout près, veillait dans son grand feu.",
+     "« Maître, lui dit-elle, à quoi bon tant de jeu ?",
+     "Ce point que tu inscris comme une chose sûre,",
+     "Je l'éteins ce matin — regarde, il fut, il dure",
+     "Le temps d'un souffle, et puis n'est plus rien du tout.",
+     "— Mais mon livre le garde ! — Et ton livre, à son tout,",
+     "Que dure-t-il ? » L'astre soudain creva la nuit,",
+     "Souffla ses feux sur mille lieues sans bruit,",
+     "Et le Cartographe, sa plume encore levée,",
+     "Vit l'encre de son ciel à jamais effacée.",
+     "« J'ai cartographié la mort », dit-il, tremblant,",
+     "« Croyant fixer un ciel qui n'était que passant. »",
+     "La Nova, refroidie, laissa pour testament",
+     "Un peu de poudre où naîtraient d'autres firmaments."
+    ],
+    "moral": [
+     "Qui prétend enfermer l'immense dans un trait",
+     "Copie une ombre — et l'ombre, déjà, s'en allait.",
+     "Le ciel n'est pas un livre : il est ce qui s'écrit",
+     "Sans nous, sans plume, et se relit après nos vies."
+    ]
+   },
+   "en": {
+    "title": "The Void-Cartographer and the Nova",
+    "verses": [
+     "An old Cartographer, mapping the endless dark,",
+     "Named every star and pinned each one with a careful mark.",
+     "« A thousand years, » he boasted, « I chart and I declare;",
+     "My atlas will outlast all men that breathe the air. »",
+     "A Nova, burning near, kept watch within her blaze.",
+     "« Master, » she asked, « why waste your ink on fleeting rays?",
+     "This dot you set as though it were a fixed decree —",
+     "I snuff it out this dawn. Behold, it was, you see,",
+     "The breath of an instant, then nothing left to hold. »",
+     "« My book preserves it! » « And your book, when years unfold,",
+     "How long shall that endure? » Then swiftly she went white,",
+     "Blew out her fires across a thousand leagues of night;",
+     "The Cartographer, his quill still raised in vain,",
+     "Watched all his charted heaven vanish like the rain.",
+     "« I have but mapped a death, » he whispered, cold with dread,",
+     "« Mistaking for the fixed a sky already fled. »",
+     "The cooled Nova bequeathed, for all her fatal art,",
+     "A little dust where newborn heavens would restart."
+    ],
+    "moral": [
+     "Who dares to cage the vast within a single line",
+     "Copies a shadow fleeing even as men design.",
+     "The sky is not a book; it is the thing that writes",
+     "Beyond us, penless, read by unborn later nights."
+    ]
+   },
+   "theme": "temps cosmique, impermanence",
+   "image_prompt": "An aged cartographer in a robe, quill raised, stands before a vast open star-atlas on a floating desk in deep space; beside him a dying star bursts into a blinding nova, its shockwave rippling across mapped constellations, ink fading from the pages, drifting glowing dust forming new tiny stars in the surrounding void.",
+   "num": 47,
+   "ts": "2026-07-09T10:50:17Z",
+   "image": "img/cartographe-nova.jpg"
   }
  ]
 }
