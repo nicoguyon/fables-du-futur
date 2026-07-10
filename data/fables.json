@@ -3445,6 +3445,72 @@
    "num": 47,
    "ts": "2026-07-09T10:50:17Z",
    "image": "img/cartographe-nova.jpg"
+  },
+  {
+   "id": "le-glaneur-et-lepave",
+   "fr": {
+    "title": "Le Glaneur et l'Épave",
+    "verses": [
+     "Sur l'orbite d'un monde éteint, parmi les scories,",
+     "Un Glaneur ramassait de mortes batteries,",
+     "Des câbles, des débris, tout ce qui brille encor.",
+     "Il trouva là, dérivant dans le noir,",
+     "Une Épave immense, un croiseur de guerre :",
+     "« Enfin ! » dit-il, « ma fortune, mon sort !",
+     "Ce cuivre, ce titane, et cet immense fer !",
+     "Je vais couper, revendre, et devenir prospère. »",
+     "L'Épave, dont un cœur battait encore un peu,",
+     "Murmura d'une voix de vieux métal fêlé :",
+     "« Naguère je portais mille hommes vers le feu,",
+     "Puissant, craint, honoré, de gloire auréolé.",
+     "Découpe-moi, glaneur, ta main ne trahit rien :",
+     "Ce que je fus ne pèse plus au tien. »",
+     "Le Glaneur, arrachant la plaque triomphale,",
+     "Y lut un nom, des dates, une bataille fatale,",
+     "Et sentit, malgré lui, quelque frisson passer.",
+     "« Tant de grandeur, » songea-t-il, « pour finir en ferraille ! »",
+     "Puis il chargea le tout sans plus se lamenter,",
+     "Car la faim, elle, ne connaît nulle médaille."
+    ],
+    "moral": [
+     "La gloire d'hier ne nourrit point demain :",
+     "Le fer d'un roi vaut ce qu'en donne une main."
+    ]
+   },
+   "en": {
+    "title": "The Scrapper and the Wreck",
+    "verses": [
+     "On the orbit of a dead and cindered sphere,",
+     "A Scrapper gleaned old cells and cables clear,",
+     "Every scrap that still could catch the light.",
+     "He came upon, adrift within the night,",
+     "A vast, colossal wreck: a warship's frame.",
+     "« At last! » he cried, « my fortune and my name!",
+     "This copper, this titanium, this steel—",
+     "I'll cut, I'll sell, and prosper for my zeal. »",
+     "The Wreck, whose core still flickered, faint and cold,",
+     "Whispered in a cracked and metal voice of old:",
+     "« I once bore thousands toward the roaring fight,",
+     "Feared, honored, crowned with glory's borrowed light.",
+     "Cut me apart, scrapper, you wrong me not:",
+     "What I once was weighs nothing in your lot. »",
+     "The Scrapper, tearing off the triumph-plate,",
+     "Read there a name, some dates, a fatal date,",
+     "And felt, despite himself, a shiver stir.",
+     "« Such grandeur, » thought he, « ending in this slur! »",
+     "Then loaded all, and mourned the loss no more,",
+     "For hunger honors neither crown nor war."
+    ],
+    "moral": [
+     "Yesterday's glory buys no bread today:",
+     "A king's own steel is worth what hands will pay."
+    ]
+   },
+   "theme": "gloire déchue, survie",
+   "image_prompt": "A lone scrapper in a patched spacesuit floating beside a colossal derelict warship in orbit above a dead cindered planet, prying off a large ornamental hull plate engraved with a name and dates, cables and salvaged batteries drifting around him, faint glow from the wreck's dying core, debris field scattered across the black void.",
+   "num": 48,
+   "ts": "2026-07-10T10:49:18Z",
+   "image": "img/le-glaneur-et-lepave.jpg"
   }
  ]
 }
