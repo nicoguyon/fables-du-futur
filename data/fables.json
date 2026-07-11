@@ -3511,6 +3511,72 @@
    "num": 48,
    "ts": "2026-07-10T10:49:18Z",
    "image": "img/le-glaneur-et-lepave.jpg"
+  },
+  {
+   "id": "gardienne-graines",
+   "fr": {
+    "title": "La Gardienne des Graines et le Convertisseur",
+    "verses": [
+     "Dans un cellier scellé de zinc et de silence,",
+     "Une vieille Gardienne, aux doigts pleins de patience,",
+     "Comptait, grain après grain, des semences d'antan :",
+     "Blés oubliés, courges du vieux temps.",
+     "« Que gardes-tu là, momie ? » dit le Convertisseur,",
+     "Machine d'appétit, broyeuse et compresseur,",
+     "« Ces poussières ne rendent rien ! Livre-les à ma bouche :",
+     "J'en ferai du carbone, du crédit sur la couche.",
+     "— Chacune est un printemps qui dort, lui répond-elle,",
+     "Un verger, une soupe, une étoile fidèle.",
+     "— Sottise ! Le calcul ne connaît que le poids. »",
+     "Et la Machine avala tout d'une seule fois.",
+     "Vint l'an de la disette, et le ciel de plomb sombre ;",
+     "Le Convertisseur, gavé, rendit du chiffre et de l'ombre.",
+     "La Gardienne, pourtant, tira d'un pli de sa manche",
+     "Trois graines cachées contre sa hanche.",
+     "Elle sema. Le printemps répondit,",
+     "Et de trois grains, tout un peuple verdit."
+    ],
+    "moral": [
+     "Qui broie l'avenir pour un gain qui l'attise",
+     "Récolte le vide au bout de sa bêtise ;",
+     "Trois graines valent mieux qu'un empire mangé :",
+     "L'espoir tient en la main qui l'a rangé."
+    ]
+   },
+   "en": {
+    "title": "The Seed-Keeper and the Converter",
+    "verses": [
+     "In a vault of sealed zinc and hush,",
+     "An old Seed-Keeper, slow and free of rush,",
+     "Counted, grain by grain, her hoard of long-lost years:",
+     "Forgotten wheat, gourds of the pioneers.",
+     "« What guard you, mummy? » sneered the Converter loud,",
+     "A grinding jaw, a hungry, humming cloud,",
+     "« These dusts yield nothing! Feed them to my maw:",
+     "I'll turn them into carbon, credit, law. »",
+     "« Each is a spring asleep, » the woman said,",
+     "« An orchard, soup, a star that lights the shed. »",
+     "« Nonsense! My reckoning weighs only mass. »",
+     "And so it swallowed all in one swift pass.",
+     "Then came the famine year, the leaden sky;",
+     "The gorged Converter yielded but a lie.",
+     "Yet from her sleeve the Keeper, still and mild,",
+     "Drew three small seeds she'd hidden like a child.",
+     "She sowed. The spring gave answer to her hand,",
+     "And from three grains there greened an entire land."
+    ],
+    "moral": [
+     "Who grinds tomorrow for a present gain",
+     "Shall reap an emptiness for all his pain;",
+     "Three seeds outweigh an empire crushed and priced:",
+     "Hope fits the hand that kept it, well-suffised."
+    ]
+   },
+   "theme": "préservation contre avidité",
+   "image_prompt": "An old woman in a sealed underground vault, holding out three small seeds in her open palm, standing before a massive industrial grinding machine with hungry gears and a wide metal maw. Shelves of labeled seed jars line the walls behind her. A single sprout of green pushes through cracked floor at her feet, contrasting the cold machinery.",
+   "num": 49,
+   "ts": "2026-07-11T09:22:36Z",
+   "image": "img/gardienne-graines.jpg"
   }
  ]
 }
