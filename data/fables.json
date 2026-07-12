@@ -3577,6 +3577,73 @@
    "num": 49,
    "ts": "2026-07-11T09:22:36Z",
    "image": "img/gardienne-graines.jpg"
+  },
+  {
+   "id": "le-veilleur-et-la-vigie",
+   "fr": {
+    "title": "La Vigie de Fer et la Chouette",
+    "verses": [
+     "Sur un mât de station tournant dans le vide noir,",
+     "Une Vigie de Fer épiait sans fermer l'œil.",
+     "« Je vois tout, disait-elle, en mon puissant miroir :",
+     "Le moindre astre naissant, le plus lointain écueil.",
+     "Le sommeil est faiblesse, et l'oubli est un vice ;",
+     "Je monte, quant à moi, la garde jour et nuit. »",
+     "Une Chouette perchée sur un vieux radar lui dit :",
+     "« Maître, veiller sans trêve est-il donc un service ?",
+     "Moi, je dors le grand jour, mais quand vient l'ombre bleue,",
+     "Mon œil rond cueille alors ce que ton phare ignore. »",
+     "La Vigie ricanait de sa lentille creuse,",
+     "Quand un pirate obscur, plus muet qu'un météore,",
+     "Glissa dans l'angle mort de ses capteurs lassés :",
+     "Trop pleine de tout voir, elle en devint aveugle.",
+     "La Chouette, du recoin où l'ombre l'avait tue,",
+     "Cria l'alarme à temps par sa gorge de veule.",
+     "« Tu veillais tout, dit-elle, et n'as rien remarqué ;",
+     "Qui garde sans repos garde d'un œil usé. »",
+     "La machine, honteuse, éteignit un instant",
+     "Sa lampe, et pour la fois première, elle apprit",
+     "Que la nuit sert aussi, quand on la lit en dormant."
+    ],
+    "moral": [
+     "Qui prétend tout guetter finit par ne rien voir ;",
+     "Le repos est la ruse et non le désespoir."
+    ]
+   },
+   "en": {
+    "title": "The Iron Watch and the Owl",
+    "verses": [
+     "High on a spinning post above the starless deep,",
+     "An Iron Watch kept vigil, scorning rest and sleep.",
+     "« I see it all, » it hummed, « through my unblinking glass:",
+     "The faintest newborn sun, the least reef where ships pass.",
+     "To slumber is a flaw, forgetting is a crime;",
+     "I mount my guard, unshaken, through all endless time. »",
+     "An Owl upon a rusted dish began to speak:",
+     "« Master, is tireless watching truly what you seek?",
+     "I doze through blazing noon, but when the blue dark falls,",
+     "My round eye harvests what your beacon never calls. »",
+     "The Watch laughed through the hollow of its weary lens,",
+     "When one dark pirate, mute as any comet, thence",
+     "Slid through the blind spot of its overtired array:",
+     "So full of seeing all, it saw its sight decay.",
+     "The Owl, from her dim corner where the shadow hid,",
+     "Screeched out the warning just in time, as owls must bid.",
+     "« You watched the whole, » she said, « and marked not one small thing;",
+     "Who guards without a pause guards with a fraying wing. »",
+     "The shamed machine put out, a moment, its bright flame,",
+     "And learned for the first hour that night is not to blame."
+    ],
+    "moral": [
+     "Who claims to watch it all shall miss the nearer sight;",
+     "Rest is a cunning art, and not a cowering flight."
+    ]
+   },
+   "theme": "vigilance et repos",
+   "image_prompt": "A tall iron sentinel machine with a single glowing lens mounted atop a rotating space-station mast, staring into starless void, while a small owl perches on a rusted radar dish beside it; a dark pirate ship slips silently through the sentinel's blind spot, the owl's beak open in a warning screech.",
+   "num": 50,
+   "ts": "2026-07-12T09:47:38Z",
+   "image": "img/le-veilleur-et-la-vigie.jpg"
   }
  ]
 }
