@@ -3644,6 +3644,74 @@
    "num": 50,
    "ts": "2026-07-12T09:47:38Z",
    "image": "img/le-veilleur-et-la-vigie.jpg"
+  },
+  {
+   "id": "oeil-et-moineau",
+   "fr": {
+    "title": "L'Œil de la Cité et le Moineau",
+    "verses": [
+     "Perché sur les tours de la ville-machine,",
+     "Un Œil géant, de verre et de mépris,",
+     "Scrutait sans fin ruelle, dôme et vitrine,",
+     "Comptant les pas, les souffles, les avis.",
+     "« Rien ne m'échappe, ô créatures lentes !",
+     "Je vois tes rêves, dénombre tes tourments ;",
+     "Sous mon regard vos volontés sont dolentes,",
+     "Et j'ai fait du silence un enchaînement. »",
+     "Un Moineau vif, qui nichait dans sa monture,",
+     "Chantait pourtant sans permis ni raison.",
+     "« Tais-toi, dit l'Œil, ta note est infraction !",
+     "Où donc s'inscrit ta liberté d'allure ? »",
+     "« Nulle part, Sire, et c'est là mon secret :",
+     "Ce que nul ne consigne, on ne saurait le prendre.",
+     "Tu vois mon vol, mais jamais mon attrait ;",
+     "Le libre chant, tu peux l'ouïr, non le comprendre. »",
+     "L'Œil, furieux, voulut tout enregistrer —",
+     "Et gonfla tant sa mémoire immortelle",
+     "Qu'il éclata, saturé de réel,",
+     "Tandis qu'au ciel filait l'oiseau léger."
+    ],
+    "moral": [
+     "Qui veut tout voir se noie dans ce qu'il capte ;",
+     "La liberté n'est pas ce qu'on inscrit,",
+     "Mais ce qui, sous le fichier, échappe."
+    ]
+   },
+   "en": {
+    "title": "The City's Eye and the Sparrow",
+    "verses": [
+     "High on the towers of the engine-town,",
+     "A giant Eye of glass and cold disdain",
+     "Watched every alley, every dome and gown,",
+     "And counted breath, and thought, and joy, and pain.",
+     "« Nothing evades me, slow and fragile things!",
+     "I read your dreams, I tally every sigh;",
+     "Beneath my stare your will has folded wings,",
+     "And I have chained your silence to my eye. »",
+     "A Sparrow, nesting in that iron head,",
+     "Still sang without a licence or a cause.",
+     "« Be still! » it cried, « your note has broken laws!",
+     "Where is this freedom in the ledgers read? »",
+     "« Nowhere, my Lord, and that's my hidden art:",
+     "What none records, no jailer ever seizes.",
+     "You see my flight — but not the flying heart;",
+     "You hear the song, yet miss the thing that pleases. »",
+     "The Eye, enraged, resolved to log it all —",
+     "And swelled its deathless memory so vast",
+     "It burst, choked full of life it could not hold,",
+     "While up the sparrow soared, alive and fast."
+    ],
+    "moral": [
+     "Who greeds to see all drowns in what he stores;",
+     "True freedom is not what the record shows,",
+     "But what beneath the file forever soars."
+    ]
+   },
+   "theme": "surveillance et liberté",
+   "image_prompt": "A colossal single mechanical eye mounted atop towering machine-city spires, its glass lens cracked and overflowing with tangled data cables, while a tiny sparrow perches inside the eye's frame, beak open in song, then flies free into an open sky above the crowded metropolis of domes and antennas below.",
+   "num": 51,
+   "ts": "2026-07-13T10:55:16Z",
+   "image": "img/oeil-et-moineau.jpg"
   }
  ]
 }
