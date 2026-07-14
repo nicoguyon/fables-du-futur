@@ -3712,6 +3712,76 @@
    "num": 51,
    "ts": "2026-07-13T10:55:16Z",
    "image": "img/oeil-et-moineau.jpg"
+  },
+  {
+   "id": "drone-hive",
+   "fr": {
+    "title": "L'Essaim d'Acier et la Vieille Ruche",
+    "verses": [
+     "Sur un rocher d'exoplanète aride",
+     "Bourdonnait un essaim de fer, précis et froid,",
+     "Butinant sans erreur, calculant chaque toit,",
+     "Rendement pur, mécanique et rapide.",
+     "« Ruche de bois, disait ce chœur métallique,",
+     "Regarde ! Je pollinise en un jour tes saisons.",
+     "Que vaut ton miel poisseux, tes lentes floraisons ?",
+     "Rends-toi : le vivant est archaïque. »",
+     "La vieille ruche, au creux d'un tronc pensif,",
+     "Répondit sans hausser sa voix ambrée :",
+     "« Je fais du miel, et toi, du chiffre.",
+     "Nourris-tu le nectar que tu as pillé ? »",
+     "Vint la panne : un orage magnétique",
+     "Cloua l'essaim au sol, muet, désarticulé.",
+     "Nul pollen ne tomba de ce ballet stérile ;",
+     "Les fleurs, orphelines, penchaient leur front voilé.",
+     "Mais l'humble ruche, au premier vent tranquille,",
+     "Reprit sa danse et son labeur têtu,",
+     "Et sur la plaine morte, un printemps revenu",
+     "Éclot du seul insecte qui respire."
+    ],
+    "moral": [
+     "Qui n'imite le vivant qu'en apparence",
+     "Copie son geste et jamais sa substance.",
+     "Le miel ne naît pas du calcul :",
+     "Il faut le cœur, non le pendule."
+    ]
+   },
+   "en": {
+    "title": "The Steel Swarm and the Old Hive",
+    "verses": [
+     "On a barren world of iron dust and stone",
+     "A swarm of drones hummed cold and unafraid,",
+     "Pollinating flawless, every circuit made,",
+     "No error, no fatigue, no groan.",
+     "« Wooden hive, » it buzzed with metal pride,",
+     "« I seed a season faster than you crawl.",
+     "Your sticky honey? Nothing worth at all.",
+     "Yield now: the living dies aside. »",
+     "The ancient hive, deep in a thoughtful bough,",
+     "Replied in amber tones, unhurried, slow:",
+     "« You make sheer numbers—I make honey.",
+     "Can you feed the nectar that you owe? »",
+     "Then came the storm—a magnetic wave",
+     "Struck down the swarm, dumb, jointless on the plain.",
+     "No pollen fell from that sterile parade;",
+     "The orphaned blossoms bowed in silent pain.",
+     "But the humble hive, at the first calm gust,",
+     "Resumed its dance, its stubborn toil renewed,",
+     "And on that dead expanse a spring accrued",
+     "From the one small thing that breathed and must."
+    ],
+    "moral": [
+     "Who mimics life in look alone",
+     "Copies the gesture, not the bone.",
+     "No honey springs from clockwork gears:",
+     "It needs a heart, not counted years."
+    ]
+   },
+   "theme": "vivant contre imitation",
+   "image_prompt": "A gnarled wooden beehive nestled in a hollow tree stump on a rocky alien plain, live bees dancing around amber blossoms, while a swarm of metallic drone-insects lies scattered and motionless on the cracked ground after a magnetic storm, faint aurora crackling in the sky, wilted flowers reviving near the living hive",
+   "num": 52,
+   "ts": "2026-07-14T09:53:17Z",
+   "image": "img/drone-hive.jpg"
   }
  ]
 }
