@@ -3782,6 +3782,72 @@
    "num": 52,
    "ts": "2026-07-14T09:53:17Z",
    "image": "img/drone-hive.jpg"
+  },
+  {
+   "id": "le-jardinier-orbital-et-la-lune-morte",
+   "fr": {
+    "title": "Le Jardinier Orbital et la Lune Morte",
+    "verses": [
+     "Sur un roc mort tournait une serre de verre,",
+     "Où d'un vieux Jardinier fleurissaient les efforts.",
+     "Il semait dans la poudre, il chauffait la lumière,",
+     "Et parlait à ses plants comme on parle aux endormis.",
+     "« Pourquoi, disait la Lune, un si vain labeur suivre ?",
+     "Je suis stérile et froide, on ne peut m'habiter ;",
+     "Tes graines, comme moi, ne sauraient jamais vivre :",
+     "Renonce, et laisse en paix mon roc déshérité. »",
+     "« Patience ! » dit le vieux, courbé sur sa rocaille.",
+     "Il vint des mille ans, il vint des mille pluies,",
+     "Il vint un souffle vert où soufflait la ferraille,",
+     "Et la serre creva de mousses et de fruits.",
+     "La Lune, s'éveillant sous un ciel qui verdoie,",
+     "Sentit courir en elle une sève, un émoi.",
+     "« Toi qui me disais morte, entends-tu cette joie ?",
+     "— Je ne rêvais, dit-elle, ô semeur, que par toi. »",
+     "Le Jardinier n'était plus là pour l'entendre :",
+     "Sous une fleur nouvelle il dormait, poussière et cendre."
+    ],
+    "moral": [
+     "Qui sème sans jamais espérer la moisson",
+     "Fait pousser l'avenir sur sa propre saison.",
+     "Le monde que tu laisses est ta plus belle preuve :",
+     "On ne meurt pas tout court quand la terre s'abreuve."
+    ]
+   },
+   "en": {
+    "title": "The Orbital Gardener and the Dead Moon",
+    "verses": [
+     "On a dead rock there turned a dome of frozen glass,",
+     "Where an old Gardener toiled through the endless night.",
+     "He sowed the sterile dust, he warmed the passing light,",
+     "And spoke to sleeping seeds as one speaks to a lass.",
+     "« Why, » sighed the Moon, « pursue this labor without end?",
+     "I'm cold and barren, none could ever dwell in me;",
+     "Your seeds, like all my stone, are doomed to never mend—",
+     "Give up, and leave my disinherited rock free. »",
+     "« Patience! » the old man said, bent low upon the scree.",
+     "There came a thousand years, a thousand iron rains,",
+     "There came a breath of green where hummed the broken chains,",
+     "And all the dome burst forth with moss and fruit and tree.",
+     "The Moon awoke beneath a sky grown soft and warm,",
+     "And felt a rising sap, a strange and living charm.",
+     "« You called me dead—now hear the joy that fills my form!",
+     "— I only dreamed, » she said, « old sower, through your arm. »",
+     "But he was gone, and could not hear her waking breath:",
+     "Beneath a fresh new flower he slept, in dust and death."
+    ],
+    "moral": [
+     "Who sows and never hopes to reap the ripened grain",
+     "Grows all the future up from his own passing reign.",
+     "The world you leave behind is your most lasting word:",
+     "You do not wholly die when quickened earth is stirred."
+    ]
+   },
+   "theme": "terraforming altruisme legs",
+   "image_prompt": "An old bearded gardener kneels inside a cracked glass dome on a barren gray moon, pressing seeds into pale dust. Around him young green vines and small fruit trees burst through the soil toward a sky where a distant sun glows. Outside the dome, dead craters stretch to the horizon. His tools lie scattered; one flower blooms above where he rests.",
+   "num": 53,
+   "ts": "2026-07-15T09:56:52Z",
+   "image": "img/le-jardinier-orbital-et-la-lune-morte.jpg"
   }
  ]
 }
