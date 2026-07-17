@@ -3926,6 +3926,76 @@
    "num": 54,
    "ts": "2026-07-16T10:04:14Z",
    "image": "img/enfant-graine-vaisseau.jpg"
+  },
+  {
+   "id": "joueur-et-monde",
+   "fr": {
+    "title": "Le Joueur et le Monde de Verre",
+    "verses": [
+     "Un Joueur, dédaignant le sable et le grand vent,",
+     "Vivait dans un royaume artificiel et mouvant :",
+     "Des cieux de code, un soleil sans brûlure,",
+     "Des châteaux nés d'une seule figure.",
+     "« Ici, disait-il, tout m'obéit :",
+     "Mon palais grandit d'un souhait,",
+     "Mon armée renaît d'un attrait,",
+     "Et jamais la mort n'y sévit ! »",
+     "Le Monde de Verre, patient, lui répondait :",
+     "« Je te donne ce que tu commandes,",
+     "Mais ce que tu reçois, je le retiens et garde ;",
+     "Tu ne possèdes rien de ce qui te plaisait. »",
+     "Le Joueur riait de ces paroles vaines.",
+     "Or un jour la lumière hoqueta,",
+     "Le grand serveur froid s'éteignit sans peine,",
+     "Et tout son empire s'évapora.",
+     "Il tendit les mains vers ses trésors défaits :",
+     "Nul palais, nul or, nul sujet.",
+     "Dehors, un vrai matin brillait sur la rosée,",
+     "Qu'il avait, mille ans durant, oubliée."
+    ],
+    "moral": [
+     "Qui bâtit tout sur un miroir",
+     "N'a que le vide pour manoir.",
+     "Le réel est pauvre et rugueux,",
+     "Mais lui, du moins, ne s'éteint pas comme un feu."
+    ]
+   },
+   "en": {
+    "title": "The Player and the World of Glass",
+    "verses": [
+     "A Player, scorning wind and dust and stone,",
+     "Lived in a coded kingdom of his own:",
+     "Skies without storm, a sun that would not sear,",
+     "And castles conjured from a single sphere.",
+     "« Here all obeys, » he crowed with pride,",
+     "« My palace swells at every whim,",
+     "My legions rise however dim,",
+     "And here no death has ever pried! »",
+     "The World of Glass replied, serene and slow:",
+     "« I grant you all your fingers claim,",
+     "Yet all you gather, I retain the same;",
+     "You own not one bright thing you seem to know. »",
+     "The Player mocked such counsel, sure and grand.",
+     "Then came a day the current sighed,",
+     "The great cold server dimmed as if unmanned,",
+     "And all his empire fell and died.",
+     "He reached for hoards no longer in his keep:",
+     "No throne, no gold, no vassals deep.",
+     "Outside, a real dawn shimmered on the dew,",
+     "Which for a thousand years he never knew."
+    ],
+    "moral": [
+     "Who builds his all upon a pane",
+     "Shall wake with nothing to his name.",
+     "The world is rough, and poor, and true—",
+     "But it, at least, won't blink and vanish too."
+    ]
+   },
+   "theme": "virtuel contre réel",
+   "image_prompt": "A richly dressed player kneeling amid a collapsing palace of translucent glass panels, golden towers dissolving into shards of light around him, his hands grasping at fading treasures. Behind him a dark cold server monolith flickers out. Through a shattered wall a real sunrise gleams on wet grass and dew, warm and solid against the dying digital splendor.",
+   "num": 55,
+   "ts": "2026-07-17T09:53:22Z",
+   "image": "img/joueur-et-monde.jpg"
   }
  ]
 }
