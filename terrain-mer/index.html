@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Un terrain au bord de la mer, au plus près de Paris</title>
-<meta name="description" content="Synthèse complète : où acheter un terrain (constructible ou non) le plus près possible de la mer et de Paris en voiture — annonces, prix, temps de route, liens.">
+<title>Pépites : terrains bord de mer à ~2h de Paris</title>
+<meta name="description" content="Catalogue de terrains à vendre vérifiés un par un — constructibles ou loisirs — au plus près de la mer et de Paris. Photos réelles, prix, liens directs vers les annonces.">
 <style>
   :root{
     --sand:#faf7f0; --surface:#fcfcfb; --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781;
@@ -15,82 +15,80 @@
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--sand);color:var(--ink);line-height:1.6;font-size:16px}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
   a{color:var(--sea);text-decoration:none}
   a:hover{text-decoration:underline}
 
-  /* HERO */
-  header{background:linear-gradient(160deg,#0d366b 0%,#1c5cab 55%,#2a78d6 100%);color:#fff;padding:56px 0 48px}
-  header .wrap{max-width:1080px}
+  header{background:linear-gradient(160deg,#0d366b 0%,#1c5cab 55%,#2a78d6 100%);color:#fff;padding:44px 0 38px}
   .kicker{text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;opacity:.85;margin-bottom:10px}
-  h1{font-size:clamp(1.7rem,4.5vw,2.6rem);line-height:1.15;font-weight:800;max-width:760px}
-  .sub{margin-top:14px;font-size:1.05rem;opacity:.92;max-width:720px}
-  .hero-stats{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-  .stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:var(--radius);padding:14px 18px;min-width:150px;flex:1 1 150px;max-width:240px}
-  .stat b{display:block;font-size:1.35rem;font-weight:800}
-  .stat span{font-size:.82rem;opacity:.88}
+  h1{font-size:clamp(1.6rem,4.5vw,2.4rem);line-height:1.15;font-weight:800;max-width:820px}
+  .sub{margin-top:12px;font-size:1.02rem;opacity:.92;max-width:780px}
+  .hero-stats{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+  .stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:var(--radius);padding:12px 16px;min-width:150px;flex:1 1 150px;max-width:250px}
+  .stat b{display:block;font-size:1.3rem;font-weight:800}
+  .stat span{font-size:.8rem;opacity:.88}
 
-  /* SECTIONS */
-  section{padding:44px 0}
-  h2{font-size:clamp(1.3rem,3vw,1.7rem);font-weight:800;margin-bottom:6px}
-  .lead{color:var(--ink-2);margin-bottom:24px;max-width:780px}
-  h3{font-size:1.08rem;font-weight:700;margin:22px 0 8px}
+  section{padding:40px 0}
+  h2{font-size:clamp(1.3rem,3vw,1.65rem);font-weight:800;margin-bottom:6px}
+  .lead{color:var(--ink-2);margin-bottom:22px;max-width:820px}
+  .grouptitle{display:flex;align-items:baseline;gap:10px;margin:34px 0 14px}
+  .grouptitle h3{font-size:1.15rem;font-weight:800}
+  .grouptitle span{color:var(--muted);font-size:.85rem}
+  .grouptitle:first-of-type{margin-top:8px}
 
-  /* STRATEGIES */
-  .cards3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
-  .strat{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--radius);padding:22px;box-shadow:0 1px 3px rgba(11,11,11,.05)}
-  .strat .tag{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--sea-light);color:var(--sea);border-radius:99px;padding:3px 12px;margin-bottom:10px}
-  .strat h3{margin:0 0 6px;font-size:1.12rem}
-  .strat p{font-size:.92rem;color:var(--ink-2)}
-  .strat .pick{margin-top:12px;padding-top:12px;border-top:1px dashed var(--hairline);font-size:.9rem}
-  .strat .pick b{color:var(--ink)}
-
-  /* BAR CHART */
-  .chart{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--radius);padding:26px 22px;box-shadow:0 1px 3px rgba(11,11,11,.05)}
-  .chart-title{font-weight:700;margin-bottom:2px}
-  .chart-sub{font-size:.85rem;color:var(--muted);margin-bottom:18px}
-  .brow{display:grid;grid-template-columns:170px 1fr 56px;align-items:center;gap:10px;padding:4px 0;border-radius:8px}
-  .brow:hover{background:var(--neutral-bg)}
-  .brow .lbl{font-size:.88rem;color:var(--ink);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .brow .lbl small{color:var(--muted);font-size:.75rem}
-  .brow .track{height:14px;position:relative;display:block}
-  .brow .bar{display:block;height:14px;border-radius:0 4px 4px 0;background:var(--sea-mid);min-width:6px}
-  .brow.sable .bar{background:var(--sea-mid)}
-  .brow .val{font-size:.85rem;color:var(--ink-2);font-variant-numeric:tabular-nums;white-space:nowrap}
-  .chart-note{font-size:.8rem;color:var(--muted);margin-top:14px}
-  @media(max-width:560px){.brow{grid-template-columns:120px 1fr 52px}.brow .lbl{font-size:.78rem}}
-
-  /* ZONES */
-  .zones{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-  .zone{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 3px rgba(11,11,11,.05);display:flex;flex-direction:column}
-  .zone img{width:100%;height:170px;object-fit:cover;display:block}
-  .zone .body{padding:18px 20px 20px;flex:1;display:flex;flex-direction:column}
-  .zone h3{margin:0 0 4px;font-size:1.1rem}
-  .zone .meta{font-size:.82rem;color:var(--sea);font-weight:700;margin-bottom:8px}
-  .zone p{font-size:.9rem;color:var(--ink-2);flex:1}
-  .zone .prix{margin-top:10px;font-size:.85rem;background:var(--neutral-bg);border-radius:8px;padding:8px 12px}
+  /* CARDS */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+  .card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 3px rgba(11,11,11,.05);display:flex;flex-direction:column;position:relative}
+  .card img{width:100%;height:180px;object-fit:cover;display:block;background:var(--neutral-bg)}
+  .card .flag{position:absolute;top:10px;left:10px;background:#0d366b;color:#fff;font-size:.72rem;font-weight:800;border-radius:99px;padding:4px 12px;letter-spacing:.03em;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+  .card .body{padding:14px 16px 16px;flex:1;display:flex;flex-direction:column;gap:6px}
+  .price{font-size:1.3rem;font-weight:800}
+  .price small{font-size:.82rem;color:var(--muted);font-weight:600}
+  .loc{font-size:.9rem;font-weight:700}
+  .loc span{color:var(--muted);font-weight:400;font-size:.8rem}
+  .badges{display:flex;flex-wrap:wrap;gap:5px}
+  .b{display:inline-block;font-size:.7rem;font-weight:700;border-radius:99px;padding:2px 10px;white-space:nowrap}
+  .b.ok{background:var(--good-bg);color:var(--good)}
+  .b.no{background:var(--neutral-bg);color:var(--ink-2)}
+  .b.warn{background:var(--warn-bg);color:var(--warn)}
+  .b.sea{background:var(--sea-light);color:var(--sea)}
+  .card p{font-size:.85rem;color:var(--ink-2);flex:1}
+  .cta{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+  .btn{display:inline-block;background:var(--sea);color:#fff;font-size:.82rem;font-weight:700;border-radius:8px;padding:7px 14px}
+  .btn:hover{background:#0d366b;text-decoration:none}
+  .btn.ghost{background:var(--neutral-bg);color:var(--sea)}
+  .btn.ghost:hover{background:var(--sea-light)}
 
   /* TABLE */
   .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
   .chip{border:1px solid var(--hairline);background:var(--surface);border-radius:99px;padding:6px 16px;font-size:.85rem;cursor:pointer;color:var(--ink-2)}
   .chip.on{background:var(--sea);border-color:var(--sea);color:#fff;font-weight:700}
   .tablebox{overflow-x:auto;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--radius);box-shadow:0 1px 3px rgba(11,11,11,.05)}
-  table{border-collapse:collapse;width:100%;min-width:880px;font-size:.88rem}
+  table{border-collapse:collapse;width:100%;min-width:900px;font-size:.88rem}
   th{position:sticky;top:0;background:var(--surface);text-align:left;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);padding:12px 14px;border-bottom:2px solid var(--hairline);white-space:nowrap}
-  td{padding:11px 14px;border-bottom:1px solid var(--hairline);vertical-align:top}
+  td{padding:10px 14px;border-bottom:1px solid var(--hairline);vertical-align:top}
   tr:last-child td{border-bottom:none}
   tbody tr:hover{background:var(--neutral-bg)}
   td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
-  .b{display:inline-block;font-size:.72rem;font-weight:700;border-radius:99px;padding:2px 10px;white-space:nowrap}
-  .b.ok{background:var(--good-bg);color:var(--good)}
-  .b.no{background:var(--neutral-bg);color:var(--ink-2)}
-  .b.warn{background:var(--warn-bg);color:var(--warn)}
-  .star{color:var(--sea);font-weight:800}
   td .com{font-weight:700}
   td .dep{color:var(--muted);font-size:.78rem}
   .tnote{font-size:.8rem;color:var(--muted);margin-top:12px}
 
-  /* LINKS */
+  /* CHART */
+  .chart{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--radius);padding:24px 22px;box-shadow:0 1px 3px rgba(11,11,11,.05)}
+  .chart-title{font-weight:700;margin-bottom:2px}
+  .chart-sub{font-size:.85rem;color:var(--muted);margin-bottom:16px}
+  .brow{display:grid;grid-template-columns:170px 1fr 56px;align-items:center;gap:10px;padding:4px 0;border-radius:8px}
+  .brow:hover{background:var(--neutral-bg)}
+  .brow .lbl{font-size:.88rem;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brow .lbl small{color:var(--muted);font-size:.75rem}
+  .brow .track{height:14px;display:block}
+  .brow .bar{display:block;height:14px;border-radius:0 4px 4px 0;background:var(--sea-mid);min-width:6px}
+  .brow .val{font-size:.85rem;color:var(--ink-2);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .chart-note{font-size:.8rem;color:var(--muted);margin-top:12px}
+  @media(max-width:560px){.brow{grid-template-columns:120px 1fr 52px}.brow .lbl{font-size:.78rem}}
+
+  /* LINKS + TIPS */
   .linkgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
   .linkcard{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--radius);padding:20px}
   .linkcard h3{margin:0 0 10px;font-size:1rem}
@@ -98,13 +96,11 @@
   .linkcard li{padding:5px 0;font-size:.9rem;border-bottom:1px dashed var(--hairline)}
   .linkcard li:last-child{border-bottom:none}
   .linkcard .site{color:var(--muted);font-size:.78rem}
-
-  /* CONSEILS */
   .tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
   .tip{background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--sea-mid);border-radius:10px;padding:16px 18px;font-size:.9rem}
   .tip b{display:block;margin-bottom:4px}
 
-  footer{background:#0d366b;color:rgba(255,255,255,.85);padding:32px 0;font-size:.82rem;margin-top:20px}
+  footer{background:#0d366b;color:rgba(255,255,255,.85);padding:30px 0;font-size:.82rem;margin-top:20px}
   footer a{color:#9ec5f4}
   .alt{background:#fff;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
 </style>
@@ -113,53 +109,395 @@
 
 <header>
   <div class="wrap">
-    <div class="kicker">Recherche foncière · juillet 2026</div>
-    <h1>Un terrain au bord de la mer, au plus près de Paris 🌊</h1>
-    <p class="sub">Toutes les côtes accessibles en ~2h à 2h30 de voiture passées au crible : temps de route réels, prix du foncier, et une trentaine d'annonces actives (constructibles <em>et</em> terrains de loisirs) relevées sur Leboncoin, PAP, SeLoger, Superimmo, EtreProprio, Logic-Immo, terrain-construction.com et les agences locales.</p>
+    <div class="kicker">Chasse aux pépites · vérifié le 23 juillet 2026</div>
+    <h1>34 terrains bord de mer à ~2h de Paris, vérifiés un par un 🌊</h1>
+    <p class="sub">Chaque annonce ci-dessous a été <b>ouverte et confirmée active aujourd'hui</b> — photo réelle du bien, prix, surface et lien direct. Sources : Bien'ici (flux live), Superimmo, EtreProprio, iad, agences locales. Zéro blabla, que des biens précis.</p>
     <div class="hero-stats">
-      <div class="stat"><b>195 km</b><span>Dieppe, la mer la plus proche de Paris</span></div>
-      <div class="stat"><b>≈ 1h50</b><span>Le Havre, le trajet le plus rapide (A13 + A131)</span></div>
-      <div class="stat"><b>dès 18 000 €</b><span>terrain de loisirs ~5 000 m² à Cayeux-sur-Mer</span></div>
-      <div class="stat"><b>dès 26 500 €</b><span>constructible à Ault, à moins d'1 km de la mer</span></div>
+      <div class="stat"><b>35 000 €</b><span>900 m² constructibles en Baie de Somme (Pendé)</span></div>
+      <div class="stat"><b>200 m</b><span>de la plage : 1 419 m² à Berneval, 85 000 € (−11,5 %)</span></div>
+      <div class="stat"><b>4,5 ha</b><span>de marais à 500 m de la baie pour 78 000 €</span></div>
+      <div class="stat"><b>18 000 €</b><span>4 970 m² boisés à Cayeux-sur-Mer</span></div>
     </div>
   </div>
 </header>
 
-<section>
+<section id="pepites">
   <div class="wrap">
-    <h2>La synthèse en 3 stratégies</h2>
-    <p class="lead">Hors trafic, tout le littoral normand et picard se joue entre 1h50 et 2h40 de Paris. Ce qui départage vraiment les zones, c'est le type de plage, le prix du m² et ce qu'on veut faire du terrain.</p>
-    <div class="cards3">
-      <div class="strat">
-        <div class="tag">⚡ La plus proche</div>
-        <h3>Dieppe · Le Tréport · côte d'Albâtre</h3>
-        <p>La mer la plus proche de Paris en kilomètres (195 km) et quasi la plus rapide (~2h05). Falaises de craie, plages de galets, vraies villes à l'année. Foncier doux : 50–130 €/m².</p>
-        <div class="pick">⭐ <b>Coup de cœur :</b> Petit-Caux (10 min de Dieppe), 1 419 m² à <b>85 000 €</b>, plage à <b>200 m à pied</b>, vue mer possible.</div>
+    <h2>Les pépites</h2>
+    <p class="lead">Classées en 4 familles. ⭐ = mes coups de cœur. Les temps indiqués = route depuis Paris hors trafic.</p>
+
+    <div class="grouptitle"><h3>🌊 Les pieds dans l'eau</h3><span>à moins de 500 m de la plage</span></div>
+    <div class="grid">
+      <div class="card"><span class="flag">⭐ COUP DE CŒUR</span><img src="img/annonces/berneval-85k.jpg" alt="Terrain Berneval-le-Grand" loading="lazy">
+        <div class="body">
+          <div class="price">85 000 € <small>· 60 €/m²</small></div>
+          <div class="loc">Berneval-le-Grand (Petit-Caux) <span>· Seine-Maritime · ≈ 2h10</span></div>
+          <div class="badges"><span class="b sea">Mer à 200 m à pied</span><span class="b ok">✓ ~900 m² constructibles</span><span class="b warn">−11,5 % en juin</span></div>
+          <p>1 419 m² dont ~900 constructibles + partie boisée. Aperçu mer possible, Dieppe à 10 min, réseaux en bordure. Le prix vient de baisser de 96 000 à 85 000 €.</p>
+          <div class="cta"><a class="btn" href="https://www.bienici.com/annonce/netty-company54396zsr-land-4278" target="_blank" rel="noopener">Voir sur Bien'ici →</a><a class="btn ghost" href="https://www.superimmo.com/annonces/achat-terrain-1419m-petit-caux-76370-x11ebsd" target="_blank" rel="noopener">Superimmo</a></div>
+        </div>
       </div>
-      <div class="strat">
-        <div class="tag">🏖️ Sable + autoroute directe</div>
-        <h3>Côte Fleurie (Deauville → Cabourg)</h3>
-        <p>~2h de pure autoroute par l'A13, plages de sable fin, gares directes. C'est le secteur chic : comptez 300–600 €/m² (jusqu'à 1 500 €/m² à Trouville/Villers hyper-centre).</p>
-        <div class="pick">⭐ <b>Entrée de gamme :</b> Villers-sur-Mer, 334 m² à <b>129 600 €</b> à 1 km de la plage — ou Houlgate, 323 m² à <b>115 500 €</b> à 500 m de la mer.</div>
+      <div class="card"><img src="img/annonces/cayeux-100k.jpg" alt="Terrain Cayeux-sur-Mer secteur Brighton" loading="lazy">
+        <div class="body">
+          <div class="price">100 000 € <small>· 151 €/m²</small></div>
+          <div class="loc">Cayeux-sur-Mer, secteur Brighton <span>· Somme · ≈ 2h30</span></div>
+          <div class="badges"><span class="b sea">Plage à qq centaines de m</span><span class="b ok">✓ Constructible</span></div>
+          <p>663 m² arborés et entretenus entre dunes et galets, « rare à la vente ». Le même terrain est aussi affiché 110 000 € FAI chez une autre agence — négocier.</p>
+          <div class="cta"><a class="btn" href="https://www.bienici.com/annonce/entities-1046596-3757065" target="_blank" rel="noopener">Voir sur Bien'ici →</a><a class="btn ghost" href="https://www.superimmo.com/annonces/achat-terrain-663m-cayeux-sur-mer-80410-x11ekjk" target="_blank" rel="noopener">Superimmo</a></div>
+        </div>
       </div>
-      <div class="strat">
-        <div class="tag">💶 Max de terrain pour l'euro</div>
-        <h3>Baie de Somme &amp; côte picarde</h3>
-        <p>~2h10–2h30 par l'A16. Sable, dunes, phoques, lumière incroyable. Le gisement des terrains de <b>loisirs non constructibles</b> à petit prix (4–9 €/m²) et du constructible abordable.</p>
-        <div class="pick">⭐ <b>Bonne affaire :</b> Cayeux-sur-Mer, 4 970 m² boisés à <b>18 000 €</b> — ou constructible 621 m² « à quelques pas de la plage » à <b>99 000 €</b>.</div>
+      <div class="card"><img src="img/annonces/cayeux-95k.jpg" alt="Terrain Cayeux-sur-Mer Nestenn" loading="lazy">
+        <div class="body">
+          <div class="price">95 000 € <small>· 123 €/m²</small></div>
+          <div class="loc">Cayeux-sur-Mer <span>· Somme · ≈ 2h30</span></div>
+          <div class="badges"><span class="b sea">Plage à qq minutes à pied</span><span class="b ok">✓ Constructible</span><span class="b warn">Exclusivité</span></div>
+          <p>770 m² à l'abri des regards, libres de constructeur. Exclusivité Nestenn Amiens — « rare sur le secteur, à voir rapidement ».</p>
+          <div class="cta"><a class="btn" href="https://www.bienici.com/annonce/nestenn-1-99939510628" target="_blank" rel="noopener">Voir sur Bien'ici →</a></div>
+        </div>
+      </div>
+      <div class="card"><span class="flag">⭐ VUE MER</span><img src="img/annonces/criel-130k.jpg" alt="Terrain vue mer Criel-sur-Mer" loading="lazy">
+        <div class="body">
+          <div class="price">130 000 € <small>· 76 €/m²</small></div>
+          <div class="loc">Criel-sur-Mer <span>· Seine-Maritime · ≈ 2h15</span></div>
+          <div class="badges"><span class="b sea">Vue mer directe</span><span class="b ok">✓ Constructible</span></div>
+          <p>1 719 m² constructibles avec vue mer — quasi introuvable à ce prix sur la côte d'Albâtre.</p>
+          <div class="cta"><a class="btn" href="https://www.superimmo.com/annonces/achat-terrain-1719m-criel-sur-mer-76910-x11f8a6" target="_blank" rel="noopener">Voir l'annonce →</a><a class="btn ghost" href="https://www.bienici.com/annonce/hektor-1806_EXPERTIMO22-291722" target="_blank" rel="noopener">Bien'ici</a></div>
+        </div>
+      </div>
+      <div class="card"><span class="flag">⭐ RARISSIME</span><img src="img/annonces/staubin-227k.jpg" alt="Terrain avec maison à colombages Saint-Aubin-sur-Mer" loading="lazy">
+        <div class="body">
+          <div class="price">227 900 € <small>· 43 €/m²</small></div>
+          <div class="loc">Saint-Aubin-sur-Mer <span>· Seine-Maritime · ≈ 2h20</span></div>
+          <div class="badges"><span class="b sea">Plage à qq pas</span><span class="b ok">✓ Constructible</span><span class="b no">+ maison 70 m² à rénover</span></div>
+          <p>5 319 m² — plus d'un demi-hectare quasi les pieds dans l'eau (plage du Grand Sable), avec maison en colombages et dépendance à rénover ou raser pour bâtir.</p>
+          <div class="cta"><a class="btn" href="https://www.etreproprio.com/immobilier-22988793-vente-rare-terrain-de-5319m2-avec-maison-en-colombages-et-dependance-a-renover-ou-a-batir-saint-aubin-sur-mer" target="_blank" rel="noopener">Voir l'annonce →</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grouptitle"><h3>💶 Constructibles à petit prix</h3><span>de 35 000 à 75 000 €</span></div>
+    <div class="grid">
+      <div class="card"><span class="flag">⭐ PRIX PLANCHER</span><img src="img/annonces/pende-35k.jpg" alt="Terrain à bâtir Pendé" loading="lazy">
+        <div class="body">
+          <div class="price">35 000 € <small>· 39 €/m²</small></div>
+          <div class="loc">Pendé <span>· Somme, Baie de Somme · ≈ 2h20</span></div>
+          <div class="badges"><span class="b ok">✓ Terrain à bâtir</span><span class="b sea">Baie à ~2 km</span></div>
+          <p>900 m² constructibles proche de la Baie de Somme — le constructible le moins cher relevé sur toute la côte. Mandataire Expertimo (F. Dufestel).</p>
+          <div class="cta"><a class="btn" href="https://www.bienici.com/annonce/hektor-1806_EXPERTIMO22-270896" target="_blank" rel="noopener">Voir sur Bien'ici →</a></div>
+        </div>
+      </div>
+      <div class="card"><img src="img/annonces/stvalery-43k.jpg" alt="Terrain Saint-Valery-en-Caux" loading="lazy">
+        <div class="body">
+          <div class="price">43 000 € <small>· 44 €/m²</small></div>
+          <div class="loc">Saint-Valery-en-Caux <span>· Seine-Maritime · ≈ 2h20</span></div>
+          <div class="badges"><span class="b ok">✓ Constructible, borné</span><span class="b ok">✓ Réseaux + tout-à-l'égout en bordure</span></div>
+          <p>968 m² bornés, eau/électricité/égout/télécom en bordure de route, dans la ville-port de plaisance. Century 21.</p>
+          <div class="cta"><a class="btn" href="https://www.bienici.com/annonce/century-21-202_2808_12654" target="_blank" rel="noopener">Voir sur Bien'ici →</a></div>
+        </div>
+      </div>
+      <div class="card"><img src="img/annonces/pende-44k.jpg" alt="Terrain Pendé CU positif" loading="lazy">
+        <div class="body">
+          <div class="price">44 000 € <small>· 46 €/m²</small></div>
+          <div class="loc">Pendé <span>· Somme, Baie de Somme · ≈ 2h20</span></div>
+          <div class="badges"><span class="b ok">✓ CU positif</span><span class="b sea">St-Valery à 5 min</span></div>
+          <p>966 m² avec certificat d'urbanisme positif, hors périmètre classé — moitié du prix des communes voisines de la baie.</p>
+          <div class="cta"><a class="btn" href="https://www.superimmo.com/annonces/achat-terrain-966m-pende-80230-x10c4oh" target="_blank" rel="noopener">Voir l'annonce →</a></div>
+        </div>
+      </div>
+      <div class="card"><img src="img/annonces/gueutteville-49k.jpg" alt="Terrain Gueutteville-les-Grès" loading="lazy">
+        <div class="body">
+          <div class="price">49 000 € <small>· 39 €/m²</small></div>
+          <div class="loc">Gueutteville-les-Grès <span>· Seine-Maritime · ≈ 2h20</span></div>
+          <div class="badges"><span class="b ok">✓ Constructible</span><span class="b no">Mer à ~6 km</span></div>
+          <p>1 243 m², façade de 23 m, vue champs, entre Saint-Valery-en-Caux et Veules-les-Roses. iad (Clément Lefebvre).</p>
+          <div class="cta"><a class="btn" href="https://www.bienici.com/annonce/iad-france-1903826" target="_blank" rel="noopener">Voir sur Bien'ici →</a></div>
+        </div>
+      </div>
+      <div class="card"><img src="img/annonces/fecamp-55k.jpg" alt="Terrain Fécamp vue vallée" loading="lazy">
+        <div class="body">
+          <div class="price">55 000 € <small>· 33 €/m²</small></div>
+          <div class="loc">Fécamp <span>· Seine-Maritime · ≈ 2h20</span></div>
+          <div class="badges"><span class="b ok">✓ 1 200 m² constructibles</span><span class="b sea">Vue vallée</span></div>
+          <p>1 654 m² au total avec « vue imprenable sur la vallée », à quelques minutes du centre de Fécamp. Century 21 Accore. (Aussi : 437 m² sur les hauteurs à 50 000 € chez Laforêt.)</p>
+          <div class="cta"><a class="btn" href="https://www.bienici.com/annonce/century-21-202_3149_2858" target="_blank" rel="noopener">Voir sur Bien'ici →</a><a class="btn ghost" href="https://www.bienici.com/annonce/laforet-immo-facile-52457596" target="_blank" rel="noopener">Le 437 m²</a></div>
+        </div>
+      </div>
+      <div class="card"><img src="img/annonces/ault-55k.jpg" alt="Terrain à bâtir Ault" loading="lazy">
+        <div class="body">
+          <div class="price">55 000 € <small>· 126 €/m²</small></div>
+          <div class="loc">Ault <span>· Somme, pays des falaises · ≈ 2h20</span></div>
+          <div class="badges"><span class="b ok">✓ Constructible</span><span class="b sea">Plage à 900 m</span><span class="b no">Garage béton inclus</span></div>
+          <p>437 m² en cœur de station, deux accès, garage béton 16 m² déjà bâti, centre à 700 m. BSK Immobilier.</p>
+          <div class="cta"><a class="btn" href="https://www.etreproprio.com/immobilier-25929168-vente-terrain-a-batir-437-m-facade-9-m-ault" target="_blank" rel="noopener">Voir l'annonce →</a><a class="btn ghost" href="https://www.bienici.com/annonce/ag311656-535245248" target="_blank" rel="noopener">Bien'ici</a></div>
+        </div>
+      </div>
+      <div class="card"><img src="img/annonces/criel-60k.jpg" alt="Terrain Criel-sur-Mer eau et électricité" loading="lazy">
+        <div class="body">
+          <div class="price">60 000 € <small>· 95 €/m²</small></div>
+          <div class="loc">Criel-sur-Mer <span>· Seine-Maritime · ≈ 2h15</span></div>
+          <div class="badges"><span class="b ok">✓ Constructible</span><span class="b ok">✓ Eau + élec sur place</span></div>
+          <p>634 m² plats, clôturés, arborés, eau et électricité déjà raccordées — utilisable tout de suite. (Aussi : 620 m² à 56 000 € chez Maisons France Confort.)</p>
+          <div class="cta"><a class="btn" href="https://www.superimmo.com/annonces/achat-terrain-634m-criel-sur-mer-76910-xvnh9i" target="_blank" rel="noopener">Voir l'annonce →</a><a class="btn ghost" href="https://www.bienici.com/annonce/entities-1046563-3825549" target="_blank" rel="noopener">Le 620 m²</a></div>
+        </div>
+      </div>
+      <div class="card"><img src="img/annonces/penly-58k.jpg" alt="Terrain Penly" loading="lazy">
+        <div class="body">
+          <div class="price">58 000 € <small>· 58 €/m²</small></div>
+          <div class="loc">Penly <span>· Seine-Maritime, proche Dieppe · ≈ 2h15</span></div>
+          <div class="badges"><span class="b ok">✓ CU obtenu</span><span class="b no">+3 000 m² en option</span></div>
+          <p>1 000 m² plats entre les champs, certificat d'urbanisme obtenu, raccordements en bordure — avec possibilité d'ajouter 3 000 m² non constructibles. SAFTI.</p>
+          <div class="cta"><a class="btn" href="https://www.superimmo.com/annonces/achat-terrain-1000m-penly-76630-x11o65h" target="_blank" rel="noopener">Voir l'annonce →</a><a class="btn ghost" href="https://www.bienici.com/annonce/safti-1-1689310" target="_blank" rel="noopener">Bien'ici</a></div>
+        </div>
+      </div>
+      <div class="card"><img src="img/annonces/belleville-60k.jpg" alt="Terrain Belleville-sur-Mer" loading="lazy">
+        <div class="body">
+          <div class="price">60 500 € <small>· 61 €/m²</small></div>
+          <div class="loc">Belleville-sur-Mer (Petit-Caux) <span>· Seine-Maritime · ≈ 2h10</span></div>
+          <div class="badges"><span class="b ok">✓ Constructible, hors lotissement</span><span class="b sea">Mer à qq minutes</span></div>
+          <p>1 000 m² dans un quartier recherché, réseaux en bordure, école à 400 m. (Dans le même secteur : 811 m² à 59 600 € chez ERA.)</p>
+          <div class="cta"><a class="btn" href="https://www.bienici.com/annonce/hektor-victoriaimmob76200-771" target="_blank" rel="noopener">Voir sur Bien'ici →</a><a class="btn ghost" href="https://www.bienici.com/annonce/era-2-57638595" target="_blank" rel="noopener">Le 811 m²</a></div>
+        </div>
+      </div>
+      <div class="card"><img src="img/annonces/conteville-70k.jpg" alt="Terrain Conteville près Honfleur" loading="lazy">
+        <div class="body">
+          <div class="price">70 000 € <small>· 87 €/m²</small></div>
+          <div class="loc">Conteville, près Honfleur <span>· Eure, estuaire · ≈ 2h05</span></div>
+          <div class="badges"><span class="b ok">✓ Constructible, plat</span><span class="b warn">Exclusivité</span></div>
+          <p>802 m² en plein bourg, proche estuaire, à 15 min d'Honfleur — et à moins de 2h de Paris par l'A13. (Voisin : 505 m² avec permis de construire validé à 73 000 € à Berville-sur-Mer.)</p>
+          <div class="cta"><a class="btn" href="https://www.bienici.com/annonce/ag761829-538440704" target="_blank" rel="noopener">Voir sur Bien'ici →</a><a class="btn ghost" href="https://www.bienici.com/annonce/iad-france-925234" target="_blank" rel="noopener">Berville + PC</a></div>
+        </div>
+      </div>
+      <div class="card"><img src="img/annonces/stmartin-75k.jpg" alt="Terrain Saint-Martin-aux-Buneaux" loading="lazy">
+        <div class="body">
+          <div class="price">75 000 € <small>· 58 €/m²</small></div>
+          <div class="loc">Saint-Martin-aux-Buneaux <span>· Seine-Maritime · ≈ 2h25</span></div>
+          <div class="badges"><span class="b ok">✓ Constructible</span><span class="b sea">Petites-Dalles à ~2 km</span></div>
+          <p>1 300 m² exposés sud, vue dégagée, école et supérette à pied, plage des Petites-Dalles à 2 km.</p>
+          <div class="cta"><a class="btn" href="https://www.bienici.com/annonce/entities-1046568-3777688" target="_blank" rel="noopener">Voir sur Bien'ici →</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grouptitle"><h3>🌳 Loisirs XXL à prix mini</h3><span>non constructibles — jardin, camp de base, chasse, nature</span></div>
+    <div class="grid">
+      <div class="card"><span class="flag">⭐ 3,6 €/m²</span><img src="img/annonces/cayeux-18k.jpg" alt="Terrain arboré Cayeux-sur-Mer" loading="lazy">
+        <div class="body">
+          <div class="price">18 000 € <small>· 4 970 m²</small></div>
+          <div class="loc">Cayeux-sur-Mer <span>· Somme · ≈ 2h30</span></div>
+          <div class="badges"><span class="b no">Loisirs, non constructible</span><span class="b sea">Commune littorale</span></div>
+          <p>Près de 5 000 m² arborés pour le prix d'une voiture d'occasion. Le boisé voisin de 4 320 m² est à 23 000 €. Agence OPAL'IM.</p>
+          <div class="cta"><a class="btn" href="https://www.etreproprio.com/immobilier-25307448-vente-terrain-arbore-a-cayeux-sur-mer-cayeux-sur-mer" target="_blank" rel="noopener">Voir l'annonce →</a><a class="btn ghost" href="https://www.etreproprio.com/immobilier-25307446-vente-terrain-boise-a-cayeux-sur-mer-cayeux-sur-mer" target="_blank" rel="noopener">Le 4 320 m²</a></div>
+        </div>
+      </div>
+      <div class="card"><span class="flag">⭐ DÉJÀ VIABILISÉ</span><img src="img/annonces/periers-19k.jpg" alt="Terrain de loisirs Périers-en-Auge" loading="lazy">
+        <div class="body">
+          <div class="price">19 500 € <small>· 450 m²</small></div>
+          <div class="loc">Périers-en-Auge, près Cabourg <span>· Calvados · ≈ 2h15</span></div>
+          <div class="badges"><span class="b no">Loisirs</span><span class="b ok">✓ Eau + assainissement en place</span></div>
+          <p>Au bord de la Dives, à quelques minutes des plages de Cabourg. Eau potable et assainissement déjà installés — le camp de base vacances idéal. iad.</p>
+          <div class="cta"><a class="btn" href="https://www.iadfrance.fr/annonce/terrain-vente-periers-en-auge-450m2/r1864696" target="_blank" rel="noopener">Voir l'annonce →</a><a class="btn ghost" href="https://www.bienici.com/annonce/iad-france-1924646" target="_blank" rel="noopener">Bien'ici</a></div>
+        </div>
+      </div>
+      <div class="card"><span class="flag">⭐ 4,5 HECTARES</span><img src="img/annonces/marais-pende-78k.jpg" alt="Marais Baie de Somme Pendé" loading="lazy">
+        <div class="body">
+          <div class="price">78 000 € <small>· 45 164 m² · 1,7 €/m²</small></div>
+          <div class="loc">Pendé / Lanchères <span>· Somme, Baie de Somme · ≈ 2h20</span></div>
+          <div class="badges"><span class="b sea">Baie à 500 m</span><span class="b no">Marais (chasse/nature)</span></div>
+          <p>4,5 ha de pâture et bois avec mare de 5 000 m², hutte de chasse à réaménager, platières à bécassines. Un morceau de Baie de Somme à soi.</p>
+          <div class="cta"><a class="btn" href="https://www.etreproprio.com/immobilier-24843412-vente-baie-de-somme-pende" target="_blank" rel="noopener">Voir l'annonce →</a></div>
+        </div>
+      </div>
+      <div class="card"><img src="img/annonces/merlimont-189k.jpg" alt="Terrain avec dunes Merlimont" loading="lazy">
+        <div class="body">
+          <div class="price">189 000 € <small>· 5 053 m²</small></div>
+          <div class="loc">Merlimont <span>· Pas-de-Calais · ≈ 2h32</span></div>
+          <div class="badges"><span class="b ok">✓ 733 m² constructibles</span><span class="b no">+ bois et dunes classés</span></div>
+          <p>Une demi-hectare avec dunes à l'arrière : 733 m² constructibles en second rang, le reste boisé et classé. Accès privé.</p>
+          <div class="cta"><a class="btn" href="https://www.bienici.com/annonce/gedeon-31997750" target="_blank" rel="noopener">Voir sur Bien'ici →</a></div>
+        </div>
+      </div>
+      <div class="card"><img src="img/annonces/honfleur-7k.jpg" alt="Terrain de loisirs Honfleur" loading="lazy">
+        <div class="body">
+          <div class="price">7 500 € <small>· surface à vérifier</small></div>
+          <div class="loc">Honfleur <span>· Calvados · ≈ 2h05</span></div>
+          <div class="badges"><span class="b no">Loisirs</span><span class="b warn">⚠ Surface incohérente (18 ou 1 770 m² ?)</span></div>
+          <p>Curiosité à micro-budget chez Pozzo Immobilier : le titre dit 1 770 m², la fiche 18 m². Si c'est bien 1 770 m², c'est LA pépite absolue — appeler pour trancher.</p>
+          <div class="cta"><a class="btn" href="https://www.etreproprio.com/immobilier-24586253-vente-terrain-de-loisirs-honfleur-1770-m2-honfleur" target="_blank" rel="noopener">Voir l'annonce →</a></div>
+        </div>
+      </div>
+      <div class="card"><img src="img/annonces/fecamp-149k.jpg" alt="Terrain de loisirs équipé entre Fécamp et Yvetot" loading="lazy">
+        <div class="body">
+          <div class="price">149 000 € <small>· 8 400 m²</small></div>
+          <div class="loc">Entre Fécamp et Yvetot <span>· Seine-Maritime · ≈ 2h15</span></div>
+          <div class="badges"><span class="b no">Loisirs viabilisé</span><span class="b ok">✓ 4 mobil-homes + box chevaux</span></div>
+          <p>8 400 m² viabilisés, tout équipés (mobil-homes, garage, box chevaux, poulailler), au calme — à ~15 min de la mer. Idéal base de loisirs familiale.</p>
+          <div class="cta"><a class="btn" href="https://www.bienici.com/annonce/adapt-immo-7600633555" target="_blank" rel="noopener">Voir sur Bien'ici →</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grouptitle"><h3>🏆 Les belles pièces</h3><span>emplacements rares, vue mer, stations cotées</span></div>
+    <div class="grid">
+      <div class="card"><span class="flag">⭐ ÉTRETAT</span><img src="img/annonces/etretat-190k.jpg" alt="Terrain constructible Étretat" loading="lazy">
+        <div class="body">
+          <div class="price">190 000 € <small>· 62 €/m²</small></div>
+          <div class="loc">Étretat <span>· Seine-Maritime · ≈ 2h28</span></div>
+          <div class="badges"><span class="b ok">✓ Constructible</span><span class="b warn">Quasi introuvable ici</span></div>
+          <p>3 066 m² bien exposés dans la station la plus iconique de Normandie, où le foncier est d'habitude introuvable — 62 €/m² quand le marché local vaut 150-250 €.</p>
+          <div class="cta"><a class="btn" href="https://www.bienici.com/annonce/apimo-83285648" target="_blank" rel="noopener">Voir sur Bien'ici →</a></div>
+        </div>
+      </div>
+      <div class="card"><span class="flag">⭐ VUE MER</span><img src="img/annonces/versurmer-199k.jpg" alt="Terrain vue mer Ver-sur-Mer" loading="lazy">
+        <div class="body">
+          <div class="price">199 990 € <small>· 190 €/m²</small></div>
+          <div class="loc">Ver-sur-Mer (Gold Beach) <span>· Calvados · ≈ 2h30</span></div>
+          <div class="badges"><span class="b sea">Vue mer dégagée</span><span class="b ok">✓ Zone Uc, libre de constructeur</span></div>
+          <p>1 052 m² au-dessus de Gold Beach, murs en pierre sur 3 côtés, hauteur constructible 11 m. Plage à moins d'1 km.</p>
+          <div class="cta"><a class="btn" href="https://www.superimmo.com/annonces/achat-terrain-1052m-ver-sur-mer-14114-x11oux9" target="_blank" rel="noopener">Voir l'annonce →</a></div>
+        </div>
+      </div>
+      <div class="card"><img src="img/annonces/treport-133k.jpg" alt="Terrain Le Tréport" loading="lazy">
+        <div class="body">
+          <div class="price">133 350 € <small>· 64 €/m²</small></div>
+          <div class="loc">Le Tréport <span>· Seine-Maritime · ≈ 2h10</span></div>
+          <div class="badges"><span class="b ok">✓ CU opérationnel</span><span class="b sea">Plages à 5 min</span></div>
+          <p>2 080 m² à 5 minutes des plages du Tréport et de Mers-les-Bains, certificat d'urbanisme opérationnel, réseaux à proximité.</p>
+          <div class="cta"><a class="btn" href="https://www.bienici.com/annonce/gedeon-33321808" target="_blank" rel="noopener">Voir sur Bien'ici →</a></div>
+        </div>
+      </div>
+      <div class="card"><img src="img/annonces/villers-149k.jpg" alt="Terrain Villers-sur-Mer" loading="lazy">
+        <div class="body">
+          <div class="price">149 000 € <small>· 314 €/m²</small></div>
+          <div class="loc">Villers-sur-Mer <span>· Calvados, Côte Fleurie · ≈ 2h10</span></div>
+          <div class="badges"><span class="b ok">✓ Constructible</span><span class="b sea">Plage à 10 min à pied</span></div>
+          <p>475 m² à 10 minutes à pied de la plage de sable, sur la Côte Fleurie — l'entrée de gamme du secteur chic, 100 % autoroute depuis Paris.</p>
+          <div class="cta"><a class="btn" href="https://www.bienici.com/annonce/entities-1039580-3801663" target="_blank" rel="noopener">Voir sur Bien'ici →</a></div>
+        </div>
+      </div>
+      <div class="card"><img src="img/annonces/groffliers-128k.jpg" alt="Terrain Groffliers baie d'Authie" loading="lazy">
+        <div class="body">
+          <div class="price">128 000 € <small>· 99 €/m²</small></div>
+          <div class="loc">Groffliers, sud de Berck <span>· Pas-de-Calais · ≈ 2h32</span></div>
+          <div class="badges"><span class="b ok">✓ Constructible, plat, expo SO</span><span class="b warn">−15 % en janvier</span></div>
+          <p>1 286 m² à 99 €/m² quand Berck voisin se vend 170-240 €/m² — et le vendeur vient de baisser de 23 000 €. Baie d'Authie à ~1,5 km.</p>
+          <div class="cta"><a class="btn" href="https://www.superimmo.com/annonces/achat-terrain-1286m-groffliers-62600-xzql6j" target="_blank" rel="noopener">Voir l'annonce →</a></div>
+        </div>
+      </div>
+      <div class="card"><img src="img/annonces/stvalerysomme-134k.jpg" alt="Terrain Saint-Valery-sur-Somme" loading="lazy">
+        <div class="body">
+          <div class="price">134 400 € <small>· 160 €/m²</small></div>
+          <div class="loc">Saint-Valery-sur-Somme <span>· Somme, Baie de Somme · ≈ 2h20</span></div>
+          <div class="badges"><span class="b ok">✓ Constructible</span><span class="b sea">Rue calme, cœur de baie</span></div>
+          <p>841 m² dans une petite rue au calme de la plus belle adresse de la Baie de Somme. « Rare opportunité » — les terrains y partent très vite.</p>
+          <div class="cta"><a class="btn" href="https://www.bienici.com/annonce/entities-1046596-3757066" target="_blank" rel="noopener">Voir sur Bien'ici →</a></div>
+        </div>
+      </div>
+      <div class="card"><img src="img/annonces/hautot-135k.jpg" alt="Terrain Hautot-sur-Mer" loading="lazy">
+        <div class="body">
+          <div class="price">135 000 € <small>· 135 €/m²</small></div>
+          <div class="loc">Hautot-sur-Mer (Pourville) <span>· Seine-Maritime · ≈ 2h08</span></div>
+          <div class="badges"><span class="b ok">✓ Constructible</span><span class="b sea">Mer à 15 min à pied</span></div>
+          <p>1 000 m² (59,5 × 17 m) entre Dieppe et Varengeville, cadre calme et verdoyant, plage de Pourville à 15 min à pied. Agence Les Valleuses.</p>
+          <div class="cta"><a class="btn" href="https://www.lesvalleusesimmobilier.com/produit/terrain-a-vendre-hautot-sur-mer/" target="_blank" rel="noopener">Voir l'annonce →</a><a class="btn ghost" href="https://www.bienici.com/annonce/netty-company40337wqz-land-80" target="_blank" rel="noopener">Bien'ici</a></div>
+        </div>
+      </div>
+      <div class="card"><img src="img/annonces/angiens-91k.jpg" alt="Terrains viabilisés Angiens près Veules-les-Roses" loading="lazy">
+        <div class="body">
+          <div class="price">dès ~60 000 € <small>· 691 à 1 159 m²</small></div>
+          <div class="loc">Angiens, près Veules-les-Roses <span>· Seine-Maritime · ≈ 2h20</span></div>
+          <div class="badges"><span class="b ok">✓ Viabilisés, libres de constructeur</span><span class="b sea">Plage de Veules à 5 min</span></div>
+          <p>11 parcelles entièrement viabilisées (voirie, élec, télécom, assainissement) à 5 minutes de la plage de Veules-les-Roses. Le 1 159 m² est à 91 000 €.</p>
+          <div class="cta"><a class="btn" href="https://www.bienici.com/annonce/netty-company54396zsr-land-762" target="_blank" rel="noopener">Voir sur Bien'ici →</a></div>
+        </div>
+      </div>
+      <div class="card"><img src="img/annonces/fiquefleur-140k.jpg" alt="Terrain Fiquefleur près Honfleur" loading="lazy">
+        <div class="body">
+          <div class="price">140 000 € <small>· 4 131 m² · 34 €/m²</small></div>
+          <div class="loc">Fiquefleur, près Honfleur <span>· Eure, estuaire · ≈ 2h05</span></div>
+          <div class="badges"><span class="b ok">✓ 2 parcelles à bâtir</span><span class="b sea">Vue d'exception</span></div>
+          <p>Plus de 4 000 m² en deux parcelles constructibles à quelques minutes d'Honfleur, entre campagne et vue sur l'estuaire. iad.</p>
+          <div class="cta"><a class="btn" href="https://www.bienici.com/annonce/iad-france-859524" target="_blank" rel="noopener">Voir sur Bien'ici →</a></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="alt">
+<section class="alt" id="table">
+  <div class="wrap">
+    <h2>Tout le tableau de chasse</h2>
+    <p class="lead">Les pépites ci-dessus + les autres annonces actives vérifiées. Filtre et clique.</p>
+    <div class="filters">
+      <button class="chip on" data-f="all">Tout</button>
+      <button class="chip" data-f="c">Constructible</button>
+      <button class="chip" data-f="nc">Loisirs / non constructible</button>
+      <button class="chip" data-f="lt60">&lt; 60 000 €</button>
+      <button class="chip" data-f="lt100">&lt; 100 000 €</button>
+      <button class="chip" data-f="star">⭐ Pépites</button>
+    </div>
+    <div class="tablebox">
+      <table>
+        <thead><tr><th></th><th>Commune</th><th>Prix</th><th>Surface</th><th>Statut</th><th>Atout</th><th>Paris</th><th>Annonce</th></tr></thead>
+        <tbody>
+          <tr data-c="nc" data-p="7500" data-s="0"><td></td><td><span class="com">Honfleur</span><br><span class="dep">Calvados</span></td><td class="num">7 500 €</td><td class="num">18 ou 1 770 m² ⚠</td><td><span class="b no">Loisirs</span></td><td>Micro-budget, surface à faire préciser</td><td class="num">≈ 2h05</td><td><a href="https://www.etreproprio.com/immobilier-24586253-vente-terrain-de-loisirs-honfleur-1770-m2-honfleur" target="_blank" rel="noopener">EtreProprio ↗</a></td></tr>
+          <tr data-c="nc" data-p="18000" data-s="1"><td>⭐</td><td><span class="com">Cayeux-sur-Mer</span><br><span class="dep">Somme</span></td><td class="num">18 000 €</td><td class="num">4 970 m²</td><td><span class="b no">Loisirs</span></td><td>3,6 €/m², arboré</td><td class="num">≈ 2h30</td><td><a href="https://www.etreproprio.com/immobilier-25307448-vente-terrain-arbore-a-cayeux-sur-mer-cayeux-sur-mer" target="_blank" rel="noopener">EtreProprio ↗</a></td></tr>
+          <tr data-c="nc" data-p="19500" data-s="1"><td>⭐</td><td><span class="com">Périers-en-Auge</span><br><span class="dep">Calvados · près Cabourg</span></td><td class="num">19 500 €</td><td class="num">450 m²</td><td><span class="b no">Loisirs</span></td><td>Eau + assainissement en place</td><td class="num">≈ 2h15</td><td><a href="https://www.iadfrance.fr/annonce/terrain-vente-periers-en-auge-450m2/r1864696" target="_blank" rel="noopener">iad ↗</a></td></tr>
+          <tr data-c="nc" data-p="23000" data-s="0"><td></td><td><span class="com">Cayeux-sur-Mer</span><br><span class="dep">Somme</span></td><td class="num">23 000 €</td><td class="num">4 320 m²</td><td><span class="b no">Loisirs</span></td><td>Boisé, plusieurs rangées d'arbres</td><td class="num">≈ 2h30</td><td><a href="https://www.etreproprio.com/immobilier-25307446-vente-terrain-boise-a-cayeux-sur-mer-cayeux-sur-mer" target="_blank" rel="noopener">EtreProprio ↗</a></td></tr>
+          <tr data-c="c" data-p="28000" data-s="0"><td></td><td><span class="com">Pendé (Sallenelle)</span><br><span class="dep">Somme · Baie de Somme</span></td><td class="num">28 000 €</td><td class="num">472 m²</td><td><span class="b ok">✓ Constructible</span></td><td>Garage + dépendance inclus</td><td class="num">≈ 2h20</td><td><a href="https://www.etreproprio.com/immobilier-25077976-vente-terrain-a-batir-a-sallenelle-pende" target="_blank" rel="noopener">EtreProprio ↗</a></td></tr>
+          <tr data-c="c" data-p="35000" data-s="1"><td>⭐</td><td><span class="com">Pendé</span><br><span class="dep">Somme · Baie de Somme</span></td><td class="num">35 000 €</td><td class="num">900 m²</td><td><span class="b ok">✓ Terrain à bâtir</span></td><td>Constructible le moins cher du dossier</td><td class="num">≈ 2h20</td><td><a href="https://www.bienici.com/annonce/hektor-1806_EXPERTIMO22-270896" target="_blank" rel="noopener">Bien'ici ↗</a></td></tr>
+          <tr data-c="c" data-p="43000" data-s="1"><td>⭐</td><td><span class="com">Saint-Valery-en-Caux</span><br><span class="dep">Seine-Maritime</span></td><td class="num">43 000 €</td><td class="num">968 m²</td><td><span class="b ok">✓ Constructible</span></td><td>Borné, tous réseaux en bordure</td><td class="num">≈ 2h20</td><td><a href="https://www.bienici.com/annonce/century-21-202_2808_12654" target="_blank" rel="noopener">Bien'ici ↗</a></td></tr>
+          <tr data-c="c" data-p="44000" data-s="0"><td></td><td><span class="com">Pendé</span><br><span class="dep">Somme · Baie de Somme</span></td><td class="num">44 000 €</td><td class="num">966 m²</td><td><span class="b ok">✓ CU positif</span></td><td>46 €/m² en Baie de Somme</td><td class="num">≈ 2h20</td><td><a href="https://www.superimmo.com/annonces/achat-terrain-966m-pende-80230-x10c4oh" target="_blank" rel="noopener">Superimmo ↗</a></td></tr>
+          <tr data-c="c" data-p="45000" data-s="0"><td></td><td><span class="com">Veulettes-sur-Mer</span><br><span class="dep">Seine-Maritime</span></td><td class="num">45 000 €</td><td class="num">650 m²</td><td><span class="b ok">✓ Constructible</span></td><td>Expo sud-est, vue dégagée, &lt;1 km mer</td><td class="num">≈ 2h25</td><td><a href="https://www.terrain-construction.com/terrain-a-vendre/seine-maritime-76/veulettes-sur-mer-76450/295185022" target="_blank" rel="noopener">Terrain-Constr. ↗</a></td></tr>
+          <tr data-c="c" data-p="49000" data-s="0"><td></td><td><span class="com">Gueutteville-les-Grès</span><br><span class="dep">Seine-Maritime</span></td><td class="num">49 000 €</td><td class="num">1 243 m²</td><td><span class="b ok">✓ Constructible</span></td><td>Façade 23 m, entre St-Valery et Veules</td><td class="num">≈ 2h20</td><td><a href="https://www.bienici.com/annonce/iad-france-1903826" target="_blank" rel="noopener">Bien'ici ↗</a></td></tr>
+          <tr data-c="c" data-p="49600" data-s="0"><td></td><td><span class="com">Pendé</span><br><span class="dep">Somme</span></td><td class="num">49 600 €</td><td class="num">960 m²</td><td><span class="b ok">✓ Constructible</span></td><td>Au calme, dépendance présente</td><td class="num">≈ 2h20</td><td><a href="https://www.etreproprio.com/immobilier-25756528-vente-terrain-960-m-a-pende-pende" target="_blank" rel="noopener">EtreProprio ↗</a></td></tr>
+          <tr data-c="c" data-p="50000" data-s="0"><td></td><td><span class="com">Fécamp</span><br><span class="dep">Seine-Maritime</span></td><td class="num">50 000 €</td><td class="num">437 m²</td><td><span class="b ok">✓ Constructible</span></td><td>Hauteurs de Fécamp, quartier recherché</td><td class="num">≈ 2h20</td><td><a href="https://www.bienici.com/annonce/laforet-immo-facile-52457596" target="_blank" rel="noopener">Bien'ici ↗</a></td></tr>
+          <tr data-c="c" data-p="55000" data-s="1"><td>⭐</td><td><span class="com">Ault</span><br><span class="dep">Somme · falaises</span></td><td class="num">55 000 €</td><td class="num">437 m²</td><td><span class="b ok">✓ Constructible</span></td><td>Plage à 900 m, garage béton inclus</td><td class="num">≈ 2h20</td><td><a href="https://www.etreproprio.com/immobilier-25929168-vente-terrain-a-batir-437-m-facade-9-m-ault" target="_blank" rel="noopener">EtreProprio ↗</a></td></tr>
+          <tr data-c="c" data-p="55000" data-s="0"><td></td><td><span class="com">Fécamp</span><br><span class="dep">Seine-Maritime</span></td><td class="num">55 000 €</td><td class="num">1 654 m²</td><td><span class="b ok">✓ 1 200 m² constructibles</span></td><td>Vue imprenable sur la vallée</td><td class="num">≈ 2h20</td><td><a href="https://www.bienici.com/annonce/century-21-202_3149_2858" target="_blank" rel="noopener">Bien'ici ↗</a></td></tr>
+          <tr data-c="c" data-p="56000" data-s="0"><td></td><td><span class="com">Criel-sur-Mer</span><br><span class="dep">Seine-Maritime</span></td><td class="num">56 000 €</td><td class="num">620 m²</td><td><span class="b ok">✓ Constructible</span></td><td>Proche mer</td><td class="num">≈ 2h15</td><td><a href="https://www.bienici.com/annonce/entities-1046563-3825549" target="_blank" rel="noopener">Bien'ici ↗</a></td></tr>
+          <tr data-c="c" data-p="58000" data-s="0"><td></td><td><span class="com">Penly</span><br><span class="dep">Seine-Maritime · proche Dieppe</span></td><td class="num">58 000 €</td><td class="num">1 000 m²</td><td><span class="b ok">✓ CU obtenu</span></td><td>+3 000 m² non constructibles en option</td><td class="num">≈ 2h15</td><td><a href="https://www.superimmo.com/annonces/achat-terrain-1000m-penly-76630-x11o65h" target="_blank" rel="noopener">Superimmo ↗</a></td></tr>
+          <tr data-c="c" data-p="59600" data-s="0"><td></td><td><span class="com">Petit-Caux (Assigny)</span><br><span class="dep">Seine-Maritime</span></td><td class="num">59 600 €</td><td class="num">811 m²</td><td><span class="b ok">✓ Constructible</span></td><td>Plat, libre de constructeur, fibre en bordure</td><td class="num">≈ 2h12</td><td><a href="https://www.bienici.com/annonce/era-2-57638595" target="_blank" rel="noopener">Bien'ici ↗</a></td></tr>
+          <tr data-c="c" data-p="60000" data-s="0"><td></td><td><span class="com">Criel-sur-Mer</span><br><span class="dep">Seine-Maritime</span></td><td class="num">60 000 €</td><td class="num">634 m²</td><td><span class="b ok">✓ Constructible</span></td><td>Eau + électricité déjà sur place</td><td class="num">≈ 2h15</td><td><a href="https://www.superimmo.com/annonces/achat-terrain-634m-criel-sur-mer-76910-xvnh9i" target="_blank" rel="noopener">Superimmo ↗</a></td></tr>
+          <tr data-c="c" data-p="60000" data-s="0"><td></td><td><span class="com">Biville-sur-Mer (Petit-Caux)</span><br><span class="dep">Seine-Maritime</span></td><td class="num">60 000 €</td><td class="num">641 m²</td><td><span class="b ok">✓ Constructible</span></td><td>Bâtiment en dur déjà sur la parcelle</td><td class="num">≈ 2h12</td><td><a href="https://www.bienici.com/annonce/square-habitat-immo-facile-43301553" target="_blank" rel="noopener">Bien'ici ↗</a></td></tr>
+          <tr data-c="c" data-p="60500" data-s="0"><td></td><td><span class="com">Belleville-sur-Mer (Petit-Caux)</span><br><span class="dep">Seine-Maritime</span></td><td class="num">60 500 €</td><td class="num">1 000 m²</td><td><span class="b ok">✓ Constructible</span></td><td>Mer à quelques minutes, hors lotissement</td><td class="num">≈ 2h10</td><td><a href="https://www.bienici.com/annonce/hektor-victoriaimmob76200-771" target="_blank" rel="noopener">Bien'ici ↗</a></td></tr>
+          <tr data-c="c" data-p="63000" data-s="0"><td></td><td><span class="com">Saint-Valery-en-Caux</span><br><span class="dep">Seine-Maritime</span></td><td class="num">63 000 €</td><td class="num">754 m²</td><td><span class="b ok">✓ Constructible</span></td><td>Port de plaisance à ~1,5 km</td><td class="num">≈ 2h20</td><td><a href="https://www.bienici.com/annonce/netty-company54396zsr-land-764" target="_blank" rel="noopener">Bien'ici ↗</a></td></tr>
+          <tr data-c="c" data-p="65000" data-s="0"><td></td><td><span class="com">Fécamp</span><br><span class="dep">Seine-Maritime</span></td><td class="num">65 000 €</td><td class="num">1 000 m²</td><td><span class="b ok">✓ CU positif</span></td><td>Réseaux en bordure</td><td class="num">≈ 2h20</td><td><a href="https://www.bienici.com/annonce/hektor-AGENCEDUCENTRE-5997" target="_blank" rel="noopener">Bien'ici ↗</a></td></tr>
+          <tr data-c="c" data-p="70000" data-s="0"><td></td><td><span class="com">Conteville (près Honfleur)</span><br><span class="dep">Eure · estuaire</span></td><td class="num">70 000 €</td><td class="num">802 m²</td><td><span class="b ok">✓ Constructible</span></td><td>Plein bourg, A13 à proximité</td><td class="num">≈ 2h05</td><td><a href="https://www.bienici.com/annonce/ag761829-538440704" target="_blank" rel="noopener">Bien'ici ↗</a></td></tr>
+          <tr data-c="c" data-p="73000" data-s="0"><td></td><td><span class="com">Berville-sur-Mer</span><br><span class="dep">Eure · estuaire</span></td><td class="num">73 000 €</td><td class="num">505 m²</td><td><span class="b ok">✓ Permis validé</span></td><td>PC déjà déposé et accepté pour une maison</td><td class="num">≈ 2h05</td><td><a href="https://www.bienici.com/annonce/iad-france-925234" target="_blank" rel="noopener">Bien'ici ↗</a></td></tr>
+          <tr data-c="c" data-p="74646" data-s="0"><td></td><td><span class="com">Honfleur</span><br><span class="dep">Calvados</span></td><td class="num">74 646 €</td><td class="num">531 m²</td><td><span class="b ok">✓ Constructible</span></td><td>Proche mer, ville prisée</td><td class="num">≈ 2h05</td><td><a href="https://www.bienici.com/annonce/entities-1046572-3828030" target="_blank" rel="noopener">Bien'ici ↗</a></td></tr>
+          <tr data-c="c" data-p="75000" data-s="0"><td></td><td><span class="com">St-Martin-aux-Buneaux</span><br><span class="dep">Seine-Maritime · Petites-Dalles</span></td><td class="num">75 000 €</td><td class="num">1 300 m²</td><td><span class="b ok">✓ Constructible</span></td><td>Expo sud, vue dégagée, plage à 2 km</td><td class="num">≈ 2h25</td><td><a href="https://www.bienici.com/annonce/entities-1046568-3777688" target="_blank" rel="noopener">Bien'ici ↗</a></td></tr>
+          <tr data-c="nc" data-p="78000" data-s="1"><td>⭐</td><td><span class="com">Pendé / Lanchères</span><br><span class="dep">Somme · Baie de Somme</span></td><td class="num">78 000 €</td><td class="num">45 164 m²</td><td><span class="b no">Marais</span></td><td>4,5 ha à 500 m de la baie, hutte, mare</td><td class="num">≈ 2h20</td><td><a href="https://www.etreproprio.com/immobilier-24843412-vente-baie-de-somme-pende" target="_blank" rel="noopener">EtreProprio ↗</a></td></tr>
+          <tr data-c="c" data-p="85000" data-s="1"><td>⭐</td><td><span class="com">Berneval-le-Grand (Petit-Caux)</span><br><span class="dep">Seine-Maritime</span></td><td class="num">85 000 €</td><td class="num">1 419 m²</td><td><span class="b ok">✓ ~900 m² constructibles</span></td><td>Mer à 200 m à pied, −11,5 % récent</td><td class="num">≈ 2h10</td><td><a href="https://www.bienici.com/annonce/netty-company54396zsr-land-4278" target="_blank" rel="noopener">Bien'ici ↗</a></td></tr>
+          <tr data-c="c" data-p="91000" data-s="0"><td></td><td><span class="com">Angiens (près Veules)</span><br><span class="dep">Seine-Maritime</span></td><td class="num">dès ~60 000 €</td><td class="num">691–1 159 m²</td><td><span class="b ok">✓ Viabilisés</span></td><td>11 lots, plage de Veules à 5 min</td><td class="num">≈ 2h20</td><td><a href="https://www.bienici.com/annonce/netty-company54396zsr-land-762" target="_blank" rel="noopener">Bien'ici ↗</a></td></tr>
+          <tr data-c="c" data-p="95000" data-s="0"><td></td><td><span class="com">Cayeux-sur-Mer</span><br><span class="dep">Somme</span></td><td class="num">95 000 €</td><td class="num">770 m²</td><td><span class="b ok">✓ Constructible</span></td><td>Plage à qq minutes à pied, exclusivité</td><td class="num">≈ 2h30</td><td><a href="https://www.bienici.com/annonce/nestenn-1-99939510628" target="_blank" rel="noopener">Bien'ici ↗</a></td></tr>
+          <tr data-c="c" data-p="100000" data-s="1"><td>⭐</td><td><span class="com">Cayeux-sur-Mer (Brighton)</span><br><span class="dep">Somme</span></td><td class="num">100 000 €</td><td class="num">663 m²</td><td><span class="b ok">✓ Constructible</span></td><td>Plage à quelques centaines de mètres</td><td class="num">≈ 2h30</td><td><a href="https://www.bienici.com/annonce/entities-1046596-3757065" target="_blank" rel="noopener">Bien'ici ↗</a></td></tr>
+          <tr data-c="c" data-p="115500" data-s="0"><td></td><td><span class="com">Houlgate</span><br><span class="dep">Calvados · Côte Fleurie</span></td><td class="num">115 500 €</td><td class="num">323 m²</td><td><span class="b ok">✓ Constructible</span></td><td>Cœur de ville, mer à ~500 m</td><td class="num">≈ 2h12</td><td><a href="https://www.superimmo.com/annonces/achat-terrain-323m-houlgate-14510-x11ap3y" target="_blank" rel="noopener">Superimmo ↗</a></td></tr>
+          <tr data-c="c" data-p="126500" data-s="0"><td></td><td><span class="com">Honfleur</span><br><span class="dep">Calvados</span></td><td class="num">126 500 €</td><td class="num">702 m²</td><td><span class="b ok">✓ Constructible</span></td><td>Clos, arboré, garage, libre de constructeur</td><td class="num">≈ 2h05</td><td><a href="https://www.etreproprio.com/immobilier-21982522-vente-honfleur-terrain-constructible-702-m-avec-garage-existant-libre-de-constructeur-honfleur" target="_blank" rel="noopener">EtreProprio ↗</a></td></tr>
+          <tr data-c="c" data-p="128000" data-s="0"><td></td><td><span class="com">Groffliers (sud Berck)</span><br><span class="dep">Pas-de-Calais · Baie d'Authie</span></td><td class="num">128 000 €</td><td class="num">1 286 m²</td><td><span class="b ok">✓ Constructible</span></td><td>−15 % en janvier, 99 €/m²</td><td class="num">≈ 2h32</td><td><a href="https://www.superimmo.com/annonces/achat-terrain-1286m-groffliers-62600-xzql6j" target="_blank" rel="noopener">Superimmo ↗</a></td></tr>
+          <tr data-c="c" data-p="130000" data-s="1"><td>⭐</td><td><span class="com">Criel-sur-Mer</span><br><span class="dep">Seine-Maritime</span></td><td class="num">130 000 €</td><td class="num">1 719 m²</td><td><span class="b ok">✓ Constructible</span></td><td>VUE MER directe</td><td class="num">≈ 2h15</td><td><a href="https://www.superimmo.com/annonces/achat-terrain-1719m-criel-sur-mer-76910-x11f8a6" target="_blank" rel="noopener">Superimmo ↗</a></td></tr>
+          <tr data-c="c" data-p="133350" data-s="0"><td></td><td><span class="com">Le Tréport</span><br><span class="dep">Seine-Maritime</span></td><td class="num">133 350 €</td><td class="num">2 080 m²</td><td><span class="b ok">✓ CU opérationnel</span></td><td>Plages du Tréport et de Mers à 5 min</td><td class="num">≈ 2h10</td><td><a href="https://www.bienici.com/annonce/gedeon-33321808" target="_blank" rel="noopener">Bien'ici ↗</a></td></tr>
+          <tr data-c="c" data-p="134400" data-s="0"><td></td><td><span class="com">Saint-Valery-sur-Somme</span><br><span class="dep">Somme · Baie de Somme</span></td><td class="num">134 400 €</td><td class="num">841 m²</td><td><span class="b ok">✓ Constructible</span></td><td>Petite rue au calme, adresse cotée</td><td class="num">≈ 2h20</td><td><a href="https://www.bienici.com/annonce/entities-1046596-3757066" target="_blank" rel="noopener">Bien'ici ↗</a></td></tr>
+          <tr data-c="c" data-p="135000" data-s="0"><td></td><td><span class="com">Hautot-sur-Mer (Pourville)</span><br><span class="dep">Seine-Maritime</span></td><td class="num">135 000 €</td><td class="num">1 000 m²</td><td><span class="b ok">✓ Constructible</span></td><td>Plage de Pourville à 15 min à pied</td><td class="num">≈ 2h08</td><td><a href="https://www.lesvalleusesimmobilier.com/produit/terrain-a-vendre-hautot-sur-mer/" target="_blank" rel="noopener">Les Valleuses ↗</a></td></tr>
+          <tr data-c="c" data-p="140000" data-s="0"><td></td><td><span class="com">Fiquefleur (près Honfleur)</span><br><span class="dep">Eure · estuaire</span></td><td class="num">140 000 €</td><td class="num">4 131 m²</td><td><span class="b ok">✓ 2 parcelles à bâtir</span></td><td>34 €/m², vue d'exception</td><td class="num">≈ 2h05</td><td><a href="https://www.bienici.com/annonce/iad-france-859524" target="_blank" rel="noopener">Bien'ici ↗</a></td></tr>
+          <tr data-c="nc" data-p="149000" data-s="0"><td></td><td><span class="com">Entre Fécamp et Yvetot</span><br><span class="dep">Seine-Maritime</span></td><td class="num">149 000 €</td><td class="num">8 400 m²</td><td><span class="b no">Loisirs viabilisé</span></td><td>4 mobil-homes, box chevaux, garage</td><td class="num">≈ 2h15</td><td><a href="https://www.bienici.com/annonce/adapt-immo-7600633555" target="_blank" rel="noopener">Bien'ici ↗</a></td></tr>
+          <tr data-c="c" data-p="149000" data-s="0"><td></td><td><span class="com">Villers-sur-Mer</span><br><span class="dep">Calvados · Côte Fleurie</span></td><td class="num">149 000 €</td><td class="num">475 m²</td><td><span class="b ok">✓ Constructible</span></td><td>Plage de sable à 10 min à pied</td><td class="num">≈ 2h10</td><td><a href="https://www.bienici.com/annonce/entities-1039580-3801663" target="_blank" rel="noopener">Bien'ici ↗</a></td></tr>
+          <tr data-c="c" data-p="175000" data-s="0"><td></td><td><span class="com">Heuland (5 km de Cabourg)</span><br><span class="dep">Calvados</span></td><td class="num">175 000 €</td><td class="num">1 511 m²</td><td><span class="b ok">✓ Viabilisé</span></td><td>150 m² de plancher autorisés · 2ᵉ lot 1 737 m² à 195 000 €</td><td class="num">≈ 2h15</td><td><a href="https://www.bienici.com/annonce/iad-france-2023303" target="_blank" rel="noopener">Bien'ici ↗</a></td></tr>
+          <tr data-c="c" data-p="189000" data-s="0"><td></td><td><span class="com">Merlimont</span><br><span class="dep">Pas-de-Calais</span></td><td class="num">189 000 €</td><td class="num">5 053 m²</td><td><span class="b ok">✓ 733 m² constructibles</span></td><td>Bois + dunes classées à l'arrière</td><td class="num">≈ 2h32</td><td><a href="https://www.bienici.com/annonce/gedeon-31997750" target="_blank" rel="noopener">Bien'ici ↗</a></td></tr>
+          <tr data-c="c" data-p="190000" data-s="1"><td>⭐</td><td><span class="com">Étretat</span><br><span class="dep">Seine-Maritime</span></td><td class="num">190 000 €</td><td class="num">3 066 m²</td><td><span class="b ok">✓ Constructible</span></td><td>Foncier quasi introuvable à Étretat</td><td class="num">≈ 2h28</td><td><a href="https://www.bienici.com/annonce/apimo-83285648" target="_blank" rel="noopener">Bien'ici ↗</a></td></tr>
+          <tr data-c="c" data-p="199990" data-s="0"><td></td><td><span class="com">Ver-sur-Mer (Gold Beach)</span><br><span class="dep">Calvados</span></td><td class="num">199 990 €</td><td class="num">1 052 m²</td><td><span class="b ok">✓ Zone Uc</span></td><td>Vue mer dégagée, murs en pierre</td><td class="num">≈ 2h30</td><td><a href="https://www.superimmo.com/annonces/achat-terrain-1052m-ver-sur-mer-14114-x11oux9" target="_blank" rel="noopener">Superimmo ↗</a></td></tr>
+          <tr data-c="c" data-p="227900" data-s="1"><td>⭐</td><td><span class="com">Saint-Aubin-sur-Mer</span><br><span class="dep">Seine-Maritime</span></td><td class="num">227 900 €</td><td class="num">5 319 m²</td><td><span class="b ok">✓ Constructible + bâti</span></td><td>Plage à qq pas + maison colombages à rénover</td><td class="num">≈ 2h20</td><td><a href="https://www.etreproprio.com/immobilier-22988793-vente-rare-terrain-de-5319m2-avec-maison-en-colombages-et-dependance-a-renover-ou-a-batir-saint-aubin-sur-mer" target="_blank" rel="noopener">EtreProprio ↗</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tnote">Toutes les annonces ci-dessus ont été ouvertes et confirmées actives le 23 juillet 2026 (2 annonces mortes écartées lors de la vérification). Prix généralement honoraires inclus. Les bonnes affaires partent en quelques jours : appeler plutôt qu'e-mailer.</p>
+  </div>
+</section>
+
+<section>
   <div class="wrap">
     <h2>Temps de route depuis Paris</h2>
-    <p class="lead">Départ Paris centre, hors trafic, itinéraire le plus rapide (péages sur tous les trajets, 15–25 €). La sortie de Paris et les derniers kilomètres de départementales font la différence, plus que la distance.</p>
     <div class="chart">
       <div class="chart-title">Villes côtières classées par temps de trajet en voiture</div>
-      <div class="chart-sub">Heures:minutes · itinéraires vérifiés (Mappy, ViaMichelin) · 🏖️ = plage de sable</div>
-      <!-- max 160 min -->
+      <div class="chart-sub">Départ Paris centre, hors trafic, péages 15–25 € · 🏖️ = plage de sable</div>
       <div class="brow"><span class="lbl">Le Havre <small>197 km</small></span><span class="track"><span class="bar" style="width:68.75%"></span></span><span class="val">1h50</span></div>
       <div class="brow"><span class="lbl">🏖️ Deauville-Trouville <small>198 km</small></span><span class="track"><span class="bar" style="width:78.1%"></span></span><span class="val">2h05</span></div>
       <div class="brow"><span class="lbl">Honfleur <small>198 km</small></span><span class="track"><span class="bar" style="width:78.1%"></span></span><span class="val">2h05</span></div>
@@ -170,376 +508,94 @@
       <div class="brow"><span class="lbl">🏖️ Le Crotoy (Baie de Somme) <small>206 km</small></span><span class="track"><span class="bar" style="width:85.6%"></span></span><span class="val">2h17</span></div>
       <div class="brow"><span class="lbl">Ault <small>210 km</small></span><span class="track"><span class="bar" style="width:87.5%"></span></span><span class="val">2h20</span></div>
       <div class="brow"><span class="lbl">Saint-Valery-en-Caux <small>199 km</small></span><span class="track"><span class="bar" style="width:87.5%"></span></span><span class="val">2h20</span></div>
-      <div class="brow"><span class="lbl">🏖️ Quend – Fort-Mahon <small>220 km</small></span><span class="track"><span class="bar" style="width:89.4%"></span></span><span class="val">2h23</span></div>
       <div class="brow"><span class="lbl">Veules-les-Roses <small>188 km</small></span><span class="track"><span class="bar" style="width:88.75%"></span></span><span class="val">2h22</span></div>
+      <div class="brow"><span class="lbl">🏖️ Quend – Fort-Mahon <small>220 km</small></span><span class="track"><span class="bar" style="width:89.4%"></span></span><span class="val">2h23</span></div>
       <div class="brow"><span class="lbl">🏖️ Ouistreham <small>232 km</small></span><span class="track"><span class="bar" style="width:90.6%"></span></span><span class="val">2h25</span></div>
       <div class="brow"><span class="lbl">Étretat <small>207 km</small></span><span class="track"><span class="bar" style="width:92.5%"></span></span><span class="val">2h28</span></div>
       <div class="brow"><span class="lbl">🏖️ Cayeux-sur-Mer <small>215 km</small></span><span class="track"><span class="bar" style="width:93.75%"></span></span><span class="val">2h30</span></div>
       <div class="brow"><span class="lbl">🏖️ Berck <small>227 km</small></span><span class="track"><span class="bar" style="width:93.75%"></span></span><span class="val">2h30</span></div>
-      <div class="chart-note">Fait notable : Veules-les-Roses est la plus proche en kilomètres (188 km) mais pas en temps — la fin du trajet se fait sur départementales. À l'inverse, la Côte Fleurie se fait à 100 % sur autoroute.</div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>Les zones à connaître</h2>
-    <p class="lead">Six secteurs, six ambiances — tous à portée d'un aller-retour dans la journée depuis Paris.</p>
-    <div class="zones">
-      <div class="zone"><img src="img/dieppe.jpg" alt="Dieppe, plage et falaises" loading="lazy">
-        <div class="body"><h3>Dieppe &amp; environs</h3><div class="meta">≈ 2h05 · 195 km · galets + falaises</div>
-        <p>« La plage la plus proche de Paris ». Ville vivante à l'année, marché réputé, gare. Autour : Pourville, Varengeville, Quiberville, Berneval — des villages de falaises avec de vraies opportunités foncières.</p>
-        <div class="prix">Terrains : <b>60–120 €/m²</b> · annonces dès 52 000 €</div></div>
-      </div>
-      <div class="zone"><img src="img/mers-les-bains.jpg" alt="Villas Belle Époque de Mers-les-Bains" loading="lazy">
-        <div class="body"><h3>Le Tréport · Mers · Criel · Ault</h3><div class="meta">≈ 2h10 · A16 fluide · galets + falaises</div>
-        <p>Les plus hautes falaises de craie d'Europe, le front de mer Belle Époque de Mers-les-Bains, des prix très doux. Le constructible le moins cher du littoral (Ault, Criel, Le Tréport).</p>
-        <div class="prix">Terrains : <b>50–130 €/m²</b> · constructible dès 26 500 €</div></div>
-      </div>
-      <div class="zone"><img src="img/veules.jpg" alt="Veules-les-Roses" loading="lazy">
-        <div class="body"><h3>Pays de Caux ouest (St-Valery → Fécamp)</h3><div class="meta">≈ 2h20 · 188–215 km · galets, valleuses</div>
-        <p>Veules-les-Roses (plus beau village), Saint-Valery-en-Caux, Veulettes, les Petites-Dalles, Fécamp, Étretat. Le charme normand classique, avec du foncier encore accessible hors Étretat.</p>
-        <div class="prix">Terrains : <b>50–90 €/m²</b> · annonces dès 45 000 €</div></div>
-      </div>
-      <div class="zone"><img src="img/cabourg.jpg" alt="Plage de Cabourg" loading="lazy">
-        <div class="body"><h3>Côte Fleurie (Honfleur → Ouistreham)</h3><div class="meta">≈ 2h00–2h25 · 100 % autoroute · SABLE</div>
-        <p>Deauville, Trouville, Villers, Houlgate, Cabourg, Merville, Ouistreham : sable fin, digues-promenades, trains directs. Le secteur le plus cher mais le plus « carte postale ».</p>
-        <div class="prix">Terrains : <b>300–600 €/m²</b> (littoral) · loisirs dès 19 500 € en 2ᵉ ligne</div></div>
-      </div>
-      <div class="zone"><img src="img/baie-de-somme.jpg" alt="Baie de Somme" loading="lazy">
-        <div class="body"><h3>Baie de Somme</h3><div class="meta">≈ 2h15–2h30 · sable + nature classée</div>
-        <p>Le Crotoy (seule plage de sable exposée sud du Nord), Saint-Valery-sur-Somme, Cayeux, Pendé, Quend, Fort-Mahon. Phoques, Marquenterre, chemins de planches — et les terrains les moins chers du dossier.</p>
-        <div class="prix">Loisirs : <b>4–9 €/m²</b> · constructible : 60–180 €/m²</div></div>
-      </div>
-      <div class="zone"><img src="img/berck.jpg" alt="Plage de Berck" loading="lazy">
-        <div class="body"><h3>Berck &amp; Opale sud</h3><div class="meta">≈ 2h30 · 227 km · immense plage de sable</div>
-        <p>Berck l'abordable et familiale, Merlimont, Stella-Plage, et Le Touquet le chic (foncier 400–1 000 €/m²). À réserver si le budget suit ou si on vise la plage XXL.</p>
-        <div class="prix">Terrains : <b>120–270 €/m²</b> (hors Le Touquet)</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="alt" id="annonces">
-  <div class="wrap">
-    <h2>Les annonces relevées (juillet 2026)</h2>
-    <p class="lead">Une trentaine de terrains actifs repérés lors de la recherche. ⭐ = les meilleurs plans selon moi. Les prix affichés incluent généralement les honoraires ; tout est à re-vérifier, les annonces partent vite.</p>
-    <div class="filters">
-      <button class="chip on" data-f="all">Tout</button>
-      <button class="chip" data-f="c">Constructible</button>
-      <button class="chip" data-f="nc">Loisirs / non constructible</button>
-      <button class="chip" data-f="lt100">Budget &lt; 100 000 €</button>
-      <button class="chip" data-f="star">⭐ Coups de cœur</button>
-    </div>
-    <div class="tablebox">
-      <table>
-        <thead><tr><th></th><th>Commune</th><th>Prix</th><th>Surface</th><th>€/m²</th><th>Statut</th><th>Mer</th><th>Paris</th><th>Annonce</th></tr></thead>
-        <tbody>
-          <tr data-c="c" data-p="85000" data-s="1">
-            <td class="star">⭐</td><td><span class="com">Petit-Caux (Berneval)</span><br><span class="dep">Seine-Maritime · 10 min de Dieppe</span></td>
-            <td class="num">85 000 €</td><td class="num">1 419 m²</td><td class="num">60</td>
-            <td><span class="b warn">⚠ Partiellement constructible</span></td><td class="num">200 m</td><td class="num">≈ 2h10</td>
-            <td><a href="https://www.superimmo.com/annonces/achat-terrain-1419m-petit-caux-76370-x11ebsd" target="_blank" rel="noopener">Superimmo ↗</a></td>
-          </tr>
-          <tr data-c="nc" data-p="18000" data-s="1">
-            <td class="star">⭐</td><td><span class="com">Cayeux-sur-Mer</span><br><span class="dep">Somme · Baie de Somme</span></td>
-            <td class="num">18 000 €</td><td class="num">4 970 m²</td><td class="num">4</td>
-            <td><span class="b no">Loisirs (non constructible)</span></td><td class="num">~1,5 km</td><td class="num">≈ 2h30</td>
-            <td><a href="https://www.etreproprio.com/immobilier-25307448" target="_blank" rel="noopener">EtreProprio ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="26500" data-s="1">
-            <td class="star">⭐</td><td><span class="com">Ault</span><br><span class="dep">Somme · falaises</span></td>
-            <td class="num">26 500 €</td><td class="num">537 m²</td><td class="num">49</td>
-            <td><span class="b ok">✓ Constructible</span> <span class="b warn">⚠ vérifier érosion</span></td><td class="num">&lt; 1 km</td><td class="num">≈ 2h20</td>
-            <td><a href="https://www.mamaison-bois.fr/terrains-constructibles/ault-80460-51838" target="_blank" rel="noopener">mamaison-bois ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="99000" data-s="1">
-            <td class="star">⭐</td><td><span class="com">Cayeux-sur-Mer</span><br><span class="dep">Somme · « à quelques pas de la plage »</span></td>
-            <td class="num">99 000 €</td><td class="num">621 m²</td><td class="num">159</td>
-            <td><span class="b ok">✓ Constructible</span></td><td class="num">&lt; 300 m</td><td class="num">≈ 2h30</td>
-            <td><a href="https://www.etreproprio.com/immobilier-26280551" target="_blank" rel="noopener">EtreProprio ↗</a></td>
-          </tr>
-          <tr data-c="nc" data-p="19500" data-s="1">
-            <td class="star">⭐</td><td><span class="com">Périers-en-Auge</span><br><span class="dep">Calvados · proche Cabourg, bord de la Dives</span></td>
-            <td class="num">19 500 €</td><td class="num">450 m²</td><td class="num">43</td>
-            <td><span class="b no">Loisirs</span> <span class="b ok">✓ eau + assainissement</span></td><td class="num">~3 km</td><td class="num">≈ 2h15</td>
-            <td><a href="https://www.iadfrance.fr/annonce/terrain-vente-periers-en-auge-450m2/r1864696" target="_blank" rel="noopener">iad France ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="40000" data-s="0">
-            <td></td><td><span class="com">Le Tréport</span><br><span class="dep">Seine-Maritime</span></td>
-            <td class="num">40 000 €</td><td class="num">469 m²</td><td class="num">85</td>
-            <td><span class="b ok">✓ Constructible, viabilisé</span></td><td class="num">~1,5 km</td><td class="num">≈ 2h10</td>
-            <td><a href="https://www.logic-immo.com/terrain-le-treport/vente-terrain-le-treport-76470-17287_2.html" target="_blank" rel="noopener">Logic-Immo ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="45000" data-s="0">
-            <td></td><td><span class="com">Veulettes-sur-Mer</span><br><span class="dep">Seine-Maritime · bord de Manche</span></td>
-            <td class="num">45 000 €</td><td class="num">650 m²</td><td class="num">69</td>
-            <td><span class="b ok">✓ Constructible</span></td><td class="num">&lt; 1 km</td><td class="num">≈ 2h25</td>
-            <td><a href="https://www.terrain-construction.com/terrain-a-vendre/seine-maritime-76/veulettes-sur-mer-76450/295185022" target="_blank" rel="noopener">Terrain-Construction ↗</a></td>
-          </tr>
-          <tr data-c="nc" data-p="22000" data-s="0">
-            <td></td><td><span class="com">Cayeux-sur-Mer</span><br><span class="dep">Somme · près des dunes</span></td>
-            <td class="num">22 000 €</td><td class="num">2 994 m²</td><td class="num">7</td>
-            <td><span class="b no">Zone naturelle</span></td><td class="num">&lt; 500 m</td><td class="num">≈ 2h30</td>
-            <td><a href="https://www.leboncoin.fr/cl/_immobilier_/cp_cayeux-sur-mer_80410" target="_blank" rel="noopener">Leboncoin ↗</a></td>
-          </tr>
-          <tr data-c="nc" data-p="23000" data-s="0">
-            <td></td><td><span class="com">Cayeux-sur-Mer</span><br><span class="dep">Somme · terrain boisé</span></td>
-            <td class="num">23 000 €</td><td class="num">4 320 m²</td><td class="num">5</td>
-            <td><span class="b no">Loisirs (non constructible)</span></td><td class="num">~1,5 km</td><td class="num">≈ 2h30</td>
-            <td><a href="https://www.etreproprio.com/immobilier-25307446" target="_blank" rel="noopener">EtreProprio ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="100000" data-s="0">
-            <td></td><td><span class="com">Cayeux-sur-Mer</span><br><span class="dep">Somme · « rare à la vente »</span></td>
-            <td class="num">100 000 €</td><td class="num">663 m²</td><td class="num">151</td>
-            <td><span class="b ok">✓ Constructible</span></td><td class="num">&lt; 500 m</td><td class="num">≈ 2h30</td>
-            <td><a href="https://www.etreproprio.com/immobilier-26064419" target="_blank" rel="noopener">EtreProprio ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="28000" data-s="0">
-            <td></td><td><span class="com">Pendé (Sallenelle)</span><br><span class="dep">Somme · sortie de St-Valery-sur-Somme</span></td>
-            <td class="num">28 000 €</td><td class="num">472 m²</td><td class="num">59</td>
-            <td><span class="b ok">✓ Constructible</span></td><td class="num">~1,5 km (baie)</td><td class="num">≈ 2h20</td>
-            <td><a href="https://www.etreproprio.com/immobilier-25077976" target="_blank" rel="noopener">EtreProprio ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="49600" data-s="0">
-            <td></td><td><span class="com">Pendé</span><br><span class="dep">Somme</span></td>
-            <td class="num">49 600 €</td><td class="num">960 m²</td><td class="num">52</td>
-            <td><span class="b ok">✓ Constructible</span></td><td class="num">~1,5 km (baie)</td><td class="num">≈ 2h20</td>
-            <td><a href="https://www.etreproprio.com/immobilier-25756528" target="_blank" rel="noopener">EtreProprio ↗</a></td>
-          </tr>
-          <tr data-c="nc" data-p="27000" data-s="0">
-            <td></td><td><span class="com">Quend</span><br><span class="dep">Somme · zone agricole</span></td>
-            <td class="num">27 000 €</td><td class="num">3 141 m²</td><td class="num">9</td>
-            <td><span class="b no">Agricole</span> <span class="b warn">⚠ annonce à confirmer</span></td><td class="num">~3,5 km</td><td class="num">≈ 2h23</td>
-            <td><a href="https://www.les-terrains.com/index.php?page=terrains&mode_aff=un_terrain&idter=8571761&ville=quend&departement=80" target="_blank" rel="noopener">les-terrains.com ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="66000" data-s="0">
-            <td></td><td><span class="com">Le Crotoy</span><br><span class="dep">Somme · Baie de Somme, plage de sable</span></td>
-            <td class="num">66 000 €</td><td class="num">450 m²</td><td class="num">147</td>
-            <td><span class="b ok">✓ Constructible</span></td><td class="num">&lt; 1 km</td><td class="num">≈ 2h17</td>
-            <td><a href="https://www.les-terrains.com/index.php?page=terrains&mode_aff=un_terrain&idter=6600484&ville=le%20crotoy&departement=80" target="_blank" rel="noopener">les-terrains.com ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="57420" data-s="0">
-            <td></td><td><span class="com">Mers-les-Bains</span><br><span class="dep">Somme · front de mer Belle Époque</span></td>
-            <td class="num">57 420 €</td><td class="num">463 m²</td><td class="num">124</td>
-            <td><span class="b ok">✓ Constructible</span></td><td class="num">~1 km</td><td class="num">≈ 2h10</td>
-            <td><a href="https://www.vizzit.fr/acheter/mers-les-bains/terrain" target="_blank" rel="noopener">Vizzit ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="102000" data-s="0">
-            <td></td><td><span class="com">Fort-Mahon-Plage</span><br><span class="dep">Somme · réseaux en bordure</span></td>
-            <td class="num">102 000 €</td><td class="num">1 365 m²</td><td class="num">75</td>
-            <td><span class="b ok">✓ Constructible</span></td><td class="num">~1,5 km</td><td class="num">≈ 2h23</td>
-            <td><a href="https://www.seloger.com/immobilier/achat/immo-fort-mahon-plage-80/bien-terrain/" target="_blank" rel="noopener">SeLoger ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="56000" data-s="0">
-            <td></td><td><span class="com">Criel-sur-Mer</span><br><span class="dep">Seine-Maritime</span></td>
-            <td class="num">56 000 €</td><td class="num">620 m²</td><td class="num">90</td>
-            <td><span class="b ok">✓ Constructible</span></td><td class="num">~2 km</td><td class="num">≈ 2h15</td>
-            <td><a href="https://www.terrain-construction.com/terrain-a-vendre/seine-maritime-76/criel-sur-mer-76910" target="_blank" rel="noopener">Terrain-Construction ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="84900" data-s="0">
-            <td></td><td><span class="com">Criel-sur-Mer</span><br><span class="dep">Seine-Maritime · fibre + tout-à-l'égout</span></td>
-            <td class="num">84 900 €</td><td class="num">1 176 m²</td><td class="num">72</td>
-            <td><span class="b ok">✓ Constructible</span></td><td class="num">~2 km</td><td class="num">≈ 2h15</td>
-            <td><a href="https://www.terrain-construction.com/terrain-a-vendre/seine-maritime-76/criel-sur-mer-76910" target="_blank" rel="noopener">Terrain-Construction ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="55900" data-s="0">
-            <td></td><td><span class="com">Saint-Valery-en-Caux</span><br><span class="dep">Seine-Maritime · port de plaisance</span></td>
-            <td class="num">55 900 €</td><td class="num">1 118 m²</td><td class="num">50</td>
-            <td><span class="b ok">✓ Constructible</span></td><td class="num">~1,5 km</td><td class="num">≈ 2h20</td>
-            <td><a href="https://www.terrain-construction.com/terrain-a-vendre/seine-maritime-76/st-valery-en-caux-76460/208046833" target="_blank" rel="noopener">Terrain-Construction ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="55900" data-s="0">
-            <td></td><td><span class="com">Veules-les-Roses</span><br><span class="dep">Seine-Maritime · « plus beau village »</span></td>
-            <td class="num">55 900 €</td><td class="num">1 000 m²</td><td class="num">56</td>
-            <td><span class="b ok">✓ Constructible</span></td><td class="num">~1 km</td><td class="num">≈ 2h22</td>
-            <td><a href="https://www.terrain-construction.com/terrain-a-vendre/seine-maritime-76/st-valery-en-caux-76460" target="_blank" rel="noopener">Terrain-Construction ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="47470" data-s="0">
-            <td></td><td><span class="com">Gueutteville-les-Grès</span><br><span class="dep">Seine-Maritime · entre St-Valery et Veules</span></td>
-            <td class="num">47 470 €</td><td class="num">738 m²</td><td class="num">64</td>
-            <td><span class="b ok">✓ Constructible</span></td><td class="num">4 km</td><td class="num">≈ 2h20</td>
-            <td><a href="https://www.terrain-construction.com/terrain-a-vendre/seine-maritime-76/st-valery-en-caux-76460" target="_blank" rel="noopener">Terrain-Construction ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="58000" data-s="0">
-            <td></td><td><span class="com">Penly</span><br><span class="dep">Seine-Maritime · proche Dieppe</span></td>
-            <td class="num">58 000 €</td><td class="num">1 000 m²</td><td class="num">58</td>
-            <td><span class="b warn">⚠ CU obtenu, statut à vérifier</span></td><td class="num">~1,5 km</td><td class="num">≈ 2h15</td>
-            <td><a href="https://www.superimmo.com/annonces/achat-terrain-1000m-penly-76630-x11o65h" target="_blank" rel="noopener">Superimmo ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="135000" data-s="0">
-            <td></td><td><span class="com">Hautot-sur-Mer (Pourville)</span><br><span class="dep">Seine-Maritime · entre Dieppe et Varengeville</span></td>
-            <td class="num">135 000 €</td><td class="num">~1 000 m²</td><td class="num">135</td>
-            <td><span class="b ok">✓ Constructible</span></td><td class="num">~1 km</td><td class="num">≈ 2h08</td>
-            <td><a href="https://www.lesvalleusesimmobilier.com/produit/terrain-a-vendre-hautot-sur-mer/" target="_blank" rel="noopener">Les Valleuses ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="75000" data-s="0">
-            <td></td><td><span class="com">St-Martin-aux-Buneaux</span><br><span class="dep">Seine-Maritime · Petites-Dalles à 2 km</span></td>
-            <td class="num">75 000 €</td><td class="num">1 300 m²</td><td class="num">58</td>
-            <td><span class="b ok">✓ Constructible</span></td><td class="num">~2 km</td><td class="num">≈ 2h25</td>
-            <td><a href="https://www.terrain-construction.com/terrain-a-vendre/seine-maritime-76/st-martin-aux-buneaux-76540/314574947" target="_blank" rel="noopener">Terrain-Construction ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="49000" data-s="0">
-            <td></td><td><span class="com">Ste-Hélène-Bondeville</span><br><span class="dep">Seine-Maritime · 5 km de Fécamp</span></td>
-            <td class="num">49 000 €</td><td class="num">~860 m²</td><td class="num">57</td>
-            <td><span class="b ok">✓ Constructible</span></td><td class="num">~5 km</td><td class="num">≈ 2h20</td>
-            <td><a href="https://www.fecampimmo.com/terrains-divers-w1" target="_blank" rel="noopener">Fécamp Immo ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="115500" data-s="0">
-            <td></td><td><span class="com">Houlgate</span><br><span class="dep">Calvados · cœur de ville</span></td>
-            <td class="num">115 500 €</td><td class="num">323 m²</td><td class="num">358</td>
-            <td><span class="b ok">✓ Constructible</span></td><td class="num">~500 m</td><td class="num">≈ 2h12</td>
-            <td><a href="https://www.superimmo.com/annonces/achat-terrain-323m-houlgate-14510-x11ap3y" target="_blank" rel="noopener">Superimmo ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="129600" data-s="0">
-            <td></td><td><span class="com">Villers-sur-Mer</span><br><span class="dep">Calvados · Côte Fleurie, sable</span></td>
-            <td class="num">129 600 €</td><td class="num">334 m²</td><td class="num">388</td>
-            <td><span class="b ok">✓ Constructible</span> <span class="b warn">à viabiliser</span></td><td class="num">~1 km</td><td class="num">≈ 2h10</td>
-            <td><a href="https://www.superimmo.com/achat/terrain/basse-normandie/calvados/villers-sur-mer-14640" target="_blank" rel="noopener">Superimmo ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="126500" data-s="0">
-            <td></td><td><span class="com">Honfleur</span><br><span class="dep">Calvados · estuaire</span></td>
-            <td class="num">126 500 €</td><td class="num">702 m²</td><td class="num">180</td>
-            <td><span class="b ok">✓ Constructible, libre de constructeur</span></td><td class="num">~1,5 km</td><td class="num">≈ 2h05</td>
-            <td><a href="https://www.etreproprio.com/immobilier-21982522-vente-honfleur-terrain-constructible-702-m-avec-garage-existant-libre-de-constructeur-honfleur" target="_blank" rel="noopener">EtreProprio ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="108000" data-s="0">
-            <td></td><td><span class="com">Hermanville-sur-Mer</span><br><span class="dep">Calvados · Côte de Nacre</span></td>
-            <td class="num">108 000 €</td><td class="num">400 m²</td><td class="num">270</td>
-            <td><span class="b ok">✓ Constructible</span></td><td class="num">~1,5 km</td><td class="num">≈ 2h25</td>
-            <td><a href="https://www.logic-immo.com/recherche-immo/vente/terrain/normandie/hermanville-sur-mer-14880/ad08fr4859" target="_blank" rel="noopener">Logic-Immo ↗</a></td>
-          </tr>
-          <tr data-c="nc" data-p="149000" data-s="0">
-            <td></td><td><span class="com">Ouistreham</span><br><span class="dep">Calvados · parc résidentiel de loisirs</span></td>
-            <td class="num">149 000 €</td><td class="num">203 m²</td><td class="num">—</td>
-            <td><span class="b no">PRL</span> <span class="b ok">✓ bungalow 2 ch. inclus</span></td><td class="num">~1 km</td><td class="num">≈ 2h25</td>
-            <td><a href="https://www.superimmo.com/achat/terrain/basse-normandie/calvados/ouistreham-14150" target="_blank" rel="noopener">Superimmo ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="213000" data-s="0">
-            <td></td><td><span class="com">Ouistreham</span><br><span class="dep">Calvados · 3 garages + hangar</span></td>
-            <td class="num">213 000 €</td><td class="num">467 m²</td><td class="num">456</td>
-            <td><span class="b ok">✓ Constructible</span></td><td class="num">~600 m</td><td class="num">≈ 2h25</td>
-            <td><a href="https://www.superimmo.com/achat/terrain/basse-normandie/calvados/ouistreham-14150" target="_blank" rel="noopener">Superimmo ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="220000" data-s="0">
-            <td></td><td><span class="com">Courseulles-sur-Mer</span><br><span class="dep">Calvados · Côte de Nacre</span></td>
-            <td class="num">220 000 €</td><td class="num">348 m²</td><td class="num">632</td>
-            <td><span class="b ok">✓ Constructible</span></td><td class="num">~500 m</td><td class="num">≈ 2h30</td>
-            <td><a href="https://www.logic-immo.com/terrain-courseulles-sur-mer/vente-terrain-courseulles-sur-mer-14470-8570_2.html" target="_blank" rel="noopener">Logic-Immo ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="210000" data-s="0">
-            <td></td><td><span class="com">Trouville-sur-Mer</span><br><span class="dep">Calvados · lotissement 8 lots viabilisés</span></td>
-            <td class="num">dès 210 000 €</td><td class="num">lots variés</td><td class="num">—</td>
-            <td><span class="b ok">✓ Constructible, viabilisé</span></td><td class="num">~1,5 km</td><td class="num">≈ 2h05</td>
-            <td><a href="https://www.superimmo.com/achat/terrain/basse-normandie/calvados/trouville-sur-mer-14360" target="_blank" rel="noopener">Superimmo ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="117700" data-s="0">
-            <td></td><td><span class="com">Berck-Plage</span><br><span class="dep">Pas-de-Calais · 1 km de la plage</span></td>
-            <td class="num">117 700 €</td><td class="num">546 m²</td><td class="num">216</td>
-            <td><span class="b ok">✓ Constructible</span></td><td class="num">~1 km</td><td class="num">≈ 2h30</td>
-            <td><a href="https://www.etreproprio.com/immobilier-vente-berck-v62108/terrain" target="_blank" rel="noopener">EtreProprio ↗</a></td>
-          </tr>
-          <tr data-c="c" data-p="85500" data-s="0">
-            <td></td><td><span class="com">Merlimont</span><br><span class="dep">Pas-de-Calais · proche Stella-Plage</span></td>
-            <td class="num">85 500 €</td><td class="num">464 m²</td><td class="num">184</td>
-            <td><span class="b ok">✓ Constructible</span></td><td class="num">~1,5 km</td><td class="num">≈ 2h32</td>
-            <td><a href="https://www.seloger.com/recherche/achat/terrain/hauts-de-france/cucq-62780/ad08fr25408" target="_blank" rel="noopener">SeLoger ↗</a></td>
-          </tr>
-          <tr data-c="nc" data-p="78000" data-s="0">
-            <td></td><td><span class="com">Pendé / Lanchères</span><br><span class="dep">Somme · marais, hutte de chasse</span></td>
-            <td class="num">78 000 €</td><td class="num">~2,5 ha</td><td class="num">3</td>
-            <td><span class="b no">Marais (loisirs/chasse)</span></td><td class="num">~500 m (baie)</td><td class="num">≈ 2h20</td>
-            <td><a href="https://www.etreproprio.com/immobilier-24843412" target="_blank" rel="noopener">EtreProprio ↗</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="tnote">Prix au m² arrondis. « Mer » = distance approximative à la plage ou à la baie. Temps de route hors trafic depuis Paris centre. Relevé du 23 juillet 2026 — certaines annonces peuvent avoir été vendues ou retirées.</p>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>Où chercher toi-même (liens directs filtrés)</h2>
-    <p class="lead">Leboncoin, PAP et SeLoger bloquent les robots : voici les recherches déjà filtrées, à ouvrir dans ton navigateur. Astuce : crée une alerte e-mail sur chacun, les bons terrains partent en quelques jours.</p>
-    <div class="linkgrid">
-      <div class="linkcard">
-        <h3>🟠 Leboncoin</h3>
-        <ul>
-          <li><a href="https://www.leboncoin.fr/recherche?category=9&real_estate_type=3&locations=d_76" target="_blank" rel="noopener">Terrains Seine-Maritime (76)</a></li>
-          <li><a href="https://www.leboncoin.fr/s/5d4c7080-achat-terrain-dans-le-calvados" target="_blank" rel="noopener">Terrains Calvados (14)</a></li>
-          <li><a href="https://www.leboncoin.fr/cl/_immobilier_/cp_cayeux-sur-mer_80410" target="_blank" rel="noopener">Immobilier Cayeux-sur-Mer</a></li>
-          <li><a href="https://www.leboncoin.fr/l/cp_quend_80120" target="_blank" rel="noopener">Quend</a> · <a href="https://www.leboncoin.fr/l/cp_pende_80230" target="_blank" rel="noopener">Pendé</a> · <a href="https://www.leboncoin.fr/cl/ventes_immobilieres/cp_criel-sur-mer_76910/real_estate_type:1" target="_blank" rel="noopener">Criel-sur-Mer</a></li>
-        </ul>
-      </div>
-      <div class="linkcard">
-        <h3>🔵 PAP (entre particuliers)</h3>
-        <ul>
-          <li><a href="https://www.pap.fr/annonce/vente-terrains-seine-maritime-76-g440" target="_blank" rel="noopener">Terrains Seine-Maritime</a></li>
-          <li><a href="https://www.pap.fr/annonce/vente-terrains-houlgate-14510-g11898" target="_blank" rel="noopener">Terrains Houlgate</a></li>
-          <li><a href="https://www.pap.fr/annonce/vente-immobiliere-villers-sur-mer-14640-g11977" target="_blank" rel="noopener">Villers-sur-Mer</a></li>
-        </ul>
-      </div>
-      <div class="linkcard">
-        <h3>🟣 SeLoger</h3>
-        <ul>
-          <li><a href="https://www.seloger.com/immobilier/achat/14/bien-terrain/" target="_blank" rel="noopener">Terrains Calvados (843 annonces)</a></li>
-          <li><a href="https://www.seloger.com/immobilier/achat/immo-saint-valery-sur-somme-80/bien-terrain/" target="_blank" rel="noopener">Saint-Valery-sur-Somme (dès 63 600 €)</a></li>
-          <li><a href="https://www.seloger.com/immobilier/achat/immo-fort-mahon-plage-80/bien-terrain/" target="_blank" rel="noopener">Fort-Mahon</a> · <a href="https://www.seloger.com/immobilier/achat/immo-quend-80/bien-terrain/" target="_blank" rel="noopener">Quend</a> · <a href="https://www.seloger.com/recherche/achat/terrain/hauts-de-france/berck-62600/ad08fr25258" target="_blank" rel="noopener">Berck</a></li>
-          <li><a href="https://www.seloger.com/immobilier/achat/immo-varengeville-sur-mer-76/bien-terrain/" target="_blank" rel="noopener">Varengeville</a> · <a href="https://www.seloger.com/immobilier/achat/immo-hautot-sur-mer-76/bien-terrain/" target="_blank" rel="noopener">Hautot-sur-Mer</a></li>
-        </ul>
-      </div>
-      <div class="linkcard">
-        <h3>🟢 Spécial « non constructible » pas cher</h3>
-        <ul>
-          <li><a href="https://www.superimmo.com/achat/terrain/haute-normandie/seine-maritime/non-constructible" target="_blank" rel="noopener">Superimmo — non constructibles 76</a></li>
-          <li><a href="https://www.superimmo.com/achat/terrain/basse-normandie/calvados/non-constructible" target="_blank" rel="noopener">Superimmo — non constructibles 14</a></li>
-          <li><a href="https://www.paruvendu.fr/immobilier/vente/terrain/terrain-non-constructible/haute-normandie/" target="_blank" rel="noopener">ParuVendu — non constructibles Normandie</a></li>
-          <li><a href="https://immo.trovit.fr/terrain-non-constructible-seine-maritime" target="_blank" rel="noopener">Trovit — 76 (30 annonces dès 17 000 €)</a></li>
-          <li><a href="https://www.immonot.com/immobilier/tout/TEBE/80120-quend/terrain-de-loisirs-bois-etang-80120-quend-80.html" target="_blank" rel="noopener">Immonot — loisirs/bois/étangs Quend</a></li>
-        </ul>
-      </div>
-      <div class="linkcard">
-        <h3>🏗️ Terrain-Construction.com</h3>
-        <ul>
-          <li><a href="https://www.terrain-construction.com/terrain-a-vendre/seine-maritime-76/criel-sur-mer-76910" target="_blank" rel="noopener">Criel-sur-Mer</a> · <a href="https://www.terrain-construction.com/terrain-a-vendre/seine-maritime-76/st-valery-en-caux-76460" target="_blank" rel="noopener">St-Valery-en-Caux</a></li>
-          <li><a href="https://www.terrain-construction.com/terrain-a-vendre/seine-maritime-76/varengeville-sur-mer-76119" target="_blank" rel="noopener">Varengeville</a> · <a href="https://www.terrain-construction.com/terrain-a-vendre/seine-maritime-76/hautot-sur-mer-76550" target="_blank" rel="noopener">Hautot-sur-Mer</a></li>
-          <li><a href="https://www.terrain-construction.com/terrain-a-vendre/somme-80/le-crotoy-80550" target="_blank" rel="noopener">Le Crotoy</a> · <a href="https://www.terrain-construction.com/terrain-a-vendre/somme-80/ault-80460" target="_blank" rel="noopener">Ault</a></li>
-          <li><a href="https://www.terrain-construction.com/terrain-a-vendre/calvados-14/houlgate-14510" target="_blank" rel="noopener">Houlgate</a> · <a href="https://www.terrain-construction.com/terrain-a-vendre/calvados-14/merville-franceville-plage-14810" target="_blank" rel="noopener">Merville-Franceville</a></li>
-        </ul>
-      </div>
-      <div class="linkcard">
-        <h3>📚 Autres bons plans</h3>
-        <ul>
-          <li><a href="https://www.immobilier.notaires.fr/fr/annonces-immobilieres/vente/terrain/calvados-14" target="_blank" rel="noopener">Notaires de France — terrains 14</a> <span class="site">(ventes notariales, parfois sous le marché)</span></li>
-          <li><a href="https://www.logic-immo.com/terrain-seine-maritime/vente-terrain-seine-maritime-76-101_1.html" target="_blank" rel="noopener">Logic-Immo — 76 (895 annonces dès 9 000 €)</a></li>
-          <li><a href="https://www.logic-immo.com/terrain-calvados/vente-terrain-calvados/terrain-pas-cher-calvados-14-36_1.html" target="_blank" rel="noopener">Logic-Immo — terrains pas chers 14 (dès 4 500 €)</a></li>
-          <li><a href="https://www.etreproprio.com/terrain-a-vendre/14" target="_blank" rel="noopener">EtreProprio — 14</a> · <a href="https://www.etreproprio.com/immobilier-vente-cayeux-sur-mer-v80182/terrain" target="_blank" rel="noopener">Cayeux</a> · <a href="https://www.etreproprio.com/immobilier-vente-berck-v62108/terrain" target="_blank" rel="noopener">Berck</a></li>
-          <li><a href="https://www.bienici.com/recherche/achat/ault-80460/terrain" target="_blank" rel="noopener">Bien'ici — Ault</a> · <a href="https://www.bienici.com/recherche/achat/varengeville-sur-mer-76119/terrain" target="_blank" rel="noopener">Varengeville</a></li>
-        </ul>
-      </div>
+      <div class="chart-note">Veules-les-Roses est la plus proche en kilomètres (188 km) mais pas en temps — fin de trajet sur départementales. La Côte Fleurie (Deauville → Cabourg) se fait à 100 % sur autoroute.</div>
     </div>
   </div>
 </section>
 
 <section class="alt">
   <div class="wrap">
+    <h2>Chercher toi-même (liens filtrés) + alertes</h2>
+    <p class="lead">Leboncoin, PAP et SeLoger bloquent les robots — voici les recherches pré-filtrées à ouvrir dans ton navigateur, et où mettre des alertes e-mail.</p>
+    <div class="linkgrid">
+      <div class="linkcard">
+        <h3>🟠 Leboncoin</h3>
+        <ul>
+          <li><a href="https://www.leboncoin.fr/recherche?category=9&real_estate_type=3&locations=d_76" target="_blank" rel="noopener">Terrains Seine-Maritime (76)</a></li>
+          <li><a href="https://www.leboncoin.fr/s/5d4c7080-achat-terrain-dans-le-calvados" target="_blank" rel="noopener">Terrains Calvados (14)</a></li>
+          <li><a href="https://www.leboncoin.fr/cl/_immobilier_/cp_cayeux-sur-mer_80410" target="_blank" rel="noopener">Cayeux-sur-Mer</a> · <a href="https://www.leboncoin.fr/l/cp_quend_80120" target="_blank" rel="noopener">Quend</a> · <a href="https://www.leboncoin.fr/l/cp_pende_80230" target="_blank" rel="noopener">Pendé</a> · <a href="https://www.leboncoin.fr/cl/ventes_immobilieres/cp_criel-sur-mer_76910/real_estate_type:1" target="_blank" rel="noopener">Criel</a></li>
+        </ul>
+      </div>
+      <div class="linkcard">
+        <h3>🔵 PAP + Bien'ici</h3>
+        <ul>
+          <li><a href="https://www.pap.fr/annonce/vente-terrains-seine-maritime-76-g440" target="_blank" rel="noopener">PAP — terrains Seine-Maritime</a></li>
+          <li><a href="https://www.pap.fr/annonce/vente-terrains-houlgate-14510-g11898" target="_blank" rel="noopener">PAP — Houlgate</a></li>
+          <li><a href="https://www.bienici.com/recherche/achat/terrain?camera=9_1.35_50.05" target="_blank" rel="noopener">Bien'ici — carte des terrains sur la côte</a> <span class="site">(source du flux live de cette page)</span></li>
+        </ul>
+      </div>
+      <div class="linkcard">
+        <h3>🟣 SeLoger</h3>
+        <ul>
+          <li><a href="https://www.seloger.com/immobilier/achat/14/bien-terrain/" target="_blank" rel="noopener">Terrains Calvados (843 annonces)</a></li>
+          <li><a href="https://www.seloger.com/immobilier/achat/immo-saint-valery-sur-somme-80/bien-terrain/" target="_blank" rel="noopener">Saint-Valery-sur-Somme</a> · <a href="https://www.seloger.com/immobilier/achat/immo-fort-mahon-plage-80/bien-terrain/" target="_blank" rel="noopener">Fort-Mahon</a> · <a href="https://www.seloger.com/recherche/achat/terrain/hauts-de-france/berck-62600/ad08fr25258" target="_blank" rel="noopener">Berck</a></li>
+          <li><a href="https://www.seloger.com/immobilier/achat/immo-varengeville-sur-mer-76/bien-terrain/" target="_blank" rel="noopener">Varengeville</a> · <a href="https://www.seloger.com/immobilier/achat/immo-hautot-sur-mer-76/bien-terrain/" target="_blank" rel="noopener">Hautot-sur-Mer</a></li>
+        </ul>
+      </div>
+      <div class="linkcard">
+        <h3>🟢 Spécial « non constructible » pas cher</h3>
+        <ul>
+          <li><a href="https://www.superimmo.com/achat/terrain/haute-normandie/seine-maritime/non-constructible" target="_blank" rel="noopener">Superimmo — non constructibles 76</a> · <a href="https://www.superimmo.com/achat/terrain/basse-normandie/calvados/non-constructible" target="_blank" rel="noopener">14</a></li>
+          <li><a href="https://www.paruvendu.fr/immobilier/vente/terrain/terrain-non-constructible/haute-normandie/" target="_blank" rel="noopener">ParuVendu — non constructibles Normandie</a></li>
+          <li><a href="https://immo.trovit.fr/terrain-non-constructible-seine-maritime" target="_blank" rel="noopener">Trovit — 76 (dès 17 000 €)</a></li>
+          <li><a href="https://www.immonot.com/immobilier/tout/TEBE/80120-quend/terrain-de-loisirs-bois-etang-80120-quend-80.html" target="_blank" rel="noopener">Immonot — loisirs/bois/étangs Quend</a></li>
+        </ul>
+      </div>
+      <div class="linkcard">
+        <h3>📚 Autres bons plans</h3>
+        <ul>
+          <li><a href="https://www.immobilier.notaires.fr/fr/annonces-immobilieres/vente/terrain/calvados-14" target="_blank" rel="noopener">Notaires de France — terrains 14</a> <span class="site">(parfois sous le marché)</span></li>
+          <li><a href="https://www.logic-immo.com/terrain-seine-maritime/vente-terrain-seine-maritime-76-101_1.html" target="_blank" rel="noopener">Logic-Immo — 76 (dès 9 000 €)</a></li>
+          <li><a href="https://www.etreproprio.com/terrain-a-vendre/14" target="_blank" rel="noopener">EtreProprio — 14</a> · <a href="https://www.etreproprio.com/immobilier-vente-cayeux-sur-mer-v80182/terrain" target="_blank" rel="noopener">Cayeux</a> · <a href="https://www.etreproprio.com/immobilier-vente-berck-v62108/terrain" target="_blank" rel="noopener">Berck</a></li>
+          <li><a href="https://www.terrain-construction.com/terrain-a-vendre/seine-maritime-76/criel-sur-mer-76910" target="_blank" rel="noopener">Terrain-Construction — Criel</a> · <a href="https://www.terrain-construction.com/terrain-a-vendre/seine-maritime-76/st-valery-en-caux-76460" target="_blank" rel="noopener">St-Valery-en-Caux</a></li>
+        </ul>
+      </div>
+      <div class="linkcard">
+        <h3>🎯 Pistes signalées mais non vérifiables en ligne</h3>
+        <ul>
+          <li>Quiberville : 3 900 m² avec CU, vue vallée de la Saâne, proche plage <span class="site">(agence Leforestier — via SeLoger)</span></li>
+          <li>Petit-Caux : 900 m² à 35 000 € <span class="site">(Arlogis, à appeler)</span></li>
+          <li>Ault – Bois de Cise : 4 615 m² constructibles à 103 376 € <span class="site">(Résidences Picardes, annonce n°46711)</span></li>
+          <li>Woignarue : 966 m² à 37 100 € <span class="site">(Habitat Concept n°37305)</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
     <h2>Avant de faire une offre : les 5 vérifications qui sauvent</h2>
     <div class="tips">
-      <div class="tip"><b>📜 PLU et loi Littoral</b>Dans les communes littorales, la loi Littoral interdit de construire hors continuité des zones urbanisées et dans la bande des 100 m. Demande un <b>certificat d'urbanisme opérationnel (CUb)</b> en mairie avant toute offre — c'est gratuit et ça fige les règles 18 mois.</div>
-      <div class="tip"><b>🌊 Risque de submersion</b>Vérifie la parcelle sur <a href="https://www.georisques.gouv.fr" target="_blank" rel="noopener">georisques.gouv.fr</a>. Zones sensibles du dossier : les Bas-Champs de Cayeux, Brutelles, Pendé, et le bord de Dives (Périers-en-Auge).</div>
-      <div class="tip"><b>⛰️ Érosion des falaises</b>Sur la côte d'Albâtre (Ault, Criel, Le Tréport, Varengeville), la falaise recule de 10 à 50 cm/an. Un prix très bas près du bord de falaise n'est jamais un hasard — regarde la distance au trait de côte.</div>
-      <div class="tip"><b>🏕️ Non constructible : ce qu'on peut vraiment y faire</b>Jardin, verger, ruches, quelques animaux : oui. Cabane/abri &lt; 5 m² sans fondation : souvent toléré (vérifier en mairie). Caravane à demeure, mobil-home, camping : en principe interdits hors zones prévues. Le statut peut évoluer avec le PLU… mais ne jamais acheter en pariant dessus.</div>
-      <div class="tip"><b>💶 Le vrai budget constructible</b>Ajoute au prix : viabilisation si non raccordé (5 000–15 000 €), frais de notaire ~8 %, taxe d'aménagement, étude de sol G1 (obligatoire à la vente). « Viabilisé » et « réseaux en bordure », ce n'est pas pareil.</div>
-      <div class="tip"><b>⏱️ Va vite (mais pas trop)</b>Les terrains &lt; 60 000 € près de la mer partent en quelques jours. Mets des alertes partout, appelle plutôt qu'e-mailer, mais conditionne toute offre à l'obtention du CU / permis.</div>
+      <div class="tip"><b>📜 PLU et loi Littoral</b>Dans les communes littorales, pas de construction hors continuité urbaine ni dans la bande des 100 m. Demande un <b>certificat d'urbanisme opérationnel (CUb)</b> en mairie avant toute offre — gratuit, et ça fige les règles 18 mois.</div>
+      <div class="tip"><b>🌊 Risque de submersion</b>Vérifie la parcelle sur <a href="https://www.georisques.gouv.fr" target="_blank" rel="noopener">georisques.gouv.fr</a>. Zones sensibles du dossier : Bas-Champs de Cayeux, Pendé/Lanchères, bord de Dives (Périers-en-Auge).</div>
+      <div class="tip"><b>⛰️ Érosion des falaises</b>Côte d'Albâtre (Ault, Criel, Le Tréport, Berneval) : la falaise recule de 10 à 50 cm/an. Un prix bas près du bord n'est jamais un hasard — regarde la distance au trait de côte.</div>
+      <div class="tip"><b>🏕️ Non constructible : ce qu'on peut y faire</b>Jardin, verger, ruches : oui. Abri &lt; 5 m² : souvent toléré (vérifier en mairie). Caravane à demeure, mobil-home : en principe interdits hors zones prévues. Ne jamais acheter en pariant sur un changement de PLU.</div>
+      <div class="tip"><b>💶 Le vrai budget constructible</b>Ajoute : viabilisation si non raccordé (5 000–15 000 €), notaire ~8 %, taxe d'aménagement, étude de sol G1. « Viabilisé » ≠ « réseaux en bordure ».</div>
+      <div class="tip"><b>⏱️ Va vite (mais pas trop)</b>Les terrains &lt; 60 000 € près de la mer partent en quelques jours (le Berneval a déjà baissé 2 fois). Appelle plutôt qu'e-mailer, et conditionne l'offre à l'obtention du CU.</div>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <p><b>Recherche réalisée le 23 juillet 2026</b> — temps de route vérifiés via Mappy/ViaMichelin ; annonces relevées sur Leboncoin, PAP, SeLoger, Superimmo, EtreProprio, Logic-Immo, Bien'ici, terrain-construction.com, les-terrains.com, iad France, Immonot, Notaires de France, ParuVendu, Trovit, Vizzit et agences locales. Les annonces évoluent vite : re-vérifier prix et disponibilité avant tout déplacement.</p>
-    <p style="margin-top:10px">Photos : <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimédia Commons</a> (licences CC), via les pages Wikipédia des communes.</p>
+    <p><b>Vérification du 23 juillet 2026</b> — chaque annonce de cette page a été ouverte individuellement et confirmée en ligne ce jour (flux Bien'ici en direct + vérification manuelle sur Superimmo, EtreProprio, iad, agences). Les annonces évoluent vite : re-vérifier prix et disponibilité avant déplacement. Photos : visuels des annonces, © agences/annonceurs respectifs, reproduits à titre de référence avec lien direct vers la source.</p>
   </div>
 </footer>
 
@@ -554,6 +610,7 @@
       let show=true;
       if(f==='c')show=r.dataset.c==='c';
       else if(f==='nc')show=r.dataset.c==='nc';
+      else if(f==='lt60')show=parseInt(r.dataset.p,10)<60000;
       else if(f==='lt100')show=parseInt(r.dataset.p,10)<100000;
       else if(f==='star')show=r.dataset.s==='1';
       r.style.display=show?'':'none';
