@@ -109,3 +109,21 @@ continue proprement si une clé d'API manque).
    l'environnement sur claude.ai/code).
 4. Tant que ces variables sont absentes, le script logge « Telegram non
    configuré » et continue sans erreur : rien d'autre à faire.
+
+## 6. Sources X / Twitter (prioritaires pour le temps réel)
+
+X est souvent en avance de 1 à 3 h sur la presse pour cette crise. À chaque
+cycle, lancer des recherches web ciblées (les posts X ressortent bien via la
+recherche web classique) :
+
+- **Comptes officiels** : `@PrefAquitaine33` (préfète — points de situation,
+  ordres d'évacuation, routes), `@SDIS33` (pompiers de la Gironde),
+  `@SecCivileFrance`, `@Interieur_Gouv`, `@VigiMeteoFrance`, mairie
+  `Lège-Cap-Ferret`.
+- **Requêtes types** :
+  - `x.com PrefAquitaine33 incendie Saumos Cap-Ferret point de situation`
+  - `x.com SDIS33 OR SecCivileFrance Gironde feu`
+  - `twitter "Lège-Cap-Ferret" OR #Saumos évacuation OR réouverture OR fixé`
+- Toujours **recouper avec le communiqué préfectoral** avant de qualifier un
+  événement de majeur ; les posts officiels de @PrefAquitaine33 valent
+  communiqué (les citer dans le journal avec leur URL x.com).
