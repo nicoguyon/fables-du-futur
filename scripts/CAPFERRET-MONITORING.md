@@ -127,3 +127,15 @@ recherche web classique) :
 - Toujours **recouper avec le communiqué préfectoral** avant de qualifier un
   événement de majeur ; les posts officiels de @PrefAquitaine33 valent
   communiqué (les citer dans le journal avec leur URL x.com).
+
+## 7. Publication automatique sur X
+
+`python3 scripts/capferret_xpost.py --text "…" [--image chemin.jpg]` publie un
+point de situation sur X (≤ 280 caractères, image jointe possible — typiquement
+l'image satellite du jour). Nécessite 4 variables (env ou
+`.capferret-secrets.env`) : `X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`,
+`X_ACCESS_SECRET` — à créer sur https://developer.x.com (app avec accès
+« Read and write », offre gratuite suffisante). Tant qu'elles sont absentes, le
+script logge et s'arrête proprement. Cadence : un point toutes les 3 h
+(cycles UTC 5/8/11/14/17/20), terminé par « Suivi en continu :
+t.me/Capfeuretbot » + lien dashboard.
