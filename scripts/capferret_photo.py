@@ -3,13 +3,16 @@
 """Envoie sur Telegram une image satellite récente de la zone Cap-Ferret / Saumos.
 
 Usage :
-    python3 scripts/capferret_photo.py --caption "Texte du message" [--date 2026-07-24]
+    python3 scripts/capferret_photo.py --caption "Texte" [--date AAAA-MM-JJ] [--style fresh|day] [--photo-url URL]
 
-- Image : NASA GIBS (WMS public, sans clé), couche VIIRS/MODIS vraie couleur
-  + anomalies thermiques (points chauds des incendies), cadrée sur le bassin
-  d'Arcachon et la presqu'île (lat 44.45–45.10, lon -1.45 – -0.70).
-- Essaie la date du jour, puis la veille si l'image du jour n'est pas encore
-  disponible (les passages satellites ont lieu en début d'après-midi).
+- Image : API snapshot NASA Worldview (publique, sans clé) — vraie couleur +
+  anomalies thermiques + traits de côte, cadrée sur le bassin d'Arcachon et la
+  presqu'île. Sélection automatique du meilleur passage parmi 5 satellites
+  (VIIRS NOAA-21/NOAA-20/Suomi-NPP ~12h30-13h30, MODIS Aqua ~13h30,
+  MODIS Terra ~10h30), sur aujourd'hui puis la veille.
+- --style fresh (défaut) : détections les plus récentes, y compris les points
+  chauds de la nuit sur fond noir ; --style day : plus belle image de jour
+  (panache de fumée visible).
 - Envoi : Telegram sendPhoto en multipart (TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID,
   lus dans l'environnement ou .capferret-secrets.env comme capferret_notify).
 Stdlib uniquement.
@@ -27,38 +30,83 @@ import uuid
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from capferret_notify import load_local_secrets, log, telegram_chat_ids  # noqa: E402
 
-GIBS_WMS = "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi"
-BBOX = "44.45,-1.45,45.10,-0.70"  # lat_min,lon_min,lat_max,lon_max (WMS 1.3.0)
-LAYER_SETS = [
-    "VIIRS_SNPP_CorrectedReflectance_TrueColor,VIIRS_SNPP_Thermal_Anomalies_375m_All",
-    "MODIS_Terra_CorrectedReflectance_TrueColor,MODIS_Terra_Thermal_Anomalies_All",
+WORLDVIEW = "https://wvs.earthdata.nasa.gov/api/v1/snapshot"
+BBOX = "44.45,-1.45,45.10,-0.70"  # lat_min,lon_min,lat_max,lon_max (EPSG:4326)
+# Passages quotidiens approximatifs (heure locale) : Terra ~10h30, NOAA-20 ~12h30,
+# SNPP/NOAA-21/Aqua ~13h30. On interroge tous les satellites et on garde le meilleur.
+SATELLITES = [
+    ("VIIRS_NOAA21_CorrectedReflectance_TrueColor,VIIRS_NOAA21_Thermal_Anomalies_375m_All", "VIIRS NOAA-21"),
+    ("VIIRS_NOAA20_CorrectedReflectance_TrueColor,VIIRS_NOAA20_Thermal_Anomalies_375m_All", "VIIRS NOAA-20"),
+    ("VIIRS_SNPP_CorrectedReflectance_TrueColor,VIIRS_SNPP_Thermal_Anomalies_375m_All", "VIIRS Suomi-NPP"),
+    ("MODIS_Aqua_CorrectedReflectance_TrueColor,MODIS_Aqua_Thermal_Anomalies_All", "MODIS Aqua"),
+    ("MODIS_Terra_CorrectedReflectance_TrueColor,MODIS_Terra_Thermal_Anomalies_All", "MODIS Terra"),
 ]
+HOTSPOT_MIN = 15000   # en dessous : snapshot vide (ni image de jour ni points chauds)
+DAYLIGHT_MIN = 30000  # au-dessus : vraie image de jour exploitable
 
 
-def fetch_satellite_image(date_str):
-    """Renvoie (bytes_jpeg, description) ou (None, None)."""
-    context = ssl.create_default_context()
-    for layers in LAYER_SETS:
-        url = (
-            GIBS_WMS
-            + "?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&CRS=EPSG:4326"
-            + "&LAYERS=" + layers
-            + "&BBOX=" + BBOX
-            + "&WIDTH=900&HEIGHT=780&FORMAT=image/jpeg"
-            + "&TIME=" + date_str
-        )
-        try:
-            with urllib.request.urlopen(url, timeout=45, context=context) as resp:
-                data = resp.read()
-                ctype = resp.headers.get("Content-Type", "")
-                if resp.status == 200 and "image" in ctype and len(data) > 20000:
-                    sat = "VIIRS" if "VIIRS" in layers else "MODIS"
-                    return data, "%s — %s" % (sat, date_str)
-                log("GIBS %s %s : réponse non exploitable (%s, %d octets)"
-                    % (layers.split(",")[0], date_str, ctype, len(data)))
-        except (urllib.error.URLError, OSError) as exc:
-            log("GIBS %s : erreur %s" % (date_str, exc))
-    return None, None
+def fetch_snapshot(layers, date_str):
+    """Un snapshot Worldview (couche vraie couleur + points chauds + côtes)."""
+    url = (
+        WORLDVIEW
+        + "?REQUEST=GetSnapshot&CRS=EPSG:4326&FORMAT=image/jpeg"
+        + "&WIDTH=1000&HEIGHT=870&BBOX=" + BBOX
+        + "&LAYERS=" + layers + ",Coastlines_15m"
+        + "&TIME=" + date_str
+    )
+    try:
+        with urllib.request.urlopen(url, timeout=45,
+                                    context=ssl.create_default_context()) as resp:
+            data = resp.read()
+            if resp.status == 200 and "image" in resp.headers.get("Content-Type", ""):
+                return data
+    except (urllib.error.URLError, OSError) as exc:
+        log("Worldview %s %s : erreur %s" % (layers.split(",")[0], date_str, exc))
+    return None
+
+
+def fetch_satellite_image(date_str=None, style="fresh"):
+    """Sélectionne la meilleure image parmi tous les satellites sur 2 jours.
+
+    style « fresh » : priorité aux détections les plus récentes (points chauds
+    de la nuit inclus, sur fond noir) ; style « day » : priorité à la plus
+    belle image de jour (panache de fumée visible). Renvoie (bytes, desc).
+    """
+    today = datetime.date.today()
+    dates = [date_str] if date_str else [str(today), str(today - datetime.timedelta(days=1))]
+
+    candidates = []  # (date, nom_satellite, taille, bytes)
+    for d in dates:
+        for layers, name in SATELLITES:
+            data = fetch_snapshot(layers, d)
+            if data and len(data) >= HOTSPOT_MIN:
+                candidates.append((d, name, len(data), data))
+        # style fresh : si le jour le plus récent a déjà du contenu, inutile
+        # d'interroger la veille sauf pour trouver une image de jour.
+        if style == "fresh" and candidates and any(c[0] == d for c in candidates):
+            daylight = [c for c in candidates if c[2] >= DAYLIGHT_MIN]
+            if daylight:
+                break
+
+    if not candidates:
+        return None, None
+
+    freshest_day = candidates[0][0]
+    fresh_best = max((c for c in candidates if c[0] == freshest_day), key=lambda c: c[2])
+    day_candidates = [c for c in candidates if c[2] >= DAYLIGHT_MIN]
+    day_best = max(day_candidates, key=lambda c: c[2]) if day_candidates else None
+
+    if style == "day" and day_best:
+        chosen, kind = day_best, "dernier passage de jour"
+    elif fresh_best[2] >= DAYLIGHT_MIN:
+        chosen, kind = fresh_best, "image de jour la plus récente"
+    elif style == "fresh" or day_best is None:
+        chosen, kind = fresh_best, "points chauds les plus récents"
+    else:
+        chosen, kind = day_best, "dernier passage de jour"
+
+    d, name, _size, data = chosen
+    return data, "%s — %s (%s)" % (name, d, kind)
 
 
 def send_photo(token, chat_id, image, caption):
@@ -119,6 +167,9 @@ def main(argv=None):
     parser.add_argument("--photo-url", default="",
                         help="URL d'une image à envoyer à la place du satellite "
                              "(ex. photo Wikimedia Commons d'une destination plan B).")
+    parser.add_argument("--style", default="fresh", choices=["fresh", "day"],
+                        help="fresh = détections les plus récentes (défaut) ; "
+                             "day = plus belle image de jour (panache visible).")
     args = parser.parse_args(argv)
 
     load_local_secrets()
@@ -128,21 +179,12 @@ def main(argv=None):
         log("Telegram non configuré — abandon.")
         return 1
 
-    if args.date:
-        dates = [args.date]
-    else:
-        today = datetime.date.today()
-        dates = [str(today), str(today - datetime.timedelta(days=1))]
-
     image, desc = None, None
     if args.photo_url:
         image = fetch_url_image(args.photo_url)
         desc = None
     if image is None:
-        for date_str in dates:
-            image, desc = fetch_satellite_image(date_str)
-            if image:
-                break
+        image, desc = fetch_satellite_image(args.date or None, style=args.style)
 
     rc = 0
     if image:
