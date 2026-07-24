@@ -110,12 +110,22 @@ def html_escape(text):
 
 # ---------------------------------------------------------------- Telegram
 
+def telegram_chat_ids():
+    """Liste des destinataires : TELEGRAM_CHAT_IDS (séparés par des virgules)
+    ou, à défaut, TELEGRAM_CHAT_ID seul."""
+    raw = os.environ.get("TELEGRAM_CHAT_IDS", "").strip() or os.environ.get(
+        "TELEGRAM_CHAT_ID", ""
+    ).strip()
+    return [c.strip() for c in raw.split(",") if c.strip()]
+
+
 def send_telegram(data, summary):
-    """Envoie le message compact Telegram. True = OK, False = échec réel."""
+    """Envoie le message compact Telegram à tous les destinataires.
+    True = OK, False = échec réel."""
     token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
-    chat_id = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
-    if not token or not chat_id:
-        log("Telegram non configuré (TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID absents) — étape ignorée.")
+    chat_ids = telegram_chat_ids()
+    if not token or not chat_ids:
+        log("Telegram non configuré (TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID(S) absents) — étape ignorée.")
         return True
 
     level = data.get("level", "warning")
@@ -141,20 +151,23 @@ def send_telegram(data, summary):
         "",
         '<a href="%s">Voir le dashboard complet</a>' % PAGE_URL,
     ]
-    payload = {
-        "chat_id": chat_id,
-        "text": "\n".join(lines),
-        "parse_mode": "HTML",
-        "disable_web_page_preview": True,
-    }
-    status, detail = http_post_json(
-        "https://api.telegram.org/bot%s/sendMessage" % token, payload
-    )
-    if status == 200:
-        log("Telegram : message envoyé.")
-        return True
-    log("Telegram : échec (statut=%s, détail=%s)" % (status, detail))
-    return False
+    ok = True
+    for chat_id in chat_ids:
+        payload = {
+            "chat_id": chat_id,
+            "text": "\n".join(lines),
+            "parse_mode": "HTML",
+            "disable_web_page_preview": True,
+        }
+        status, detail = http_post_json(
+            "https://api.telegram.org/bot%s/sendMessage" % token, payload
+        )
+        if status == 200:
+            log("Telegram : message envoyé à %s." % chat_id)
+        else:
+            log("Telegram : échec pour %s (statut=%s, détail=%s)" % (chat_id, status, detail))
+            ok = False
+    return ok
 
 
 # ------------------------------------------------------------------ E-mail

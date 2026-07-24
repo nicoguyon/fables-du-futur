@@ -25,7 +25,7 @@ import urllib.request
 import uuid
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from capferret_notify import load_local_secrets, log  # noqa: E402
+from capferret_notify import load_local_secrets, log, telegram_chat_ids  # noqa: E402
 
 GIBS_WMS = "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi"
 BBOX = "44.45,-1.45,45.10,-0.70"  # lat_min,lon_min,lat_max,lon_max (WMS 1.3.0)
@@ -103,8 +103,8 @@ def main(argv=None):
 
     load_local_secrets()
     token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
-    chat_id = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
-    if not token or not chat_id:
+    chat_ids = telegram_chat_ids()
+    if not token or not chat_ids:
         log("Telegram non configuré — abandon.")
         return 1
 
@@ -114,29 +114,39 @@ def main(argv=None):
         today = datetime.date.today()
         dates = [str(today), str(today - datetime.timedelta(days=1))]
 
+    image, desc = None, None
     for date_str in dates:
         image, desc = fetch_satellite_image(date_str)
         if image:
-            caption = args.caption + "\n🛰 Image satellite NASA %s" % desc
+            break
+
+    rc = 0
+    if image:
+        caption = args.caption + "\n🛰 Image satellite NASA %s" % desc
+        for chat_id in chat_ids:
             if send_photo(token, chat_id, image, caption):
-                log("Photo satellite envoyée (%s)." % desc)
-                return 0
-            return 1
+                log("Photo satellite envoyée à %s (%s)." % (chat_id, desc))
+            else:
+                rc = 1
+        return rc
 
     log("Aucune image satellite disponible — envoi du texte seul via sendMessage.")
     import json as _json
     import urllib.request as _r
-    body = _json.dumps({"chat_id": chat_id, "text": args.caption,
-                        "parse_mode": "HTML"}).encode("utf-8")
-    req = _r.Request("https://api.telegram.org/bot%s/sendMessage" % token,
-                     data=body, method="POST")
-    req.add_header("Content-Type", "application/json")
-    try:
-        with _r.urlopen(req, timeout=30, context=ssl.create_default_context()) as resp:
-            return 0 if resp.status == 200 else 1
-    except (urllib.error.URLError, OSError) as exc:
-        log("sendMessage : erreur %s" % exc)
-        return 1
+    for chat_id in chat_ids:
+        body = _json.dumps({"chat_id": chat_id, "text": args.caption,
+                            "parse_mode": "HTML"}).encode("utf-8")
+        req = _r.Request("https://api.telegram.org/bot%s/sendMessage" % token,
+                         data=body, method="POST")
+        req.add_header("Content-Type", "application/json")
+        try:
+            with _r.urlopen(req, timeout=30, context=ssl.create_default_context()) as resp:
+                if resp.status != 200:
+                    rc = 1
+        except (urllib.error.URLError, OSError) as exc:
+            log("sendMessage %s : erreur %s" % (chat_id, exc))
+            rc = 1
+    return rc
 
 
 if __name__ == "__main__":
