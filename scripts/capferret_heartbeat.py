@@ -118,6 +118,31 @@ def post_x(d, hhmm):
         log("heartbeat : post X échoué (%s)." % exc)
 
 
+def notify_new_subscribers(state):
+    """Prévient Nico sur Telegram quand le compteur d'abonnés progresse."""
+    from capferret_notify import BLOCKED_PATH, SUBSCRIBERS_PATH, _read_id_set, refresh_subscribers
+    token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+    if not token:
+        return
+    subs = refresh_subscribers(token) - _read_id_set(BLOCKED_PATH)
+    known = set(state.get("known_subs") or [])
+    new = sorted(subs - known)
+    if known and new:
+        msg = ("👥 Veille Cap-Ferret : +%d abonné(s). Total : %d actifs."
+               % (len(new), len(subs)))
+        body = json.dumps({"chat_id": "632685614", "text": msg}).encode()
+        req = urllib.request.Request(
+            "https://api.telegram.org/bot%s/sendMessage" % token,
+            data=body, method="POST")
+        req.add_header("Content-Type", "application/json")
+        try:
+            urllib.request.urlopen(req, timeout=20)
+            log("heartbeat : %d nouvel(aux) abonné(s) signalé(s) à Nico." % len(new))
+        except Exception as exc:  # noqa: BLE001
+            log("heartbeat : notification abonnés échouée (%s)." % exc)
+    state["known_subs"] = sorted(subs)
+
+
 def main():
     load_local_secrets()
     d = load_data()
@@ -125,6 +150,7 @@ def main():
         return 1
     state = load_state()
     state["n"] = state.get("n", 0) + 1
+    notify_new_subscribers(state)
     hhmm = now_fr().strftime("%Hh%M")
 
     args = ["--caption", telegram_caption(d, hhmm)]
