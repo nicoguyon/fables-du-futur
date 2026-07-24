@@ -1,19 +1,25 @@
 {
-  "updated": "2026-07-24T14:05:00Z",
-  "updated_label": "vendredi 24 juillet, 16h05",
+  "updated": "2026-07-24T15:20:00Z",
+  "updated_label": "vendredi 24 juillet, 17h20",
   "level": "critical",
-  "level_label": "Évacuations étendues à l'est du bassin",
-  "headline": "La préfète ordonne l'évacuation préventive d'Arès, Andernos, Le Temple et Saumos : le feu menace désormais aussi l'est du bassin. Vigilance orages à partir de 19h — vent imprévisible. 1 000 pompiers engagés.",
-  "prob_ok": 20,
-  "prob_degraded": 30,
-  "prob_cancelled": 50,
+  "level_label": "Feu hors norme — il file vers la métropole bordelaise",
+  "headline": "« Ampleur inédite » (préfète) : 19 000 ha brûlés, le feu se dirige vers l'est et la métropole bordelaise. 110 000 évacués en Gironde, l'armée mobilisée par le Président, cellule interministérielle de crise ce soir.",
+  "prob_ok": 10,
+  "prob_degraded": 25,
+  "prob_cancelled": 65,
   "stats": {
-    "hectares": "≈ 10 000",
-    "evacues": "35–40 000",
-    "pompiers": "1 000",
-    "statut_feu": "actif, non maîtrisé"
+    "hectares": "19 000",
+    "evacues": "110 000",
+    "pompiers": "1 000+ & armée",
+    "statut_feu": "hors norme, non maîtrisé"
   },
   "journal": [
+    {
+      "time": "2026-07-24T15:20:00Z",
+      "time_label": "ven. 24/07, 17h20",
+      "level": "critical",
+      "text": "ESCALADE MAJEURE, confirmée par la préfète sur X : « l'incendie a pris une ampleur inédite (19 000 hectares brûlés) et se dirige vers l'est du département et la métropole bordelaise ». 110 000 personnes évacuées en Gironde (France 3), premières évacuations dans la métropole de Bordeaux. Évacuations préventives de Sainte-Hélène, Salaunes et Lanton. Le Président demande aux Armées de se mobiliser ; cellule interministérielle de crise convoquée à 22h par le Premier ministre. Les pompiers décrivent un feu convectif « jamais vu ». Probabilités révisées : annulé/impossible 65 % — le sinistre dépasse désormais très largement la presqu'île. Sources : https://x.com/PrefAquitaine33/status/2080749394169905627 · France 3 · franceinfo"
+    },
     {
       "time": "2026-07-24T14:05:00Z",
       "time_label": "ven. 24/07, 16h05",
