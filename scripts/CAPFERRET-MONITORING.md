@@ -149,3 +149,16 @@ ou un asset poussé dans `social/capferret/` (servi sur
 https://fables.comptoiria.com/social/capferret/…). Vérifier ensuite
 `GET /api/v1/posts/<id>` → `status: published`. L'ancien script
 `capferret_xpost.py` (API X directe) reste en secours si Late est indisponible.
+
+## 8. Veille X temps réel (Apify)
+
+`python3 scripts/capferret_x_live.py [--minutes 45] [--max 25] [--officiels]`
+interroge X en TEMPS RÉEL via l'acteur Apify
+`kaitoeasyapi/twitter-x-data-tweet-scraper-pay-per-result-cheapest`
+(`APIFY_TOKEN` dans l'environnement). Sort un digest antichronologique
+horodaté (heure française). À chaque cycle : lancer d'abord `--officiels
+--minutes 90` (préfète/SDIS/Sécurité civile = source faisant foi), puis sans
+option pour le bruit ambiant (témoins, médias). C'est CE canal qui a détecté
+l'extension des évacuations à Arès/Andernos/Le Temple/Saumos 11 minutes après
+le post de la préfète, avant toute reprise presse. Coût : pay-per-result
+(~0,2 $/1 000 tweets) — rester sur des maxItems raisonnables (15-25).
