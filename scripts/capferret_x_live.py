@@ -68,6 +68,9 @@ def main(argv=None):
                         help="Tweets max par requête (défaut 25).")
     parser.add_argument("--officiels", action="store_true",
                         help="Uniquement les comptes officiels.")
+    parser.add_argument("--images", action="store_true",
+                        help="Uniquement les tweets contenant des photos "
+                             "(ajoute filter:images à la recherche, liste les URLs des médias).")
     args = parser.parse_args(argv)
 
     load_local_secrets()
@@ -76,7 +79,9 @@ def main(argv=None):
         log("APIFY_TOKEN absent — veille X live indisponible.")
         return 1
 
-    queries = [OFFICIAL_QUERY] if args.officiels else SEARCH_QUERIES
+    queries = [OFFICIAL_QUERY] if args.officiels else list(SEARCH_QUERIES)
+    if args.images:
+        queries = [q + " filter:images" for q in queries]
     cutoff = (datetime.datetime.now(datetime.timezone.utc)
               - datetime.timedelta(minutes=args.minutes))
 
@@ -94,6 +99,11 @@ def main(argv=None):
             created = parse_created(t.get("createdAt"))
             if created and created < cutoff:
                 continue
+            media_urls = [m.get("media_url_https") or m.get("url") or ""
+                          for m in ((t.get("extendedEntities") or {}).get("media") or [])
+                          if m.get("type") == "photo"]
+            if args.images and not media_urls:
+                continue
             author = (t.get("author") or {})
             rows.append((
                 created or datetime.datetime.now(datetime.timezone.utc),
@@ -101,16 +111,19 @@ def main(argv=None):
                 bool(author.get("isVerified") or author.get("isBlueVerified")),
                 (t.get("text") or "").replace("\n", " ").strip(),
                 t.get("url") or "",
+                media_urls,
             ))
 
     rows.sort(key=lambda r: r[0], reverse=True)
     if not rows:
         print("(aucun tweet frais sur la fenêtre de %d min)" % args.minutes)
         return 0
-    for created, user, verified, text, url in rows:
+    for created, user, verified, text, url, media_urls in rows:
         hhmm = created.astimezone(datetime.timezone(datetime.timedelta(hours=2))).strftime("%H:%M")
         badge = "✔" if verified else " "
         print("[%s FR]%s @%-20s %s  %s" % (hhmm, badge, user, text[:240], url))
+        for mu in media_urls:
+            print("        📸 %s" % mu)
     return 0
 
 
