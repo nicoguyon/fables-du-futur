@@ -26,6 +26,27 @@ import urllib.request
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_PATH = os.path.join(REPO_ROOT, "data", "capferret-live.json")
+SECRETS_PATH = os.path.join(REPO_ROOT, ".capferret-secrets.env")
+
+
+def load_local_secrets():
+    """Charge .capferret-secrets.env (KEY=VALUE, hors git) dans os.environ
+    pour les clés absentes de l'environnement (TELEGRAM_BOT_TOKEN, etc.)."""
+    try:
+        with open(SECRETS_PATH, "r", encoding="utf-8") as fh:
+            for line in fh:
+                line = line.strip()
+                if not line or line.startswith("#") or "=" not in line:
+                    continue
+                key, _, value = line.partition("=")
+                key, value = key.strip(), value.strip().strip('"').strip("'")
+                if key and value and not os.environ.get(key):
+                    os.environ[key] = value
+    except OSError:
+        pass
+
+
+load_local_secrets()
 PAGE_URL = "https://fables.comptoiria.com/cap-ferret-aout-2026.html"
 EMAIL_TO = "nicolas@comptoiria.com"
 
