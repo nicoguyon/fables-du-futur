@@ -85,6 +85,8 @@ def main(argv=None):
         for t in run_actor(token, q, args.max):
             if not isinstance(t, dict) or not t.get("text"):
                 continue
+            if "From KaitoEasyAPI" in t["text"]:  # bourrage publicitaire de l'acteur
+                continue
             tid = t.get("id") or t.get("url")
             if tid in seen:
                 continue

@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-24T13:45:00Z",
-  "updated_label": "vendredi 24 juillet, 15h45",
+  "updated": "2026-07-24T14:05:00Z",
+  "updated_label": "vendredi 24 juillet, 16h05",
   "level": "critical",
   "level_label": "Évacuations étendues à l'est du bassin",
   "headline": "La préfète ordonne l'évacuation préventive d'Arès, Andernos, Le Temple et Saumos : le feu menace désormais aussi l'est du bassin. Vigilance orages à partir de 19h — vent imprévisible. 1 000 pompiers engagés.",
@@ -14,6 +14,12 @@
     "statut_feu": "actif, non maîtrisé"
   },
   "journal": [
+    {
+      "time": "2026-07-24T14:05:00Z",
+      "time_label": "ven. 24/07, 16h05",
+      "level": "serious",
+      "text": "Origine du feu : selon Le Parisien, un chantier de débroussaillage réalisé pour le compte d'Enedis, sous une ligne électrique près de Saumos, pourrait être à l'origine de l'incendie (au conditionnel — enquête en cours). Un départ accidentel, pas criminel, selon les premiers éléments. Source : https://x.com/le_parisien/status/2080369928754831661"
+    },
     {
       "time": "2026-07-24T13:45:00Z",
       "time_label": "ven. 24/07, 15h45",
