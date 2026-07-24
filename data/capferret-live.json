@@ -1,0 +1,18 @@
+{
+  "updated": "2026-07-24T09:30:00Z",
+  "updated_label": "vendredi 24 juillet, 11h30",
+  "level": "critical",
+  "level_label": "Feu actif — presqu'île évacuée",
+  "headline": "L'incendie de Saumos dépasse 10 000 ha ; évacuation totale de la presqu'île ordonnée, feu toujours virulent.",
+  "prob_ok": 35,
+  "prob_degraded": 30,
+  "prob_cancelled": 35,
+  "stats": { "hectares": "10 000+", "evacues": "40 000", "pompiers": "800+", "statut_feu": "actif, non maîtrisé" },
+  "journal": [
+    { "time": "2026-07-24T08:00:00Z", "time_label": "ven. 24/07, 10h00", "level": "critical", "text": "Ordre d'évacuation de l'ensemble de la presqu'île du Cap-Ferret, par route et par mer. Plus de 10 000 ha parcourus, 40 000 évacués. « Le plus gros feu de la saison » selon le ministre de l'Intérieur." },
+    { "time": "2026-07-23T19:00:00Z", "time_label": "jeu. 23/07, 21h00", "level": "critical", "text": "≈ 4 800 ha. Le feu atteint Lège-Cap-Ferret, un pompier blessé, maisons détruites au Porge, à Lège et à Saumos. Évacuations par bateau vers Arcachon." },
+    { "time": "2026-07-23T05:00:00Z", "time_label": "jeu. 23/07, 7h00", "level": "serious", "text": "≈ 2 000 ha parcourus depuis le départ du feu la veille près de Saumos. Premières évacuations massives (12 000 personnes), renforts aériens européens demandés." },
+    { "time": "2026-07-22T18:00:00Z", "time_label": "mer. 22/07, soirée", "level": "warning", "text": "Départ de feu près de Saumos, en forêt des Landes girondines. Propagation rapide : chaleur, sécheresse installée depuis fin mai, rafales de vent." }
+  ],
+  "next_check_label": "prochaine vérification vers 14h00"
+}

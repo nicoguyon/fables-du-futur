@@ -145,6 +145,45 @@ svg text{font-family:Inter,system-ui,sans-serif}
 }
 footer{margin-top:36px;text-align:center;color:var(--muted);font-size:13px}
 
+/* ---------- surveillance live ---------- */
+.live{margin-top:36px}
+.live-card{background:var(--surface);border:1px solid var(--ring);border-radius:16px;box-shadow:0 1px 3px rgba(11,11,11,.04);overflow:hidden}
+.live-top{display:flex;align-items:center;justify-content:space-between;gap:8px 14px;flex-wrap:wrap;padding:14px 22px;background:#f4f3ef;border-bottom:1px solid var(--ring)}
+.live-flag{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-2)}
+.live-flag .live-dot{width:8px;height:8px;border-radius:50%;background:var(--blue);animation:pulse 1.4s infinite;flex:none}
+.live-next{font-size:12.5px;color:var(--muted)}
+.live-body{padding:22px}
+.live-status{display:flex;align-items:flex-start;gap:10px 14px;flex-wrap:wrap}
+.live-badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.02em;border-radius:20px;padding:7px 14px;border:1px solid transparent;white-space:nowrap;flex:none}
+.live-badge i{width:9px;height:9px;border-radius:50%;flex:none}
+.live-headline{font-size:16.5px;font-weight:600;line-height:1.45;flex:1;min-width:230px}
+.live-updated{width:100%;color:var(--muted);font-size:12.5px;margin-top:2px}
+.live-tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+.live-tile{background:var(--page);border:1px solid var(--ring);border-radius:10px;padding:12px 14px;min-width:0}
+.live-tile .k{font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.live-tile .v{font-size:19px;font-weight:800;letter-spacing:-.01em;margin-top:3px;line-height:1.3;overflow-wrap:break-word}
+.live-tile .v.small{font-size:14.5px;line-height:1.4}
+.live-probs{margin-top:22px}
+.live-h{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.live-bar{display:flex;height:38px;border-radius:9px;overflow:hidden;gap:2px;background:#fff;border:1px solid var(--ring)}
+.live-bar div{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:13.5px;min-width:44px}
+.live-journal{margin-top:24px}
+.tl{list-style:none;position:relative;margin:12px 0 0;padding:2px 0 2px 26px}
+.tl::before{content:"";position:absolute;left:5px;top:10px;bottom:10px;width:2px;border-radius:2px;background:var(--grid)}
+.tl li{position:relative;padding-bottom:16px}
+.tl li:last-child{padding-bottom:0}
+.tl .pip{position:absolute;left:-26px;top:3px;width:12px;height:12px;border-radius:50%;border:2px solid var(--surface);box-shadow:0 0 0 1px var(--ring)}
+.tl .when{display:block;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.tl .what{font-size:14px;color:var(--ink-2);line-height:1.55;margin-top:2px}
+.live-note{margin-top:18px;color:var(--muted);font-size:12.5px}
+.live-note code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11.5px;background:#f0efec;border-radius:5px;padding:2px 6px}
+@media(max-width:660px){
+  .live-tiles{grid-template-columns:repeat(2,1fr)}
+  .live-top{padding:12px 16px}
+  .live-body{padding:18px 16px}
+  .live-bar div{font-size:12px;min-width:34px}
+}
+
 /* ---------- tooltip ---------- */
 #tip{
   position:fixed;z-index:99;pointer-events:none;opacity:0;transition:opacity .12s;
@@ -184,6 +223,38 @@ footer{margin-top:36px;text-align:center;color:var(--muted);font-size:13px}
     <strong>En clair :</strong> en l'état actuel, il n'est pas prudent de compter sur des vacances sereines au Cap-Ferret début août. Préparez dès maintenant un plan&nbsp;B et vérifiez vos conditions d'annulation. Tout dépendra de la maîtrise du feu et de la météo dans les 7 à 10 prochains jours — ces chiffres sont une estimation raisonnée, pas une prévision officielle.
   </div>
 </div>
+
+<!-- ============ SURVEILLANCE AUTOMATIQUE (dashboard live) ============ -->
+<section class="live" id="surveillance" aria-label="Dashboard de surveillance automatique">
+  <div class="live-card">
+    <div class="live-top">
+      <span class="live-flag"><span class="live-dot"></span>Surveillance automatique — toutes les 3&nbsp;h, 7h–22h</span>
+      <span class="live-next" id="live-next"></span>
+    </div>
+    <div class="live-body">
+      <div class="live-status">
+        <span class="live-badge" id="live-badge"><i id="live-badge-dot"></i><span id="live-badge-label"></span></span>
+        <p class="live-headline" id="live-headline"></p>
+        <p class="live-updated" id="live-updated"></p>
+      </div>
+      <div class="live-tiles" id="live-tiles"></div>
+      <div class="live-probs">
+        <div class="live-h">Probabilités actualisées pour vos dates</div>
+        <div class="live-bar" id="live-bar" role="img" aria-label="Répartition actualisée des probabilités entre séjour possible, fortement dégradé et impossible"></div>
+        <div class="legend">
+          <span><i style="background:var(--good)"></i>Séjour possible</span>
+          <span><i style="background:var(--serious)"></i>Fortement dégradé</span>
+          <span><i style="background:var(--critical)"></i>Impossible / annulé</span>
+        </div>
+      </div>
+      <div class="live-journal">
+        <div class="live-h">Journal de situation</div>
+        <ol class="tl" id="live-journal"></ol>
+      </div>
+      <p class="live-note">Alertes envoyées par e-mail (et Telegram une fois configuré) — voir <code>scripts/CAPFERRET-MONITORING.md</code>.</p>
+    </div>
+  </div>
+</section>
 
 <!-- ============ SITUATION ============ -->
 <section>
@@ -536,7 +607,9 @@ footer{margin-top:36px;text-align:center;color:var(--muted);font-size:13px}
 <script>
 (function(){
   var tip=document.getElementById('tip');
-  document.querySelectorAll('[data-tip]').forEach(function(el){
+  function bind(el){
+    if(el.__tipBound)return;
+    el.__tipBound=true;
     function show(e){
       tip.textContent=el.getAttribute('data-tip');
       tip.style.opacity='1';
@@ -554,7 +627,112 @@ footer{margin-top:36px;text-align:center;color:var(--muted);font-size:13px}
     el.addEventListener('mousemove',move);
     el.addEventListener('mouseleave',hide);
     el.addEventListener('touchstart',function(e){show(e);setTimeout(hide,2600)},{passive:true});
-  });
+  }
+  window.__bindTips=function(root){(root||document).querySelectorAll('[data-tip]').forEach(bind)};
+  window.__bindTips();
+})();
+
+/* ---------- dashboard de surveillance (données live) ---------- */
+(function(){
+  // Secours si le fetch échoue (ouverture en file:// par exemple) :
+  // copie conforme de data/capferret-live.json au moment de la mise en place.
+  var FALLBACK={
+    "updated":"2026-07-24T09:30:00Z",
+    "updated_label":"vendredi 24 juillet, 11h30",
+    "level":"critical",
+    "level_label":"Feu actif — presqu'île évacuée",
+    "headline":"L'incendie de Saumos dépasse 10 000 ha ; évacuation totale de la presqu'île ordonnée, feu toujours virulent.",
+    "prob_ok":35,
+    "prob_degraded":30,
+    "prob_cancelled":35,
+    "stats":{"hectares":"10 000+","evacues":"40 000","pompiers":"800+","statut_feu":"actif, non maîtrisé"},
+    "journal":[
+      {"time":"2026-07-24T08:00:00Z","time_label":"ven. 24/07, 10h00","level":"critical","text":"Ordre d'évacuation de l'ensemble de la presqu'île du Cap-Ferret, par route et par mer. Plus de 10 000 ha parcourus, 40 000 évacués. « Le plus gros feu de la saison » selon le ministre de l'Intérieur."},
+      {"time":"2026-07-23T19:00:00Z","time_label":"jeu. 23/07, 21h00","level":"critical","text":"≈ 4 800 ha. Le feu atteint Lège-Cap-Ferret, un pompier blessé, maisons détruites au Porge, à Lège et à Saumos. Évacuations par bateau vers Arcachon."},
+      {"time":"2026-07-23T05:00:00Z","time_label":"jeu. 23/07, 7h00","level":"serious","text":"≈ 2 000 ha parcourus depuis le départ du feu la veille près de Saumos. Premières évacuations massives (12 000 personnes), renforts aériens européens demandés."},
+      {"time":"2026-07-22T18:00:00Z","time_label":"mer. 22/07, soirée","level":"warning","text":"Départ de feu près de Saumos, en forêt des Landes girondines. Propagation rapide : chaleur, sécheresse installée depuis fin mai, rafales de vent."}
+    ],
+    "next_check_label":"prochaine vérification vers 14h00"
+  };
+  var LEVELS={
+    good:    {c:'#0ca30c', bg:'#f0f8f0', bd:'#bcd9bc', tx:'#006300'},
+    warning: {c:'#fab219', bg:'#fff8e8', bd:'#f0dfb0', tx:'#8a5f00'},
+    serious: {c:'#ec835a', bg:'#fdf3ee', bd:'#f2c9b5', tx:'#b04a1f'},
+    critical:{c:'#d03b3b', bg:'#fdeeee', bd:'#f5cccc', tx:'#b32d2d'}
+  };
+  var STAT_LABELS=[
+    ['hectares','Hectares parcourus'],
+    ['evacues','Personnes évacuées'],
+    ['pompiers','Pompiers mobilisés'],
+    ['statut_feu','Statut du feu']
+  ];
+  function lvl(name){return LEVELS[name]||LEVELS.warning}
+  function el(tag,cls,text){
+    var n=document.createElement(tag);
+    if(cls)n.className=cls;
+    if(text!=null)n.textContent=text;
+    return n;
+  }
+  function render(d){
+    var L=lvl(d.level);
+    // Bandeau : badge de niveau, headline, horodatages
+    var badge=document.getElementById('live-badge');
+    badge.style.background=L.bg;
+    badge.style.borderColor=L.bd;
+    badge.style.color=L.tx;
+    document.getElementById('live-badge-dot').style.background=L.c;
+    document.getElementById('live-badge-label').textContent=d.level_label||'';
+    document.getElementById('live-headline').textContent=d.headline||'';
+    document.getElementById('live-updated').textContent='Dernière vérification : '+(d.updated_label||'—');
+    document.getElementById('live-next').textContent=d.next_check_label||'';
+    // Mini-tuiles de statistiques
+    var tiles=document.getElementById('live-tiles');
+    tiles.textContent='';
+    STAT_LABELS.forEach(function(pair){
+      var t=el('div','live-tile');
+      t.appendChild(el('div','k',pair[1]));
+      var raw=(d.stats&&d.stats[pair[0]]!=null)?String(d.stats[pair[0]]):'—';
+      var v=el('div','v'+(raw.length>10?' small':''),raw);
+      if(pair[0]==='statut_feu')v.style.color=L.tx;
+      t.appendChild(v);
+      tiles.appendChild(t);
+    });
+    // Barre de probabilités
+    var bar=document.getElementById('live-bar');
+    bar.textContent='';
+    [
+      [d.prob_ok,'var(--good)','✓','séjour possible avec restrictions'],
+      [d.prob_degraded,'var(--serious)','⚠','séjour fortement dégradé'],
+      [d.prob_cancelled,'var(--critical)','✕','séjour impossible ou annulé']
+    ].forEach(function(seg){
+      var p=Number(seg[0])||0;
+      if(p<=0)return;
+      var s=el('div',null,seg[2]+' '+p+' %');
+      s.style.flex=String(p);
+      s.style.background=seg[1];
+      s.setAttribute('data-tip','Estimation actuelle : '+p+' % — '+seg[3]);
+      bar.appendChild(s);
+    });
+    // Journal de situation (antichronologique)
+    var list=document.getElementById('live-journal');
+    list.textContent='';
+    (d.journal||[]).slice().sort(function(a,b){
+      return String(b.time||'').localeCompare(String(a.time||''));
+    }).forEach(function(entry){
+      var li=el('li');
+      var pip=el('span','pip');
+      pip.style.background=lvl(entry.level).c;
+      li.appendChild(pip);
+      li.appendChild(el('span','when',entry.time_label||''));
+      li.appendChild(el('p','what',entry.text||''));
+      list.appendChild(li);
+    });
+    if(window.__bindTips)window.__bindTips(document.getElementById('surveillance'));
+  }
+  fetch('data/capferret-live.json',{cache:'no-store'})
+    .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json()})
+    .then(render)
+    .catch(function(){render(FALLBACK)});
 })();
 </script>
 </body>
