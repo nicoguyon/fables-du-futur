@@ -1,12 +1,12 @@
 {
-  "updated": "2026-07-24T13:10:00Z",
-  "updated_label": "vendredi 24 juillet, 15h10",
+  "updated": "2026-07-24T13:45:00Z",
+  "updated_label": "vendredi 24 juillet, 15h45",
   "level": "critical",
-  "level_label": "Feu dans les villages — dernière phase d'évacuation",
-  "headline": "« Un feu XXL, vorace, qui fait des sautes d'un kilomètre » (préfète). Pas de maîtrise en vue : la surface a doublé depuis jeudi soir, 35 000 évacués, dernière phase d'évacuation de la presqu'île en cours.",
-  "prob_ok": 25,
+  "level_label": "Évacuations étendues à l'est du bassin",
+  "headline": "La préfète ordonne l'évacuation préventive d'Arès, Andernos, Le Temple et Saumos : le feu menace désormais aussi l'est du bassin. Vigilance orages à partir de 19h — vent imprévisible. 1 000 pompiers engagés.",
+  "prob_ok": 20,
   "prob_degraded": 30,
-  "prob_cancelled": 45,
+  "prob_cancelled": 50,
   "stats": {
     "hectares": "≈ 10 000",
     "evacues": "35–40 000",
@@ -14,6 +14,12 @@
     "statut_feu": "actif, non maîtrisé"
   },
   "journal": [
+    {
+      "time": "2026-07-24T13:45:00Z",
+      "time_label": "ven. 24/07, 15h45",
+      "level": "critical",
+      "text": "ALERTE (X @PrefAquitaine33, 14h38, confirmé officiel) : évacuation préventive ordonnée pour Arès, Andernos, Le Temple et Saumos — l'incendie menace désormais le pourtour EST du bassin, plus seulement la presqu'île. Vigilance jaune orages à partir de 19h : rafales erratiques possibles, le pire scénario pour un feu de forêt (mais une pluie orageuse aiderait). Probabilités révisées : annulé/impossible porté à 50 % — la zone sinistrée s'étend des deux côtés du bassin. Source : https://x.com/PrefAquitaine33/status/2080633724417274136"
+    },
     {
       "time": "2026-07-24T13:10:00Z",
       "time_label": "ven. 24/07, 15h10",
@@ -63,5 +69,5 @@
       "text": "Départ de feu près de Saumos, en forêt des Landes girondines. Propagation rapide : chaleur, sécheresse installée depuis fin mai, rafales de vent."
     }
   ],
-  "next_check_label": "prochaine vérification vers 15h45"
+  "next_check_label": "prochaine vérification dans 15 min"
 }
