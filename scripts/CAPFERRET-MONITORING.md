@@ -128,14 +128,24 @@ recherche web classique) :
   événement de majeur ; les posts officiels de @PrefAquitaine33 valent
   communiqué (les citer dans le journal avec leur URL x.com).
 
-## 7. Publication automatique sur X
+## 7. Publication automatique sur X (via Late)
 
-`python3 scripts/capferret_xpost.py --text "…" [--image chemin.jpg]` publie un
-point de situation sur X (≤ 280 caractères, image jointe possible — typiquement
-l'image satellite du jour). Nécessite 4 variables (env ou
-`.capferret-secrets.env`) : `X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`,
-`X_ACCESS_SECRET` — à créer sur https://developer.x.com (app avec accès
-« Read and write », offre gratuite suffisante). Tant qu'elles sont absentes, le
-script logge et s'arrête proprement. Cadence : un point toutes les 3 h
-(cycles UTC 5/8/11/14/17/20), terminé par « Suivi en continu :
-t.me/Capfeuretbot » + lien dashboard.
+La publication passe par l'API Late (getlate.dev) — la clé `LATE_API_KEY` est
+dans l'environnement, le compte X connecté est « Nicolas Guyon - e/acc »
+(accountId `69a8b75bdc8cab9432b8bf60`). Un point toutes les 3 h (cycles UTC
+5/8/11/14/17/20), ≤ 280 caractères (une URL compte 23), terminé par « Suivi en
+continu : t.me/Capfeuretbot » + lien dashboard, avec image satellite :
+
+```bash
+curl -s -X POST "https://getlate.dev/api/v1/posts" \
+  -H "Authorization: Bearer $LATE_API_KEY" -H "Content-Type: application/json" \
+  -d '{"content":"<texte>","publishNow":true,
+       "platforms":[{"platform":"twitter","accountId":"69a8b75bdc8cab9432b8bf60"}],
+       "mediaItems":[{"type":"image","url":"<URL image publique>"}]}'
+```
+
+Pour l'image : réutiliser l'URL snapshot NASA Worldview du moment (publique),
+ou un asset poussé dans `social/capferret/` (servi sur
+https://fables.comptoiria.com/social/capferret/…). Vérifier ensuite
+`GET /api/v1/posts/<id>` → `status: published`. L'ancien script
+`capferret_xpost.py` (API X directe) reste en secours si Late est indisponible.
