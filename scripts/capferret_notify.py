@@ -48,7 +48,7 @@ def load_local_secrets():
 
 load_local_secrets()
 PAGE_URL = "https://fables.comptoiria.com/cap-ferret-aout-2026.html"
-EMAIL_TO = "nicolas@comptoiria.com"
+EMAIL_TO = ["nicolas@comptoiria.com", "herveguyon@gmail.com"]
 
 LEVEL_EMOJI = {"good": "🟢", "warning": "🟡", "serious": "🟠", "critical": "🔴"}
 LEVEL_COLOR = {
@@ -300,7 +300,7 @@ def send_email(data, subject, summary):
         status, detail = http_post_json(
             "https://api.agentmail.to/v0/inboxes/%s/messages/send" % AGENTMAIL_INBOX,
             {
-                "to": [EMAIL_TO],
+                "to": EMAIL_TO,
                 "subject": subject,
                 "html": html,
                 "text": "%s — %s\n%s" % (
@@ -312,7 +312,7 @@ def send_email(data, subject, summary):
             headers={"Authorization": "Bearer %s" % agentmail_key},
         )
         if status in (200, 201):
-            log("E-mail (AgentMail) : envoyé à %s (objet : %s)." % (EMAIL_TO, subject))
+            log("E-mail (AgentMail) : envoyé à %s (objet : %s)." % (", ".join(EMAIL_TO), subject))
             return True
         log("E-mail (AgentMail) : échec (statut=%s, détail=%s) — tentative Resend." % (status, detail))
 
@@ -326,11 +326,11 @@ def send_email(data, subject, summary):
 
     status, detail = http_post_json(
         "https://api.resend.com/emails",
-        {"from": sender, "to": [EMAIL_TO], "subject": subject, "html": html},
+        {"from": sender, "to": EMAIL_TO, "subject": subject, "html": html},
         headers={"Authorization": "Bearer %s" % resend_key},
     )
     if status in (200, 201):
-        log("E-mail (Resend) : envoyé à %s (objet : %s)." % (EMAIL_TO, subject))
+        log("E-mail (Resend) : envoyé à %s (objet : %s)." % (", ".join(EMAIL_TO), subject))
         return True
     log("E-mail (Resend) : échec (statut=%s, détail=%s)" % (status, detail))
     return False
