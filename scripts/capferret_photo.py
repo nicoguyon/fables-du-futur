@@ -28,7 +28,7 @@ import urllib.request
 import uuid
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from capferret_notify import load_local_secrets, log, telegram_chat_ids  # noqa: E402
+from capferret_notify import load_local_secrets, log, mark_blocked, telegram_chat_ids  # noqa: E402
 
 WORLDVIEW = "https://wvs.earthdata.nasa.gov/api/v1/snapshot"
 BBOX = "44.45,-1.45,45.10,-0.70"  # lat_min,lon_min,lat_max,lon_max (EPSG:4326)
@@ -138,6 +138,12 @@ def send_photo(token, chat_id, image, caption):
     try:
         with urllib.request.urlopen(req, timeout=60, context=context) as resp:
             return resp.status == 200
+    except urllib.error.HTTPError as exc:
+        if exc.code == 403:
+            mark_blocked(chat_id)
+        else:
+            log("sendPhoto : erreur HTTP %s" % exc.code)
+        return False
     except (urllib.error.URLError, OSError) as exc:
         log("sendPhoto : erreur %s" % exc)
         return False
@@ -170,6 +176,9 @@ def main(argv=None):
     parser.add_argument("--style", default="fresh", choices=["fresh", "day"],
                         help="fresh = détections les plus récentes (défaut) ; "
                              "day = plus belle image de jour (panache visible).")
+    parser.add_argument("--photo-file", default="",
+                        help="Chemin local d'une image à envoyer (ex. carte de "
+                             "situation générée par scripts/render_card.mjs).")
     args = parser.parse_args(argv)
 
     load_local_secrets()
@@ -180,9 +189,14 @@ def main(argv=None):
         return 1
 
     image, desc = None, None
-    if args.photo_url:
+    if args.photo_file:
+        try:
+            with open(args.photo_file, "rb") as fh:
+                image = fh.read()
+        except OSError as exc:
+            log("photo-file illisible (%s) — repli satellite." % exc)
+    if image is None and args.photo_url:
         image = fetch_url_image(args.photo_url)
-        desc = None
     if image is None:
         image, desc = fetch_satellite_image(args.date or None, style=args.style)
 

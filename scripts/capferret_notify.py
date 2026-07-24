@@ -111,17 +111,32 @@ def html_escape(text):
 # ---------------------------------------------------------------- Telegram
 
 SUBSCRIBERS_PATH = os.path.join(REPO_ROOT, ".capferret-subscribers.json")
+BLOCKED_PATH = os.path.join(REPO_ROOT, ".capferret-blocked.json")
+
+
+def _read_id_set(path):
+    try:
+        with open(path, "r", encoding="utf-8") as fh:
+            return set(str(x) for x in json.load(fh))
+    except (OSError, json.JSONDecodeError):
+        return set()
+
+
+def mark_blocked(chat_id):
+    """Un 403 Telegram = le destinataire a bloqué le bot : on l'écarte."""
+    blocked = _read_id_set(BLOCKED_PATH)
+    if str(chat_id) not in blocked:
+        blocked.add(str(chat_id))
+        with open(BLOCKED_PATH, "w", encoding="utf-8") as fh:
+            json.dump(sorted(blocked), fh)
+        log("Destinataire %s marqué comme bloqué (plus sollicité)." % chat_id)
 
 
 def refresh_subscribers(token):
     """Enregistre comme abonné toute personne ayant écrit au bot (/start).
     Fusionne les chat_id de getUpdates dans .capferret-subscribers.json
     (hors git). Sans effet en cas d'erreur réseau."""
-    try:
-        with open(SUBSCRIBERS_PATH, "r", encoding="utf-8") as fh:
-            subs = set(str(x) for x in json.load(fh))
-    except (OSError, json.JSONDecodeError):
-        subs = set()
+    subs = _read_id_set(SUBSCRIBERS_PATH)
     context = ssl.create_default_context()
     try:
         with urllib.request.urlopen(
@@ -154,7 +169,8 @@ def telegram_chat_ids(token=None):
         for sub in sorted(refresh_subscribers(token)):
             if sub not in ids:
                 ids.append(sub)
-    return ids
+    blocked = _read_id_set(BLOCKED_PATH)
+    return [i for i in ids if i not in blocked]
 
 
 def send_telegram(data, summary):
@@ -202,6 +218,8 @@ def send_telegram(data, summary):
         )
         if status == 200:
             log("Telegram : message envoyé à %s." % chat_id)
+        elif status == 403:
+            mark_blocked(chat_id)
         else:
             log("Telegram : échec pour %s (statut=%s, détail=%s)" % (chat_id, status, detail))
             ok = False

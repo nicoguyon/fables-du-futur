@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1200px;height:675px;background:#f9f9f7;font-family:Inter,system-ui,sans-serif;color:#0b0b0b;overflow:hidden}
+.frame{width:1200px;height:675px;padding:40px 48px;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:14px}
+.dot{width:14px;height:14px;border-radius:50%;background:var(--level-color)}
+.brand b{font-size:19px;letter-spacing:.08em;text-transform:uppercase;font-weight:800}
+.updated{font-size:17px;color:#52514e;font-weight:600}
+.levelbar{margin-top:22px;display:flex;align-items:center;gap:16px;background:var(--level-bg);
+  border:2px solid var(--level-border);border-radius:16px;padding:16px 24px}
+.levelbar .emo{font-size:34px}
+.levelbar .lab{font-size:25px;font-weight:800;color:var(--level-color)}
+.headline{margin-top:18px;font-size:22.5px;font-weight:600;line-height:1.4;color:#0b0b0b}
+.tiles{display:flex;gap:18px;margin-top:26px}
+.tile{flex:1;background:#fcfcfb;border:2px solid rgba(11,11,11,.10);border-radius:16px;padding:18px 22px}
+.tile .l{font-size:13.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#898781}
+.tile .n{font-size:37px;font-weight:900;letter-spacing:-.02em;margin-top:4px}
+.tile.alert .n{color:#d03b3b}
+.probs{margin-top:26px}
+.probs .l{font-size:13.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#898781;margin-bottom:10px}
+.bar{display:flex;height:52px;border-radius:12px;overflow:hidden;gap:3px}
+.bar div{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:19px}
+.legend{display:flex;gap:26px;margin-top:10px;font-size:15px;color:#52514e;font-weight:600}
+.legend i{width:13px;height:13px;border-radius:3px;display:inline-block;margin-right:7px;vertical-align:-1px}
+.footer{margin-top:auto;display:flex;align-items:center;justify-content:space-between;border-top:2px solid #e1e0d9;padding-top:18px}
+.cta{font-size:20px;font-weight:900}
+.cta span{color:#2a78d6}
+.url{font-size:15px;color:#898781;font-weight:600}
+</style>
+</head>
+<body>
+<div class="frame" id="frame">
+  <div class="top">
+    <div class="brand"><span class="dot"></span><b>Veille incendie Cap-Ferret</b></div>
+    <div class="updated" id="updated">—</div>
+  </div>
+  <div class="levelbar"><span class="emo" id="emo">🔴</span><span class="lab" id="levelLabel">—</span></div>
+  <div class="headline" id="headline">—</div>
+  <div class="tiles">
+    <div class="tile alert"><div class="l">Hectares parcourus</div><div class="n" id="ha">—</div></div>
+    <div class="tile alert"><div class="l">Personnes évacuées</div><div class="n" id="evac">—</div></div>
+    <div class="tile"><div class="l">Pompiers mobilisés</div><div class="n" id="pomp">—</div></div>
+    <div class="tile"><div class="l">Statut du feu</div><div class="n" id="statut" style="font-size:23px;line-height:1.2;margin-top:10px">—</div></div>
+  </div>
+  <div class="probs">
+    <div class="l">Vacances début août — estimation actualisée</div>
+    <div class="bar" id="bar"></div>
+    <div class="legend">
+      <span><i style="background:#0ca30c"></i>Séjour possible</span>
+      <span><i style="background:#ec835a"></i>Fortement dégradé</span>
+      <span><i style="background:#d03b3b"></i>Impossible / annulé</span>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="cta">Point toutes les 15 min : <span>t.me/Capfeuretbot</span></div>
+    <div class="url">fables.comptoiria.com/cap-ferret-aout-2026.html</div>
+  </div>
+</div>
+<script>
+const LEVELS = {
+  good:     {c:"#0ca30c", bg:"#f0f8f0", bd:"#bfe6c8", e:"🟢"},
+  warning:  {c:"#9a6b00", bg:"#fdf6ea", bd:"#f0dcae", e:"🟡"},
+  serious:  {c:"#c05621", bg:"#fdf3ee", bd:"#f2cdb5", e:"🟠"},
+  critical: {c:"#d03b3b", bg:"#fdeeee", bd:"#f5cccc", e:"🔴"},
+};
+fetch('../data/capferret-live.json', {cache:'no-store'}).then(r=>r.json()).then(d=>{
+  const lv = LEVELS[d.level] || LEVELS.critical;
+  const f = document.getElementById('frame');
+  f.style.setProperty('--level-color', lv.c);
+  f.style.setProperty('--level-bg', lv.bg);
+  f.style.setProperty('--level-border', lv.bd);
+  document.getElementById('emo').textContent = lv.e;
+  document.getElementById('levelLabel').textContent = d.level_label;
+  document.getElementById('updated').textContent = 'Dernière vérification : ' + d.updated_label;
+  document.getElementById('headline').textContent = d.headline;
+  document.getElementById('ha').textContent = d.stats.hectares;
+  document.getElementById('evac').textContent = d.stats.evacues;
+  document.getElementById('pomp').textContent = d.stats.pompiers;
+  document.getElementById('statut').textContent = d.stats.statut_feu;
+  const bar = document.getElementById('bar');
+  [[d.prob_ok,'#0ca30c','✓'],[d.prob_degraded,'#ec835a','⚠'],[d.prob_cancelled,'#d03b3b','✕']]
+    .forEach(([p,c,s])=>{ if(p>0){const el=document.createElement('div');
+      el.style.flex=p; el.style.background=c; el.textContent=s+' '+p+' %'; bar.appendChild(el);}});
+  document.title = 'ready';
+});
+</script>
+</body>
+</html>

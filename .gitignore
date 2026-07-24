@@ -11,3 +11,4 @@ gta-douane/clips/*.bak
 gta-douane/gta-la-douane-30s-916.mp4
 .capferret-secrets.env
 .capferret-subscribers.json
+.capferret-blocked.json
