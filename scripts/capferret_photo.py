@@ -95,10 +95,30 @@ def send_photo(token, chat_id, image, caption):
         return False
 
 
+def fetch_url_image(url):
+    """Télécharge une image quelconque (jpeg/png). Renvoie bytes ou None."""
+    context = ssl.create_default_context()
+    req = urllib.request.Request(url, headers={"User-Agent": "capferret-veille/1.0"})
+    try:
+        with urllib.request.urlopen(req, timeout=45, context=context) as resp:
+            data = resp.read()
+            if resp.status == 200 and "image" in resp.headers.get("Content-Type", "") \
+                    and len(data) > 10000:
+                return data
+            log("fetch_url_image : réponse non exploitable (%s, %d octets)"
+                % (resp.headers.get("Content-Type", ""), len(data)))
+    except (urllib.error.URLError, OSError) as exc:
+        log("fetch_url_image : erreur %s" % exc)
+    return None
+
+
 def main(argv=None):
-    parser = argparse.ArgumentParser(description="Photo satellite → Telegram.")
+    parser = argparse.ArgumentParser(description="Photo satellite (ou autre image) → Telegram.")
     parser.add_argument("--caption", required=True, help="Légende du message.")
     parser.add_argument("--date", default="", help="Date AAAA-MM-JJ (défaut : aujourd'hui puis la veille).")
+    parser.add_argument("--photo-url", default="",
+                        help="URL d'une image à envoyer à la place du satellite "
+                             "(ex. photo Wikimedia Commons d'une destination plan B).")
     args = parser.parse_args(argv)
 
     load_local_secrets()
@@ -115,14 +135,20 @@ def main(argv=None):
         dates = [str(today), str(today - datetime.timedelta(days=1))]
 
     image, desc = None, None
-    for date_str in dates:
-        image, desc = fetch_satellite_image(date_str)
-        if image:
-            break
+    if args.photo_url:
+        image = fetch_url_image(args.photo_url)
+        desc = None
+    if image is None:
+        for date_str in dates:
+            image, desc = fetch_satellite_image(date_str)
+            if image:
+                break
 
     rc = 0
     if image:
-        caption = args.caption + "\n🛰 Image satellite NASA %s" % desc
+        caption = args.caption
+        if desc:
+            caption += "\n🛰 Image satellite NASA %s" % desc
         for chat_id in chat_ids:
             if send_photo(token, chat_id, image, caption):
                 log("Photo satellite envoyée à %s (%s)." % (chat_id, desc))
