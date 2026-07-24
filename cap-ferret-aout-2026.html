@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cap Ferret — mes vacances d'août sont-elles compromises ?</title>
+<meta name="description" content="Analyse au 24 juillet 2026 : probabilité de pouvoir passer ses vacances au Cap-Ferret début août malgré l'incendie de Saumos. Situation, scénarios, comparaison 2022, conseils.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --page:#f9f9f7; --surface:#fcfcfb;
+  --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781;
+  --grid:#e1e0d9; --axis:#c3c2b7; --ring:rgba(11,11,11,.10);
+  --blue:#2a78d6; --blue-light:#cde2fb; --orange:#eb6834;
+  --good:#0ca30c; --warning:#fab219; --serious:#ec835a; --critical:#d03b3b;
+  --good-text:#006300;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--page); color:var(--ink);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px 80px}
+
+/* ---------- header ---------- */
+header{padding:52px 0 8px;text-align:center}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--critical);background:#fdeeee;border:1px solid #f5cccc;
+  border-radius:20px;padding:6px 14px;margin-bottom:20px;
+}
+.badge .dot{width:8px;height:8px;border-radius:50%;background:var(--critical);animation:pulse 1.4s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+h1{font-size:clamp(28px,5.4vw,44px);font-weight:800;letter-spacing:-.02em;line-height:1.12;max-width:760px;margin:0 auto}
+.sub{color:var(--ink-2);max-width:640px;margin:16px auto 0;font-size:17px}
+.updated{color:var(--muted);font-size:13px;margin-top:14px}
+
+/* ---------- verdict ---------- */
+.verdict{
+  margin-top:36px;background:var(--surface);border:1px solid var(--ring);
+  border-radius:16px;padding:30px 26px;box-shadow:0 1px 3px rgba(11,11,11,.04);
+}
+.verdict h2{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:22px}
+.verdict-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:620px){.verdict-grid{grid-template-columns:1fr}}
+.vcard{border-radius:12px;padding:22px 20px;text-align:center;border:1px solid var(--ring)}
+.vcard.no{background:#fdf2f0}
+.vcard.yes{background:#f0f8f0}
+.vnum{font-size:44px;font-weight:800;letter-spacing:-.02em;line-height:1}
+.vcard.no .vnum{color:var(--critical)}
+.vcard.yes .vnum{color:var(--good-text)}
+.vlabel{margin-top:10px;font-weight:600;font-size:15px}
+.vdesc{margin-top:6px;color:var(--ink-2);font-size:13.5px;line-height:1.5}
+.verdict-note{
+  margin-top:22px;padding:14px 18px;border-radius:10px;background:#fff8e8;border:1px solid #f0dfb0;
+  font-size:14.5px;color:var(--ink-2);
+}
+.verdict-note strong{color:var(--ink)}
+
+/* ---------- sections ---------- */
+section{margin-top:56px}
+section>h2{font-size:24px;font-weight:800;letter-spacing:-.015em;margin-bottom:6px}
+.lede{color:var(--ink-2);max-width:720px;margin-bottom:22px;font-size:15.5px}
+
+/* ---------- stat tiles ---------- */
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:760px){.tiles{grid-template-columns:repeat(2,1fr)}}
+.tile{background:var(--surface);border:1px solid var(--ring);border-radius:12px;padding:18px 16px}
+.tile .n{font-size:28px;font-weight:800;letter-spacing:-.02em}
+.tile .l{color:var(--ink-2);font-size:13px;margin-top:4px;line-height:1.4}
+.tile.alert .n{color:var(--critical)}
+
+/* ---------- cards / charts ---------- */
+.card{
+  background:var(--surface);border:1px solid var(--ring);border-radius:14px;
+  padding:24px 22px;box-shadow:0 1px 3px rgba(11,11,11,.04);
+}
+.card+.card{margin-top:18px}
+.card h3{font-size:17px;font-weight:700;margin-bottom:2px}
+.card .cap{color:var(--muted);font-size:13px;margin-bottom:16px}
+svg{display:block;width:100%;height:auto}
+svg text{font-family:Inter,system-ui,sans-serif}
+.axis-t{fill:var(--muted);font-size:11px}
+.dlabel{fill:var(--ink);font-size:12px;font-weight:600}
+.dlabel2{fill:var(--ink-2);font-size:11px;font-weight:500}
+.legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:12px;font-size:13px;color:var(--ink-2)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+
+/* ---------- scenario bar ---------- */
+.scen-bar{display:flex;height:46px;border-radius:10px;overflow:hidden;gap:2px;background:var(--surface)}
+.scen-bar div{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px}
+.scen-list{margin-top:20px;display:grid;gap:14px}
+.scen{
+  display:grid;grid-template-columns:46px 1fr;gap:14px;align-items:start;
+  background:var(--surface);border:1px solid var(--ring);border-radius:12px;padding:16px 18px;
+}
+.scen .ico{
+  width:46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+  font-size:21px;
+}
+.scen h4{font-size:15.5px;font-weight:700}
+.scen h4 em{font-style:normal;font-weight:800}
+.scen p{color:var(--ink-2);font-size:14px;margin-top:4px;line-height:1.55}
+
+/* ---------- map ---------- */
+.map-note{color:var(--muted);font-size:12.5px;margin-top:10px;text-align:center}
+
+/* ---------- factors ---------- */
+.factors{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:660px){.factors{grid-template-columns:1fr}}
+.factors .card ul{list-style:none;display:grid;gap:10px;margin-top:12px}
+.factors li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:14.5px;color:var(--ink-2)}
+.factors li b{color:var(--ink);font-weight:600}
+
+/* ---------- checklist ---------- */
+.check{counter-reset:c;display:grid;gap:12px;margin-top:8px}
+.check .step{
+  display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start;
+  background:var(--surface);border:1px solid var(--ring);border-radius:12px;padding:16px 18px;
+}
+.step::before{
+  counter-increment:c;content:counter(c);
+  width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;
+}
+.step h4{font-size:15px;font-weight:700}
+.step p{color:var(--ink-2);font-size:14px;margin-top:3px;line-height:1.55}
+.step a{color:var(--blue);text-decoration:none;font-weight:600}
+.step a:hover{text-decoration:underline}
+
+/* ---------- sources / footer ---------- */
+.sources ul{list-style:none;display:grid;gap:8px;margin-top:12px}
+.sources a{color:var(--blue);text-decoration:none;font-size:14px}
+.sources a:hover{text-decoration:underline}
+.disclaimer{
+  margin-top:48px;padding:18px 20px;border-radius:12px;background:#f0efec;
+  color:var(--ink-2);font-size:13px;line-height:1.6;
+}
+footer{margin-top:36px;text-align:center;color:var(--muted);font-size:13px}
+
+/* ---------- tooltip ---------- */
+#tip{
+  position:fixed;z-index:99;pointer-events:none;opacity:0;transition:opacity .12s;
+  background:var(--ink);color:#fff;font-size:12.5px;font-weight:500;
+  padding:7px 11px;border-radius:8px;max-width:240px;line-height:1.45;
+}
+[data-tip]{cursor:default}
+</style>
+</head>
+<body>
+<div id="tip"></div>
+<div class="wrap">
+
+<header>
+  <div class="badge"><span class="dot"></span>Situation évolutive — incendie en cours</div>
+  <h1>Cap Ferret : vos vacances de début août sont-elles compromises&nbsp;?</h1>
+  <p class="sub">Analyse de la situation pour un séjour de deux semaines en famille sur la presqu'île, prévu dans deux semaines, à la lumière de l'incendie majeur de Saumos.</p>
+  <p class="updated">Dernière mise à jour : vendredi 24 juillet 2026, matin</p>
+</header>
+
+<!-- ============ VERDICT ============ -->
+<div class="verdict">
+  <h2>Estimation au 24 juillet</h2>
+  <div class="verdict-grid">
+    <div class="vcard no">
+      <div class="vnum">60–70&nbsp;%</div>
+      <div class="vlabel">Séjour fortement dégradé ou annulé</div>
+      <div class="vdesc">Accès restreint, hébergements fermés ou en alerte, fumée, paysages brûlés — voire zone toujours interdite.</div>
+    </div>
+    <div class="vcard yes">
+      <div class="vnum">30–40&nbsp;%</div>
+      <div class="vlabel">Séjour possible, avec restrictions</div>
+      <div class="vdesc">Accès rouvert, hébergement disponible, pas d'évacuation en cours — mais forêts interdites et vigilance permanente.</div>
+    </div>
+  </div>
+  <div class="verdict-note">
+    <strong>En clair :</strong> en l'état actuel, il n'est pas prudent de compter sur des vacances sereines au Cap-Ferret début août. Préparez dès maintenant un plan&nbsp;B et vérifiez vos conditions d'annulation. Tout dépendra de la maîtrise du feu et de la météo dans les 7 à 10 prochains jours — ces chiffres sont une estimation raisonnée, pas une prévision officielle.
+  </div>
+</div>
+
+<!-- ============ SITUATION ============ -->
+<section>
+  <h2>Ce qui se passe en ce moment</h2>
+  <p class="lede">Un incendie particulièrement intense s'est déclaré le <b>22 juillet</b> près de Saumos (Gironde) et progresse très vite vers le nord du bassin d'Arcachon. La préfecture a ordonné l'évacuation de <b>l'ensemble de la presqu'île du Cap-Ferret</b>, par la route et par la mer. Le ministre de l'Intérieur parle du « plus gros feu de la saison ». Le feu n'est pas maîtrisé.</p>
+  <div class="tiles">
+    <div class="tile alert"><div class="n">10&nbsp;000+</div><div class="l">hectares parcourus en Gironde (chiffre en hausse)</div></div>
+    <div class="tile alert"><div class="n">40&nbsp;000</div><div class="l">personnes évacuées, dont toute la presqu'île</div></div>
+    <div class="tile"><div class="n">800+</div><div class="l">sapeurs-pompiers mobilisés, renforts aériens européens</div></div>
+    <div class="tile"><div class="n">38&nbsp;°C</div><div class="l">pic de chaleur attendu, rafales 30–40&nbsp;km/h</div></div>
+  </div>
+</section>
+
+<!-- ============ CARTE ============ -->
+<section>
+  <h2>La géographie du problème</h2>
+  <p class="lede">La presqu'île du Cap-Ferret est une « souricière » : une seule route principale (la D106) la relie au reste de la Gironde, et elle passe par Lège et Arès — précisément le secteur menacé par le feu. C'est pourquoi les évacuations se font aussi par bateau vers Arcachon, et pourquoi une réouverture prendra du temps.</p>
+  <div class="card">
+    <h3>Le feu et la presqu'île</h3>
+    <div class="cap">Carte schématique — positions approximatives, au 24 juillet 2026</div>
+    <svg viewBox="0 0 640 430" role="img" aria-label="Carte schématique du bassin d'Arcachon montrant la zone de l'incendie entre Saumos, Le Porge et Lège, et la presqu'île du Cap-Ferret évacuée">
+      <!-- ocean -->
+      <rect x="0" y="0" width="640" height="430" fill="#eaf1fa"/>
+      <text x="60" y="215" class="axis-t" font-size="13" fill="#7a94b8" font-style="italic">Océan Atlantique</text>
+      <!-- land -->
+      <path d="M195 0 L640 0 L640 430 L330 430 Q300 400 296 360 Q293 330 275 300 Q250 270 240 230 Q233 195 220 150 Q208 105 200 60 Q196 30 195 0 Z" fill="#f2efe4" stroke="#d8d4c4" stroke-width="1.5"/>
+      <!-- bassin -->
+      <path d="M258 258 Q300 238 345 246 Q392 256 400 296 Q406 334 372 356 Q334 376 300 362 Q270 350 262 316 Q256 284 258 258 Z" fill="#dcebf9" stroke="#b9d2ec" stroke-width="1.5"/>
+      <text x="298" y="310" class="axis-t" font-size="11.5" fill="#7a94b8" font-style="italic">Bassin</text>
+      <text x="290" y="325" class="axis-t" font-size="11.5" fill="#7a94b8" font-style="italic">d'Arcachon</text>
+      <!-- presqu'ile -->
+      <path d="M243 232 Q252 262 250 292 Q249 322 258 350 Q265 372 280 388 L262 396 Q243 372 236 340 Q229 306 230 272 Q231 248 236 230 Z" fill="#f6e2c8" stroke="#dfc49a" stroke-width="1.5" data-tip="Presqu'île du Cap-Ferret — évacuation totale ordonnée le 24 juillet, par route et par bateaux"/>
+      <text x="120" y="330" class="dlabel" font-size="12.5">Presqu'île du</text>
+      <text x="120" y="345" class="dlabel" font-size="12.5">Cap-Ferret</text>
+      <text x="120" y="362" class="dlabel2" fill="#c0392b" font-size="11">⚠ évacuation totale</text>
+      <line x1="212" y1="345" x2="240" y2="330" stroke="#898781" stroke-width="1"/>
+      <!-- fire zone -->
+      <path d="M300 120 Q350 100 395 122 Q430 140 428 185 Q426 225 390 244 Q350 262 310 250 Q272 238 268 196 Q265 152 300 120 Z" fill="#f5b199" opacity=".55" data-tip="Zone parcourue par le feu : plus de 10 000 ha entre Saumos, Le Porge et Lège (contour schématique)"/>
+      <path d="M316 142 Q352 128 384 144 Q408 158 406 190 Q404 218 378 231 Q348 244 320 234 Q294 224 292 194 Q290 164 316 142 Z" fill="#ec6a44" opacity=".65"/>
+      <text x="330" y="192" font-size="20">🔥</text>
+      <!-- fire direction arrows -->
+      <g stroke="#c0392b" stroke-width="2.5" fill="none" marker-end="url(#arr)">
+        <path d="M305 220 Q290 235 278 252"/>
+        <path d="M330 245 Q325 262 318 278"/>
+      </g>
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" fill="#c0392b"/>
+        </marker>
+      </defs>
+      <!-- D106 road -->
+      <path d="M244 234 Q247 276 246 310 Q246 344 258 378" fill="none" stroke="#b0a890" stroke-width="2.5" stroke-dasharray="7 5" data-tip="D106 : l'unique route d'accès à la presqu'île — fermée pendant l'évacuation"/>
+      <text x="196" y="416" class="dlabel2" font-size="11">D106 — seule route d'accès</text>
+      <!-- boat evacuation -->
+      <g stroke="#1f5fa8" stroke-width="2" fill="none" stroke-dasharray="4 4" marker-end="url(#arrb)">
+        <path d="M282 356 Q320 348 352 340"/>
+      </g>
+      <defs>
+        <marker id="arrb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" fill="#1f5fa8"/>
+        </marker>
+      </defs>
+      <text x="285" y="380" class="dlabel2" fill="#1f5fa8" font-size="11">⛴ évacuations par mer</text>
+      <!-- towns -->
+      <g>
+        <circle cx="420" cy="150" r="5" fill="#0b0b0b" data-tip="Saumos — départ du feu le 22 juillet, maisons détruites"/>
+        <text x="432" y="154" class="dlabel" font-size="12.5">Saumos <tspan class="dlabel2" font-size="11">(départ du feu, 22/07)</tspan></text>
+        <circle cx="290" cy="170" r="5" fill="#0b0b0b" data-tip="Le Porge — évacué, maisons détruites"/>
+        <text x="245" y="158" class="dlabel" font-size="12.5">Le Porge</text>
+        <circle cx="272" cy="252" r="5" fill="#0b0b0b" data-tip="Lège — évacué, un pompier blessé, maisons détruites"/>
+        <text x="284" y="256" class="dlabel" font-size="12.5">Lège</text>
+        <circle cx="326" cy="270" r="5" fill="#0b0b0b" data-tip="Arès — commune en cours d'évacuation"/>
+        <text x="338" y="274" class="dlabel" font-size="12.5">Arès</text>
+        <circle cx="268" cy="392" r="5" fill="#0b0b0b" data-tip="Cap Ferret — pointe de la presqu'île, votre lieu de vacances"/>
+        <text x="284" y="398" class="dlabel" font-size="12.5">Cap Ferret</text>
+        <circle cx="352" cy="368" r="5" fill="#0b0b0b" data-tip="Arcachon — point d'arrivée des navettes maritimes d'évacuation"/>
+        <text x="364" y="380" class="dlabel" font-size="12.5">Arcachon</text>
+        <circle cx="468" cy="70" r="5" fill="#0b0b0b" data-tip="Lacanau — au nord de la zone de feu"/>
+        <text x="480" y="74" class="dlabel" font-size="12.5">Lacanau</text>
+        <circle cx="560" cy="230" r="4" fill="#898781"/>
+        <text x="572" y="234" class="dlabel2" font-size="12">vers Bordeaux →</text>
+      </g>
+    </svg>
+    <p class="map-note">Survolez les éléments de la carte pour plus de détails. Contours volontairement simplifiés.</p>
+  </div>
+</section>
+
+<!-- ============ PROGRESSION ============ -->
+<section>
+  <h2>Une progression très rapide</h2>
+  <p class="lede">En moins de 48 heures, le feu est passé de quelques hectares à plus de 10&nbsp;000, malgré plus de 800 pompiers et d'importants moyens aériens. Cette vitesse — comparable aux grands feux de 2022 — est le cœur du problème pour vos vacances : un feu de cette ampleur met généralement une à deux semaines à être fixé, puis la zone reste sous surveillance.</p>
+  <div class="card">
+    <h3>Surface parcourue par le feu</h3>
+    <div class="cap">En hectares, du 22 au 24 juillet 2026 — d'après les points de situation successifs</div>
+    <svg viewBox="0 0 640 320" role="img" aria-label="Courbe de la surface brûlée : départ du feu le 22 juillet au soir, 2 000 hectares le 23 au matin, 4 800 le 23 au soir, plus de 10 000 le 24 au matin">
+      <!-- grid -->
+      <g stroke="#e1e0d9" stroke-width="1">
+        <line x1="50" y1="20" x2="620" y2="20"/>
+        <line x1="50" y1="103.3" x2="620" y2="103.3"/>
+        <line x1="50" y1="186.7" x2="620" y2="186.7"/>
+      </g>
+      <line x1="50" y1="270" x2="620" y2="270" stroke="#c3c2b7" stroke-width="1.5"/>
+      <g class="axis-t" text-anchor="end">
+        <text x="44" y="24">12 000</text>
+        <text x="44" y="107">8 000</text>
+        <text x="44" y="191">4 000</text>
+        <text x="44" y="274">0</text>
+      </g>
+      <!-- area + line -->
+      <path d="M50 270 L235 228.3 L299 207.5 L435 170 L620 61.7 L620 270 Z" fill="#cde2fb" opacity=".55"/>
+      <path d="M50 270 L235 228.3 L299 207.5 L435 170 L620 61.7" fill="none" stroke="#2a78d6" stroke-width="2.5" stroke-linejoin="round"/>
+      <!-- points -->
+      <g fill="#2a78d6" stroke="#fcfcfb" stroke-width="2">
+        <circle cx="50" cy="270" r="5" data-tip="Mer. 22/07 en soirée — départ du feu près de Saumos"/>
+        <circle cx="235" cy="228.3" r="5" data-tip="Jeu. 23/07, 7h — ≈ 2 000 ha parcourus, premières évacuations massives"/>
+        <circle cx="299" cy="207.5" r="5" data-tip="Jeu. 23/07, 11h30 — ≈ 3 000 ha, 20 000 personnes évacuées"/>
+        <circle cx="435" cy="170" r="5" data-tip="Jeu. 23/07, 21h — ≈ 4 800 ha, le feu atteint Lège-Cap-Ferret, un pompier blessé"/>
+        <circle cx="620" cy="61.7" r="6" data-tip="Ven. 24/07 au matin — plus de 10 000 ha, évacuation totale de la presqu'île ordonnée"/>
+      </g>
+      <!-- direct labels -->
+      <text x="235" y="215" class="dlabel" text-anchor="middle">2 000 ha</text>
+      <text x="435" y="156" class="dlabel" text-anchor="middle">4 800 ha</text>
+      <text x="600" y="46" class="dlabel" text-anchor="end">10 000+ ha</text>
+      <text x="600" y="30" class="dlabel2" text-anchor="end">feu toujours actif</text>
+      <!-- x labels -->
+      <g class="axis-t" text-anchor="middle">
+        <text x="50" y="292">mer. 22/07</text>
+        <text x="299" y="292">jeu. 23/07</text>
+        <text x="600" y="292">ven. 24/07</text>
+      </g>
+    </svg>
+  </div>
+  <div class="card">
+    <h3>Personnes évacuées</h3>
+    <div class="cap">Cumul annoncé par les autorités — la presqu'île compte des dizaines de milliers d'habitants et de vacanciers en été</div>
+    <svg viewBox="0 0 640 210" role="img" aria-label="Barres des évacuations : 12 000 personnes le 23 juillet au matin, 20 000 le 23 en journée, 40 000 le 24 juillet">
+      <line x1="150" y1="14" x2="150" y2="166" stroke="#c3c2b7" stroke-width="1.5"/>
+      <g fill="#2a78d6">
+        <rect x="151" y="20"  width="141" height="34" rx="4" data-tip="Jeu. 23/07 matin — 12 000 personnes évacuées (Le Porge, Lacanau, Saumos…)"/>
+        <rect x="151" y="66"  width="235" height="34" rx="4" data-tip="Jeu. 23/07 en journée — 20 000 évacués, premières évacuations par bateau à Lège-Cap-Ferret"/>
+        <rect x="151" y="112" width="470" height="34" rx="4" data-tip="Ven. 24/07 — 40 000 évacués, ordre d'évacuation de toute la presqu'île"/>
+      </g>
+      <g class="axis-t" text-anchor="end">
+        <text x="140" y="41">23/07 matin</text>
+        <text x="140" y="87">23/07 soir</text>
+        <text x="140" y="133">24/07</text>
+      </g>
+      <g class="dlabel">
+        <text x="300" y="41">12 000</text>
+        <text x="394" y="87">20 000</text>
+        <text x="480" y="133" fill="#fff" text-anchor="end">40 000</text>
+      </g>
+      <line x1="150" y1="166" x2="620" y2="166" stroke="#c3c2b7" stroke-width="1.5"/>
+      <g class="axis-t" text-anchor="middle">
+        <text x="150" y="188">0</text>
+        <text x="385" y="188">20 000</text>
+        <text x="620" y="188">40 000</text>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<!-- ============ COMPARAISON 2022 ============ -->
+<section>
+  <h2>Le précédent de 2022, et ce qu'il enseigne</h2>
+  <p class="lede">La Gironde a déjà vécu cela à l'été 2022. Les deux enseignements clés pour vos dates : le feu de La Teste-de-Buch avait mis <b>13 jours</b> à être fixé, et celui de Landiras était <b>reparti trois semaines plus tard</b>, en plein mois d'août, forçant de nouvelles évacuations. Même feu « fixé », la zone reste à risque plusieurs semaines : sols chauds, reprises, forêts interdites, fumées.</p>
+  <div class="card">
+    <h3>Surface brûlée : Saumos 2026 face aux grands feux de Gironde 2022</h3>
+    <div class="cap">En hectares</div>
+    <svg viewBox="0 0 640 240" role="img" aria-label="Comparaison des surfaces brûlées : Landiras juillet 2022, 13 800 hectares ; Saumos 2026, plus de 10 000 hectares et toujours en cours ; Landiras 2 en août 2022, 7 400 hectares ; La Teste-de-Buch juillet 2022, 7 000 hectares">
+      <line x1="170" y1="14" x2="170" y2="196" stroke="#c3c2b7" stroke-width="1.5"/>
+      <g>
+        <rect x="171" y="20"  width="443" height="34" rx="4" fill="#2a78d6" data-tip="Landiras (juil. 2022) — 13 800 ha. Reparti le 9 août 2022 (Landiras 2)."/>
+        <rect x="171" y="66"  width="321" height="34" rx="4" fill="#eb6834" data-tip="Saumos (juil. 2026) — plus de 10 000 ha au 24 juillet, feu toujours actif et en progression"/>
+        <rect x="171" y="112" width="238" height="34" rx="4" fill="#2a78d6" data-tip="Landiras 2 (août 2022) — 7 400 ha : la reprise du feu de juillet, trois semaines après"/>
+        <rect x="171" y="158" width="225" height="34" rx="4" fill="#2a78d6" data-tip="La Teste-de-Buch (juil. 2022) — 7 000 ha, 13 jours pour fixer le feu"/>
+      </g>
+      <g class="axis-t" text-anchor="end">
+        <text x="160" y="37">Landiras — juil. 22</text>
+        <text x="160" y="83">Saumos — juil. 26</text>
+        <text x="160" y="129">Landiras 2 — août 22</text>
+        <text x="160" y="175">La Teste — juil. 22</text>
+      </g>
+      <g class="dlabel">
+        <text x="560" y="41" fill="#fff" text-anchor="end">13 800</text>
+        <text x="440" y="87" fill="#fff" text-anchor="end">10 000+ <tspan font-weight="500">(en cours)</tspan></text>
+        <text x="355" y="133" fill="#fff" text-anchor="end">7 400</text>
+        <text x="342" y="179" fill="#fff" text-anchor="end">7 000</text>
+      </g>
+      <line x1="170" y1="196" x2="620" y2="196" stroke="#c3c2b7" stroke-width="1.5"/>
+      <g class="axis-t" text-anchor="middle">
+        <text x="170" y="218">0</text>
+        <text x="395" y="218">7 000</text>
+        <text x="620" y="218">14 000 ha</text>
+      </g>
+    </svg>
+    <div class="legend">
+      <span><i style="background:#eb6834"></i>Incendie actuel (en cours)</span>
+      <span><i style="background:#2a78d6"></i>Incendies de l'été 2022 (bilans définitifs)</span>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Chronologie type d'un grand feu girondin — appliquée à vos dates</h3>
+    <div class="cap">Ce que 2022 suggère pour les semaines qui viennent</div>
+    <svg viewBox="0 0 640 150" role="img" aria-label="Frise chronologique : phase de lutte fin juillet, phase de sécurisation début août pendant vos vacances, risque de reprises tout août">
+      <line x1="30" y1="60" x2="610" y2="60" stroke="#c3c2b7" stroke-width="2"/>
+      <g>
+        <rect x="30" y="46" width="180" height="28" rx="6" fill="#d03b3b" data-tip="Phase de lutte : feu actif, évacuations, zone fermée. En 2022, 9 à 13 jours pour fixer les grands feux."/>
+        <rect x="214" y="46" width="180" height="28" rx="6" fill="#ec835a" data-tip="Feu fixé mais pas éteint : sols brûlants, fumées, forêts interdites, réouvertures progressives et révocables"/>
+        <rect x="398" y="46" width="212" height="28" rx="6" fill="#fab219" data-tip="Risque de reprises tant que dure la sécheresse — en 2022, Landiras est reparti le 9 août (7 400 ha de plus)"/>
+      </g>
+      <g class="dlabel" text-anchor="middle" fill="#fff">
+        <text x="120" y="65" font-size="11.5">🔥 lutte</text>
+        <text x="304" y="65" font-size="11.5">⚠ sécurisation</text>
+        <text x="504" y="65" font-size="11.5" fill="#5c4400">♨ risque de reprises</text>
+      </g>
+      <g class="axis-t" text-anchor="middle">
+        <text x="30" y="94" text-anchor="start">22 juil. — départ du feu</text>
+        <text x="360" y="94">≈ 7 août</text>
+        <text x="610" y="94" text-anchor="end">fin août</text>
+      </g>
+      <g>
+        <rect x="330" y="108" width="240" height="26" rx="13" fill="#f0f8f0" stroke="#bcd9bc"/>
+        <text x="450" y="125" text-anchor="middle" font-size="12" font-weight="700" fill="#006300">📅 vos vacances (≈ 7 – 21 août)</text>
+        <path d="M450 108 L450 76" stroke="#0ca30c" stroke-width="1.5" stroke-dasharray="3 3"/>
+      </g>
+    </svg>
+    <p style="color:var(--ink-2);font-size:14px;margin-top:10px">Vos deux semaines tomberaient dans la phase « sécurisation / risque de reprises » : c'est le scénario le plus optimiste. Si le feu n'est pas fixé rapidement, elles tomberaient encore en phase de lutte.</p>
+  </div>
+</section>
+
+<!-- ============ SCENARIOS ============ -->
+<section>
+  <h2>Les trois scénarios pour vos dates</h2>
+  <p class="lede">Voici comment se répartissent, selon nous, les issues possibles pour un séjour débutant vers le 7 août. Les pourcentages sont des ordres de grandeur, à réviser chaque jour selon les points de situation.</p>
+  <div class="card">
+    <div class="scen-bar" role="img" aria-label="Répartition des probabilités : séjour possible 35 %, séjour fortement dégradé 30 %, séjour impossible ou annulé 35 %">
+      <div style="flex:35;background:var(--good)" data-tip="Scénario A — séjour possible avec restrictions : 30 à 40 %">✓ 35&nbsp;%</div>
+      <div style="flex:30;background:var(--serious)" data-tip="Scénario B — séjour fortement dégradé : environ 30 %">⚠ 30&nbsp;%</div>
+      <div style="flex:35;background:var(--critical)" data-tip="Scénario C — séjour impossible ou annulé : 30 à 35 %">✕ 35&nbsp;%</div>
+    </div>
+    <div class="legend" style="margin-top:14px">
+      <span><i style="background:var(--good)"></i>A — possible avec restrictions</span>
+      <span><i style="background:var(--serious)"></i>B — fortement dégradé</span>
+      <span><i style="background:var(--critical)"></i>C — impossible / annulé</span>
+    </div>
+  </div>
+  <div class="scen-list">
+    <div class="scen">
+      <div class="ico" style="background:#f0f8f0">✅</div>
+      <div>
+        <h4>Scénario A <em>(30–40&nbsp;%)</em> — le feu est fixé rapidement, la météo aide un peu</h4>
+        <p>La presqu'île rouvre progressivement fin juillet / tout début août. Vous pouvez venir, mais avec des restrictions : massifs forestiers interdits, odeur de fumée par moments, paysages abîmés côté forêt, hébergements et commerces qui rouvrent en ordre dispersé. Les plages et le bassin restent le refuge du séjour.</p>
+      </div>
+    </div>
+    <div class="scen">
+      <div class="ico" style="background:#fdf3ee">⚠️</div>
+      <div>
+        <h4>Scénario B <em>(≈ 30&nbsp;%)</em> — feu long à maîtriser, ou reprises</h4>
+        <p>Le feu est fixé tardivement, ou repart (comme Landiras en août 2022). Accès à la presqu'île limité ou soumis à autorisation, hébergements fermés ou en pré-alerte d'évacuation, fumées récurrentes. Un séjour avec deux enfants devient très difficile à défendre — c'est un « oui » sur le papier, un « non » en pratique.</p>
+      </div>
+    </div>
+    <div class="scen">
+      <div class="ico" style="background:#fdeeee">⛔</div>
+      <div>
+        <h4>Scénario C <em>(30–35&nbsp;%)</em> — la situation empire, zone fermée</h4>
+        <p>Le feu poursuit sa progression vers la presqu'île ou de nouveaux départs surviennent en Gironde ou dans les Landes voisines (Biscarrosse est aussi touchée). Zone interdite au public, séjour annulé de fait. C'est le scénario que les autorités cherchent à éviter, mais il n'est pas exclu tant que le feu court.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FACTEURS ============ -->
+<section>
+  <h2>Ce qui fera basculer la balance</h2>
+  <p class="lede">Quatre variables décideront de vos vacances dans les 7 à 10 prochains jours. Voici ce qui joue pour vous, et contre vous.</p>
+  <div class="factors">
+    <div class="card">
+      <h3 style="color:var(--good-text)">Dans le bon sens ✚</h3>
+      <ul>
+        <li><span>🚒</span><span><b>Moyens exceptionnels engagés</b> : 800+ pompiers, colonnes de renfort, bombardiers d'eau européens (mécanisme UE) en arrivée.</span></li>
+        <li><span>🌊</span><span><b>Le feu bute sur des obstacles naturels</b> : océan à l'ouest, bassin au sud — la presqu'île elle-même est étroite et défendable.</span></li>
+        <li><span>📉</span><span><b>Expérience de 2022</b> : doctrine améliorée (pare-feux géants, évacuations précoces), ce qui accélère la maîtrise.</span></li>
+        <li><span>💨</span><span><b>Un changement de vent ou un épisode pluvieux</b> changerait tout en 48&nbsp;h.</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="color:var(--critical)">Dans le mauvais sens −</h3>
+      <ul>
+        <li><span>🌡️</span><span><b>4ᵉ canicule annoncée</b> la semaine prochaine : jusqu'à 38&nbsp;°C, temps chaud et sec prévu jusqu'à début août.</span></li>
+        <li><span>🥀</span><span><b>Sécheresse installée depuis fin mai</b> : végétation desséchée, humidité très basse — le pin des Landes brûle vite.</span></li>
+        <li><span>🛣️</span><span><b>Une seule route d'accès</b> : la réouverture de la presqu'île sera prudente et lente, même feu fixé.</span></li>
+        <li><span>🔥</span><span><b>Saison 2026 déjà record</b> en France, feux parallèles dans les Landes (Biscarrosse, 20 000+ évacués) qui mobilisent les mêmes moyens.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLAN D'ACTION ============ -->
+<section>
+  <h2>Votre plan d'action, dès aujourd'hui</h2>
+  <p class="lede">Vous avez deux semaines devant vous : c'est suffisant pour sécuriser vos vacances quel que soit le scénario, à condition d'agir maintenant.</p>
+  <div class="check">
+    <div class="step"><div>
+      <h4>Vérifiez vos conditions d'annulation aujourd'hui</h4>
+      <p>Relisez la politique d'annulation de votre hébergement et votre assurance (carte bancaire, assurance voyage, multirisque habitation). En zone sinistrée avec arrêté préfectoral, l'annulation sans frais est souvent possible — demandez-le par écrit dès maintenant, sans attendre le dernier moment.</p>
+    </div></div>
+    <div class="step"><div>
+      <h4>Suivez deux sources officielles, deux fois par jour</h4>
+      <p>Les points de situation de la <a href="https://www.gironde.gouv.fr/Actualites/Communiques-de-presse" target="_blank" rel="noopener">préfecture de la Gironde</a> (matin et soir) et la <a href="https://meteofrance.com/meteo-des-forets" target="_blank" rel="noopener">météo des forêts de Météo-France</a>. Les mots à guetter : feu « fixé » puis « maîtrisé », et la levée des ordres d'évacuation.</p>
+    </div></div>
+    <div class="step"><div>
+      <h4>Fixez-vous une date butoir : le 31 juillet</h4>
+      <p>Si au 31 juillet le feu n'est pas fixé <b>et</b> la presqu'île toujours évacuée, basculez sur le plan B sans état d'âme. Décider une semaine avant le départ vous laisse le temps de réserver ailleurs — attendre le 5 août ne vous laissera rien.</p>
+    </div></div>
+    <div class="step"><div>
+      <h4>Pré-réservez un plan B annulable gratuitement</h4>
+      <p>Réservez dès maintenant une option remboursable dans une région épargnée : côte atlantique nord (Bretagne sud, Vendée, île de Ré), Pays basque intérieur, ou Normandie. Une réservation « annulation gratuite » ne coûte rien et transforme un scénario noir en simple changement de destination pour les enfants.</p>
+    </div></div>
+    <div class="step"><div>
+      <h4>Si vous partez quand même : préparez un séjour « plage et bassin »</h4>
+      <p>Dans le scénario A, prévoyez des activités hors forêt (plages océanes surveillées, bassin, Arcachon en bateau), gardez les réservoirs pleins et les documents importants accessibles, inscrivez-vous aux alertes SMS de la mairie de Lège-Cap-Ferret, et repérez les consignes d'évacuation dès l'arrivée.</p>
+    </div></div>
+  </div>
+</section>
+
+<!-- ============ SOURCES ============ -->
+<section class="sources">
+  <h2>Sources consultées</h2>
+  <p class="lede">Recherches effectuées le 24 juillet 2026 au matin. La situation évolue d'heure en heure : fiez-vous en priorité aux communiqués préfectoraux.</p>
+  <ul>
+    <li>🏛️ <a href="https://www.gironde.gouv.fr/Actualites/Communiques-de-presse/Communiques-de-presse-2026/Juillet-2026/Incendie-de-Saumos-point-de-situation-a-21h00" target="_blank" rel="noopener">Préfecture de la Gironde — points de situation successifs sur l'incendie de Saumos (7h, 11h30, 21h)</a></li>
+    <li>📰 <a href="https://www.ici.fr/nouvelle-aquitaine/gironde-33/lege-cap-ferret/incendie-en-gironde-evacuation-en-cours-des-premiers-villages-de-la-prequ-ile-du-cap-ferret-9011692" target="_blank" rel="noopener">ICI (France Bleu) — Direct : plus de 10 000 hectares, 40 000 évacués, « le plus gros feu de la saison »</a></li>
+    <li>📰 <a href="https://france3-regions.franceinfo.fr/nouvelle-aquitaine/gironde/arcachon/12-000-personnes-evacuees-plus-de-2-000-hectares-parcourus-le-violent-incendie-s-etend-de-lacanau-a-lege-cap-ferret-3390697.html" target="_blank" rel="noopener">France 3 Nouvelle-Aquitaine — L'incendie s'étend à Lège-Cap-Ferret, 20 000 personnes évacuées</a></li>
+    <li>📰 <a href="https://france3-regions.franceinfo.fr/nouvelle-aquitaine/gironde/bordeaux/incendie-en-gironde-c-est-assez-alarmant-les-evacuations-d-habitants-et-touristes-se-poursuivent-par-terre-et-par-mer-3390727.html" target="_blank" rel="noopener">France 3 — Évacuations par terre et par mer : « c'est assez alarmant »</a></li>
+    <li>📰 <a href="https://cnews.fr/france/2026-07-23/incendie-en-gironde-8800-nouvelles-evacuations-en-cours-dans-le-secteur-de-saumos" target="_blank" rel="noopener">CNEWS — L'Union européenne déploie trois bombardiers d'eau</a></li>
+    <li>🌤️ <a href="https://www.meteoconsult.fr/actualites-meteo/2026-07-23/90677-feux-de-foret-en-france-gironde-et-var-sous-tension-avant-le-retour-des-fortes-chaleurs" target="_blank" rel="noopener">Météo Consult — Gironde sous tension avant le retour des fortes chaleurs (38 °C, 4ᵉ canicule)</a></li>
+    <li>🔥 <a href="https://feuxdeforet.fr/gironde-33/saumos-22-07-2026-4367/" target="_blank" rel="noopener">Feuxdeforet.fr — Fiche de suivi de l'incendie de Saumos</a></li>
+  </ul>
+</section>
+
+<div class="disclaimer">
+  <b>Avertissement.</b> Cette page est une aide à la décision personnelle, établie le 24 juillet 2026 à partir de sources publiques. Les probabilités indiquées sont des estimations raisonnées, pas des prévisions officielles : la situation d'un incendie en cours évolue d'heure en heure. Pour toute décision, référez-vous aux consignes de la préfecture de la Gironde, des mairies concernées et de Météo-France. Les surfaces et bilans cités sont ceux communiqués au moment de la rédaction et seront probablement révisés.
+</div>
+
+<footer>Analyse préparée pour Nico — 24 juillet 2026 · Bon courage, et quoi qu'il arrive, les enfants auront leurs vacances 🏖️</footer>
+
+</div>
+
+<script>
+(function(){
+  var tip=document.getElementById('tip');
+  document.querySelectorAll('[data-tip]').forEach(function(el){
+    function show(e){
+      tip.textContent=el.getAttribute('data-tip');
+      tip.style.opacity='1';
+      move(e);
+    }
+    function move(e){
+      var x=(e.touches?e.touches[0].clientX:e.clientX);
+      var y=(e.touches?e.touches[0].clientY:e.clientY);
+      var w=tip.offsetWidth;
+      tip.style.left=Math.min(Math.max(8,x-w/2),window.innerWidth-w-8)+'px';
+      tip.style.top=(y-tip.offsetHeight-14<8 ? y+18 : y-tip.offsetHeight-14)+'px';
+    }
+    function hide(){tip.style.opacity='0'}
+    el.addEventListener('mouseenter',show);
+    el.addEventListener('mousemove',move);
+    el.addEventListener('mouseleave',hide);
+    el.addEventListener('touchstart',function(e){show(e);setTimeout(hide,2600)},{passive:true});
+  });
+})();
+</script>
+</body>
+</html>
