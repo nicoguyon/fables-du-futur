@@ -87,8 +87,11 @@ continue proprement si une clé d'API manque).
     - **levée** ou **extension** d'un ordre d'évacuation ;
     - **reprise** du feu ;
     - toute **bascule de `level`** (dans un sens ou dans l'autre).
-- Destinataire e-mail : nicolas@comptoiria.com, via l'API Resend
-  (`RESEND_API_KEY`, `RESEND_FROM_DEFAULT` — déjà dans l'environnement).
+- Destinataire e-mail : nicolas@comptoiria.com, via l'API **AgentMail**
+  (`AGENTMAIL_API_KEY`, boîte d'envoi `nico-fireflies@agentmail.to`), avec
+  Resend en secours (`RESEND_API_KEY`, `RESEND_FROM_DEFAULT`). Attention :
+  `api.resend.com` est bloqué par la politique de sortie de l'environnement
+  Claude Code — AgentMail est la voie qui fonctionne, testée le 24/07/2026.
 
 ## 4. Activer Telegram
 

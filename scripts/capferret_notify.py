@@ -243,35 +243,62 @@ def build_email_html(data, summary):
     }
 
 
-def send_email(data, subject, summary):
-    """Envoie l'e-mail via Resend. True = OK ou non configuré, False = échec."""
-    api_key = os.environ.get("RESEND_API_KEY", "").strip()
-    sender = os.environ.get("RESEND_FROM_DEFAULT", "").strip()
-    if not api_key or not sender:
-        log("E-mail non configuré (RESEND_API_KEY / RESEND_FROM_DEFAULT absents) — étape ignorée.")
-        return True
+AGENTMAIL_INBOX = "nico-fireflies@agentmail.to"
 
+
+def send_email(data, subject, summary):
+    """Envoie l'e-mail : AgentMail en priorité, Resend en secours.
+
+    (api.resend.com est bloqué par la politique de sortie de certains
+    environnements ; AgentMail est la voie fiable ici.)
+    True = OK ou non configuré, False = échec.
+    """
     level = data.get("level", "warning")
     if not subject:
         subject = "%s Cap-Ferret — %s" % (
             LEVEL_EMOJI.get(level, "🟡"),
             data.get("level_label", "point de situation"),
         )
-    payload = {
-        "from": sender,
-        "to": [EMAIL_TO],
-        "subject": subject,
-        "html": build_email_html(data, summary),
-    }
+    html = build_email_html(data, summary)
+
+    agentmail_key = os.environ.get("AGENTMAIL_API_KEY", "").strip()
+    if agentmail_key:
+        status, detail = http_post_json(
+            "https://api.agentmail.to/v0/inboxes/%s/messages/send" % AGENTMAIL_INBOX,
+            {
+                "to": [EMAIL_TO],
+                "subject": subject,
+                "html": html,
+                "text": "%s — %s\n%s" % (
+                    data.get("level_label", ""),
+                    summary or data.get("headline", ""),
+                    PAGE_URL,
+                ),
+            },
+            headers={"Authorization": "Bearer %s" % agentmail_key},
+        )
+        if status in (200, 201):
+            log("E-mail (AgentMail) : envoyé à %s (objet : %s)." % (EMAIL_TO, subject))
+            return True
+        log("E-mail (AgentMail) : échec (statut=%s, détail=%s) — tentative Resend." % (status, detail))
+
+    resend_key = os.environ.get("RESEND_API_KEY", "").strip()
+    sender = os.environ.get("RESEND_FROM_DEFAULT", "").strip()
+    if not resend_key or not sender:
+        if not agentmail_key:
+            log("E-mail non configuré (ni AGENTMAIL_API_KEY ni RESEND_API_KEY) — étape ignorée.")
+            return True
+        return False
+
     status, detail = http_post_json(
         "https://api.resend.com/emails",
-        payload,
-        headers={"Authorization": "Bearer %s" % api_key},
+        {"from": sender, "to": [EMAIL_TO], "subject": subject, "html": html},
+        headers={"Authorization": "Bearer %s" % resend_key},
     )
     if status in (200, 201):
-        log("E-mail : envoyé à %s (objet : %s)." % (EMAIL_TO, subject))
+        log("E-mail (Resend) : envoyé à %s (objet : %s)." % (EMAIL_TO, subject))
         return True
-    log("E-mail : échec (statut=%s, détail=%s)" % (status, detail))
+    log("E-mail (Resend) : échec (statut=%s, détail=%s)" % (status, detail))
     return False
 
 
