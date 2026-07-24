@@ -123,7 +123,7 @@ def main(argv=None):
 
     load_local_secrets()
     token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
-    chat_ids = telegram_chat_ids()
+    chat_ids = telegram_chat_ids(token)
     if not token or not chat_ids:
         log("Telegram non configuré — abandon.")
         return 1

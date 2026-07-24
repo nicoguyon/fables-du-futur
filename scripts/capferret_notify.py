@@ -110,20 +110,58 @@ def html_escape(text):
 
 # ---------------------------------------------------------------- Telegram
 
-def telegram_chat_ids():
-    """Liste des destinataires : TELEGRAM_CHAT_IDS (séparés par des virgules)
-    ou, à défaut, TELEGRAM_CHAT_ID seul."""
+SUBSCRIBERS_PATH = os.path.join(REPO_ROOT, ".capferret-subscribers.json")
+
+
+def refresh_subscribers(token):
+    """Enregistre comme abonné toute personne ayant écrit au bot (/start).
+    Fusionne les chat_id de getUpdates dans .capferret-subscribers.json
+    (hors git). Sans effet en cas d'erreur réseau."""
+    try:
+        with open(SUBSCRIBERS_PATH, "r", encoding="utf-8") as fh:
+            subs = set(str(x) for x in json.load(fh))
+    except (OSError, json.JSONDecodeError):
+        subs = set()
+    context = ssl.create_default_context()
+    try:
+        with urllib.request.urlopen(
+            "https://api.telegram.org/bot%s/getUpdates" % token,
+            timeout=20, context=context,
+        ) as resp:
+            data = json.load(resp)
+        before = len(subs)
+        for upd in data.get("result", []):
+            chat = (upd.get("message") or {}).get("chat") or {}
+            if chat.get("type") == "private" and chat.get("id"):
+                subs.add(str(chat["id"]))
+        if len(subs) != before:
+            log("Abonnés Telegram : %d nouveau(x), %d au total." % (len(subs) - before, len(subs)))
+        with open(SUBSCRIBERS_PATH, "w", encoding="utf-8") as fh:
+            json.dump(sorted(subs), fh)
+    except (urllib.error.URLError, OSError, ValueError) as exc:
+        log("refresh_subscribers : erreur ignorée (%s)" % exc)
+    return subs
+
+
+def telegram_chat_ids(token=None):
+    """Destinataires : TELEGRAM_CHAT_IDS / TELEGRAM_CHAT_ID (env ou fichier
+    de secrets) + tous les abonnés auto-enregistrés du bot."""
     raw = os.environ.get("TELEGRAM_CHAT_IDS", "").strip() or os.environ.get(
         "TELEGRAM_CHAT_ID", ""
     ).strip()
-    return [c.strip() for c in raw.split(",") if c.strip()]
+    ids = [c.strip() for c in raw.split(",") if c.strip()]
+    if token:
+        for sub in sorted(refresh_subscribers(token)):
+            if sub not in ids:
+                ids.append(sub)
+    return ids
 
 
 def send_telegram(data, summary):
     """Envoie le message compact Telegram à tous les destinataires.
     True = OK, False = échec réel."""
     token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
-    chat_ids = telegram_chat_ids()
+    chat_ids = telegram_chat_ids(token)
     if not token or not chat_ids:
         log("Telegram non configuré (TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID(S) absents) — étape ignorée.")
         return True
