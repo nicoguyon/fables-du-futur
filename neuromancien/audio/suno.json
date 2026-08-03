@@ -1,0 +1,50 @@
+{
+  "code": 200,
+  "msg": "success",
+  "data": {
+    "taskId": "777b1982e3bf9245d1f8846f844e7f3c",
+    "parentMusicId": "",
+    "param": "{\"callBackUrl\":\"https://example.com/noop\",\"customMode\":true,\"instrumental\":true,\"model\":\"V5\",\"prompt\":\"Instrumental teaser score for a prestige cyberpunk TV series set in a rainy neon Paris. Slow menacing build, sub-bass pulses every two bars, distant metallic echoes, climaxing in a single huge braam, then a fragile shimmering outro.\",\"style\":\"cinematic dark synthwave film score, retro-futuristic sci-fi noir, deep sub-bass swells, vintage analog synth brass pads, rain ambience textures, sparse glitchy percussion, slow ominous build over 25 seconds into one massive distorted braam hit, then eerie silence with a high shimmering drone, 70 BPM, instrumental, no vocals\",\"title\":\"Neuromancien (Teaser Score)\"}",
+    "response": {
+      "taskId": "777b1982e3bf9245d1f8846f844e7f3c",
+      "sunoData": [
+        {
+          "id": "8f797b9b-b8ac-4d30-a921-51ec2cc501b2",
+          "audioUrl": "https://tempfile.aiquickdraw.com/r/3b6880ed8b514103aa1e821c296e5d75.mp3",
+          "sourceAudioUrl": "https://cdn1.suno.ai/8f797b9b-b8ac-4d30-a921-51ec2cc501b2.mp3",
+          "streamAudioUrl": "https://musicfile.removeai.ai/OGY3OTdiOWItYjhhYy00ZDMwLWE5MjEtNTFlYzJjYzUwMWIy",
+          "sourceStreamAudioUrl": "https://cdn1.suno.ai/8f797b9b-b8ac-4d30-a921-51ec2cc501b2.mp3",
+          "imageUrl": "https://musicfile.removeai.ai/OGY3OTdiOWItYjhhYy00ZDMwLWE5MjEtNTFlYzJjYzUwMWIy.jpeg",
+          "sourceImageUrl": "https://cdn2.suno.ai/image_8f797b9b-b8ac-4d30-a921-51ec2cc501b2.jpeg",
+          "prompt": "",
+          "modelName": "chirp-crow",
+          "title": "Neuromancien (Teaser Score)",
+          "tags": "cinematic dark synthwave film score, retro-futuristic sci-fi noir, deep sub-bass swells, vintage analog synth brass pads, rain ambience textures, sparse glitchy percussion, slow ominous build over 25 seconds into one massive distorted braam hit, then eerie silence with a high shimmering drone, 70 BPM, instrumental, no vocals",
+          "createTime": 1785796543807,
+          "duration": 221.72
+        },
+        {
+          "id": "bff6684f-3712-4306-be37-9707d262f89e",
+          "audioUrl": "https://tempfile.aiquickdraw.com/r/c941d48796444c779fcbf03212730f5f.mp3",
+          "sourceAudioUrl": "https://cdn1.suno.ai/bff6684f-3712-4306-be37-9707d262f89e.mp3",
+          "streamAudioUrl": "https://musicfile.removeai.ai/YmZmNjY4NGYtMzcxMi00MzA2LWJlMzctOTcwN2QyNjJmODll",
+          "sourceStreamAudioUrl": "https://cdn1.suno.ai/bff6684f-3712-4306-be37-9707d262f89e.mp3",
+          "imageUrl": "https://musicfile.removeai.ai/YmZmNjY4NGYtMzcxMi00MzA2LWJlMzctOTcwN2QyNjJmODll.jpeg",
+          "sourceImageUrl": "https://cdn2.suno.ai/image_bff6684f-3712-4306-be37-9707d262f89e.jpeg",
+          "prompt": "",
+          "modelName": "chirp-crow",
+          "title": "Neuromancien (Teaser Score)",
+          "tags": "cinematic dark synthwave film score, retro-futuristic sci-fi noir, deep sub-bass swells, vintage analog synth brass pads, rain ambience textures, sparse glitchy percussion, slow ominous build over 25 seconds into one massive distorted braam hit, then eerie silence with a high shimmering drone, 70 BPM, instrumental, no vocals",
+          "createTime": 1785796543807,
+          "duration": 222.84
+        }
+      ]
+    },
+    "status": "SUCCESS",
+    "type": "chirp-crow",
+    "operationType": "generate",
+    "errorCode": null,
+    "errorMessage": null,
+    "createTime": 1785796409000
+  }
+}
