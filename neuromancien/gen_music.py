@@ -14,10 +14,10 @@ BASE = "https://api.sunoapi.org"
 
 TITLE = "Neuromancien (Teaser Score)"
 
-STYLE = ("cinematic dark synthwave film score, Blade Runner 2049 style, deep sub-bass swells, "
-         "Vangelis CS-80 brass pads, rain ambience textures, sparse glitchy percussion, slow "
-         "ominous build over 25 seconds into one massive distorted braam hit, then eerie silence "
-         "with a high shimmering drone, 70 BPM, instrumental, no vocals")
+STYLE = ("cinematic dark synthwave film score, retro-futuristic sci-fi noir, deep sub-bass "
+         "swells, vintage analog synth brass pads, rain ambience textures, sparse glitchy "
+         "percussion, slow ominous build over 25 seconds into one massive distorted braam hit, "
+         "then eerie silence with a high shimmering drone, 70 BPM, instrumental, no vocals")
 
 PROMPT = ("Instrumental teaser score for a prestige cyberpunk TV series set in a rainy neon "
           "Paris. Slow menacing build, sub-bass pulses every two bars, distant metallic echoes, "
