@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cascades &amp; vasques autour d'Ajaccio — le comparatif</title>
+<meta name="description" content="Les 5 plus belles cascades et piscines naturelles à moins d'1h de route d'Ajaccio et des Sanguinaires : accès voiture, parking, marche d'approche, baignade et vraies photos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c2b26;
+    --ink-soft:#4c5f58;
+    --paper:#faf8f3;
+    --card:#ffffff;
+    --water:#0e7c86;
+    --water-deep:#0a5f67;
+    --sand:#f0e9db;
+    --line:#e4ddd0;
+    --gold:#b98a2f;
+    --ok:#1e7d46;
+    --warn:#b3541e;
+    --no:#b02e2e;
+    --radius:18px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.65;
+    font-size:16px;
+  }
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.15}
+  img{display:block;max-width:100%}
+  a{color:var(--water-deep)}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:72vh;
+    display:flex;align-items:flex-end;
+    color:#fff;
+    background:url('img/anglais-1.jpg') center 60%/cover no-repeat, #24423b;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(10,30,25,.25) 0%,rgba(10,30,25,.05) 40%,rgba(8,26,22,.82) 100%);
+  }
+  .hero-inner{position:relative;z-index:2;width:100%;max-width:1060px;margin:0 auto;padding:48px 22px 42px}
+  .hero .kicker{
+    display:inline-block;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.35);border-radius:100px;
+    padding:6px 16px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px;
+  }
+  .hero h1{font-size:clamp(34px,6.5vw,58px);font-weight:700;text-shadow:0 2px 24px rgba(0,0,0,.45);max-width:19ch}
+  .hero p{margin-top:14px;font-size:clamp(16px,2.4vw,19px);max-width:56ch;color:#eef5f2;text-shadow:0 1px 12px rgba(0,0,0,.5)}
+  .hero .photo-credit{position:absolute;right:12px;bottom:8px;z-index:2;font-size:11px;color:rgba(255,255,255,.75)}
+
+  /* ---------- LAYOUT ---------- */
+  .wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+  section{padding:52px 0 8px}
+  .section-title{font-size:clamp(26px,4.5vw,36px);margin-bottom:10px}
+  .section-sub{color:var(--ink-soft);max-width:64ch;margin-bottom:28px}
+
+  /* ---------- NOTICE AOÛT ---------- */
+  .notice{
+    background:var(--sand);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px 22px;margin:34px auto 0;max-width:1060px;
+  }
+  .notice strong{color:var(--warn)}
+
+  /* ---------- CARDS ---------- */
+  .spot{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;margin-bottom:40px;
+    box-shadow:0 10px 30px -18px rgba(28,43,38,.25);
+  }
+  .gallery{
+    display:flex;gap:6px;overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    background:#0d1f1b;
+  }
+  .gallery img{
+    height:300px;flex:0 0 auto;width:auto;max-width:88vw;
+    object-fit:cover;scroll-snap-align:center;
+  }
+  @media(min-width:700px){.gallery img{height:360px}}
+  .gallery-hint{font-size:12px;color:var(--ink-soft);text-align:right;padding:6px 16px 0}
+  .spot-body{padding:22px 24px 26px}
+  .spot-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 14px}
+  .spot h3{font-size:clamp(22px,3.6vw,29px)}
+  .spot .place{color:var(--ink-soft);font-size:14px;font-weight:500}
+  .medal{
+    display:inline-block;background:linear-gradient(135deg,#f3d27a,#d8a93f);
+    color:#4a3608;font-size:12.5px;font-weight:700;border-radius:100px;padding:4px 12px;letter-spacing:.02em;
+  }
+  .badges{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 14px}
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;
+    background:var(--paper);border:1px solid var(--line);border-radius:100px;
+    padding:6px 13px;font-size:13.5px;font-weight:500;color:var(--ink);
+  }
+  .badge.ok{border-color:#bfdccb;background:#eef7f1;color:var(--ok)}
+  .badge.warn{border-color:#ecd3bd;background:#fbf1e7;color:var(--warn)}
+  .badge.no{border-color:#eec9c9;background:#fdefef;color:var(--no)}
+  .spot p{margin:10px 0;color:#2c3d37}
+  .facts{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:10px;margin:18px 0 6px;
+  }
+  .fact{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14.5px}
+  .fact b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);margin-bottom:3px}
+  .maps-btn{
+    display:inline-block;margin-top:14px;background:var(--water);color:#fff;text-decoration:none;
+    font-weight:600;font-size:14.5px;border-radius:100px;padding:10px 20px;
+  }
+  .maps-btn:hover{background:var(--water-deep)}
+  .note-photo{font-size:12.5px;color:var(--ink-soft);margin-top:10px;font-style:italic}
+
+  /* ---------- TABLE ---------- */
+  .table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:860px;font-size:14px}
+  th,td{padding:13px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+  thead th{
+    background:#12332c;color:#fff;font-weight:600;font-size:13px;
+    letter-spacing:.03em;white-space:nowrap;position:sticky;top:0;
+  }
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:nth-child(odd){background:#fcfbf7}
+  td b{color:var(--ink)}
+  .pill{display:inline-block;border-radius:100px;padding:2px 10px;font-size:12.5px;font-weight:600;white-space:nowrap}
+  .pill.ok{background:#e3f3e9;color:var(--ok)}
+  .pill.warn{background:#faeadd;color:var(--warn)}
+  .pill.no{background:#fbe4e4;color:var(--no)}
+  .stars{color:var(--gold);letter-spacing:2px;white-space:nowrap}
+
+  /* ---------- RECO ---------- */
+  .reco{
+    background:linear-gradient(135deg,#0e5b52,#0e7c86);color:#fff;
+    border-radius:var(--radius);padding:28px 26px;margin-top:34px;
+  }
+  .reco h3{font-size:23px;margin-bottom:10px}
+  .reco p{margin:8px 0;color:#e7f4f2}
+  .reco b{color:#fff}
+
+  footer{margin-top:60px;padding:28px 22px 40px;border-top:1px solid var(--line);color:var(--ink-soft);font-size:13px}
+  footer .wrap{padding:0}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="kicker">Ajaccio · Route des Sanguinaires · Août 2026</span>
+    <h1>Cascades &amp; vasques d'eau émeraude à moins d'1h d'Ajaccio</h1>
+    <p>5 options vérifiées, avec le temps de route réel depuis les Sanguinaires, la difficulté en voiture, où se garer, la marche d'approche… et de vraies photos pour choisir en connaissance de cause.</p>
+  </div>
+  <span class="photo-credit">Photo : Cascade des Anglais (Wikimedia Commons)</span>
+</header>
+
+<div class="notice">
+  ⚠️ <strong>À savoir en plein mois d'août :</strong> les cascades corses ont un débit réduit en été. Les <b>vasques de baignade restent magnifiques</b> (Cascade des Anglais, Richiusa), mais les grandes chutes « rideau d'eau » comme le Voile de la Mariée sont bien plus impressionnantes au printemps. Partez <b>tôt le matin</b> : les petits parkings saturent vite en été, et vous marcherez à la fraîche.
+</div>
+
+<main class="wrap">
+
+  <!-- ================= SPOT 1 ================= -->
+  <section id="anglais">
+    <article class="spot">
+      <div class="gallery">
+        <img src="img/anglais-1.jpg" alt="Vasque émeraude au pied d'une petite cascade, Cascade des Anglais" loading="lazy">
+        <img src="img/anglais-3.jpg" alt="Eau tombant entre les rochers de granit, Cascade des Anglais" loading="lazy">
+        <img src="img/anglais-2.jpg" alt="Saut dans une vasque naturelle à la Cascade des Anglais" loading="lazy">
+        <img src="img/anglais-4.jpg" alt="Le torrent de l'Agnone s'étalant sur les dalles de granit" loading="lazy">
+        <img src="img/anglais-5.jpg" alt="Piscine naturelle limpide de la Cascade des Anglais" loading="lazy">
+      </div>
+      <p class="gallery-hint">← faites défiler les photos →</p>
+      <div class="spot-body">
+        <div class="spot-head">
+          <span class="medal">🏆 Notre coup de cœur</span>
+          <h3>1. Cascade des Anglais</h3>
+          <span class="place">Vizzavona — torrent de l'Agnone, au pied du Monte d'Oro</span>
+        </div>
+        <div class="badges">
+          <span class="badge">🚗 ≈ 1h05 des Sanguinaires</span>
+          <span class="badge ok">🛣️ Route facile (RN193)</span>
+          <span class="badge ok">🅿️ Parking gratuit</span>
+          <span class="badge">🥾 30–45 min de marche facile</span>
+          <span class="badge ok">🏊 Baignade oui</span>
+        </div>
+        <p>La valeur sûre absolue depuis Ajaccio : une succession de <b>chutes et de vasques turquoise creusées dans le granit blanc</b>, dans une hêtraie fraîche et ombragée sur le tracé du GR20. C'est le spot qui coche toutes les cases : visuellement superbe, baignade possible (eau vivifiante, 14–17 °C l'été), et le seul de la liste qui garde un vrai débit même en août.</p>
+        <div class="facts">
+          <div class="fact"><b>Route</b> RN193 direction Corte/Bastia jusqu'à Vizzavona : nationale large et roulante, aucun passage difficile. C'est la route la plus simple de toute la sélection.</div>
+          <div class="fact"><b>Parking</b> Gratuit à la gare de Vizzavona ou au hameau de La Foce (départ le plus court). Sature vite en été → viser avant 10h.</div>
+          <div class="fact"><b>Marche</b> ≈ 2,5 km, sentier balisé, facile et à l'ombre. Premières vasques après 30–45 min. Baskets suffisent.</div>
+          <div class="fact"><b>Sur place</b> Buvette/restaurant à Vizzavona. Possibilité d'y aller en train depuis Ajaccio (ligne Ajaccio–Bastia) si vous voulez éviter la voiture !</div>
+        </div>
+        <a class="maps-btn" href="https://maps.google.com/?q=Cascade+des+Anglais,+Vizzavona" target="_blank" rel="noopener">📍 Itinéraire Google Maps</a>
+      </div>
+    </article>
+  </section>
+
+  <!-- ================= SPOT 2 ================= -->
+  <section id="richiusa">
+    <article class="spot">
+      <div class="gallery">
+        <img src="img/richiusa-1.jpg" alt="La Gravona à Bocognano, au départ du sentier de la Richiusa" loading="lazy">
+        <img src="img/richiusa-2.jpg" alt="Torrent de montagne aux eaux claires près de Bocognano" loading="lazy">
+        <img src="img/richiusa-3.jpg" alt="La vallée de la Gravona vue depuis Bocognano" loading="lazy">
+      </div>
+      <p class="gallery-hint">← faites défiler les photos →</p>
+      <div class="spot-body">
+        <div class="spot-head">
+          <span class="medal">💎 Le plus « waouh »</span>
+          <h3>2. Canyon de la Richiusa</h3>
+          <span class="place">Bocognano — ruisseau de la Cardiccia</span>
+        </div>
+        <div class="badges">
+          <span class="badge">🚗 ≈ 50 min des Sanguinaires</span>
+          <span class="badge ok">🛣️ Route facile + petite route finale</span>
+          <span class="badge ok">🅿️ Grand parking (centrale électrique)</span>
+          <span class="badge warn">🥾 ≈ 1h de marche d'approche</span>
+          <span class="badge ok">🏊 Vasques &amp; toboggans</span>
+        </div>
+        <p>Le spot le plus spectaculaire de la région d'Ajaccio : une <b>succession de 5 vasques émeraude parfaitement sculptées</b>, reliées par des toboggans naturels dans une gorge étroite. C'est LE décor « bluffant » que vous cherchez — mais il se mérite : comptez environ 1h de marche d'approche (passerelle sur la Gravona puis sentier balisé jaune dans le maquis), et le canyon complet se fait idéalement en <b>sortie canyoning encadrée</b> (demi-journée, ≈ 50–60 €/pers., combinaison fournie — plusieurs guides à Bocognano).</p>
+        <div class="facts">
+          <div class="fact"><b>Route</b> RN193 jusqu'à Bocognano (facile), puis petite route en cul-de-sac vers la Richiusa — étroite mais courte et sans difficulté réelle.</div>
+          <div class="fact"><b>Parking</b> Grande aire juste avant la petite centrale électrique, au-dessus du torrent.</div>
+          <div class="fact"><b>Accès libre</b> Les premières vasques sont accessibles à pied sans encadrement ; prudence exigée (rochers glissants, ne jamais sauter sans vérifier la profondeur).</div>
+          <div class="fact"><b>Version canyoning</b> Réservation conseillée la veille en août (Rêves de Cimes, Canyon Corse…). Sensations + sécurité, dès 8–10 ans.</div>
+        </div>
+        <a class="maps-btn" href="https://maps.google.com/?q=Canyon+de+la+Richiusa,+Bocognano" target="_blank" rel="noopener">📍 Itinéraire Google Maps</a>
+        <p class="note-photo">Photos : la Gravona et la vallée à Bocognano (point de départ). Peu de photos libres de droits existent du canyon lui-même — regardez les galeries des guides (canyon-corse.com, revesdecimes.fr) pour voir les vasques : ça vaut le détour.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- ================= SPOT 3 ================= -->
+  <section id="voile">
+    <article class="spot">
+      <div class="gallery">
+        <img src="img/voile-1.jpg" alt="La cascade du Voile de la Mariée en grand débit, Bocognano" loading="lazy">
+        <img src="img/voile-2.jpg" alt="Le Voile de la Mariée dévalant la paroi rocheuse" loading="lazy">
+        <img src="img/voile-3.jpg" alt="Vue rapprochée du Voile de la Mariée" loading="lazy">
+        <img src="img/voile-4.jpg" alt="Le Voile de la Mariée au cœur de la végétation corse" loading="lazy">
+      </div>
+      <p class="gallery-hint">← faites défiler les photos →</p>
+      <div class="spot-body">
+        <div class="spot-head">
+          <span class="medal">🌊 La plus grande chute</span>
+          <h3>3. Cascade du Voile de la Mariée</h3>
+          <span class="place">Bocognano — pont de Saliciu (D27)</span>
+        </div>
+        <div class="badges">
+          <span class="badge">🚗 ≈ 45 min des Sanguinaires</span>
+          <span class="badge ok">🛣️ Route facile</span>
+          <span class="badge warn">🅿️ Petit parking au pont</span>
+          <span class="badge ok">🥾 20 min de marche</span>
+          <span class="badge no">🚫 Baignade interdite</span>
+        </div>
+        <p><b>70 mètres de chute</b> : c'est la cascade la plus impressionnante de la région, et la plus facile d'accès (20 min de marche sur sentier balisé jaune jusqu'au belvédère). Deux réserves importantes pour un choix éclairé : la <b>baignade et l'accès au pied de la cascade sont interdits</b> (risques d'éboulement), et en plein août le débit peut être réduit à un mince voile — elle est à son apogée au printemps ou après un orage. Idéal en <b>combo avec la Richiusa</b> (même village !) plutôt qu'en destination unique.</p>
+        <div class="facts">
+          <div class="fact"><b>Route</b> RN193 jusqu'à l'entrée de Bocognano puis D27 sur 3,5 km, lieu-dit pont de Saliciu. Aucune difficulté.</div>
+          <div class="fact"><b>Parking</b> Quelques places de chaque côté du pont de Saliciu — limité, arriver tôt.</div>
+          <div class="fact"><b>Marche</b> ≈ 20 min aller, sentier balisé jaune jusqu'au point de vue au pied de la cascade.</div>
+          <div class="fact"><b>Le bon plan</b> Matinée Richiusa + passage au Voile de la Mariée + déjeuner corse à Bocognano (village réputé pour sa charcuterie).</div>
+        </div>
+        <a class="maps-btn" href="https://maps.google.com/?q=Cascade+du+Voile+de+la+Mariée,+Bocognano" target="_blank" rel="noopener">📍 Itinéraire Google Maps</a>
+      </div>
+    </article>
+  </section>
+
+  <!-- ================= SPOT 4 ================= -->
+  <section id="tolla">
+    <article class="spot">
+      <div class="gallery">
+        <img src="img/tolla-2.jpg" alt="Le lac de Tolla et ses eaux émeraude entourés de montagnes" loading="lazy">
+        <img src="img/prunelli-1.jpg" alt="Les gorges du Prunelli et le maquis corse" loading="lazy">
+        <img src="img/tolla-1.jpg" alt="Le lac de Tolla vu depuis les hauteurs, village en surplomb" loading="lazy">
+        <img src="img/tolla-3.jpg" alt="Vue panoramique du lac de Tolla" loading="lazy">
+        <img src="img/prunelli-2.jpg" alt="La vallée encaissée du Prunelli" loading="lazy">
+      </div>
+      <p class="gallery-hint">← faites défiler les photos →</p>
+      <div class="spot-body">
+        <div class="spot-head">
+          <span class="medal">🏔️ Le grand paysage</span>
+          <h3>4. Gorges du Prunelli &amp; lac de Tolla</h3>
+          <span class="place">Ocana / Tolla — vallée du Prunelli</span>
+        </div>
+        <div class="badges">
+          <span class="badge">🚗 ≈ 45 min des Sanguinaires</span>
+          <span class="badge warn">🛣️ Route en lacets (D3)</span>
+          <span class="badge ok">🅿️ Parking au village + plage</span>
+          <span class="badge ok">🥾 0 à 15 min</span>
+          <span class="badge ok">🏊 Baignade au lac</span>
+        </div>
+        <p>Un <b>lac émeraude encaissé entre les montagnes</b>, un village perché, des belvédères vertigineux sur les gorges : c'est l'option « paysage grandiose sans effort ». La plage aménagée de Tolla permet de se baigner, louer paddle, kayak ou pédalo, avec buvettes et restaurants au village. Le point de vue sur les gorges depuis la route entre Ocana et Tolla est saisissant. En août, quand les cascades baissent, c'est l'alternative la plus sûre pour l'effet « carte postale ».</p>
+        <div class="facts">
+          <div class="fact"><b>Route</b> Par Bastelicaccia puis D3 vers Ocana et Tolla : route de montagne sinueuse et par endroits étroite — prudence, mais goudron correct et paysages superbes en prime. Le seul trajet « technique » de la sélection.</div>
+          <div class="fact"><b>Parking</b> Au village de Tolla et près de la base nautique/plage du lac.</div>
+          <div class="fact"><b>Baignade</b> Plage du lac (base nautique l'été). Eau plus chaude que les torrents !</div>
+          <div class="fact"><b>Bonus</b> Belvédères sur le barrage et les gorges ; via ferrata au-dessus du barrage pour les amateurs de sensations.</div>
+        </div>
+        <a class="maps-btn" href="https://maps.google.com/?q=Lac+de+Tolla" target="_blank" rel="noopener">📍 Itinéraire Google Maps</a>
+      </div>
+    </article>
+  </section>
+
+  <!-- ================= SPOT 5 ================= -->
+  <section id="zipitoli">
+    <article class="spot">
+      <div class="gallery">
+        <img src="img/zipitoli-1.jpg" alt="Le pont génois de Zipitoli enjambant la rivière Ese" loading="lazy">
+      </div>
+      <div class="spot-body">
+        <div class="spot-head">
+          <span class="medal">🌿 L'option tranquille</span>
+          <h3>5. Pont génois de Zipitoli &amp; vasques de l'Ese</h3>
+          <span class="place">Route de Bastelica — forêt de Pineta</span>
+        </div>
+        <div class="badges">
+          <span class="badge">🚗 ≈ 45 min des Sanguinaires</span>
+          <span class="badge warn">🛣️ Route de montagne correcte</span>
+          <span class="badge ok">🅿️ Bord de route (panneau)</span>
+          <span class="badge ok">🥾 300 m à pied</span>
+          <span class="badge ok">🏊 Petites vasques</span>
+        </div>
+        <p>Le plan « zéro effort, maximum charme » : un <b>pont génois du XVe siècle classé monument historique</b> enjambant l'Ese, avec de petites vasques où se rafraîchir juste à côté, dans la forêt de Pineta. Moins « bluffant » que la Richiusa, mais parfait pour un pique-nique au bord de l'eau avec un décor très photogénique, et quasi pas de marche. À combiner avec Bastelica (7 km plus haut), patrie de Sampiero Corso et temple de la charcuterie corse.</p>
+        <div class="facts">
+          <div class="fact"><b>Route</b> Par Cauro puis D27a vers Bastelica : route de montagne classique, virages mais sans difficulté majeure.</div>
+          <div class="fact"><b>Parking</b> En bord de route, une pancarte indique le sentier ; le pont est à ≈ 300 m à pied.</div>
+          <div class="fact"><b>Baignade</b> Petites vasques de torrent — trempette et fraîcheur plus que grande nage.</div>
+          <div class="fact"><b>Bonus</b> Déjeuner à Bastelica, ou boucle retour par Tolla et les gorges du Prunelli (les deux vallées se rejoignent).</div>
+        </div>
+        <a class="maps-btn" href="https://maps.google.com/?q=Pont+génois+de+Zipitoli,+Bastelica" target="_blank" rel="noopener">📍 Itinéraire Google Maps</a>
+      </div>
+    </article>
+  </section>
+
+  <!-- ================= TABLEAU ================= -->
+  <section id="comparatif">
+    <h2 class="section-title">Le tableau comparatif</h2>
+    <p class="section-sub">Temps de route estimés depuis la route des Sanguinaires (comptez ~10 min de moins depuis le centre d'Ajaccio).</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Spot</th>
+            <th>Route</th>
+            <th>Difficulté conduite</th>
+            <th>Parking</th>
+            <th>Marche</th>
+            <th>Baignade</th>
+            <th>Effet « waouh »</th>
+            <th>Idéal pour</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Cascade des Anglais</b><br>Vizzavona</td>
+            <td>≈ 1h05<br>(72 km, RN193)</td>
+            <td><span class="pill ok">Facile</span></td>
+            <td><span class="pill ok">Gratuit</span> gare / La Foce, sature l'été</td>
+            <td>30–45 min, facile, ombragé</td>
+            <td><span class="pill ok">Oui</span> vasques 14–17 °C</td>
+            <td><span class="stars">★★★★★</span></td>
+            <td>La journée parfaite : rando douce + baignade + photos</td>
+          </tr>
+          <tr>
+            <td><b>Canyon de la Richiusa</b><br>Bocognano</td>
+            <td>≈ 50 min<br>(40 km)</td>
+            <td><span class="pill ok">Facile</span> + petite route finale</td>
+            <td><span class="pill ok">Grande aire</span> à la centrale</td>
+            <td>≈ 1h d'approche</td>
+            <td><span class="pill ok">Oui</span> vasques + toboggans</td>
+            <td><span class="stars">★★★★★</span></td>
+            <td>Le décor le plus spectaculaire ; version canyoning encadrée recommandée</td>
+          </tr>
+          <tr>
+            <td><b>Voile de la Mariée</b><br>Bocognano</td>
+            <td>≈ 45 min<br>(37 km)</td>
+            <td><span class="pill ok">Facile</span></td>
+            <td><span class="pill warn">Limité</span> pont de Saliciu</td>
+            <td>20 min, balisé</td>
+            <td><span class="pill no">Interdite</span> (éboulements)</td>
+            <td><span class="stars">★★★★☆</span><br><small>★★ en août (débit faible)</small></td>
+            <td>Photo d'une chute de 70 m, en combo avec la Richiusa</td>
+          </tr>
+          <tr>
+            <td><b>Prunelli &amp; lac de Tolla</b><br>Ocana / Tolla</td>
+            <td>≈ 45 min<br>(35 km)</td>
+            <td><span class="pill warn">Sinueuse</span> D3 étroite par endroits</td>
+            <td><span class="pill ok">Village + plage</span></td>
+            <td>0–15 min</td>
+            <td><span class="pill ok">Oui</span> lac + base nautique</td>
+            <td><span class="stars">★★★★☆</span></td>
+            <td>Grand paysage sans effort, paddle/kayak, resto au village</td>
+          </tr>
+          <tr>
+            <td><b>Pont de Zipitoli</b><br>rte de Bastelica</td>
+            <td>≈ 45 min<br>(30 km)</td>
+            <td><span class="pill warn">Montagne</span> virages classiques</td>
+            <td><span class="pill ok">Bord de route</span></td>
+            <td>300 m</td>
+            <td><span class="pill ok">Petites vasques</span></td>
+            <td><span class="stars">★★★☆☆</span></td>
+            <td>Pique-nique au frais, charme historique, zéro effort</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="reco">
+      <h3>🎯 Notre recommandation pour demain</h3>
+      <p><b>Vous voulez le combo baignade + « bluffant » :</b> foncez à la <b>Cascade des Anglais</b>. Départ 8h30 des Sanguinaires, parking à Vizzavona vers 9h35, vasques à 10h15 avant la foule, pique-nique au bord de l'eau — c'est la valeur sûre qui garde de l'eau en août, avec une route très facile.</p>
+      <p><b>Vous voulez LE décor le plus incroyable et êtes prêts à marcher (ou réserver un guide) :</b> le <b>canyon de la Richiusa</b>, avec arrêt photo au <b>Voile de la Mariée</b> à 5 min — deux spots pour un seul trajet, et le déjeuner à Bocognano en prime.</p>
+      <p><b>Vous préférez limiter la marche :</b> <b>lac de Tolla</b> pour le panorama et la baignade facile (mais route sinueuse), ou <b>Zipitoli</b> pour le charme au calme.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>Sources :</b> offices de tourisme et guides locaux (ajaccio-tourisme.com, visit-corsica.com, routard.com, visorando, corsicalovers.fr, canyon-corse.com, revesdecimes.fr, bastelica.fr). Temps de route estimés depuis la route des Sanguinaires, hors trafic estival — comptez +10/15 min aux heures de pointe pour traverser Ajaccio.</p>
+    <p style="margin-top:8px"><b>Photos :</b> Wikimedia Commons (licences Creative Commons / domaine public) — auteurs : RaBoe, Pierre Bona, Jean-Pol GRANDMONT, panoramio (CC-BY / CC-BY-SA) et autres contributeurs. Elles montrent les lieux réels ; le débit des cascades varie fortement selon la saison.</p>
+    <p style="margin-top:8px">Page générée le 4 août 2026 · Bonne baignade ! 🏊</p>
+  </div>
+</footer>
+
+</body>
+</html>
