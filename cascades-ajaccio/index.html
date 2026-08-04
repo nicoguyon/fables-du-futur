@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="leaflet/leaflet.css">
 <style>
   :root{
     --ink:#1c2b26;
@@ -121,6 +122,36 @@
   .maps-btn:hover{background:var(--water-deep)}
   .note-photo{font-size:12.5px;color:var(--ink-soft);margin-top:10px;font-style:italic}
 
+  /* ---------- CARTE ---------- */
+  #map{
+    height:66vh;min-height:420px;max-height:640px;
+    border-radius:var(--radius);border:1px solid var(--line);
+    box-shadow:0 10px 30px -18px rgba(28,43,38,.25);
+    z-index:1;
+  }
+  .marker-pin{
+    display:flex;align-items:center;justify-content:center;
+    width:34px;height:34px;border-radius:50% 50% 50% 4px;
+    transform:rotate(-45deg);
+    background:var(--water);border:2.5px solid #fff;
+    box-shadow:0 3px 10px rgba(0,0,0,.35);
+  }
+  .marker-pin span{transform:rotate(45deg);color:#fff;font-weight:700;font-size:15px;font-family:'Inter',sans-serif}
+  .marker-pin.depart{background:#b02e2e;border-radius:50%;transform:none}
+  .marker-pin.depart span{transform:none;font-size:16px}
+  .leaflet-popup-content-wrapper{border-radius:14px;font-family:'Inter',sans-serif}
+  .leaflet-popup-content{margin:14px 16px;line-height:1.5;font-size:13.5px;min-width:210px}
+  .pop-title{font-family:'Fraunces',Georgia,serif;font-size:16.5px;font-weight:700;color:var(--ink)}
+  .pop-stars{color:var(--gold);letter-spacing:2px;font-size:14px;margin:2px 0 6px}
+  .pop-row{display:flex;gap:7px;margin:3px 0;color:#2c3d37}
+  .pop-row .i{flex:0 0 auto}
+  .pop-link{display:inline-block;margin-top:9px;background:var(--water);color:#fff !important;text-decoration:none;font-weight:600;font-size:13px;border-radius:100px;padding:7px 14px}
+  .map-legend{
+    display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;
+  }
+  .map-legend .badge{cursor:pointer}
+  .map-legend .badge:hover{border-color:var(--water);color:var(--water-deep)}
+
   /* ---------- TABLE ---------- */
   .table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--card)}
   table{border-collapse:collapse;width:100%;min-width:860px;font-size:14px}
@@ -183,6 +214,7 @@
         <div class="spot-head">
           <span class="medal">🏆 Notre coup de cœur</span>
           <h3>1. Cascade des Anglais</h3>
+          <span class="stars" title="Note : 5/5">★★★★★</span>
           <span class="place">Vizzavona — torrent de l'Agnone, au pied du Monte d'Oro</span>
         </div>
         <div class="badges">
@@ -217,6 +249,7 @@
         <div class="spot-head">
           <span class="medal">💎 Le plus « waouh »</span>
           <h3>2. Canyon de la Richiusa</h3>
+          <span class="stars" title="Note : 5/5">★★★★★</span>
           <span class="place">Bocognano — ruisseau de la Cardiccia</span>
         </div>
         <div class="badges">
@@ -253,6 +286,7 @@
         <div class="spot-head">
           <span class="medal">🌊 La plus grande chute</span>
           <h3>3. Cascade du Voile de la Mariée</h3>
+          <span class="stars" title="Note : 4/5 (2/5 en août, débit faible)">★★★★☆</span>
           <span class="place">Bocognano — pont de Saliciu (D27)</span>
         </div>
         <div class="badges">
@@ -289,6 +323,7 @@
         <div class="spot-head">
           <span class="medal">🏔️ Le grand paysage</span>
           <h3>4. Gorges du Prunelli &amp; lac de Tolla</h3>
+          <span class="stars" title="Note : 4/5">★★★★☆</span>
           <span class="place">Ocana / Tolla — vallée du Prunelli</span>
         </div>
         <div class="badges">
@@ -320,6 +355,7 @@
         <div class="spot-head">
           <span class="medal">🌿 L'option tranquille</span>
           <h3>5. Pont génois de Zipitoli &amp; vasques de l'Ese</h3>
+          <span class="stars" title="Note : 3/5">★★★☆☆</span>
           <span class="place">Route de Bastelica — forêt de Pineta</span>
         </div>
         <div class="badges">
@@ -339,6 +375,14 @@
         <a class="maps-btn" href="https://maps.google.com/?q=Pont+génois+de+Zipitoli,+Bastelica" target="_blank" rel="noopener">📍 Itinéraire Google Maps</a>
       </div>
     </article>
+  </section>
+
+  <!-- ================= CARTE ================= -->
+  <section id="carte">
+    <h2 class="section-title">La carte des spots</h2>
+    <p class="section-sub">Cliquez sur un marqueur : temps de voiture depuis les Sanguinaires, temps de marche, note… et le bouton pour lancer l'itinéraire dans Google Maps (avec le trafic en temps réel).</p>
+    <div id="map"></div>
+    <div class="map-legend" id="map-legend"></div>
   </section>
 
   <!-- ================= TABLEAU ================= -->
@@ -432,5 +476,79 @@
   </div>
 </footer>
 
+<script src="leaflet/leaflet.js"></script>
+<script>
+(function(){
+  var depart = {lat:41.9169, lon:8.6740};
+
+  var spots = [
+    {n:1, nom:"Cascade des Anglais", lat:42.1177, lon:9.1092, stars:"★★★★★",
+     voiture:"≈ 1h05 · 72 km · route facile", marche:"30–45 min, facile et ombragé",
+     bain:"Baignade : oui, vasques 14–17 °C",
+     maps:"https://www.google.com/maps/dir/?api=1&origin=Route+des+Sanguinaires,+Ajaccio&destination=Gare+de+Vizzavona&travelmode=driving",
+     ancre:"#anglais"},
+    {n:2, nom:"Canyon de la Richiusa", lat:42.1114, lon:9.0673, stars:"★★★★★",
+     voiture:"≈ 50 min · 40 km · facile + petite route", marche:"≈ 1h d'approche",
+     bain:"Baignade : vasques + toboggans",
+     maps:"https://www.google.com/maps/dir/?api=1&origin=Route+des+Sanguinaires,+Ajaccio&destination=La+Richiusa,+Bocognano&travelmode=driving",
+     ancre:"#richiusa"},
+    {n:3, nom:"Voile de la Mariée", lat:42.0640, lon:9.0514, stars:"★★★★☆",
+     voiture:"≈ 45 min · 37 km · route facile", marche:"20 min, sentier balisé",
+     bain:"Baignade : interdite (éboulements)",
+     maps:"https://www.google.com/maps/dir/?api=1&origin=Route+des+Sanguinaires,+Ajaccio&destination=Cascade+du+Voile+de+la+Mariée,+Bocognano&travelmode=driving",
+     ancre:"#voile"},
+    {n:4, nom:"Gorges du Prunelli & lac de Tolla", lat:41.9760, lon:8.9770, stars:"★★★★☆",
+     voiture:"≈ 45 min · 35 km · D3 sinueuse", marche:"0–15 min",
+     bain:"Baignade : oui, plage du lac",
+     maps:"https://www.google.com/maps/dir/?api=1&origin=Route+des+Sanguinaires,+Ajaccio&destination=Lac+de+Tolla&travelmode=driving",
+     ancre:"#tolla"},
+    {n:5, nom:"Pont génois de Zipitoli", lat:41.9593, lon:9.0038, stars:"★★★☆☆",
+     voiture:"≈ 45 min · 30 km · route de montagne", marche:"300 m",
+     bain:"Baignade : petites vasques",
+     maps:"https://www.google.com/maps/dir/?api=1&origin=Route+des+Sanguinaires,+Ajaccio&destination=Pont+génois+de+Zipitoli,+Bastelica&travelmode=driving",
+     ancre:"#zipitoli"}
+  ];
+
+  var map = L.map('map', {scrollWheelZoom:false});
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 17,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);
+
+  L.marker([depart.lat, depart.lon], {icon: L.divIcon({
+    className:'', html:'<div class="marker-pin depart"><span>🏠</span></div>', iconSize:[34,34], iconAnchor:[17,17]
+  })}).addTo(map).bindPopup('<div class="pop-title">Départ — route des Sanguinaires</div><div class="pop-row">Votre point de départ à Ajaccio.</div>');
+
+  var legend = document.getElementById('map-legend');
+  var bounds = [[depart.lat, depart.lon]];
+
+  spots.forEach(function(s){
+    bounds.push([s.lat, s.lon]);
+    var m = L.marker([s.lat, s.lon], {icon: L.divIcon({
+      className:'', html:'<div class="marker-pin"><span>'+s.n+'</span></div>', iconSize:[34,34], iconAnchor:[17,30], popupAnchor:[0,-28]
+    })}).addTo(map);
+    m.bindPopup(
+      '<div class="pop-title">'+s.n+'. '+s.nom+'</div>'+
+      '<div class="pop-stars">'+s.stars+'</div>'+
+      '<div class="pop-row"><span class="i">🚗</span><span>'+s.voiture+'</span></div>'+
+      '<div class="pop-row"><span class="i">🥾</span><span>'+s.marche+'</span></div>'+
+      '<div class="pop-row"><span class="i">🏊</span><span>'+s.bain+'</span></div>'+
+      '<a class="pop-link" href="'+s.maps+'" target="_blank" rel="noopener">📍 Itinéraire Google Maps</a> '+
+      '<a class="pop-link" style="background:#4c5f58" href="'+s.ancre+'">Voir la fiche</a>'
+    );
+    var chip = document.createElement('button');
+    chip.className = 'badge';
+    chip.type = 'button';
+    chip.textContent = s.n + ' · ' + s.nom;
+    chip.addEventListener('click', function(){
+      map.flyTo([s.lat, s.lon], 13, {duration:.8});
+      m.openPopup();
+    });
+    legend.appendChild(chip);
+  });
+
+  map.fitBounds(bounds, {padding:[36,36]});
+})();
+</script>
 </body>
 </html>
