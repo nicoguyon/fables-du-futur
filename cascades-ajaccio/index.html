@@ -182,6 +182,20 @@
   .reco p{margin:8px 0;color:#e7f4f2}
   .reco b{color:#fff}
 
+  /* ---------- PROGRAMME ---------- */
+  .timeline{position:relative;margin:26px 0 10px;padding-left:30px}
+  .timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2.5px;background:var(--line);border-radius:2px}
+  .step{position:relative;padding:0 0 22px}
+  .step::before{content:"";position:absolute;left:-27px;top:5px;width:13px;height:13px;border-radius:50%;background:var(--water);border:3px solid var(--paper);box-shadow:0 0 0 2px var(--water)}
+  .step.food::before{background:var(--gold);box-shadow:0 0 0 2px var(--gold)}
+  .step .h{font-weight:700;font-size:15.5px}
+  .step .h .t{display:inline-block;background:var(--sand);border-radius:8px;padding:1px 9px;margin-right:8px;font-variant-numeric:tabular-nums}
+  .step p{margin:4px 0 0;color:#2c3d37;font-size:14.5px}
+  .resto{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:18px 0 8px;
+  }
+  .resto .fact b{color:var(--water-deep);font-size:13px}
+
   footer{margin-top:60px;padding:28px 22px 40px;border-top:1px solid var(--line);color:var(--ink-soft);font-size:13px}
   footer .wrap{padding:0}
 </style>
@@ -497,6 +511,59 @@
       <p><b>Vous voulez LE décor le plus incroyable et êtes prêts à marcher (ou réserver un guide) :</b> le <b>canyon de la Richiusa</b>, avec arrêt photo au <b>Voile de la Mariée</b> à 5 min — deux spots pour un seul trajet, et le déjeuner à Bocognano en prime.</p>
       <p><b>Combo Richiusa + Cascade des Anglais ?</b> Les deux ne sont qu'à <b>15–20 min de voiture</b> l'une de l'autre sur la même RN193 (Bocognano → Vizzavona). C'est jouable sur une journée pour des marcheurs motivés partis tôt (Richiusa le matin, vasques des Anglais l'après-midi), mais ça fait ≈ 3h de marche cumulée — la version confortable reste : un « gros » spot + le Voile de la Mariée en arrêt photo.</p>
       <p><b>Vous préférez limiter la marche :</b> <b>lac de Tolla</b> pour le panorama et la baignade facile (mais route sinueuse), ou <b>Zipitoli</b> pour le charme au calme.</p>
+    </div>
+  </section>
+
+  <!-- ================= PROGRAMME ================= -->
+  <section id="programme">
+    <h2 class="section-title">🗓️ Le programme — journée Cascade des Anglais</h2>
+    <p class="section-sub">Horaires calés pour un mois d'août : parking assuré, marche à la fraîche, vasques avant la foule… et un vrai déjeuner corse en terrasse au retour.</p>
+
+    <div class="timeline">
+      <div class="step">
+        <div class="h"><span class="t">8h15</span> Départ de la route des Sanguinaires</div>
+        <p>Traversée d'Ajaccio avant le gros du trafic, puis RN193 direction Corte/Bastia. Prenez de l'eau, les maillots, serviettes et des baskets — pas besoin de chaussures de rando.</p>
+      </div>
+      <div class="step">
+        <div class="h"><span class="t">9h25</span> Arrivée à Vizzavona — parking</div>
+        <p>Garez-vous au parking gratuit de la gare de Vizzavona (ou au hameau de La Foce). À cette heure-là en août, vous aurez encore de la place ; après 10h30 c'est moins sûr.</p>
+      </div>
+      <div class="step">
+        <div class="h"><span class="t">9h40</span> Départ à pied</div>
+        <p>Sentier balisé depuis la gare, ~2,5 km dans la hêtraie ombragée, sur le tracé du GR20. Montée douce, très agréable le matin.</p>
+      </div>
+      <div class="step">
+        <div class="h"><span class="t">10h25</span> Les vasques ! Baignade &amp; photos</div>
+        <p>Vous arrivez avant les gros flux de la mi-journée : cascades pour les photos, vasques turquoise pour la baignade (l'eau est à 14–17 °C, ça se mérite 😄). Comptez 2 bonnes heures de pur plaisir.</p>
+      </div>
+      <div class="step">
+        <div class="h"><span class="t">12h40</span> Redescente tranquille</div>
+        <p>~40 minutes en descente, toujours à l'ombre.</p>
+      </div>
+      <div class="step food">
+        <div class="h"><span class="t">13h30</span> Déjeuner en terrasse à Vizzavona</div>
+        <p>Table réservée (voir les deux adresses ci-dessous). Truite grillée, omelette au brocciu et à la menthe, veau corse aux olives, desserts à la châtaigne…</p>
+      </div>
+      <div class="step">
+        <div class="h"><span class="t">15h15</span> Option retour gourmand</div>
+        <p>Sur la route du retour, arrêt photo au <b>Voile de la Mariée</b> (20 min de marche) et/ou charcuterie-fromage à <b>Bocognano</b> — les deux sont pile sur votre itinéraire.</p>
+      </div>
+      <div class="step">
+        <div class="h"><span class="t">17h00</span> Retour aux Sanguinaires</div>
+        <p>Parfait pour enchaîner sur l'apéro face au coucher de soleil sur les îles. 🌅</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Fraunces',Georgia,serif;font-size:21px;margin:18px 0 4px">🍽️ Où déjeuner (oui, il y a de vrais restaurants !)</h3>
+    <div class="resto">
+      <div class="fact"><b>Hôtel-Restaurant Le Vizzavona (à la gare)</b><br>
+      Le plus pratique : à 50 m de la gare, au départ même du sentier. Cuisine corse (truite, brocciu, veau aux olives), terrasse sous les tilleuls face au Monte d'Oro. Réservez la veille en août — c'est LE spot des randonneurs du GR20.<br>
+      <a href="https://www.hotel-vizzavona.com/restaurant-vizzavona" target="_blank" rel="noopener">hotel-vizzavona.com</a></div>
+      <div class="fact"><b>Hôtel-Restaurant Monte d'Oro (La Foce)</b><br>
+      Bâtisse historique de 1880 au col de Vizzavona, à 1,4 km de la cascade. Restaurant de recettes familiales, bar et salon au coin du feu — parfait pour un café ou un déjeuner plus « vieille Corse ».<br>
+      <a href="https://www.monte-oro.com/" target="_blank" rel="noopener">monte-oro.com</a></div>
+      <div class="fact"><b>Option pique-nique au bord des vasques 🧺</b><br>
+      Aucune buvette à la cascade même : si vous préférez déjeuner les pieds dans l'eau, achetez tout le matin à Ajaccio (ou charcuterie à Bocognano à l'aller) et pique-niquez sur les dalles de granit. Redescente ensuite pour un café en terrasse.</div>
     </div>
   </section>
 
