@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>ULTRARIDE — de la neige à l'océan 🏂🌊</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:100%; height:100%; overflow:hidden; background:#0a0e1a; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; touch-action:none; }
+  #c { display:block; width:100%; height:100%; }
+  #hud { position:fixed; top:14px; left:16px; right:16px; display:flex; justify-content:space-between; align-items:flex-start; pointer-events:none; color:#fff; text-shadow:0 2px 8px rgba(0,0,0,.45); }
+  .stat { font-weight:800; font-size:26px; line-height:1.1; }
+  .lbl { font-size:11px; font-weight:600; opacity:.85; letter-spacing:.12em; text-transform:uppercase; }
+  #biome { position:fixed; top:14px; left:50%; transform:translateX(-50%); font-weight:800; font-size:15px; color:#fff; text-shadow:0 2px 8px rgba(0,0,0,.45); letter-spacing:.08em; pointer-events:none; }
+  #speedlines { position:fixed; inset:0; pointer-events:none; opacity:0; }
+  #start, #over {
+    position:fixed; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    background:rgba(8,12,24,.72); color:#fff; text-align:center; padding:24px; z-index:10; backdrop-filter: blur(4px);
+  }
+  #start h1, #over h1 { font-size:min(11vw,58px); font-weight:900; letter-spacing:-0.02em;
+    background:linear-gradient(90deg,#8ecbff,#fff,#7dfcd0); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  #start p, #over p { margin:14px 0 6px; font-size:16px; opacity:.92; max-width:520px; line-height:1.5; }
+  .keys { font-size:14px; opacity:.75; margin-top:4px; }
+  button { margin-top:22px; font-size:19px; font-weight:800; padding:14px 42px; border:none; border-radius:999px;
+    background:linear-gradient(90deg,#3d8bfd,#22c58b); color:#fff; cursor:pointer; box-shadow:0 6px 24px rgba(38,132,255,.45); }
+  button:active { transform:scale(.96); }
+  #over { display:none; }
+  .credit { position:fixed; bottom:10px; left:0; right:0; text-align:center; font-size:11px; color:rgba(255,255,255,.55); z-index:11; }
+  .credit a { color:rgba(255,255,255,.8); }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<canvas id="speedlines"></canvas>
+<div id="hud">
+  <div><div class="stat" id="speed">0</div><div class="lbl">km/h</div></div>
+  <div style="text-align:right"><div class="stat" id="dist">0</div><div class="lbl">mètres</div></div>
+</div>
+<div id="biome">❄️ LA MONTAGNE</div>
+<div id="start">
+  <h1>ULTRARIDE</h1>
+  <p>De la neige à l'océan. Descends la montagne en snowboard, enchaîne en jetski quand la piste plonge dans la mer — et remonte sur la neige. Évite rochers et bouées, cherche la vitesse.</p>
+  <p class="keys">← → ou Q / D pour carver · sur mobile : touche à gauche / à droite de l'écran</p>
+  <button id="go">RIDE 🏂</button>
+</div>
+<div id="over">
+  <h1 id="overTitle">WIPEOUT !</h1>
+  <p id="overText"></p>
+  <button id="again">REMONTER ↺</button>
+</div>
+<div class="credit">100 % code généré par IA · zéro asset externe · l'hommage de la newsletter aux jeux de la vague Opus 5</div>
+<script src="./three.min.js"></script>
+<script>
+(function(){
+'use strict';
+// ---------- base ----------
+const canvas = document.getElementById('c');
+const renderer = new THREE.WebGLRenderer({canvas, antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(72, 1, 0.1, 900);
+function resize(){ const w=innerWidth,h=innerHeight; renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix();
+  slCanvas.width=w; slCanvas.height=h; }
+addEventListener('resize', resize);
+
+// ---------- palette / toon ----------
+function toonGrad(){ const c=document.createElement('canvas'); c.width=1;c.height=4; const g=c.getContext('2d');
+  ['#8fa0c4','#b9c7e2','#e8eef9','#ffffff'].forEach((col,i)=>{g.fillStyle=col;g.fillRect(0,3-i,1,1);});
+  const t=new THREE.CanvasTexture(c); t.minFilter=t.magFilter=THREE.NearestFilter; return t; }
+const grad = toonGrad();
+const MAT = {
+  snow:  new THREE.MeshToonMaterial({color:0xf7faff, gradientMap:grad}),
+  sand:  new THREE.MeshToonMaterial({color:0xf0dca4, gradientMap:grad}),
+  water: new THREE.MeshToonMaterial({color:0x2a7fd4, gradientMap:grad, transparent:true, opacity:0.94}),
+  rock:  new THREE.MeshToonMaterial({color:0x6b7688, gradientMap:grad}),
+  tree:  new THREE.MeshToonMaterial({color:0x2f7d4f, gradientMap:grad}),
+  trunk: new THREE.MeshToonMaterial({color:0x6d4c33, gradientMap:grad}),
+  buoy:  new THREE.MeshToonMaterial({color:0xff5340, gradientMap:grad}),
+  rider: new THREE.MeshToonMaterial({color:0x21324e, gradientMap:grad}),
+  board: new THREE.MeshToonMaterial({color:0xffc93c, gradientMap:grad}),
+  jet:   new THREE.MeshToonMaterial({color:0xffc93c, gradientMap:grad}),
+  trail: new THREE.MeshBasicMaterial({color:0xbfd4ff, transparent:true, opacity:0.55, side:THREE.DoubleSide}),
+  wtrail:new THREE.MeshBasicMaterial({color:0xdff3ff, transparent:true, opacity:0.6, side:THREE.DoubleSide}),
+};
+
+// sky
+scene.fog = new THREE.Fog(0xbcd6f5, 60, 420);
+{ const sky=document.createElement('canvas'); sky.width=2; sky.height=256; const g=sky.getContext('2d');
+  const gr=g.createLinearGradient(0,0,0,256); gr.addColorStop(0,'#3d7bd6'); gr.addColorStop(.55,'#a8ccf5'); gr.addColorStop(1,'#eef6ff');
+  g.fillStyle=gr; g.fillRect(0,0,2,256);
+  const t=new THREE.CanvasTexture(sky); scene.background=t; }
+const sun = new THREE.DirectionalLight(0xfff4e0, 2.6); sun.position.set(-40,80,-30); scene.add(sun);
+scene.add(new THREE.AmbientLight(0xaec5ef, 1.35));
+
+// ---------- terrain ----------
+// piste infinie : bande de heightfield devant le rider, biomes cycliques neige -> océan -> neige
+const SEG_L = 6;            // longueur d'un segment (z)
+const W = 90, WSEG = 26;    // largeur piste
+const NSEG = 90;            // segments visibles
+const BIOME_LEN = 900;      // longueur d'un biome en mètres
+function biomeAt(z){ const p = (z % (BIOME_LEN*2) + BIOME_LEN*2) % (BIOME_LEN*2); return p < BIOME_LEN ? 0 : 1; } // 0 neige, 1 eau
+function biomeBlend(z){ // 0=neige pure, 1=eau pure, transition sur 80m
+  const p=(z%(BIOME_LEN*2)+BIOME_LEN*2)%(BIOME_LEN*2);
+  const t1=Math.min(1,Math.max(0,(p-(BIOME_LEN-80))/80));
+  const t2=Math.min(1,Math.max(0,(p-(2*BIOME_LEN-80))/80));
+  return p<BIOME_LEN ? t1 : 1-t2;
+}
+let n2=(x,z)=>{ // value noise maison, zéro dépendance
+  const s=(a,b)=>{const h=Math.sin(a*127.1+b*311.7)*43758.5453; return h-Math.floor(h);};
+  const xi=Math.floor(x), zi=Math.floor(z), xf=x-xi, zf=z-zi, u=xf*xf*(3-2*xf), v=zf*zf*(3-2*zf);
+  return s(xi,zi)*(1-u)*(1-v)+s(xi+1,zi)*u*(1-v)+s(xi,zi+1)*(1-u)*v+s(xi+1,zi+1)*u*v; };
+function heightAt(x,z,t){
+  const b=biomeBlend(z);
+  // neige : pente descendante + bosses érodées ; eau : houle animée
+  const slope = -z*0.16;
+  let snowH = slope + (n2(x*0.045,z*0.045)*8 + n2(x*0.14,z*0.14)*2.2) * (0.65+0.35*n2(x*0.02,z*0.02));
+  const carve = Math.abs(x)/ (W/2); snowH += carve*carve*10; // bords relevés = couloir naturel
+  let waterH = slope + Math.sin(x*0.22+t*2.1)*0.5 + Math.sin(z*0.19+t*1.6)*0.7 + Math.sin((x+z)*0.11+t*1.1)*0.45;
+  return snowH*(1-b) + waterH*b;
+}
+const tiles=[]; // segments recyclés
+const tileGeo = new THREE.PlaneGeometry(W, SEG_L, WSEG, 1);
+tileGeo.rotateX(-Math.PI/2);
+for(let i=0;i<NSEG;i++){
+  const m = new THREE.Mesh(tileGeo.clone(), MAT.snow.clone());
+  m.frustumCulled=false; scene.add(m); tiles.push(m);
+}
+function refreshTile(m, z0, t){
+  const b=biomeBlend(z0);
+  m.material.color.lerpColors(new THREE.Color(0xf7faff), new THREE.Color(0x2a7fd4), b);
+  m.material.opacity = 1-b*0.06;
+  const pos=m.geometry.attributes.position;
+  for(let i=0;i<pos.count;i++){
+    const x=pos.getX(i), zLocal=pos.getZ(i);
+    pos.setY(i, heightAt(x, z0+zLocal, t));
+  }
+  pos.needsUpdate=true; m.geometry.computeVertexNormals();
+  m.position.set(0,0,z0);
+}
+// décor instancié : sapins + rochers (neige), bouées (eau)
+function makeTree(){ const g=new THREE.Group();
+  const tr=new THREE.Mesh(new THREE.CylinderGeometry(.22,.3,1.2,5), MAT.trunk); tr.position.y=.6; g.add(tr);
+  for(let i=0;i<3;i++){ const c=new THREE.Mesh(new THREE.ConeGeometry(1.5-i*.4,1.6,7), MAT.tree); c.position.y=1.5+i*1.05; g.add(c);} return g; }
+function makeRock(){ const r=new THREE.Mesh(new THREE.DodecahedronGeometry(0.9+Math.random()*0.9,0), MAT.rock); r.rotation.set(Math.random(),Math.random(),Math.random()); return r; }
+function makeBuoy(){ const g=new THREE.Group();
+  const b=new THREE.Mesh(new THREE.SphereGeometry(.8,10,8), MAT.buoy); b.position.y=.5; g.add(b);
+  const tip=new THREE.Mesh(new THREE.ConeGeometry(.22,.9,6), new THREE.MeshToonMaterial({color:0xffffff,gradientMap:grad})); tip.position.y=1.5; g.add(tip); return g; }
+const props=[]; // {obj, z, x, kind, hitR}
+function spawnPropsForRange(z0,z1){
+  for(let z=Math.floor(z0); z<z1; z+=3){
+    if(Math.random()>0.34) continue;
+    const b=biomeAt(z);
+    const x=(Math.random()*2-1)*(W/2-10);
+    if(Math.abs(x)<3.5) continue; // couloir central un peu ouvert
+    let o,kind,hitR;
+    if(b===0){ if(Math.random()<0.5){o=makeTree();kind='tree';hitR=1.3;} else {o=makeRock();kind='rock';hitR=1.2;} }
+    else { o=makeBuoy(); kind='buoy'; hitR=1.1; }
+    o.position.set(x,0,z); scene.add(o);
+    props.push({obj:o,z,x,kind,hitR});
+  }
+}
+// ---------- rider ----------
+const rider=new THREE.Group();
+const body=new THREE.Mesh(new THREE.CapsuleGeometry(.42,.8,3,8), MAT.rider); body.position.y=1.15; rider.add(body);
+const head=new THREE.Mesh(new THREE.SphereGeometry(.3,10,8), new THREE.MeshToonMaterial({color:0xf2c9a0,gradientMap:grad})); head.position.y=2.0; rider.add(head);
+const board=new THREE.Mesh(new THREE.BoxGeometry(.55,.09,2.3), MAT.board); board.position.y=.32; rider.add(board);
+const jetski=new THREE.Group();
+{ const hull=new THREE.Mesh(new THREE.BoxGeometry(1.1,.5,2.6), MAT.jet); hull.position.y=.45; jetski.add(hull);
+  const nose=new THREE.Mesh(new THREE.ConeGeometry(.5,.9,4), MAT.jet); nose.rotation.x=-Math.PI/2; nose.position.set(0,.45,-1.7); jetski.add(nose);
+  const bar=new THREE.Mesh(new THREE.CylinderGeometry(.05,.05,.8,6), MAT.rock); bar.rotation.x=.5; bar.position.set(0,1.0,-0.6); jetski.add(bar); }
+jetski.visible=false; rider.add(jetski);
+scene.add(rider);
+
+// spray particles (neige + eau)
+const P_N=260;
+const pGeo=new THREE.BufferGeometry();
+const pPos=new Float32Array(P_N*3), pVel=new Float32Array(P_N*3), pLife=new Float32Array(P_N);
+pGeo.setAttribute('position', new THREE.BufferAttribute(pPos,3));
+const pMat=new THREE.PointsMaterial({color:0xffffff,size:.35,transparent:true,opacity:.9});
+const spray=new THREE.Points(pGeo,pMat); spray.frustumCulled=false; scene.add(spray);
+let pIdx=0;
+function emit(x,y,z,n,spread,col){
+  pMat.color.setHex(col);
+  for(let i=0;i<n;i++){ const j=pIdx=(pIdx+1)%P_N;
+    pPos[j*3]=x; pPos[j*3+1]=y; pPos[j*3+2]=z;
+    pVel[j*3]=(Math.random()-0.5)*spread; pVel[j*3+1]=Math.random()*3.5+1.5; pVel[j*3+2]=(Math.random()-0.2)*spread;
+    pLife[j]=0.7+Math.random()*0.5; }
+}
+// traces persistantes (clin d'œil SNOWFLOW) : ruban derrière le rider
+const TRAIL_N=160;
+const trailGeo=new THREE.BufferGeometry();
+const tPos=new Float32Array(TRAIL_N*2*3);
+trailGeo.setAttribute('position',new THREE.BufferAttribute(tPos,3));
+const tIdxArr=[];
+for(let i=0;i<TRAIL_N-1;i++){ const a=i*2,b=i*2+1,c=i*2+2,d=i*2+3; tIdxArr.push(a,b,c,b,d,c); }
+trailGeo.setIndex(tIdxArr);
+const trail=new THREE.Mesh(trailGeo, MAT.trail); trail.frustumCulled=false; scene.add(trail);
+let trailPts=[];
+
+// ---------- speed lines (canvas overlay, clin d'œil anime/BMX) ----------
+const slCanvas=document.getElementById('speedlines');
+const slCtx=slCanvas.getContext('2d');
+function drawSpeedLines(intensity){
+  slCanvas.style.opacity=Math.min(1,intensity);
+  if(intensity<=0.02){ slCtx.clearRect(0,0,slCanvas.width,slCanvas.height); return; }
+  const w=slCanvas.width,h=slCanvas.height; slCtx.clearRect(0,0,w,h);
+  slCtx.strokeStyle='rgba(255,255,255,0.5)'; slCtx.lineWidth=2;
+  const n=Math.floor(26*intensity);
+  for(let i=0;i<n;i++){ const a=Math.random()*Math.PI*2, r0=Math.min(w,h)*(0.34+Math.random()*0.2), r1=r0+40+Math.random()*160;
+    const cx=w/2, cy=h/2;
+    slCtx.beginPath(); slCtx.moveTo(cx+Math.cos(a)*r0, cy+Math.sin(a)*r0); slCtx.lineTo(cx+Math.cos(a)*r1, cy+Math.sin(a)*r1); slCtx.stroke(); }
+}
+
+// ---------- audio (100% synthétisé, clin d'œil Claude of Duty) ----------
+let AC=null, windGain=null, carveGain=null, carveFilter=null;
+function initAudio(){
+  if(AC) return; AC=new (window.AudioContext||window.webkitAudioContext)();
+  const buf=AC.createBuffer(1, AC.sampleRate*2, AC.sampleRate);
+  const data=buf.getChannelData(0); for(let i=0;i<data.length;i++) data[i]=Math.random()*2-1;
+  const wind=AC.createBufferSource(); wind.buffer=buf; wind.loop=true;
+  const wf=AC.createBiquadFilter(); wf.type='lowpass'; wf.frequency.value=420;
+  windGain=AC.createGain(); windGain.gain.value=0;
+  wind.connect(wf).connect(windGain).connect(AC.destination); wind.start();
+  const carve=AC.createBufferSource(); carve.buffer=buf; carve.loop=true;
+  carveFilter=AC.createBiquadFilter(); carveFilter.type='bandpass'; carveFilter.frequency.value=900; carveFilter.Q.value=0.8;
+  carveGain=AC.createGain(); carveGain.gain.value=0;
+  carve.connect(carveFilter).connect(carveGain).connect(AC.destination); carve.start();
+}
+function thud(){ if(!AC) return; const o=AC.createOscillator(), g=AC.createGain();
+  o.type='sine'; o.frequency.setValueAtTime(150,AC.currentTime); o.frequency.exponentialRampToValueAtTime(38,AC.currentTime+0.22);
+  g.gain.setValueAtTime(0.5,AC.currentTime); g.gain.exponentialRampToValueAtTime(0.001,AC.currentTime+0.3);
+  o.connect(g).connect(AC.destination); o.start(); o.stop(AC.currentTime+0.32); }
+
+// ---------- état ----------
+const state={ running:false, z:0, x:0, v:16, lean:0, dist:0, shake:0, slowT:0, biome:0, t:0 };
+const input={left:false,right:false};
+addEventListener('keydown',e=>{ if(['ArrowLeft','KeyA','KeyQ'].includes(e.code)) input.left=true;
+  if(['ArrowRight','KeyD'].includes(e.code)) input.right=true; });
+addEventListener('keyup',e=>{ if(['ArrowLeft','KeyA','KeyQ'].includes(e.code)) input.left=false;
+  if(['ArrowRight','KeyD'].includes(e.code)) input.right=false; });
+addEventListener('touchstart',e=>{ for(const t of e.changedTouches){ if(t.clientX<innerWidth/2) input.left=true; else input.right=true; } },{passive:true});
+addEventListener('touchend',e=>{ input.left=false; input.right=false; },{passive:true});
+
+const $=id=>document.getElementById(id);
+function startGame(){
+  initAudio(); if(AC && AC.state==='suspended') AC.resume();
+  $('start').style.display='none'; $('over').style.display='none';
+  // reset
+  state.running=true; state.z=10; state.x=0; state.v=16; state.dist=0; state.shake=0; state.slowT=0; state.t=0;
+  props.forEach(p=>scene.remove(p.obj)); props.length=0;
+  spawnPropsForRange(20, 20+NSEG*SEG_L);
+  trailPts=[];
+}
+$('go').onclick=startGame; $('again').onclick=startGame;
+
+function gameOver(){
+  state.running=false;
+  $('overTitle').textContent = 'BEAU RUN 🤙';
+  $('overText').textContent = `${Math.floor(state.dist)} m parcourus, pointe à ${Math.floor(maxSpeed)} km/h. La montagne et l'océan te rappellent.`;
+  $('over').style.display='flex';
+}
+let maxSpeed=0;
+
+// ---------- boucle ----------
+let last=performance.now();
+function frame(now){
+  requestAnimationFrame(frame);
+  const dt=Math.min(0.05,(now-last)/1000); last=now;
+  state.t+=dt;
+  if(state.running){
+    const b=biomeBlend(state.z);
+    // vitesse : gravité de pente + friction par biome
+    const target = 26 + 14*(1-b) + Math.sin(state.t*0.4)*2;
+    const accel = state.slowT>0 ? -18 : (target-state.v)*0.35;
+    state.v += accel*dt; state.v=Math.max(9,state.v);
+    if(state.slowT>0) state.slowT-=dt;
+    maxSpeed=Math.max(maxSpeed,state.v*3.4);
+    // carve
+    const steer=(input.left?-1:0)+(input.right?1:0);
+    state.lean += (steer*0.55-state.lean)*Math.min(1,dt*7);
+    state.x += state.lean*state.v*0.9*dt;
+    state.x = Math.max(-(W/2-6), Math.min(W/2-6, state.x));
+    state.z += state.v*dt;
+    state.dist += state.v*dt;
+    // position rider sur terrain
+    const y=heightAt(state.x,state.z,state.t);
+    const yAhead=heightAt(state.x,state.z+2,state.t);
+    rider.position.set(state.x, y, state.z);
+    rider.rotation.z = -state.lean*0.7;
+    rider.rotation.x = Math.atan2(yAhead-y,2)*0.8;
+    rider.rotation.y = -state.lean*0.4;
+    // mode board / jetski
+    const onWater = b>0.5;
+    board.visible=!onWater; jetski.visible=onWater;
+    body.position.y = onWater?1.35:1.15;
+    $('biome').textContent = onWater? '🌊 L\'OCÉAN' : '❄️ LA MONTAGNE';
+    // spray
+    const carving=Math.abs(state.lean)>0.12;
+    if(carving || onWater){
+      emit(state.x-state.lean, y+0.2, state.z-0.8, carving?3:2, 2.5+Math.abs(state.lean)*3, onWater?0xdff3ff:0xffffff);
+    }
+    // trace persistante
+    trailPts.push({x:state.x, z:state.z, y:y+0.06, lean:state.lean});
+    if(trailPts.length>TRAIL_N) trailPts.shift();
+    trail.material = onWater? MAT.wtrail : MAT.trail;
+    for(let i=0;i<TRAIL_N;i++){
+      const p=trailPts[Math.min(i,trailPts.length-1)] || {x:state.x,z:state.z,y:0,lean:0};
+      const half=0.35+Math.abs(p.lean)*0.3;
+      tPos[i*6]=p.x-half; tPos[i*6+1]=p.y; tPos[i*6+2]=p.z;
+      tPos[i*6+3]=p.x+half; tPos[i*6+4]=p.y; tPos[i*6+5]=p.z;
+    }
+    trailGeo.attributes.position.needsUpdate=true;
+    // collisions
+    for(const p of props){
+      if(Math.abs(p.z-state.z)<p.hitR && Math.abs(p.x-state.x)<p.hitR){
+        state.slowT=0.55; state.shake=0.5; thud(); p.z=-99999; scene.remove(p.obj);
+      }
+    }
+    // recyclage props & terrain
+    for(let i=props.length-1;i>=0;i--){ if(props[i].z < state.z-30){ scene.remove(props[i].obj); props.splice(i,1); } }
+    const horizon = state.z + NSEG*SEG_L - 30;
+    if(props.length<140) spawnPropsForRange(horizon-SEG_L, horizon);
+    // audio
+    if(windGain){ windGain.gain.value=Math.min(0.24,(state.v/60)*0.24);
+      carveGain.gain.value=carving?Math.min(0.16,Math.abs(state.lean)*0.3):(onWater?0.06:0.02);
+      carveFilter.frequency.value=onWater?600:1100; }
+    // hud
+    $('speed').textContent=Math.floor(state.v*3.4);
+    $('dist').textContent=Math.floor(state.dist);
+    drawSpeedLines((state.v-24)/26);
+    // fin de run : au bout de 3 cycles complets on félicite (évite l'infini sans but)
+    if(state.dist>BIOME_LEN*6) gameOver();
+  }
+  // terrain suit le rider
+  const zBase=Math.floor((state.z-20)/SEG_L)*SEG_L;
+  tiles.forEach((m,i)=>refreshTile(m, zBase+i*SEG_L, state.t));
+  // bob des bouées
+  for(const p of props){ if(p.kind==='buoy'){ p.obj.position.y=heightAt(p.x,p.z,state.t)-0.2; } else { p.obj.position.y=heightAt(p.x,p.z,0)-0.15; } }
+  // particules
+  for(let i=0;i<P_N;i++){ if(pLife[i]>0){ pLife[i]-=dt;
+    pPos[i*3]+=pVel[i*3]*dt; pPos[i*3+1]+=pVel[i*3+1]*dt; pPos[i*3+2]+=pVel[i*3+2]*dt; pVel[i*3+1]-=9.8*dt;
+    if(pLife[i]<=0){ pPos[i*3+1]=-999; } } }
+  pGeo.attributes.position.needsUpdate=true;
+  // caméra chase + shake + FOV kick
+  state.shake=Math.max(0,state.shake-dt*1.6);
+  const shx=(Math.random()-0.5)*state.shake, shy=(Math.random()-0.5)*state.shake;
+  const camY=heightAt(state.x*0.6, state.z-9, state.t)+6.5;
+  camera.position.set(state.x*0.75+shx, camY+shy, state.z-9);
+  camera.lookAt(state.x, rider.position.y+1.4, state.z+7);
+  camera.fov=72+Math.min(16,(state.v-16)*0.5); camera.updateProjectionMatrix();
+  renderer.render(scene,camera);
+}
+resize();
+requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
