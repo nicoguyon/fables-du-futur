@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newsletter — Les jeux vidéo créés par l'IA (vague Opus 5) — Brouillon à valider</title>
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --muted: #5a5a72;
+    --accent: #e63946;
+    --accent2: #1d6fa5;
+    --bg: #faf8f5;
+    --card: #ffffff;
+    --border: #e8e2d9;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    font-size: 17px;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 24px 20px 80px; }
+  .banner {
+    background: #fff3cd;
+    border: 1px solid #f0d97a;
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 15px;
+    margin-bottom: 32px;
+    color: #6b5900;
+  }
+  .banner strong { color: #4a3d00; }
+  h1 { font-size: 1.9em; line-height: 1.25; margin-bottom: 8px; letter-spacing: -0.5px; }
+  .subtitle { color: var(--muted); font-size: 1.05em; margin-bottom: 36px; }
+  h2 {
+    font-size: 1.35em;
+    margin: 48px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--accent);
+    display: inline-block;
+  }
+  h3 { font-size: 1.1em; margin: 24px 0 8px; }
+  p { margin-bottom: 16px; }
+  a { color: var(--accent2); }
+  .lead { font-size: 1.15em; }
+  .game-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .game-card h3 { margin: 0 0 6px; font-size: 1.15em; }
+  .game-card .meta { font-size: 0.85em; color: var(--muted); margin-bottom: 10px; }
+  .game-card p { margin-bottom: 8px; font-size: 0.97em; }
+  .game-card .links { font-size: 0.9em; }
+  .tag {
+    display: inline-block;
+    background: #fdeaea;
+    color: var(--accent);
+    font-size: 0.75em;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 999px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .tag.blue { background: #e7f1f8; color: var(--accent2); }
+  .format-block {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--accent2);
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin: 20px 0 36px;
+    white-space: pre-wrap;
+    font-size: 0.96em;
+  }
+  .note {
+    background: #eef6ee;
+    border: 1px solid #cde3cd;
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: 0.95em;
+    margin: 24px 0;
+    color: #2d5a2d;
+  }
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding-left: 18px;
+    margin: 20px 0;
+    color: var(--muted);
+    font-style: italic;
+  }
+  ul, ol { margin: 0 0 16px 24px; }
+  li { margin-bottom: 8px; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 56px 0; }
+  .footer { color: var(--muted); font-size: 0.85em; margin-top: 48px; }
+  @media (max-width: 480px) {
+    body { font-size: 16px; }
+    h1 { font-size: 1.55em; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="banner">
+    ⚠️ <strong>Brouillon à valider avant publication.</strong> Préparé le 10 août 2026. Sources : posts X publics de la vague « jeux Opus 5 » (fin juillet – début août 2026). <strong>Note :</strong> je n'ai pas pu accéder directement à tes likes/bookmarks Twitter (aucun connecteur X disponible) — cette sélection a été reconstituée via les recaps publics de la même vague. Si un jeu que tu avais liké manque (notamment le jetski 👀), envoie-moi le lien et je l'ajoute.
+  </div>
+
+  <h1>🎮 Une IA vient de coder un « Call of Duty » dans ton navigateur. Et ce n'est que le début.</h1>
+  <p class="subtitle">Newsletter — édition spéciale : la vague des jeux vidéo créés par l'IA avec Claude Opus 5</p>
+
+  <p class="lead">Fin juillet, Anthropic sort <strong>Claude Opus 5</strong>. En moins de 48 heures, X se transforme en salon du jeu vidéo. Des dizaines de démos jouables, directement dans le navigateur, générées à partir d'un simple prompt. Pas de moteur de jeu. Pas d'assets achetés. Pas d'équipe de 50 personnes. Juste du texte… et une IA qui code.</p>
+
+  <p>J'ai passé ces dernières semaines à collectionner les exemples les plus dingues. Voici ma sélection — et pourquoi je pense que l'industrie du jeu vidéo (et pas seulement elle) est en train de vivre son moment iPhone.</p>
+
+  <h2>La sélection : 10 jeux créés par l'IA qui m'ont scotché</h2>
+
+  <div class="game-card">
+    <h3>1. « Claude of Duty » — le FPS qui a tout déclenché <span class="tag">Le plus viral</span></h3>
+    <div class="meta">Matt Shumer (@mattshumer_) · 25 juillet 2026 · Three.js</div>
+    <p>Un FPS aux allures de jeu AAA, généré en <strong>un seul prompt de trois paragraphes</strong>. ~55 000 lignes de code, 11 sous-systèmes, et surtout : <strong>zéro asset externe</strong>. Les armes, les ennemis, les textures, les sons — tout est généré par du code. C'est ce post qui a lancé la vague.</p>
+    <p class="links">→ <a href="https://x.com/mattshumer_/status/2081054356405731740" target="_blank">Le post X</a> · <a href="https://github.com/mshumer/Claude-of-Duty" target="_blank">Le code sur GitHub</a></p>
+  </div>
+
+  <div class="game-card">
+    <h3>2. Le snowboard aux physiques bluffantes <span class="tag blue">Glisse</span></h3>
+    <div class="meta">Alex Ermolov (@alex_erm) · Opus 5</div>
+    <p>Une démo de snowboard où <strong>les sensations de glisse sont justes</strong> — carving, vitesse, pentes. Ceux qui ont essayé le disent : on sent la physique, ce qui était impensable pour du code 100 % généré il y a encore six mois.</p>
+    <p class="links">→ <a href="https://x.com/alex_erm/status/2080739261909762364" target="_blank">Le post X</a></p>
+  </div>
+
+  <div class="game-card">
+    <h3>3. SNOWFLOW — surf sur neige et magie de l'eau <span class="tag blue">Glisse</span></h3>
+    <div class="meta">Builder Reddit/X · Claude Code + Opus 5 · WebGPU · 9 heures de génération</div>
+    <p>Des <strong>millions de particules de neige</strong>, un système de surf avec une gerbe de spray dans la lumière, des sorts d'eau qui creusent le terrain… et chaque trace laissée dans la neige <strong>persiste puis se rebouche lentement</strong>. Le tout dans un onglet de navigateur, sans moteur de jeu. Probablement la démo la plus impressionnante techniquement de toute la vague.</p>
+    <p class="links">→ <a href="https://snowflow-lilac.vercel.app/" target="_blank">Jouer à SNOWFLOW</a> · <a href="https://x.com/VaibhavSisinty/status/2082277466685751683" target="_blank">Le post récap</a></p>
+  </div>
+
+  <div class="game-card">
+    <h3>4. Rocket Arena — le clone de Rocket League</h3>
+    <div class="meta">@LLMJunky · Opus 5</div>
+    <p>Du foot en voitures-fusées, jouable en ligne, généré pour <strong>27 % du budget de crédits max</strong> d'un abonnement. La physique du ballon et les boosts fonctionnent.</p>
+    <p class="links">→ <a href="https://rl-opus5.vercel.app" target="_blank">Jouer à Rocket Arena</a></p>
+  </div>
+
+  <div class="game-card">
+    <h3>5. Le RTS spatial façon Homeworld</h3>
+    <div class="meta">@mikeluan123 · Opus 5 · 632,65 $ de génération</div>
+    <p>Un jeu de stratégie spatiale en 3D, avec flottes, formations et combats — pour un prompt et <strong>632 $ de tokens</strong>. Cher ? C'est le prix d'une demi-journée d'un développeur junior… pour un prototype qu'une équipe mettrait des mois à produire.</p>
+  </div>
+
+  <div class="game-card">
+    <h3>6. « The Long Silence » — l'hommage à Outer Wilds en 24 h</h3>
+    <div class="meta">Anshu (@achimala) · Opus 5 · 24 heures</div>
+    <p>Un jeu d'exploration spatiale narratif inspiré d'Outer Wilds, généré en 24 heures avec un système de <strong>17 points de validation automatiques</strong> : l'IA testait elle-même son jeu avant de continuer.</p>
+    <p class="links">→ <a href="https://github.com/achimala/TheLongSilence" target="_blank">Le code sur GitHub</a></p>
+  </div>
+
+  <div class="game-card">
+    <h3>7. Le clone de Minecraft — 15 biomes, monde infini</h3>
+    <div class="meta">Pankaj Kumar (@pankajkumar_dev) · Opus 5 · 25M de tokens</div>
+    <p>Monde procédural infini, 15 biomes, crafting. Recréer Minecraft est devenu <strong>le benchmark officieux</strong> de la communauté pour tester chaque nouveau modèle.</p>
+    <p class="links">→ <a href="https://x.com/pankajkumar_dev/status/2081246739990982771" target="_blank">Le post X</a></p>
+  </div>
+
+  <div class="game-card">
+    <h3>8. Le sous-marin « peint à la main »</h3>
+    <div class="meta">Pietro Schirano (@skirano) · Opus 5</div>
+    <p>Un jeu d'exploration sous-marine avec une direction artistique en <strong>16 couleurs et du dithering</strong> façon jeu rétro — 3D, textures et <strong>musique</strong> générées. La preuve que l'IA ne sait pas que coder : elle sait faire des choix esthétiques.</p>
+    <p class="links">→ <a href="https://x.com/skirano/status/2081499734233997570" target="_blank">Le post X</a></p>
+  </div>
+
+  <div class="game-card">
+    <h3>9. Le kart racer</h3>
+    <div class="meta">Ryan Campbell · Opus 5</div>
+    <p>Un jeu de course de karts jouable en ligne, poli par itérations successives — l'approche inverse du « one-shot » : l'IA comme partenaire de game design qui améliore le feeling tour après tour.</p>
+    <p class="links">→ <a href="https://x.com/Ryancampbell/status/2081750419857133709" target="_blank">Le post X</a> · <a href="https://racing.ryancampbell.com" target="_blank">Jouer</a></p>
+  </div>
+
+  <div class="game-card">
+    <h3>10. L'explorateur du désert — 14 h de génération autonome</h3>
+    <div class="meta">Builder Reddit · Opus 5 · ~5M de tokens · 14 heures</div>
+    <p>Un monde désertique procédural généré à partir d'un brief de 2 000 mots, pendant que son créateur <strong>dormait</strong>. Il s'est réveillé avec un jeu.</p>
+    <p class="links">→ <a href="https://desert-dusky.vercel.app/" target="_blank">Jouer</a></p>
+  </div>
+
+  <p style="margin-top: 24px;">Et j'en passe : un simulateur de baliste médiévale (<a href="https://x.com/chetaslua/status/2080290382315925911" target="_blank">@chetaslua</a>), « Claudepunk 2077 », « Operation Blackout » généré en 10 h par James Altucher, une map zombie façon COD avec pack-a-punch et mystery box… Les threads récap de <a href="https://x.com/minchoi/status/2082670106975359202" target="_blank">Min Choi</a> en listent des dizaines.</p>
+
+  <h2>Pourquoi c'est un vrai tournant (et pas juste des démos)</h2>
+
+  <p>Des IA qui génèrent des jeux, ça existait déjà. La différence avec cette vague, elle tient en trois points :</p>
+
+  <ol>
+    <li><strong>Ça marche du premier coup.</strong> Il y a six mois, un prompt donnait des blocs de couleur qui buguaient. Aujourd'hui, les démos tournent dès la première génération : physique, éclairage, musique, menus.</li>
+    <li><strong>Zéro asset externe.</strong> Pas de modèles 3D téléchargés, pas de textures achetées. Tout est du code : la géométrie est calculée, les textures sont des shaders, les sons sont synthétisés. L'IA ne assemble pas — elle <em>crée</em>.</li>
+    <li><strong>Les non-développeurs s'y mettent.</strong> La moitié de ces démos viennent de gens qui ne savent pas coder. Le prompt devient le nouveau game design document.</li>
+  </ol>
+
+  <blockquote>La question n'est plus « est-ce que l'IA peut faire un jeu ? » mais « à quoi ressemble un studio de jeu vidéo quand un prompt remplace six mois de production ? »</blockquote>
+
+  <h2>Et maintenant ? Trois questions que je me pose</h2>
+
+  <ul>
+    <li><strong>Qui seront les studios de demain ?</strong> Si un créatif seul peut prototyper un jeu en une nuit, la valeur se déplace du code vers l'idée, la direction artistique et la communauté.</li>
+    <li><strong>Le jeu jetable arrive-t-il ?</strong> Des jeux générés à la demande, personnalisés, joués une fois puis oubliés — comme on scrolle une vidéo TikTok ?</li>
+    <li><strong>Que devient la valeur d'un jeu</strong> quand le coût de production tend vers le prix des tokens ? (632 $ pour un RTS spatial, 27 % d'un abonnement pour un Rocket League…)</li>
+  </ul>
+
+  <p><strong>Mon pari :</strong> dans les six prochains mois, on verra le premier jeu 100 % généré par IA dépasser le million de joueurs. Et vous, vous en pensez quoi ? Répondez à ce mail, je lis tout. 👇</p>
+
+  <hr class="divider">
+
+  <h2>📱 Déclinaisons par format</h2>
+  <p class="subtitle" style="margin-bottom: 12px;">À copier-coller après validation.</p>
+
+  <h3>💼 LinkedIn</h3>
+  <div class="format-block">Une IA vient de coder un « Call of Duty » jouable dans un navigateur.
+
+Un seul prompt. Trois paragraphes. Zéro asset externe.
+
+Fin juillet, Claude Opus 5 est sorti. En 48 h, X s'est transformé en salon du jeu vidéo :
+
+→ « Claude of Duty » : un FPS de 55 000 lignes de code, tout est généré (armes, sons, textures)
+→ Un snowboard dont les sensations de glisse sont justes
+→ SNOWFLOW : des millions de particules de neige déformable, dans un simple onglet Chrome
+→ Un clone de Rocket League jouable en ligne
+→ Un RTS spatial façon Homeworld pour 632 $ de tokens
+→ Un hommage à Outer Wilds généré en 24 h
+→ Un clone de Minecraft : monde infini, 15 biomes
+
+Le plus frappant : la moitié de ces créateurs ne savent pas coder.
+
+Il y a 6 mois, un prompt donnait des blocs de couleur bugués.
+Aujourd'hui, ça marche du premier coup : physique, éclairage, musique.
+
+La question n'est plus « est-ce que l'IA peut faire un jeu ? »
+C'est : « à quoi ressemble un studio quand un prompt remplace 6 mois de production ? »
+
+Mon pari : d'ici 6 mois, un jeu 100 % généré par IA dépassera le million de joueurs.
+
+Vous en pensez quoi ? 👇
+
+#IA #JeuVidéo #ClaudeOpus5 #VibeCoding</div>
+
+  <h3>🐦 Thread X / Twitter</h3>
+  <div class="format-block">1/ Une IA vient de coder un « Call of Duty » jouable dans ton navigateur.
+
+Un prompt de 3 paragraphes. 55 000 lignes de code. Zéro asset externe.
+
+Depuis la sortie de Claude Opus 5, X est devenu un salon du jeu vidéo. Les 10 démos les plus dingues 🧵
+
+2/ « Claude of Duty » par @mattshumer_ : le FPS qui a tout déclenché.
+
+Armes, ennemis, textures, sons : TOUT est généré par du code. Pas un seul fichier externe. Le code est open source.
+
+3/ Le snowboard de @alex_erm : des sensations de glisse justes.
+
+Carving, vitesse, pente. Pour du code 100 % généré, c'était impensable il y a 6 mois.
+
+4/ SNOWFLOW : la démo la plus folle techniquement.
+
+Des millions de particules de neige. Chaque trace persiste puis se rebouche. Un système de surf avec spray dans la lumière. Dans UN onglet de navigateur. Sans moteur de jeu.
+
+5/ Un clone de Rocket League jouable en ligne, généré pour 27 % du budget crédits d'un abonnement.
+
+6/ Un RTS spatial façon Homeworld : un prompt, 632 $ de tokens.
+
+Cher ? C'est le prix de quelques heures d'un dev… pour un prototype qui prendrait des mois.
+
+7/ « The Long Silence » : un hommage à Outer Wilds généré en 24 h, avec 17 checks de validation automatiques. L'IA testait son propre jeu avant de continuer.
+
+8/ Un clone de Minecraft par @pankajkumar_dev : monde infini, 15 biomes, 25M de tokens.
+
+Recréer Minecraft est devenu LE benchmark officieux de chaque nouveau modèle.
+
+9/ Le plus frappant dans tout ça : la moitié de ces créateurs ne savent pas coder.
+
+Le prompt est le nouveau game design document.
+
+10/ Il y a 6 mois : des blocs de couleur bugués.
+Aujourd'hui : physique + éclairage + musique, du premier coup.
+Dans 6 mois : mon pari, un jeu 100 % IA à 1M de joueurs.
+
+La suite va être complètement dingue. Vous en pensez quoi ?</div>
+
+  <h3>📧 Substack / Newsletter longue</h3>
+  <div class="format-block">→ C'est le corps de l'article ci-dessus (du titre jusqu'à « Répondez à ce mail »). Il est prêt à être collé tel quel dans Substack : titres, liens vers les posts X et les jeux jouables inclus.</div>
+
+  <div class="note">
+    <strong>✅ Pour valider :</strong> dis-moi (1) si la sélection de jeux te va — et envoie-moi le lien du jeu de jetski que tu avais liké pour que je l'ajoute, (2) si le ton te convient, (3) quel(s) format(s) tu veux publier en premier. Je peux ensuite ajuster et te préparer les visuels si besoin.
+  </div>
+
+  <div class="footer">
+    Brouillon généré le 10 août 2026 · Sources : posts X publics, the-decoder.com, explainx.ai, recaps Min Choi · Fables du Futur / Comptoir IA
+  </div>
+
+</div>
+</body>
+</html>
