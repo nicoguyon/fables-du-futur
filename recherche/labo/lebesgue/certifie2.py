@@ -319,7 +319,7 @@ def _travailleur(args):
     nom, boites, budget, graine = args
     pb = PROBLEMES[nom]()
     ckpt = f"ckpt_{nom}_{graine}.json"
-    return pb.certifie(budget_s=budget, pile_init=boites, rapport=10**9,
+    return pb.certifie(budget_s=budget, pile_init=boites, rapport=500000,
                        chemin_ckpt=ckpt)
 
 
