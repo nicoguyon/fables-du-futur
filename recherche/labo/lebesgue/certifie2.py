@@ -256,9 +256,9 @@ class Probleme:
             return meilleurs
         return max(meilleurs, ConvexHull(pts).volume - MARGE_FLOTTANTE)
 
-    def certifie(self, taille_min=2e-5, budget_s=None, rapport=200000):
+    def certifie(self, taille_min=2e-5, budget_s=None, rapport=200000, pile_init=None):
         boite0 = tuple((lo, hi) for (_, _, lo, hi) in self.dims)
-        pile = [boite0]
+        pile = list(pile_init) if pile_init is not None else [boite0]
         t0 = time.time()
         pire = math.inf
         while pile:
@@ -301,10 +301,43 @@ PROBLEMES = {
                                  float(os.environ.get("L", "0.834")))),
 }
 
+def _travailleur(args):
+    nom, boites, budget, graine = args
+    pb = PROBLEMES[nom]()
+    return pb.certifie(budget_s=budget, pile_init=boites, rapport=10**9)
+
+
+def certifie_parallele(nom, procs=4, budget_s=None):
+    """Découpe la racine en lots et distribue sur `procs` processus.
+    Succès ssi TOUS les lots certifient (l'union des lots couvre la racine)."""
+    from multiprocessing import Pool
+    pb = PROBLEMES[nom]()
+    boites = [tuple((lo, hi) for (_, _, lo, hi) in pb.dims)]
+    while len(boites) < procs * 16:
+        b = boites.pop(0)
+        b1, b2, _ = pb._decoupe(b)
+        boites.extend([b1, b2])
+    lots = [(nom, boites[i::procs], budget_s, i) for i in range(procs)]
+    t0 = time.time()
+    with Pool(procs) as pool:
+        resultats = pool.map(_travailleur, lots)
+    total = sum(r.get("boites", 0) for r in resultats)
+    echecs = [r for r in resultats if not r.get("succes")]
+    if not echecs:
+        return {"succes": True, "L": pb.L, "boites": total, "procs": procs,
+                "secondes": round(time.time() - t0, 1)}
+    return {"succes": False, "boites": total, "echecs": echecs,
+            "secondes": round(time.time() - t0, 1)}
+
+
 if __name__ == "__main__":
     nom = sys.argv[1] if len(sys.argv) > 1 else "valide3d"
     budget = float(sys.argv[2]) if len(sys.argv) > 2 else None
+    procs = int(os.environ.get("PROCS", "1"))
     pb = PROBLEMES[nom]()
-    print(f"[{nom}] L = {pb.L}, dims = {len(pb.dims)}", flush=True)
-    res = pb.certifie(budget_s=budget)
+    print(f"[{nom}] L = {pb.L}, dims = {len(pb.dims)}, procs = {procs}", flush=True)
+    if procs > 1:
+        res = certifie_parallele(nom, procs=procs, budget_s=budget)
+    else:
+        res = pb.certifie(budget_s=budget)
     print(res)
