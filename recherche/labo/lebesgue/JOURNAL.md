@@ -78,3 +78,21 @@ méthode d'attaque fonctionne). Le pentagone de Reuleaux tient presque :
 0.8345678** (+0.0010 vs xie3, ~70x le bruit). Batch de durcissement
 lancé : baseline xie3 à 500 départs (fair-play), champion à 2000
 départs, nonagone/hendécagone à 300.
+
+**Verdict du durcissement (batch relancé après redémarrage)** :
+- baseline xie3 à 500 départs : 0.8335968 — identique au run à 120,
+  la référence est verrouillée ;
+- champion xie3+reuleaux5 à 2000 départs : 0.8345744 (vs 0.8345678 à
+  500 ; écart 7e-6 = plancher de bruit). LE CHAMPION SURVIT.
+- xie3+nonagone (300) : 0.8342239 ;
+- xie3+hendecagone (300) : 0.8345968 — quasi ex æquo avec le champion,
+  à challenger plus tard à 2000 départs.
+
+**Cible de record consolidée : disque + triangle + pentagone +
+pentagone de Reuleaux -> min numérique 0.83457 ± 0.00001**, soit
++0.0010 au-dessus du trio du record certifié (0.8335968). Prochaine
+étape (séance 3) : la CERTIFICATION — branch-and-bound sur le domaine
+des placements (9 paramètres, quotienté par les symétries), minoration
+par boîte via polygones témoins intérieurs + arithmétique d'intervalles.
+Objectif : prouver « toute couverture universelle convexe a une aire
+>= 0.834 », ce qui améliorerait le record de Xie (0.833).
