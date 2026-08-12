@@ -1,0 +1,267 @@
+<title>Minorations pour la couverture de Lebesgue</title>
+<style>
+  :root {
+    --paper: #FCFBF7;
+    --ink: #1D2530;
+    --muted: #5C6572;
+    --accent: #2B4C7E;
+    --rule: #E4E1D7;
+    --panel: #F3F1E9;
+    --warn-bg: #FBF3E4;
+    --warn-edge: #C9A227;
+  }
+  :root:not([data-theme="light"]) { }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #14181F;
+      --ink: #E7E5DF;
+      --muted: #9AA3B0;
+      --accent: #86A9D8;
+      --rule: #2A3140;
+      --panel: #1B212C;
+      --warn-bg: #262115;
+      --warn-edge: #A98D2E;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #14181F;
+    --ink: #E7E5DF;
+    --muted: #9AA3B0;
+    --accent: #86A9D8;
+    --rule: #2A3140;
+    --panel: #1B212C;
+    --warn-bg: #262115;
+    --warn-edge: #A98D2E;
+  }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Charter, "Bitstream Charter", Cambria, Georgia, "Times New Roman", serif;
+    font-size: 1.0625rem;
+    line-height: 1.62;
+    margin: 0;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  main { max-width: 42rem; margin: 0 auto; }
+  .eyebrow {
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 0.75rem;
+  }
+  h1 {
+    font-size: 1.85rem;
+    line-height: 1.22;
+    margin: 0 0 0.9rem;
+    text-wrap: balance;
+    font-weight: 700;
+  }
+  .byline {
+    font-size: 0.92rem;
+    color: var(--muted);
+    margin: 0 0 0.3rem;
+  }
+  .statut {
+    background: var(--warn-bg);
+    border-left: 3px solid var(--warn-edge);
+    padding: 0.7rem 0.95rem;
+    font-size: 0.92rem;
+    margin: 1.4rem 0 0;
+  }
+  h2 {
+    font-size: 1.18rem;
+    margin: 2.6rem 0 0.8rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--rule);
+    text-wrap: balance;
+  }
+  h2 .num { color: var(--accent); font-variant-numeric: tabular-nums; margin-right: 0.45em; }
+  p { margin: 0 0 1rem; }
+  .lemme {
+    background: var(--panel);
+    border-radius: 4px;
+    padding: 0.95rem 1.1rem;
+    margin: 1.2rem 0;
+  }
+  .lemme p { margin: 0 0 0.6rem; }
+  .lemme p:last-child { margin: 0; }
+  .lemme .tag { font-style: normal; font-weight: 700; color: var(--accent); }
+  em.math, span.math { font-style: italic; }
+  .tablewrap { overflow-x: auto; margin: 1.2rem 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.94rem;
+    font-variant-numeric: tabular-nums;
+  }
+  caption {
+    caption-side: bottom;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: left;
+    padding-top: 0.5rem;
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  th {
+    text-align: left;
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    padding: 0.45rem 0.9rem 0.45rem 0;
+    border-bottom: 1.5px solid var(--ink);
+  }
+  td { padding: 0.45rem 0.9rem 0.45rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  tr.hit td { font-weight: 700; }
+  figure { margin: 1.6rem 0; }
+  figcaption {
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    margin-top: 0.55rem;
+  }
+  .formes { display: flex; gap: 1rem; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+  .formes svg { flex: 1 1 90px; max-width: 120px; height: auto; }
+  .formes .shape { stroke: var(--accent); stroke-width: 3; fill: none; }
+  .formes .lbl {
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 13px;
+    fill: var(--muted);
+  }
+  ol.refs { padding-left: 1.3rem; font-size: 0.92rem; }
+  ol.refs li { margin-bottom: 0.55rem; }
+  ol.questions { padding-left: 1.3rem; }
+  ol.questions li { margin-bottom: 0.7rem; }
+  a { color: var(--accent); }
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.86em;
+    background: var(--panel);
+    padding: 0.08em 0.35em;
+    border-radius: 3px;
+  }
+  .foot {
+    margin-top: 3rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+</style>
+<main>
+  <p class="eyebrow">Note de recherche · travail exploratoire</p>
+  <h1>Minorations numériques pour le problème de la couverture universelle de Lebesgue</h1>
+  <p class="byline">Nicolas Guyon (Comptoir IA), avec l'assistance de Claude (Anthropic) pour la conception des algorithmes et l'exécution des calculs.</p>
+  <p class="byline">12 août 2026 · calculs reproductibles, code public</p>
+  <div class="statut"><strong>Statut.</strong> Ce document présente une <em>cible numérique reproductible</em>, pas un résultat certifié. Le passage du minimum numérique (§5) à une borne inférieure prouvée exige l'étape de certification décrite au §6, qui n'est pas encore réalisée. Toute relecture critique est bienvenue.</div>
+
+  <h2><span class="num">1.</span>Le problème</h2>
+  <p>Lebesgue (lettre à Pál, 1914) : déterminer
+  <span class="math">α</span> = inf { aire(<span class="math">U</span>) : <span class="math">U</span> ⊂ ℝ² convexe tel que toute partie de ℝ² de diamètre ≤ 1 admette une copie congruente (isométries, réflexions comprises) incluse dans <span class="math">U</span> }.
+  Le problème est ouvert depuis 112 ans. L'encadrement actuel est
+  0.833 ≤ <span class="math">α</span> ≤ 0.8440935944.</p>
+
+  <h2><span class="num">2.</span>État de l'art</h2>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Année</th><th>Auteur</th><th>Type</th><th>Valeur</th></tr></thead>
+    <tbody>
+      <tr><td>1920</td><td>Pál</td><td>majorant</td><td>2 − 2/√3 ≈ 0.845299</td></tr>
+      <tr><td>1936</td><td>Sprague</td><td>majorant</td><td>0.844137708…</td></tr>
+      <tr><td>1992</td><td>Hansen</td><td>majorant</td><td>amélioration infime</td></tr>
+      <tr><td>2015</td><td>Baez, Bagdasaryan, Gibbs</td><td>majorant</td><td>0.8441153</td></tr>
+      <tr><td>2018</td><td>Gibbs</td><td>majorant</td><td>0.8440935944 (prépublication)</td></tr>
+      <tr><td>2005</td><td>Brass, Sharifi</td><td>minorant</td><td>0.832</td></tr>
+      <tr><td>2026</td><td>Xie</td><td>minorant</td><td>0.833 (certifié)</td></tr>
+    </tbody>
+    <caption>Repères principaux. Les majorants procèdent par ablation de coins d'un hexagone régulier de largeur 1 ; les minorants par la méthode des formes-tests (§3).</caption>
+  </table>
+  </div>
+
+  <h2><span class="num">3.</span>La méthode de minoration</h2>
+  <div class="lemme">
+    <p><span class="tag">Lemme (Brass–Sharifi).</span> Soient <span class="math">F₁, …, F_k</span> des parties de ℝ² de diamètre ≤ 1. Alors
+    <span class="math">α</span> ≥ min<sub><span class="math">σ₁,…,σ_k</span></sub> aire( conv( <span class="math">σ₁F₁</span> ∪ ⋯ ∪ <span class="math">σ_kF_k</span> ) ),
+    le minimum portant sur tous les <span class="math">k</span>-uplets d'isométries du plan.</p>
+    <p><span class="tag">Démonstration.</span> Toute couverture universelle convexe <span class="math">U</span> contient une copie <span class="math">σᵢFᵢ</span> de chaque forme-test. Par convexité, <span class="math">U</span> contient l'enveloppe convexe de leur union, donc son aire dépasse le minimum ci-dessus. ∎</p>
+  </div>
+  <p>Deux remarques structurantes. <em>(i)</em> La méthode est asymptotiquement complète : en prenant pour formes-tests toutes les parties de diamètre 1, le minimum vaut exactement <span class="math">α</span> ; chaque forme ajoutée ne peut que faire croître le minorant. <em>(ii)</em> Le calcul du minimum est un problème d'optimisation globale en dimension finie — 3(<span class="math">k</span>−1) paramètres après réduction — dont la certification relève de l'arithmétique d'intervalles. C'est la voie suivie par Xie (2026) avec trois formes : disque, triangle équilatéral, pentagone régulier de diamètre 1.</p>
+
+  <h2><span class="num">4.</span>Protocole numérique</h2>
+  <p>Nous estimons le minimum du lemme par optimisation multi-départs (Nelder–Mead, deux étages : 120 à 2000 départs aléatoires grossiers, puis raffinage des meilleurs candidats), en Python (numpy/scipy), sur des formes discrétisées par des polygones <em>inscrits</em>. Trois garde-fous :</p>
+  <p><em>Sens des erreurs.</em> Un polygone inscrit est inclus dans la forme exacte ; le minimum calculé sous-estime donc le minimum exact — le sens prudent pour une minoration annoncée.</p>
+  <p><em>Calibration du bruit.</em> L'ajout d'une forme ne peut mathématiquement pas faire baisser le minimum ; l'écart négatif observé entre un jeu de 5 formes et son sous-ensemble de 4 (−1.0 × 10⁻⁵) fournit une mesure directe de l'erreur d'optimisation.</p>
+  <p><em>Contradiction systématique.</em> Chaque valeur haute est « attaquée » par des relances massives destinées à la faire tomber (jusqu'à 2000 départs indépendants) ; l'heptagone régulier, initialement à 0.83519, est ainsi retombé à 0.83433 — la valeur retenue est toujours la plus basse jamais observée.</p>
+
+  <h2><span class="num">5.</span>Résultats</h2>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Jeu de formes-tests</th><th>Min. numérique</th><th>Contrôle</th></tr></thead>
+    <tbody>
+      <tr><td>disque seul</td><td>0.785397</td><td>π/4 = 0.785398 (exact)</td></tr>
+      <tr><td>disque + triangle de Reuleaux</td><td>0.825711</td><td>cohérent avec Pál</td></tr>
+      <tr><td>disque + triangle + pentagone (jeu de Xie)</td><td>0.833597</td><td>cohérent avec le 0.833 certifié</td></tr>
+      <tr><td>jeu de Xie + carré (diagonale 1)</td><td>0.833602</td><td>gain nul : le carré est absorbé</td></tr>
+      <tr><td>jeu de Xie + triangle de Reuleaux</td><td>0.833845</td><td>gain +2.5 × 10⁻⁴</td></tr>
+      <tr><td>jeu de Xie + heptagone régulier</td><td>0.834334</td><td>gain +7.4 × 10⁻⁴</td></tr>
+      <tr><td>jeu de Xie + hendécagone régulier</td><td>0.834597</td><td>300 départs seulement</td></tr>
+      <tr class="hit"><td>jeu de Xie + pentagone de Reuleaux</td><td>0.834574</td><td>stable sur 2000 départs (± 10⁻⁵)</td></tr>
+    </tbody>
+    <caption>Minimums numériques (non certifiés). Les deux premières lignes valident la chaîne de calcul sur des valeurs connues.</caption>
+  </table>
+  </div>
+  <figure>
+    <div class="formes">
+      <svg viewBox="-95 -105 190 190" role="img" aria-label="Disque de diamètre 1">
+        <circle class="shape" cx="0" cy="0" r="75"/>
+        <text class="lbl" x="0" y="80" text-anchor="middle" dominant-baseline="hanging">disque</text>
+      </svg>
+      <svg viewBox="-95 -105 190 190" role="img" aria-label="Triangle équilatéral de côté 1">
+        <polygon class="shape" points="0.00,-86.60 -75.00,43.30 75.00,43.30"/>
+        <text class="lbl" x="0" y="80" text-anchor="middle" dominant-baseline="hanging">triangle</text>
+      </svg>
+      <svg viewBox="-95 -105 190 190" role="img" aria-label="Pentagone régulier de diagonale 1">
+        <polygon class="shape" points="0.00,-78.86 -75.00,-24.37 -46.35,63.80 46.35,63.80 75.00,-24.37"/>
+        <text class="lbl" x="0" y="80" text-anchor="middle" dominant-baseline="hanging">pentagone</text>
+      </svg>
+      <svg viewBox="-95 -105 190 190" role="img" aria-label="Pentagone de Reuleaux de largeur 1">
+        <path class="shape" d="M -46.35 63.80 A 150 150 0 0 1 46.35 63.80 A 150 150 0 0 1 75.00 -24.37 A 150 150 0 0 1 0.00 -78.86 A 150 150 0 0 1 -75.00 -24.37 A 150 150 0 0 1 -46.35 63.80 Z"/>
+        <text class="lbl" x="0" y="80" text-anchor="middle" dominant-baseline="hanging">p. de Reuleaux</text>
+      </svg>
+    </div>
+    <figcaption>Le jeu de quatre formes-tests candidat (toutes de diamètre 1, toutes à symétrie axiale — les réflexions du lemme sont donc sans effet). Le pentagone de Reuleaux, de largeur constante 1, résiste à l'absorption dans l'enveloppe optimale des trois premières.</figcaption>
+  </figure>
+  <p>Le fait saillant : l'ajout du <strong>pentagone de Reuleaux</strong> au jeu de Xie porte le minimum numérique à <strong>0.834574</strong>, un gain d'environ 10⁻³ sur la valeur du jeu de Xie — cent fois l'erreur d'optimisation mesurée — qui a résisté à 2000 relances indépendantes. Si ce minimum se certifie, la borne inférieure du problème passerait de 0.833 à ≈ 0.8345.</p>
+
+  <h2><span class="num">6.</span>De la cible à la borne : le chantier de certification</h2>
+  <p>Il faut prouver que <em>tout</em> placement des quatre formes donne une enveloppe d'aire ≥ 0.834, et non seulement qu'aucun placement trouvé ne fait mieux. Le schéma envisagé, calqué sur celui de Xie : quotienter le domaine des 9 paramètres par les symétries ; le découper en boîtes par séparation-évaluation ; minorer l'aire sur chaque boîte par un <em>polygone témoin intérieur</em> (un polygone contenu dans l'enveloppe pour tous les placements de la boîte, dont l'aire se calcule en arithmétique d'intervalles) ; raffiner près du minimiseur. Les majorations de Lipschitz (l'aire varie d'au plus ~3δ pour un déplacement δ) bornent le coût du découpage.</p>
+
+  <h2><span class="num">7.</span>Questions ouvertes — points sur lesquels un avis expert serait précieux</h2>
+  <ol class="questions">
+    <li>La méthode des formes-tests a-t-elle une limite pratique connue avant ~0.844, ou la communauté la considère-t-elle comme la voie plausible vers la valeur exacte ?</li>
+    <li>Existe-t-il des minorations <em>analytiques</em> de l'aire de conv(∪σᵢFᵢ) par boîte de paramètres (aires mixtes, inégalités de type Brunn–Minkowski) plus fortes que les estimations de Lipschitz, qui accéléreraient la certification ?</li>
+    <li>Le choix des formes-tests peut-il s'optimiser dans l'autre sens (dualité) : caractériser les formes qui « débordent » nécessairement de l'enveloppe optimale courante, plutôt que de les chercher par balayage ?</li>
+    <li>Quel standard de publication pour ce type de résultat calculatoire (code + certificat) rendrait la contribution la plus utile à la communauté ?</li>
+  </ol>
+
+  <h2><span class="num">8.</span>Reproductibilité</h2>
+  <p>L'explorateur complet tient en ~180 lignes de Python (numpy, scipy) : <code>bornes_inf.py</code>, dans le dépôt public du projet, avec le journal de bord daté de chaque expérience. Chaque valeur du §5 se reproduit en minutes sur une machine à 4 cœurs, par exemple <code>ESSAIS=500 python3 bornes_inf.py xie3+reuleaux5</code>. Les auteurs signalent avec transparence que la conception des algorithmes et les calculs ont été menés avec un assistant IA ; toutes les affirmations mathématiques du présent document sont élémentaires et vérifiables à la main, et aucune valeur numérique n'est présentée comme certifiée.</p>
+
+  <h2><span class="num">9.</span>Références</h2>
+  <ol class="refs">
+    <li>H. Lebesgue, lettre à J. Pál, 1914 ; J. Pál, <em>Über ein elementares Variationsproblem</em>, 1920.</li>
+    <li>R. Sprague, <em>Über ein elementares Variationsproblem</em>, Matematisk Tidsskrift B, 1936.</li>
+    <li>P. Brass, M. Sharifi, <em>A lower bound for Lebesgue's universal cover problem</em>, Int. J. Comput. Geom. Appl., 2005.</li>
+    <li>J. C. Baez, K. Bagdasaryan, P. Gibbs, <em>The Lebesgue universal covering problem</em>, arXiv:1502.01251, 2015.</li>
+    <li>P. Gibbs, <em>An upper bound for Lebesgue's covering problem</em>, arXiv:1810.10089, 2018.</li>
+    <li>N. Xie, <em>A certified lower bound for Lebesgue's universal cover problem</em>, arXiv:2606.04458, 2026.</li>
+  </ol>
+
+  <p class="foot">Document de travail — version du 12 août 2026. Contact : nicolas@comptoiria.com.</p>
+</main>
