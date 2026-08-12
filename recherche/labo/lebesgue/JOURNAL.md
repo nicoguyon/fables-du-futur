@@ -44,3 +44,29 @@ cible de record.
    mixtes des formes ; pourrait donner des minorations analytiques par
    boîte de paramètres, plus fortes que Lipschitz, et accélérer le
    branch-and-bound d'un facteur important.
+
+## Séance 2 (12 août 2026) — la chasse
+
+Balayage des cocktails (explorateur v2, 120 départs, bruit estimé ~1e-5
+via le test de monotonie : le jeu à 5 formes sort 1e-5 SOUS son
+sous-ensemble à 4, ce qui borne l'erreur d'optimisation) :
+
+| jeu | min numérique |
+|---|---|
+| xie3 (record à battre) | 0.8335968 |
+| xie3+carre | 0.8336021 |
+| xie3+reuleaux3 | 0.8338548 |
+| xie3+reuleaux3+carre | 0.8338447 |
+| xie3+reuleaux5 | 0.8346870 |
+| **xie3+heptagone** | **0.8351916** |
+
+Deux signaux réels (100x le bruit) : le pentagone de Reuleaux (+0.0011)
+et surtout l'HEPTAGONE RÉGULIER de diamètre 1 (+0.0016). Intuition : sa
+largeur ~0.975 dans toutes les directions le rend incompressible dans
+l'enveloppe du trio de Xie. À tester : nonagone (largeur ~0.985),
+hendécagone — il doit exister un optimum entre « trop pointu » (rentre
+dans les coins) et « trop rond » (devient le disque).
+
+Attaque en cours : 500 départs sur les deux champions pour tenter de
+faire TOMBER leurs minimums (honnêteté : un min élevé peut être un échec
+d'optimisation). Ce qui survit = cible de certification.

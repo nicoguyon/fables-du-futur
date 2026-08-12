@@ -17,6 +17,7 @@ disque 2048 points, tolérances serrées). Discrétisations inscrites
 Usage : python3 bornes_inf.py [nom_de_jeu ...]   (défaut : balayage)
 """
 import math
+import os
 import sys
 from multiprocessing import Pool
 
@@ -109,7 +110,9 @@ def _un_depart(arg):
     return float(res.fun), res.x
 
 
-def minimise(noms_formes, essais=120, graine=0, procs=4):
+def minimise(noms_formes, essais=None, graine=0, procs=4):
+    if essais is None:
+        essais = int(os.environ.get("ESSAIS", "120"))
     """Deux étages. noms_formes : liste de fabriques (nom, kwargs grossier/fin)."""
     rng = np.random.default_rng(graine)
     formes_g = [FABRIQUES[n](fin=False) for n in noms_formes]
@@ -145,6 +148,8 @@ FABRIQUES = {
     "pentagone": lambda fin: pentagone(),
     "carre": lambda fin: carre(),
     "heptagone": lambda fin: polygone_regulier(7),
+    "nonagone": lambda fin: polygone_regulier(9),
+    "hendecagone": lambda fin: polygone_regulier(11),
     "reuleaux3": lambda fin: reuleaux(3, 360 if fin else 120),
     "reuleaux5": lambda fin: reuleaux(5, 220 if fin else 80),
     "reuleaux7": lambda fin: reuleaux(7, 160 if fin else 60),
@@ -158,6 +163,10 @@ JEUX = {
     "xie3+heptagone": ["disque", "triangle", "pentagone", "heptagone"],
     "brass-sharifi": ["disque", "reuleaux3"],
     "xie3+reuleaux3+carre": ["disque", "triangle", "pentagone", "reuleaux3", "carre"],
+    "xie3+nonagone": ["disque", "triangle", "pentagone", "nonagone"],
+    "xie3+hendecagone": ["disque", "triangle", "pentagone", "hendecagone"],
+    "xie3+heptagone+reuleaux5": ["disque", "triangle", "pentagone", "heptagone", "reuleaux5"],
+    "sans-disque": ["heptagone", "triangle", "pentagone"],
 }
 
 if __name__ == "__main__":
