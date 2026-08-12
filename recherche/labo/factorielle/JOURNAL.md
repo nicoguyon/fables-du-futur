@@ -38,5 +38,13 @@ OEIS A034258 (t(N), Guy–Selfridge, arXiv:2503.20170) ? Existe-t-il du
 code public ? Comment l'allocation des facteurs 2 et 3 y est-elle
 optimisée ? »
 
+**v6 (réparation par dons)** : partir de la meilleure construction et
+tenter t+1 en déplaçant des premiers des bacs excédentaires vers les
+déficitaires. Résultat : aucun gain — la solution gloutonne n'a pas de
+mou (à N=1000, presque tous les bacs sont exactement à t, les donneurs
+manquent). Confirme que l'écart est STRUCTUREL : le glouton gaspille la
+colle 2/3 en dépassements, il faut une allocation globale exacte (v7 :
+matching/DP à coût minimal, ou l'algorithme du papier de Tao et al.).
+
 **Règle inchangée** : toute construction est revérifiée en exact
 (produit == N!, bigint) inline ET par `verifier.py` avant toute annonce.

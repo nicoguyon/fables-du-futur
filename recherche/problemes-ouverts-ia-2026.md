@@ -55,6 +55,14 @@ Plus dur à vérifier sans labo, mais il existe des records numériques vérifia
 1. **Piste principale (A2 + A4/A5)** : choisir 2–3 problèmes du dépôt AlphaEvolve (ou de type Erdős combinatoire) avec vérificateur fourni, reproduire le record actuel, puis lancer une boucle de recherche type AlphaEvolve (Claude écrit et fait évoluer des heuristiques, on calcule, on vérifie). Résultat espéré : battre un record documenté → contribution publiable immédiatement (le certificat parle de lui-même).
 2. **Piste parallèle (B1)** : chasse bibliographique sur ~20 problèmes Erdős « ouverts » peu regardés. Coût faible, et chaque trouvaille est une contribution officielle créditée.
 
+## 3 bis. La niche française 🇫🇷
+
+Travailler sur des problèmes posés par des mathématiciens français — un style, et une niche moins disputée :
+
+- **⭐ Le problème de la couverture universelle de Lebesgue (1914)** — Henri Lebesgue demande, dans une lettre à Pál : quelle est la plus petite surface convexe capable de recouvrir *n'importe quelle* forme de diamètre 1 ? Cent dix ans plus tard, on sait seulement que la réponse est entre **0.832** (borne inférieure, Brass–Sharifi) et **0.8440935944** (meilleure couverture connue, Gibbs). Trois arguments massifs pour nous : (1) énoncé compréhensible par n'importe qui avec un dessin ; (2) le détenteur du record, Philip Gibbs, est un **physicien indépendant, pas un académique** — la preuve que des outsiders y contribuent ; (3) le progrès se fait par grignotage numérique (raboter des coins de la couverture et certifier le calcul géométrique) — exactement notre méthode. Encore actif (papier de décembre 2025 sur la version asymptotique).
+- **Le problème de Syracuse** (nom français de la conjecture de Collatz) : à éviter malgré le nom — aucune prise connue.
+- Candidature à creuser plus tard : bornes du nombre chromatique du plan (Hadwiger–Nelson) — pas français, mais le précédent y est encore plus fort (Aubrey de Grey, amateur, a fait sauter la borne en 2018 avec un certificat vérifiable par SAT).
+
 ## 4. Protocole (anti-erreur, avec GPT-5 en second avis)
 
 1. **Sélection** : ne retenir un problème que s'il a (a) un vérificateur automatisable en < 100 lignes, (b) un record actuel documenté et daté, (c) un espace de recherche attaquable sans méga-GPU.
