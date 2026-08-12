@@ -70,3 +70,11 @@ dans les coins) et « trop rond » (devient le disque).
 Attaque en cours : 500 départs sur les deux champions pour tenter de
 faire TOMBER leurs minimums (honnêteté : un min élevé peut être un échec
 d'optimisation). Ce qui survit = cible de certification.
+
+**Verdict de l'attaque à 500 départs** : l'heptagone TOMBE de 0.8351916
+à 0.8343338 (le run à 120 départs avait raté un meilleur placement — la
+méthode d'attaque fonctionne). Le pentagone de Reuleaux tient presque :
+0.8346870 -> 0.8345678. Nouveau champion : **xie3+reuleaux5 =
+0.8345678** (+0.0010 vs xie3, ~70x le bruit). Batch de durcissement
+lancé : baseline xie3 à 500 départs (fair-play), champion à 2000
+départs, nonagone/hendécagone à 300.
