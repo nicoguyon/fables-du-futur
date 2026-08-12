@@ -96,3 +96,31 @@ des placements (9 paramètres, quotienté par les symétries), minoration
 par boîte via polygones témoins intérieurs + arithmétique d'intervalles.
 Objectif : prouver « toute couverture universelle convexe a une aire
 >= 0.834 », ce qui améliorerait le record de Xie (0.833).
+
+## Séance 3 (12 août 2026) — le moteur de certification
+
+**Jalon majeur : la certification fonctionne.** `certifie.py` (v1) prouve
+par séparation-évaluation que pour toute isométrie σ,
+aire(conv(D ∪ σ·Reuleaux₃)) >= 0.825 (min numérique : 0.82571).
+1822 boîtes certifiées en 9.7 s. Structure de la preuve :
+- réductions exactes à la main : quotient par rotation globale (le
+  disque est invariant), réflexions couvertes par symétrie axiale,
+  lemme « loin » analytique pour |t| >= 0.9 ;
+- séparation-évaluation sur les translations avec, par boîte, un
+  polygone témoin de points CERTAINS (appartenant à la forme pour tout
+  placement de la boîte — test exact par coins de boîte, car le Reuleaux
+  est une intersection de 3 disques et le max d'une fonction convexe sur
+  un rectangle est atteint en un coin) ;
+- leçon d'implémentation : les témoins doivent être rétractés le long de
+  la NORMALE de leur arc (vers le centre de l'arc), pas radialement —
+  sinon un quart des témoins meurent et la borne s'effondre de 4e-2.
+
+Restant pour viser le record (0.834 avec le jeu à 4 formes) :
+1. intervalles de ROTATION (cos/sin encadrés) pour triangle/pentagone —
+   le disque n'a pas de rotation, le quotient n'en supprime qu'une ;
+2. passage de 2 à 8 dimensions de paramètres : découpage hiérarchique,
+   vectorisation, et minorants « loin » par paire de formes ;
+3. durcissement arithmétique (rationnels exacts ou arrondi dirigé) pour
+   la version publiable.
+Estimation honnête : c'est le gros morceau — mais la brique de base
+tourne, et vite.
