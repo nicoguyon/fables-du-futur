@@ -30,6 +30,7 @@ Minorant par boîte : aire de l'enveloppe convexe des points certains de
 toutes les formes (celle-ci est incluse dans conv(∪σᵢFᵢ) pour TOUT
 placement de la boîte), moins une marge flottante.
 """
+import json
 import math
 import os
 import sys
@@ -256,15 +257,26 @@ class Probleme:
             return meilleurs
         return max(meilleurs, ConvexHull(pts).volume - MARGE_FLOTTANTE)
 
-    def certifie(self, taille_min=2e-5, budget_s=None, rapport=200000, pile_init=None):
+    def certifie(self, taille_min=2e-5, budget_s=None, rapport=200000, pile_init=None,
+                 chemin_ckpt=None):
         boite0 = tuple((lo, hi) for (_, _, lo, hi) in self.dims)
         pile = list(pile_init) if pile_init is not None else [boite0]
         t0 = time.time()
+        dernier_ckpt = t0
         pire = math.inf
         while pile:
-            if budget_s and time.time() - t0 > budget_s:
+            maintenant = time.time()
+            if chemin_ckpt and maintenant - dernier_ckpt > 60:
+                json.dump({"L": self.L, "pile": pile, "boites_faites": self.n_ok},
+                          open(chemin_ckpt, "w"))
+                dernier_ckpt = maintenant
+            if budget_s and maintenant - t0 > budget_s:
+                if chemin_ckpt:
+                    json.dump({"L": self.L, "pile": pile, "boites_faites": self.n_ok},
+                              open(chemin_ckpt, "w"))
                 return {"succes": False, "raison": "budget temps", "restantes": len(pile),
-                        "boites": self.n_ok, "secondes": round(time.time() - t0, 1)}
+                        "boites": self.n_ok, "ckpt": chemin_ckpt,
+                        "secondes": round(maintenant - t0, 1)}
             boite = pile.pop()
             lb = self._borne(boite)
             if lb >= self.L:
@@ -282,6 +294,8 @@ class Probleme:
             self.n_split += 1
             pile.append(b1)
             pile.append(b2)
+        if chemin_ckpt and os.path.exists(chemin_ckpt):
+            os.remove(chemin_ckpt)
         return {"succes": True, "L": self.L, "boites": self.n_ok,
                 "decoupes": self.n_split, "pire_borne": pire,
                 "secondes": round(time.time() - t0, 1)}
@@ -304,7 +318,9 @@ PROBLEMES = {
 def _travailleur(args):
     nom, boites, budget, graine = args
     pb = PROBLEMES[nom]()
-    return pb.certifie(budget_s=budget, pile_init=boites, rapport=10**9)
+    ckpt = f"ckpt_{nom}_{graine}.json"
+    return pb.certifie(budget_s=budget, pile_init=boites, rapport=10**9,
+                       chemin_ckpt=ckpt)
 
 
 def certifie_parallele(nom, procs=4, budget_s=None):
@@ -312,12 +328,27 @@ def certifie_parallele(nom, procs=4, budget_s=None):
     Succès ssi TOUS les lots certifient (l'union des lots couvre la racine)."""
     from multiprocessing import Pool
     pb = PROBLEMES[nom]()
-    boites = [tuple((lo, hi) for (_, _, lo, hi) in pb.dims)]
-    while len(boites) < procs * 16:
-        b = boites.pop(0)
-        b1, b2, _ = pb._decoupe(b)
-        boites.extend([b1, b2])
-    lots = [(nom, boites[i::procs], budget_s, i) for i in range(procs)]
+    lots = None
+    if os.environ.get("RESUME") == "1":
+        piles = []
+        for i in range(procs):
+            ck = f"ckpt_{nom}_{i}.json"
+            if os.path.exists(ck):
+                piles.append([tuple(tuple(iv) for iv in b)
+                              for b in json.load(open(ck))["pile"]])
+            else:
+                piles.append([])
+        if any(piles):
+            lots = [(nom, piles[i], budget_s, i) for i in range(procs) if piles[i]]
+            print(f"[reprise] {sum(len(p) for p in piles)} boîtes restantes "
+                  f"depuis les checkpoints", flush=True)
+    if lots is None:
+        boites = [tuple((lo, hi) for (_, _, lo, hi) in pb.dims)]
+        while len(boites) < procs * 16:
+            b = boites.pop(0)
+            b1, b2, _ = pb._decoupe(b)
+            boites.extend([b1, b2])
+        lots = [(nom, boites[i::procs], budget_s, i) for i in range(procs)]
     t0 = time.time()
     with Pool(procs) as pool:
         resultats = pool.map(_travailleur, lots)
