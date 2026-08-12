@@ -159,7 +159,7 @@
   <h1>Minorations numériques pour le problème de la couverture universelle de Lebesgue</h1>
   <p class="byline">Nicolas Guyon (Comptoir IA), avec l'assistance de Claude (Anthropic) pour la conception des algorithmes et l'exécution des calculs.</p>
   <p class="byline">12 août 2026 · calculs reproductibles, code public</p>
-  <div class="statut"><strong>Statut.</strong> Ce document présente une <em>cible numérique reproductible</em>, pas un résultat certifié. Le passage du minimum numérique (§5) à une borne inférieure prouvée exige l'étape de certification décrite au §6, qui n'est pas encore réalisée. Toute relecture critique est bienvenue.</div>
+  <div class="statut"><strong>Statut.</strong> Ce document présente une <em>cible numérique reproductible</em> (§5), pas encore une borne certifiée. Le moteur de certification est opérationnel et validé sur un cas d'école (§6) ; son passage à l'échelle du jeu de quatre formes est en cours. Toute relecture critique est bienvenue.</div>
 
   <h2><span class="num">1.</span>Le problème</h2>
   <p>Lebesgue (lettre à Pál, 1914) : déterminer
@@ -240,7 +240,8 @@
   <p>Le fait saillant : l'ajout du <strong>pentagone de Reuleaux</strong> au jeu de Xie porte le minimum numérique à <strong>0.834574</strong>, un gain d'environ 10⁻³ sur la valeur du jeu de Xie — cent fois l'erreur d'optimisation mesurée — qui a résisté à 2000 relances indépendantes. Si ce minimum se certifie, la borne inférieure du problème passerait de 0.833 à ≈ 0.8345.</p>
 
   <h2><span class="num">6.</span>De la cible à la borne : le chantier de certification</h2>
-  <p>Il faut prouver que <em>tout</em> placement des quatre formes donne une enveloppe d'aire ≥ 0.834, et non seulement qu'aucun placement trouvé ne fait mieux. Le schéma envisagé, calqué sur celui de Xie : quotienter le domaine des 9 paramètres par les symétries ; le découper en boîtes par séparation-évaluation ; minorer l'aire sur chaque boîte par un <em>polygone témoin intérieur</em> (un polygone contenu dans l'enveloppe pour tous les placements de la boîte, dont l'aire se calcule en arithmétique d'intervalles) ; raffiner près du minimiseur. Les majorations de Lipschitz (l'aire varie d'au plus ~3δ pour un déplacement δ) bornent le coût du découpage.</p>
+  <p>Il faut prouver que <em>tout</em> placement des quatre formes donne une enveloppe d'aire ≥ 0.834, et non seulement qu'aucun placement trouvé ne fait mieux. Le schéma, calqué sur celui de Xie : quotienter le domaine des paramètres par les symétries ; le découper en boîtes par séparation-évaluation ; minorer l'aire sur chaque boîte par un <em>polygone témoin intérieur</em> ; raffiner près du minimiseur.</p>
+  <p><strong>Premier jalon réalisé.</strong> Un moteur de certification v1 (<code>certifie.py</code>, ~160 lignes) est opérationnel et validé sur le cas d'école à deux formes : il démontre que pour toute isométrie <span class="math">σ</span>, aire(conv(<span class="math">D</span> ∪ <span class="math">σR₃</span>)) ≥ 0.825, où <span class="math">D</span> est le disque et <span class="math">R₃</span> le triangle de Reuleaux (minimum numérique : 0.82571). La preuve combine des réductions de symétrie démontrées à la main (quotient par rotation globale, réflexions, lemme analytique pour les placements éloignés) et 1 822 boîtes certifiées en 9.7 s par polygones de points <em>certains</em> — points dont l'appartenance à la forme pour <em>tous</em> les placements d'une boîte se teste exactement, le maximum d'une fonction convexe sur un rectangle étant atteint en un coin. Réserve déclarée : l'arithmétique est flottante avec marges de sécurité explicites ; le durcissement en rationnels exacts est prévu. Restent, pour le jeu de quatre formes : les intervalles de rotation (encadrements de cos/sin) et le passage de 2 à 8 dimensions de paramètres — le morceau difficile.</p>
 
   <h2><span class="num">7.</span>Questions ouvertes — points sur lesquels un avis expert serait précieux</h2>
   <ol class="questions">
@@ -251,7 +252,7 @@
   </ol>
 
   <h2><span class="num">8.</span>Reproductibilité</h2>
-  <p>L'explorateur complet tient en ~180 lignes de Python (numpy, scipy) : <code>bornes_inf.py</code>, dans le dépôt public du projet, avec le journal de bord daté de chaque expérience. Chaque valeur du §5 se reproduit en minutes sur une machine à 4 cœurs, par exemple <code>ESSAIS=500 python3 bornes_inf.py xie3+reuleaux5</code>. Les auteurs signalent avec transparence que la conception des algorithmes et les calculs ont été menés avec un assistant IA ; toutes les affirmations mathématiques du présent document sont élémentaires et vérifiables à la main, et aucune valeur numérique n'est présentée comme certifiée.</p>
+  <p>L'explorateur (<code>bornes_inf.py</code>, ~180 lignes de Python — numpy, scipy) et le certificateur (<code>certifie.py</code>) sont dans le dépôt public du projet, avec le journal de bord daté de chaque expérience. Chaque valeur du §5 se reproduit en minutes sur une machine à 4 cœurs, par exemple <code>ESSAIS=500 python3 bornes_inf.py xie3+reuleaux5</code>. Les auteurs signalent avec transparence que la conception des algorithmes et les calculs ont été menés avec un assistant IA ; toutes les affirmations mathématiques du présent document sont élémentaires et vérifiables à la main, et aucune valeur numérique n'est présentée comme certifiée.</p>
 
   <h2><span class="num">9.</span>Références</h2>
   <ol class="refs">
