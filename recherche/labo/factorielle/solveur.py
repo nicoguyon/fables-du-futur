@@ -172,18 +172,85 @@ def construit_cofacteur(n, t, exp):
 STRATEGIES = (construit, construit_cofacteur)
 
 
+def factorise_petit(x):
+    """Factorise un entier en petits premiers (les facteurs sont <= N)."""
+    fs = []
+    d = 2
+    while d * d <= x:
+        while x % d == 0:
+            fs.append(d)
+            x //= d
+        d += 1
+    if x > 1:
+        fs.append(x)
+    return fs
+
+
+def repare_vers(n, t, facteurs, rondes_max=None):
+    """Tente de rendre tous les facteurs >= t en déplaçant des premiers
+    des bacs excédentaires (qui restent >= t après don) vers les bacs
+    déficitaires. Rend la nouvelle liste de facteurs ou None si blocage."""
+    bacs = [sorted(factorise_petit(f)) for f in facteurs]
+    vals = [f for f in facteurs]
+    if rondes_max is None:
+        rondes_max = 20 * n
+    for _ in range(rondes_max):
+        i_min = min(range(n), key=lambda i: vals[i])
+        if vals[i_min] >= t:
+            return vals
+        deficit = (t + vals[i_min] - 1) // vals[i_min]
+        # candidats : (p, j) retirables (bac j reste >= t sans p)
+        juste = None   # plus petit p >= deficit
+        gros = None    # plus gros p toutes catégories (si aucun ne suffit)
+        for j in range(n):
+            if j == i_min:
+                continue
+            vj = vals[j]
+            for p in bacs[j]:
+                if vj // p < t:
+                    break  # bacs triés croissants : les suivants sont plus gros
+                if p >= deficit:
+                    if juste is None or p < juste[0]:
+                        juste = (p, j)
+                    break  # inutile de regarder plus gros dans ce bac
+                if gros is None or p > gros[0]:
+                    gros = (p, j)
+        choix = juste or gros
+        if choix is None:
+            return None
+        p, j = choix
+        bacs[j].remove(p)
+        vals[j] //= p
+        bisect.insort(bacs[i_min], p)
+        vals[i_min] *= p
+    return None
+
+
 def meilleur_t(n, exp=None, t_max=None):
-    """Balayage descendant ; à chaque t on tente toutes les stratégies."""
+    """Balayage descendant + phase de réparation pour grappiller au-delà."""
     if exp is None:
         exp = primes_de_factorielle(n)
     if t_max is None:
         t_max = int(n / math.e) + 2
+    base = None
     for t in range(t_max, 0, -1):
         for strat in STRATEGIES:
             f = strat(n, t, exp)
             if f is not None:
-                return t, f
-    return 1, None
+                base = (t, f)
+                break
+        if base:
+            break
+    if base is None:
+        return 1, None
+    t, f = base
+    # réparation : tente t+1, t+2... tant que ça passe
+    while True:
+        f2 = repare_vers(n, t + 1, f)
+        if f2 is None:
+            return t, f
+        t += 1
+        f = f2
 
 
 if __name__ == "__main__":
