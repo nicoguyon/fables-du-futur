@@ -36,6 +36,7 @@ meilleure optimisation, puis certification.
 |---|---|---|
 | disque seul | 0.785397 | π/4 = 0.785398 ✅ |
 | disque + Reuleaux | 0.825711 | (l'argument Brass–Sharifi 0.832 utilise plus que l'enveloppe seule) |
+| disque + triangle + pentagone | **0.8335968** | reproduit le record de Xie (0.833 certifié, juin 2026) ✅ |
 
 ## Garde-fous
 
