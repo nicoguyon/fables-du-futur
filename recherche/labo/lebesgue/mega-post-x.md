@@ -12,7 +12,8 @@ Le déclic : il y a 4 jours, un ingénieur d'Anthropic (pas matheux du tout) a d
 
 **3/12**
 Alors je me suis dit : et si un amateur français faisait pareil, en public, sur un problème français ?
-Mon choix : la couverture universelle de LEBESGUE (1914). Quelle est la plus petite surface convexe qui peut recouvrir n'importe quelle forme de 1 m d'envergure ? Réponse inconnue depuis 112 ans : entre 0.833 et 0.845.
+Mon choix, expliqué comme à un enfant : tu as plein de biscuits de formes différentes — ronds, triangles, étoiles — mais tous tiennent dans ta main. Quelle est la PLUS PETITE boîte qui peut ranger n'importe lequel d'entre eux ?
+C'est la question posée par Henri Lebesgue en 1914. Personne n'a la réponse depuis 112 ans.
 
 **4/12**
 La méthode de l'expérience :
@@ -23,7 +24,7 @@ La méthode de l'expérience :
 Tout est public, tout se reproduit en minutes.
 
 **5/12**
-Où on en est après 48 h, en toute transparence :
+Où on en est après 48 h, en toute transparence (règle de la maison : on explique tout simplement, et on ne prétend JAMAIS plus que ce qu'on a) :
 ✅ méthode du record reproduite (0.8336 ≈ le 0.833 certifié de Xie, juin 2026)
 ✅ un candidat : ajouter un pentagone de Reuleaux pousse le plancher potentiel à 0.8346
 ⏳ certification en cours (des milliards de configurations à écarter)
@@ -33,8 +34,9 @@ Où on en est après 48 h, en toute transparence :
 Le croisement d'IA a déjà payé : GPT-5 a attrapé une vraie erreur d'énoncé chez nous (une valeur atteignable présentée comme une borne), on a corrigé publiquement. Et nous, on a vérifié ses références sur pièces : deux confirmées, une introuvable — écartée. Les IA se surveillent mutuellement, les humains arbitrent.
 
 **7/12**
-Et ce matin, l'expérience a produit sa première vraie CONJECTURE de mathématicien :
-l'aire de l'enveloppe convexe de formes qui se déplacent semble CONVEXE en leurs translations, localement (0 violation sur 300 tests dans le régime critique, des violations à grande amplitude).
+Et ce matin, l'expérience a produit sa première vraie CONJECTURE.
+Version enfant : quand tu écartes deux jouets posés sur une nappe, la nappe qu'il faut pour les couvrir tous les deux grandit toujours « en accélérant », jamais par à-coups vers le bas.
+Version matheux : l'aire de l'enveloppe convexe semble CONVEXE en les translations, localement (0 violation sur 300 tests dans le régime critique).
 Si ce lemme tient → le coût de la preuve s'effondre d'un facteur ~10 000.
 
 **8/12**
