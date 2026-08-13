@@ -156,10 +156,10 @@
 </style>
 <main>
   <p class="eyebrow">Note de recherche · travail exploratoire</p>
-  <h1>Minorations numériques pour le problème de la couverture universelle de Lebesgue</h1>
+  <h1>Exploration numérique de familles-tests pour la couverture universelle de Lebesgue, et stratégie de certification</h1>
   <p class="byline">Nicolas Guyon (Comptoir IA), avec l'assistance de Claude (Anthropic) pour la conception des algorithmes et l'exécution des calculs.</p>
-  <p class="byline">12 août 2026 · calculs reproductibles, code public</p>
-  <div class="statut"><strong>Statut.</strong> Ce document présente une <em>cible numérique reproductible</em> (§5), pas encore une borne certifiée. Le moteur de certification est opérationnel et validé sur un cas d'école (§6) ; son passage à l'échelle du jeu de quatre formes est en cours. Toute relecture critique est bienvenue.</div>
+  <p class="byline">13 août 2026 (v2, après revue adversariale externe) · calculs reproductibles, code public</p>
+  <div class="statut"><strong>Statut (reformulé après revue).</strong> Cette note rapporte une exploration numérique de familles finies d'ensembles-tests. La valeur 0.834574 est la <em>meilleure aire réalisable observée</em> pour notre famille à quatre tests : un <em>candidat</em> pour le minimum global de ce sous-problème — pas une minoration de α. L'objectif est de certifier le seuil <strong>0.834</strong> par subdivision exhaustive du domaine des placements. Le schéma de certification a été validé numériquement sur un problème à deux formes ; son passage à une arithmétique rigoureuse et aux dimensions supérieures est en cours. Toute relecture critique est bienvenue — la présente version intègre déjà une revue adversariale externe.</div>
 
   <h2><span class="num">1.</span>Le problème</h2>
   <p>Lebesgue (lettre à Pál, 1914) : déterminer
@@ -186,10 +186,10 @@
         <text x="341.85" y="49" text-anchor="middle" dominant-baseline="middle" font-style="italic">α est ici</text>
       </g>
       <g fill="var(--accent)" font-family="-apple-system, Segoe UI, Roboto, sans-serif" font-size="12.5" font-weight="600">
-        <text x="189.0" y="20">0.83457 — notre cible</text>
+        <text x="189.0" y="20">0.83457 — candidat (à certifier)</text>
       </g>
     </svg>
-    <figcaption>L'encadrement du problème : la réponse α vit entre le plancher certifié (0.833, Xie) et le plafond construit (0.84409, Gibbs). Notre cible numérique (pointillés) relèverait le plancher d'un millième.</figcaption>
+    <figcaption>L'encadrement du problème : la réponse α vit entre le plancher certifié (0.833, Xie) et le plafond construit (0.84409, Gibbs). Notre candidat numérique (pointillés) — s'il se certifie — relèverait le plancher d'un millième.</figcaption>
   </figure>
 
 
@@ -201,12 +201,14 @@
       <tr><td>1920</td><td>Pál</td><td>majorant</td><td>2 − 2/√3 ≈ 0.845299</td></tr>
       <tr><td>1936</td><td>Sprague</td><td>majorant</td><td>0.844137708…</td></tr>
       <tr><td>1992</td><td>Hansen</td><td>majorant</td><td>amélioration infime</td></tr>
-      <tr><td>2015</td><td>Baez, Bagdasaryan, Gibbs</td><td>majorant</td><td>0.8441153</td></tr>
-      <tr><td>2018</td><td>Gibbs</td><td>majorant</td><td>0.8440935944 (prépublication)</td></tr>
-      <tr><td>2005</td><td>Brass, Sharifi</td><td>minorant</td><td>0.832</td></tr>
-      <tr><td>2026</td><td>Xie</td><td>minorant</td><td>0.833 (certifié)</td></tr>
+      <tr><td>2015</td><td>Baez, Bagdasaryan, Gibbs</td><td>majorant publié</td><td>0.8441153</td></tr>
+      <tr><td>2018</td><td>Gibbs</td><td>majorant (prépublication)</td><td>0.8440935944</td></tr>
+      <tr><td>1994</td><td>Elekes</td><td>minorant (famille certifiée)</td><td>0.8271</td></tr>
+      <tr><td>2005</td><td>Brass, Sharifi</td><td>minorant publié</td><td>0.832</td></tr>
+      <tr><td>2014</td><td>Gibbs</td><td>exploration empirique</td><td>0.83699098 (recuit, 5 formes, non certifié)</td></tr>
+      <tr><td>2026</td><td>Xie</td><td>minorant (prépublication)</td><td>0.833</td></tr>
     </tbody>
-    <caption>Repères principaux. Les majorants procèdent par ablation de coins d'un hexagone régulier de largeur 1 ; les minorants par la méthode des formes-tests (§3).</caption>
+    <caption>L'état de l'art se lit sur deux étages : résultats évalués par les pairs (0.832 ≤ α ≤ 0.8441153) et prépublications comprises (0.833 ≤ α ≤ 0.8440935944). L'exploration heuristique de familles-tests n'est pas nouvelle : Gibbs (2014) atteignait déjà 0.83699 avec cercle + polygones de Reuleaux à 3, 5, 7, 9 côtés — sans certification. Aucune famille n'a été certifiée au-dessus de 0.833 : c'est là que se joue notre contribution.</caption>
   </table>
   </div>
 
@@ -221,8 +223,8 @@
 
   <h2><span class="num">4.</span>Protocole numérique</h2>
   <p>Nous estimons le minimum du lemme par optimisation multi-départs (Nelder–Mead, deux étages : 120 à 2000 départs aléatoires grossiers, puis raffinage des meilleurs candidats), en Python (numpy/scipy), sur des formes discrétisées par des polygones <em>inscrits</em>. Trois garde-fous :</p>
-  <p><em>Sens des erreurs.</em> Un polygone inscrit est inclus dans la forme exacte ; le minimum calculé sous-estime donc le minimum exact — le sens prudent pour une minoration annoncée.</p>
-  <p><em>Calibration du bruit.</em> L'ajout d'une forme ne peut mathématiquement pas faire baisser le minimum ; l'écart négatif observé entre un jeu de 5 formes et son sous-ensemble de 4 (−1.0 × 10⁻⁵) fournit une mesure directe de l'erreur d'optimisation.</p>
+  <p><em>Sens des erreurs (corrigé après revue).</em> Deux erreurs jouent en sens opposés : la discrétisation inscrite tire la valeur vers le bas, l'écart d'optimisation locale la tire vers le haut. La valeur rapportée est donc un <em>candidat</em> pour le minimum du sous-problème fini, sans encadrement garanti — seule la certification (§6) tranche. Pour la version rigoureuse, les polygones inscrits seront redéfinis comme <em>ensembles-tests exacts à coordonnées rationnelles</em> (toute partie de diamètre ≤ 1 est un test légitime), ce qui élimine la question de la discrétisation.</p>
+  <p><em>Plancher de bruit.</em> L'ajout d'une forme ne peut mathématiquement pas faire baisser le minimum ; l'écart négatif observé entre un jeu de 5 formes et son sous-ensemble de 4 (−1.0 × 10⁻⁵) prouve qu'au moins un de ces deux calculs est sous-optimal d'au moins 10⁻⁵ — un plancher d'erreur, pas un plafond. De même, 2000 relances mesurent la répétabilité du bassin trouvé, pas l'absence d'un bassin plus bas.</p>
   <p><em>Contradiction systématique.</em> Chaque valeur haute est « attaquée » par des relances massives destinées à la faire tomber (jusqu'à 2000 départs indépendants) ; l'heptagone régulier, initialement à 0.83519, est ainsi retombé à 0.83433 — la valeur retenue est toujours la plus basse jamais observée.</p>
 
   <h2><span class="num">5.</span>Résultats</h2>
@@ -233,7 +235,7 @@
       <tr><td>disque seul</td><td>0.785397</td><td>π/4 = 0.785398 (exact)</td></tr>
       <tr><td>disque + triangle de Reuleaux</td><td>0.825711</td><td>cohérent avec Pál</td></tr>
       <tr><td>disque + triangle + pentagone (jeu de Xie)</td><td>0.833597</td><td>cohérent avec le 0.833 certifié</td></tr>
-      <tr><td>jeu de Xie + carré (diagonale 1)</td><td>0.833602</td><td>gain nul : le carré est absorbé</td></tr>
+      <tr><td>jeu de Xie + carré (diagonale 1)</td><td>0.833602</td><td>gain exactement nul (fait exact : le carré de diagonale 1 est inscrit dans le disque) — l'écart +5×10⁻⁶ calibre le pipeline</td></tr>
       <tr><td>jeu de Xie + triangle de Reuleaux</td><td>0.833845</td><td>gain +2.5 × 10⁻⁴</td></tr>
       <tr><td>jeu de Xie + heptagone régulier</td><td>0.834334</td><td>gain +7.4 × 10⁻⁴</td></tr>
       <tr><td>jeu de Xie + hendécagone régulier</td><td>0.834597</td><td>300 départs seulement</td></tr>
@@ -274,10 +276,11 @@
     </svg>
     <figcaption>Le pire embouteillage connu (données réelles du calcul, aire 0.8345731) : disque, triangle, pentagone et pentagone de Reuleaux (en bleu) dans leur placement optimal ; l'enveloppe convexe (pointillés) est la surface qu'aucune couverture ne peut éviter de contenir. C'est le pentagone de Reuleaux qui « déborde » et force l'enveloppe à grandir.</figcaption>
   </figure>
-  <p>Le fait saillant : l'ajout du <strong>pentagone de Reuleaux</strong> au jeu de Xie porte le minimum numérique à <strong>0.834574</strong>, un gain d'environ 10⁻³ sur la valeur du jeu de Xie — cent fois l'erreur d'optimisation mesurée — qui a résisté à 2000 relances indépendantes. Si ce minimum se certifie, la borne inférieure du problème passerait de 0.833 à ≈ 0.8345.</p>
+  <p>Le fait saillant : l'ajout du <strong>pentagone de Reuleaux</strong> au jeu de Xie porte la meilleure aire réalisable observée à <strong>0.834574</strong> (stable sur 2000 relances). Précédent important, signalé par la revue externe et vérifié sur le papier original : Gibbs (2014) avait déjà exploré les familles de Reuleaux et atteint 0.83699098 avec cinq formes — notre exploration redécouvre indépendamment cette veine. La contribution visée n'est donc pas la famille elle-même mais sa <strong>certification</strong> : prouver α ≥ 0.834 (seuil choisi pour laisser 5.7×10⁻⁴ de marge sous le candidat) dépasserait toute borne certifiée existante, prépublications comprises.</p>
 
   <h2><span class="num">6.</span>De la cible à la borne : le chantier de certification</h2>
-  <p>Il faut prouver que <em>tout</em> placement des quatre formes donne une enveloppe d'aire ≥ 0.834, et non seulement qu'aucun placement trouvé ne fait mieux. Le schéma, calqué sur celui de Xie : quotienter le domaine des paramètres par les symétries ; le découper en boîtes par séparation-évaluation ; minorer l'aire sur chaque boîte par un <em>polygone témoin intérieur</em> ; raffiner près du minimiseur.</p>
+  <p>Le théorème visé : <em>pour toute disposition des quatre ensembles-tests explicitement définis, l'aire de l'enveloppe convexe est au moins <strong>0.834</strong></em>. Le schéma : quotienter le domaine des paramètres par les symétries ; le découper en boîtes par séparation-évaluation ; minorer l'aire sur chaque boîte par un <em>polygone témoin intérieur</em> ; raffiner près du minimiseur. Deux améliorations issues de la revue externe sont intégrées à la feuille de route : l'attaque hiérarchique (réutiliser le pavage du problème à trois formes et ne développer les trois paramètres de la quatrième que sur les boîtes critiques) et, pour la version publiable, la substitution rationnelle t = tan(θ/2) qui élimine la trigonométrie flottante.</p>
+  <p><em>Point de rigueur (objection examinée et levée).</em> Le test des points certains ne se contente pas d'évaluer les extrémités des intervalles d'angles : le maximum intérieur du cosinus est traité explicitement, et le passage au maximum sur les coins du rectangle de translations est licite car, après maximisation en θ, la fonction de t est un supremum de fonctions convexes (linéaires ou quadratiques) de t — donc convexe, donc maximale en un coin.</p>
 
   <figure>
     <svg viewBox="-120 -125 240 250" role="img" aria-label="Points certains d'une boîte de placements" style="max-width:17rem;display:block;margin:0 auto;height:auto">
@@ -287,7 +290,7 @@
     </svg>
     <figcaption>Le cœur de la certification : pour une « boîte » de placements possibles (les quatre positions grises extrêmes), la zone bleue appartient à la forme <em>quel que soit</em> le placement dans la boîte — testé exactement, coin par coin. L'enveloppe de ces zones certaines minore l'aire pour toute la boîte d'un coup.</figcaption>
   </figure>
-  <p><strong>Premier jalon réalisé.</strong> Un moteur de certification v1 (<code>certifie.py</code>, ~160 lignes) est opérationnel et validé sur le cas d'école à deux formes : il démontre que pour toute isométrie <span class="math">σ</span>, aire(conv(<span class="math">D</span> ∪ <span class="math">σR₃</span>)) ≥ 0.825, où <span class="math">D</span> est le disque et <span class="math">R₃</span> le triangle de Reuleaux (minimum numérique : 0.82571). La preuve combine des réductions de symétrie démontrées à la main (quotient par rotation globale, réflexions, lemme analytique pour les placements éloignés) et 1 822 boîtes certifiées en 9.7 s par polygones de points <em>certains</em> — points dont l'appartenance à la forme pour <em>tous</em> les placements d'une boîte se teste exactement, le maximum d'une fonction convexe sur un rectangle étant atteint en un coin. Réserve déclarée : l'arithmétique est flottante avec marges de sécurité explicites ; le durcissement en rationnels exacts est prévu. Restent, pour le jeu de quatre formes : les intervalles de rotation (encadrements de cos/sin) et le passage de 2 à 8 dimensions de paramètres — le morceau difficile.</p>
+  <p><strong>Premier jalon réalisé.</strong> Un moteur de certification v1 (<code>certifie.py</code>, ~160 lignes) est opérationnel et validé sur le cas d'école à deux formes : il établit numériquement (flottants à marges explicites — le durcissement rationnel reste à faire avant de parler de preuve) que pour toute isométrie <span class="math">σ</span>, aire(conv(<span class="math">D</span> ∪ <span class="math">σR₃</span>)) ≥ 0.825, où <span class="math">D</span> est le disque et <span class="math">R₃</span> le triangle de Reuleaux (minimum numérique : 0.82571). La preuve combine des réductions de symétrie démontrées à la main (quotient par rotation globale, réflexions, lemme analytique pour les placements éloignés) et 1 822 boîtes certifiées en 9.7 s par polygones de points <em>certains</em> — points dont l'appartenance à la forme pour <em>tous</em> les placements d'une boîte se teste exactement, le maximum d'une fonction convexe sur un rectangle étant atteint en un coin. Réserve déclarée : l'arithmétique est flottante avec marges de sécurité explicites ; le durcissement en rationnels exacts est prévu. Restent, pour le jeu de quatre formes : les intervalles de rotation (encadrements de cos/sin) et le passage de 2 à 8 dimensions de paramètres — le morceau difficile.</p>
 
   <h2><span class="num">7.</span>Questions ouvertes — points sur lesquels un avis expert serait précieux</h2>
   <ol class="questions">
@@ -306,6 +309,8 @@
     <li>R. Sprague, <em>Über ein elementares Variationsproblem</em>, Matematisk Tidsskrift B, 1936.</li>
     <li>P. Brass, M. Sharifi, <em>A lower bound for Lebesgue's universal cover problem</em>, Int. J. Comput. Geom. Appl., 2005.</li>
     <li>J. C. Baez, K. Bagdasaryan, P. Gibbs, <em>The Lebesgue universal covering problem</em>, arXiv:1502.01251, 2015.</li>
+    <li>P. Gibbs, <em>A new slant on Lebesgue's universal covering problem</em>, arXiv:1401.8217, 2014 (exploration empirique de familles-tests, 0.83699098 avec 5 formes).</li>
+    <li>M. Elekes, borne inférieure certifiée 0.8271 (cercle + polygones de Reuleaux 3^j), 1994.</li>
     <li>P. Gibbs, <em>An upper bound for Lebesgue's covering problem</em>, arXiv:1810.10089, 2018.</li>
     <li>N. Xie, <em>A certified lower bound for Lebesgue's universal cover problem</em>, arXiv:2606.04458, 2026.</li>
   </ol>

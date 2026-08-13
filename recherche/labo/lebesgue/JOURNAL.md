@@ -124,3 +124,33 @@ Restant pour viser le record (0.834 avec le jeu à 4 formes) :
    la version publiable.
 Estimation honnête : c'est le gros morceau — mais la brique de base
 tourne, et vite.
+
+## Séance 4 (13 août 2026) — la revue adversariale (GPT-5) et ses suites
+
+Critique externe reçue et traitée point par point :
+- ACCEPTÉ (majeur) : nos formulations survendaient — 0.834574 est un
+  CANDIDAT pour le minimum du sous-problème fini (majorant de m(F)),
+  pas une « minoration numérique ». Titre et statut des deux notes
+  réécrits ; « sens prudent » retiré (les deux erreurs jouent en sens
+  opposés) ; monotonie = plancher d'erreur, pas plafond ; 2000 relances
+  = répétabilité d'un bassin.
+- ACCEPTÉ (exact) : le carré de diagonale 1 est inscrit dans le disque
+  => gain exactement nul ; notre +5e-6 est un artefact — désormais un
+  test de non-régression du pipeline.
+- VÉRIFIÉ ET CONFIRMÉ (précédent) : Gibbs 2014 (arXiv:1401.8217, §2) a
+  exploré cercle + Reuleaux 3/5/7/9 par recuit simulé -> 0.83699098,
+  avec le bon statut épistémique. Elekes 1994 : famille 3^j certifiée,
+  0.8271. Repositionnement : notre contribution est la CERTIFICATION
+  (> 0.833 jamais certifié), pas la famille. Famille de Gibbs ajoutée à
+  l'explorateur (reuleaux9, jeu gibbs5) — reproduction lancée.
+- NON CONFIRMÉ : « Gonzalez 2026 » (certification de l'aire de Gibbs,
+  marge 9.3e-12) — deux recherches ciblées sans résultat ; on ne cite pas.
+- RÉFUTÉ (avec argument) : « tester les extrémités d'un intervalle
+  d'angles n'est pas sûr » — notre test traite explicitement le pic
+  intérieur du cosinus, et après maximisation en θ la fonction de t est
+  un sup de fonctions convexes, donc convexe, donc maximale en un coin
+  du rectangle. Le schéma est sain ; consigné dans la note (§6).
+- ADOPTÉ (stratégie) : cible de théorème 0.834 (marge 5.7e-4) ; attaque
+  hiérarchique 5D -> extension 3D des boîtes critiques ; substitution
+  rationnelle t = tan(θ/2) pour la version publiable ; vérificateur
+  minuscule indépendant du générateur.

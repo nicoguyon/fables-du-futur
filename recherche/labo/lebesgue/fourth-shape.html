@@ -163,7 +163,7 @@
 
   <h2><span class="num">1.</span>Claim</h2>
   <p>Consider the test-shape method for lower bounds (Brass–Sharifi 2005; Xie 2026): any convex universal cover contains a congruent copy of each chosen shape of diameter 1, hence its area is at least the minimum, over all placements, of the area of the convex hull of their union. Xie certified 0.833 with three shapes: disk, equilateral triangle, regular pentagon (all of diameter 1).</p>
-  <p><strong>Adding the Reuleaux pentagon of width 1 as a fourth test shape raises this minimum to 0.834574&nbsp;±&nbsp;0.00001 (numerically).</strong> The gain over the three-shape minimum (0.833597 in our reproduction) is about 10⁻³ — roughly 100× our measured optimizer noise — and survived 2000 independent restarts.</p>
+  <p><strong>Adding the Reuleaux pentagon of width 1 as a fourth test shape raises the best achievable area we observed to 0.834574 (stable across 2000 restarts).</strong> Caveats, per the review: restarts measure basin repeatability, not the absence of a lower basin; the certification (branch-and-bound over all placements) is the sole arbiter, and a realistic certification target is <strong>0.834</strong> (margin 5.7×10⁻⁴ under the candidate). Richer families go higher still: Gibbs's five-shape family targets 0.83699.</p>
   <figure>
     <svg viewBox="-30 -10 700 120" role="img" aria-label="Encadrement du problème de Lebesgue" style="width:100%;height:auto">
       <rect x="120.0" y="34" width="443.70000000000005" height="22" fill="var(--panel)"/>
@@ -197,7 +197,7 @@
     <tbody>
       <tr><td>disk alone</td><td>0.785397</td><td>= π/4, exact sanity check</td></tr>
       <tr><td>disk + triangle + pentagon (Xie's set)</td><td>0.833597</td><td>consistent with his certified 0.833</td></tr>
-      <tr><td>+ square (diagonal 1)</td><td>0.833602</td><td>useless — absorbed by the hull</td></tr>
+      <tr><td>+ square (diagonal 1)</td><td>0.833602</td><td>exactly zero gain (the diagonal-1 square is inscribed in the disk); the +5×10⁻⁶ measured gap calibrates the pipeline</td></tr>
       <tr><td>+ Reuleaux triangle</td><td>0.833855</td><td>small gain</td></tr>
       <tr><td>+ regular heptagon</td><td>0.834334</td><td>good gain</td></tr>
       <tr><td>+ regular hendecagon</td><td>0.834597</td><td>promising, less hardened (300 restarts)</td></tr>
@@ -232,7 +232,9 @@
     <li>P. Brass, M. Sharifi, <em>A lower bound for Lebesgue's universal cover problem</em>, Int. J. Comput. Geom. Appl., 2005.</li>
     <li>N. Xie, <em>A certified lower bound for Lebesgue's universal cover problem</em>, arXiv:2606.04458, 2026.</li>
     <li>P. Gibbs, <em>An upper bound for Lebesgue's covering problem</em>, arXiv:1810.10089, 2018 (current upper bound 0.8440935944).</li>
-    <li>J. C. Baez, K. Bagdasaryan, P. Gibbs, <em>The Lebesgue universal covering problem</em>, arXiv:1502.01251, 2015.</li>
+    <li>J. C. Baez, K. Bagdasaryan, P. Gibbs, <em>The Lebesgue universal covering problem</em>, arXiv:1502.01251, 2015 (published upper bound 0.8441153).</li>
+    <li>P. Gibbs, <em>A new slant on Lebesgue's universal covering problem</em>, arXiv:1401.8217, 2014 — prior empirical test-family exploration: 0.83699098 with disk + Reuleaux 3, 5, 7, 9-gons.</li>
+    <li>M. Elekes, certified lower bound 0.8271 from disk + Reuleaux 3^j-gons, 1994.</li>
   </ol>
   <p class="foot">Working document, August 12, 2026. Contact: nicolas@comptoiria.com. AI assistance is used throughout and disclosed; every mathematical statement here is elementary and hand-checkable, and no numerical value is claimed as certified.</p>
 </main>

@@ -153,6 +153,7 @@ FABRIQUES = {
     "reuleaux3": lambda fin: reuleaux(3, 360 if fin else 120),
     "reuleaux5": lambda fin: reuleaux(5, 220 if fin else 80),
     "reuleaux7": lambda fin: reuleaux(7, 160 if fin else 60),
+    "reuleaux9": lambda fin: reuleaux(9, 140 if fin else 50),
 }
 
 JEUX = {
@@ -167,6 +168,9 @@ JEUX = {
     "xie3+hendecagone": ["disque", "triangle", "pentagone", "hendecagone"],
     "xie3+heptagone+reuleaux5": ["disque", "triangle", "pentagone", "heptagone", "reuleaux5"],
     "sans-disque": ["heptagone", "triangle", "pentagone"],
+    "gibbs5": ["disque", "reuleaux3", "reuleaux5", "reuleaux7", "reuleaux9"],
+    "gibbs5+pentagone": ["disque", "reuleaux3", "reuleaux5", "reuleaux7", "reuleaux9", "pentagone"],
+    "disque+triangle": ["disque", "triangle"],
 }
 
 if __name__ == "__main__":
