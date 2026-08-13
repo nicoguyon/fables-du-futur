@@ -199,3 +199,10 @@ trio, 3 pour le jeu à 4 formes), les translations se réglant par
 minimisation convexe certifiée par sous-gradient. C'est très
 vraisemblablement le mécanisme de Xie. Question Q8 ajoutée au registre
 (GPT-5 round 2 + D. Madore — question française par excellence).
+
+**Clôture de la validation 3D** : 5.17M boîtes certifiées sans aucun
+blocage de borne (seule la taille de l'anneau de minima non quotienté
+coûte) ; la validation par quotient (certifie.py, 10 s) reste la
+référence. Leçon d'infrastructure : le mode mono-processus n'activait
+pas les checkpoints — toujours PROCS>1 ou LOT. Cœur réaffecté à
+l'attaque massive de l'énigme de Gibbs (2500 départs).
