@@ -158,11 +158,13 @@
   <p class="eyebrow">Research communication · numerical evidence, offered for certification</p>
   <h1>A fourth test shape for lower bounds in Lebesgue's universal covering problem</h1>
   <p class="byline">Nicolas Guyon (Comptoir IA, France), with AI assistance (Claude, Anthropic) for algorithm design and computation.</p>
-  <p class="byline">August 12, 2026 · reproducible in minutes · code public</p>
-  <div class="statut"><strong>Status &amp; purpose.</strong> This is <em>reproducible numerical evidence</em>, not a certified bound. We publish it so that groups with certification pipelines (notably the framework of Xie, arXiv:2606.04458) can use it directly: everything needed — shapes, optimal placements, code — is below. If it certifies, the lower bound for the problem improves from 0.833 to ≈&nbsp;0.834.</p>
+  <p class="byline">August 13, 2026 (v2) · reproducible in minutes · code public</p>
+  <div class="statut"><strong>Status &amp; purpose (v2, after external adversarial review).</strong> This note reports a numerical exploration of finite test-shape families. The value 0.834574 is the <em>best achievable area we observed</em> for a four-shape family — a <em>candidate</em> for the global minimum of that finite subproblem, <em>not</em> a numerical lower bound on α. Historical note (verified in the original paper): Gibbs already explored Reuleaux-polygon test families in 2014, reaching 0.83699098 empirically with five shapes (disk + Reuleaux 3, 5, 7, 9-gons, simulated annealing, arXiv:1401.8217 §2) — our exploration independently rediscovers this vein. What remains genuinely open, and what we target, is <strong>certification above 0.833</strong>: no family has ever been certified past that threshold. Everything needed to work on this — shapes, optimal placements, code — is below.</div>
+
+
 
   <h2><span class="num">1.</span>Claim</h2>
-  <p>Consider the test-shape method for lower bounds (Brass–Sharifi 2005; Xie 2026): any convex universal cover contains a congruent copy of each chosen shape of diameter 1, hence its area is at least the minimum, over all placements, of the area of the convex hull of their union. Xie certified 0.833 with three shapes: disk, equilateral triangle, regular pentagon (all of diameter 1).</p>
+  <p>Consider the test-shape method for lower bounds (Elekes 1994; Brass–Sharifi 2005; Xie 2026): any convex universal cover contains a congruent copy of each chosen shape of diameter 1, hence its area is at least the minimum, over all placements, of the area of the convex hull of their union. Xie's preprint certifies 0.833 with three shapes: disk, equilateral triangle, regular pentagon (all of diameter 1).</p>
   <p><strong>Adding the Reuleaux pentagon of width 1 as a fourth test shape raises the best achievable area we observed to 0.834574 (stable across 2000 restarts).</strong> Caveats, per the review: restarts measure basin repeatability, not the absence of a lower basin; the certification (branch-and-bound over all placements) is the sole arbiter, and a realistic certification target is <strong>0.834</strong> (margin 5.7×10⁻⁴ under the candidate). Richer families go higher still: Gibbs's five-shape family targets 0.83699.</p>
   <figure>
     <svg viewBox="-30 -10 700 120" role="img" aria-label="Encadrement du problème de Lebesgue" style="width:100%;height:auto">
@@ -184,16 +186,16 @@
         <text x="341.85" y="49" text-anchor="middle" dominant-baseline="middle" font-style="italic">α is here</text>
       </g>
       <g fill="var(--accent)" font-family="-apple-system, Segoe UI, Roboto, sans-serif" font-size="12.5" font-weight="600">
-        <text x="189.0" y="20">0.83457 — our target</text>
+        <text x="189.0" y="20">0.83457 — candidate (to certify)</text>
       </g>
     </svg>
-    <figcaption>The state of the problem: α lives between the certified floor (0.833, Xie) and the constructed ceiling (0.84409, Gibbs). Our numerical target (dashed) would raise the floor by one thousandth.</figcaption>
+    <figcaption>The state of the problem: α lives between the certified floor (0.833, Xie) and the constructed ceiling (0.84409, Gibbs). Our numerical candidate (dashed) — if certified — would raise the floor by one thousandth.</figcaption>
   </figure>
 
   <h2><span class="num">2.</span>What we measured</h2>
   <div class="tablewrap">
   <table>
-    <thead><tr><th>Test set</th><th>Numerical min of hull area</th><th>Note</th></tr></thead>
+    <thead><tr><th>Test set</th><th>Best achievable area observed</th><th>Note</th></tr></thead>
     <tbody>
       <tr><td>disk alone</td><td>0.785397</td><td>= π/4, exact sanity check</td></tr>
       <tr><td>disk + triangle + pentagon (Xie's set)</td><td>0.833597</td><td>consistent with his certified 0.833</td></tr>
@@ -203,10 +205,9 @@
       <tr><td>+ regular hendecagon</td><td>0.834597</td><td>promising, less hardened (300 restarts)</td></tr>
       <tr class="hit"><td>+ Reuleaux pentagon (width 1)</td><td>0.834574</td><td>stable across 2000 restarts</td></tr>
     </tbody>
-    <caption>Nelder–Mead multi-start (two-stage), shapes discretized by inscribed polygons (safe direction: underestimates). Noise ≈ 10⁻⁵, calibrated by a monotonicity check (a 5-set once scored 10⁻⁵ below its own 4-subset — mathematically impossible, hence measured optimizer error). High values are systematically attacked with mass restarts: the heptagon fell from 0.83519 to 0.83433 under attack; the Reuleaux pentagon held.</caption>
+    <caption>Nelder–Mead multi-start (two-stage), shapes discretized by inscribed polygons (for the rigorous version these become exact rational test sets — any diameter-1 set is a legitimate test). Discretization and local-optimization errors pull in opposite directions, so these values carry no guaranteed sign: they are candidates, and the branch-and-bound is the arbiter. The 10⁻⁵ monotonicity violation (a 5-set scoring below its own 4-subset) is an error floor, not a ceiling. High values are systematically attacked with mass restarts: the heptagon fell from 0.83519 to 0.83433 under attack; the Reuleaux pentagon held.</caption>
   </table>
   </div>
-
   <h2><span class="num">3.</span>The optimal configuration (all you need to reproduce)</h2>
   <figure>
     <svg viewBox="-160 -170 320 340" role="img" aria-label="Configuration optimale des quatre formes" style="max-width:24rem;display:block;margin:0 auto;height:auto">
