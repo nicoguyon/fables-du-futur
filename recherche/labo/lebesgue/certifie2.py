@@ -264,6 +264,14 @@ class Probleme:
         t0 = time.time()
         dernier_ckpt = t0
         pire = math.inf
+
+        def vol(b):
+            v = 1.0
+            for lo, hi in b:
+                v *= (hi - lo)
+            return v
+        vol_racine = sum(vol(b) for b in pile) or 1.0
+        vol_ok = 0.0
         while pile:
             maintenant = time.time()
             if chemin_ckpt and maintenant - dernier_ckpt > 60:
@@ -276,15 +284,17 @@ class Probleme:
                               open(chemin_ckpt, "w"))
                 return {"succes": False, "raison": "budget temps", "restantes": len(pile),
                         "boites": self.n_ok, "ckpt": chemin_ckpt,
+                        "volume_pct": round(100 * vol_ok / vol_racine, 3),
                         "secondes": round(maintenant - t0, 1)}
             boite = pile.pop()
             lb = self._borne(boite)
             if lb >= self.L:
                 self.n_ok += 1
+                vol_ok += vol(boite)
                 pire = min(pire, lb)
                 if self.n_ok % rapport == 0:
-                    print(f"  … {self.n_ok} boîtes ok, pile {len(pile)}, "
-                          f"{round(time.time() - t0)} s", flush=True)
+                    print(f"  … {self.n_ok} boîtes ok, {100*vol_ok/vol_racine:.3f}% du volume, "
+                          f"pile {len(pile)}, {round(time.time() - t0)} s", flush=True)
                 continue
             b1, b2, wmax = self._decoupe(boite)
             if wmax < taille_min:
