@@ -177,3 +177,25 @@ record4@0.8335 : ~0 % (reprise sur les boîtes profondes). Lecture
 honnête : les certifications 5D/8D sont des MONTAGNES en l'état — la
 stratégie hiérarchique et/ou la flotte seront nécessaires. Argument de
 plus pour lancer l'appel communautaire sans attendre le verdict.
+
+## Séance 5 (13 août 2026) — le diagnostic qui change la stratégie
+
+**Diagnostic chirurgical au voisinage de l'optimum xie3** (L=0.832) :
+borne témoin ponctuelle 0.833565 (vraie valeur 0.833597 — étanchéité
+3e-5) ; taille de boîte certifiable ~6e-4 ; perte ~1.85 par unité de
+taille. Extrapolation sur la coquille critique 5D : de l'ordre de
+10^9-10^10 boîtes — la force brute seule ne suffira PAS (Xie : 357k
+domaines -> il possède une arme structurelle).
+
+**Conjecture structurelle testée** : l'aire de l'enveloppe est-elle
+convexe en les translations (rotations fixées) ? Test numérique :
+- amplitude 0.15 (régime de la coquille critique) : 0 violation / 300
+  segments — convexité nette ;
+- amplitude 0.30, rotations aléatoires : 1 violation réelle / 200
+  (+1.25e-3) — la convexité est LOCALE, pas globale.
+Si un lemme de convexité locale est établi (ou trouvé dans la
+littérature), le B&B se réduit aux dimensions de ROTATION (1 pour le
+trio, 3 pour le jeu à 4 formes), les translations se réglant par
+minimisation convexe certifiée par sous-gradient. C'est très
+vraisemblablement le mécanisme de Xie. Question Q8 ajoutée au registre
+(GPT-5 round 2 + D. Madore — question française par excellence).
