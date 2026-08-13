@@ -387,5 +387,10 @@ if __name__ == "__main__":
     elif procs > 1:
         res = certifie_parallele(nom, procs=procs, budget_s=budget)
     else:
-        res = pb.certifie(budget_s=budget)
+        ck = f"ckpt_{nom}_solo.json"
+        pile = None
+        if os.environ.get("RESUME") == "1" and os.path.exists(ck):
+            pile = [tuple(tuple(iv) for iv in b) for b in json.load(open(ck))["pile"]]
+            print(f"[reprise solo] {len(pile)} boîtes depuis {ck}", flush=True)
+        res = pb.certifie(budget_s=budget, pile_init=pile, chemin_ckpt=ck)
     print(res)
