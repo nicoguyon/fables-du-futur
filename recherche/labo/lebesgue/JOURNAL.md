@@ -206,3 +206,22 @@ coûte) ; la validation par quotient (certifie.py, 10 s) reste la
 référence. Leçon d'infrastructure : le mode mono-processus n'activait
 pas les checkpoints — toujours PROCS>1 ou LOT. Cœur réaffecté à
 l'attaque massive de l'énigme de Gibbs (2500 départs).
+
+## Séance 6 (13 août) — le verdict de la force brute, et le pivot
+
+Bilan des runs de 6 h : xie3 = 23.5M boîtes pour 6.25 % du volume ;
+record4 = 25.6M boîtes pour ~0 % (zones profondes). CONCLUSION FERME :
+la force brute ne conclura aucun des deux fronts (années de calcul).
+C'est une donnée scientifique en soi — Xie détient nécessairement une
+réduction structurelle, et notre conjecture de convexité locale (Q8)
+n'est pas une option mais LE chemin.
+
+Pivot acté :
+- xie3 brute-force GARÉ (checkpoint conservé, reprenable) ;
+- record4 maintenu en régime lent (2 cœurs) — ses checkpoints
+  cartographient la zone critique, capital pour la future version
+  hiérarchique ; et la « certification en cours » du thread reste vraie ;
+- cœur libéré -> énigme de Gibbs (basin-hopping, 2000 sauts) ;
+- prochain sprint d'ingénierie : PROTOTYPE de la réduction convexe
+  (minimisation convexe par tranche de rotation + certificat par
+  sous-gradient), d'abord numérique pour mesurer le gain, rigueur ensuite.
