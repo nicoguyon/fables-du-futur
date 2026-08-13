@@ -54,7 +54,7 @@ La note de recherche (avec schémas), le code (~500 lignes de Python), le journa
 → [LIEN NOTE EN]
 
 **11/12**
-Je mentionne quelques personnes dont le regard serait précieux — pas pour le buzz, pour l'arbitrage. En France : @gro_tsen (le lemme de convexité, c'est pour vous), @micmaths, @VillaniCedric, @RogerMansuy, @ElJj. Standard de preuve et IA : @wtgowers. Le gardien historique du problème : @johncarlosbaez. Cassez, validez, orientez.
+Je mentionne quelques personnes dont le regard serait précieux — pas pour le buzz, pour l'arbitrage. En France : @gro_tsen (le lemme de convexité, c'est pour vous), @micmaths, @VillaniCedric, @roger_mansuy, @ElJj. Standard de preuve et IA : @wtgowers. Le gardien historique du problème : @johncarlosbaez. Cassez, validez, orientez.
 
 **12/12**
 Objectif final assumé : une vraie avancée certifiée sur le plancher de Lebesgue — un théorème, pas un tweet.
@@ -69,7 +69,7 @@ For English-speaking mathematicians: an amateur + adversarial AIs, publicly atta
 Énigme pour les geeks de géométrie : Gibbs (2014) rapportait 0.83699 pour l'embouteillage minimal de {cercle + Reuleaux 3,5,7,9}. Notre optimiseur, sur SA famille, reconverge obstinément vers 0.83754 (800 départs). Bassin étroit ? Convention différente ? Valeur perfectible ? Le premier qui tranche gagne notre gratitude éternelle + son nom au journal de bord.
 
 ## RÈGLES D'ENVOI
-1. Vérifier chaque handle avant de poster (sûrs : @gro_tsen, @micmaths, @johncarlosbaez, @wtgowers ; à vérifier : @VillaniCedric, @RogerMansuy, @ElJj).
+1. Handles VÉRIFIÉS le 13/08 : @gro_tsen, @micmaths, @johncarlosbaez, @wtgowers, @VillaniCedric (officiel — attention aux comptes fans), @roger_mansuy (avec underscore). Reste à confirmer d'un clic dans la recherche X : @ElJj (sinon le retirer).
 2. Remplacer les [LIENS] : note FR + note EN (activer le partage dans le menu de chaque page artifact) + repo github.com/nicoguyon/fables-du-futur/tree/claude/math-problems-research-npnrg2/recherche/labo/lebesgue
 3. Poster le thread d'un bloc le matin (9h-10h, bon créneau), le tweet EN en réponse, l'énigme le lendemain.
 4. Ne JAMAIS éditer vers plus de certitude que le texte — il est calibré au millimètre épistémique.
