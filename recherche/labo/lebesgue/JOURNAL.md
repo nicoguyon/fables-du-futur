@@ -154,3 +154,12 @@ Critique externe reçue et traitée point par point :
   hiérarchique 5D -> extension 3D des boîtes critiques ; substitution
   rationnelle t = tan(θ/2) pour la version publiable ; vérificateur
   minuscule indépendant du générateur.
+
+**Reproductions post-audit** : gibbs5 (D+R3+R5+R7+R9) -> 0.8375361 chez
+nous à 250 départs, AU-DESSUS du 0.83699098 de Gibbs 2014 : notre
+optimiseur n'a pas encore trouvé son bassin (12 dims). Leçon de l'audit
+appliquée : le candidat de cette famille reste 0.83699098 (plus basse
+valeur jamais observée, par Gibbs) ; attaque à 800 départs lancée.
+disque+triangle (nu) -> 0.8257108 = exactement la valeur de
+disque+reuleaux3 : point « valeur classique » de la revue confirmé
+(les arcs du Reuleaux ne jouent pas au voisinage de l'optimum).
