@@ -68,6 +68,11 @@ For English-speaking mathematicians: an amateur + adversarial AIs, publicly atta
 ## TWEET BONUS ÉNIGME (à poster le lendemain, relance naturelle)
 Énigme pour les geeks de géométrie : Gibbs (2014) rapportait 0.83699 pour l'embouteillage minimal de {cercle + Reuleaux 3,5,7,9}. Notre optimiseur, sur SA famille, reconverge obstinément vers 0.83754 (800 départs). Bassin étroit ? Convention différente ? Valeur perfectible ? Le premier qui tranche gagne notre gratitude éternelle + son nom au journal de bord.
 
+## IMAGES (dans le même dossier du repo)
+- img1_configuration.png -> joindre au tweet 3/12 (ou 1/12 en héros)
+- img2_bornes.png -> joindre au tweet 3/12 ou 5/12
+- img3_convexite.png -> joindre au tweet 7/12 (la conjecture)
+
 ## RÈGLES D'ENVOI
 1. Handles VÉRIFIÉS le 13/08 : @gro_tsen, @micmaths, @johncarlosbaez, @wtgowers, @VillaniCedric (officiel — attention aux comptes fans), @roger_mansuy (avec underscore). Reste à confirmer d'un clic dans la recherche X : @ElJj (sinon le retirer).
 2. Remplacer les [LIENS] : note FR + note EN (activer le partage dans le menu de chaque page artifact) + repo github.com/nicoguyon/fables-du-futur/tree/claude/math-problems-research-npnrg2/recherche/labo/lebesgue
