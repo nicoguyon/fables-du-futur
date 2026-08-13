@@ -110,9 +110,12 @@ def _un_depart(arg):
     return float(res.fun), res.x
 
 
-def minimise(noms_formes, essais=None, graine=0, procs=4):
+def minimise(noms_formes, essais=None, graine=None, procs=4):
     if essais is None:
         essais = int(os.environ.get("ESSAIS", "120"))
+    if graine is None:
+        graine = int(os.environ.get("GRAINE", "0"))
+    ampli = float(os.environ.get("AMPLI", "0.3"))
     """Deux étages. noms_formes : liste de fabriques (nom, kwargs grossier/fin)."""
     rng = np.random.default_rng(graine)
     formes_g = [FABRIQUES[n](fin=False) for n in noms_formes]
@@ -123,7 +126,7 @@ def minimise(noms_formes, essais=None, graine=0, procs=4):
     departs = []
     for _ in range(essais):
         x0 = np.concatenate([[rng.uniform(0, 2 * math.pi),
-                              rng.uniform(-0.3, 0.3), rng.uniform(-0.3, 0.3)]
+                              rng.uniform(-ampli, ampli), rng.uniform(-ampli, ampli)]
                              for _ in range(k)])
         departs.append((formes_g, x0, 1200, 1e-6, 1e-9))
     with Pool(procs) as pool:
