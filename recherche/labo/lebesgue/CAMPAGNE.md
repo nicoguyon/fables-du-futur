@@ -3,17 +3,42 @@
 *Objectif : 5-10 personnes ACTIVEMENT engagées (réponse, critique, calcul).
 Hypothèse de rendement : 25-30 % => toucher ~18 personnes bien appariées.*
 
-## Canal 1 — X (le thread du 14/08 + relances) : 8 cibles
-| Qui | Rôle | Quand |
+## Canal 1 — X élargi : 20 cibles en 4 cercles
+
+### Cercle 1 — les évaluateurs (jour 1, mentions dans le thread)
+| Qui | Pourquoi | Confiance handle |
 |---|---|---|
-| @johncarlosbaez | gardien historique du problème | mention jour 1 |
-| @gro_tsen (Madore) | technique FR, très réactif | mention jour 1 |
-| @micmaths (Launay) | amplification FR | mention jour 1 |
-| @VillaniCedric | légitimité (+ contact direct de Nico !) | mention jour 1 |
-| @roger_mansuy | prépa/agreg, relais enseignants | mention jour 1 |
-| @ElJj (à confirmer) | vulgarisation geek | mention jour 1 |
-| @wtgowers | standard de preuve IA+maths | J+2 |
-| @science4all (Lê Nguyên Hoang — à confirmer) | angle IA+maths FR | J+2, tweet dédié |
+| @johncarlosbaez | gardien historique du problème de Lebesgue | sûre |
+| @gro_tsen (D. Madore) | technique FR, très réactif | sûre |
+| @VillaniCedric | légitimité + contact direct de Nico | vérifiée (officiel) |
+| @wtgowers | standard de preuve IA+maths (J+2) | sûre |
+| @AlexKontorovich | maths+IA, engage volontiers | à vérifier |
+
+### Cercle 2 — amplificateurs français (jour 1-2, tweets dédiés)
+| @micmaths (Launay) | 1er vulgarisateur FR | sûre |
+| @roger_mansuy | relais prépas/enseignants | vérifiée (underscore) |
+| @ElJj | vulgarisation geek | à confirmer |
+| @dlouapre (Science Étonnante) | rigueur + audience | à vérifier |
+| @science4all ou @le_science4all (Lê Nguyên Hoang) | angle IA+maths | à vérifier |
+| @achambertloir (Chambert-Loir) | mathématicien FR actif en ligne | à vérifier |
+
+### Cercle 3 — amplificateurs internationaux (jour 2-3, tweet EN dédié)
+| @standupmaths (Matt Parker) | LE public des maths calculatoires amateurs (sofa, etc.) | sûre |
+| @robinhouston | crowdsourcing de preuves (superpermutations !) — cousin direct de notre démarche | à vérifier |
+| @stevenstrogatz | conteur n°1 des jolies histoires mathématiques | sûre |
+| @3blue1brown | long shot assumé — l'histoire est taillée pour son audience | sûre |
+| @FryRsquared (Hannah Fry) | récit science+IA grand public | à vérifier |
+
+### Cercle 4 — institutions & médias (jour 3+, interpellation polie)
+| @CNRS_INSMI | l'institution des maths françaises | vérifiée |
+| @PourLaScience | la chronique de Delahaye en ligne de mire | à vérifier |
+| @QuantaMagazine | a couvert Lebesgue (articles Baez/Gibbs) ET l'IA-math | sûre |
+| @AnthropicAI | leur histoire Riemann est notre tremplin — les tenir informés est de bonne guerre | sûre |
+
+Règles inchangées : UNE mention par tweet, jamais de tag groupé (sauf le tweet 11/12
+du thread qui en liste 5 françaises — c'est l'appel initial, assumé) ; chaque
+mention accrochée à l'univers de la personne ; vérifier tout handle 'à vérifier'
+dans la recherche X avant envoi (30 s chacun).
 
 ## Canal 2 — e-mails spécialistes (brouillons Gmail par Claude) : 8 cibles
 | Qui | Question du registre | Quand |
