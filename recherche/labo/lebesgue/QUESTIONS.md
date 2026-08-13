@@ -13,6 +13,7 @@ puis marquée. Rien ne se perd.*
 | Q5 | Famille de Gibbs (11 dims, candidat 0.83699) vs 4-formes (8 dims, 0.834574) : laquelle certifier en premier ? | GPT-5 (round 2) | ouverte | allocation du calcul |
 | Q6 | Minorations par boîte plus fortes que les témoins (aires mixtes, Brunn–Minkowski) ? | note §7 ; expert géométrie convexe (M. Fradelizi ?) | ouverte | accélération du B&B |
 | — | « Gonzalez 2026 » : identifiant arXiv exact ? | GPT-5 (round 2) | ouverte | référence à valider ou écarter |
+| Q7 | Famille de Gibbs 2014 : nous convergeons vers 0.83754 (800 départs), pas son 0.83699 — bassin étroit, convention différente, ou valeur perfectible ? | à poser à J. Baez / P. Gibbs | ouverte | vraie valeur du candidat gibbs5 |
 
 ## Réponses intégrées
 - GPT-5 (round 1, 13/08) : requalification candidat/minoration, carré ⊂ disque,

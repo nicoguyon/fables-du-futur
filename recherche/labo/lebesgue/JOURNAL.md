@@ -163,3 +163,17 @@ valeur jamais observée, par Gibbs) ; attaque à 800 départs lancée.
 disque+triangle (nu) -> 0.8257108 = exactement la valeur de
 disque+reuleaux3 : point « valeur classique » de la revue confirmé
 (les arcs du Reuleaux ne jouent pas au voisinage de l'optimum).
+
+**Énigme gibbs5** : à 800 départs comme à 250, notre optimiseur converge
+vers le MÊME minimum 0.8375361 (mêmes placements) sans retrouver le
+0.83699098 de Gibbs 2014. Hypothèses : bassin étroit, différence de
+convention, ou valeur 2014 perfectible. Question ajoutée au registre
+(idéale pour Baez/Gibbs). Note : si notre 0.83754 était le vrai minimum
+de cette famille, la cible de certification monterait d'autant.
+
+**Métriques de volume (premières)** : xie3@0.832 : 6.05 % du volume en
+~25 min monocœur, progression par paliers (zones dures dominantes) ;
+record4@0.8335 : ~0 % (reprise sur les boîtes profondes). Lecture
+honnête : les certifications 5D/8D sont des MONTAGNES en l'état — la
+stratégie hiérarchique et/ou la flotte seront nécessaires. Argument de
+plus pour lancer l'appel communautaire sans attendre le verdict.
