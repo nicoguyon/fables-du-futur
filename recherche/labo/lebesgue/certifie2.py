@@ -377,7 +377,14 @@ if __name__ == "__main__":
     procs = int(os.environ.get("PROCS", "1"))
     pb = PROBLEMES[nom]()
     print(f"[{nom}] L = {pb.L}, dims = {len(pb.dims)}, procs = {procs}", flush=True)
-    if procs > 1:
+    lot = os.environ.get("LOT")
+    if lot:
+        ck = lot + ".ckpt"
+        source = ck if (os.environ.get("RESUME") == "1" and os.path.exists(ck)) else lot
+        pile = [tuple(tuple(iv) for iv in b) for b in json.load(open(source))["pile"]]
+        print(f"[lot] {lot} depuis {source} : {len(pile)} boîtes", flush=True)
+        res = pb.certifie(budget_s=budget, pile_init=pile, chemin_ckpt=ck)
+    elif procs > 1:
         res = certifie_parallele(nom, procs=procs, budget_s=budget)
     else:
         res = pb.certifie(budget_s=budget)
